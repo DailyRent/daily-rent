@@ -1,9 +1,7 @@
 @import "../../../styles/_variables.scss";
 
-.q {
-  // background-color: $qwe;
-  height: 100vh;
-  @media screen and (min-width: $mobile) {
-    // background-color: aqua;
-  }
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: blueviolet;
 }
