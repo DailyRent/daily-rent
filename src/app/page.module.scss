@@ -1,17 +1,18 @@
 @import "../styles/_variables.scss";
 
-.main {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 6rem;
-  min-height: 100vh;
-}
+// .main {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
+//   align-items: center;
+//   padding: 6rem;
+//   min-height: 100vh;
+// }
 
-.q {
+.container {
   // background-color: $qwe;
-  height: 100vh;
+  background-color: burlywood;
+
   @media screen and (min-width: $mobile) {
     // background-color: aqua;
   }
