@@ -3,6 +3,7 @@ import styles from "./page.module.scss";
 import ApartItem from "@/components/ApartItem/ApartItem";
 import OrderBtn from "@/components/OrderBtn/OrderBtn";
 import CallBtn from "@/components/CallBtn/CallBtn";
+import Link from "next/link";
 
 
 const Apartments = () => {
@@ -12,6 +13,7 @@ const Apartments = () => {
     <ApartItem />
     <ApartItem />
     <ApartItem />
+    <Link href='/apartments/roomsQuantity'>Move to page for choose quantity of rooms</Link>
     <OrderBtn />
     <CallBtn />
   </div>;
