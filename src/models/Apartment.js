@@ -17,6 +17,7 @@ const apartmentSchema = new Schema({
         type: Array,
         required: true,
     },
+    // возможно лучше разделить адрес на поля: город, улица, дом, квартира ?!??! по той причине,что мы не собираемся показывать номер квартиры
     address: {
         type: String,
         required: true,

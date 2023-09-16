@@ -13,7 +13,7 @@ const Apartments = () => {
     <ApartItem />
     <ApartItem />
     <ApartItem />
-    <Link href='/apartments/roomsQuantity'>Move to page for choose quantity of rooms</Link>
+    <Link href='/apartments/rooms' style={{ backgroundColor: "green" }}>Move to page for choose quantity of rooms</Link>
     <OrderBtn />
     <CallBtn />
   </div>;
