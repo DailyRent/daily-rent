@@ -1,3 +1,4 @@
+// будет редактироваться в процессе работы с БД
 import { NextResponse } from "next/server";
 import connect from "@/utils/db";
 import Apartment from "@/models/Apartment";

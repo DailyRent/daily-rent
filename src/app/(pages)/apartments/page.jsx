@@ -6,7 +6,22 @@ import CallBtn from "@/components/CallBtn/CallBtn";
 import Link from "next/link";
 
 
-const Apartments = () => {
+async function getData() {
+  const result = await fetch(`${process.env.URL}/api/apartments`, { cache: "no-store" })
+
+  if (!result.ok) {
+    throw new Error("Failed to fetch data.")
+  }
+
+  return result.json();
+}
+
+
+const Apartments = async () => {
+  const data = await getData();
+  console.log("data", data);
+
+
   return <div className={styles.container}>
     <h1>Apartments</h1>
     <ApartItem />
