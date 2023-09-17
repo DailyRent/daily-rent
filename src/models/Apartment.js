@@ -73,4 +73,6 @@ const apartmentSchema = new Schema({
 )
 
 
-export default mongoose.model("Apartment", apartmentSchema);
+// export default mongoose.model("Apartment", apartmentSchema);
+//If the Apartment collection does not exist - create a new one.
+export default mongoose.models.Apartment || mongoose.model("Apartment", apartmentSchema);

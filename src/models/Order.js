@@ -1,4 +1,4 @@
-// мысли набудущее
+// мысли на будущее
 import mongoose, { Schema } from "mongoose";
 
 
@@ -28,4 +28,6 @@ const orderSchema = new Schema({
 )
 
 
-export default mongoose.model("Order", orderSchema);
+// export default mongoose.model("Order", orderSchema);
+//If the Order collection does not exist - create a new one.
+export default mongoose.models.Order || mongoose.model("Order", orderSchema);
