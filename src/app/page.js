@@ -6,6 +6,7 @@ import OrderBtn from "@/components/OrderBtn/OrderBtn";
 import CallBtn from "@/components/CallBtn/CallBtn";
 
 
+
 export default function Home() {
   return <section className={styles.container}>
     <h1>Home Page</h1>
