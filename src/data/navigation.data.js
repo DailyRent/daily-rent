@@ -19,4 +19,9 @@ export const navigationData = [
         title: 'Contacts',
         path: '/contacts',
     },
+    {
+        // id: 5,
+        title: 'Dashboard',
+        path: '/dashboard',
+    },
 ];
