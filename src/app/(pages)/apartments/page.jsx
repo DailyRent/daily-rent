@@ -4,6 +4,7 @@ import ApartItem from "@/components/ApartItem/ApartItem";
 import OrderBtn from "@/components/OrderBtn/OrderBtn";
 import CallBtn from "@/components/CallBtn/CallBtn";
 import Link from "next/link";
+import Filter from "@/components/Filter/Filter";
 
 
 async function getData() {
@@ -23,7 +24,8 @@ const Apartments = async () => {
 
 
   return <div className={styles.container}>
-    <h1>Apartments</h1>
+    <h1>Apart Page</h1>
+    <Filter />
     <ApartItem />
     <ApartItem />
     <ApartItem />
