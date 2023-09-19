@@ -8,7 +8,7 @@ import Filter from "@/components/Filter/Filter";
 
 
 async function getData() {
-  const result = await fetch(`${process.env.URL}/api/apartments`, { cache: "no-store" })
+  const result = await fetch(`${process.env.NEXTAUTH_URL}/api/apartments`, { cache: "no-store" })
 
   if (!result.ok) {
     throw new Error("Failed to fetch data.")
