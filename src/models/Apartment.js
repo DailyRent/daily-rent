@@ -2,13 +2,11 @@ import mongoose, { Schema } from "mongoose";
 
 
 const apartmentSchema = new Schema({
-    // id: number;
     id: {
         type: String,
         unique: true,
         required: true,
     },
-    // для отображения в слайдере на HomePage !?!?!?!?!?
     top: {
         type: Boolean,
     },
@@ -16,17 +14,15 @@ const apartmentSchema = new Schema({
         type: String,
         required: true,
     },
-    // может упустить здесь titleImg, а размещать её в imgs с каким-то уникальным названием во всех массивах, напр: mainPhoto, или тоже titleImg
     imgs: {
         type: Array,
         required: true,
     },
-    // возможно лучше разделить адрес на поля: город, улица, дом, квартира ?!??! по той причине,что мы не собираемся показывать номер квартиры
     address: {
         type: String,
         required: true,
     },
-    // ??? насколько необходимо,и как видим его работу
+    // ??? насколько необходимо,и как видим его работу 
     googleMapLocation: {
         type: String,
         required: true,
@@ -40,13 +36,11 @@ const apartmentSchema = new Schema({
         type: Number,
         required: true,
     },
-    // ??? что это ????
     airbnbUrl: {
         type: String,
         unique: true,
         required: true,
     },
-    // ????
     bookingUrl: {
         type: String,
         unique: true,
@@ -55,7 +49,7 @@ const apartmentSchema = new Schema({
     amenities: {
         type: Array,
     },
-    // эти свойства будут заходить в conditions, благодаря checkbox
+    // эти свойства будут заходить в amenities, благодаря checkbox
     // airCond: bool,
     // smartTV: bool,
     // bath: bool,
