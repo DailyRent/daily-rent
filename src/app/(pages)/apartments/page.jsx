@@ -7,20 +7,21 @@ import Link from "next/link";
 import Filter from "@/components/Filter/Filter";
 
 
-async function getData() {
-  const result = await fetch(`${process.env.NEXTAUTH_URL}/api/apartments`, { cache: "no-store" })
+// async function getData() {
+//   const result = await fetch(`${process.env.NEXTAUTH_URL}/api/apartments`, { cache: "no-store" })
 
-  if (!result.ok) {
-    throw new Error("Failed to fetch data.")
-  }
+//   if (!result.ok) {
+//     throw new Error("Failed to fetch data.")
+//   }
 
-  return result.json();
-}
+//   return result.json();
+// }
+
+// const data = await getData();
 
 
-const Apartments = async () => {
-  const data = await getData();
-  console.log("data", data);
+const Apartments = () => {
+  // console.log("data", data);
 
 
   return <div className={styles.container}>
