@@ -8,6 +8,10 @@ const apartmentSchema = new Schema({
         unique: true,
         required: true,
     },
+    // для отображения в слайдере на HomePage !?!?!?!?!?
+    top: {
+        type: Boolean,
+    },
     titleImg: {
         type: String,
         required: true,

@@ -8,7 +8,7 @@ import CallBtn from '@/components/CallBtn/CallBtn';
 const ApartId = () => {
     return (
         <div className={styles.container}>
-            <h1>ApartId</h1>
+            <h1>ApartId Page</h1>
             <ApartItem />
             <OrderBtn />
             <CallBtn />

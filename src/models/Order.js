@@ -20,6 +20,7 @@ const orderSchema = new Schema({
     dateTo: {
         type: Number,
     },
+    // возможно не apartment, а только apartmentId
     apartment: {
         type: String,  // подтягивать данные из модели Apartment
     },
