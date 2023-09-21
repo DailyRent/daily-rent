@@ -1,8 +1,84 @@
 @import "../../styles/_variables.scss";
 
 .container {
+  position: fixed;
+  display: flex;
+  // justify-content: space-around;
+  align-items: center;
+  padding: 42px 16px;
+
+  @media screen and (min-width: $tablet) {
+    padding: 28px 48px;
+  }
+  @media screen and (min-width: $desktop) {
+    padding: 24px 75px;
+  }
+}
+
+.leftLinks,
+.rightLinks {
+  display: none;
+
+  @media screen and (min-width: $tablet) {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: aquamarine;
+    gap: 20px;
+
+    & a {
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
+  @media screen and (min-width: 960px) {
+    gap: 40px;
+  }
+}
+
+.leftLinks {
+  margin-left: 0;
+  margin-right: auto;
+  & a {
+    color: $lightFontColor;
+  }
+}
+.rightLinks {
+  margin-right: 0;
+  margin-left: auto;
+  & a {
+    color: $darckFontColor;
+  }
+}
+
+.langSwitcher {
+  margin-right: auto;
+  margin-left: 0;
+  width: 64px;
+  height: 20px;
+
+  display: flex;
+  padding: 8px 16px;
+  align-items: center;
+  gap: 4px;
+
+  border-radius: 24px;
+  border: 1px solid #242424;
+
+  color: #242424;
+  text-align: center;
+  font-family: Jura;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+
+  overflow: hidden;
+
+  @media screen and (min-width: $tablet) {
+    margin-right: 0;
+    margin-left: 20px;
+
+    width: 74px;
+    height: 32px;
+  }
 }
