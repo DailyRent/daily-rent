@@ -70,5 +70,12 @@
 <path fill="#fff" style="fill: var(--color2, #fff)" d="M3.341 13.187h47.473c1.457 0 2.637 1.181 2.637 2.637s-1.181 2.637-2.637 2.637h-47.473c-1.457 0-2.637-1.181-2.637-2.637s1.181-2.637 2.637-2.637z"></path>
 <path fill="#fff" style="fill: var(--color2, #fff)" d="M3.341 26.373h47.473c1.457 0 2.637 1.181 2.637 2.637s-1.181 2.637-2.637 2.637h-47.473c-1.457 0-2.637-1.181-2.637-2.637s1.181-2.637 2.637-2.637z"></path>
 </symbol>
+<symbol id="icon-map-pin-footer" viewBox="0 0 32 32">
+<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="1" stroke-width="2" d="M28 13.334c0 9.333-12 17.333-12 17.333s-12-8-12-17.333c0-3.183 1.264-6.235 3.515-8.485s5.303-3.515 8.485-3.515c3.183 0 6.235 1.264 8.485 3.515s3.515 5.303 3.515 8.485z"></path>
+<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2" d="M16 17.334c2.209 0 4-1.791 4-4s-1.791-4-4-4c-2.209 0-4 1.791-4 4s1.791 4 4 4z"></path>
+</symbol>
+<symbol id="icon-Facebook" viewBox="0 0 32 32">
+<path d="M0.762 0.762h30.476v30.476h-30.476v-30.476z"></path>
+</symbol>
 </defs>
 </svg>

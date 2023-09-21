@@ -13,13 +13,14 @@ const Header = () => {
         <Link href={"/documents"}>Документи</Link>
       </div>
 
-      <Logo />
+      <Logo className={styles.headerLogo} />
 
       <div className={styles.rightLinks}>
         <Link href={"/rools"}>Правила</Link>
         <Link href={"/contacts"}>Контакти</Link>
       </div>
-      <div className={styles.langSwitcher}>Eng Ukr</div>
+
+      <div className={styles.langSwitcher}>Eng </div>
 
       <BurgerBtn />
       {/* <Navigation /> */}
