@@ -1,5 +1,8 @@
 @import "../../styles/_variables.scss";
 
 .container {
-    display: flex;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  background-color: rgba(79, 70, 65, 0.413);
 }

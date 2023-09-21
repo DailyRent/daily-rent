@@ -2,27 +2,8 @@
 
 .container {
   font-family: "Crimson Text";
-  font-size: 16px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
   letter-spacing: 1.92px;
-  color: $lightFontColor;
-  margin-left: -16px;
-
-  text-align: center;
-  position: absolute;
-  width: 100%;
-  z-index: -1;
-  & span {
-    color: $darckFontColor;
-  }
-  @media screen and (min-width: $tablet) {
-    font-size: 20px;
-    margin-left: -48px;
-  }
-  @media screen and (min-width: $desktop) {
-    font-size: 24px;
-    margin-left: -75px;
-  }
 }

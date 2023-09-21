@@ -22,7 +22,7 @@
   @media screen and (min-width: $tablet) {
     display: flex;
     gap: 20px;
-
+    z-index: 1;
     & a {
       font-size: 16px;
       font-style: normal;
@@ -38,10 +38,12 @@
 .leftLinks {
   margin-left: 0;
   margin-right: auto;
+
   & a {
     color: $lightFontColor;
   }
 }
+
 .rightLinks {
   margin-right: 0;
   margin-left: auto;
@@ -80,5 +82,27 @@
 
     width: 74px;
     height: 32px;
+  }
+}
+
+.headerLogo {
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+  position: absolute;
+  margin-left: -16px;
+
+  color: $lightFontColor;
+
+  & span {
+    color: $darckFontColor;
+  }
+  @media screen and (min-width: $tablet) {
+    font-size: 20px;
+    margin-left: -48px;
+  }
+  @media screen and (min-width: $desktop) {
+    font-size: 24px;
+    margin-left: -75px;
   }
 }

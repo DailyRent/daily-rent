@@ -10,10 +10,10 @@ export default function Home() {
     <>
       {/* <h1>Home Page</h1> */}
       <Hero />
-      <Slider />
+      {/* <Slider />
       <SocialLinks />
       <OrderBtn />
-      <CallBtn />
+      <CallBtn /> */}
     </>
   );
 }
