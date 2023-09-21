@@ -1,12 +1,19 @@
-import React from 'react';
-import styles from './Hero.module.scss';
-
+import React from "react";
+// import styles from "./Hero.module.scss";
 
 const Hero = () => {
-    return (
-        <div className={styles.container}>Hero</div>
-    )
-}
-
+  return (
+    <section
+      style={{
+        backgroundColor: "#ddd",
+        height: "100vh",
+        display: "flex",
+        justifyContent: "center",
+      }}
+    >
+      Hero
+    </section>
+  );
+};
 
 export default Hero;

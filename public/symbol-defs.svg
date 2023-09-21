@@ -65,5 +65,10 @@
 <path fill="none" stroke="#c7c7c7" style="stroke: var(--color1, #c7c7c7)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.8824" d="M26.039 27.294v-2.51c0-1.331-0.529-2.608-1.47-3.55s-2.218-1.47-3.549-1.47h-10.039c-1.331 0-2.608 0.529-3.549 1.47s-1.47 2.218-1.47 3.55v2.51"></path>
 <path fill="none" stroke="#c7c7c7" style="stroke: var(--color1, #c7c7c7)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.8824" d="M16 14.745c2.772 0 5.020-2.247 5.020-5.020s-2.247-5.020-5.020-5.020c-2.772 0-5.020 2.247-5.020 5.020s2.247 5.020 5.020 5.020z"></path>
 </symbol>
+<symbol id="icon-burger-mobile" viewBox="0 0 54 32">
+<path fill="#fff" style="fill: var(--color2, #fff)" d="M3.341 0h47.473c1.457 0 2.637 1.181 2.637 2.637s-1.181 2.637-2.637 2.637h-47.473c-1.457 0-2.637-1.181-2.637-2.637s1.181-2.637 2.637-2.637z"></path>
+<path fill="#fff" style="fill: var(--color2, #fff)" d="M3.341 13.187h47.473c1.457 0 2.637 1.181 2.637 2.637s-1.181 2.637-2.637 2.637h-47.473c-1.457 0-2.637-1.181-2.637-2.637s1.181-2.637 2.637-2.637z"></path>
+<path fill="#fff" style="fill: var(--color2, #fff)" d="M3.341 26.373h47.473c1.457 0 2.637 1.181 2.637 2.637s-1.181 2.637-2.637 2.637h-47.473c-1.457 0-2.637-1.181-2.637-2.637s1.181-2.637 2.637-2.637z"></path>
+</symbol>
 </defs>
 </svg>

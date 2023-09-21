@@ -1,16 +1,30 @@
-import React from 'react';
-import styles from './Header.module.scss';
-import Logo from '../Logo/Logo';
-import Navigation from '../Navigation/Navigation';
-
+import React from "react";
+import styles from "./Header.module.scss";
+import Logo from "../Logo/Logo";
+import Navigation from "../Navigation/Navigation";
+import Link from "next/link";
+import BurgerBtn from "../BurgerBtn/BurgerBtn";
 
 const Header = () => {
-  return <div className={styles.container}>
-    <h1>Header</h1>
-    <Logo />
-    <Navigation />
-  </div>;
-};
+  return (
+    <header className={styles.container}>
+      <div className={styles.leftLinks}>
+        <Link href={"/apartments"}>Апартаменти</Link>
+        <Link href={"/documents"}>Документи</Link>
+      </div>
 
+      <Logo />
+
+      <div className={styles.rightLinks}>
+        <Link href={"/rools"}>Правила</Link>
+        <Link href={"/contacts"}>Контакти</Link>
+      </div>
+      <div className={styles.langSwitcher}>Eng Ukr</div>
+
+      <BurgerBtn />
+      {/* <Navigation /> */}
+    </header>
+  );
+};
 
 export default Header;
