@@ -18,13 +18,16 @@ const Dashboard = () => {
         router?.push('/dashboard/login');
     }
 
-
-    if (session.status === "authenticated") {
-        return (
-            <div className={styles.container}>Dashboard</div>
-        )
+    if (session.status === "authenticated" && session.data.user.email !== process.env.NEXT_PUBLIC_ADMIN) {
+        router.push("/")
     }
 
+
+    if (session.status === "authenticated" && session.data.user.email === process.env.NEXT_PUBLIC_ADMIN) {
+        return <div className={styles.container}>
+            <h1>Welcome, {session.data.user.name} Admin!</h1>
+        </div>
+    }
 }
 
 

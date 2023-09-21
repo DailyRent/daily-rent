@@ -5,7 +5,6 @@ import { useRouter } from "next/navigation";
 import styles from "./page.module.scss";
 
 
-
 const Login = () => {
     // дает данные о пользователе - data, залогинен он или нет - status
     const session = useSession();
@@ -17,9 +16,14 @@ const Login = () => {
         return <p>Loading...</p>
     }
 
-    // перенаправляет на другую страницу за счет роутера
-    if (session.status === "authenticated") {
-        router?.push("/dashboard");
+    // перенаправляет на другую страницу за счет роутера (если не админ)
+    if (session.status === "authenticated" && session.data.user.email !== process.env.NEXT_PUBLIC_ADMIN) {
+        router?.push("/");
+    }
+
+    // перенаправляет на другую страницу за счет роутера (если админ)
+    if (session.status === "authenticated" && session.data.user.email === process.env.NEXT_PUBLIC_ADMIN) {
+        router.push("/dashboard");
     }
 
     const handleSubmit = async (e) => {
