@@ -3,11 +3,16 @@ import React from 'react';
 import styles from './page.module.scss';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
+import useSWR from 'swr';
 
 
 const Dashboard = () => {
     const session = useSession();
-    console.log("session", session);
+    // console.log("session", session);
+
+    const fetcher = (...args) => fetch(...args).then(res => res.json())
+    const { data, mutate, error, isLoading } = useSWR('/api/apartments', fetcher);
+
     const router = useRouter();
 
     if (session.status === "loading") {

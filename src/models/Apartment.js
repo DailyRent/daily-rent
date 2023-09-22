@@ -2,7 +2,7 @@ import mongoose, { Schema } from "mongoose";
 
 
 const apartmentSchema = new Schema({
-    id: {
+    objNumber: {
         type: String,
         unique: true,
         required: true,
@@ -22,18 +22,22 @@ const apartmentSchema = new Schema({
         type: String,
         required: true,
     },
+    flatNumber: {
+        type: String,
+        required: true,
+    },
     // ??? насколько необходимо,и как видим его работу 
     googleMapLocation: {
         type: String,
         required: true,
     },
     price: {
-        type: Number,
+        type: String,
         required: true,
     },
     // это можно реализовать на форме с помощью radio button
-    roomQuantity: {
-        type: Number,
+    roomsQuantity: {
+        type: String,
         required: true,
     },
     airbnbUrl: {
