@@ -77,5 +77,10 @@
 <symbol id="icon-Facebook" viewBox="0 0 32 32">
 <path d="M0.762 0.762h30.476v30.476h-30.476v-30.476z"></path>
 </symbol>
+<symbol id="icon-arrow-left-circle" viewBox="0 0 32 32">
+<path fill="none" stroke="#636363" style="stroke: var(--color1, #636363)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.3333" d="M16 29.333c7.364 0 13.333-5.97 13.333-13.333s-5.97-13.333-13.333-13.333c-7.364 0-13.333 5.97-13.333 13.333s5.97 13.333 13.333 13.333z"></path>
+<path fill="none" stroke="#636363" style="stroke: var(--color1, #636363)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.3333" d="M16 10.667l-5.333 5.333 5.333 5.333"></path>
+<path fill="none" stroke="#636363" style="stroke: var(--color1, #636363)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.3333" d="M21.333 16h-10.667"></path>
+</symbol>
 </defs>
 </svg>
