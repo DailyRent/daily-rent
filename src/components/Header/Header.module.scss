@@ -92,11 +92,14 @@
   position: absolute;
   margin-left: -16px;
 
-  color: $lightFontColor;
+  filter: contrast(0.6);
 
-  & span {
-    color: $darckFontColor;
-  }
+  // & a {
+  //   color: $lightFontColor;
+  // }
+  // & span {
+  color: $footerLogoColor;
+  // }
   @media screen and (min-width: $tablet) {
     font-size: 20px;
     margin-left: -48px;

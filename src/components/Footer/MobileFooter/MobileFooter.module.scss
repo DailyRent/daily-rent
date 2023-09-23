@@ -1,4 +1,4 @@
-@import "../../styles/_variables.scss";
+@import "../../../styles/_variables.scss";
 
 .container {
   display: flex;
@@ -8,14 +8,6 @@
   // background-color: darkgrey;
   padding: 32px 16px;
 
-  & .mobileSocialLinks {
-    @media screen and (min-width: $tablet) {
-      display: none;
-    }
-  }
-}
-
-.mobileFooter {
   @media screen and (min-width: $tablet) {
     display: none;
   }
@@ -49,10 +41,6 @@
     width: 16px;
     height: 16px;
   }
-
-  @media screen and (min-width: $tablet) {
-    display: none;
-  }
 }
 
 .phoneNumbers {
@@ -68,11 +56,8 @@
 }
 
 .linksWrapper {
-  display: none;
+  display: flex;
   width: 100%;
   justify-content: space-between;
   padding-bottom: 24px;
-  @media screen and (min-width: $tablet) {
-    display: flex;
-  }
 }

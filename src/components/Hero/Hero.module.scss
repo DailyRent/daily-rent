@@ -5,4 +5,11 @@
   flex: 1;
   justify-content: center;
   background-color: rgba(79, 70, 65, 0.413);
+  background-image: linear-gradient(
+    90deg,
+    black 50%,
+    white 50%,
+
+    white 100%
+  );
 }

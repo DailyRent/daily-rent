@@ -1,0 +1,84 @@
+@import "../../../styles/_variables.scss";
+
+.container {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  // background-color: darkgrey;
+  padding: 0px 32px 24px;
+  color: $footerTextColor;
+
+  @media screen and (min-width: $tablet) {
+    display: flex;
+  }
+}
+
+.tabletLinksWrapper {
+  display: flex;
+  width: inherit;
+  justify-content: space-between;
+
+  & p {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: $footerTextColor;
+  }
+}
+
+.footerLogo {
+  font-size: 32px;
+  margin-left: 0;
+  margin-right: auto;
+  color: $footerLogoColor;
+}
+
+.contentWrapper {
+  display: flex;
+  width: inherit;
+  gap: 40px;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+.leftContentWrapper {
+  & .contacts {
+    display: flex;
+    flex-direction: column;
+    // flex: 1;
+  }
+}
+
+.leftContentWrapper {
+  flex-direction: column;
+}
+
+.rightContentWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  //   flex: 1;
+}
+
+.navWrapper {
+  display: flex;
+  gap: 40px;
+}
+
+.nav {
+  flex-direction: column;
+  & a {
+    color: red;
+  }
+}
+// .rights {
+//   width: inherit;
+// }
+
+.webevery {
+  width: 100vw;
+  text-align: center;
+  margin-top: -20px;
+  border-top: 1px solid red;
+}
