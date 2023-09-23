@@ -10,7 +10,7 @@ const TabletFooter = () => {
   return (
     <footer className={styles.container}>
       <div className={styles.tabletLinksWrapper}>
-        <p>Зв'яжіться з нами</p> <SocialLinks />
+        <p>Звяжіться з нами</p> <SocialLinks />
       </div>
 
       <Logo className={styles.footerLogo} />
