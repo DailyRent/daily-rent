@@ -1,12 +1,22 @@
-import React from 'react';
-import styles from './SocialLinks.module.scss';
+import React from "react";
+import styles from "./SocialLinks.module.scss";
+import { socialLinks } from "@/data/socialLinks";
+import Image from "next/image";
 
-
-const SocialLinks = () => {
-    return (
-        <div className={styles.container}>SocialLinks</div>
-    )
-}
-
+const SocialLinks = ({ className }) => {
+  return (
+    <ul className={styles.socialLinks + " " + `${className}`}>
+      {socialLinks.map((item) => {
+        return (
+          <li key={item.id}>
+            <a href={item.href}>
+              <Image src={item.img} width={24} height={24} alt={item.title} />
+            </a>
+          </li>
+        );
+      })}
+    </ul>
+  );
+};
 
 export default SocialLinks;

@@ -1,5 +1,12 @@
 @import "../../styles/_variables.scss";
 
-.container {
-    display: flex;
+.socialLinks {
+  display: flex;
+  gap: 16px;
+  @media screen and (min-width: $tablet) {
+    & img {
+      width: 38px;
+      height: 38px;
+    }
+  }
 }
