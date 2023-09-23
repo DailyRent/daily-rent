@@ -1,7 +1,11 @@
 @import '../../../../../styles/variables.scss';
 
 .container {
-  margin-top: 80px;
+  margin-top: 110px;
+  padding: 0 16px 32px 16px;
+  @media screen and (min-width: $tablet) {
+    margin-top: 80px;
+  }
 }
 
 .visuallyHidden {
@@ -15,6 +19,73 @@
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
   margin: -1px;
+}
+
+.oneRoomBox {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.backContainer {
+  display: flex;
+  align-items: center;
+  column-gap: 13px;
+}
+
+.backBtnContainer {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.backSvg {
+  width: 24px;
+  height: 24px;
+  fill: #636363;
+}
+
+.text {
+  width: max-content;
+  color: #636363;
+  font-family: Crimson Text;
+  font-size: 10px;
+  font-weight: 400;
+}
+
+.filterContainer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  column-gap: 16px;
+  @media screen and (min-width: $tablet) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-10%, -50%);
+  }
+}
+
+.filterBtnContainer {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.filterSvg {
+  width: 24px;
+  height: 24px;
+  stroke: #373737;
+}
+
+.filter {
+  color: #373737;
+  font-family: Crimson Text;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
 }
 
 .containerOneRooms {
