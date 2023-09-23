@@ -1,5 +1,82 @@
-@import "../../styles/_variables.scss";
+@import '../../styles/_variables.scss';
 
-.container {
-    display: flex;
+// .container {
+//     display: flex;
+// }
+
+.oneRooms {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+}
+
+.imgContainer {
+  position: relative;
+  width: 328px;
+  height: 365px;
+  @media screen and (min-width: $tablet) {
+    width: 324px;
+    height: 360px;
+  }
+  @media screen and (min-width: $desktop) {
+    width: 300px;
+    height: 333px;
+  }
+}
+
+.img {
+  object-fit: cover;
+}
+
+.codeImg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 169px;
+  text-align: center;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  background-color: #373737;
+}
+
+.addressRooms {
+  color: #6d6d6d;
+  font-family: Playfair Display;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.priceRooms {
+  color: #373737;
+  font-family: Crimson Text;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.codeRooms {
+  color: #373737;
+  // font-family: Segoe UI;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.btnRooms {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  padding: 10px 24px;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  border-radius: 24px;
+  border: 1px solid #373737;
+  color: #373737;
+  // font-family: Segoe UI;
+  font-size: 14px;
+  font-weight: 400;
 }
