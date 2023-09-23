@@ -1,6 +1,11 @@
+import styles from './page.module.scss';
+
 export default function OneRoomsLayout({ children }) {
-    return <section>
-        <h1>OneRooms Appartments</h1>
-        <div>{children}</div>
+  return (
+    <section className={styles.container}>
+      <h1 className={styles.visuallyHidden}>OneRooms Appartments</h1>
+      <p>filter</p>
+      <div>{children}</div>
     </section>
+  );
 }
