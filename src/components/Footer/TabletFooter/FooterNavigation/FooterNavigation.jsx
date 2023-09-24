@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const FooterNavigation = () => {
   return (
-    <ul>
+    <ul className={styles.FooterNavigation}>
       {navigationData.slice(0, 4).map((item) => {
         return (
           <li key={item.id}>

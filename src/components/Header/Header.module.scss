@@ -6,6 +6,7 @@
   // justify-content: space-around;
   align-items: center;
   padding: 42px 16px;
+  z-index: 10;
 
   @media screen and (min-width: $tablet) {
     padding: 28px 48px;
