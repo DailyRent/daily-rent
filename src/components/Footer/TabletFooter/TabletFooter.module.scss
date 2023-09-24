@@ -69,29 +69,23 @@
   justify-content: space-around;
 }
 
-// .tabletLinksWrapper {
-//   display: flex;
-//   width: inherit;
-//   justify-content: space-between;
-
-//   & p {
-//     font-size: 24px;
-//     font-style: normal;
-//     font-weight: 400;
-//     line-height: normal;
-//     color: $footerTextColor;
-//   }
-// }
-
 .nav {
   flex-direction: column;
   & a {
     color: red;
   }
 }
-// .rights {
-//   width: inherit;
-// }
+
+.btnsWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-left: -12px;
+}
+
+.bookBtn {
+  margin-left: -48px;
+}
 
 .webevery {
   width: 100vw;

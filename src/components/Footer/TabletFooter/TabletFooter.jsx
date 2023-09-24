@@ -1,3 +1,5 @@
+import Button from "@/components/Button/Button";
+import CallBtn from "@/components/CallBtn/CallBtn";
 import Logo from "@/components/Logo/Logo";
 
 import SocialLinks from "@/components/SocialLinks/SocialLinks";
@@ -34,14 +36,14 @@ const TabletFooter = () => {
           <div className={styles.navWrapper}>
             <FooterNavigation />
             <Support />
-            {/* <div className={styles.supportWrapper}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Cupiditate, a.
-            </div> */}
           </div>
           <div className={styles.btnsWrapper}>
-            <button>1</button>
-            <button>2</button>
+            <CallBtn href="tel:+380503738465" title="Звʼязатись" />
+            <Button
+              type="button"
+              title="Забронювати"
+              classname={styles.bookBtn}
+            />
           </div>
         </div>
       </div>
