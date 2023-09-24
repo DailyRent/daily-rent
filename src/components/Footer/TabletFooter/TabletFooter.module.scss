@@ -6,7 +6,7 @@
   align-items: center;
   gap: 40px;
   // background-color: darkgrey;
-  padding: 0px 32px 24px;
+  padding: 0px 32px;
   color: $footerTextColor;
 
   @media screen and (min-width: $tablet) {
@@ -87,9 +87,19 @@
   margin-left: -48px;
 }
 
+.rights {
+  color: $footerTextColor;
+  font-family: inherit;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
 .webevery {
   width: 100vw;
   text-align: center;
   margin-top: -20px;
-  border-top: 1px solid red;
+  padding: 8px;
+  border-top: 1px solid rgb(84, 84, 84, 0.14);
 }

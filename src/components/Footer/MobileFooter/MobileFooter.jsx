@@ -22,7 +22,9 @@ const MobileFooter = () => {
         </div>
       </div>
       <SocialLinks />
-      <Link href="mailto:BoomRoom@gmail.com">BoomRoom@gmail.com</Link>
+      <Link href="mailto:BoomRoom@gmail.com" className={styles.email}>
+        BoomRoom@gmail.com
+      </Link>
     </footer>
   );
 };
