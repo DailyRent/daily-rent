@@ -13,7 +13,7 @@ const Hero = () => {
         <p className={styles.heroText}>
           Lorem ipsum dolor sit amet consectetur.
         </p>
-        <CallBtn href="tel:+380503738465" title="Звʼязатись" />
+        <CallBtn />
       </div>
     </section>
   );

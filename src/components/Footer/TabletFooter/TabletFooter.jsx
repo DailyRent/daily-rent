@@ -38,7 +38,7 @@ const TabletFooter = () => {
             <Support />
           </div>
           <div className={styles.btnsWrapper}>
-            <CallBtn href="tel:+380503738465" title="Звʼязатись" />
+            <CallBtn />
             <Button
               type="button"
               title="Забронювати"

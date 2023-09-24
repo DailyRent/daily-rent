@@ -1,10 +1,13 @@
 import React from "react";
 import styles from "./CallBtn.module.scss";
 
-const CallBtn = ({ href, classname, title }) => {
+const CallBtn = ({ classname }) => {
   return (
-    <a href={href} className={styles.button + " " + `${classname}`}>
-      {title}
+    <a
+      href="tel:+380503738465"
+      className={styles.button + " " + `${classname}`}
+    >
+      Звʼязатись
     </a>
   );
 };
