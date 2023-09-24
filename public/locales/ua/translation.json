@@ -1,0 +1,35 @@
+{
+  "HERO": {
+    "hero": "Розширення можливостей вашого успіху",
+    "heroButton": "Замовити"
+  },
+  "servicesItem": {
+    "understand": "Зрозуміло!",
+    "whatItIs": "Що це..?",
+    "days": "днів",
+    "price": "Ціна від",
+    "orderBtn": "Замовити"
+  },
+  "form": {
+    "buttonSubmit": "Відправити",
+    "name": "Ім’я, Прізвище",
+    "idea": "Опишіть Вашу Ідею",
+    "contactUs": "або зв’яжіться з нами"
+  },
+  "contactsPage": {
+    "contactsPage": "Замовити дзвінок"
+  },
+  "formErrors": {
+    "name": "Введіть ім'я",
+    "phone": "Введіть телефон",
+    "email": "Введіть електронну пошту",
+    "incorrectPhone": "Не вірний формат",
+    "incorrectMail": "Не коректний email",
+    "shortName": "Ім’я має бути довшим",
+    "comment": "Коментар має бути коротшим"
+  },
+  "notification": {
+    "title": "Чудово!",
+    "message": "Повідомлення надіслано!"
+  }
+}
