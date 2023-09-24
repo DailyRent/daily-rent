@@ -1,78 +1,78 @@
-@import "../../styles/_variables.scss";
+// @import "../../styles/_variables.scss";
 
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-  // background-color: darkgrey;
-  padding: 32px 16px;
+// .container {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   gap: 16px;
+//   // background-color: darkgrey;
+//   padding: 32px 16px;
 
-  & .mobileSocialLinks {
-    @media screen and (min-width: $tablet) {
-      display: none;
-    }
-  }
-}
+//   & .mobileSocialLinks {
+//     @media screen and (min-width: $tablet) {
+//       display: none;
+//     }
+//   }
+// }
 
-.mobileFooter {
-  @media screen and (min-width: $tablet) {
-    display: none;
-  }
-}
+// .mobileFooter {
+//   @media screen and (min-width: $tablet) {
+//     display: none;
+//   }
+// }
 
-.footerLogo {
-  color: $footerLogoColor;
-  position: static;
-}
+// .footerLogo {
+//   color: $footerLogoColor;
+//   position: static;
+// }
 
-.contactsWrapper {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  justify-content: space-between;
-}
+// .contactsWrapper {
+//   display: flex;
+//   align-items: center;
+//   width: 100%;
+//   justify-content: space-between;
+// }
 
-.location {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  color: $footerLocationColor;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+// .location {
+//   display: flex;
+//   align-items: center;
+//   gap: 12px;
+//   color: $footerLocationColor;
+//   font-size: 16px;
+//   font-style: normal;
+//   font-weight: 400;
+//   line-height: normal;
 
-  & svg {
-    fill: transparent;
-    stroke: $footerLocationColor;
-    width: 16px;
-    height: 16px;
-  }
+//   & svg {
+//     fill: transparent;
+//     stroke: $footerLocationColor;
+//     width: 16px;
+//     height: 16px;
+//   }
 
-  @media screen and (min-width: $tablet) {
-    display: none;
-  }
-}
+//   @media screen and (min-width: $tablet) {
+//     display: none;
+//   }
+// }
 
-.phoneNumbers {
-  color: $footerLocationColor;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+// .phoneNumbers {
+//   color: $footerLocationColor;
+//   font-size: 14px;
+//   font-style: normal;
+//   font-weight: 400;
+//   line-height: normal;
 
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
+//   display: flex;
+//   flex-direction: column;
+//   gap: 8px;
+// }
 
-.linksWrapper {
-  display: none;
-  width: 100%;
-  justify-content: space-between;
-  padding-bottom: 24px;
-  @media screen and (min-width: $tablet) {
-    display: flex;
-  }
-}
+// .linksWrapper {
+//   display: none;
+//   width: 100%;
+//   justify-content: space-between;
+//   padding-bottom: 24px;
+//   @media screen and (min-width: $tablet) {
+//     display: flex;
+//   }
+// }

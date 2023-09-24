@@ -4,6 +4,8 @@ import SocialLinks from "@/components/SocialLinks/SocialLinks";
 import Link from "next/link";
 import React from "react";
 import FooterNavigation from "./FooterNavigation/FooterNavigation";
+import Support from "./Support/Support";
+
 import styles from "./TabletFooter.module.scss";
 
 const TabletFooter = () => {
@@ -17,7 +19,7 @@ const TabletFooter = () => {
 
       <div className={styles.contentWrapper}>
         <div className={styles.leftContentWrapper}>
-          <p>
+          <p className={styles.leftContentText}>
             Lorem ipsum dolor sit amet consectetur. Semper senectus nunc non
             aenean interdum sit sit. Ultrices habitasse massa pellentesque
             semper.
@@ -31,10 +33,11 @@ const TabletFooter = () => {
         <div className={styles.rightContentWrapper}>
           <div className={styles.navWrapper}>
             <FooterNavigation />
-            <div className={styles.supportWrapper}>
+            <Support />
+            {/* <div className={styles.supportWrapper}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Cupiditate, a.
-            </div>
+            </div> */}
           </div>
           <div className={styles.btnsWrapper}>
             <button>1</button>

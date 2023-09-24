@@ -14,20 +14,6 @@
   }
 }
 
-.tabletLinksWrapper {
-  display: flex;
-  width: inherit;
-  justify-content: space-between;
-
-  & p {
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    color: $footerTextColor;
-  }
-}
-
 .footerLogo {
   font-size: 32px;
   margin-left: 0;
@@ -42,29 +28,60 @@
   flex-wrap: nowrap;
   justify-content: space-between;
 }
-.leftContentWrapper {
-  & .contacts {
-    display: flex;
-    flex-direction: column;
-    // flex: 1;
-  }
-}
 
 .leftContentWrapper {
+  // max-width: 421px;
+  display: flex;
   flex-direction: column;
+  flex: 1;
+}
+
+.leftContentText {
+  color: #bbbbbb;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 16px;
+  // flex: 1;
+}
+
+.contacts {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  color: $footerLocationColor;
 }
 
 .rightContentWrapper {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 40px;
-  //   flex: 1;
+  flex: 1;
 }
 
 .navWrapper {
+  width: 100%;
   display: flex;
-  gap: 40px;
+  // gap: 40px;
+  justify-content: space-around;
 }
+
+// .tabletLinksWrapper {
+//   display: flex;
+//   width: inherit;
+//   justify-content: space-between;
+
+//   & p {
+//     font-size: 24px;
+//     font-style: normal;
+//     font-weight: 400;
+//     line-height: normal;
+//     color: $footerTextColor;
+//   }
+// }
 
 .nav {
   flex-direction: column;
