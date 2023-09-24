@@ -12,7 +12,7 @@ const BurgerBtn = () => {
       }}
     >
       <svg className={styles.iconBurger}>
-        <use href="/symbol-defs.svg#icon-burger-mobile" />
+        <use href="/sprite.svg#icon-burger-mobile" />
       </svg>
     </button>
   );

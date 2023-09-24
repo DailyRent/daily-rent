@@ -1,26 +1,29 @@
+import { v4 } from "uuid";
+
 export const navigationData = [
   {
-    // id: 1,
+    id: v4(),
     title: "Apartments",
     path: "/apartments",
   },
+
   {
-    // id: 2,
-    title: "Rools",
-    path: "/rools",
-  },
-  {
-    // id: 3,
+    id: v4(),
     title: "Documents",
     path: "/documents",
   },
   {
-    // id: 4,
+    id: v4(),
+    title: "Rools",
+    path: "/rools",
+  },
+  {
+    id: v4(),
     title: "Contacts",
     path: "/contacts",
   },
   {
-    // id: 5,
+    id: v4(),
     title: "Dashboard",
     path: "/dashboard",
   },
