@@ -1,5 +1,5 @@
 import "./globals.css";
-import TranslaterProvider from "@/translater/i18Provider";
+import TranslatorProvider from "@/translator/i18Provider";
 // import { Inter } from "next/font/google";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
@@ -18,11 +18,11 @@ export default function RootLayout({ children }) {
       {/* <body className={inter.className}> */}
       <body>
         <AuthProvider>
-          <TranslaterProvider>
+          <TranslatorProvider>
           <Header />
           <main>{children}</main>
             <Footer />
-            </TranslaterProvider>
+            </TranslatorProvider>
         </AuthProvider>
       </body>
     </html>
