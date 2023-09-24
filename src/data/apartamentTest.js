@@ -3,7 +3,7 @@ export const data = [
     id: 1,
     img: '/apartTest.png',
     code: '8329533',
-    address: 'проїзд Філатівський 25, Суми',
+    address: 'проїзд dshdfh 25, Суми',
     price: '29',
   },
   {
@@ -13,13 +13,7 @@ export const data = [
     address: 'проїзд Філатівський 25, Суми',
     price: '29',
   },
-  {
-    id: 2,
-    img: '/apartTest.png',
-    code: '8329533',
-    address: 'проїзд Філатівський 25, Суми',
-    price: '29',
-  },
+
   {
     id: 3,
     img: '/apartTest.png',
@@ -71,6 +65,41 @@ export const data = [
   },
   {
     id: 10,
+    img: '/apartTest.png',
+    code: '8329533',
+    address: 'проїзд Філатівський 25, Суми',
+    price: '29',
+  },
+  {
+    id: 11,
+    img: '/apartTest.png',
+    code: '8329533',
+    address: 'проїзд Філатівський 25, Суми',
+    price: '29',
+  },
+  {
+    id: 12,
+    img: '/apartTest.png',
+    code: '8329533',
+    address: 'проїзд Філатівський 25, Суми',
+    price: '29',
+  },
+  {
+    id: 13,
+    img: '/apartTest.png',
+    code: '8329533',
+    address: 'проїзд Філатівський 25, Суми',
+    price: '29',
+  },
+  {
+    id: 14,
+    img: '/apartTest.png',
+    code: '8329533',
+    address: 'проїзд Філатівський 25, Суми',
+    price: '29',
+  },
+  {
+    id: 15,
     img: '/apartTest.png',
     code: '8329533',
     address: 'проїзд Філатівський 25, Суми',
