@@ -1,0 +1,35 @@
+{
+  "HERO": {
+    "hero": "Empowering your success",
+    "heroButton": "Order"
+  },
+  "servicesItem": {
+    "understand": "Understood!",
+    "whatItIs": "What is it?",
+    "days": "days",
+    "price": "price",
+    "orderBtn": "Order"
+  },
+  "form": {
+    "buttonSubmit": "Send",
+    "name": "Name",
+    "idea": "Describe Your Idea",
+    "contactUs": "or contact us"
+  },
+  "contactsPage": {
+    "contactsPage": "Order a call"
+  },
+  "formErrors": {
+    "name": "Enter a name",
+    "phone": "Enter a phone",
+    "email": "Enter an email",
+    "incorrectPhone": "Incorrect format",
+    "incorrectMail": "Incorrect email",
+    "shortName": "Name should be longer",
+    "comment": "The comment should be shorter"
+  },
+  "notification": {
+    "title": "Great!",
+    "message": "Message sent!"
+  }
+}
