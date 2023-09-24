@@ -1,6 +1,7 @@
 'use client';
 import ButtonFilter from '@/components/share/ButtonFilter/ButtonFilter';
 import ButtonToBack from '@/components/share/ButtonToBack/ButtonToBack';
+import { PaginationProvider } from '@/context/PaginationContext';
 import { useRouter } from 'next/navigation';
 import styles from './page.module.scss';
 
@@ -20,7 +21,9 @@ export default function OneRoomsLayout({ children }) {
           <p className={styles.filter}>Filter</p>
         </div>
       </div>
-      <div>{children}</div>
+      <PaginationProvider>
+        <div>{children}</div>
+      </PaginationProvider>
     </section>
   );
 }
