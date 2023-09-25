@@ -4,6 +4,7 @@ import TranslatorProvider from "@/translator/i18Provider";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import AuthProvider from "@/components/AuthProvider/AuthProvider";
+import { SiteProvider } from "@/siteContext/SiteContext";
 
 // const inter = Inter({ subsets: ["latin"] });
 
@@ -17,13 +18,15 @@ export default function RootLayout({ children }) {
     <html lang="en">
       {/* <body className={inter.className}> */}
       <body>
-        <AuthProvider>
-          <TranslatorProvider>
-          <Header />
-          <main>{children}</main>
-            <Footer />
+        <SiteProvider>
+          <AuthProvider>
+            <TranslatorProvider>
+              <Header />
+              <main>{children}</main>
+              <Footer />
             </TranslatorProvider>
-        </AuthProvider>
+          </AuthProvider>
+        </SiteProvider>
       </body>
     </html>
   );
