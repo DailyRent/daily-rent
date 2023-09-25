@@ -43,12 +43,12 @@ const apartmentSchema = new Schema({
     airbnbUrl: {
         type: String,
         unique: true,
-        required: true,
+        required: true,  // ??
     },
     bookingUrl: {
         type: String,
         unique: true,
-        required: true,
+        required: true,   // ??
     },
     amenities: {
         type: Array,
