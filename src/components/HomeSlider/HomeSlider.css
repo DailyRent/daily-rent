@@ -1,0 +1,26 @@
+.HomeSliderSwiper {
+  height: fit-content;
+  background-color: white;
+  padding: 16px 0px 32px;
+}
+
+.HomeSliderSwiper .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+}
+
+.HomeSliderSwiper .div {
+  width: 196px;
+  height: 218px;
+  background-color: blue;
+}
+
+@media screen and (min-width: 1366px) {
+  .HomeSliderSwiper .div {
+    width: 300px;
+    height: 333px;
+    background-color: blue;
+  }
+}
