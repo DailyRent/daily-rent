@@ -1,14 +1,20 @@
 @import '../../styles/_variables.scss';
 
-// .container {
-//     display: flex;
-// }
-
 .oneRooms {
   position: relative;
   display: flex;
   flex-direction: column;
   row-gap: 24px;
+}
+
+.containerOneRooms {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  column-gap: 30px;
+  row-gap: 40px;
+  padding: 40px 0;
 }
 
 .imgContainer {
@@ -46,6 +52,14 @@
   font-family: Playfair Display;
   font-size: 16px;
   font-weight: 400;
+  text-overflow: ellipsis;
+  width: 300px;
+  // white-space: wrap;
+  white-space: nowrap;
+  overflow: hidden;
+  &:hover {
+    white-space: wrap;
+  }
 }
 
 .priceRooms {

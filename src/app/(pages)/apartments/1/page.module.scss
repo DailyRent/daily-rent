@@ -1,4 +1,4 @@
-@import '../../../../../styles/variables.scss';
+@import '../../../../styles/variables.scss';
 
 .container {
   margin-top: 110px;
@@ -51,15 +51,15 @@
   cursor: pointer;
 }
 
-.containerOneRooms {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  column-gap: 30px;
-  row-gap: 40px;
-  padding: 40px 0;
-}
+// .containerOneRooms {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   flex-wrap: wrap;
+//   column-gap: 30px;
+//   row-gap: 40px;
+//   padding: 40px 0;
+// }
 
 // .oneRooms {
 //   position: relative;
