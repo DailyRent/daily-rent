@@ -1,6 +1,6 @@
 "use client";
 
-import { SiteContext } from "@/siteContext/SiteContext";
+import { SiteContext } from "@/context/SiteContext";
 import React, { useContext } from "react";
 import styles from "./Button.module.scss";
 
