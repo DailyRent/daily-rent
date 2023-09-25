@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import styles from './Pagination.module.scss';
-import { PaginationContext } from '@/context/PaginationContext';
-import { useContext } from 'react';
+import styles from "./Pagination.module.scss";
+import { PaginationContext } from "@/context/PaginationContext";
+import { useContext } from "react";
 
 const Pagination = ({ numbers }) => {
   const { prePage, changeCPage, nextPage, currentPage } =
@@ -12,14 +12,14 @@ const Pagination = ({ numbers }) => {
     <ul className={styles.pagination}>
       <li className={styles.pageItem}>
         <a href="#" className={styles.pageLink} onClick={prePage}>
-          <div className={styles.svgArrow + ' ' + styles.arrowLeft}></div>
+          <div className={styles.svgArrow + " " + styles.arrowLeft}></div>
         </a>
       </li>
       {numbers.map((n, i) => (
         <li
           key={i}
           className={`${styles.pageLinkDot} ${styles.pageItem} ${
-            currentPage === n ? styles.active : ''
+            currentPage === n ? styles.active : ""
           }`}
         >
           <a href="#" onClick={() => changeCPage(n)}>
@@ -29,7 +29,7 @@ const Pagination = ({ numbers }) => {
       ))}
       <li className={styles.pageItem}>
         <a href="#" className={styles.pageLink} onClick={nextPage}>
-          <div className={styles.svgArrow + ' ' + styles.arrowRight}></div>
+          <div className={styles.svgArrow + " " + styles.arrowRight}></div>
         </a>
       </li>
     </ul>

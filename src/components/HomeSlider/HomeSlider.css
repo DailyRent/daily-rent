@@ -2,6 +2,7 @@
   height: fit-content;
   background-color: white;
   padding: 16px 0px 32px;
+  width: 100%;
 }
 
 .HomeSliderSwiper .swiper-slide {
@@ -9,18 +10,110 @@
   justify-content: center;
   align-items: center;
   height: fit-content;
+  margin-bottom: 30px;
+}
+
+.HomeSliderSwiper .link {
+  display: inline-block;
+  position: relative;
 }
 
 .HomeSliderSwiper .div {
+  /* display: inline-block; */
   width: 196px;
   height: 218px;
-  background-color: blue;
+  /* background-color: blue; */
+  position: relative;
+}
+
+.HomeSliderSwiper .slideDescr {
+  position: absolute;
+  bottom: 0;
+
+  width: 110px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2d2d2d;
+  color: white;
+
+  font-size: 8px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.swiper-button-prev,
+.swiper-button-next {
+  bottom: 0;
+  top: auto;
+}
+.swiper-button-prev,
+.swiper-button-next {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 52px;
+  height: 12px;
+  color: transparent;
+  bottom: 8px;
+  top: auto;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  width: 100%;
+}
+
+.swiper-button-prev {
+  background-image: url("../../../public/png/ArrowLeft.webp");
+  left: 80%;
+}
+.swiper-button-next {
+  background-image: url("../../../public/png/ArrowRight.webp");
+  right: 80%;
+}
+
+.swiper-pagination-bullet {
+  background-color: #7d7d7d;
+  width: 12px;
+  height: 12px;
+}
+
+@media screen and (min-width: 768px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    height: 16px;
+    width: 124px;
+  }
+  .swiper-button-prev {
+    left: 60%;
+  }
+  .swiper-button-next {
+    right: 60%;
+  }
 }
 
 @media screen and (min-width: 1366px) {
+  .HomeSliderSwiper .swiper-slide {
+    margin-bottom: 38px;
+  }
+
   .HomeSliderSwiper .div {
     width: 300px;
     height: 333px;
     background-color: blue;
+  }
+
+  .HomeSliderSwiper .slideDescr {
+    width: 169px;
+    height: 24px;
+    flex-shrink: 0;
+    font-size: 12px;
+  }
+
+  .swiper-pagination-bullet {
+    width: 16px;
+    height: 16px;
   }
 }

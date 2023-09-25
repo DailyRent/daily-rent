@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import styles from "./HomeSlider.module.scss";
+import useSWR from "swr";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -14,17 +15,30 @@ import "./HomeSlider.css";
 
 // import required modules
 import { Pagination, Navigation, Autoplay } from "swiper/modules";
+import Link from "next/link";
+import Image from "next/image";
 
 const HomeSlider = () => {
+  const fetcher = (...args) => fetch(...args).then((res) => res.json());
+  const { data, error, isLoading } = useSWR("/api/apartments", fetcher);
+  // console.log(data);
+
+  // Filter the data to get only the item with top === true
+  // const topData = data ? data.filter((item) => item.top === true) : [];
+  const topData = data?.filter((item) => item.top === true);
+
+  console.log(topData);
+  // Now, filteredData contains only the item(s) with flatNumber=66
+
   const [slidesPerView, setSlidesPerView] = useState(5); // Default value for slidesPerView
 
   // Function to update slidesPerView based on viewport width
   const updateSlidesPerView = () => {
     if (window.innerWidth < 500) {
       setSlidesPerView(1); // Adjust this value for smaller screens
-    } else if (window.innerWidth < 800) {
+    } else if (window.innerWidth < 700) {
       setSlidesPerView(2); // Adjust this value for medium-sized screens
-    } else if (window.innerWidth < 1100) {
+    } else if (window.innerWidth < 900) {
       setSlidesPerView(3);
     } else if (window.innerWidth < 1400) {
       setSlidesPerView(4);
@@ -50,6 +64,18 @@ const HomeSlider = () => {
 
   return (
     <div className={styles.container}>
+      <p>Lorem ipsum</p>
+      {isLoading && (
+        <p
+          style={{
+            color: "black",
+            textAlign: "center",
+            width: "100%",
+          }}
+        >
+          Loading...
+        </p>
+      )}
       <Swiper
         slidesPerView={slidesPerView}
         // spaceBetween={30}
@@ -68,41 +94,18 @@ const HomeSlider = () => {
         modules={[Pagination, Navigation, Autoplay]}
         className="HomeSliderSwiper"
       >
-        <SwiperSlide>
-          <div className="div">Slide 0</div>
-        </SwiperSlide>
-        <SwiperSlide>
-          {" "}
-          <div className="div">Slide 1</div>
-        </SwiperSlide>
-        <SwiperSlide>
-          {" "}
-          <div className="div">Slide 2</div>
-        </SwiperSlide>
-        <SwiperSlide>
-          {" "}
-          <div className="div">Slide 3</div>
-        </SwiperSlide>
-        <SwiperSlide>
-          {" "}
-          <div className="div">Slide 4</div>
-        </SwiperSlide>
-        <SwiperSlide>
-          {" "}
-          <div className="div">Slide 5</div>
-        </SwiperSlide>
-        <SwiperSlide>
-          {" "}
-          <div className="div">Slide 6</div>
-        </SwiperSlide>
-        <SwiperSlide>
-          {" "}
-          <div className="div">Slide 7</div>
-        </SwiperSlide>
-        <SwiperSlide>
-          {" "}
-          <div className="div">Slide 8</div>
-        </SwiperSlide>
+        {topData?.map((el) => {
+          return (
+            <SwiperSlide key={el._id}>
+              <Link href={`home/${el._id}`} className="link">
+                <div className="div">
+                  <Image src={el.titleImg} fill={true} alt={el.objNumber} />
+                </div>
+                <p className="slideDescr">{el.objNumber}</p>
+              </Link>
+            </SwiperSlide>
+          );
+        })}
       </Swiper>
     </div>
   );
