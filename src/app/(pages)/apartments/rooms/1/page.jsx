@@ -1,20 +1,33 @@
 'use client';
-
-import React, { useContext } from 'react';
 import ApartItem from '@/components/ApartItem/ApartItem';
-import { data } from '../../../../../data/apartamentTest';
-import { PaginationContext } from '@/context/PaginationContext';
+import React, { useState } from 'react';
 import styles from './page.module.scss';
-import Pagination from '@/components/share/Pagination/Pagination';
+import { data } from '../../../../../data/apartamentTest';
 
 const OneRooms = () => {
-  const { firstIndex, lastIndex, recordsPerPage } =
-    useContext(PaginationContext);
-
+  const [currentPage, setCurrentPage] = useState(1);
+  const recordsPerPage = 4;
+  const lastIndex = currentPage * recordsPerPage;
+  const firstIndex = lastIndex - recordsPerPage;
   const records = data.slice(firstIndex, lastIndex);
   const npage = Math.ceil(data.length / recordsPerPage);
   const numbers = [...Array(npage + 1).keys()].slice(1);
 
+  const prePage = () => {
+    if (currentPage !== firstIndex) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+
+  const changeCPage = (id) => {
+    setCurrentPage(id);
+  };
+
+  const nextPage = () => {
+    if (currentPage !== lastIndex) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
   return (
     <>
       <ul className={styles.containerOneRooms}>
@@ -28,7 +41,30 @@ const OneRooms = () => {
           />
         ))}
       </ul>
-      <Pagination numbers={numbers} />
+      <ul className={styles.pagination}>
+        <li className={styles.pageItem}>
+          <a href="#" className={styles.pageLink} onClick={prePage}>
+            <div className={styles.svgArrow + ' ' + styles.arrowLeft}></div>
+          </a>
+        </li>
+        {numbers.map((n, i) => (
+          <li
+            key={i}
+            className={`${styles.pageLinkDot} ${styles.pageItem} ${
+              currentPage === n ? styles.active : ''
+            }`}
+          >
+            <a href="#" onClick={() => changeCPage(n)}>
+              <span className={styles.pageDot}>{n}</span>
+            </a>
+          </li>
+        ))}
+        <li className={styles.pageItem}>
+          <a href="#" className={styles.pageLink} onClick={nextPage}>
+            <div className={styles.svgArrow + ' ' + styles.arrowRight}></div>
+          </a>
+        </li>
+      </ul>
     </>
   );
 };
