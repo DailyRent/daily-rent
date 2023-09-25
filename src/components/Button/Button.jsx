@@ -1,15 +1,17 @@
 "use client";
 
-import React from "react";
+import { SiteContext } from "@/siteContext/SiteContext";
+import React, { useContext } from "react";
 import styles from "./Button.module.scss";
 
 const Button = ({ classname, type, title }) => {
+  const { state, setState } = useContext(SiteContext);
   return (
     <button
       type={type}
       className={styles.button + " " + `${classname}`}
       onClick={() => {
-        console.log("Button is clicked");
+        console.log("Button is clicked"), setState(!state);
       }}
     >
       {title}
