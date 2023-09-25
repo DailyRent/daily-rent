@@ -27,7 +27,6 @@ const HomeSlider = () => {
   // const topData = data ? data.filter((item) => item.top === true) : [];
   const topData = data?.filter((item) => item.top === true);
 
-  console.log(topData);
   // Now, filteredData contains only the item(s) with flatNumber=66
 
   const [slidesPerView, setSlidesPerView] = useState(5); // Default value for slidesPerView
@@ -64,49 +63,43 @@ const HomeSlider = () => {
 
   return (
     <div className={styles.container}>
-      <p>Lorem ipsum</p>
-      {isLoading && (
-        <p
-          style={{
-            color: "black",
-            textAlign: "center",
-            width: "100%",
+      <p className={styles.sliderText}>Lorem ipsum</p>
+      <h2 className={styles.sliderTitle}>Lorem ipsum</h2>
+      {isLoading ? (
+        <p className={styles.isLoading}>Loading...</p>
+      ) : (
+        <Swiper
+          slidesPerView={slidesPerView}
+          // spaceBetween={30}
+          pagination={{
+            clickable: true,
+            dynamicBullets: true,
           }}
+          navigation={true}
+          speed={2000}
+          autoplay={{
+            delay: 1000,
+            disableOnInteraction: false,
+          }}
+          effect="slide"
+          loop={true}
+          modules={[Pagination, Navigation, Autoplay]}
+          className="HomeSliderSwiper"
         >
-          Loading...
-        </p>
+          {topData?.map((el) => {
+            return (
+              <SwiperSlide key={el._id}>
+                <Link href={`home/${el._id}`} className="link">
+                  <div className="div">
+                    <Image src={el.titleImg} fill={true} alt={el.objNumber} />
+                  </div>
+                  <p className="slideDescr">{el.objNumber}</p>
+                </Link>
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
       )}
-      <Swiper
-        slidesPerView={slidesPerView}
-        // spaceBetween={30}
-        pagination={{
-          clickable: true,
-          dynamicBullets: true,
-        }}
-        navigation={true}
-        speed={2000}
-        autoplay={{
-          delay: 1000,
-          disableOnInteraction: false,
-        }}
-        effect="slide"
-        loop={true}
-        modules={[Pagination, Navigation, Autoplay]}
-        className="HomeSliderSwiper"
-      >
-        {topData?.map((el) => {
-          return (
-            <SwiperSlide key={el._id}>
-              <Link href={`home/${el._id}`} className="link">
-                <div className="div">
-                  <Image src={el.titleImg} fill={true} alt={el.objNumber} />
-                </div>
-                <p className="slideDescr">{el.objNumber}</p>
-              </Link>
-            </SwiperSlide>
-          );
-        })}
-      </Swiper>
     </div>
   );
 };

@@ -12,3 +12,40 @@
     padding: 28px 32px 40px;
   }
 }
+
+.sliderText {
+  color: #bbb;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  @media screen and (min-width: $tablet) {
+    font-size: 24px;
+  }
+}
+
+.sliderTitle {
+  color: $footerTextColor;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  @media screen and (min-width: $tablet) {
+    font-size: 32px;
+  }
+}
+
+.isLoading {
+  color: $footerTextColor;
+  text-align: center;
+  width: 100%;
+  height: 296px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media screen and (min-width: $tablet) {
+    height: 420px;
+  }
+}

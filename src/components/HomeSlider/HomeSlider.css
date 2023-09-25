@@ -24,6 +24,11 @@
   height: 218px;
   /* background-color: blue; */
   position: relative;
+  overflow: hidden;
+}
+
+.HomeSliderSwiper .div img {
+  width: auto !important;
 }
 
 .HomeSliderSwiper .slideDescr {
@@ -67,11 +72,11 @@
 
 .swiper-button-prev {
   background-image: url("../../../public/png/ArrowLeft.webp");
-  left: 80%;
+  left: 10%;
 }
 .swiper-button-next {
   background-image: url("../../../public/png/ArrowRight.webp");
-  right: 80%;
+  right: 10%;
 }
 
 .swiper-pagination-bullet {
@@ -87,10 +92,10 @@
     width: 124px;
   }
   .swiper-button-prev {
-    left: 60%;
+    left: 20%;
   }
   .swiper-button-next {
-    right: 60%;
+    right: 20%;
   }
 }
 
