@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import styles from "./Header.module.scss";
 import Logo from "../Logo/Logo";
 import Navigation from "../Navigation/Navigation";
@@ -6,6 +8,8 @@ import Link from "next/link";
 import BurgerBtn from "../BurgerBtn/BurgerBtn";
 
 const Header = () => {
+  const [burgerMenu, setBurgerMenu] = useState(false);
+  console.log(burgerMenu);
   return (
     <header className={styles.container}>
       <div className={styles.leftLinks}>
@@ -22,8 +26,22 @@ const Header = () => {
 
       <div className={styles.langSwitcher}>Eng </div>
 
-      <BurgerBtn />
-      {/* <Navigation /> */}
+      <BurgerBtn
+        onClick={() => {
+          setBurgerMenu(!burgerMenu);
+        }}
+        burgerMenu={burgerMenu}
+      />
+      <Navigation
+        className={
+          burgerMenu ? styles.mobileNavigationVisible : styles.mobileNavigation
+        }
+        onClick={() => {
+          setTimeout(() => {
+            setBurgerMenu(false);
+          }, 250);
+        }}
+      />
     </header>
   );
 };

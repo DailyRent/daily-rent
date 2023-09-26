@@ -3,17 +3,18 @@
 import React from "react";
 import styles from "./BurgerBtn.module.scss";
 
-const BurgerBtn = () => {
+const BurgerBtn = ({ onClick, burgerMenu }) => {
   return (
-    <button
-      className={styles.burgerBtn}
-      onClick={() => {
-        console.log("open mobile menu");
-      }}
-    >
-      <svg className={styles.iconBurger}>
-        <use href="/sprite.svg#icon-burger-mobile" />
-      </svg>
+    <button className={styles.burgerBtn} onClick={onClick}>
+      {burgerMenu ? (
+        <svg className={styles.iconClose}>
+          <use href="/sprite.svg#icon-close" />
+        </svg>
+      ) : (
+        <svg className={styles.iconBurger}>
+          <use href="/sprite.svg#icon-burger-mobile" />
+        </svg>
+      )}
     </button>
   );
 };
