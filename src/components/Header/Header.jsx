@@ -7,6 +7,7 @@ import Navigation from "../Navigation/Navigation";
 import Link from "next/link";
 import BurgerBtn from "../BurgerBtn/BurgerBtn";
 import { usePathname } from "next/navigation";
+import LangSwitcher from "../LangSwitcher/LangSwitcher";
 
 const Header = () => {
   const [burgerMenu, setBurgerMenu] = useState(false);
@@ -42,7 +43,7 @@ const Header = () => {
         <Link href={"/contacts"}>Контакти</Link>
       </div>
 
-      <div className={styles.langSwitcher}>Eng </div>
+      <LangSwitcher />
 
       <BurgerBtn
         onClick={() => {
