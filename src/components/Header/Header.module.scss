@@ -85,20 +85,23 @@
   }
 }
 
+.headerLogoLight,
 .headerLogo {
   width: 100%;
   position: absolute;
   margin-left: -16px;
-  color: $lightFontColor;
   @media screen and (min-width: $tablet) {
     margin-left: -48px;
-
-    & span {
-      color: initial;
-    }
   }
   @media screen and (min-width: $desktop) {
     margin-left: -75px;
+  }
+}
+
+.headerLogoLight {
+  color: $lightFontColor;
+  & span {
+    color: initial;
   }
 }
 
@@ -116,7 +119,7 @@
   gap: 0px;
 
   color: $footerTextColor;
-  font-size: 20px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;

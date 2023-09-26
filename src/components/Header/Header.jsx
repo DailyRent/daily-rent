@@ -31,7 +31,11 @@ const Header = () => {
         </Link>
       </div>
 
-      <Logo className={pathname === "/" ? styles.headerLogo : " "} />
+      <Logo
+        className={
+          pathname === "/" ? styles.headerLogoLight : styles.headerLogo
+        }
+      />
 
       <div className={styles.rightLinks}>
         <Link href={"/rools"}>Правила</Link>

@@ -23,15 +23,21 @@
   }
 }
 
+.iconBurgerDark,
 .iconBurger {
   width: 22px;
   height: 12px;
+  fill: $lightFontColor;
   @media screen and (min-width: $mobile) {
     width: 40px;
     height: 24px;
   }
 }
+.iconBurgerDark {
+  fill: $darckFontColor;
+}
 
+.iconCloseDark,
 .iconClose {
   stroke: $lightFontColor;
   width: 20px;
@@ -41,4 +47,7 @@
     width: 32px;
     height: 32px;
   }
+}
+.iconCloseDark {
+  stroke: $darckFontColor;
 }
