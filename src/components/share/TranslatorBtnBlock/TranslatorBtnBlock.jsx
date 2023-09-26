@@ -6,12 +6,12 @@ import styles from './TranslatorBtnBlock.module.scss';
 const options = [
   {
     id: 1,
-    label: 'EN',
+    label: 'Eng',
     value: 'en',
   },
   {
     id: 2,
-    label: 'UA',
+    label: 'Укр',
     value: 'ua',
   },
 ];
@@ -52,7 +52,7 @@ const TranslatorBtnBlock = () => {
             setIsOpen(prev => !prev);
           }}
         >
-          {(typeof window !=="undefined" && typeof language !=="undefined") && (language || 'UA')}
+          {(typeof window !=="undefined" && typeof language !=="undefined") && (language || 'ua')}
           
           <svg
             className={
