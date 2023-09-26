@@ -2,8 +2,7 @@
 
 .container {
     display: flex;
-    flex-direction: column;
-    background-color: deeppink;
+    gap: 100px;
 }
 
 .apartments {
@@ -44,8 +43,10 @@
     position: relative;
 }
 
-.infoWrapper {
-    padding: 0 10px;
+.platformLink {
+    display: block;
+    width: 200px;
+    overflow: hidden;
 }
 
 .delete {
@@ -71,20 +72,31 @@
     font-weight: bold;
 }
 
-fieldset.side {
+fieldset.top {
+    padding: 5px 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.top input {
+    margin-right: 10px;
+}
+
+fieldset.roomsQuantity {
     padding: 5px 10px;
     display: flex;
     flex-direction: row;
     gap: 10px;
 }
 
-fieldset.carBody {
+fieldset.amenities {
     padding: 5px 10px;
     display: flex;
     flex-direction: column;
+    gap: 5px;
 }
 
-.carBody input {
+.amenities input {
     margin-right: 10px;
 }
 
