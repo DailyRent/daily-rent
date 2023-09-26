@@ -6,18 +6,32 @@ import Logo from "../Logo/Logo";
 import Navigation from "../Navigation/Navigation";
 import Link from "next/link";
 import BurgerBtn from "../BurgerBtn/BurgerBtn";
+import { usePathname } from "next/navigation";
 
 const Header = () => {
   const [burgerMenu, setBurgerMenu] = useState(false);
-  console.log(burgerMenu);
+  const pathname = usePathname();
+
+  console.log(pathname === "/");
+
   return (
     <header className={styles.container}>
       <div className={styles.leftLinks}>
-        <Link href={"/apartments"}>Апартаменти</Link>
-        <Link href={"/documents"}>Документи</Link>
+        <Link
+          href={"/apartments"}
+          className={pathname === "/" && styles.leftLinkLight}
+        >
+          Апартаменти
+        </Link>
+        <Link
+          href={"/documents"}
+          className={pathname === "/" && styles.leftLinkLight}
+        >
+          Документи
+        </Link>
       </div>
 
-      <Logo className={styles.headerLogo} />
+      <Logo className={pathname === "/" ? styles.headerLogo : " "} />
 
       <div className={styles.rightLinks}>
         <Link href={"/rools"}>Правила</Link>

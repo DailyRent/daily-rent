@@ -6,8 +6,7 @@ const Logo = ({ className }) => {
   return (
     <div className={styles.container + " " + `${className}`}>
       <Link href="/">
-        {/* Daily <span>Rent</span> */}
-        Daily Rent
+        Daily <span>Rent</span>
       </Link>
     </div>
   );

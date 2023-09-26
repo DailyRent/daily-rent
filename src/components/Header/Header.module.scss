@@ -39,18 +39,17 @@
 .leftLinks {
   margin-left: 0;
   margin-right: auto;
+  color: $darckFontColor;
+}
 
-  & a {
-    color: $lightFontColor;
-  }
+.leftLinkLight {
+  color: $lightFontColor;
 }
 
 .rightLinks {
   margin-right: 0;
   margin-left: auto;
-  & a {
-    color: $darckFontColor;
-  }
+  color: $darckFontColor;
 }
 
 .langSwitcher {
@@ -88,25 +87,17 @@
 
 .headerLogo {
   width: 100%;
-  text-align: center;
-  font-size: 16px;
   position: absolute;
   margin-left: -16px;
-
-  filter: contrast(0.6);
-
-  // & a {
-  //   color: $lightFontColor;
-  // }
-  // & span {
-  color: $footerLogoColor;
-  // }
+  color: $lightFontColor;
   @media screen and (min-width: $tablet) {
-    font-size: 20px;
     margin-left: -48px;
+
+    & span {
+      color: initial;
+    }
   }
   @media screen and (min-width: $desktop) {
-    font-size: 24px;
     margin-left: -75px;
   }
 }
