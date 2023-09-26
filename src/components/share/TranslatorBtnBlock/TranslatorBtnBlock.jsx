@@ -52,7 +52,7 @@ const TranslatorBtnBlock = () => {
             setIsOpen(prev => !prev);
           }}
         >
-          {(typeof window !=="undefined" && typeof language !=="undefined") && (language || 'ua')}
+          {(typeof window !=="undefined" && typeof language !=="undefined") && (language || 'UA')}
           
           <svg
             className={
