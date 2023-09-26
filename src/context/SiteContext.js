@@ -5,13 +5,17 @@ export const SiteContext = createContext();
 
 export const SiteProvider = ({ children }) => {
   const [state, setState] = useState(false);
-  console.log(state);
+  // console.log(state);
+  const [language, setLanguage] = useState("en");
+  console.log(language);
 
   return (
     <SiteContext.Provider
       value={{
         state,
         setState,
+        language,
+        setLanguage,
       }}
     >
       {children}

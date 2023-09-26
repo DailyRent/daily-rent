@@ -17,4 +17,10 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+
+  @media screen and (min-width: $desktop) {
+    width: 183px;
+    height: 58px;
+    font-size: 20px;
+  }
 }

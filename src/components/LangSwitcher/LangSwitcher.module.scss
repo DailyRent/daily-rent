@@ -1,0 +1,50 @@
+@import "../../styles/_variables.scss";
+
+.langSwitcher {
+  z-index: 30;
+  margin-right: auto;
+  margin-left: 0;
+  width: 64px;
+  height: 20px;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 4px;
+
+  border-radius: 24px;
+  // border: 1px solid #242424;
+  border: 1px solid $lightFontColor;
+  // color: #242424;
+  color: $lightFontColor;
+  text-align: center;
+  // font-family: Jura;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+
+  overflow: hidden;
+
+  @media screen and (min-width: $tablet) {
+    margin-right: 0;
+    margin-left: 20px;
+
+    width: 74px;
+    height: 32px;
+    border-color: $darckFontColor;
+    color: $darckFontColor;
+  }
+}
+
+.arrow {
+  stroke: $lightFontColor;
+  width: 12px;
+  height: 12px;
+  stroke-width: 2px;
+  @media screen and (min-width: $tablet) {
+    stroke: $darckFontColor;
+    width: 16px;
+    height: 16px;
+  }
+}

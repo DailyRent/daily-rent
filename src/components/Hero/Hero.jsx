@@ -13,7 +13,7 @@ const Hero = () => {
         <p className={styles.heroText}>
           Lorem ipsum dolor sit amet consectetur.
         </p>
-        <CallBtn />
+        <CallBtn className={styles.heroCallBtn} />
       </div>
     </section>
   );

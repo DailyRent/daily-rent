@@ -69,6 +69,13 @@
   justify-content: space-around;
 }
 
+.FooterNavigation {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  color: $footerTextColor;
+}
+
 .nav {
   flex-direction: column;
   & a {

@@ -39,74 +39,75 @@
 .leftLinks {
   margin-left: 0;
   margin-right: auto;
+  color: $darckFontColor;
+}
 
-  & a {
-    color: $lightFontColor;
-  }
+.leftLinkLight {
+  color: $lightFontColor;
 }
 
 .rightLinks {
   margin-right: 0;
   margin-left: auto;
-  & a {
-    color: $darckFontColor;
-  }
+  color: $darckFontColor;
 }
 
-.langSwitcher {
-  margin-right: auto;
-  margin-left: 0;
-  width: 64px;
-  height: 20px;
-
-  display: flex;
-  padding: 8px 16px;
-  align-items: center;
-  gap: 4px;
-
-  border-radius: 24px;
-  border: 1px solid #242424;
-
-  color: #242424;
-  text-align: center;
-  font-family: Jura;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-
-  overflow: hidden;
-
-  @media screen and (min-width: $tablet) {
-    margin-right: 0;
-    margin-left: 20px;
-
-    width: 74px;
-    height: 32px;
-  }
-}
-
+.headerLogoLight,
 .headerLogo {
   width: 100%;
-  text-align: center;
-  font-size: 16px;
   position: absolute;
   margin-left: -16px;
-
-  filter: contrast(0.6);
-
-  // & a {
-  //   color: $lightFontColor;
-  // }
-  // & span {
-  color: $footerLogoColor;
-  // }
   @media screen and (min-width: $tablet) {
-    font-size: 20px;
     margin-left: -48px;
   }
   @media screen and (min-width: $desktop) {
-    font-size: 24px;
     margin-left: -75px;
   }
+}
+
+.headerLogoLight {
+  color: $lightFontColor;
+  & span {
+    color: initial;
+  }
+}
+
+.mobileNavigation,
+.mobileNavigationVisible {
+  position: fixed;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  margin-left: -16px;
+  top: 112px;
+  width: 100%;
+  height: 1px;
+  overflow: hidden;
+  gap: 0px;
+
+  color: $footerTextColor;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  & li {
+    margin-top: 20px;
+  }
+
+  @media screen and (min-width: 425px) {
+    flex-direction: row;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  @media screen and (min-width: $tablet) {
+    display: none;
+  }
+}
+
+.mobileNavigationVisible {
+  height: fit-content;
+  padding-bottom: 20px;
+  background-color: $lightFontColor;
 }
