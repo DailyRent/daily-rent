@@ -1,11 +1,11 @@
 import Button from "@/components/Button/Button";
 import CallBtn from "@/components/CallBtn/CallBtn";
 import Logo from "@/components/Logo/Logo";
+import Navigation from "@/components/Navigation/Navigation";
 
 import SocialLinks from "@/components/SocialLinks/SocialLinks";
 import Link from "next/link";
 import React from "react";
-import FooterNavigation from "./FooterNavigation/FooterNavigation";
 import Support from "./Support/Support";
 
 import styles from "./TabletFooter.module.scss";
@@ -34,7 +34,7 @@ const TabletFooter = () => {
         </div>
         <div className={styles.rightContentWrapper}>
           <div className={styles.navWrapper}>
-            <FooterNavigation />
+            <Navigation className={styles.FooterNavigation} />
             <Support />
           </div>
           <div className={styles.btnsWrapper}>

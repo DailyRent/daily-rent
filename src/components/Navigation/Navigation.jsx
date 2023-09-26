@@ -6,11 +6,13 @@ import Link from "next/link";
 const Navigation = ({ className }) => {
   return (
     <ul className={styles.container + " " + `${className}`}>
-      {navigationData.map((item, index) => (
-        <li key={index}>
-          <Link href={item.path}>{item.title}</Link>
-        </li>
-      ))}
+      {navigationData.slice(0, 4).map((item) => {
+        return (
+          <li key={item.id}>
+            <Link href={item.path}>{item.title}</Link>
+          </li>
+        );
+      })}
     </ul>
   );
 };
