@@ -1,5 +1,18 @@
 @import "../../styles/_variables.scss";
 
 .container {
-    display: flex;
+  font-family: "Crimson Text";
+  color: $darckFontColor;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1.28px;
+  text-align: center;
+  @media screen and (min-width: $tablet) {
+    font-size: 20px;
+  }
+  @media screen and (min-width: $desktop) {
+    font-size: 24px;
+  }
 }

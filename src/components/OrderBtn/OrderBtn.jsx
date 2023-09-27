@@ -1,12 +1,11 @@
-import React from 'react';
-import styles from './OrderBtn.module.scss';
+import styles from "./OrderBtn.module.scss";
 
-
-const OrderBtn = () => {
+const OrderBtn = ({ openModal }) => {
     return (
-        <div className={styles.container}>OrderBtn</div>
-    )
-}
-
+        <button type='button' className={styles.button} onClick={openModal}>
+            Забронювати
+        </button>
+    );
+};
 
 export default OrderBtn;

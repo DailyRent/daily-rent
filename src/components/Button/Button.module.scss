@@ -1,0 +1,23 @@
+@import "../../styles/_variables.scss";
+
+.button {
+  display: flex;
+  width: 128px;
+  padding: 8px 0px 9px;
+
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+
+  border-radius: 24px;
+  border: 1px solid #000;
+  background-color: transparent;
+
+  color: #000;
+  font-family: inherit;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  cursor: pointer;
+}

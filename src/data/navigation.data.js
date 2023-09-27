@@ -1,27 +1,30 @@
+import { v4 } from "uuid";
+
 export const navigationData = [
-    {
-        // id: 1,
-        title: 'Apartments',
-        path: '/apartments',
-    },
-    {
-        // id: 2,
-        title: 'Rools',
-        path: '/rools',
-    },
-    {
-        // id: 3,
-        title: 'Documents',
-        path: '/documents',
-    },
-    {
-        // id: 4,
-        title: 'Contacts',
-        path: '/contacts',
-    },
-    {
-        // id: 5,
-        title: 'Dashboard',
-        path: '/dashboard',
-    },
+  {
+    id: v4(),
+    title: "Apartments",
+    path: "/apartments",
+  },
+
+  {
+    id: v4(),
+    title: "Documents",
+    path: "/documents",
+  },
+  {
+    id: v4(),
+    title: "Rules",
+    path: "/rools",
+  },
+  {
+    id: v4(),
+    title: "Contacts",
+    path: "/contacts",
+  },
+  {
+    id: v4(),
+    title: "Dashboard",
+    path: "/dashboard",
+  },
 ];

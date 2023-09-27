@@ -1,0 +1,38 @@
+{
+  "MainPage": {
+    "hero": "Твій комфорт - наша турбота",
+    "galleryTittle": "Апартаменти",
+    "contactsTitle": "Зв'яжіться з нами"
+  },
+  "Buttons":{
+    "ContactBtn": "Зв’язатись",
+    "OrderBtn": "Забронювати",
+    "CloseBtn":"Закрити",
+    "CardBtn":"Детальніше",
+    "FilterBtn":"Шукати",
+    "ObjectsBtn":"Всі об’єкти"
+  },
+  "form": {
+    "name": "Ім’я, Прізвище",
+    "phone": "Номер телефону",
+    "dateOfEntry":"Дата заїзду",
+    "departureDate":"Дата виїзду",
+    "numberObject": "Номер об’єкту",
+    "formSubmited":"Ваша заявка успішна відправлена! Наш менеджер зв’яжеться з вами в найближчий час."
+  },
+  "formErrors": {
+    "name": "Невірно введене ім’я",
+    "phone": "Номер телефону",
+    "dateOfEntry": "Оберіть дату",
+    "departureDate": "Оберіть дату",
+    "numberObject": "Вкажіть номер об’єкту"
+  },
+  "contacts": {
+    "contacts": "Зв'яжіться з нами"
+  },
+  
+  "notification": {
+    "title": "Чудово!",
+    "message": "Повідомлення надіслано!"
+  }
+}

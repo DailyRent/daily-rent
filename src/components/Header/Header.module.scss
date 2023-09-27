@@ -1,8 +1,113 @@
 @import "../../styles/_variables.scss";
 
 .container {
+  position: fixed;
+  display: flex;
+  // justify-content: space-around;
+  align-items: center;
+  padding: 42px 16px;
+  z-index: 10;
+
+  @media screen and (min-width: $tablet) {
+    padding: 28px 48px;
+  }
+  @media screen and (min-width: $desktop) {
+    padding: 24px 75px;
+  }
+}
+
+.leftLinks,
+.rightLinks {
+  display: none;
+
+  @media screen and (min-width: $tablet) {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: aquamarine;
+    gap: 20px;
+    z-index: 1;
+    & a {
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
+  @media screen and (min-width: 960px) {
+    gap: 40px;
+  }
+}
+
+.leftLinks {
+  margin-left: 0;
+  margin-right: auto;
+  color: $darckFontColor;
+}
+
+.leftLinkLight {
+  color: $lightFontColor;
+}
+
+.rightLinks {
+  margin-right: 0;
+  margin-left: auto;
+  color: $darckFontColor;
+}
+
+.headerLogoLight,
+.headerLogo {
+  width: 100%;
+  position: absolute;
+  margin-left: -16px;
+  @media screen and (min-width: $tablet) {
+    margin-left: -48px;
+  }
+  @media screen and (min-width: $desktop) {
+    margin-left: -75px;
+  }
+}
+
+.headerLogoLight {
+  color: $lightFontColor;
+  & span {
+    color: initial;
+  }
+}
+
+.mobileNavigation,
+.mobileNavigationVisible {
+  position: fixed;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  margin-left: -16px;
+  top: 112px;
+  width: 100%;
+  height: 1px;
+  overflow: hidden;
+  gap: 0px;
+
+  color: $footerTextColor;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  & li {
+    margin-top: 20px;
+  }
+
+  @media screen and (min-width: 425px) {
+    flex-direction: row;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  @media screen and (min-width: $tablet) {
+    display: none;
+  }
+}
+
+.mobileNavigationVisible {
+  height: fit-content;
+  padding-bottom: 20px;
+  background-color: $lightFontColor;
 }

@@ -1,7 +1,221 @@
-@import "../../../../../styles/variables.scss";
+@import '../../../../../styles/variables.scss';
 
 .container {
-    display: flex;
-    flex-direction: column;
-    background-color: crimson;
+  margin-top: 110px;
+  padding: 0 16px 32px 16px;
+  @media screen and (min-width: $tablet) {
+    margin-top: 80px;
+  }
 }
+
+.oneRoomBox {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.backContainer {
+  display: flex;
+  align-items: center;
+  column-gap: 13px;
+}
+
+.text {
+  width: max-content;
+  color: #636363;
+  font-family: Crimson Text;
+  font-size: 10px;
+  font-weight: 400;
+}
+
+.filterContainer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  column-gap: 16px;
+  @media screen and (min-width: $tablet) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-5%, -50%);
+  }
+}
+
+.filter {
+  color: #373737;
+  font-family: Crimson Text;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.containerOneRooms {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  column-gap: 30px;
+  row-gap: 40px;
+  padding: 40px 0;
+}
+
+// .oneRooms {
+//   position: relative;
+//   display: flex;
+//   flex-direction: column;
+//   row-gap: 24px;
+// }
+
+// .imgContainer {
+//   position: relative;
+//   width: 328px;
+//   height: 365px;
+//   @media screen and (min-width: $tablet) {
+//     width: 324px;
+//     height: 360px;
+//   }
+//   @media screen and (min-width: $desktop) {
+//     width: 300px;
+//     height: 333px;
+//   }
+// }
+
+// .img {
+//   object-fit: cover;
+// }
+
+// .codeImg {
+//   position: absolute;
+//   bottom: 0;
+//   left: 0;
+//   width: 169px;
+//   text-align: center;
+//   color: #fff;
+//   font-size: 13px;
+//   font-weight: 700;
+//   background-color: #373737;
+// }
+
+// .addressRooms {
+//   color: #6d6d6d;
+//   font-family: Playfair Display;
+//   font-size: 16px;
+//   font-weight: 400;
+// }
+
+// .priceRooms {
+//   color: #373737;
+//   font-family: Crimson Text;
+//   font-size: 20px;
+//   font-weight: 400;
+// }
+
+// .codeRooms {
+//   color: #373737;
+//   // font-family: Segoe UI;
+//   font-size: 13px;
+//   font-weight: 400;
+// }
+
+// .btnRooms {
+//   position: absolute;
+//   bottom: 0;
+//   right: 0;
+//   display: flex;
+//   padding: 10px 24px;
+//   justify-content: center;
+//   align-items: center;
+//   background-color: transparent;
+//   cursor: pointer;
+//   outline: none;
+//   border-radius: 24px;
+//   border: 1px solid #373737;
+//   color: #373737;
+//   // font-family: Segoe UI;
+//   font-size: 14px;
+//   font-weight: 400;
+// }
+
+/////pagination
+
+// .pagination {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   column-gap: 16px;
+// }
+
+// .pageItem {
+//   display: flex;
+//   align-items: center;
+// }
+
+// .pageLinkDot {
+//   width: 12px;
+//   height: 12px;
+//   background-color: #c7c7c7;
+//   border-radius: 50%;
+//   border: none;
+//   cursor: pointer;
+//   outline: none;
+//   display: flex;
+//   align-items: center;
+//   column-gap: 16px;
+// }
+
+// .active {
+//   width: 16px;
+//   height: 16px;
+//   background-color: #7d7d7d;
+// }
+
+// .pageDot {
+//   visibility: hidden;
+// }
+
+// .pageLink {
+//   display: flex;
+//   align-items: center;
+//   height: 15px;
+// }
+
+// .svgArrow {
+//   position: relative;
+//   width: 124px;
+//   height: 1px;
+//   background-color: #373737;
+// }
+
+// .arrowLeft {
+//   margin-right: 100px;
+//   &::after {
+//     content: '';
+//     position: absolute;
+//     top: -3px;
+//     left: 0;
+//     border: solid #373737;
+//     border-width: 1px 0 0 1px;
+//     display: block;
+//     padding: 3px;
+//     transform: rotate(-45deg);
+//     -webkit-transform: rotate(-45deg);
+//   }
+// }
+
+// .arrowRight {
+//   margin-left: 100px;
+//   &::after {
+//     content: '';
+//     position: absolute;
+//     top: -3px;
+//     right: 0;
+//     border: solid #373737;
+//     border-width: 1px 0 0 1px;
+//     display: block;
+//     padding: 3px;
+//     transform: rotate(135deg);
+//     -webkit-transform: rotate(135deg);
+//   }
+// }

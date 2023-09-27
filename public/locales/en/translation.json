@@ -1,0 +1,37 @@
+{
+  "MainPage": {
+    "hero": "Your comfort is our concern",
+    "galleryTittle": "Аpartments",
+    "contactsTitle": "Contact Us"
+    },
+  "Buttons": {
+    "ContactBtn": "Contact Us",
+    "OrderBtn": "Request to book",
+    "CloseBtn": "Close",
+    "CardBtn":"Details",
+    "FilterBtn":"Find",
+    "ObjectsBtn":"All objects"
+  },
+  "form": {
+    "name": "Name",
+    "phone": "Phone number",
+    "dateOfEntry":"Date of entry",
+    "departureDate":"Departure date",
+    "numberOfObject": "Number of object",
+    "formSubmited":"Your application has been successfully sent! Our manager will contact you shortly."
+  },
+  "formErrors": {
+    "name": "Incorrect name entered",
+    "phone": "Phone number",
+    "dateOfEntry": "Choose a date",
+    "departureDate": "Choose a date",
+    "numberObject": "Enter the object number"
+  },
+  "contactsPage": {
+    "contactsPage": "Order a call"
+  },
+  "notification": {
+    "title": "Great!",
+    "message": "Message sent!"
+  }
+}

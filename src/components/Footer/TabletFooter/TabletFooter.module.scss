@@ -1,0 +1,112 @@
+@import "../../../styles/_variables.scss";
+
+.container {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  // background-color: darkgrey;
+  padding: 0px 32px;
+  color: $footerTextColor;
+
+  @media screen and (min-width: $tablet) {
+    display: flex;
+  }
+}
+
+.footerLogo {
+  font-size: 32px;
+  margin-left: 0;
+  margin-right: auto;
+  color: $footerLogoColor;
+}
+
+.contentWrapper {
+  display: flex;
+  width: inherit;
+  gap: 40px;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.leftContentWrapper {
+  // max-width: 421px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.leftContentText {
+  color: #bbbbbb;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 16px;
+  // flex: 1;
+}
+
+.contacts {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  color: $footerLocationColor;
+}
+
+.rightContentWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+  flex: 1;
+}
+
+.navWrapper {
+  width: 100%;
+  display: flex;
+  // gap: 40px;
+  justify-content: space-around;
+}
+
+.FooterNavigation {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  color: $footerTextColor;
+}
+
+.nav {
+  flex-direction: column;
+  & a {
+    color: red;
+  }
+}
+
+.btnsWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-left: -12px;
+}
+
+.bookBtn {
+  margin-left: -48px;
+}
+
+.rights {
+  color: $footerTextColor;
+  font-family: inherit;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.webevery {
+  width: 100vw;
+  text-align: center;
+  margin-top: -20px;
+  padding: 8px;
+  border-top: 1px solid rgb(84, 84, 84, 0.14);
+}

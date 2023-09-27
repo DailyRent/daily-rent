@@ -1,19 +1,13 @@
 import Hero from "@/components/Hero/Hero";
-import styles from "./page.module.scss";
-import Slider from "@/components/Slider/Slider";
-import SocialLinks from "@/components/SocialLinks/SocialLinks";
-import OrderBtn from "@/components/OrderBtn/OrderBtn";
-import CallBtn from "@/components/CallBtn/CallBtn";
-
-
+import HomeSlider from "@/components/HomeSlider/HomeSlider";
+// import styles from "./page.module.scss";
 
 export default function Home() {
-  return <section className={styles.container}>
-    <h1>Home Page</h1>
-    <Hero />
-    <Slider />
-    <SocialLinks />
-    <OrderBtn />
-    <CallBtn />
-  </section>;
+  return (
+    <>
+      {/* <h1>Home Page</h1> */}
+      <Hero />
+      <HomeSlider />
+    </>
+  );
 }

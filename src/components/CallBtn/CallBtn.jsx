@@ -1,12 +1,15 @@
-import React from 'react';
-import styles from './CallBtn.module.scss';
+import React from "react";
+import styles from "./CallBtn.module.scss";
 
-
-const CallBtn = () => {
-    return (
-        <div className={styles.container}>CallBtn</div>
-    )
-}
-
+const CallBtn = ({ className }) => {
+  return (
+    <a
+      href="tel:+380503738465"
+      className={styles.button + " " + `${className}`}
+    >
+      Звʼязатись
+    </a>
+  );
+};
 
 export default CallBtn;
