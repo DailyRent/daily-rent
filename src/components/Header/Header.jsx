@@ -16,7 +16,7 @@ const Header = () => {
   const [burgerMenu, setBurgerMenu] = useState(false);
   const pathname = usePathname();
 
-  console.log(pathname === "/");
+  // console.log(pathname === "/");
 
   return (
     <header className={styles.container}>
