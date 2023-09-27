@@ -25,6 +25,9 @@
 <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2" d="M24 8l-16 16"></path>
 <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2" d="M8 8l16 16"></path>
 </symbol>
+<symbol id="close" viewBox="0 0 20 20">
+<path d="M10 8.586l-7.071-7.071-1.414 1.414 7.071 7.071-7.071 7.071 1.414 1.414 7.071-7.071 7.071 7.071 1.414-1.414-7.071-7.071 7.071-7.071-1.414-1.414-7.071 7.071z"></path>
+</symbol>
 <symbol id="icon-dollar-sign" viewBox="0 0 32 32">
 <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2" d="M16 1.333v29.333"></path>
 <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2" d="M22.667 6.667h-10c-1.238 0-2.425 0.492-3.3 1.367s-1.367 2.062-1.367 3.3c0 1.238 0.492 2.425 1.367 3.3s2.062 1.367 3.3 1.367h6.667c1.238 0 2.425 0.492 3.3 1.367s1.367 2.062 1.367 3.3c0 1.238-0.492 2.425-1.367 3.3s-2.062 1.367-3.3 1.367h-11.333"></path>
