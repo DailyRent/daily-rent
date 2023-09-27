@@ -22,7 +22,7 @@ export const GET = async (request, { params }) => {
 //     try {
 //         await connect();
 
-//         const data = await Apartment.find(id);
+//         const data = await Apartment.findById(id);
 
 //         return new NextResponse(JSON.stringify(data), { status: 200 })
 

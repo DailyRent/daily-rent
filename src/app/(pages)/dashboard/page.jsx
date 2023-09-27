@@ -5,6 +5,7 @@ import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import useSWR from 'swr';
 import Image from 'next/image';
+import Link from 'next/link';
 
 
 const Dashboard = () => {
@@ -133,7 +134,10 @@ const Dashboard = () => {
                             </ul>
                             <p>Опис: {apart.description}</p>
 
-                            <span className={styles.delete} onClick={() => handleDelete(apart._id)}>X</span>
+                            <div className={styles.btnsWrapper}>
+                                <Link href={`/dashboard/${apart._id}`}>Edit Card</Link>
+                                <span className={styles.delete} onClick={() => handleDelete(apart._id)}>X</span>
+                            </div>
                         </div>))}
             </div>
 
