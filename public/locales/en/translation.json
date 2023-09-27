@@ -1,32 +1,34 @@
 {
-  "HERO": {
-    "hero": "Empowering your success",
-    "heroButton": "Order"
-  },
-  "servicesItem": {
-    "understand": "Understood!",
-    "whatItIs": "What is it?",
-    "days": "days",
-    "price": "price",
-    "orderBtn": "Order"
+  "MainPage": {
+    "hero": "Your comfort is our concern",
+    "galleryTittle": "Аpartments",
+    "contactsTitle": "Contact Us"
+    },
+  "Buttons": {
+    "ContactBtn": "Contact Us",
+    "OrderBtn": "Request to book",
+    "CloseBtn": "Close",
+    "CardBtn":"Details",
+    "FilterBtn":"Find",
+    "ObjectsBtn":"All objects"
   },
   "form": {
-    "buttonSubmit": "Send",
     "name": "Name",
-    "idea": "Describe Your Idea",
-    "contactUs": "or contact us"
+    "phone": "Phone number",
+    "dateOfEntry":"Date of entry",
+    "departureDate":"Departure date",
+    "numberOfObject": "Number of object",
+    "formSubmited":"Your application has been successfully sent! Our manager will contact you shortly."
+  },
+  "formErrors": {
+    "name": "Incorrect name entered",
+    "phone": "Phone number",
+    "dateOfEntry": "Choose a date",
+    "departureDate": "Choose a date",
+    "numberObject": "Enter the object number"
   },
   "contactsPage": {
     "contactsPage": "Order a call"
-  },
-  "formErrors": {
-    "name": "Enter a name",
-    "phone": "Enter a phone",
-    "email": "Enter an email",
-    "incorrectPhone": "Incorrect format",
-    "incorrectMail": "Incorrect email",
-    "shortName": "Name should be longer",
-    "comment": "The comment should be shorter"
   },
   "notification": {
     "title": "Great!",
