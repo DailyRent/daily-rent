@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useState } from "react";
 import styles from "./Header.module.scss";
 import Logo from "../Logo/Logo";
@@ -8,8 +7,12 @@ import Link from "next/link";
 import BurgerBtn from "../BurgerBtn/BurgerBtn";
 import { usePathname } from "next/navigation";
 import LangSwitcher from "../LangSwitcher/LangSwitcher";
+import { signOut, useSession } from 'next-auth/react';
+
 
 const Header = () => {
+  const session = useSession();
+
   const [burgerMenu, setBurgerMenu] = useState(false);
   const pathname = usePathname();
 
@@ -44,6 +47,8 @@ const Header = () => {
       </div>
 
       <LangSwitcher />
+
+      {session.status === "authenticated" && <button onClick={signOut}>Logout</button>}
 
       <BurgerBtn
         onClick={() => {

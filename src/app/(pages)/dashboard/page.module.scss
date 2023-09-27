@@ -2,6 +2,109 @@
 
 .container {
     display: flex;
+    gap: 100px;
+}
+
+.apartments {
+    flex: 1;
+}
+
+.apartment {
+    display: flex;
     flex-direction: column;
-    background-color: deeppink;
+    justify-content: space-between;
+    gap: 5px;
+    margin: 20px 0px;
+    padding: 10px;
+    background-color: #8c878fd6;
+    border-radius: 5px;
+    border: 1px solid navy;
+}
+
+.imgContainer {
+    width: 300px;
+    height: 150px;
+    position: relative;
+}
+
+.img {
+    object-fit: cover;
+}
+
+.imgsWrapper {
+    gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.imgsCont {
+    width: 200px;
+    height: 100px;
+    position: relative;
+}
+
+.platformLink {
+    display: block;
+    width: 200px;
+    overflow: hidden;
+}
+
+.delete {
+    cursor: pointer;
+    color: red;
+}
+
+.new {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input,
+.textarea {
+    padding: 10px;
+    background-color: transparent;
+    border: 2px solid #bbb;
+    border-radius: 3px;
+    color: #bbb;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+fieldset.top {
+    padding: 5px 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.top input {
+    margin-right: 10px;
+}
+
+fieldset.roomsQuantity {
+    padding: 5px 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+fieldset.amenities {
+    padding: 5px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.amenities input {
+    margin-right: 10px;
+}
+
+.sendBtn {
+    padding: 5px;
+    border: none;
+    background-color: #53c28b;
+    color: white;
+    cursor: pointer;
+    border-radius: 3px;
 }
