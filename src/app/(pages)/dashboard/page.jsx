@@ -83,8 +83,20 @@ const Dashboard = () => {
             })
             // автоматически обновляет страницу при изменении кол-ва карточек
             mutate();
+            // обнуляет все поля формы
+            // e.target.reset();
         } catch (err) {
             console.log(err);
+        }
+    }
+
+    const handleDelete = async (id) => {
+        try {
+            await fetch(`/api/apartment/${id}`, { method: "DELETE" });
+            // автоматически обновляет страницу при изменении кол-ва карточек
+            mutate();
+        } catch (error) {
+            console.log(error);
         }
     }
 
@@ -121,9 +133,7 @@ const Dashboard = () => {
                             </ul>
                             <p>Опис: {apart.description}</p>
 
-                            <span className={styles.delete}
-                            // onClick={() => handleDelete(card._id)}
-                            >X</span>
+                            <span className={styles.delete} onClick={() => handleDelete(apart._id)}>X</span>
                         </div>))}
             </div>
 
