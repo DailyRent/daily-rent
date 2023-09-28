@@ -4,13 +4,13 @@ import React from "react";
 import styles from "./BurgerBtn.module.scss";
 import { usePathname } from "next/navigation";
 
-const BurgerBtn = ({ onClick, burgerMenu }) => {
+const BurgerBtn = ({ onClick, burgerMenu, isClient }) => {
   const pathname = usePathname();
 
   let iconCloseStyles;
   let iconBurgerStyles;
   if (
-    (pathname === "/" && scrollY >= window.innerHeight - 50) ||
+    (pathname === "/" && isClient && scrollY >= window.innerHeight - 50) ||
     pathname !== "/"
   ) {
     iconCloseStyles = styles.iconCloseDark;

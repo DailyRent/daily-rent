@@ -83,13 +83,14 @@ const Header = () => {
       {session.status === "authenticated" && (
         <button onClick={signOut}>Logout</button>
       )}
-      {/* <BurgerBtn
+      <BurgerBtn
         onClick={() => {
           setBurgerMenu(!burgerMenu);
         }}
         burgerMenu={burgerMenu}
-      /> */}
-      {/* <Navigation
+        isClient={isClient}
+      />
+      <Navigation
         className={
           burgerMenu ? styles.mobileNavigationVisible : styles.mobileNavigation
         }
@@ -98,7 +99,7 @@ const Header = () => {
             setBurgerMenu(false);
           }, 250);
         }}
-      /> */}
+      />
     </header>
   );
 };
