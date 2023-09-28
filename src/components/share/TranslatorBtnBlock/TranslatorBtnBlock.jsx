@@ -1,6 +1,7 @@
 "use client";
+import { SiteContext } from "@/context/SiteContext";
 import { usePathname } from "next/navigation";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
 import { useTranslation } from "react-i18next";
 import styles from "./TranslatorBtnBlock.module.scss";
 
@@ -24,6 +25,8 @@ const TranslatorBtnBlock = () => {
   const { i18n } = useTranslation();
   const rootEl = useRef(null);
 
+  const { scrollY } = useContext(SiteContext);
+
   useEffect(() => {
     setLanguage(localStorage.getItem("whatLanguage"));
   }, []);
@@ -44,10 +47,10 @@ const TranslatorBtnBlock = () => {
     document.addEventListener("click", onClick);
     return () => document.removeEventListener("click", onClick);
   }, []);
-
+  const isClient = typeof window !== "undefined";
   let scrollStyles;
   if (
-    (pathname === "/" && scrollY >= window.innerHeight - 50) ||
+    (pathname === "/" && scrollY && isClient >= window.innerHeight - 50) ||
     pathname !== "/"
   ) {
     scrollStyles = styles.dropdownDark;

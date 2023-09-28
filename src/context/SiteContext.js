@@ -9,6 +9,8 @@ export const SiteProvider = ({ children }) => {
   const [language, setLanguage] = useState("en");
   // console.log(language);
 
+  const [scrollY, setScrollY] = useState(0);
+
   return (
     <SiteContext.Provider
       value={{
@@ -16,6 +18,8 @@ export const SiteProvider = ({ children }) => {
         setState,
         language,
         setLanguage,
+        scrollY,
+        setScrollY,
       }}
     >
       {children}

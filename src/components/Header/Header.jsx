@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styles from "./Header.module.scss";
 import Logo from "../Logo/Logo";
 import Navigation from "../Navigation/Navigation";
@@ -9,6 +9,7 @@ import { usePathname } from "next/navigation";
 // import LangSwitcher from "../LangSwitcher/LangSwitcher";
 import { signOut, useSession } from "next-auth/react";
 import TranslatorBtnBlock from "../share/TranslatorBtnBlock/TranslatorBtnBlock";
+import { SiteContext } from "@/context/SiteContext";
 
 const Header = () => {
   const session = useSession();
@@ -17,7 +18,9 @@ const Header = () => {
   // console.log(window.innerHeight - 10);
 
   const [burgerMenu, setBurgerMenu] = useState(false);
-  const [scrollY, setScrollY] = useState(0); // Track scroll position
+  // const [scrollY, setScrollY] = useState(0); // Track scroll position
+  const { scrollY, setScrollY } = useContext(SiteContext);
+  console.log(scrollY);
   const pathname = usePathname();
 
   const isClient = typeof window !== "undefined";
@@ -45,37 +48,42 @@ const Header = () => {
   //   pathname === "/" && scrollY >= window.innerHeight ? styles.scrolledBg : "";
 
   let headerBgClass;
-  if (pathname === "/" && isClient) {
+  // if (pathname === "/" && isClient) {
+  if (pathname === "/") {
     headerBgClass =
       scrollY >= window.innerHeight - 50 ? styles.scrolledBg : " ";
   } else {
     headerBgClass = styles.scrolledBg;
   }
 
-  // let leftLinksStyles;
-  // let logoStyles;
+  let leftLinksStyles;
+  let logoStyles;
   // if (
-  //   (pathname === "/" && scrollY >= window.innerHeight - 50) ||
+  //   (pathname === "/" && scrollY && isClient >= window.innerHeight - 50) ||
   //   pathname !== "/"
   // ) {
-  //   leftLinksStyles = " ";
-  //   logoStyles = styles.headerLogo;
-  // } else {
-  //   leftLinksStyles = styles.leftLinkLight;
-  //   logoStyles = styles.headerLogoLight;
-  // }
+  if (
+    (pathname === "/" && scrollY >= window.innerHeight - 50) ||
+    pathname !== "/"
+  ) {
+    leftLinksStyles = " ";
+    logoStyles = styles.headerLogo;
+  } else {
+    leftLinksStyles = styles.leftLinkLight;
+    logoStyles = styles.headerLogoLight;
+  }
 
   return (
     <header className={`${styles.container} ${headerBgClass}`}>
       <div className={styles.leftLinks}>
-        {/* <Link href={"/apartments"} className={leftLinksStyles}>
+        <Link href={"/apartments"} className={leftLinksStyles}>
           Апартаменти
         </Link>
         <Link href={"/documents"} className={leftLinksStyles}>
           Документи
-        </Link> */}
+        </Link>
       </div>
-      {/* <Logo className={logoStyles} /> */}
+      <Logo className={logoStyles} />
       <div className={styles.rightLinks}>
         <Link href={"/rools"}>Правила</Link>
         <Link href={"/contacts"}>Контакти</Link>
