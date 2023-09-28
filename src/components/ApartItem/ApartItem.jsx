@@ -5,8 +5,9 @@ import Image from 'next/image';
 import styles from './ApartItem.module.scss';
 import { PaginationContext } from '@/context/PaginationContext';
 import Pagination from '../share/Pagination/PaginationPage';
+import Link from 'next/link';
 
-const ApartItem = ({ titleImg, address, price, objNumber }) => {
+const ApartItem = ({ titleImg, address, price, objNumber, rooms, id }) => {
   return (
     <>
       <li className={styles.oneRooms}>
@@ -23,9 +24,12 @@ const ApartItem = ({ titleImg, address, price, objNumber }) => {
         <p className={styles.addressRooms}>{address}</p>
         <p className={styles.priceRooms}>{price}$ нічь</p>
         <span className={styles.codeRooms}>{objNumber}</span>
-        <button type="button" className={styles.btnRooms}>
+        {/* <button type="button" className={styles.btnRooms}>
           Детальніше
-        </button>
+        </button> */}
+        <Link href={`/apartments/${rooms}/${id}`} className={styles.btnRooms}>
+          Детальніше
+        </Link>
       </li>
     </>
   );

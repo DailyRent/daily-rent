@@ -31,11 +31,13 @@ const TwoRooms = () => {
               address={item.address}
               prise={item.prise}
               objNumber={item.objNumber}
+              rooms={2}
+              id={item._id}
             />
           ))
         ) : (
           <div className={styles.notFoundText}>
-            <p>Не знайдено трикімнатних квартир</p>
+            <p>Двокімнатних квартир не знайдено</p>
           </div>
         )}
       </ul>
