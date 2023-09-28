@@ -48,8 +48,7 @@ const Header = () => {
   //   pathname === "/" && scrollY >= window.innerHeight ? styles.scrolledBg : "";
 
   let headerBgClass;
-  // if (pathname === "/" && isClient) {
-  if (pathname === "/") {
+  if (pathname === "/" && isClient) {
     headerBgClass =
       scrollY >= window.innerHeight - 50 ? styles.scrolledBg : " ";
   } else {
@@ -58,12 +57,8 @@ const Header = () => {
 
   let leftLinksStyles;
   let logoStyles;
-  // if (
-  //   (pathname === "/" && scrollY && isClient >= window.innerHeight - 50) ||
-  //   pathname !== "/"
-  // ) {
   if (
-    (pathname === "/" && scrollY >= window.innerHeight - 50) ||
+    (pathname === "/" && scrollY && isClient >= window.innerHeight - 50) ||
     pathname !== "/"
   ) {
     leftLinksStyles = " ";
