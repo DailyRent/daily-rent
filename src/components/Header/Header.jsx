@@ -6,9 +6,9 @@ import Navigation from "../Navigation/Navigation";
 import Link from "next/link";
 import BurgerBtn from "../BurgerBtn/BurgerBtn";
 import { usePathname } from "next/navigation";
-import LangSwitcher from "../LangSwitcher/LangSwitcher";
-import { signOut, useSession } from 'next-auth/react';
-
+// import LangSwitcher from "../LangSwitcher/LangSwitcher";
+import { signOut, useSession } from "next-auth/react";
+import TranslatorBtnBlock from "../share/TranslatorBtnBlock/TranslatorBtnBlock";
 
 const Header = () => {
   const session = useSession();
@@ -46,9 +46,11 @@ const Header = () => {
         <Link href={"/contacts"}>Контакти</Link>
       </div>
 
-      <LangSwitcher />
+      <TranslatorBtnBlock />
 
-      {session.status === "authenticated" && <button onClick={signOut}>Logout</button>}
+      {session.status === "authenticated" && (
+        <button onClick={signOut}>Logout</button>
+      )}
 
       <BurgerBtn
         onClick={() => {

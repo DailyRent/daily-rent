@@ -14,7 +14,6 @@ const LangSwitcher = () => {
           setLanguage((prev) => (prev === "uk" ? "en" : "uk"));
         }}
       >
-        {/* <p> {language === "uk" ? "uk" : "en"}</p> */}
         {language === "uk" ? "uk" : "en"}
         <svg className={styles.arrow}>
           <use href="/sprite.svg#icon-chevron-down" />
