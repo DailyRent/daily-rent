@@ -3,17 +3,20 @@
 .container {
   position: fixed;
   display: flex;
-  // justify-content: space-around;
   align-items: center;
-  padding: 42px 16px;
+  padding: 24px 16px;
+
   z-index: 10;
 
   @media screen and (min-width: $tablet) {
-    padding: 28px 48px;
+    padding: 12px 48px;
   }
   @media screen and (min-width: $desktop) {
     padding: 24px 75px;
   }
+}
+.scrolledBg {
+  background-color: $lightFontColor;
 }
 
 .leftLinks,
@@ -67,8 +70,11 @@
 
 .headerLogoLight {
   color: $lightFontColor;
-  & span {
-    color: initial;
+
+  @media screen and (min-width: $tablet) {
+    & span {
+      color: initial;
+    }
   }
 }
 
@@ -79,7 +85,7 @@
   align-items: center;
   padding: 0px;
   margin-left: -16px;
-  top: 112px;
+  top: 64px;
   width: 100%;
   height: 1px;
   overflow: hidden;
@@ -110,4 +116,8 @@
   height: fit-content;
   padding-bottom: 20px;
   background-color: $lightFontColor;
+}
+.qwe {
+  background-color: aqua;
+  border: 2px solid red;
 }

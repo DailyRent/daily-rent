@@ -16,3 +16,23 @@ export const GET = async (request, { params }) => {
         return new NextResponse("Database Error.", { status: 500 })
     }
 }
+
+
+export const POST = async (request) => {
+    const body = await request.json();
+    console.log("body in POST", body)
+
+    const newApartment = new Apartment(body);
+    console.log("newApartment", newApartment)
+
+    try {
+        await connect();
+        console.log("after connect()")
+        await newApartment.save();
+        console.log("after newApartment.save()")
+
+        return new NextResponse("Apartment has been created.", { status: 201 })
+    } catch (err) {
+        return new NextResponse(err, { status: 500 })
+    }
+}
