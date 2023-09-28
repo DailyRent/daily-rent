@@ -9,11 +9,14 @@
   z-index: 10;
 
   @media screen and (min-width: $tablet) {
-    padding: 28px 48px;
+    padding: 12px 48px;
   }
   @media screen and (min-width: $desktop) {
     padding: 24px 75px;
   }
+}
+.scrolledBg {
+  background-color: $lightFontColor;
 }
 
 .leftLinks,

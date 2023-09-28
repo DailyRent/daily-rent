@@ -7,7 +7,7 @@ export const SiteProvider = ({ children }) => {
   const [state, setState] = useState(false);
   // console.log(state);
   const [language, setLanguage] = useState("en");
-  console.log(language);
+  // console.log(language);
 
   return (
     <SiteContext.Provider

@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Header.module.scss";
 import Logo from "../Logo/Logo";
 import Navigation from "../Navigation/Navigation";
@@ -13,24 +13,55 @@ import TranslatorBtnBlock from "../share/TranslatorBtnBlock/TranslatorBtnBlock";
 const Header = () => {
   const session = useSession();
 
+  // console.log(window.innerHeight);
+  // console.log(window.innerHeight - 10);
+
   const [burgerMenu, setBurgerMenu] = useState(false);
+  const [scrollY, setScrollY] = useState(0); // Track scroll position
   const pathname = usePathname();
 
-  console.log(pathname === "/");
+  const handleScroll = () => {
+    setScrollY(window.scrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    // Remove event listener on cleanup
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  // Determine if the background should change after scrolling 100vh
+  // const headerBgClass =
+  //   pathname === "/" && scrollY >= window.innerHeight ? styles.scrolledBg : "";
+
+  let headerBgClass;
+  if (pathname === "/") {
+    headerBgClass =
+      scrollY >= window.innerHeight - 50 ? styles.scrolledBg : " ";
+  } else {
+    headerBgClass = styles.scrolledBg;
+  }
+
+  let leftLinksStyles;
+  if (
+    (pathname === "/" && scrollY >= window.innerHeight - 50) ||
+    pathname !== "/"
+  ) {
+    leftLinksStyles = " ";
+  } else {
+    leftLinksStyles = styles.leftLinkLight;
+  }
 
   return (
-    <header className={styles.container}>
+    <header className={`${styles.container} ${headerBgClass}`}>
       <div className={styles.leftLinks}>
-        <Link
-          href={"/apartments"}
-          className={pathname === "/" && styles.leftLinkLight}
-        >
+        <Link href={"/apartments"} className={leftLinksStyles}>
           Апартаменти
         </Link>
-        <Link
-          href={"/documents"}
-          className={pathname === "/" && styles.leftLinkLight}
-        >
+        <Link href={"/documents"} className={leftLinksStyles}>
           Документи
         </Link>
       </div>
