@@ -54,7 +54,7 @@ const Header = () => {
   let leftLinksStyles;
   let logoStyles;
   if (
-    (pathname === "/" && scrollY && isClient >= window.innerHeight - 50) ||
+    (pathname === "/" && isClient && scrollY >= window.innerHeight - 50) ||
     pathname !== "/"
   ) {
     leftLinksStyles = " ";
@@ -74,7 +74,7 @@ const Header = () => {
           Документи
         </Link>
       </div>
-      <Logo className={logoStyles} />
+      <Logo className={logoStyles} isClient={isClient} />
       <div className={styles.rightLinks}>
         <Link href={"/rools"}>Правила</Link>
         <Link href={"/contacts"}>Контакти</Link>

@@ -28,6 +28,9 @@
   & .svg {
     stroke: $darckFontColor;
   }
+  & .label {
+    color: $darckFontColor;
+  }
 }
 
 .dropBtn {
@@ -108,7 +111,7 @@
   border-color: transparent;
   outline: none;
   cursor: pointer;
-  color: $darckFontColor;
+  color: $lightFontColor;
   font-size: 12px;
   font-weight: 500;
   padding: 0;
@@ -116,6 +119,10 @@
   &:hover {
     color: $darckFontColor;
     font-size: 14px;
+  }
+
+  @media screen and (min-width: $tablet) {
+    color: $darckFontColor;
   }
 }
 
