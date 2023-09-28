@@ -45,31 +45,31 @@ const Header = () => {
     headerBgClass = styles.scrolledBg;
   }
 
-  let leftLinksStyles;
-  let logoStyles;
-  if (
-    (pathname === "/" && scrollY >= window.innerHeight - 50) ||
-    pathname !== "/"
-  ) {
-    leftLinksStyles = " ";
-    logoStyles = styles.headerLogo;
-  } else {
-    leftLinksStyles = styles.leftLinkLight;
-    logoStyles = styles.headerLogoLight;
-  }
+  // let leftLinksStyles;
+  // let logoStyles;
+  // if (
+  //   (pathname === "/" && scrollY >= window.innerHeight - 50) ||
+  //   pathname !== "/"
+  // ) {
+  //   leftLinksStyles = " ";
+  //   logoStyles = styles.headerLogo;
+  // } else {
+  //   leftLinksStyles = styles.leftLinkLight;
+  //   logoStyles = styles.headerLogoLight;
+  // }
 
   return (
     <header className={`${styles.container} ${headerBgClass}`}>
       <div className={styles.leftLinks}>
-        <Link href={"/apartments"} className={leftLinksStyles}>
+        {/* <Link href={"/apartments"} className={leftLinksStyles}>
           Апартаменти
         </Link>
         <Link href={"/documents"} className={leftLinksStyles}>
           Документи
-        </Link>
+        </Link> */}
       </div>
 
-      <Logo className={logoStyles} />
+      {/* <Logo className={logoStyles} /> */}
 
       <div className={styles.rightLinks}>
         <Link href={"/rools"}>Правила</Link>
