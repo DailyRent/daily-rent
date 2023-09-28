@@ -68,27 +68,22 @@ const Header = () => {
           Документи
         </Link> */}
       </div>
-
       {/* <Logo className={logoStyles} /> */}
-
       <div className={styles.rightLinks}>
         <Link href={"/rools"}>Правила</Link>
         <Link href={"/contacts"}>Контакти</Link>
       </div>
-
       <TranslatorBtnBlock />
-
       {session.status === "authenticated" && (
         <button onClick={signOut}>Logout</button>
       )}
-
-      <BurgerBtn
+      {/* <BurgerBtn
         onClick={() => {
           setBurgerMenu(!burgerMenu);
         }}
         burgerMenu={burgerMenu}
-      />
-      <Navigation
+      /> */}
+      {/* <Navigation
         className={
           burgerMenu ? styles.mobileNavigationVisible : styles.mobileNavigation
         }
@@ -97,7 +92,7 @@ const Header = () => {
             setBurgerMenu(false);
           }, 250);
         }}
-      />
+      /> */}
     </header>
   );
 };
