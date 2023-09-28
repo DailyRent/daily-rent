@@ -6,20 +6,28 @@ import { usePathname } from "next/navigation";
 
 const BurgerBtn = ({ onClick, burgerMenu }) => {
   const pathname = usePathname();
+
+  let iconCloseStyles;
+  let iconBurgerStyles;
+  if (
+    (pathname === "/" && scrollY >= window.innerHeight - 50) ||
+    pathname !== "/"
+  ) {
+    iconCloseStyles = styles.iconCloseDark;
+    iconBurgerStyles = styles.iconBurgerDark;
+  } else {
+    iconCloseStyles = styles.iconClose;
+    iconBurgerStyles = styles.iconBurger;
+  }
+
   return (
     <button className={styles.burgerBtn} onClick={onClick}>
       {burgerMenu ? (
-        <svg
-          className={pathname === "/" ? styles.iconClose : styles.iconCloseDark}
-        >
+        <svg className={iconCloseStyles}>
           <use href="/sprite.svg#icon-close" />
         </svg>
       ) : (
-        <svg
-          className={
-            pathname === "/" ? styles.iconBurger : styles.iconBurgerDark
-          }
-        >
+        <svg className={iconBurgerStyles}>
           <use href="/sprite.svg#icon-burger-mobile" />
         </svg>
       )}

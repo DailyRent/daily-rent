@@ -46,13 +46,16 @@ const Header = () => {
   }
 
   let leftLinksStyles;
+  let logoStyles;
   if (
     (pathname === "/" && scrollY >= window.innerHeight - 50) ||
     pathname !== "/"
   ) {
     leftLinksStyles = " ";
+    logoStyles = styles.headerLogo;
   } else {
     leftLinksStyles = styles.leftLinkLight;
+    logoStyles = styles.headerLogoLight;
   }
 
   return (
@@ -66,11 +69,7 @@ const Header = () => {
         </Link>
       </div>
 
-      <Logo
-        className={
-          pathname === "/" ? styles.headerLogoLight : styles.headerLogo
-        }
-      />
+      <Logo className={logoStyles} />
 
       <div className={styles.rightLinks}>
         <Link href={"/rools"}>Правила</Link>

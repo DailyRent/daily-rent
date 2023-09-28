@@ -45,10 +45,19 @@ const TranslatorBtnBlock = () => {
     return () => document.removeEventListener("click", onClick);
   }, []);
 
+  let scrollStyles;
+  if (
+    (pathname === "/" && scrollY >= window.innerHeight - 50) ||
+    pathname !== "/"
+  ) {
+    scrollStyles = styles.dropdownDark;
+  } else {
+    scrollStyles = styles.dropdown;
+  }
+
   return (
     <div ref={rootEl}>
-      {/* <div className={styles.dropdown}> */}
-      <div className={pathname === "/" ? styles.dropdown : styles.dropdownDark}>
+      <div className={scrollStyles}>
         <button
           className={styles.dropBtn}
           type="button"
