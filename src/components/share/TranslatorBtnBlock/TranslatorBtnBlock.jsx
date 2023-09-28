@@ -18,7 +18,7 @@ const options = [
   },
 ];
 
-const TranslatorBtnBlock = () => {
+const TranslatorBtnBlock = ({ isClient }) => {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [language, setLanguage] = useState();
@@ -50,7 +50,7 @@ const TranslatorBtnBlock = () => {
 
   let scrollStyles;
   if (
-    (pathname === "/" && scrollY >= window.innerHeight - 50) ||
+    (pathname === "/" && isClient && scrollY >= window.innerHeight - 50) ||
     pathname !== "/"
   ) {
     scrollStyles = styles.dropdownDark;
