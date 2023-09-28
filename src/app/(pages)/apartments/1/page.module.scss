@@ -1,0 +1,93 @@
+@import '../../../../styles/variables.scss';
+
+.container {
+  margin-top: 110px;
+  padding: 0 16px 32px 16px;
+
+  display: flex;
+  flex: 1;
+  @media screen and (min-width: $tablet) {
+    margin-top: 80px;
+  }
+}
+
+.oneRoomBox {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.backContainer {
+  display: flex;
+  align-items: center;
+  column-gap: 13px;
+}
+
+.text {
+  width: max-content;
+  color: #636363;
+  font-family: Crimson Text;
+  font-size: 10px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+}
+
+.link {
+  &:hover {
+    color: #cd5d12;
+  }
+}
+
+// .filterContainer {
+//   position: absolute;
+//   top: 0;
+//   right: 0;
+//   display: flex;
+//   align-items: center;
+//   column-gap: 16px;
+//   @media screen and (min-width: $tablet) {
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-5%, -50%);
+//   }
+// }
+
+// .filter {
+//   color: #373737;
+//   font-family: Crimson Text;
+//   font-size: 16px;
+//   font-weight: 400;
+//   cursor: pointer;
+// }
+
+.apartContainer {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.containerOneRooms {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  flex-wrap: wrap;
+  column-gap: 30px;
+  row-gap: 40px;
+  padding: 40px 0;
+}
+
+.notFoundText {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #373737;
+  font-family: Crimson Text;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}

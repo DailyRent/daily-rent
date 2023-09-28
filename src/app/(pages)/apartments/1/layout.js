@@ -2,6 +2,7 @@
 import ButtonFilter from '@/components/share/ButtonFilter/ButtonFilter';
 import ButtonToBack from '@/components/share/ButtonToBack/ButtonToBack';
 import { PaginationProvider } from '@/context/PaginationContext';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import styles from './page.module.scss';
 
@@ -10,19 +11,25 @@ export default function OneRoomsLayout({ children }) {
 
   return (
     <section className={styles.container}>
-      <h1 className="visuallyHidden">TwoRooms Appartments</h1>
+      <h1 className="visuallyHidden">OneRooms Appartments</h1>
       <div className={styles.oneRoomBox}>
         <div className={styles.backContainer}>
           <ButtonToBack onGoBack={() => router.back()} />
-          <p className={styles.text}>Головна / Апартаменти / Lorem ipsum </p>
+          <p className={styles.text}>
+            <Link href="/" className={styles.link}>
+              Головна
+            </Link>
+            /
+            <Link href="/apartments" className={styles.link}>
+              Апартаменти
+            </Link>
+            / Однокімнатні
+          </p>
         </div>
-        <div className={styles.filterContainer}>
-          <ButtonFilter />
-          <p className={styles.filter}>Filter</p>
-        </div>
+        <ButtonFilter />
       </div>
       <PaginationProvider>
-        <div>{children}</div>
+        <div className={styles.apartContainer}>{children}</div>
       </PaginationProvider>
     </section>
   );

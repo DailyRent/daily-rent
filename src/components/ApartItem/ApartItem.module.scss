@@ -1,9 +1,5 @@
 @import '../../styles/_variables.scss';
 
-// .container {
-//     display: flex;
-// }
-
 .oneRooms {
   position: relative;
   display: flex;
@@ -46,6 +42,15 @@
   font-family: Playfair Display;
   font-size: 16px;
   font-weight: 400;
+  // text-overflow: ellipsis;
+  width: 300px;
+  height: 40px;
+  // white-space: wrap;
+  // white-space: nowrap;
+  // overflow: hidden;
+  &:hover {
+    white-space: wrap;
+  }
 }
 
 .priceRooms {
