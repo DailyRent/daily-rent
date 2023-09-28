@@ -9,5 +9,9 @@
 .backSvg {
   width: 24px;
   height: 24px;
-  fill: #636363;
+  stroke: #636363;
+  fill: none;
+  &:hover {
+    stroke: #cd5d12;
+  }
 }
