@@ -80,7 +80,7 @@ const Header = () => {
         <Link href={"/rools"}>Правила</Link>
         <Link href={"/contacts"}>Контакти</Link>
       </div>
-      <TranslatorBtnBlock />
+      {/* <TranslatorBtnBlock /> */}
       {session.status === "authenticated" && (
         <button onClick={signOut}>Logout</button>
       )}
