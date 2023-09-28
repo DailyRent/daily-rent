@@ -20,25 +20,32 @@ const Header = () => {
   const [scrollY, setScrollY] = useState(0); // Track scroll position
   const pathname = usePathname();
 
+  const isClient = typeof window !== "undefined";
+
   const handleScroll = () => {
-    setScrollY(window.scrollY);
+    if (isClient) {
+      setScrollY(window.scrollY);
+    }
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+    // Add event listener only on the client-side
+    if (isClient) {
+      window.addEventListener("scroll", handleScroll);
 
-    // Remove event listener on cleanup
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+      // Remove event listener on cleanup
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    }
+  }, [isClient]);
 
   // Determine if the background should change after scrolling 100vh
   // const headerBgClass =
   //   pathname === "/" && scrollY >= window.innerHeight ? styles.scrolledBg : "";
 
   let headerBgClass;
-  if (pathname === "/") {
+  if (pathname === "/" && isClient) {
     headerBgClass =
       scrollY >= window.innerHeight - 50 ? styles.scrolledBg : " ";
   } else {
