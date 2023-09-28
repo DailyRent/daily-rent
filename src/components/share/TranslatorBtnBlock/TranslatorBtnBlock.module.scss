@@ -20,6 +20,15 @@
     color: $darckFontColor;
   }
 }
+.dropdownDark {
+  & .dropBtn {
+    border: 1px solid $darckFontColor;
+    color: $darckFontColor;
+  }
+  & .svg {
+    stroke: $darckFontColor;
+  }
+}
 
 .dropBtn {
   display: flex;
@@ -115,14 +124,4 @@
   opacity: 0;
   visibility: hidden;
   position: absolute;
-}
-
-.dropdownDark {
-  & .dropBtn {
-    border: 1px solid $darckFontColor;
-    color: $darckFontColor;
-  }
-  & .svg {
-    stroke: $darckFontColor;
-  }
 }

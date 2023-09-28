@@ -20,7 +20,6 @@ const Header = () => {
   const [burgerMenu, setBurgerMenu] = useState(false);
   // const [scrollY, setScrollY] = useState(0); // Track scroll position
   const { scrollY, setScrollY } = useContext(SiteContext);
-  console.log(scrollY);
   const pathname = usePathname();
 
   const isClient = typeof window !== "undefined";
@@ -47,13 +46,10 @@ const Header = () => {
   // const headerBgClass =
   //   pathname === "/" && scrollY >= window.innerHeight ? styles.scrolledBg : "";
 
-  let headerBgClass;
-  if (pathname === "/" && isClient) {
-    headerBgClass =
-      scrollY >= window.innerHeight - 50 ? styles.scrolledBg : " ";
-  } else {
-    headerBgClass = styles.scrolledBg;
-  }
+  const headerBgClass =
+    pathname === "/" && isClient && scrollY >= window.innerHeight - 50
+      ? styles.scrolledBg
+      : " ";
 
   let leftLinksStyles;
   let logoStyles;
@@ -83,7 +79,7 @@ const Header = () => {
         <Link href={"/rools"}>Правила</Link>
         <Link href={"/contacts"}>Контакти</Link>
       </div>
-      {/* <TranslatorBtnBlock /> */}
+      <TranslatorBtnBlock isClient={isClient} />
       {session.status === "authenticated" && (
         <button onClick={signOut}>Logout</button>
       )}

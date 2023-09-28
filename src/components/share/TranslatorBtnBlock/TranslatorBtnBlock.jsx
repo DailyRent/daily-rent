@@ -25,8 +25,6 @@ const TranslatorBtnBlock = () => {
   const { i18n } = useTranslation();
   const rootEl = useRef(null);
 
-  const { scrollY } = useContext(SiteContext);
-
   useEffect(() => {
     setLanguage(localStorage.getItem("whatLanguage"));
   }, []);
@@ -47,10 +45,12 @@ const TranslatorBtnBlock = () => {
     document.addEventListener("click", onClick);
     return () => document.removeEventListener("click", onClick);
   }, []);
-  const isClient = typeof window !== "undefined";
+
+  const { scrollY } = useContext(SiteContext);
+
   let scrollStyles;
   if (
-    (pathname === "/" && scrollY && isClient >= window.innerHeight - 50) ||
+    (pathname === "/" && scrollY >= window.innerHeight - 50) ||
     pathname !== "/"
   ) {
     scrollStyles = styles.dropdownDark;
