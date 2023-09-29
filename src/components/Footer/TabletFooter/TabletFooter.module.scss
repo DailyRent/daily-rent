@@ -5,11 +5,15 @@
   flex-direction: column;
   align-items: center;
   gap: 40px;
-  padding: 0px 32px;
+  // padding: 0px 32px;
+  padding: 40px 32px;
   color: $footerTextColor;
 
   @media screen and (min-width: $tablet) {
     display: flex;
+  }
+  @media screen and (min-width: $desktop) {
+    padding: 48px 75px 42px;
   }
 }
 
