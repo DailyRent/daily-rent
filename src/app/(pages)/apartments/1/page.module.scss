@@ -41,29 +41,21 @@
   }
 }
 
-// .filterContainer {
-//   position: absolute;
-//   top: 0;
-//   right: 0;
-//   display: flex;
-//   align-items: center;
-//   column-gap: 16px;
-//   @media screen and (min-width: $tablet) {
-//     top: 50%;
-//     left: 50%;
-//     transform: translate(-5%, -50%);
-//   }
-// }
-
-// .filter {
-//   color: #373737;
-//   font-family: Crimson Text;
-//   font-size: 16px;
-//   font-weight: 400;
-//   cursor: pointer;
-// }
+.isLoading {
+  color: $footerTextColor;
+  text-align: center;
+  width: 100%;
+  height: 296px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media screen and (min-width: $tablet) {
+    height: 420px;
+  }
+}
 
 .apartContainer {
+  width: 100%;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -84,7 +76,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #373737;
+  color: $acentColor;
   font-family: Crimson Text;
   font-size: 32px;
   font-style: normal;

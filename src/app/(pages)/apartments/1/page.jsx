@@ -24,24 +24,30 @@ const OneRooms = () => {
 
   return (
     <>
-      <ul className={styles.containerOneRooms}>
-        {records?.length > 0 ? (
-          records?.map((item) => (
-            <ApartItem
-              key={item._id}
-              titleImg={item.titleImg}
-              code={item.code}
-              address={item.address}
-              prise={item.prise}
-              objNumber={item.objNumber}
-            />
-          ))
-        ) : (
-          <div className={styles.notFoundText}>
-            <p>Не знайдено трикімнатних квартир</p>
-          </div>
-        )}
-      </ul>
+      {isLoading ? (
+        <p className={styles.isLoading}>Loading...</p>
+      ) : (
+        <ul className={styles.containerOneRooms}>
+          {records?.length > 0 ? (
+            records?.map((item) => (
+              <ApartItem
+                key={item._id}
+                titleImg={item.titleImg}
+                code={item.code}
+                address={item.address}
+                prise={item.prise}
+                objNumber={item.objNumber}
+                rooms={1}
+                id={item._id}
+              />
+            ))
+          ) : (
+            <div className={styles.notFoundText}>
+              <p>Однокімнатних квартир не знайдено</p>
+            </div>
+          )}
+        </ul>
+      )}
       {records?.length > 0 && !isLoading && (
         <PaginationPage numbers={numbers} npage={npage} />
       )}

@@ -45,7 +45,7 @@
   position: relative;
   width: 124px;
   height: 1px;
-  background-color: #373737;
+  background-color: $acentColor;
 }
 
 .arrowLeft {
@@ -55,7 +55,7 @@
     position: absolute;
     top: -3px;
     left: 0;
-    border: solid #373737;
+    border: solid $acentColor;
     border-width: 1px 0 0 1px;
     display: block;
     padding: 3px;
@@ -71,7 +71,7 @@
     position: absolute;
     top: -3px;
     right: 0;
-    border: solid #373737;
+    border: solid $acentColor;
     border-width: 1px 0 0 1px;
     display: block;
     padding: 3px;

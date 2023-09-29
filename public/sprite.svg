@@ -38,10 +38,10 @@
 <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 20v-16"></path>
 </symbol>
 <symbol id="icon-hash" viewBox="0 0 32 32">
-<path fill="none" stroke="#c7c7c7" style="stroke: var(--color1, #c7c7c7)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.8824" d="M5.961 12.235h20.078"></path>
-<path fill="none" stroke="#c7c7c7" style="stroke: var(--color1, #c7c7c7)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.8824" d="M5.961 19.765h20.078"></path>
-<path fill="none" stroke="#c7c7c7" style="stroke: var(--color1, #c7c7c7)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.8824" d="M13.49 4.706l-2.51 22.588"></path>
-<path fill="none" stroke="#c7c7c7" style="stroke: var(--color1, #c7c7c7)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.8824" d="M21.020 4.706l-2.51 22.588"></path>
+<path fill="none" stroke="#6D6D6D" style="stroke: var(--color1, #6D6D6D)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.8824" d="M5.961 12.235h20.078"></path>
+<path fill="none" stroke="#6D6D6D" style="stroke: var(--color1, #6D6D6D)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.8824" d="M5.961 19.765h20.078"></path>
+<path fill="none" stroke="#6D6D6D" style="stroke: var(--color1, #6D6D6D)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.8824" d="M13.49 4.706l-2.51 22.588"></path>
+<path fill="none" stroke="#6D6D6D" style="stroke: var(--color1, #6D6D6D)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.8824" d="M21.020 4.706l-2.51 22.588"></path>
 </symbol>
 <symbol id="icon-map-pin" viewBox="0 0 32 32">
 <path fill="none" stroke="#fff" style="stroke: var(--color2, #fff)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M28 13.333c0 9.333-12 17.333-12 17.333s-12-8-12-17.333c0-3.183 1.264-6.235 3.515-8.485s5.303-3.515 8.485-3.515c3.183 0 6.235 1.264 8.485 3.515s3.515 5.303 3.515 8.485z"></path>
