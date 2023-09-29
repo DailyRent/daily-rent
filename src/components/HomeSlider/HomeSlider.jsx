@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from "react";
 import styles from "./HomeSlider.module.scss";
-import useSWR from "swr";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -17,10 +16,10 @@ import "./HomeSlider.css";
 import { Pagination, Navigation, Autoplay, Mousewheel } from "swiper/modules";
 import Link from "next/link";
 import Image from "next/image";
+import { GetData } from "@/fetch/clientFetch";
 
 const HomeSlider = () => {
-  const fetcher = (...args) => fetch(...args).then((res) => res.json());
-  const { data, error, isLoading } = useSWR("/api/apartments", fetcher);
+  const { data, error, isLoading } = GetData();
   // console.log(data);
 
   // Filter the data to get only the item with top === true
