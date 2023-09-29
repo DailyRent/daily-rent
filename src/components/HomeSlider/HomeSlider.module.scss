@@ -5,11 +5,11 @@
   flex-direction: column;
   width: 100%;
   // height: f;
-  padding: 16px 16px 32px;
+  padding: 16px 16px 0px;
   gap: 16px;
 
   @media screen and (min-width: $tablet) {
-    padding: 28px 32px 40px;
+    padding: 28px 32px 0px;
   }
 }
 

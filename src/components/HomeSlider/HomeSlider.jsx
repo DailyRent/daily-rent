@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from "react";
 import styles from "./HomeSlider.module.scss";
-import useSWR from "swr";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -14,18 +13,18 @@ import "swiper/css/navigation";
 import "./HomeSlider.css";
 
 // import required modules
-import { Pagination, Navigation, Autoplay } from "swiper/modules";
+import { Pagination, Navigation, Autoplay, Mousewheel } from "swiper/modules";
 import Link from "next/link";
 import Image from "next/image";
+import { GetData } from "@/fetch/clientFetch";
 
 const HomeSlider = () => {
-  const fetcher = (...args) => fetch(...args).then((res) => res.json());
-  const { data, error, isLoading } = useSWR("/api/apartments", fetcher);
+  const { data, error, isLoading } = GetData();
   // console.log(data);
 
   // Filter the data to get only the item with top === true
-  // const topData = data ? data.filter((item) => item.top === true) : [];
-  const topData = data?.filter((item) => item.top === true);
+  const topData = data ? data.filter((item) => item.top === true) : [];
+  // const topData = data?.filter((item) => item.top === true)
 
   // Now, filteredData contains only the item(s) with flatNumber=66
 
@@ -76,14 +75,16 @@ const HomeSlider = () => {
             dynamicBullets: true,
           }}
           navigation={true}
-          speed={2000}
-          autoplay={{
-            delay: 1000,
-            disableOnInteraction: false,
-          }}
-          effect="slide"
-          loop={true}
-          modules={[Pagination, Navigation, Autoplay]}
+          // speed={1000}
+          // autoplay={{
+          //   delay: 1000,
+          //   disableOnInteraction: false,
+          // }}
+          // effect="slide"
+
+          // loop={true}
+          mousewheel={true}
+          modules={[Pagination, Navigation, Autoplay, Mousewheel]}
           className="HomeSliderSwiper"
         >
           {topData?.map((el) => {
