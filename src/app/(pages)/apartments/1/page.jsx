@@ -1,15 +1,15 @@
 'use client';
 
 import React, { useContext } from 'react';
-import useSWR from 'swr';
 import ApartItem from '@/components/ApartItem/ApartItem';
 import { PaginationContext } from '@/context/PaginationContext';
 import PaginationPage from '@/components/share/Pagination/PaginationPage';
 import styles from './page.module.scss';
+import { GetData } from '@/fetch/clientFetch';
+import IsLoading from '@/components/share/IsLoading/IsLoading';
 
 const OneRooms = () => {
-  const fetcher = (...args) => fetch(...args).then((res) => res.json());
-  const { data, error, isLoading } = useSWR('/api/apartments', fetcher);
+  const { data, error, isLoading } = GetData();
 
   const { firstIndex, lastIndex, recordsPerPage } =
     useContext(PaginationContext);
@@ -25,7 +25,7 @@ const OneRooms = () => {
   return (
     <>
       {isLoading ? (
-        <p className={styles.isLoading}>Loading...</p>
+        <IsLoading />
       ) : (
         <ul className={styles.containerOneRooms}>
           {records?.length > 0 ? (
@@ -37,7 +37,7 @@ const OneRooms = () => {
                 address={item.address}
                 prise={item.prise}
                 objNumber={item.objNumber}
-                rooms={1}
+                roomsQuantity={item.roomsQuantity}
                 id={item._id}
               />
             ))
