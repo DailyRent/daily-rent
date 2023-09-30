@@ -24,7 +24,8 @@
 }
 
 .propositionList {
-  height: 111px;
+  width: 279px;
+  height: 151px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -51,7 +52,7 @@
   position: relative;
   width: 16px;
   height: 16px;
-  margin-right: 27px;
+  margin-right: 16px;
   @media screen and (min-width: $tablet) {
     width: 24px;
     height: 24px;

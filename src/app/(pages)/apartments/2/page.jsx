@@ -32,7 +32,7 @@ const TwoRooms = () => {
                 titleImg={item.titleImg}
                 code={item.code}
                 address={item.address}
-                prise={item.prise}
+                price={item.price}
                 objNumber={item.objNumber}
                 roomsQuantity={item.roomsQuantity}
                 id={item._id}

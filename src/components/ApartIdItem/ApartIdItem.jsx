@@ -20,7 +20,7 @@ const ApartIdItem = ({ dataId, error, isLoading }) => {
           <div className={styles.content}>
             <ApartDataList dataId={dataId} />
             <div className={styles.arrow}></div>
-            <Amenities />
+            <Amenities dataId={dataId} />
             {/* <ApartStar /> */}
             <OrderBtn className={styles.orderBtn} />
           </div>
