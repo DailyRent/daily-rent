@@ -1,15 +1,15 @@
 'use client';
 
 import React, { useContext } from 'react';
-import useSWR from 'swr';
 import ApartItem from '@/components/ApartItem/ApartItem';
 import PaginationPage from '@/components/share/Pagination/PaginationPage';
 import { PaginationContext } from '@/context/PaginationContext';
 import styles from './page.module.scss';
+import { GetData } from '@/fetch/clientFetch';
+import IsLoading from '@/components/share/IsLoading/IsLoading';
 
 const ThreeRooms = () => {
-  const fetcher = (...args) => fetch(...args).then((res) => res.json());
-  const { data, error, isLoading } = useSWR('/api/apartments', fetcher);
+  const { data, error, isLoading } = GetData();
 
   const roomsData = data?.filter((item) => item.roomsQuantity === '3');
 
@@ -22,26 +22,30 @@ const ThreeRooms = () => {
 
   return (
     <>
-      <ul className={styles.containerOneRooms}>
-        {records?.length > 0 ? (
-          records?.map((item) => (
-            <ApartItem
-              key={item._id}
-              titleImg={item.titleImg}
-              code={item.code}
-              address={item.address}
-              prise={item.prise}
-              objNumber={item.objNumber}
-              rooms={3}
-              id={item._id}
-            />
-          ))
-        ) : (
-          <div className={styles.notFoundText}>
-            <p>Трикімнатних квартир не знайдено </p>
-          </div>
-        )}
-      </ul>
+      {isLoading ? (
+        <IsLoading />
+      ) : (
+        <ul className={styles.containerOneRooms}>
+          {records?.length > 0 ? (
+            records?.map((item) => (
+              <ApartItem
+                key={item._id}
+                titleImg={item.titleImg}
+                code={item.code}
+                address={item.address}
+                prise={item.prise}
+                objNumber={item.objNumber}
+                roomsQuantity={item.roomsQuantity}
+                id={item._id}
+              />
+            ))
+          ) : (
+            <div className={styles.notFoundText}>
+              <p>Трикімнатних квартир не знайдено </p>
+            </div>
+          )}
+        </ul>
+      )}
       {records?.length > 0 && (
         <PaginationPage numbers={numbers} npage={npage} />
       )}

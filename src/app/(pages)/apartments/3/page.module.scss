@@ -64,8 +64,14 @@
   justify-content: center;
   color: $acentColor;
   font-family: Crimson Text;
-  font-size: 32px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  @media screen and (min-width: $tablet) {
+    font-size: 28px;
+  }
+  @media screen and (min-width: 1024px) {
+    font-size: 32px;
+  }
 }
