@@ -10,13 +10,20 @@ const ApartIdSlider = ({ dataId }) => {
           alt="titleImg"
           className={styles.img}
           fill={true}
+          sizes="(min-width: 768px) 356px, (min-width: 1280px) 770px"
         />
       </div>
       <ul className={styles.imgsList}>
         {dataId.imgs.map((img, index) => (
           <li key={index}>
             <div className={styles.imgSliderContainer}>
-              <Image src={img} alt="image" fill={true} className={styles.img} />
+              <Image
+                src={img}
+                alt="image"
+                fill={true}
+                className={styles.img}
+                sizes="(min-width: 768px) 220px"
+              />
             </div>
           </li>
         ))}
