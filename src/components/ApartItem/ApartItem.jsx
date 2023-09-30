@@ -22,7 +22,8 @@ const ApartItem = ({
             alt="apartament"
             fill={true}
             className={styles.img}
-            priority={true}
+            priority
+            sizes="(max-width: 768px) 324px, (max-width: 1440px) 300px"
           />
           <span className={styles.codeImg}>{objNumber}</span>
         </div>

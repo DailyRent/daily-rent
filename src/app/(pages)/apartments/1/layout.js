@@ -23,7 +23,9 @@ export default function OneRoomsLayout({ children }) {
             <Link href="/apartments" className={styles.link}>
               Апартаменти
             </Link>
-            / Однокімнатні
+            <Link href="/apartments/1" className={styles.link}>
+              / Однокімнатні
+            </Link>
           </p>
         </div>
         <ButtonFilter />

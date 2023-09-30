@@ -16,8 +16,6 @@ const OneRooms = () => {
 
   const roomsData = data?.filter((item) => item.roomsQuantity === '1');
 
-  console.log(roomsData);
-
   const records = roomsData?.slice(firstIndex, lastIndex);
   const npage = roomsData ? Math.ceil(roomsData?.length / recordsPerPage) : 0;
   const numbers = [...Array(npage + 1).keys()].slice(1);

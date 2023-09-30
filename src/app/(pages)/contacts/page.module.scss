@@ -26,6 +26,12 @@
   font-weight: 400;
 }
 
+.link {
+  &:hover {
+    color: #cd5d12;
+  }
+}
+
 .contactsMap {
   width: 100vw;
   height: 427px;
