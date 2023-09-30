@@ -20,7 +20,6 @@ import { GetData } from "@/fetch/clientFetch";
 
 const HomeSlider = () => {
   const { data, error, isLoading } = GetData();
-  // console.log(data);
 
   // Filter the data to get only the item with top === true
   const topData = data ? data.filter((item) => item.top === true) : [];
@@ -90,7 +89,10 @@ const HomeSlider = () => {
           {topData?.map((el) => {
             return (
               <SwiperSlide key={el._id}>
-                <Link href={`home/${el._id}`} className="link">
+                <Link
+                  href={`apartments/${el.roomsQuantity}/${el._id}`}
+                  className="link"
+                >
                   <div className="div">
                     <Image src={el.titleImg} fill={true} alt={el.objNumber} />
                   </div>
