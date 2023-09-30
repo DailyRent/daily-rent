@@ -1,0 +1,51 @@
+@import "../../../../styles/_variables.scss";
+
+.container {
+    display: flex;
+    gap: 100px;
+}
+
+.apartment {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 5px;
+    margin: 20px 0px;
+    padding: 10px;
+    background-color: #8c878fd6;
+    border-radius: 5px;
+    border: 1px solid navy;
+}
+
+.imgContainer {
+    width: 300px;
+    height: 150px;
+    position: relative;
+}
+
+.img {
+    object-fit: cover;
+}
+
+.imgsWrapper {
+    gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.imgCont {
+    width: 200px;
+    height: 100px;
+    position: relative;
+}
+
+.platformLink {
+    display: block;
+    width: 200px;
+    overflow: hidden;
+}
+
+.updatingForm {
+    flex: 1;
+}
