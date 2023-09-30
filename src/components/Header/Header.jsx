@@ -42,12 +42,9 @@ const Header = () => {
     }
   }, [isClient]);
 
-  // Determine if the background should change after scrolling 100vh
-  // const headerBgClass =
-  //   pathname === "/" && scrollY >= window.innerHeight ? styles.scrolledBg : "";
-
   const headerBgClass =
-    pathname === "/" && isClient && scrollY >= window.innerHeight - 50
+    (pathname === "/" && isClient && scrollY >= window.innerHeight - 50) ||
+    (pathname !== "/" && isClient)
       ? styles.scrolledBg
       : " ";
 
