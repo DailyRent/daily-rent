@@ -1,9 +1,10 @@
-'use client';
-import ButtonFilter from '@/components/share/ButtonFilter/ButtonFilter';
-import ButtonToBack from '@/components/share/ButtonToBack/ButtonToBack';
-import { PaginationProvider } from '@/context/PaginationContext';
-import { useRouter } from 'next/navigation';
-import styles from './page.module.scss';
+"use client";
+import ButtonFilter from "@/components/share/ButtonFilter/ButtonFilter";
+import ButtonToBack from "@/components/share/ButtonToBack/ButtonToBack";
+import { PaginationProvider } from "@/context/PaginationContext";
+import { useRouter } from "next/navigation";
+import styles from "./page.module.scss";
+import Filter from "@/components/Filter/Filter";
 
 export default function OneRoomsLayout({ children }) {
   const router = useRouter();
@@ -22,7 +23,10 @@ export default function OneRoomsLayout({ children }) {
         </div>
       </div>
       <PaginationProvider>
-        <div>{children}</div>
+        <div>
+          {/* <Filter checked1={"checked"} /> */}
+          {children}
+        </div>
       </PaginationProvider>
     </section>
   );

@@ -1,5 +1,47 @@
 @import "../../styles/_variables.scss";
 
 .container {
-    display: flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  //   position: absolute;
+  //   top: 40px;
+}
+.filterContainer {
+  display: flex;
+  //   justify-content: center;
+  align-items: center;
+}
+.filterButtonClose {
+  display: flex;
+  border-radius: 50%;
+  margin-left: auto;
+  //   align-items: center;
+  //   position: absolute;
+  //   top: 39px;
+  //   right: 64px;
+}
+
+.filterSvg {
+  width: 24px;
+  height: 24px;
+  stroke: #373737;
+}
+
+.filterButtonsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.filterNumberRoomsList {
+  display: flex;
+  justify-content: space-between;
+}
+
+.filterAmenitisContainer {
+  display: flex;
+  justify-content: space-between;
 }
