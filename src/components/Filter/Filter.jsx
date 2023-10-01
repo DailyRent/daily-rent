@@ -1,7 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Filter.module.scss";
+import "./Filter.module.scss";
+import { amenities } from "@/data/amenities.data";
+import { GetData } from "@/fetch/clientFetch";
 
-const Filter = ({ checked1, checked2, checked3 }) => {
+const Filter = ({ checked1, checked2, checked3, children }) => {
+  const { data, error, isLoading } = GetData();
+  const [checkedAmenity, setCheckedAmenity] = useState(true);
+  console.log(data);
+
+  const filterCheckboxStyles = checkedAmenity
+    ? styles.filterInputCheckbox__Checked
+    : styles.filterInputCheckbox;
+
+  const handleChangeAmenity = (e) => {
+    console.log(e);
+    setCheckedAmenity(!checkedAmenity);
+
+    console.log(checkedAmenity);
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.filterContainer}>
@@ -20,19 +38,25 @@ const Filter = ({ checked1, checked2, checked3 }) => {
           <li>
             <label>
               <span>1 Room </span>
-              <input type="checkbox" checked={checked1} />
+              <input type="checkbox" defaultChecked={checked1} />
             </label>
           </li>
           <li>
             <label>
               <span>2 Rooms </span>
-              <input type="checkbox" checked={checked2} />
+              <input type="checkbox" defaultChecked={checked2} />
             </label>
           </li>
           <li>
             <label>
               <span>3 Rooms </span>
-              <input type="checkbox" checked={checked3} />
+              <input
+                type="checkbox"
+                checked={checkedAmenity}
+                className={filterCheckboxStyles}
+                onChange={handleChangeAmenity}
+              />
+              <span></span>
             </label>
           </li>
         </ul>
@@ -40,60 +64,18 @@ const Filter = ({ checked1, checked2, checked3 }) => {
       <div className={styles.filterButtonsContainer}>
         <h4>Amenities</h4>
         <ul className={styles.filterAmenitisContainer}>
-          <li>
-            <label>
-              <span>WiFi</span>
-              <input type="checkbox" />
-            </label>
-          </li>
-          <li>
-            <label>
-              <span>SmartTV</span>
-              <input type="checkbox" />
-            </label>
-          </li>
-          <li>
-            <label>
-              <span>Air conditioning</span>
-              <input type="checkbox" />
-            </label>
-          </li>
-          <li>
-            <label>
-              <span>Balcony</span>
-              <input type="checkbox" />
-            </label>
-          </li>
-          <li>
-            <label>
-              <span>Shower</span>
-              <input type="checkbox" />
-            </label>
-          </li>
-          <li>
-            <label>
-              <span>Bath</span>
-              <input type="checkbox" />
-            </label>
-          </li>
-          <li>
-            <label>
-              <span>Jacuzzi</span>
-              <input type="checkbox" />
-            </label>
-          </li>
-          <li>
-            <label>
-              <span>Washing machine</span>
-              <input type="checkbox" />
-            </label>
-          </li>
-          <li>
-            <label>
-              <span>Microwave</span>
-              <input type="checkbox" />
-            </label>
-          </li>
+          {amenities.map((item) => {
+            return (
+              <li key={item.id}>
+                <span>{item.titleEN}</span>
+                <input
+                  type="checkbox"
+                  checked={checkedAmenity}
+                  onChange={handleChangeAmenity}
+                />
+              </li>
+            );
+          })}
         </ul>
       </div>
       <button>Шукати</button>
