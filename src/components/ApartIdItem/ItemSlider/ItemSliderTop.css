@@ -1,0 +1,26 @@
+.ItemSliderTop {
+  width: 328px;
+  height: 264px;
+  margin-bottom: 16px;
+}
+.ItemSliderTop .swiper-wrapper {
+  margin-bottom: 16px;
+}
+
+.ItemSliderTop .swiper-slide img {
+  height: 100%;
+  width: auto;
+}
+@media screen and (min-width: 768px) {
+  .ItemSliderTop {
+    width: 356px;
+    height: 287px;
+  }
+}
+
+@media screen and (min-width: 1366px) and (min-height: 1080px) {
+  .ItemSliderTop {
+    width: 770px;
+    height: 621px;
+  }
+}

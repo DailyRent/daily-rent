@@ -1,0 +1,27 @@
+.ItemSliderBottom {
+  width: 328px;
+  height: 95px;
+}
+
+.ItemSliderBottom .swiper-slide {
+  /* width: 104px; */
+  height: 95px;
+}
+
+.ItemSliderBottom .swiper-slide img {
+  height: auto;
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .ItemSliderBottom {
+    width: 356px;
+  }
+}
+
+@media screen and (min-width: 1366px) and (min-height: 1080px) {
+  .ItemSliderBottom {
+    width: 770px;
+    height: 218px;
+  }
+}
