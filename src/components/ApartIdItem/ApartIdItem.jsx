@@ -1,9 +1,10 @@
-import OrderBtn from '../OrderBtn/OrderBtn';
-import IsLoading from '../share/IsLoading/IsLoading';
-import Amenities from './Amenities/Amenities';
-import ApartDataList from './ApartDataList/ApartDataList';
-import styles from './ApartIdItem.module.scss';
-import ApartIdSlider from './ApartIdSlider/ApartIdSlider';
+import OrderBtn from "../OrderBtn/OrderBtn";
+import IsLoading from "../share/IsLoading/IsLoading";
+import Amenities from "./Amenities/Amenities";
+import ApartDataList from "./ApartDataList/ApartDataList";
+import styles from "./ApartIdItem.module.scss";
+import ApartIdSlider from "./ApartIdSlider/ApartIdSlider";
+import ItemSlider from "./ItemSlider/ItemSlider";
 // import ApartStar from './ApartStar/ApartStar';
 
 const ApartIdItem = ({ dataId, error, isLoading }) => {
@@ -16,7 +17,7 @@ const ApartIdItem = ({ dataId, error, isLoading }) => {
         <IsLoading />
       ) : (
         <div className={styles.apartContent}>
-          <ApartIdSlider dataId={dataId} />
+          <ItemSlider dataId={dataId} />
           <div className={styles.content}>
             <ApartDataList dataId={dataId} />
             <div className={styles.arrow}></div>
