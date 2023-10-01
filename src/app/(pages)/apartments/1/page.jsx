@@ -18,6 +18,7 @@ const OneRooms = () => {
 
   const records = roomsData?.slice(firstIndex, lastIndex);
   const npage = roomsData ? Math.ceil(roomsData?.length / recordsPerPage) : 0;
+
   const numbers = [...Array(npage + 1).keys()].slice(1);
 
   return (
