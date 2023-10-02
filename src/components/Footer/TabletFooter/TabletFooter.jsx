@@ -16,64 +16,71 @@ import Support from "./Support/Support";
 import styles from "./TabletFooter.module.scss";
 
 const TabletFooter = () => {
-    const [isModalOpen, setModalOpen] = useState(false);
+  const [isModalOpen, setModalOpen] = useState(false);
 
-    const closeModal = () => {
-        setModalOpen(false);
-    };
+  const closeModal = () => {
+    setModalOpen(false);
+  };
 
-    const openModal = () => {
-        setModalOpen(true);
-    };
+  const openModal = () => {
+    setModalOpen(true);
+  };
 
-    return (
-        <footer className={styles.container}>
-            <div className={styles.tabletLinksWrapper}>
-                <p>Зв’яжіться з нами</p> <SocialLinks />
+  return (
+    <footer className={styles.container}>
+      <div className={styles.tabletLinksWrapper}>
+        <p>Зв’яжіться з нами</p> <SocialLinks />
+      </div>
+
+      <Logo className={styles.footerLogo} />
+
+      <div className={styles.contentWrapper}>
+        <div className={styles.leftContentWrapper}>
+          <p className={styles.leftContentText}>
+            Lorem ipsum dolor sit amet consectetur. Semper senectus nunc non
+            aenean interdum sit sit. Ultrices habitasse massa pellentesque
+            semper.
+          </p>
+          <div className={styles.contacts}>
+            <Link href="tel:+3803579608">+3803579608</Link>
+            <Link href="tel:+3803579608">+3803579608</Link>
+            <Link href="mailto:BoomRoom@gmail.com">BoomRoom@gmail.com</Link>
+          </div>
+        </div>
+        <div className={styles.rightContentWrapper}>
+          <div className={styles.navWrapper}>
+            <div className={styles.navWrapperContent}>
+              <Navigation className={styles.FooterNavigation} />
+              <CallBtn className={styles.navWrapperBtn} />
             </div>
-
-            <Logo className={styles.footerLogo} />
-
-            <div className={styles.contentWrapper}>
-                <div className={styles.leftContentWrapper}>
-                    <p className={styles.leftContentText}>
-                        Lorem ipsum dolor sit amet consectetur. Semper senectus
-                        nunc non aenean interdum sit sit. Ultrices habitasse
-                        massa pellentesque semper.
-                    </p>
-                    <div className={styles.contacts}>
-                        <Link href='tel:+3803579608'>+3803579608</Link>
-                        <Link href='tel:+3803579608'>+3803579608</Link>
-                        <Link href='mailto:BoomRoom@gmail.com'>
-                            BoomRoom@gmail.com
-                        </Link>
-                    </div>
-                </div>
-                <div className={styles.rightContentWrapper}>
-                    <div className={styles.navWrapper}>
-                        <Navigation className={styles.FooterNavigation} />
-                        <Support />
-                    </div>
-                    <div className={styles.btnsWrapper}>
-                        <CallBtn />
-                        <OrderBtn openModal={openModal} />
-                    </div>
-                </div>
+            <div className={styles.navWrapperContent}>
+              <Support />
+              <OrderBtn
+                openModal={openModal}
+                className={styles.navWrapperBtn}
+              />
             </div>
-            <p className={styles.rights}>ⓒ Boom Room. All rights reserved.</p>
-            <Link
-                href='https://webevery.dev/'
-                target='_blank'
-                rel='noopener noreferrer'
-                className={styles.webevery}
-            >
-                webevery.dev
-            </Link>
-            <ModalR isOpen={isModalOpen} closeModal={closeModal}>
-                <OrderForm isOpen={isModalOpen} closeModal={closeModal} />
-            </ModalR>
-        </footer>
-    );
+          </div>
+          <div className={styles.btnsWrapper}>
+            <CallBtn />
+            <OrderBtn openModal={openModal} />
+          </div>
+        </div>
+      </div>
+      <p className={styles.rights}>ⓒ Boom Room. All rights reserved.</p>
+      <Link
+        href="https://webevery.dev/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={styles.webevery}
+      >
+        webevery.dev
+      </Link>
+      <ModalR isOpen={isModalOpen} closeModal={closeModal}>
+        <OrderForm isOpen={isModalOpen} closeModal={closeModal} />
+      </ModalR>
+    </footer>
+  );
 };
 
 export default TabletFooter;

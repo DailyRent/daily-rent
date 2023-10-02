@@ -19,16 +19,15 @@
 }
 
 .HomeSliderSwiper .div {
-  /* display: inline-block; */
   width: 196px;
   height: 218px;
-  /* background-color: blue; */
   position: relative;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .HomeSliderSwiper .div img {
-  width: auto !important;
+  object-fit: cover;
+  object-position: center;
 }
 
 .HomeSliderSwiper .slideDescr {
@@ -91,7 +90,7 @@
     height: 16px;
     width: 124px;
   }
-  .HomeSliderSwiper.swiper-button-prev {
+  .HomeSliderSwiper .swiper-button-prev {
     left: 20%;
   }
   .HomeSliderSwiper .swiper-button-next {
@@ -114,6 +113,13 @@
     height: 24px;
     flex-shrink: 0;
     font-size: 12px;
+  }
+
+  .HomeSliderSwiper .swiper-button-prev {
+    left: 30%;
+  }
+  .HomeSliderSwiper .swiper-button-next {
+    right: 30%;
   }
 
   .HomeSliderSwiper .swiper-pagination-bullet {

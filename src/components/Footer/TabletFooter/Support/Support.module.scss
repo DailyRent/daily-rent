@@ -5,4 +5,7 @@
   gap: 16px;
   color: $footerTextColor;
   width: max-content;
+  @media screen and (min-width: $desktop) {
+    gap: 32px;
+  }
 }

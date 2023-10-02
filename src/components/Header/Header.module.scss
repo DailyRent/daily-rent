@@ -32,11 +32,25 @@
       font-style: normal;
       font-weight: 400;
       line-height: normal;
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 4px;
+        text-decoration-color: rgba(36, 36, 36, 0.5);
+      }
     }
   }
   @media screen and (min-width: 960px) {
     gap: 40px;
   }
+}
+
+.activeLink {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  text-decoration-color: rgba(36, 36, 36, 0.5);
 }
 
 .leftLinks {
