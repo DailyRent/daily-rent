@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import ApartItem from "@/components/ApartItem/ApartItem";
 import PaginationPage from "@/components/share/Pagination/PaginationPage";
 import { PaginationContext } from "@/context/PaginationContext";
@@ -11,8 +11,23 @@ import Filter from "@/components/Filter/Filter";
 
 const ThreeRooms = () => {
   const { data, error, mutate, isLoading } = GetData();
+  const [amenitiesArr, setAmenitiesArr] = useState([]);
 
   const roomsData = data?.filter((item) => item.roomsQuantity === "3");
+  const filteredRoomsData = () => {
+    const filteredRooms = roomsData?.filter((room) => {
+      const amenities = room.amenities;
+      console.log(amenities);
+      const filteredAmenities = amenitiesArr.every((amenity) =>
+        amenities.includes(amenity)
+      );
+      console.log(filteredAmenities);
+
+      // room.amenities.includes();
+    });
+    console.log(filteredRooms);
+  };
+  filteredRoomsData();
 
   const { firstIndex, lastIndex, recordsPerPage } =
     useContext(PaginationContext);
@@ -24,7 +39,7 @@ const ThreeRooms = () => {
   return (
     <>
       {" "}
-      <Filter />
+      <Filter amenitiesArr={amenitiesArr} setAmenitiesArr={setAmenitiesArr} />
       {isLoading ? (
         <IsLoading />
       ) : (

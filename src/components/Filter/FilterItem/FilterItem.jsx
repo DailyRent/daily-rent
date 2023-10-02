@@ -4,11 +4,11 @@ import styles from "./FilterItem.module.scss";
 
 const FilterItem = ({
   id,
-  titleEN,
+  //   titleEN,
   titleUA,
   activeIndex,
   setActiveIndex,
-  amenitiesArr,
+  //   amenitiesArr,
   setAmenitiesArr,
 }) => {
   const [isChecked, setIsChecked] = useState(false);

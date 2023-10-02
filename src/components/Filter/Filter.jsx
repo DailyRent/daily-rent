@@ -5,12 +5,20 @@ import { amenities } from "@/data/amenities.data";
 import FilterItem from "./FilterItem/FilterItem";
 import { usePathname } from "next/navigation";
 
-const Filter = () => {
+const Filter = ({ amenitiesArr, setAmenitiesArr }) => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [checkedAmenity, setCheckedAmenity] = useState(false);
-  const [amenitiesArr, setAmenitiesArr] = useState([]);
-  //   const pathname = usePathname();
-  //   const numberOfRooms = Number(pathname.slice(-1));
+  //   const [checkedAmenity, setCheckedAmenity] = useState(false);
+  //   const [amenitiesArr, setAmenitiesArr] = useState([]);
+  const pathname = usePathname();
+  console.log(pathname);
+  const numberOfRooms = Number(pathname.slice(-1));
+  console.log(numberOfRooms);
+  const isClient = typeof window !== "undefined";
+  let string;
+  if (isClient) {
+    string = window.location.href.toString().slice(-1);
+  }
+  console.log(string);
 
   console.log(amenitiesArr);
 
@@ -40,7 +48,7 @@ const Filter = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.filterContainer}>
+      {/* <div className={styles.filterContainer}>
         {" "}
         <h3>Filter</h3>
         <button type="button" className={styles.filterButtonClose}>
@@ -48,7 +56,7 @@ const Filter = () => {
             <use href="/sprite.svg#icon-close"></use>
           </svg>
         </button>
-      </div>
+      </div> */}
 
       {/* <div className={styles.filterButtonsContainer}>
         <h4>Number of rooms</h4>
@@ -109,7 +117,7 @@ const Filter = () => {
         </ul>
       </div>
       <button type="submit" className={styles.filterButtonSearch}>
-        Шукати
+        Сховати фільтр
       </button>
     </div>
   );
