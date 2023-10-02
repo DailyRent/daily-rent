@@ -1,60 +1,60 @@
 @import url("https://fonts.googleapis.com/css2?family=Andika:wght@400;700&family=Crimson+Text:wght@400;700&family=Inter:wght@400;700&family=Jura:wght@500&display=swap");
 
 * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  transition-duration: 250ms;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    transition-duration: 250ms;
 }
 
 html,
 body {
-  max-width: 100vw;
-  min-height: 100vh;
-  overflow-x: hidden;
-  font-family: "Inter";
-  /* font-family: "Inter"; */
+    max-width: 100vw;
+    min-height: 100vh;
+    /* overflow-x: hidden; Викликає скрол при відкритій модалці! */
+    font-family: "Inter";
+    /* font-family: "Inter"; */
 }
 
 body,
 main,
 section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 main {
-  flex: 1;
+    flex: 1;
 }
 
 main,
 header,
 footer,
 section {
-  width: 100%;
+    width: 100%;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+    color: inherit;
+    text-decoration: none;
 }
 
 ul,
 ol {
-  list-style: none;
+    list-style: none;
 }
 
 .visuallyHidden {
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  border: 0;
-  padding: 0;
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  margin: -1px;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    margin: -1px;
 }
 
 /* :root {

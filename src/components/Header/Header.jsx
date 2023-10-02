@@ -42,21 +42,18 @@ const Header = () => {
     }
   }, [isClient]);
 
-  const headerBgClass =
-    (pathname === "/" && isClient && scrollY >= window.innerHeight - 50) ||
-    (pathname !== "/" && isClient)
-      ? styles.scrolledBg
-      : " ";
-
+  let headerBgClass;
   let leftLinksStyles;
   let logoStyles;
   if (
     (pathname === "/" && isClient && scrollY >= window.innerHeight - 50) ||
     pathname !== "/"
   ) {
+    headerBgClass = styles.scrolledBg;
     leftLinksStyles = " ";
     logoStyles = styles.headerLogo;
   } else {
+    headerBgClass = " ";
     leftLinksStyles = styles.leftLinkLight;
     logoStyles = styles.headerLogoLight;
   }

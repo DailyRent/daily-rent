@@ -1,9 +1,9 @@
 @import '../../../styles/variables';
 
 .propositionContainer {
-  margin-bottom: 56px;
+  margin-bottom: 24px;
   @media screen and (min-width: 1280px) {
-    margin-bottom: 88px;
+    margin-bottom: 40px;
   }
 }
 
@@ -24,8 +24,7 @@
 }
 
 .propositionList {
-  width: 279px;
-  height: 151px;
+  height: 150px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -36,10 +35,10 @@
   font-size: 16px;
   font-weight: 400;
   @media screen and (min-width: 1280px) {
-    height: 174px;
+    height: 250px;
     font-size: 20px;
     row-gap: 32px;
-    column-gap: 16px;
+    column-gap: 32px;
   }
 }
 
