@@ -1,23 +1,36 @@
-@import '@/styles/_variables';
+@import "../../../styles/_variables.scss";
 
+.dropdownDark,
 .dropdown {
   position: relative;
   z-index: 30;
   display: inline-block;
   color: $lightFontColor;
   margin-right: auto;
-    margin-left: 0;
-    // width: 64px;
-    // height: 20px;
-    @media screen and (min-width: $tablet) {
-        margin-right: 0;
-        margin-left: 20px;
-    
-        // width: 74px;
-        // height: 32px;
-        border-color: $darckFontColor;
-        color: $darckFontColor;
-      }
+  margin-left: 0;
+  // width: 64px;
+  // height: 20px;
+  @media screen and (min-width: $tablet) {
+    margin-right: 0;
+    margin-left: 20px;
+
+    // width: 74px;
+    // height: 32px;
+    border-color: $darckFontColor;
+    color: $darckFontColor;
+  }
+}
+.dropdownDark {
+  & .dropBtn {
+    border: 1px solid $darckFontColor;
+    color: $darckFontColor;
+  }
+  & .svg {
+    stroke: $darckFontColor;
+  }
+  & .label {
+    color: $darckFontColor;
+  }
 }
 
 .dropBtn {
@@ -58,7 +71,7 @@
     stroke: $darckFontColor;
     width: 16px;
     height: 16px;
-    }
+  }
 }
 
 .svgActive {
@@ -71,7 +84,6 @@
   left: 0;
   width: 64px;
   height: 20px;
-  
 
   display: flex;
   align-items: center;
@@ -82,10 +94,10 @@
   opacity: 0;
   @media screen and (min-width: $tablet) {
     bottom: -50px;
-    
+
     width: 74px;
     height: 32px;
-    }
+  }
 }
 
 .dropdownContentActive {
@@ -99,7 +111,7 @@
   border-color: transparent;
   outline: none;
   cursor: pointer;
-  color: $darckFontColor;
+  color: $lightFontColor;
   font-size: 12px;
   font-weight: 500;
   padding: 0;
@@ -107,6 +119,10 @@
   &:hover {
     color: $darckFontColor;
     font-size: 14px;
+  }
+
+  @media screen and (min-width: $tablet) {
+    color: $darckFontColor;
   }
 }
 
@@ -116,4 +132,3 @@
   visibility: hidden;
   position: absolute;
 }
-

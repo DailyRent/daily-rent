@@ -7,7 +7,9 @@ export const SiteProvider = ({ children }) => {
   const [state, setState] = useState(false);
   // console.log(state);
   const [language, setLanguage] = useState("en");
-  console.log(language);
+  // console.log(language);
+
+  const [scrollY, setScrollY] = useState(0);
 
   return (
     <SiteContext.Provider
@@ -16,6 +18,8 @@ export const SiteProvider = ({ children }) => {
         setState,
         language,
         setLanguage,
+        scrollY,
+        setScrollY,
       }}
     >
       {children}

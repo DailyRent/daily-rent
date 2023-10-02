@@ -4,6 +4,7 @@ import React from 'react';
 import styles from './page.module.scss';
 import ButtonToBack from '@/components/share/ButtonToBack/ButtonToBack';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 const ContactsPage = () => {
   const router = useRouter();
@@ -13,7 +14,12 @@ const ContactsPage = () => {
       <h1 className="visuallyHidden">Contacts Page</h1>
       <div className={styles.toBackContainer}>
         <ButtonToBack onGoBack={() => router.back()} />
-        <span className={styles.toBackText}>Головна /Контакти</span>
+        <span className={styles.toBackText}>
+          <Link href="/" className={styles.link}>
+            Головна
+          </Link>
+          /Контакти
+        </span>
       </div>
       <div className={styles.contactsMap}>
         <iframe

@@ -1,0 +1,55 @@
+@import '../../../styles/variables';
+
+.container {
+  width: 328px;
+  overflow: hidden;
+  margin-bottom: 36px;
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 0px;
+    width: 356px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 770px;
+  }
+}
+
+.imgContainer {
+  position: relative;
+  width: 328px;
+  height: 264px;
+  margin-bottom: 15px;
+  @media screen and (min-width: $tablet) {
+    width: 356px;
+    height: 287px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 770px;
+    height: 621px;
+  }
+}
+
+.img {
+  object-fit: cover;
+}
+
+.imgSliderContainer {
+  position: relative;
+  width: 104px;
+  height: 95px;
+  @media screen and (min-width: 1280px) {
+    width: 220px;
+    height: 218px;
+  }
+}
+
+.imgsList {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+  @media screen and (min-width: $tablet) {
+    column-gap: 22px;
+  }
+  @media screen and (min-width: 1280px) {
+    column-gap: 27px;
+  }
+}

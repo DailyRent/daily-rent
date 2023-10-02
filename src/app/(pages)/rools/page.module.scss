@@ -1,6 +1,123 @@
 @import "../../../styles/_variables.scss";
 
 .container {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 85px;
+  padding-bottom: 20px;
+  @media screen and (min-width: 744px) {
+    margin-top: 80px;
+  }
+}
+
+.toBackContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  column-gap: 13px;
+  padding-left: 16px;
+  margin-bottom: 22.5px;
+  @media screen and (min-width: 744px) {
+    padding-left: 32px;
+    margin-bottom: 37.5px;
+  }
+  @media screen and (min-width: 1444px) {
+    padding-left: 75px;
+    margin-bottom: 40px;
+  }
+}
+
+.toBackText {
+  width: max-content;
+  color: #636363;
+  font-family: Crimson Text;
+  font-size: 10px;
+  font-weight: 400;
+}
+
+.ruleListThumb {
+  margin: 0 auto;
+  @media screen and (min-width: 744px) {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  @media screen and (min-width: 1444px) {
+    padding-left: 75px;
+    padding-right: 75px;
+  }
+}
+.ruleList {
+  margin: 0 auto;
+
+  @media (min-width: 744px) {
     display: flex;
-    background-color: darkgreen;
+    flex-wrap: wrap;
+
+    margin-bottom: -24px;
+    margin-left: -32px;
+    @media (min-width: 1444px) {
+      margin-left: -30px;
+      margin-bottom: -40px;
+    }
+  }
+}
+.ruleItem {
+  width: 328px;
+  height: 213px;
+  padding: 36.5px 13px 36.5px 20px;
+  background-color: #bbb;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @media (min-width: 744px) {
+    flex-basis: calc(100% / 2 - 32px);
+    margin-left: 32px;
+  }
+  @media (min-width: 1444px) {
+    flex-basis: calc(100% / 3 - 30px);
+    margin-left: 30px;
+  }
+}
+.ruleItem + .ruleItem {
+  margin-top: 16px;
+  @media (min-width: 744px) {
+    margin-top: 0px;
+    margin-left: 32px;
+    margin-bottom: 24px;
+  }
+  @media (min-width: 1444px) {
+    margin-top: 0px;
+    margin-left: 30px;
+    margin-bottom: 40px;
+  }
+}
+.circleBlock {
+  background: #d9d9d9;
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  flex-shrink: 0;
+  margin-right: 40px;
+}
+
+.ruleItemName {
+  font-family: Crimson Text;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+@media (min-width: 1444px) {
+        font-size: 24px;
+    }
+}
+.ruleItemDescription {
+  font-family: Crimson Text;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 24px;
+@media (min-width: 1444px) {
+        font-size: 16px;
+    }
 }

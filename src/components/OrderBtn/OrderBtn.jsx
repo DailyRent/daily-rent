@@ -1,11 +1,15 @@
-import styles from "./OrderBtn.module.scss";
+import styles from './OrderBtn.module.scss';
 
-const OrderBtn = ({ openModal }) => {
-    return (
-        <button type='button' className={styles.button} onClick={openModal}>
-            Забронювати
-        </button>
-    );
+const OrderBtn = ({ openModal, className }) => {
+  return (
+    <button
+      type="button"
+      className={styles.button + ' ' + `${className}`}
+      onClick={openModal}
+    >
+      Забронювати
+    </button>
+  );
 };
 
 export default OrderBtn;
