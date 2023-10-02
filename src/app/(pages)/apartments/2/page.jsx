@@ -14,26 +14,25 @@ const TwoRooms = () => {
   const [amenitiesArr, setAmenitiesArr] = useState([]);
 
   const roomsData = data?.filter((item) => item.roomsQuantity === "2");
-  const filteredRoomsData = () => {
-    const filteredRooms = roomsData?.filter((room) => {
-      const amenities = room.amenities;
-      console.log(amenities);
-      const filteredAmenities = amenitiesArr.every((amenity) =>
-        amenities.includes(amenity)
-      );
-      console.log(filteredAmenities);
 
-      // room.amenities.includes();
-    });
-    console.log(filteredRooms);
-  };
-  filteredRoomsData();
+  const filteredRoomsData = roomsData?.filter((room) => {
+    const amenities = room.amenities;
+    console.log(amenities);
+    const filteredAmenities = amenitiesArr.every((amenity) =>
+      amenities.includes(amenity)
+    );
+    console.log(filteredAmenities);
+    return filteredAmenities;
+    // room.amenities.includes();
+  });
 
   const { firstIndex, lastIndex, recordsPerPage } =
     useContext(PaginationContext);
 
-  const records = roomsData?.slice(firstIndex, lastIndex);
-  const npage = roomsData ? Math.ceil(roomsData?.length / recordsPerPage) : 0;
+  const records = filteredRoomsData?.slice(firstIndex, lastIndex);
+  const npage = filteredRoomsData
+    ? Math.ceil(filteredRoomsData?.length / recordsPerPage)
+    : 0;
   const numbers = [...Array(npage + 1).keys()].slice(1);
   return (
     <>

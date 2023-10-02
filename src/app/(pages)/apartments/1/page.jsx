@@ -17,6 +17,7 @@ const OneRooms = () => {
     useContext(PaginationContext);
 
   const roomsData = data?.filter((item) => item.roomsQuantity === "1");
+
   const filteredRoomsData = roomsData?.filter((room) => {
     const amenities = room.amenities;
     console.log(amenities);
@@ -34,7 +35,7 @@ const OneRooms = () => {
 
   const records = filteredRoomsData?.slice(firstIndex, lastIndex);
   const npage = filteredRoomsData
-    ? Math.ceil(roomsData?.length / recordsPerPage)
+    ? Math.ceil(filteredRoomsData?.length / recordsPerPage)
     : 0;
 
   const numbers = [...Array(npage + 1).keys()].slice(1);
