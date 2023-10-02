@@ -19,6 +19,7 @@ const Amenities = ({ dataId }) => {
                 alt="Shower"
                 fill={true}
                 className={styles.imgSvg}
+                sizes="(min-width: 768px) 24px,"
               />
             </div>
             {amenity.titleUA}

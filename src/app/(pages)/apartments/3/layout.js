@@ -5,7 +5,6 @@ import { PaginationProvider } from "@/context/PaginationContext";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import styles from "./page.module.scss";
-import Filter from "@/components/Filter/Filter";
 
 export default function OneRoomsLayout({ children }) {
   const router = useRouter();
@@ -24,16 +23,15 @@ export default function OneRoomsLayout({ children }) {
             <Link href="/apartments" className={styles.link}>
               Апартаменти
             </Link>
-            / Трикімнатні
+            <Link href="/apartments/3" className={styles.link}>
+              / Трикімнатні
+            </Link>
           </p>
         </div>
         <ButtonFilter />
       </div>
       <PaginationProvider>
-        <div className={styles.apartContainer}>
-          <Filter checked3="checked" children={children} />
-          {children}
-        </div>
+        <div className={styles.apartContainer}>{children}</div>
       </PaginationProvider>
     </section>
   );

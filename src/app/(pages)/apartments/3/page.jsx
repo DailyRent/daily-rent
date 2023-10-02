@@ -1,17 +1,18 @@
-'use client';
+"use client";
 
-import React, { useContext } from 'react';
-import ApartItem from '@/components/ApartItem/ApartItem';
-import PaginationPage from '@/components/share/Pagination/PaginationPage';
-import { PaginationContext } from '@/context/PaginationContext';
-import styles from './page.module.scss';
-import { GetData } from '@/fetch/clientFetch';
-import IsLoading from '@/components/share/IsLoading/IsLoading';
+import React, { useContext } from "react";
+import ApartItem from "@/components/ApartItem/ApartItem";
+import PaginationPage from "@/components/share/Pagination/PaginationPage";
+import { PaginationContext } from "@/context/PaginationContext";
+import styles from "./page.module.scss";
+import { GetData } from "@/fetch/clientFetch";
+import IsLoading from "@/components/share/IsLoading/IsLoading";
+import Filter from "@/components/Filter/Filter";
 
 const ThreeRooms = () => {
-  const { data, error, isLoading } = GetData();
+  const { data, error, mutate, isLoading } = GetData();
 
-  const roomsData = data?.filter((item) => item.roomsQuantity === '3');
+  const roomsData = data?.filter((item) => item.roomsQuantity === "3");
 
   const { firstIndex, lastIndex, recordsPerPage } =
     useContext(PaginationContext);
@@ -22,6 +23,8 @@ const ThreeRooms = () => {
 
   return (
     <>
+      {" "}
+      <Filter />
       {isLoading ? (
         <IsLoading />
       ) : (

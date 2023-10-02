@@ -36,62 +36,65 @@
   align-items: center;
 }
 
-.filterNumberRoomsList {
-  display: flex;
-  justify-content: space-between;
-}
+// .filterNumberRoomsList {
+//   display: flex;
+//   justify-content: space-between;
+// }
 
 .filterAmenitisContainer {
   display: flex;
   justify-content: space-between;
 }
 
-.filterInputCheckbox {
-  position: relative;
-  appearance: none;
-  width: 24px;
-  height: 10px;
-  background: #d1d1d6;
-  border-radius: 50px;
+// .filterInputCheckbox {
+//   position: relative;
+//   appearance: none;
+//   width: 24px;
+//   height: 10px;
+//   background: #d1d1d6;
+//   border-radius: 50px;
 
-  cursor: pointer;
-  transition: 0.4s;
+//   cursor: pointer;
+//   transition: 0.4s;
 
-  &::after {
-    position: absolute;
-    content: "";
-    top: -3px;
-    left: -3px;
-    width: 16px;
-    height: 16px;
-    background: #fff;
-    border-radius: 50%;
-    box-shadow: 0px 2px 8px 0px #00000029;
-    transition: 0.4s;
-  }
-}
+//   &::after {
+//     position: absolute;
+//     content: "";
+//     top: -3px;
+//     left: -3px;
+//     width: 16px;
+//     height: 16px;
+//     background: #fff;
+//     border-radius: 50%;
+//     box-shadow: 0px 2px 8px 0px #00000029;
+//     transition: 0.4s;
+//   }
+// }
 
-.filterInputCheckbox__Checked {
-  position: relative;
-  appearance: none;
-  width: 24px;
-  height: 10px;
-  border-radius: 50px;
+// .filterInputCheckbox__Checked {
+//   position: relative;
+//   appearance: none;
+//   width: 24px;
+//   height: 10px;
+//   border-radius: 50px;
 
-  cursor: pointer;
-  transition: 0.4s;
-  background: #373737;
+//   cursor: pointer;
+//   transition: 0.4s;
+//   background: #373737;
 
-  &::after {
-    position: absolute;
-    top: -3px;
-    left: 50%;
-    content: "";
-    width: 16px;
-    height: 16px;
-    background: #fff;
-    border-radius: 50%;
-    box-shadow: 0px 2px 8px 0px #00000029;
-    transition: 0.4s;
-  }
+//   &::after {
+//     position: absolute;
+//     top: -3px;
+//     left: 50%;
+//     content: "";
+//     width: 16px;
+//     height: 16px;
+//     background: #fff;
+//     border-radius: 50%;
+//     box-shadow: 0px 2px 8px 0px #00000029;
+//     transition: 0.4s;
+//   }
+// }
+
+.filterButtonSearch {
 }
