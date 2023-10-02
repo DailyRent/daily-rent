@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 
 import OrderBtn from "@/components/OrderBtn/OrderBtn";
 import CallBtn from "@/components/CallBtn/CallBtn";
@@ -19,16 +18,14 @@ import styles from "./TabletFooter.module.scss";
 const TabletFooter = () => {
     const [isModalOpen, setModalOpen] = useState(false);
 
-    const router = useRouter();
-
     const closeModal = () => {
         setModalOpen(false);
     };
 
     const openModal = () => {
-        router.replace("/", { scroll: false });
         setModalOpen(true);
     };
+
     return (
         <footer className={styles.container}>
             <div className={styles.tabletLinksWrapper}>

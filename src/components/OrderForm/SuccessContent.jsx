@@ -11,7 +11,10 @@ const SuccessContent = ({ closeModal }) => {
                     Наш менеджер зв’яжеться з вами в найближчий час.
                 </p>
             </div>
-            <button onClick={closeModal} className={styles.button}>
+            <button
+                onClick={closeModal}
+                className={`${styles.button} ${styles.activeBtn}`}
+            >
                 Закрити
             </button>
         </div>
