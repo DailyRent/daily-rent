@@ -26,7 +26,7 @@ const ItemSlider = ({ dataId }) => {
   const images = dataId?.imgs;
 
   const item = images.map((item) => {
-    console.log(item);
+    // console.log(item);
     return (
       <SwiperSlide key={v4()}>
         <Image src={item} alt="Flat image" fill={true} />
