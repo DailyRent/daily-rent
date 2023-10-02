@@ -8,8 +8,8 @@
 }
 
 .ItemSliderTop .swiper-slide img {
-  height: 100%;
-  width: auto;
+  object-fit: cover;
+  object-position: center;
 }
 
 .ItemSliderTop .swiper-button-prev,

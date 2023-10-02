@@ -19,16 +19,15 @@
 }
 
 .HomeSliderSwiper .div {
-  /* display: inline-block; */
   width: 196px;
   height: 218px;
-  /* background-color: blue; */
   position: relative;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .HomeSliderSwiper .div img {
-  width: auto !important;
+  object-fit: cover;
+  object-position: center;
 }
 
 .HomeSliderSwiper .slideDescr {
