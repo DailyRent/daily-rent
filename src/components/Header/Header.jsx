@@ -13,6 +13,7 @@ import { SiteContext } from "@/context/SiteContext";
 
 const Header = () => {
   const session = useSession();
+  const pathname = usePathname();
 
   // console.log(window.innerHeight);
   // console.log(window.innerHeight - 10);
@@ -20,7 +21,6 @@ const Header = () => {
   const [burgerMenu, setBurgerMenu] = useState(false);
   // const [scrollY, setScrollY] = useState(0); // Track scroll position
   const { scrollY, setScrollY } = useContext(SiteContext);
-  const pathname = usePathname();
 
   const isClient = typeof window !== "undefined";
 
@@ -61,17 +61,33 @@ const Header = () => {
   return (
     <header className={`${styles.container} ${headerBgClass}`}>
       <div className={styles.leftLinks}>
-        <Link href={"/apartments"} className={leftLinksStyles}>
+        <Link
+          href={"/apartments"}
+          className={pathname === "/apartments" ? styles.activeLink : " "}
+        >
           Апартаменти
         </Link>
-        <Link href={"/documents"} className={leftLinksStyles}>
+        <Link
+          href={"/documents"}
+          className={pathname === "/documents" ? styles.activeLink : " "}
+        >
           Документи
         </Link>
       </div>
       <Logo className={logoStyles} isClient={isClient} />
       <div className={styles.rightLinks}>
-        <Link href={"/rools"}>Правила</Link>
-        <Link href={"/contacts"}>Контакти</Link>
+        <Link
+          href={"/rools"}
+          className={pathname === "/rools" ? styles.activeLink : " "}
+        >
+          Правила
+        </Link>
+        <Link
+          href={"/contacts"}
+          className={pathname === "/contacts" ? styles.activeLink : " "}
+        >
+          Контакти
+        </Link>
       </div>
       <TranslatorBtnBlock isClient={isClient} />
       {session.status === "authenticated" && (
