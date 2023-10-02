@@ -9,7 +9,6 @@ const OrderForm = ({ isOpen, closeModal }) => {
     const [objNumber, setObjNumber] = useState("");
     const [dateEnter, setDateEnter] = useState(null);
     const [dateExit, setDateExit] = useState(null);
-    // const [startDate, setStartDate] = useState(new Date());
 
     const [dirtyUserName, setDirtyUserName] = useState(false);
     const [dirtyPhone, setDirtyPhone] = useState(false);
@@ -90,22 +89,6 @@ const OrderForm = ({ isOpen, closeModal }) => {
         }
         if (value.length === 0) setErrorObjNumber("Заповніть це поле");
     };
-
-    // const validateEnterDate = (value) => {
-    //     if (value.length === 0) {
-    //         setErrorDateEnter("Заповніть це поле");
-    //     } else {
-    //         setErrorDateEnter("");
-    //     }
-    // };
-
-    // const validateExitDate = (value) => {
-    //     if (value.length === 0) {
-    //         setErrorDateExit("Заповніть це поле");
-    //     } else {
-    //         setErrorDateExit("");
-    //     }
-    // };
 
     const validateDate = (value, setError) => {
         if (value.length === 0) {
