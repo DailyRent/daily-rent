@@ -16,19 +16,21 @@ const ApartItem = ({
   return (
     <>
       <li className={styles.oneRooms}>
-        <div className={styles.imgContainer}>
-          <Image
-            src={titleImg}
-            alt="apartament"
-            fill={true}
-            className={styles.img}
-            priority
-            sizes="(max-width: 768px) 324px, (max-width: 1440px) 300px"
-          />
-          <span className={styles.codeImg}>{objNumber}</span>
-        </div>
+        <Link href={`/apartments/${roomsQuantity}/${id}`}>
+          <div className={styles.imgContainer}>
+            <Image
+              src={titleImg}
+              alt="apartament"
+              fill={true}
+              className={styles.img}
+              priority
+              sizes="(max-width: 768px) 324px, (max-width: 1440px) 300px"
+            />
+            <span className={styles.codeImg}>{objNumber}</span>
+          </div>
+        </Link>
         <p className={styles.addressRooms}>{address}</p>
-        <p className={styles.priceRooms}>{price}$ нічь</p>
+        <p className={styles.priceRooms}>{price}₴ нічь</p>
         {/* <span className={styles.codeRooms}>{objNumber}</span> */}
         <Link
           href={`/apartments/${roomsQuantity}/${id}`}

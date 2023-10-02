@@ -4,10 +4,11 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   position: relative;
   row-gap: 24px;
-  @media screen and (min-width: 1280px) {
-    // row-gap: 24px;
+  @media screen and (min-width: $tablet) {
+    align-items: flex-start;
   }
 }
 
@@ -20,6 +21,15 @@
   align-items: center;
   @media screen and (min-width: 1280px) {
     font-size: 24px;
+  }
+  &:first-child {
+    width: max-content;
+  }
+  &:not(:last-child) {
+    width: 264px;
+    @media screen and (min-width: 1280px) {
+      width: 436px;
+    }
   }
 }
 
@@ -56,17 +66,18 @@
 }
 
 .svgPrise {
-  width: 16px;
-  height: 16px;
-  fill: none;
-  stroke: $acentColor;
+  width: 14px;
+  height: 14px;
+  fill: $acentColor;
+  stroke: fill;
+  // stroke: $acentColor;
   @media screen and (min-width: $tablet) {
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
   }
   @media screen and (min-width: 1280px) {
-    width: 32px;
-    height: 32px;
+    width: 24px;
+    height: 24px;
   }
 }
 

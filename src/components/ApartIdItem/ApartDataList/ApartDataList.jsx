@@ -10,16 +10,19 @@ const ApartDataList = ({ dataId }) => {
         {dataId.objNumber}
       </span>
       <span className={styles.dataText}>
-        <svg className={styles.svgMap}>
-          <use href="/sprite.svg#icon-map-pin" />
-        </svg>
+        <a href={dataId?.googleMapLocation} target="_blank">
+          <svg className={styles.svgMap}>
+            <use href="/sprite.svg#icon-map-pin" />
+          </svg>
+        </a>
+
         {dataId.address}
       </span>
       <span className={styles.dataText + ' ' + styles.dataTextPrice}>
-        <svg className={styles.svgPrise}>
-          <use href="/sprite.svg#icon-dollar-sign" />
-        </svg>
-        {dataId.price} / Night
+        {/* <svg className={styles.svgPrise}>
+          <use href="/sprite.svg#icon-UAN" />
+        </svg> */}
+        ₴ {dataId.price} / Night
       </span>
     </div>
   );
