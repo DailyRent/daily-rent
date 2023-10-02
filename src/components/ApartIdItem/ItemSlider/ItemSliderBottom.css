@@ -22,10 +22,17 @@
 
 @media screen and (min-width: 1366px) {
   .ItemSliderBottom {
-    width: 770px;
-    height: 218px;
+    width: 600px;
+    height: 150px;
   }
   .ItemSliderBottom .swiper-slide {
+    height: 218px;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .ItemSliderBottom {
+    width: 770px;
     height: 218px;
   }
 }

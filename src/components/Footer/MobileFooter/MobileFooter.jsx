@@ -25,6 +25,14 @@ const MobileFooter = () => {
       <Link href="mailto:BoomRoom@gmail.com" className={styles.email}>
         BoomRoom@gmail.com
       </Link>
+      <Link
+        href="https://webevery.dev/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={styles.webevery}
+      >
+        webevery.dev
+      </Link>
     </footer>
   );
 };

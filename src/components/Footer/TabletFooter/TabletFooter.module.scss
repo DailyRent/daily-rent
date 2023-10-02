@@ -13,7 +13,7 @@
     display: flex;
   }
   @media screen and (min-width: $desktop) {
-    padding: 48px 75px 42px;
+    padding: 48px 75px 8px;
   }
 }
 
@@ -74,6 +74,9 @@
   flex-direction: column;
   justify-content: space-between;
   color: $footerLocationColor;
+  & a {
+    width: fit-content;
+  }
 }
 
 .rightContentWrapper {
@@ -97,44 +100,58 @@
   }
 }
 
+.navWrapperContent {
+  display: flex;
+  height: 200px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  .navWrapperBtn {
+    font-size: 14px;
+    display: flex;
+    width: 128px;
+    padding: 8px 0px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 24px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    height: fit-content;
+    & .navWrapperBtn {
+      display: none;
+    }
+  }
+}
+
 .FooterNavigation {
   display: flex;
   flex-direction: column;
   gap: 16px;
   color: $footerTextColor;
-}
-
-.nav {
-  flex-direction: column;
-  & a {
-    color: red;
+  @media screen and (min-width: $desktop) {
+    gap: 32px;
   }
 }
 
 .btnsWrapper {
   width: 100%;
-  display: flex;
-  justify-content: space-around;
-  margin-left: -12px;
+  justify-content: space-between;
+  display: none;
+
   @media screen and (min-width: $desktop) {
+    display: flex;
     flex-direction: column;
     gap: 32px;
     align-items: flex-end;
     & a,
     & button {
-      // display: flex;
+      font-size: 16px;
       width: 183px;
       padding: 16px 40px;
-      justify-content: center;
-      align-items: center;
-      gap: 24px;
-      border-radius: 36px;
     }
   }
-}
-
-.bookBtn {
-  margin-left: -48px;
 }
 
 .rights {
@@ -149,7 +166,6 @@
 .webevery {
   width: 100vw;
   text-align: center;
-  margin-top: -20px;
   padding: 8px;
   border-top: 1px solid rgb(84, 84, 84, 0.14);
 }
