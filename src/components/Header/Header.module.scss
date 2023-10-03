@@ -11,10 +11,12 @@
   @media screen and (min-width: $tablet) {
     padding: 12px 48px;
   }
+
   @media screen and (min-width: $desktop) {
     padding: 24px 75px;
   }
 }
+
 .scrolledBg {
   background-color: $lightFontColor;
 }
@@ -27,11 +29,13 @@
     display: flex;
     gap: 20px;
     z-index: 1;
+
     & a {
       font-size: 16px;
       font-style: normal;
       font-weight: 400;
       line-height: normal;
+
       &:hover,
       &:focus {
         text-decoration: underline;
@@ -41,6 +45,7 @@
       }
     }
   }
+
   @media screen and (min-width: 960px) {
     gap: 40px;
   }
@@ -69,14 +74,22 @@
   color: $darckFontColor;
 }
 
+.logoutBtn {
+  margin-left: 20px;
+  padding: 5px;
+  z-index: 20;
+}
+
 .headerLogoLight,
 .headerLogo {
   width: 100%;
   position: absolute;
   margin-left: -16px;
+
   @media screen and (min-width: $tablet) {
     margin-left: -48px;
   }
+
   @media screen and (min-width: $desktop) {
     margin-left: -75px;
   }
@@ -131,6 +144,7 @@
   padding-bottom: 20px;
   background-color: $lightFontColor;
 }
+
 .qwe {
   background-color: aqua;
   border: 2px solid red;
@@ -140,14 +154,17 @@
 .iconBurger {
   width: 22px;
   height: 12px;
+
   @media screen and (min-width: $mobile) {
     width: 40px;
     height: 24px;
   }
 }
+
 .iconBurgerDark {
   fill: $darckFontColor;
 }
+
 .iconBurger {
   fill: $lightFontColor;
 }
@@ -162,9 +179,11 @@
     height: 32px;
   }
 }
+
 .iconCloseDark {
   stroke: $darckFontColor;
 }
+
 .iconClose {
   stroke: $lightFontColor;
 }
