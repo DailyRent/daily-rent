@@ -5,9 +5,31 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 30px;
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
+
+  height: 215px;
+
+  opacity: 1;
+  overflow: auto;
+
+  transition: height 0.5s linear, opacity 0.5s linear;
+
   //   position: absolute;
   //   top: 40px;
+}
+
+.container__hidden {
+  margin-top: 0;
+  margin-bottom: 0;
+  transition: height 0.5s linear, opacity 0.5s linear;
+
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  border: 0;
 }
 .filterContainer {
   display: flex;
@@ -36,6 +58,12 @@
   align-items: center;
 }
 
+.filterButtonsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 // .filterNumberRoomsList {
 //   display: flex;
 //   justify-content: space-between;
@@ -44,6 +72,8 @@
 .filterAmenitisContainer {
   display: flex;
   justify-content: space-between;
+  max-width: 753px;
+  flex-wrap: wrap;
 }
 
 // .filterInputCheckbox {
@@ -97,4 +127,22 @@
 // }
 
 .filterButtonSearch {
+  padding: 10px 30px;
+  color: #373737;
+  font-size: 14px;
+  font-family: Segoe UI;
+  font-weight: 400;
+  word-wrap: break-word;
+
+  border-radius: 24px;
+  border: 1px #373737 solid;
+
+  background-color: inherit;
+
+  margin-top: 24px;
+
+  &:hover,
+  &:focus {
+    background-color: #eee;
+  }
 }

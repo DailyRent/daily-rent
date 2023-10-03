@@ -1,26 +1,28 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { SiteContext } from "@/context/SiteContext";
 import styles from "./Filter.module.scss";
 import { amenities } from "@/data/amenities.data";
 import FilterItem from "./FilterItem/FilterItem";
-import { usePathname } from "next/navigation";
+// import { usePathname } from "next/navigation";
 
 const Filter = ({ amenitiesArr, setAmenitiesArr }) => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const { filterShown, setFilterShown } = useContext(SiteContext);
   //   const [checkedAmenity, setCheckedAmenity] = useState(false);
   //   const [amenitiesArr, setAmenitiesArr] = useState([]);
-  const pathname = usePathname();
-  console.log(pathname);
-  const numberOfRooms = Number(pathname.slice(-1));
-  console.log(numberOfRooms);
-  const isClient = typeof window !== "undefined";
-  let string;
-  if (isClient) {
-    string = window.location.href.toString().slice(-1);
-  }
-  console.log(string);
+  //   const pathname = usePathname();
+  //   console.log(pathname);
+  //   const numberOfRooms = Number(pathname.slice(-1));
+  //   console.log(numberOfRooms);
+  //   const isClient = typeof window !== "undefined";
+  //   let string;
+  //   if (isClient) {
+  //     string = window.location.href.toString().slice(-1);
+  //   }
+  //   console.log(string);
 
-  console.log(amenitiesArr);
+  //   console.log(amenitiesArr);
 
   //   const isRoomsNumber = () => {
   //     switch (numberOfRooms) {
@@ -45,9 +47,12 @@ const Filter = ({ amenitiesArr, setAmenitiesArr }) => {
   //   const handleChangeAmenity = () => {
   //     setCheckedAmenity(!checkedAmenity);
   //   };
+  const isFilterShown = filterShown
+    ? styles.container
+    : styles.container__hidden;
 
   return (
-    <div className={styles.container}>
+    <div className={isFilterShown}>
       {/* <div className={styles.filterContainer}>
         {" "}
         <h3>Filter</h3>
@@ -99,7 +104,7 @@ const Filter = ({ amenitiesArr, setAmenitiesArr }) => {
       <div className={styles.filterButtonsContainer}>
         {/* <h4>Amenities</h4> */}
         <ul className={styles.filterAmenitisContainer}>
-          {console.log(amenitiesArr)}
+          {/* {console.log(amenitiesArr)} */}
           {amenities.map((item) => {
             return (
               <FilterItem
@@ -116,7 +121,11 @@ const Filter = ({ amenitiesArr, setAmenitiesArr }) => {
           })}
         </ul>
       </div>
-      <button type="submit" className={styles.filterButtonSearch}>
+      <button
+        type="button"
+        className={styles.filterButtonSearch}
+        onClick={() => setFilterShown(!filterShown)}
+      >
         Сховати фільтр
       </button>
     </div>
