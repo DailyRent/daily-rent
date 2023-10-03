@@ -3,23 +3,23 @@ import { v4 } from "uuid";
 export const navigationData = [
   {
     id: v4(),
-    title: "Apartments",
+    title: "Апартаменти",
     path: "/apartments",
   },
 
   {
     id: v4(),
-    title: "Documents",
+    title: "Документи",
     path: "/documents",
   },
   {
     id: v4(),
-    title: "Rules",
+    title: "Правила",
     path: "/rools",
   },
   {
     id: v4(),
-    title: "Contacts",
+    title: "Контакти",
     path: "/contacts",
   },
   {

@@ -135,3 +135,36 @@
   background-color: aqua;
   border: 2px solid red;
 }
+
+.iconBurgerDark,
+.iconBurger {
+  width: 22px;
+  height: 12px;
+  @media screen and (min-width: $mobile) {
+    width: 40px;
+    height: 24px;
+  }
+}
+.iconBurgerDark {
+  fill: $darckFontColor;
+}
+.iconBurger {
+  fill: $lightFontColor;
+}
+
+.iconCloseDark,
+.iconClose {
+  width: 20px;
+  height: 20px;
+
+  @media screen and (min-width: $mobile) {
+    width: 32px;
+    height: 32px;
+  }
+}
+.iconCloseDark {
+  stroke: $darckFontColor;
+}
+.iconClose {
+  stroke: $lightFontColor;
+}
