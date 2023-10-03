@@ -3,6 +3,11 @@
 import React, { useEffect, useState } from "react";
 import styles from "./HomeSlider.module.scss";
 
+import Link from "next/link";
+import Image from "next/image";
+import { GetData } from "@/fetch/clientFetch";
+import Loading from "@/app/loading";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
@@ -14,9 +19,6 @@ import "./HomeSlider.css";
 
 // import required modules
 import { Pagination, Navigation, Autoplay, Mousewheel } from "swiper/modules";
-import Link from "next/link";
-import Image from "next/image";
-import { GetData } from "@/fetch/clientFetch";
 
 const HomeSlider = () => {
   const { data, error, isLoading } = GetData();
@@ -64,7 +66,7 @@ const HomeSlider = () => {
       <p className={styles.sliderText}>Lorem ipsum</p>
       <h2 className={styles.sliderTitle}>Lorem ipsum</h2>
       {isLoading ? (
-        <p className={styles.isLoading}>Loading...</p>
+        <Loading className={styles.sliderLoader} />
       ) : (
         <Swiper
           slidesPerView={slidesPerView}
