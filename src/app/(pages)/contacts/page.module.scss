@@ -26,6 +26,12 @@
   font-weight: 400;
 }
 
+.link {
+  &:hover {
+    color: #cd5d12;
+  }
+}
+
 .contactsMap {
   width: 100vw;
   height: 427px;
@@ -33,7 +39,7 @@
   position: relative;
   border: none;
   margin-top: 24px;
-  filter: grayscale(100%) invert(88%) contrast(100%);
+  filter: grayscale(100%) invert(85%) contrast(100%);
 
   & iframe {
     left: 0;

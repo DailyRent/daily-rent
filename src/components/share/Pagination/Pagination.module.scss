@@ -13,8 +13,8 @@
 }
 
 .pageLinkDot {
-  width: 12px;
-  height: 12px;
+  width: 8px;
+  height: 8px;
   background-color: #c7c7c7;
   border-radius: 50%;
   border: none;
@@ -23,12 +23,20 @@
   display: flex;
   align-items: center;
   column-gap: 16px;
+  @media screen and (min-width: $tablet) {
+    width: 12px;
+    height: 12px;
+  }
 }
 
 .active {
-  width: 16px;
-  height: 16px;
+  width: 12px;
+  height: 12px;
   background-color: #7d7d7d;
+  @media screen and (min-width: $tablet) {
+    width: 16px;
+    height: 16px;
+  }
 }
 
 .pageDot {
@@ -43,39 +51,55 @@
 
 .svgArrow {
   position: relative;
-  width: 124px;
+  width: 52px;
   height: 1px;
-  background-color: #373737;
+  background-color: $acentColor;
+  @media screen and (min-width: $tablet) {
+    width: 124px;
+  }
 }
 
 .arrowLeft {
-  margin-right: 100px;
+  margin-right: 55px;
   &::after {
     content: '';
     position: absolute;
     top: -3px;
     left: 0;
-    border: solid #373737;
+    border: solid $acentColor;
     border-width: 1px 0 0 1px;
     display: block;
     padding: 3px;
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
   }
+  @media screen and (min-width: $tablet) {
+    margin-right: 152px;
+  }
+  @media screen and (min-width: $desktop) {
+    margin-right: 100px;
+  }
 }
 
 .arrowRight {
-  margin-left: 100px;
+  margin-left: 55px;
   &::after {
     content: '';
     position: absolute;
     top: -3px;
     right: 0;
-    border: solid #373737;
+    border: solid $acentColor;
     border-width: 1px 0 0 1px;
     display: block;
     padding: 3px;
     transform: rotate(135deg);
     -webkit-transform: rotate(135deg);
+  }
+
+  @media screen and (min-width: $tablet) {
+    margin-left: 152px;
+  }
+  @media screen and (min-width: $desktop) {
+    margin-left: 100px;
   }
 }

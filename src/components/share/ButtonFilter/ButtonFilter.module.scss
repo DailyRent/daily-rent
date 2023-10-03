@@ -1,13 +1,40 @@
 @import '../../../styles/variables';
+.filterContainer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  @media screen and (min-width: $tablet) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-5%, -50%);
+  }
+}
 
 .filterBtnContainer {
   background-color: transparent;
   border: none;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  column-gap: 16px;
+  &:hover > .filterSvg {
+    stroke: #cd5d12;
+  }
+  &:hover > .filter {
+    color: #cd5d12;
+  }
 }
 
 .filterSvg {
   width: 24px;
   height: 24px;
-  stroke: #373737;
+  stroke: $acentColor;
+}
+
+.filter {
+  color: $acentColor;
+  font-family: Crimson Text;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
 }

@@ -3,7 +3,7 @@ import CallBtn from "../CallBtn/CallBtn";
 import Logo from "../Logo/Logo";
 import styles from "./Hero.module.scss";
 
-const Hero = () => {
+const Hero = async () => {
   return (
     <section className={styles.container}>
       <div className={styles.bgContainer}></div>

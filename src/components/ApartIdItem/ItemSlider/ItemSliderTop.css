@@ -1,0 +1,124 @@
+.ItemSliderTop {
+  width: 328px;
+  height: 264px;
+  margin-bottom: 16px;
+}
+.ItemSliderTop .swiper-wrapper {
+  margin-bottom: 16px;
+}
+
+.ItemSliderTop .swiper-slide img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.ItemSliderTop .swiper-button-prev,
+.ItemSliderTop .swiper-button-next {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 80px;
+  height: 12px;
+  color: transparent;
+  bottom: 24px;
+  top: auto;
+}
+.ItemSliderTop .swiper-button-prev::after,
+.ItemSliderTop .swiper-button-next::after {
+  width: 100%;
+}
+.ItemSliderTop .swiper-button-prev {
+  background-image: url("../../../../public/png/ArrowLeftItemSl.webp");
+  left: 16px;
+}
+.ItemSliderTop .swiper-button-next {
+  background-image: url("../../../../public/png/ArrowRightItemSl.webp");
+  right: 16px;
+}
+
+.ItemSliderTop .swiper-pagination {
+  bottom: 24px;
+}
+
+.ItemSliderTop .swiper-pagination-bullet {
+  background-color: white;
+  width: 12px;
+  height: 12px;
+}
+
+.ItemSliderTop .swiper-pagination-bullet-active-prev,
+.ItemSliderTop .swiper-pagination-bullet-active-next {
+  opacity: 0.6;
+}
+
+@media screen and (min-width: 768px) {
+  .ItemSliderTop {
+    width: 356px;
+    height: 287px;
+  }
+
+  .ItemSliderTop .swiper-button-prev {
+    left: 28px;
+  }
+  .ItemSliderTop .swiper-button-next {
+    right: 28px;
+  }
+}
+
+@media screen and (min-width: 1366px) {
+  .ItemSliderTop {
+    width: 600px;
+    height: 440px;
+  }
+
+  .ItemSliderTop .swiper-button-prev,
+  .ItemSliderTop .swiper-button-next {
+    width: 124px;
+    height: 24px;
+    bottom: 48px;
+  }
+  .ItemSliderTop .swiper-button-prev {
+    left: 70px;
+  }
+  .ItemSliderTop .swiper-button-next {
+    right: 70px;
+  }
+
+  .ItemSliderTop .swiper-pagination {
+    bottom: 48px;
+  }
+  .ItemSliderTop .swiper-pagination-bullet {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .ItemSliderTop {
+    width: 770px;
+    height: 621px;
+  }
+
+  .ItemSliderTop .swiper-button-prev,
+  .ItemSliderTop .swiper-button-next {
+    width: 124px;
+    height: 24px;
+    bottom: 72px;
+  }
+  .ItemSliderTop .swiper-button-prev {
+    left: 70px;
+  }
+  .ItemSliderTop .swiper-button-next {
+    right: 70px;
+  }
+
+  .ItemSliderTop .swiper-pagination {
+    bottom: 72px;
+  }
+  .ItemSliderTop .swiper-pagination-bullet {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* and (min-height: 1080px) */

@@ -2,24 +2,21 @@
 
 import React from "react";
 import styles from "./BurgerBtn.module.scss";
-import { usePathname } from "next/navigation";
 
-const BurgerBtn = ({ onClick, burgerMenu }) => {
-  const pathname = usePathname();
+const BurgerBtn = ({
+  onClick,
+  burgerMenu,
+  iconCloseStyles,
+  iconBurgerStyles,
+}) => {
   return (
     <button className={styles.burgerBtn} onClick={onClick}>
       {burgerMenu ? (
-        <svg
-          className={pathname === "/" ? styles.iconClose : styles.iconCloseDark}
-        >
+        <svg className={iconCloseStyles}>
           <use href="/sprite.svg#icon-close" />
         </svg>
       ) : (
-        <svg
-          className={
-            pathname === "/" ? styles.iconBurger : styles.iconBurgerDark
-          }
-        >
+        <svg className={iconBurgerStyles}>
           <use href="/sprite.svg#icon-burger-mobile" />
         </svg>
       )}

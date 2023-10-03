@@ -1,9 +1,5 @@
 @import '../../styles/_variables.scss';
 
-// .container {
-//     display: flex;
-// }
-
 .oneRooms {
   position: relative;
   display: flex;
@@ -35,10 +31,10 @@
   left: 0;
   width: 169px;
   text-align: center;
-  color: #fff;
+  color: $lightFontColor;
   font-size: 13px;
   font-weight: 700;
-  background-color: #373737;
+  background-color: $acentColor;
 }
 
 .addressRooms {
@@ -46,17 +42,26 @@
   font-family: Playfair Display;
   font-size: 16px;
   font-weight: 400;
+  // text-overflow: ellipsis;
+  width: 300px;
+  height: 40px;
+  // white-space: wrap;
+  // white-space: nowrap;
+  // overflow: hidden;
+  &:hover {
+    white-space: wrap;
+  }
 }
 
 .priceRooms {
-  color: #373737;
+  color: $acentColor;
   font-family: Crimson Text;
   font-size: 20px;
   font-weight: 400;
 }
 
 .codeRooms {
-  color: #373737;
+  color: $acentColor;
   // font-family: Segoe UI;
   font-size: 13px;
   font-weight: 400;
@@ -74,8 +79,8 @@
   cursor: pointer;
   outline: none;
   border-radius: 24px;
-  border: 1px solid #373737;
-  color: #373737;
+  border: 1px solid $acentColor;
+  color: $acentColor;
   // font-family: Segoe UI;
   font-size: 14px;
   font-weight: 400;

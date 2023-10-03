@@ -1,0 +1,94 @@
+@import '../../../styles/variables';
+
+.dataList {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  row-gap: 24px;
+  @media screen and (min-width: $tablet) {
+    align-items: flex-start;
+  }
+}
+
+.dataText {
+  color: #3c3c3c;
+  font-family: Crimson Text;
+  font-size: 16px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  @media screen and (min-width: 1280px) {
+    font-size: 24px;
+  }
+  &:first-child {
+    width: max-content;
+  }
+  &:not(:last-child) {
+    width: 264px;
+    @media screen and (min-width: 1280px) {
+      width: 436px;
+    }
+  }
+}
+
+.svgHash {
+  width: 16px;
+  height: 26px;
+  margin-right: 16px;
+  @media screen and (min-width: $tablet) {
+    width: 20px;
+    height: 20px;
+  }
+  @media screen and (min-width: 1280px) {
+    margin-right: 24px;
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.svgMap {
+  width: 16px;
+  height: 16px;
+  stroke: #6d6d6d;
+  fill: none;
+  margin-right: 16px;
+  @media screen and (min-width: $tablet) {
+    width: 20px;
+    height: 20px;
+  }
+  @media screen and (min-width: 1280px) {
+    margin-right: 24px;
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.svgPrise {
+  width: 14px;
+  height: 14px;
+  fill: $acentColor;
+  stroke: fill;
+  // stroke: $acentColor;
+  @media screen and (min-width: $tablet) {
+    width: 16px;
+    height: 16px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.dataTextPrice {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: $acentColor;
+  font-size: 20px;
+  @media screen and (min-width: 1280px) {
+    position: static;
+    font-size: 32px;
+  }
+}

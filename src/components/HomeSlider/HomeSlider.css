@@ -19,16 +19,15 @@
 }
 
 .HomeSliderSwiper .div {
-  /* display: inline-block; */
   width: 196px;
   height: 218px;
-  /* background-color: blue; */
   position: relative;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .HomeSliderSwiper .div img {
-  width: auto !important;
+  object-fit: cover;
+  object-position: center;
 }
 
 .HomeSliderSwiper .slideDescr {
@@ -48,13 +47,9 @@
   font-weight: 700;
   line-height: normal;
 }
-.swiper-button-prev,
-.swiper-button-next {
-  bottom: 0;
-  top: auto;
-}
-.swiper-button-prev,
-.swiper-button-next {
+
+.HomeSliderSwiper .swiper-button-prev,
+.HomeSliderSwiper .swiper-button-next {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -65,36 +60,40 @@
   top: auto;
 }
 
-.swiper-button-prev::after,
-.swiper-button-next::after {
+.HomeSliderSwiper .swiper-button-prev::after,
+.HomeSliderSwiper .swiper-button-next::after {
   width: 100%;
 }
 
-.swiper-button-prev {
+.HomeSliderSwiper .swiper-button-prev {
   background-image: url("../../../public/png/ArrowLeft.webp");
   left: 10%;
 }
-.swiper-button-next {
+.HomeSliderSwiper .swiper-button-next {
   background-image: url("../../../public/png/ArrowRight.webp");
   right: 10%;
 }
 
-.swiper-pagination-bullet {
+.HomeSliderSwiper .swiper-pagination-bullet {
   background-color: #7d7d7d;
   width: 12px;
   height: 12px;
 }
+.HomeSliderSwiper .swiper-pagination-bullet-active-prev,
+.HomeSliderSwiper .swiper-pagination-bullet-active-next {
+  opacity: 0.6;
+}
 
 @media screen and (min-width: 768px) {
-  .swiper-button-prev,
-  .swiper-button-next {
+  .HomeSliderSwiper .swiper-button-prev,
+  .HomeSliderSwiper .swiper-button-next {
     height: 16px;
     width: 124px;
   }
-  .swiper-button-prev {
+  .HomeSliderSwiper .swiper-button-prev {
     left: 20%;
   }
-  .swiper-button-next {
+  .HomeSliderSwiper .swiper-button-next {
     right: 20%;
   }
 }
@@ -107,7 +106,6 @@
   .HomeSliderSwiper .div {
     width: 300px;
     height: 333px;
-    background-color: blue;
   }
 
   .HomeSliderSwiper .slideDescr {
@@ -117,7 +115,14 @@
     font-size: 12px;
   }
 
-  .swiper-pagination-bullet {
+  .HomeSliderSwiper .swiper-button-prev {
+    left: 30%;
+  }
+  .HomeSliderSwiper .swiper-button-next {
+    right: 30%;
+  }
+
+  .HomeSliderSwiper .swiper-pagination-bullet {
     width: 16px;
     height: 16px;
   }

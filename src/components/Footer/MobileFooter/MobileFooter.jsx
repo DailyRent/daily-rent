@@ -22,8 +22,16 @@ const MobileFooter = () => {
         </div>
       </div>
       <SocialLinks />
-      <Link href="mailto:BoomRoom@gmail.com" className={styles.email}>
-        BoomRoom@gmail.com
+      <Link href="mailto:dailyrent4@gmail.com" className={styles.email}>
+        dailyrent4@gmail.com
+      </Link>
+      <Link
+        href="https://webevery.dev/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={styles.webevery}
+      >
+        webevery.dev
       </Link>
     </footer>
   );
