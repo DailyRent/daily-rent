@@ -1,9 +1,16 @@
+@import "../../../../../styles/_variables.scss";
+
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
+    display: none;
+
+    @media screen and (min-width: $desktop) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        padding-top: 80px;
+    }
 }
 
 .form {

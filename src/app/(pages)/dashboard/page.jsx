@@ -5,10 +5,12 @@ import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import useSWR from 'swr';
 import Image from 'next/image';
+import Link from 'next/link';
 
 
 const Dashboard = () => {
     const session = useSession();
+    console.log("Dashboard session", session)
     const [roomsQuantityValue, setRoomsQuantityValue] = useState("");
     const [amenitiesValues, setAmenitiesValues] = useState([]);
 
@@ -49,6 +51,7 @@ const Dashboard = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        console.log("handleSubmit was started");
         console.log("e.target", e.target);
         const objNumber = e.target[0].value;
         const top = e.target[1].value;
@@ -57,14 +60,14 @@ const Dashboard = () => {
         const address = e.target[4].value;
         const flatNumber = e.target[5].value;
         const googleMapLocation = e.target[6].value;
-        const price = e.target[11].value;
+        const price = e.target[7].value;
         const roomsQuantity = roomsQuantityValue;
         const bookingUrl = e.target[12].value;
         const amenities = amenitiesValues;
-        const description = e.target[14].value;
+        const description = e.target[25].value;
 
         try {
-            await fetch("/api/apartment", {
+            await fetch("/api/apartments", {
                 method: "POST",
                 body: JSON.stringify({
                     objNumber,
@@ -83,10 +86,33 @@ const Dashboard = () => {
             })
             // автоматически обновляет страницу при изменении кол-ва карточек
             mutate();
+            // обнуляет все поля формы
+            // e.target.reset();
         } catch (err) {
             console.log(err);
         }
     }
+
+    const handleDelete = async (id) => {
+        try {
+            await fetch(`/api/apartment/${id}`, { method: "DELETE" });
+            // автоматически обновляет страницу при изменении кол-ва карточек
+            mutate();
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    // меняет значение value на true или false в зависимости от checked
+    function checkboxSwitchForTop(e) {
+        if (e.target.checked) {
+            e.target.value = true;
+        }
+        else {
+            e.target.value = false;
+        }
+    }
+
 
     if (session.status === "authenticated" && session.data.user.email === process.env.NEXT_PUBLIC_ADMIN) {
 
@@ -96,34 +122,37 @@ const Dashboard = () => {
                     ? <p>Loading...</p>
                     : data?.map(apart => (
                         <div key={apart._id} className={styles.apartment}>
-                            <h2>Обʼєкт №: {apart.objNumber}</h2>
-                            <p>Топ: {apart.top ? "Так" : "Ні"}</p>
-                            <p>Основне фото:</p>
-                            <div className={styles.imgContainer}>
-                                <Image src={apart.titleImg} alt={apart.address} fill={true} />
+                            <div className={styles.contentWrapper}>
+                                <h2>Обʼєкт №: {apart.objNumber}</h2>
+                                <p>Топ: {apart.top ? "Так" : "Ні"}</p>
+                                <p>Основне фото:</p>
+                                <div className={styles.imgContainer}>
+                                    <Image src={apart.titleImg} alt={apart.address} fill={true} />
+                                </div>
+                                <p>Додаткові фото:</p>
+                                <ul className={styles.imgsWrapper}>{apart.imgs.map((item, index) => (<li className={styles.imgsCont} key={index}>
+                                    <Image
+                                        src={item}
+                                        alt="Interior photo"
+                                        fill={true}
+                                    />
+                                </li>)
+                                )}</ul>
+                                <p>Адреса: {apart.address}</p>
+                                <p>Квартира: {apart.flatNumber}</p>
+                                <p>Місцезнаходження: {apart.googleMapLocation}</p>
+                                <p>Ціна: {apart.price}</p>
+                                <p>Кількість кімнат: {apart.roomsQuantity}</p>
+                                <p className={styles.platformLink}>BookingUrl: {apart.bookingUrl}</p>
+                                <ul>Додатковий комфорт: {apart.amenities.map((item, index) => (<li key={index}>{item}</li>))}
+                                </ul>
+                                <p>Опис: {apart.description}</p>
                             </div>
-                            <p>Додаткові фото:</p>
-                            <ul className={styles.imgsWrapper}>{apart.imgs.map((item, index) => (<li className={styles.imgsCont} key={index}>
-                                <Image
-                                    src={item}
-                                    alt="Interior photo"
-                                    fill={true}
-                                />
-                            </li>)
-                            )}</ul>
-                            <p>Адреса: {apart.address}</p>
-                            <p>Квартира: {apart.flatNumber}</p>
-                            <p>Місцезнаходження: {apart.googleMapLocation}</p>
-                            <p>Ціна: {apart.price}</p>
-                            <p>Кількість кімнат: {apart.roomsQuantity}</p>
-                            <p className={styles.platformLink}>BookingUrl: {apart.bookingUrl}</p>
-                            <ul>Додатковий комфорт: {apart.amenities.map((item, index) => (<li key={index}>{item}</li>))}
-                            </ul>
-                            <p>Опис: {apart.description}</p>
 
-                            <span className={styles.delete}
-                            // onClick={() => handleDelete(card._id)}
-                            >X</span>
+                            <div className={styles.btnsWrapper}>
+                                <Link href={`/dashboard/${apart._id}`}>Редагувати</Link>
+                                <span className={styles.delete} onClick={() => handleDelete(apart._id)}>X</span>
+                            </div>
                         </div>))}
             </div>
 
@@ -131,7 +160,7 @@ const Dashboard = () => {
                 <h1>Додавання нового обʼєкту</h1>
                 <input type='text' placeholder="Номер обʼєкту" className={styles.input} />
                 <label htmlFor="Top" className={styles.top}>
-                    <input type="checkbox" id="Top" name="Top" value="Top" />Топ
+                    <input type="checkbox" id="Top" name="Top" onChange={checkboxSwitchForTop} />Топ
                 </label>
                 <input type='text' placeholder='Основне фото' className={styles.input} />
                 <input type='text' placeholder='Додаткові фото' className={styles.input} />
