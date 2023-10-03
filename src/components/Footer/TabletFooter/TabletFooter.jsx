@@ -42,32 +42,22 @@ const TabletFooter = () => {
             semper.
           </p>
           <div className={styles.contacts}>
+            <Link href="mailto:dailyrent4@gmail.com">dailyrent4@gmail.com</Link>
             <Link href="tel:+3803579608">+3803579608</Link>
             <Link href="tel:+3803579608">+3803579608</Link>
-            <Link href="mailto:BoomRoom@gmail.com">BoomRoom@gmail.com</Link>
           </div>
         </div>
         <div className={styles.rightContentWrapper}>
-          <div className={styles.navWrapper}>
-            <div className={styles.navWrapperContent}>
-              <Navigation className={styles.FooterNavigation} />
-              <CallBtn className={styles.navWrapperBtn} />
-            </div>
-            <div className={styles.navWrapperContent}>
-              <Support />
-              <OrderBtn
-                openModal={openModal}
-                className={styles.navWrapperBtn}
-              />
-            </div>
-          </div>
+          {/* <div className={styles.navWrapper}> */}
+          <Navigation className={styles.FooterNavigation} />
+          {/* </div> */}
           <div className={styles.btnsWrapper}>
             <CallBtn />
             <OrderBtn openModal={openModal} />
           </div>
         </div>
       </div>
-      <p className={styles.rights}>ⓒ Boom Room. All rights reserved.</p>
+      <p className={styles.rights}>ⓒ DailyRent. All rights reserved.</p>
       <Link
         href="https://webevery.dev/"
         target="_blank"
