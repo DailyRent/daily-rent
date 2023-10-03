@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './page.module.scss';
 import Image from 'next/image';
-import Link from 'next/link';
+// import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import UpdatingForm from '@/components/UpdatingForm/UpdatingForm';
 
@@ -21,6 +21,7 @@ async function getDataById(id) {
 const EditCard = async ({ params }) => {
     const { id } = params;
     const apart = await getDataById(id);
+
 
     return <div className={styles.container}>
         <div key={apart._id} className={styles.apartment}>

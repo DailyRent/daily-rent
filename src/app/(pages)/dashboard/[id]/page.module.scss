@@ -1,8 +1,13 @@
 @import "../../../../styles/_variables.scss";
 
 .container {
-    display: flex;
-    gap: 100px;
+    display: none;
+
+    @media screen and (min-width: $desktop) {
+        display: flex;
+        gap: 100px;
+        padding-top: 80px;
+    }
 }
 
 .apartment {

@@ -11,6 +11,7 @@
   @media screen and (min-width: $tablet) {
     padding: 28px 48px;
   }
+
   @media screen and (min-width: $desktop) {
     padding: 24px 75px;
   }
@@ -24,6 +25,7 @@
     display: flex;
     gap: 20px;
     z-index: 1;
+
     & a {
       font-size: 16px;
       font-style: normal;
@@ -31,6 +33,7 @@
       line-height: normal;
     }
   }
+
   @media screen and (min-width: 960px) {
     gap: 40px;
   }
@@ -52,14 +55,27 @@
   color: $darckFontColor;
 }
 
+.logoutBtn {
+  display: none;
+
+  @media screen and (min-width: $desktop) {
+    display: block;
+    margin-left: 20px;
+    padding: 5px;
+    z-index: 20;
+  }
+}
+
 .headerLogoLight,
 .headerLogo {
   width: 100%;
   position: absolute;
   margin-left: -16px;
+
   @media screen and (min-width: $tablet) {
     margin-left: -48px;
   }
+
   @media screen and (min-width: $desktop) {
     margin-left: -75px;
   }
@@ -67,6 +83,7 @@
 
 .headerLogoLight {
   color: $lightFontColor;
+
   & span {
     color: initial;
   }

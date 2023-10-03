@@ -48,7 +48,9 @@ const Header = () => {
 
       <LangSwitcher />
 
-      {session.status === "authenticated" && <button onClick={signOut}>Logout</button>}
+      {session.status === "authenticated" && <button className={styles.logoutBtn} onClick={signOut}>Logout</button>}
+
+
 
       <BurgerBtn
         onClick={() => {

@@ -10,6 +10,7 @@ import Link from 'next/link';
 
 const Dashboard = () => {
     const session = useSession();
+    console.log("Dashboard session", session)
     const [roomsQuantityValue, setRoomsQuantityValue] = useState("");
     const [amenitiesValues, setAmenitiesValues] = useState([]);
 
@@ -149,7 +150,7 @@ const Dashboard = () => {
                             </div>
 
                             <div className={styles.btnsWrapper}>
-                                <Link href={`/dashboard/${apart._id}`}>Edit Card</Link>
+                                <Link href={`/dashboard/${apart._id}`}>Редагувати</Link>
                                 <span className={styles.delete} onClick={() => handleDelete(apart._id)}>X</span>
                             </div>
                         </div>))}
