@@ -47,3 +47,15 @@
     transition: 0.4s;
   }
 }
+
+.filterItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 18px;
+  margin-right: 25px;
+}
+
+.filterCheckboxTitle {
+  margin-right: 16px;
+}

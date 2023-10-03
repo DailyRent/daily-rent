@@ -20,18 +20,18 @@ const OneRooms = () => {
 
   const filteredRoomsData = roomsData?.filter((room) => {
     const amenities = room.amenities;
-    console.log(amenities);
+    // console.log(amenities);
     const filteredAmenities = amenitiesArr.every((amenity) =>
       amenities.includes(amenity)
     );
-    console.log(filteredAmenities);
+    // console.log(filteredAmenities);
     return filteredAmenities;
     // room.amenities.includes();
   });
   // console.log(filteredRooms);
 
   // filteredRoomsData();
-  console.log(filteredRoomsData);
+  // console.log(filteredRoomsData);
 
   const records = filteredRoomsData?.slice(firstIndex, lastIndex);
   const npage = filteredRoomsData
@@ -43,7 +43,7 @@ const OneRooms = () => {
   return (
     <>
       <Filter amenitiesArr={amenitiesArr} setAmenitiesArr={setAmenitiesArr} />
-      {console.log(amenitiesArr)}
+      {/* {console.log(amenitiesArr)} */}
       {isLoading ? (
         <IsLoading />
       ) : (

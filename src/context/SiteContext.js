@@ -11,6 +11,8 @@ export const SiteProvider = ({ children }) => {
 
   const [scrollY, setScrollY] = useState(0);
 
+  const [filterShown, setFilterShown] = useState(true);
+
   return (
     <SiteContext.Provider
       value={{
@@ -20,6 +22,8 @@ export const SiteProvider = ({ children }) => {
         setLanguage,
         scrollY,
         setScrollY,
+        filterShown,
+        setFilterShown,
       }}
     >
       {children}
@@ -32,7 +36,7 @@ export const SiteProvider = ({ children }) => {
 //
 // "use client";
 
-// import { SiteContext } from "@/siteContext/SiteContext";
+// import { SiteContext } from "@/context/SiteContext";
 // import React, { useContext } from "react";
 // import styles from "./Button.module.scss";
 

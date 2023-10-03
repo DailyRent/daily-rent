@@ -17,12 +17,12 @@ const TwoRooms = () => {
 
   const filteredRoomsData = roomsData?.filter((room) => {
     const amenities = room.amenities;
-    console.log(amenities);
+    // console.log(amenities);
     const filteredAmenities = amenitiesArr.every((amenity) =>
       amenities.includes(amenity)
     );
     console.log(filteredAmenities);
-    return filteredAmenities;
+    // return filteredAmenities;
     // room.amenities.includes();
   });
 
