@@ -1,10 +1,10 @@
-'use client';
-import ButtonFilter from '@/components/share/ButtonFilter/ButtonFilter';
-import ButtonToBack from '@/components/share/ButtonToBack/ButtonToBack';
-import { PaginationProvider } from '@/context/PaginationContext';
-import Link from 'next/link';
-import { useRouter } from 'next/navigation';
-import styles from './page.module.scss';
+"use client";
+import ButtonFilter from "@/components/share/ButtonFilter/ButtonFilter";
+import ButtonToBack from "@/components/share/ButtonToBack/ButtonToBack";
+import { PaginationProvider } from "@/context/PaginationContext";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import styles from "./page.module.scss";
 
 export default function OneRoomsLayout({ children }) {
   const router = useRouter();

@@ -1,26 +1,42 @@
-'use client';
+"use client";
 
-import React, { useContext } from 'react';
-import ApartItem from '@/components/ApartItem/ApartItem';
-import PaginationPage from '@/components/share/Pagination/PaginationPage';
-import { PaginationContext } from '@/context/PaginationContext';
-import styles from './page.module.scss';
-import { GetData } from '@/fetch/clientFetch';
-import IsLoading from '@/components/share/IsLoading/IsLoading';
+import React, { useContext, useState } from "react";
+import ApartItem from "@/components/ApartItem/ApartItem";
+import PaginationPage from "@/components/share/Pagination/PaginationPage";
+import { PaginationContext } from "@/context/PaginationContext";
+import styles from "./page.module.scss";
+import { GetData } from "@/fetch/clientFetch";
+import IsLoading from "@/components/share/IsLoading/IsLoading";
+import Filter from "@/components/Filter/Filter";
 
 const TwoRooms = () => {
   const { data, error, isLoading } = GetData();
+  const [amenitiesArr, setAmenitiesArr] = useState([]);
 
-  const roomsData = data?.filter((item) => item.roomsQuantity === '2');
+  const roomsData = data?.filter((item) => item.roomsQuantity === "2");
+
+  const filteredRoomsData = roomsData?.filter((room) => {
+    const amenities = room.amenities;
+    console.log(amenities);
+    const filteredAmenities = amenitiesArr.every((amenity) =>
+      amenities.includes(amenity)
+    );
+    console.log(filteredAmenities);
+    return filteredAmenities;
+    // room.amenities.includes();
+  });
 
   const { firstIndex, lastIndex, recordsPerPage } =
     useContext(PaginationContext);
 
-  const records = roomsData?.slice(firstIndex, lastIndex);
-  const npage = roomsData ? Math.ceil(roomsData?.length / recordsPerPage) : 0;
+  const records = filteredRoomsData?.slice(firstIndex, lastIndex);
+  const npage = filteredRoomsData
+    ? Math.ceil(filteredRoomsData?.length / recordsPerPage)
+    : 0;
   const numbers = [...Array(npage + 1).keys()].slice(1);
   return (
     <>
+      <Filter amenitiesArr={amenitiesArr} setAmenitiesArr={setAmenitiesArr} />
       {isLoading ? (
         <IsLoading />
       ) : (
