@@ -1,15 +1,16 @@
-"use client";
+// "use client";
 import React from "react";
 import styles from "./page.module.scss";
-import ButtonToBack from "@/components/share/ButtonToBack/ButtonToBack";
-import { useRouter } from "next/navigation";
+// import ButtonToBack from "@/components/share/ButtonToBack/ButtonToBack";
+// import { useRouter } from "next/navigation";
 import Link from "next/link";
 
-const RoolsPage = () => {
-  const router = useRouter();
+
+const RulesPage = () => {
+  // const router = useRouter();
   return (
     <section className={styles.container}>
-      <h1 className="visuallyHidden">Rools Page</h1>
+      <h1 className="visuallyHidden">Rules Page</h1>
       <div className={styles.toBackContainer}>
         <span className={styles.toBackText}>
           <Link href="/" className={styles.link}>
@@ -92,4 +93,4 @@ const RoolsPage = () => {
   );
 };
 
-export default RoolsPage;
+export default RulesPage;

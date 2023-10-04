@@ -13,6 +13,9 @@ const TwoRooms = () => {
   const { data, error, isLoading } = GetData();
   const [amenitiesArr, setAmenitiesArr] = useState([]);
 
+  const { firstIndex, lastIndex, recordsPerPage } =
+    useContext(PaginationContext);
+
   const roomsData = data?.filter((item) => item.roomsQuantity === "2");
 
   const filteredRoomsData = roomsData?.filter((room) => {
@@ -21,13 +24,10 @@ const TwoRooms = () => {
     const filteredAmenities = amenitiesArr.every((amenity) =>
       amenities.includes(amenity)
     );
-    console.log(filteredAmenities);
-    // return filteredAmenities;
+    // console.log(filteredAmenities);
+    return filteredAmenities;
     // room.amenities.includes();
   });
-
-  const { firstIndex, lastIndex, recordsPerPage } =
-    useContext(PaginationContext);
 
   const records = filteredRoomsData?.slice(firstIndex, lastIndex);
   const npage = filteredRoomsData

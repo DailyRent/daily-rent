@@ -4,7 +4,7 @@ export const amenities = [
   {
     id: 1,
     titleEN: "Shower",
-    titleUA: "Душ",
+    titleUA: "Душова кабіна",
     img: "/png/Shower.png",
   },
   {
@@ -58,12 +58,12 @@ export const amenities = [
   {
     id: 10,
     titleEN: "Boiler",
-    titleUA: "Бойлер",
+    titleUA: "Котел",
     img: "/png/Boiler.png",
   },
   {
     id: 11,
-    titleEN: "waterHeater",
+    titleEN: "Water heater",
     titleUA: "Водонагрівач",
     img: "/png/Boiler.png",
   },
@@ -71,7 +71,7 @@ export const amenities = [
   {
     id: 12,
     titleEN: "Parking",
-    titleUA: "Паркінг",
+    titleUA: "Парковка",
     img: "/png/Parking.png",
   },
 ];
