@@ -86,8 +86,8 @@ const Header = () => {
       <Logo className={logoStyles} isClient={isClient} />
       <div className={styles.rightLinks}>
         <Link
-          href={"/rools"}
-          className={pathname === "/rools" ? styles.activeLink : " "}
+          href={"/rules"}
+          className={pathname === "/rules" ? styles.activeLink : " "}
         >
           Правила
         </Link>

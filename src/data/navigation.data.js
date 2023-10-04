@@ -15,7 +15,7 @@ export const navigationData = [
   {
     id: v4(),
     title: "Правила",
-    path: "/rools",
+    path: "/rules",
   },
   {
     id: v4(),
