@@ -28,6 +28,9 @@
   @media screen and (min-width: 1024px) {
     height: 930px;
   }
+  &:hover .img {
+    filter: none;
+  }
 }
 
 .imgContainer {
@@ -45,9 +48,6 @@
 .img {
   filter: grayscale(0%) brightness(44%);
   object-fit: cover;
-  &:hover {
-    filter: none;
-  }
 }
 
 .title {
@@ -55,7 +55,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 2;
+  // z-index: 2;
   color: #fff;
   font-size: 20px;
   font-style: normal;
