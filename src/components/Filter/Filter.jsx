@@ -46,6 +46,10 @@ const Filter = ({ amenitiesArr, setAmenitiesArr }) => {
 
   //   const handleChangeAmenity = () => {
   //     setCheckedAmenity(!checkedAmenity);
+
+  //   const handleResetFilter = () => {
+  //     setAmenitiesArr([]);
+  //   };
   //   };
   const isFilterShown = filterShown
     ? styles.container
@@ -121,6 +125,8 @@ const Filter = ({ amenitiesArr, setAmenitiesArr }) => {
           })}
         </ul>
       </div>
+      {/* <div className={styles.filterSearchResetContainer}> */}
+
       <button
         type="button"
         className={styles.filterButtonSearch}
@@ -128,6 +134,14 @@ const Filter = ({ amenitiesArr, setAmenitiesArr }) => {
       >
         Сховати фільтр
       </button>
+      {/* <button
+          type="button"
+          className={styles.filterButtonSearch}
+          onClick={() => handleResetFilter()}
+        >
+          Очистити фільтр
+        </button> */}
+      {/* </div> */}
     </div>
   );
 };
