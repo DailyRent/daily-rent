@@ -10,7 +10,7 @@ import Link from 'next/link';
 
 const Dashboard = () => {
     const session = useSession();
-    console.log("Dashboard session", session)
+    // console.log("Dashboard session", session)
     const [roomsQuantityValue, setRoomsQuantityValue] = useState("");
     const [amenitiesValues, setAmenitiesValues] = useState([]);
 
@@ -64,7 +64,7 @@ const Dashboard = () => {
         const roomsQuantity = roomsQuantityValue;
         const bookingUrl = e.target[12].value;
         const amenities = amenitiesValues;
-        const description = e.target[25].value;
+        const description = e.target[26].value;
 
         try {
             await fetch("/api/apartments", {
@@ -95,7 +95,7 @@ const Dashboard = () => {
 
     const handleDelete = async (id) => {
         try {
-            await fetch(`/api/apartment/${id}`, { method: "DELETE" });
+            await fetch(`/api/apartments/${id}`, { method: "DELETE" });
             // автоматически обновляет страницу при изменении кол-ва карточек
             mutate();
         } catch (error) {
@@ -183,6 +183,10 @@ const Dashboard = () => {
                         <input type="checkbox" id="airCond" name="airCond" value="Кондиціонер" onChange={changeAmenities} />
                         Кондиціонер
                     </label>
+                    <label htmlFor="wifi">
+                        <input type="checkbox" id="wifi" name="wifi" value="Вайфай" onChange={changeAmenities} />
+                        Вайфай
+                    </label>
                     <label htmlFor="smartTV">
                         <input type="checkbox" id="smartTV" name="smartTV" value="СмартТВ" onChange={changeAmenities} />
                         СмартТВ
@@ -192,8 +196,8 @@ const Dashboard = () => {
                         Ванна
                     </label>
                     <label htmlFor="shower">
-                        <input type="checkbox" id="shower" name="shower" value="Душ" onChange={changeAmenities} />
-                        Душ
+                        <input type="checkbox" id="shower" name="shower" value="Душова кабіна" onChange={changeAmenities} />
+                        Душова кабіна
                     </label>
                     <label htmlFor="jacuzzi">
                         <input type="checkbox" id="jacuzzi" name="jacuzzi" value="Джакузі" onChange={changeAmenities} />
@@ -212,16 +216,16 @@ const Dashboard = () => {
                         Балкон
                     </label>
                     <label htmlFor="boiler">
-                        <input type="checkbox" id="boiler" name="boiler" value="Бойлер" onChange={changeAmenities} />
-                        Бойлер
+                        <input type="checkbox" id="boiler" name="boiler" value="Котел" onChange={changeAmenities} />
+                        Котел
                     </label>
                     <label htmlFor="waterHeater">
                         <input type="checkbox" id="waterHeater" name="waterHeater" value="Водонагрівач" onChange={changeAmenities} />
                         Водонагрівач
                     </label>
                     <label htmlFor="parking">
-                        <input type="checkbox" id="parking" name="parking" value="Паркінг" onChange={changeAmenities} />
-                        Паркінг
+                        <input type="checkbox" id="parking" name="parking" value="Парковка" onChange={changeAmenities} />
+                        Парковка
                     </label>
                 </fieldset>
                 <input type='text' placeholder='Опис' className={styles.input} />

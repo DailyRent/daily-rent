@@ -67,13 +67,13 @@ const UpdatingForm = ({ id, apart }) => {
             // onSubmit={handleSubmit}
             >
                 <h1>Редагування обʼєкту</h1>
-                <input type='text' placeholder="Номер обʼєкту" className={styles.input} value={newObjNumber} />
+                <input type='text' placeholder="Номер обʼєкту" className={styles.input} value={newObjNumber} readOnly />
                 <label htmlFor="Top" className={styles.top}>
                     <input
                         type="checkbox"
                         id="Top"
                         name="Top"
-                        onClick={checkboxSwitchForTop}
+                        onChange={checkboxSwitchForTop}
                         checked={newTop}
                     />Топ
                 </label>
@@ -107,6 +107,13 @@ const UpdatingForm = ({ id, apart }) => {
                         />
                         Кондиціонер
                     </label>
+                    <label htmlFor="wifi">
+                        <input type="checkbox" id="wifi" name="wifi" value="Вайфай"
+                            onChange={changeAmenities}
+                            checked={checkboxSwitchForAmenities}
+                        />
+                        Вайфай
+                    </label>
                     <label htmlFor="smartTV">
                         <input type="checkbox" id="smartTV" name="smartTV" value="СмартТВ"
                             onChange={changeAmenities}
@@ -122,11 +129,11 @@ const UpdatingForm = ({ id, apart }) => {
                         Ванна
                     </label>
                     <label htmlFor="shower">
-                        <input type="checkbox" id="shower" name="shower" value="Душ"
+                        <input type="checkbox" id="shower" name="shower" value="Душова кабіна"
                             onChange={changeAmenities}
                             checked={checkboxSwitchForAmenities}
                         />
-                        Душ
+                        Душова кабіна
                     </label>
                     <label htmlFor="jacuzzi">
                         <input type="checkbox" id="jacuzzi" name="jacuzzi" value="Джакузі"
@@ -157,11 +164,11 @@ const UpdatingForm = ({ id, apart }) => {
                         Балкон
                     </label>
                     <label htmlFor="boiler">
-                        <input type="checkbox" id="boiler" name="boiler" value="Бойлер"
+                        <input type="checkbox" id="boiler" name="boiler" value="Котел"
                             onChange={changeAmenities}
                             checked={checkboxSwitchForAmenities}
                         />
-                        Бойлер
+                        Котел
                     </label>
                     <label htmlFor="waterHeater">
                         <input type="checkbox" id="waterHeater" name="waterHeater" value="Водонагрівач"
@@ -171,11 +178,11 @@ const UpdatingForm = ({ id, apart }) => {
                         Водонагрівач
                     </label>
                     <label htmlFor="parking">
-                        <input type="checkbox" id="parking" name="parking" value="Паркінг"
+                        <input type="checkbox" id="parking" name="parking" value="Парковка"
                             onChange={changeAmenities}
                             checked={checkboxSwitchForAmenities}
                         />
-                        Паркінг
+                        Парковка
                     </label>
                 </fieldset>
                 <input type='text' placeholder='Опис' className={styles.input} value={newDescription} />

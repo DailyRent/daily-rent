@@ -26,7 +26,6 @@ const apartmentSchema = new Schema({
         type: String,
         required: true,
     },
-    // ??? насколько необходимо,и как видим его работу 
     googleMapLocation: {
         type: String,
         required: true,
@@ -35,7 +34,6 @@ const apartmentSchema = new Schema({
         type: String,
         required: true,
     },
-    // это можно реализовать на форме с помощью radio button
     roomsQuantity: {
         type: String,
         required: true,
@@ -48,17 +46,18 @@ const apartmentSchema = new Schema({
         type: Array,
     },
     // эти свойства будут заходить в amenities, благодаря checkbox
-    // airCond: bool,
-    // smartTV: bool,
-    // bath: bool,
-    // shower: bool,
-    // jacuzzi: bool,
-    // microwave: bool,
-    // washingMachine: bool,
-    // balcony: bool,
-    // boiler: bool,
-    // waterHeater: bool,
-    // parking: bool,
+    // Air conditioning: bool,
+    // SmartTV: bool,
+    // WiFi: bool,
+    // Bath: bool,
+    // Shower: bool,
+    // Jacuzzi: bool,
+    // Microwave: bool,
+    // Washing machine: bool,
+    // Balcony: bool,
+    // Boiler: bool,  -  котел
+    // Water heater: bool,
+    // Parking: bool,
 
     description: {
         type: String,
