@@ -1,31 +1,25 @@
-"use client";
-import ButtonFilter from "@/components/share/ButtonFilter/ButtonFilter";
-import ButtonToBack from "@/components/share/ButtonToBack/ButtonToBack";
-import { PaginationProvider } from "@/context/PaginationContext";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-import styles from "./page.module.scss";
+'use client';
+
+import Link from 'next/link';
+import { PaginationProvider } from '@/context/PaginationContext';
+import ButtonFilter from '@/components/share/ButtonFilter/ButtonFilter';
+// import ButtonToBack from "@/components/share/ButtonToBack/ButtonToBack";
+// import { useRouter } from "next/navigation";
+import styles from './page.module.scss';
 
 export default function OneRoomsLayout({ children }) {
-  const router = useRouter();
+  // const router = useRouter();
 
   return (
     <section className={styles.container}>
       <h1 className="visuallyHidden">OneRooms Appartments</h1>
       <div className={styles.oneRoomBox}>
         <div className={styles.backContainer}>
-          <ButtonToBack onGoBack={() => router.back()} />
-          <p className={styles.text}>
-            <Link href="/" className={styles.link}>
-              Головна
-            </Link>
-            /
-            <Link href="/apartments" className={styles.link}>
-              Апартаменти
-            </Link>
-            <Link href="/apartments/1" className={styles.link}>
-              / Однокімнатні
-            </Link>
+          {/* <ButtonToBack onGoBack={() => router.back()} /> */}
+          <p className="textLink">
+            <Link href="/">Головна</Link>/
+            <Link href="/apartments">Апартаменти</Link>
+            <Link href="/apartments/1">/ Однокімнатні</Link>
           </p>
         </div>
         <ButtonFilter />

@@ -4,7 +4,7 @@
   width: 100%;
   display: flex;
   padding: 37px 16px 40px 16px;
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 1366px) {
     padding: 42px 59px 48px 59px;
   }
 }
@@ -19,7 +19,7 @@
     align-items: flex-start;
     flex-direction: row;
   }
-  @media screen and (min-width: 1312px) {
+  @media screen and (min-width: 1366px) {
     column-gap: 80px;
   }
 }
@@ -33,7 +33,7 @@
   @media screen and (min-width: $tablet) {
     align-items: flex-start;
   }
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 1366px) {
     align-items: flex-start;
   }
 }
@@ -45,10 +45,10 @@
   background: #c7c7c7;
   margin-top: 16px;
   margin-bottom: 16px;
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 1366px) {
     width: 429px;
-    margin-top: 55px;
-    margin-bottom: 55px;
+    margin-top: 24px;
+    margin-bottom: 24px;
   }
 }
 
@@ -68,7 +68,7 @@
   @media screen and (min-width: $tablet) {
     width: 239px;
   }
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 1366px) {
     width: 436px;
   }
   &:hover,
@@ -86,42 +86,42 @@
   font-weight: 400;
   padding: 32px 0;
   text-align: justify;
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 1366px) {
     font-size: 24px;
     padding: 40px 0;
   }
 }
 
-.contactsMap {
-  width: 100vw;
-  height: 427px;
-  overflow: hidden;
-  position: relative;
-  border: none;
-  filter: grayscale(100%) invert(85%) contrast(100%);
+// .contactsMap {
+//   width: 100vw;
+//   height: 427px;
+//   overflow: hidden;
+//   position: relative;
+//   border: none;
+//   filter: grayscale(100%) invert(85%) contrast(100%);
 
-  & iframe {
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    border: none;
-    padding-left: 0px;
-    padding-right: 0px;
-    @media screen and (min-width: $tablet) {
-      padding-left: 32px;
-      padding-right: 32px;
-    }
-    @media screen and (min-width: 1280px) {
-      padding-left: 0px;
-      padding-right: 0px;
-    }
-  }
-  @media screen and (min-width: $tablet) {
-    height: 404px;
-  }
-  @media screen and (min-width: 1280px) {
-    height: 600px;
-  }
-}
+//   & iframe {
+//     left: 0;
+//     top: 0;
+//     height: 100%;
+//     width: 100%;
+//     position: absolute;
+//     border: none;
+//     padding-left: 0px;
+//     padding-right: 0px;
+//     @media screen and (min-width: $tablet) {
+//       padding-left: 32px;
+//       padding-right: 32px;
+//     }
+//     @media screen and (min-width: 1280px) {
+//       padding-left: 0px;
+//       padding-right: 0px;
+//     }
+//   }
+//   @media screen and (min-width: $tablet) {
+//     height: 404px;
+//   }
+//   @media screen and (min-width: 1280px) {
+//     height: 600px;
+//   }
+// }

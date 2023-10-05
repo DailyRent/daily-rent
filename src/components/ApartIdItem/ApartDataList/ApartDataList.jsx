@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import styles from './ApartDataList.module.scss';
 
 const ApartDataList = ({ dataId }) => {
@@ -10,18 +11,23 @@ const ApartDataList = ({ dataId }) => {
         {dataId.objNumber}
       </span>
       <span className={styles.dataText}>
-        <a href={dataId?.googleMapLocation} target="_blank">
-          <svg className={styles.svgMap}>
-            <use href="/sprite.svg#icon-map-pin" />
-          </svg>
+        <a
+          href={dataId?.googleMapLocation}
+          target="_blank"
+          className={styles.googleMaps}
+        >
+          <div className={styles.imgContainer}>
+            <Image
+              src="/png/google-maps.png"
+              alt="google maps"
+              fill={true}
+              className={styles.img}
+            />
+          </div>
+          {dataId.address}
         </a>
-
-        {dataId.address}
       </span>
       <span className={styles.dataText + ' ' + styles.dataTextPrice}>
-        {/* <svg className={styles.svgPrise}>
-          <use href="/sprite.svg#icon-UAN" />
-        </svg> */}
         ₴ {dataId.price} / Night
       </span>
     </div>

@@ -11,7 +11,7 @@ export const SiteProvider = ({ children }) => {
 
   const [scrollY, setScrollY] = useState(0);
 
-  const [filterShown, setFilterShown] = useState(true);
+  const [filterShown, setFilterShown] = useState(false);
 
   return (
     <SiteContext.Provider
