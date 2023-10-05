@@ -22,7 +22,7 @@ const ApartIdItem = ({ dataId, error, isLoading }) => {
             <ApartDataList dataId={dataId} />
             <div className={styles.arrow}></div>
             <Amenities dataId={dataId} />
-            <ApartStar />
+            <ApartStar dataId={dataId} />
             <OrderBtn className={styles.orderBtn} />
           </div>
         </div>
