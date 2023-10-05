@@ -3,9 +3,9 @@ import IsLoading from '../share/IsLoading/IsLoading';
 import Amenities from './Amenities/Amenities';
 import ApartDataList from './ApartDataList/ApartDataList';
 import styles from './ApartIdItem.module.scss';
-import ApartIdSlider from './ApartIdSlider/ApartIdSlider';
+// import ApartIdSlider from './ApartIdSlider/ApartIdSlider';
 import ItemSlider from './ItemSlider/ItemSlider';
-// import ApartStar from './ApartStar/ApartStar';
+import ApartStar from './ApartStar/ApartStar';
 
 const ApartIdItem = ({ dataId, error, isLoading }) => {
   // console.log(dataId?.googleMapLocation);
@@ -22,7 +22,7 @@ const ApartIdItem = ({ dataId, error, isLoading }) => {
             <ApartDataList dataId={dataId} />
             <div className={styles.arrow}></div>
             <Amenities dataId={dataId} />
-            {/* <ApartStar /> */}
+            <ApartStar />
             <OrderBtn className={styles.orderBtn} />
           </div>
         </div>
@@ -45,7 +45,7 @@ const ApartIdItem = ({ dataId, error, isLoading }) => {
         nulla est quis nunc porttitor. Ut amet duis dictum quam ut cras ac. Nisl
         sollicitudin faucibus eu blandit odio lectus nulla.
       </p>
-      <div className={styles.contactsMap}>
+      {/* <div className={styles.contactsMap}>
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2515.95985061217!2d34.815601!3d50.905958999999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNTDCsDU0JzIxLjUiTiAzNMKwNDgnNTYuMiJF!5e0!3m2!1suk!2sua!4v1696106361244!5m2!1suk!2sua"
           // src={dataId?.googleMapLocation}
@@ -56,7 +56,7 @@ const ApartIdItem = ({ dataId, error, isLoading }) => {
           referrerPolicy="no-referrer-when-downgrade"
           title="Адреса на мапі"
         ></iframe>
-      </div>
+      </div> */}
     </section>
   );
 };

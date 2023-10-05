@@ -24,24 +24,6 @@
   column-gap: 13px;
 }
 
-.text {
-  width: max-content;
-  color: #636363;
-  font-family: Crimson Text;
-  font-size: 10px;
-  font-weight: 400;
-
-  display: flex;
-  align-items: center;
-  column-gap: 5px;
-}
-
-.link {
-  &:hover {
-    color: #cd5d12;
-  }
-}
-
 .apartContainer {
   display: flex;
   flex-direction: column;

@@ -1,9 +1,9 @@
 @import '../../../styles/variables';
 
 .propositionContainer {
-  margin-bottom: 24px;
-  @media screen and (min-width: 1280px) {
-    margin-bottom: 40px;
+  margin-bottom: 12px;
+  @media screen and (min-width: 1366px) {
+    // margin-bottom: 40px;
   }
 }
 
@@ -17,7 +17,7 @@
   @media screen and (min-width: $tablet) {
     text-align: start;
   }
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 1366px) {
     font-size: 32px;
     margin-bottom: 32px;
   }
@@ -34,10 +34,11 @@
   font-family: Crimson Text;
   font-size: 16px;
   font-weight: 400;
-  @media screen and (min-width: 1280px) {
-    height: 250px;
+  @media screen and (min-width: 1366px) {
+    height: 230px;
     font-size: 20px;
-    row-gap: 32px;
+    row-gap: 30px;
+    // row-gap: 32px;
     column-gap: 32px;
   }
 }
