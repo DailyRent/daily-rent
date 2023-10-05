@@ -1,3 +1,5 @@
+@import "../../../styles/_variables.scss";
+
 .filterInputCheckbox {
   position: relative;
   appearance: none;
@@ -53,9 +55,35 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 18px;
-  margin-right: 25px;
+
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 18px;
+    margin-right: 12px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 18px;
+    margin-right: 12px;
+  }
 }
 
 .filterCheckboxTitle {
-  margin-right: 16px;
+  margin-right: 10px;
+
+  color: #545454;
+  font-family: Crimson Text;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  @media screen and (min-width: $tablet) {
+    margin-right: 16px;
+    font-size: 20px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-right: 16px;
+    font-size: 20px;
+  }
 }
