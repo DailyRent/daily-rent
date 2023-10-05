@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import styles from './UpdatingForm.module.scss';
 
 
@@ -53,20 +53,100 @@ const UpdatingForm = ({ id, apart }) => {
         // проверяет есть ли данная опция в массиве 
         const isAmenityIn = newAmenities.find(item => item === e.target.value);
         if (isAmenityIn) {
-            console.log("isAmenityIn");
-
             // если есть - она удаляется и создается новый массив, который далее сохраняется
             const newArr = newAmenities.filter(item => item !== e.target.value)
             setNewAmenities(newArr);
-            console.log("newAmenities after del", newArr);
+
+            //перебирает всё и меняет state у элемента с e.target.value 
+            switch (e.target.value) {
+                case "Кондиціонер":
+                    setAirCond(false);
+                    break;
+                case "Вайфай":
+                    setWifi(false);
+                    break;
+                case "СмартТВ":
+                    setSmartTV(false);
+                    break;
+                case "Ванна":
+                    setBath(false);
+                    break;
+                case "Душова кабіна":
+                    setShower(false);
+                    break;
+                case "Джакузі":
+                    setJacuzzi(false);
+                    break;
+                case "Мікрохвильова піч":
+                    setMicrowave(false);
+                    break;
+                case "Пральна машина":
+                    setWashingMachine(false);
+                    break;
+                case "Балкон":
+                    setBalcony(false);
+                    break;
+                case "Котел":
+                    setBoiler(false);
+                    break;
+                case "Водонагрівач":
+                    setWaterHeater(false);
+                    break;
+                case "Парковка":
+                    setParking(false);
+                    break;
+
+                default:
+                    console.log("Все удобства после удаления:", newAmenities);
+            }
 
         } else {
-            console.log("Amenity is not In");
-
             // если данной опции нет - добавляется в массив
             const newArray = [...newAmenities, e.target.value];
             setNewAmenities(newArray);
-            console.log("newAmenities after add", newArray);
+
+            //перебирает всё и меняет state у элемента с e.target.value 
+            switch (e.target.value) {
+                case "Кондиціонер":
+                    setAirCond(true);
+                    break;
+                case "Вайфай":
+                    setWifi(true);
+                    break;
+                case "СмартТВ":
+                    setSmartTV(true);
+                    break;
+                case "Ванна":
+                    setBath(true);
+                    break;
+                case "Душова кабіна":
+                    setShower(true);
+                    break;
+                case "Джакузі":
+                    setJacuzzi(true);
+                    break;
+                case "Мікрохвильова піч":
+                    setMicrowave(true);
+                    break;
+                case "Пральна машина":
+                    setWashingMachine(true);
+                    break;
+                case "Балкон":
+                    setBalcony(true);
+                    break;
+                case "Котел":
+                    setBoiler(true);
+                    break;
+                case "Водонагрівач":
+                    setWaterHeater(true);
+                    break;
+                case "Парковка":
+                    setParking(true);
+                    break;
+
+                default:
+                    console.log("Все удобства после добавления:", newAmenities);
+            }
         };
     }
 
