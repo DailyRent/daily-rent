@@ -1,17 +1,18 @@
 @import '../../../styles/variables';
 
 .starContainer {
+  width: 100%;
   display: flex;
   align-items: center;
+  justify-content: center;
   column-gap: 21px;
-  @media screen and (min-width: 1280px) {
-    column-gap: 40px;
-  }
+  // @media screen and (min-width: 1366px) {
+  //   // column-gap: 40px;
+  // }
 }
 
 .starList {
   display: flex;
-  flex-direction: column;
   align-items: center;
   row-gap: 21px;
   color: #6d6d6d;
@@ -19,20 +20,49 @@
   font-size: 16px;
   font-weight: 400;
   margin-bottom: 32px;
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 20px;
+  }
+  @media screen and (min-width: 1366px) {
     font-size: 20px;
-    align-items: flex-start;
-    margin-bottom: 106px;
+  }
+  @media screen and (min-width: 1920px) {
+    margin-bottom: 136px;
   }
 }
 
 .starText {
   display: flex;
   align-items: center;
+  cursor: pointer;
+  outline: none;
+  &:hover .starItem {
+    position: relative;
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 0px;
+      left: 0;
+      height: 1px;
+      animation: text 0.8s ease forwards;
+      background-color: #6d6d6d;
+    }
+
+    @keyframes text {
+      0% {
+        width: 0px;
+      }
+      100% {
+        width: 100%;
+      }
+    }
+  }
 }
 
 .svgStar {
   width: 20px;
   height: 20px;
   margin-right: 8px;
+  margin-left: 16px;
 }

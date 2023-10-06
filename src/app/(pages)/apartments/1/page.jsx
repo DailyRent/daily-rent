@@ -1,37 +1,41 @@
-"use client";
+'use client';
 
-import React, { useContext, useState } from "react";
-import ApartItem from "@/components/ApartItem/ApartItem";
-import { PaginationContext } from "@/context/PaginationContext";
-import PaginationPage from "@/components/share/Pagination/PaginationPage";
-import styles from "./page.module.scss";
-import { GetData } from "@/fetch/clientFetch";
-import IsLoading from "@/components/share/IsLoading/IsLoading";
-import Filter from "@/components/Filter/Filter";
+import React, { useContext, useState, useEffect } from 'react';
+
+// import { useRouter } from 'next/navigation';
+
+import ApartItem from '@/components/ApartItem/ApartItem';
+import { PaginationContext } from '@/context/PaginationContext';
+import PaginationPage from '@/components/share/Pagination/PaginationPage';
+import styles from './page.module.scss';
+import { GetData } from '@/fetch/clientFetch';
+import IsLoading from '@/components/share/IsLoading/IsLoading';
+import Filter from '@/components/Filter/Filter';
+import ButtonFilter from '@/components/share/ButtonFilter/ButtonFilter';
 
 const OneRooms = () => {
   const { data, error, isLoading } = GetData();
   const [amenitiesArr, setAmenitiesArr] = useState([]);
 
-  const { firstIndex, lastIndex, recordsPerPage } =
+  const { firstIndex, lastIndex, recordsPerPage, currentPage, setCurrentPage } =
     useContext(PaginationContext);
 
-  const roomsData = data?.filter((item) => item.roomsQuantity === "1");
+  const roomsData = data?.filter((item) => item.roomsQuantity === '1');
 
   const filteredRoomsData = roomsData?.filter((room) => {
     const amenities = room.amenities;
-    console.log(amenities);
+    // console.log(amenities);
     const filteredAmenities = amenitiesArr.every((amenity) =>
       amenities.includes(amenity)
     );
-    console.log(filteredAmenities);
+    // console.log(filteredAmenities);
     return filteredAmenities;
     // room.amenities.includes();
   });
   // console.log(filteredRooms);
 
   // filteredRoomsData();
-  console.log(filteredRoomsData);
+  // console.log(filteredRoomsData);
 
   const records = filteredRoomsData?.slice(firstIndex, lastIndex);
   const npage = filteredRoomsData
@@ -42,8 +46,9 @@ const OneRooms = () => {
 
   return (
     <>
+      <ButtonFilter />
       <Filter amenitiesArr={amenitiesArr} setAmenitiesArr={setAmenitiesArr} />
-      {console.log(amenitiesArr)}
+      {/* {console.log(amenitiesArr)} */}
       {isLoading ? (
         <IsLoading />
       ) : (

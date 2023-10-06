@@ -49,13 +49,19 @@
   gap: 40px;
   flex-wrap: nowrap;
   justify-content: space-between;
+  @media screen and (min-width: $desktop) {
+    gap: 80px;
+  }
 }
 
 .leftContentWrapper {
-  // max-width: 421px;
   display: flex;
   flex-direction: column;
+  gap: 16px;
   flex: 1;
+  @media screen and (min-width: $desktop) {
+    gap: 24px;
+  }
 }
 
 .leftContentText {
@@ -64,64 +70,32 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  margin-bottom: 16px;
-  // flex: 1;
+  max-width: 410px;
 }
 
 .contacts {
   display: flex;
   flex: 1;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 16px;
   color: $footerLocationColor;
   & a {
     width: fit-content;
+  }
+  @media screen and (min-width: $desktop) {
+    gap: 24px;
   }
 }
 
 .rightContentWrapper {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
+  justify-content: space-between;
   gap: 40px;
   flex: 1;
   @media screen and (min-width: $desktop) {
     flex-direction: row;
-  }
-}
-
-.navWrapper {
-  width: 100%;
-  display: flex;
-  // gap: 40px;
-  justify-content: space-around;
-  @media screen and (min-width: $desktop) {
-    gap: 90px;
-  }
-}
-
-.navWrapperContent {
-  display: flex;
-  height: 200px;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-
-  .navWrapperBtn {
-    font-size: 14px;
-    display: flex;
-    width: 128px;
-    padding: 8px 0px;
-    justify-content: center;
-    align-items: center;
-    border-radius: 24px;
-  }
-
-  @media screen and (min-width: $desktop) {
-    height: fit-content;
-    & .navWrapperBtn {
-      display: none;
-    }
   }
 }
 
@@ -137,14 +111,21 @@
 
 .btnsWrapper {
   width: 100%;
+  display: flex;
   justify-content: space-between;
-  display: none;
+  flex-direction: column;
+  gap: 32px;
+  align-items: flex-end;
+  & a,
+  & button {
+    display: flex;
+    width: 128px;
+    padding: 8px 0px;
+    justify-content: center;
+    align-items: center;
+  }
 
   @media screen and (min-width: $desktop) {
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-    align-items: flex-end;
     & a,
     & button {
       font-size: 16px;
@@ -161,6 +142,7 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  margin-bottom: -20px;
 }
 
 .webevery {

@@ -2,23 +2,23 @@
 
 import React from 'react';
 import styles from './page.module.scss';
-import ButtonToBack from '@/components/share/ButtonToBack/ButtonToBack';
+// import ButtonToBack from "@/components/share/ButtonToBack/ButtonToBack";
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
 const ContactsPage = () => {
-  const router = useRouter();
+  // const router = useRouter();
 
   return (
     <section className={styles.container}>
       <h1 className="visuallyHidden">Contacts Page</h1>
       <div className={styles.toBackContainer}>
-        <ButtonToBack onGoBack={() => router.back()} />
-        <span className={styles.toBackText}>
-          <Link href="/" className={styles.link}>
+        {/* <ButtonToBack onGoBack={() => router.back()} /> */}
+        <span className="textLink">
+          <Link href="/" className="textLinkAnimation">
             Головна
           </Link>
-          /Контакти
+          / Контакти
         </span>
       </div>
       <div className={styles.contactsMap}>

@@ -35,8 +35,8 @@ const FilterItem = ({
     : styles.filterInputCheckbox;
 
   return (
-    <li>
-      <span>{titleUA}</span>
+    <li className={styles.filterItem}>
+      <p className={styles.filterCheckboxTitle}>{titleUA}</p>
       <input
         id={id}
         type="checkbox"

@@ -16,15 +16,21 @@
   justify-content: flex-start;
   column-gap: 13px;
   padding-left: 16px;
+  @media screen and (min-width: $tablet) {
+    padding-left: 48px;
+  }
+  @media screen and (min-width: 1366px) {
+    padding-left: 75px;
+  }
 }
 
-.toBackText {
-  width: max-content;
-  color: #636363;
-  font-family: Crimson Text;
-  font-size: 10px;
-  font-weight: 400;
-}
+// .toBackText {
+//   width: max-content;
+//   color: #636363;
+//   font-family: Crimson Text;
+//   font-size: 10px;
+//   font-weight: 400;
+// }
 
 .link {
   &:hover {

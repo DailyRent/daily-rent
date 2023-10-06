@@ -45,6 +45,9 @@ const Header = () => {
   let headerBgClass;
   let leftLinksStyles;
   let logoStyles;
+
+  let iconCloseStyles;
+  let iconBurgerStyles;
   if (
     (pathname === "/" && isClient && scrollY >= window.innerHeight - 50) ||
     pathname !== "/"
@@ -52,10 +55,16 @@ const Header = () => {
     headerBgClass = styles.scrolledBg;
     leftLinksStyles = " ";
     logoStyles = styles.headerLogo;
+
+    iconCloseStyles = styles.iconCloseDark;
+    iconBurgerStyles = styles.iconBurgerDark;
   } else {
     headerBgClass = " ";
     leftLinksStyles = styles.leftLinkLight;
     logoStyles = styles.headerLogoLight;
+
+    iconCloseStyles = styles.iconClose;
+    iconBurgerStyles = styles.iconBurger;
   }
 
   return (
@@ -77,8 +86,8 @@ const Header = () => {
       <Logo className={logoStyles} isClient={isClient} />
       <div className={styles.rightLinks}>
         <Link
-          href={"/rools"}
-          className={pathname === "/rools" ? styles.activeLink : " "}
+          href={"/rules"}
+          className={pathname === "/rules" ? styles.activeLink : " "}
         >
           Правила
         </Link>
@@ -91,7 +100,7 @@ const Header = () => {
       </div>
       <TranslatorBtnBlock isClient={isClient} />
       {session.status === "authenticated" && (
-        <button onClick={signOut}>Logout</button>
+        <button className={styles.logoutBtn} onClick={signOut}>Logout</button>
       )}
       <BurgerBtn
         onClick={() => {
@@ -99,6 +108,8 @@ const Header = () => {
         }}
         burgerMenu={burgerMenu}
         isClient={isClient}
+        iconCloseStyles={iconCloseStyles}
+        iconBurgerStyles={iconBurgerStyles}
       />
       <Navigation
         className={
