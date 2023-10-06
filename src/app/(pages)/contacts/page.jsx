@@ -15,8 +15,10 @@ const ContactsPage = () => {
       <div className={styles.toBackContainer}>
         {/* <ButtonToBack onGoBack={() => router.back()} /> */}
         <span className="textLink">
-          <Link href="/">Головна</Link>
-          /Контакти
+          <Link href="/" className="textLinkAnimation">
+            Головна
+          </Link>
+          / Контакти
         </span>
       </div>
       <div className={styles.contactsMap}>

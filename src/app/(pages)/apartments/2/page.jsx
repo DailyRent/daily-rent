@@ -8,6 +8,7 @@ import styles from './page.module.scss';
 import { GetData } from '@/fetch/clientFetch';
 import IsLoading from '@/components/share/IsLoading/IsLoading';
 import Filter from '@/components/Filter/Filter';
+import ButtonFilter from '@/components/share/ButtonFilter/ButtonFilter';
 
 const TwoRooms = () => {
   const { data, error, isLoading } = GetData();
@@ -36,6 +37,7 @@ const TwoRooms = () => {
   const numbers = [...Array(npage + 1).keys()].slice(1);
   return (
     <>
+      <ButtonFilter/>
       <Filter amenitiesArr={amenitiesArr} setAmenitiesArr={setAmenitiesArr} />
       {isLoading ? (
         <IsLoading />

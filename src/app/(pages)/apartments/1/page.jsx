@@ -11,6 +11,7 @@ import styles from './page.module.scss';
 import { GetData } from '@/fetch/clientFetch';
 import IsLoading from '@/components/share/IsLoading/IsLoading';
 import Filter from '@/components/Filter/Filter';
+import ButtonFilter from '@/components/share/ButtonFilter/ButtonFilter';
 
 const OneRooms = () => {
   const { data, error, isLoading } = GetData();
@@ -45,6 +46,7 @@ const OneRooms = () => {
 
   return (
     <>
+      <ButtonFilter />
       <Filter amenitiesArr={amenitiesArr} setAmenitiesArr={setAmenitiesArr} />
       {/* {console.log(amenitiesArr)} */}
       {isLoading ? (

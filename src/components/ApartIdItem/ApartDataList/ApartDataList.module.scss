@@ -51,6 +51,11 @@
 
 .googleMaps {
   display: flex;
+  align-items: center;
+  @media screen and (min-width: 1366px) {
+    align-items: flex-start;
+    flex-direction: row-reverse;
+  }
 }
 
 .imgContainer {
@@ -129,6 +134,12 @@
   50% {
     transform: translate(0, 10%);
   }
+}
+
+.googleMapsText {
+  text-decoration: none;
+  position: relative;
+  outline: none;
 }
 // .svgMap {
 //   width: 16px;

@@ -1,10 +1,9 @@
 // "use client";
-import React from "react";
-import styles from "./page.module.scss";
+import React from 'react';
+import styles from './page.module.scss';
 // import ButtonToBack from "@/components/share/ButtonToBack/ButtonToBack";
 // import { useRouter } from "next/navigation";
-import Link from "next/link";
-
+import Link from 'next/link';
 
 const RulesPage = () => {
   // const router = useRouter();
@@ -12,8 +11,8 @@ const RulesPage = () => {
     <section className={styles.container}>
       <h1 className="visuallyHidden">Rules Page</h1>
       <div className={styles.toBackContainer}>
-        <span className={styles.toBackText}>
-          <Link href="/" className={styles.link}>
+        <span className="textLink">
+          <Link href="/" className="textLinkAnimation">
             Головна
           </Link>
           /Правила

@@ -14,7 +14,7 @@ const ApartStar = ({ dataId }) => {
       </li> */}
       <li className={styles.starList}>
         <a href={dataId.bookingUrl} target="_blank" className={styles.starText}>
-          <p> Booking.com</p>
+          <p className={styles.starItem}> Booking.com</p>
           <svg className={styles.svgStar}>
             <use href="/sprite.svg#icon-star" />
           </svg>
