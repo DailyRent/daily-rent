@@ -165,8 +165,6 @@ const OrderForm = ({ isOpen, closeModal }) => {
             number: objNumber,
             check_In: formatDate(checkIn),
             check_Out: formatDate(checkOut),
-            // check_In: checkIn,
-            // check_Out: checkOut,
         };
         setSubmit(true);
         console.log("formData:", formData);
