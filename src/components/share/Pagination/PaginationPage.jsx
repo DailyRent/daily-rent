@@ -3,11 +3,14 @@
 import styles from './Pagination.module.scss';
 import { PaginationContext } from '@/context/PaginationContext';
 import { useContext, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 
 const PaginationPage = ({ numbers, npage }) => {
   const { currentPage, setCurrentPage } = useContext(PaginationContext);
+
   const router = useRouter();
+
+  const pathName = usePathname();
 
   const currentRoute = router.asPath || '';
 
@@ -30,6 +33,14 @@ const PaginationPage = ({ numbers, npage }) => {
     const newRoute = `${currentRoute}?page=${currentPage}`;
     router.push(newRoute);
   }, [currentPage, currentRoute, router]);
+
+  useEffect(() => {
+    if (typeof localStorage !== 'undefined') {
+      localStorage.removeItem('currentPages');
+      setCurrentPage(1);
+    }
+    // eslint-disable-next-line
+  }, [pathName]);
 
   const prePage = () => {
     if (currentPage !== 1) {

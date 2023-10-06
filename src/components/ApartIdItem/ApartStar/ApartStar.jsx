@@ -1,6 +1,6 @@
 import styles from './ApartStar.module.scss';
 
-const ApartStar = () => {
+const ApartStar = ({ dataId }) => {
   return (
     <ul className={styles.starContainer}>
       {/* <li className={styles.starList}>
@@ -13,13 +13,13 @@ const ApartStar = () => {
         </span>
       </li> */}
       <li className={styles.starList}>
-        <p> Booking.com</p>
-        <span className={styles.starText}>
+        <a href={dataId.bookingUrl} target="_blank" className={styles.starText}>
+          <p> Booking.com</p>
           <svg className={styles.svgStar}>
             <use href="/sprite.svg#icon-star" />
           </svg>
           4.9
-        </span>
+        </a>
       </li>
     </ul>
   );
