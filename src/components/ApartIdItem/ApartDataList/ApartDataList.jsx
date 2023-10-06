@@ -27,7 +27,7 @@ const ApartDataList = ({ dataId }) => {
               className={styles.img}
             /> */}
           </div>
-          {dataId.address}
+          <span className={styles.googleMapsText}>{dataId.address}</span>
         </a>
       </span>
       <span className={styles.dataText + ' ' + styles.dataTextPrice}>
