@@ -13,7 +13,7 @@
 <path fill="none" stroke="#c7c7c7" style="stroke: var(--color1, #c7c7c7)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.8824" d="M4.706 13.49h22.588"></path>
 </symbol>
 <symbol id="icon-chevron-down" viewBox="0 0 32 32">
-<path fill="none"  stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4"  d="M8.471 12.235l7.529 7.529 7.529-7.529"></path>
+<path fill="none" stroke="#c7c7c7" style="stroke: var(--color1, #c7c7c7)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4"  d="M8.471 12.235l7.529 7.529 7.529-7.529"></path>
 </symbol>
 <symbol id="icon-chevron-left" viewBox="0 0 32 32">
 <path fill="none" stroke="#fff" style="stroke: var(--color2, #fff)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M20 24l-8-8 8-8"></path>
