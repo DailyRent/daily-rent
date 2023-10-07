@@ -18,10 +18,10 @@ const FilterItem = ({
 
   const toggleAmenityForFilter = () => {
     if (!isChecked) {
-      setAmenitiesArr((amenitiesArr) => [...amenitiesArr, titleUA]);
+      setAmenitiesArr((amenitiesArr) => [...amenitiesArr, title]);
     } else {
       setAmenitiesArr((amenitiesArr) =>
-        amenitiesArr.filter((amenity) => amenity != titleUA)
+        amenitiesArr.filter((amenity) => amenity != title)
       );
     }
   };
