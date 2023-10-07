@@ -1,5 +1,9 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+
+import { addDays, subDays, formatDate } from "../../utils/dateUtils";
 import SuccessContent from "./SuccessContent";
 import styles from "./OrderForm.module.scss";
 
@@ -7,20 +11,20 @@ const OrderForm = ({ isOpen, closeModal }) => {
     const [userName, setUserName] = useState("");
     const [phone, setPhone] = useState("");
     const [objNumber, setObjNumber] = useState("");
-    const [dateEnter, setDateEnter] = useState(null);
-    const [dateExit, setDateExit] = useState(null);
+    const [checkIn, setCheckIn] = useState(null);
+    const [checkOut, setCheckOut] = useState(null);
 
     const [dirtyUserName, setDirtyUserName] = useState(false);
     const [dirtyPhone, setDirtyPhone] = useState(false);
     const [dirtyObjNumber, setDirtyObjNumber] = useState(false);
-    const [dirtyDateEnter, setDirtyDateEnter] = useState(false);
-    const [dirtyDateExit, setDirtyDateExit] = useState(false);
+    const [dirtyCheckIn, setDirtyCheckIn] = useState(false);
+    const [dirtyCheckOut, setDirtyCheckOut] = useState(false);
 
     const [errorUserName, setErrorUserName] = useState("Заповніть це поле");
     const [errorPhone, setErrorPhone] = useState("Заповніть це поле");
     const [errorObjNumber, setErrorObjNumber] = useState("Заповніть це поле");
-    const [errorDateEnter, setErrorDateEnter] = useState("Заповніть це поле");
-    const [errorDateExit, setErrorDateExit] = useState("Заповніть це поле");
+    const [errorCheckIn, setErrorCheckIn] = useState("Заповніть це поле");
+    const [errorCheckOut, setErrorCheckOut] = useState("Заповніть це поле");
 
     const [validForm, setValidForm] = useState(false);
     const [submit, setSubmit] = useState(false);
@@ -39,8 +43,8 @@ const OrderForm = ({ isOpen, closeModal }) => {
             errorUserName ||
             errorPhone ||
             errorObjNumber ||
-            errorDateEnter ||
-            errorDateExit
+            errorCheckIn ||
+            errorCheckOut
         ) {
             setValidForm(false);
         } else {
@@ -50,8 +54,8 @@ const OrderForm = ({ isOpen, closeModal }) => {
         errorUserName,
         errorPhone,
         errorObjNumber,
-        errorDateEnter,
-        errorDateExit,
+        errorCheckIn,
+        errorCheckOut,
     ]);
 
     const validateName = (value) => {
@@ -90,14 +94,6 @@ const OrderForm = ({ isOpen, closeModal }) => {
         if (value.length === 0) setErrorObjNumber("Заповніть це поле");
     };
 
-    const validateDate = (value, setError) => {
-        if (value.length === 0) {
-            setError("Заповніть це поле");
-        } else {
-            setError("");
-        }
-    };
-
     const handleChange = (evt) => {
         const { name, value } = evt.target;
 
@@ -120,16 +116,6 @@ const OrderForm = ({ isOpen, closeModal }) => {
                 setObjNumber(value);
                 break;
 
-            case "dateEnter":
-                validateDate(value, setErrorDateEnter);
-                setDateEnter(value);
-                break;
-
-            case "dateExit":
-                validateDate(value, setErrorDateExit);
-                setDateExit(value);
-                break;
-
             default:
                 return;
         }
@@ -149,14 +135,6 @@ const OrderForm = ({ isOpen, closeModal }) => {
                 setDirtyObjNumber(true);
                 break;
 
-            case "dateEnter":
-                setDirtyDateEnter(true);
-                break;
-
-            case "dateExit":
-                setDirtyDateExit(true);
-                break;
-
             default:
                 return;
         }
@@ -168,28 +146,28 @@ const OrderForm = ({ isOpen, closeModal }) => {
         setDirtyUserName(false);
         setDirtyPhone(false);
         setDirtyObjNumber(false);
-        setDirtyDateEnter(false);
-        setDirtyDateExit(false);
+        setDirtyCheckIn(false);
+        setDirtyCheckOut(false);
         setErrorUserName("Заповніть це поле");
         setErrorPhone("Заповніть це поле");
         setErrorObjNumber("Заповніть це поле");
-        setErrorDateEnter("Заповніть це поле");
-        setErrorDateExit("Заповніть це поле");
+        setErrorCheckIn("Заповніть це поле");
+        setErrorCheckOut("Заповніть це поле");
         setSubmit(false);
     };
 
     const formSubmit = (evt) => {
         evt.preventDefault();
 
-        const data = {
+        const formData = {
             name: userName,
             tel: phone,
             number: objNumber,
-            enter: dateEnter,
-            exit: dateExit,
+            check_In: formatDate(checkIn),
+            check_Out: formatDate(checkOut),
         };
         setSubmit(true);
-        console.log("data:", data);
+        console.log("formData:", formData);
 
         setTimeout(() => {
             closeModal();
@@ -218,7 +196,7 @@ const OrderForm = ({ isOpen, closeModal }) => {
                             )}
 
                             <label className={styles.label}>
-                                <svg className={styles.iconSvg}>
+                                <svg className={styles.icon}>
                                     <use href='/sprite.svg#icon-user' />
                                 </svg>
                                 <input
@@ -243,7 +221,7 @@ const OrderForm = ({ isOpen, closeModal }) => {
                                 <div className={styles.error}>{errorPhone}</div>
                             )}
                             <label className={styles.label}>
-                                <svg className={styles.iconSvg}>
+                                <svg className={styles.icon}>
                                     <use href='/sprite.svg#icon-phone' />
                                 </svg>
                                 <input
@@ -265,59 +243,101 @@ const OrderForm = ({ isOpen, closeModal }) => {
                     </div>
                     <div className={styles.innerWrap}>
                         <div className={styles.wrapError}>
-                            {dirtyDateEnter && errorDateEnter && (
+                            {dirtyCheckIn && errorCheckIn && (
                                 <div className={styles.error}>
-                                    {errorDateEnter}
+                                    {errorCheckIn}
                                 </div>
                             )}
-                            <label className={styles.label}>
-                                <svg className={styles.iconSvg}>
+                            <div className={styles.label}>
+                                <svg
+                                    className={`${styles.icon} ${styles.iconPicker}`}
+                                >
                                     <use href='/sprite.svg#icon-calendar' />
                                 </svg>
-                                <input
-                                    type='date'
-                                    name='dateEnter'
-                                    value={dateEnter}
-                                    placeholder='Дата заїзду'
-                                    autoComplete='off'
+                                <svg
+                                    className={`${styles.icon} ${styles.iconPickerRight}`}
+                                >
+                                    <use href='/sprite.svg#icon-chevron-down' />
+                                </svg>
+                                <DatePicker
+                                    selected={checkIn}
+                                    onChange={(date) => {
+                                        setCheckIn(date);
+                                        setErrorCheckIn("");
+                                    }}
+                                    selectsStart
+                                    dateFormat='dd/MM/yyyy'
+                                    startDate={checkIn}
+                                    endDate={checkOut}
                                     className={
-                                        dirtyDateEnter && errorDateEnter
+                                        dirtyCheckIn && errorCheckIn
                                             ? `${styles.input} ${styles.inputError}`
                                             : styles.input
                                     }
-                                    onChange={handleChange}
-                                    onBlur={handleBlur}
-                                    // onFocus={(this.type = "date")}
+                                    placeholderText='Дата заїзду'
+                                    onBlur={() => setDirtyCheckIn(true)}
+                                    excludeDateIntervals={[
+                                        {
+                                            start: subDays(new Date(), 100),
+                                            end: addDays(new Date(), 0),
+                                        },
+                                    ]}
+                                    includeDateIntervals={[
+                                        {
+                                            start: subDays(new Date(), 2),
+                                            end: addDays(new Date(), 20),
+                                        },
+                                    ]}
                                 />
-                            </label>
+                            </div>
                         </div>
+
                         <div className={styles.wrapError}>
-                            {dirtyDateExit && errorDateExit && (
+                            {dirtyCheckOut && errorCheckOut && (
                                 <div className={styles.error}>
-                                    {errorDateExit}
+                                    {errorCheckOut}
                                 </div>
                             )}
-                            <label className={styles.label}>
-                                <svg className={styles.iconSvg}>
+                            <div className={styles.label}>
+                                <svg
+                                    className={`${styles.icon} ${styles.iconPicker}`}
+                                >
                                     <use href='/sprite.svg#icon-calendar' />
                                 </svg>
-                                <input
-                                    type='date'
-                                    name='dateExit'
-                                    value={dateExit}
-                                    placeholder='Дата виїзду'
-                                    autoComplete='off'
+                                <svg
+                                    className={`${styles.icon} ${styles.iconPickerRight}`}
+                                >
+                                    <use href='/sprite.svg#icon-chevron-down' />
+                                </svg>
+                                <DatePicker
+                                    selected={checkOut}
+                                    dateFormat='dd/MM/yyyy'
+                                    onChange={(date) => {
+                                        setCheckOut(date);
+                                        setErrorCheckOut("");
+                                    }}
+                                    selectsEnd
+                                    startDate={checkIn}
+                                    endDate={checkOut}
+                                    minDate={checkIn}
                                     className={
-                                        dirtyDateExit && errorDateExit
+                                        dirtyCheckOut && errorCheckOut
                                             ? `${styles.input} ${styles.inputError}`
                                             : styles.input
                                     }
-                                    onChange={handleChange}
-                                    onBlur={handleBlur}
+                                    placeholderText='Дата виїзду'
+                                    onBlur={() => setDirtyCheckOut(true)}
+                                    includeDateIntervals={[
+                                        {
+                                            start: subDays(new Date(), 2),
+                                            end: addDays(new Date(), 20),
+                                        },
+                                    ]}
                                 />
-                            </label>
+                            </div>
                         </div>
                     </div>
+
                     <div className={styles.innerWrap}>
                         <div className={styles.wrapError}>
                             {dirtyObjNumber && errorObjNumber && (
@@ -326,7 +346,7 @@ const OrderForm = ({ isOpen, closeModal }) => {
                                 </div>
                             )}
                             <label className={styles.label}>
-                                <svg className={styles.iconSvg}>
+                                <svg className={styles.icon}>
                                     <use href='/sprite.svg#icon-hash' />
                                 </svg>
                                 <input

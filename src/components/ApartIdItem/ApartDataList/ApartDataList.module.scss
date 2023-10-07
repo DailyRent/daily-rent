@@ -51,6 +51,11 @@
 
 .googleMaps {
   display: flex;
+  align-items: center;
+  @media screen and (min-width: 1366px) {
+    align-items: flex-start;
+    flex-direction: row-reverse;
+  }
 }
 
 .imgContainer {
@@ -62,17 +67,17 @@
     content: '';
     display: block;
     position: absolute;
-    bottom: 0px;
-    left: 40%;
+    bottom: 3px;
+    left: 43%;
     width: 3px;
     animation: shadowMob 2s infinite linear;
     transition: box-shadow 0.3s ease-in-out;
   }
   @media screen and (min-width: $tablet) {
-    width: 26px;
-    height: 26px;
+    width: 24px;
+    height: 24px;
     &::before {
-      left: 43%;
+      left: 38%;
       width: 5px;
       animation: shadow 2s infinite linear;
     }
@@ -105,8 +110,20 @@
 }
 
 .img {
-  object-fit: contain;
+  width: 16px;
+  height: 16px;
+  stroke: #6d6d6d;
+  fill: none;
+  // object-fit: contain;
   animation: spin 2s infinite linear;
+  @media screen and (min-width: $tablet) {
+    width: 20px;
+    height: 20px;
+  }
+  @media screen and (min-width: 1366px) {
+    width: 24px;
+    height: 24px;
+  }
 }
 
 @keyframes spin {
@@ -117,6 +134,12 @@
   50% {
     transform: translate(0, 10%);
   }
+}
+
+.googleMapsText {
+  text-decoration: none;
+  position: relative;
+  outline: none;
 }
 // .svgMap {
 //   width: 16px;

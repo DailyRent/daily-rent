@@ -48,8 +48,7 @@
     margin-bottom: 32px;
     margin-top: 15px;
     @media screen and (min-width: $desktop) {
-        margin-bottom: 70px;
-        margin-top: 55px;
+        margin: 55px 0 0 0;
     }
 }
 
@@ -81,16 +80,19 @@
 }
 
 .input {
-    width: 100%;
+    position: relative;
+    width: 235px;
     height: 35px;
     background-color: transparent;
     margin-bottom: 36px;
     outline: none;
     border: none;
+    cursor: pointer;
     border-bottom: 1px solid rgba(199, 199, 199, 1);
     padding-left: 32px;
     @media screen and (min-width: $desktop) {
-        margin: 0 10px 80px;
+        margin: 80px 10px 0;
+        width: 440px;
     }
 }
 
@@ -121,19 +123,36 @@
     color: rgba(255, 134, 134, 1);
     font-size: 14px;
     @media screen and (min-width: $desktop) {
-        bottom: 120px;
-        left: 180px;
+        bottom: 40px;
+        left: 200px;
     }
 }
 
-.iconSvg {
+.icon {
     position: absolute;
     bottom: 2px;
     width: 16px;
     height: 16px;
-    fill: #c7c7c7;
     @media screen and (min-width: $desktop) {
         left: 10px;
+    }
+}
+
+.iconPicker {
+    bottom: 45px;
+    @media screen and (min-width: $desktop) {
+        bottom: 10px;
+    }
+}
+
+.iconPickerRight {
+    bottom: 45px;
+    left: 210px;
+    width: 16px;
+    height: 16px;
+    @media screen and (min-width: $desktop) {
+        bottom: 10px;
+        left: 425px;
     }
 }
 
@@ -145,14 +164,14 @@
 // styles for success content
 
 .successContainer {
-    margin-top: 170px;
+    margin-top: 140px;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     @media screen and (min-width: $desktop) {
-        margin-top: 76px;
+        margin-top: 140px;
         padding-bottom: 40px;
     }
 }
@@ -199,7 +218,7 @@
     font-weight: 400;
     line-height: normal;
     @media screen and (min-width: $desktop) {
-        margin-top: 20px;
+        margin-top: 80px;
     }
 }
 
@@ -215,6 +234,7 @@
     margin: 0 auto 60px;
     @media screen and (min-width: $desktop) {
         position: absolute;
-        right: 0;
+        right: -30px;
+        bottom: -70px;
     }
 }

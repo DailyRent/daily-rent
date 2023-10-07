@@ -1,9 +1,9 @@
 @import '../../../styles/variables';
 
 .propositionContainer {
-  margin-bottom: 12px;
-  @media screen and (min-width: 1366px) {
-    // margin-bottom: 40px;
+  margin-bottom: 20px;
+  @media screen and (min-width: 1920px) {
+    margin-bottom: 88px;
   }
 }
 
@@ -24,22 +24,22 @@
 }
 
 .propositionList {
-  height: 150px;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  row-gap: 16px;
-  column-gap: 8px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-row-gap: 16px;
   color: $footerLogoColor;
   font-family: Crimson Text;
   font-size: 16px;
   font-weight: 400;
+  @media screen and (min-width: $tablet) {
+    grid-row-gap: 14px;
+    font-size: 14px;
+  }
   @media screen and (min-width: 1366px) {
-    height: 230px;
     font-size: 20px;
-    row-gap: 30px;
-    // row-gap: 32px;
-    column-gap: 32px;
+    grid-row-gap: 32px;
+  }
+  @media screen and (min-width: 1920px) {
   }
 }
 

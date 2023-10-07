@@ -2,7 +2,6 @@
 
 import Link from 'next/link';
 import { PaginationProvider } from '@/context/PaginationContext';
-import ButtonFilter from '@/components/share/ButtonFilter/ButtonFilter';
 // import ButtonToBack from "@/components/share/ButtonToBack/ButtonToBack";
 // import { useRouter } from "next/navigation";
 import styles from './page.module.scss';
@@ -17,12 +16,19 @@ export default function OneRoomsLayout({ children }) {
         <div className={styles.backContainer}>
           {/* <ButtonToBack onGoBack={() => router.back()} /> */}
           <p className="textLink">
-            <Link href="/">Головна</Link>/
-            <Link href="/apartments">Апартаменти</Link>
-            <Link href="/apartments/1">/ Однокімнатні</Link>
+            <Link href="/" className="textLinkAnimation">
+              Головна
+            </Link>
+            /
+            <Link href="/apartments" className="textLinkAnimation">
+              Апартаменти
+            </Link>
+            /
+            <Link href="/apartments/1" className="textLinkAnimation">
+              Однокімнатні
+            </Link>
           </p>
         </div>
-        <ButtonFilter />
       </div>
       <PaginationProvider>
         <div className={styles.apartContainer}>{children}</div>

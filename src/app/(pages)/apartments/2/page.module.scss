@@ -6,8 +6,13 @@
 
   display: flex;
   flex: 1;
-  @media screen and (min-width: $tablet) {
+   @media screen and (min-width: $tablet) {
     margin-top: 80px;
+    padding: 0px 48px;
+  }
+
+  @media screen and (min-width: 1366px) {
+    padding: 0px 75px;
   }
 }
 

@@ -17,14 +17,17 @@ const ApartDataList = ({ dataId }) => {
           className={styles.googleMaps}
         >
           <div className={styles.imgContainer}>
-            <Image
+            <svg className={styles.img}>
+              <use href="/sprite.svg#icon-map-pin" />
+            </svg>
+            {/* <Image
               src="/png/google-maps.png"
               alt="google maps"
               fill={true}
               className={styles.img}
-            />
+            /> */}
           </div>
-          {dataId.address}
+          <span className={styles.googleMapsText}>{dataId.address}</span>
         </a>
       </span>
       <span className={styles.dataText + ' ' + styles.dataTextPrice}>
