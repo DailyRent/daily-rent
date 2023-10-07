@@ -5,7 +5,7 @@ import styles from "./FilterItem.module.scss";
 const FilterItem = ({
   id,
   //   titleEN,
-  titleUA,
+  title,
   activeIndex,
   setActiveIndex,
   //   amenitiesArr,
@@ -18,10 +18,10 @@ const FilterItem = ({
 
   const toggleAmenityForFilter = () => {
     if (!isChecked) {
-      setAmenitiesArr((amenitiesArr) => [...amenitiesArr, titleUA]);
+      setAmenitiesArr((amenitiesArr) => [...amenitiesArr, title]);
     } else {
       setAmenitiesArr((amenitiesArr) =>
-        amenitiesArr.filter((amenity) => amenity != titleUA)
+        amenitiesArr.filter((amenity) => amenity != title)
       );
     }
   };
@@ -36,7 +36,7 @@ const FilterItem = ({
 
   return (
     <li className={styles.filterItem}>
-      <p className={styles.filterCheckboxTitle}>{titleUA}</p>
+      <p className={styles.filterCheckboxTitle}>{title}</p>
       <input
         id={id}
         type="checkbox"
