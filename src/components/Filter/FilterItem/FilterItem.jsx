@@ -5,7 +5,7 @@ import styles from "./FilterItem.module.scss";
 const FilterItem = ({
   id,
   //   titleEN,
-  titleUA,
+  title,
   activeIndex,
   setActiveIndex,
   //   amenitiesArr,
@@ -36,7 +36,7 @@ const FilterItem = ({
 
   return (
     <li className={styles.filterItem}>
-      <p className={styles.filterCheckboxTitle}>{titleUA}</p>
+      <p className={styles.filterCheckboxTitle}>{title}</p>
       <input
         id={id}
         type="checkbox"
