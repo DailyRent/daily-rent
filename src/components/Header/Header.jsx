@@ -100,7 +100,9 @@ const Header = () => {
       </div>
       <TranslatorBtnBlock isClient={isClient} />
       {session.status === "authenticated" && (
-        <button className={styles.logoutBtn} onClick={signOut}>Logout</button>
+        <button className={styles.logoutBtn} onClick={signOut}>
+          Logout
+        </button>
       )}
       <BurgerBtn
         onClick={() => {
