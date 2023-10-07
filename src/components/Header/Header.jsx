@@ -40,6 +40,8 @@ const Header = () => {
         window.removeEventListener("scroll", handleScroll);
       };
     }
+
+    // eslint-disable-next-line
   }, [isClient]);
 
   let headerBgClass;
