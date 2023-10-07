@@ -40,6 +40,8 @@ const Header = () => {
         window.removeEventListener("scroll", handleScroll);
       };
     }
+
+    // eslint-disable-next-line
   }, [isClient]);
 
   let headerBgClass;
@@ -66,19 +68,24 @@ const Header = () => {
     iconCloseStyles = styles.iconClose;
     iconBurgerStyles = styles.iconBurger;
   }
-
   return (
     <header className={`${styles.container} ${headerBgClass}`}>
       <div className={styles.leftLinks}>
         <Link
           href={"/apartments"}
-          className={pathname === "/apartments" ? styles.activeLink : " "}
+          className={
+            pathname === "/apartments"
+              ? styles.activeLink
+              : " textLinkAnimation"
+          }
         >
           Апартаменти
         </Link>
         <Link
           href={"/documents"}
-          className={pathname === "/documents" ? styles.activeLink : " "}
+          className={
+            pathname === "/documents" ? styles.activeLink : " textLinkAnimation"
+          }
         >
           Документи
         </Link>
@@ -87,20 +94,26 @@ const Header = () => {
       <div className={styles.rightLinks}>
         <Link
           href={"/rules"}
-          className={pathname === "/rules" ? styles.activeLink : " "}
+          className={
+            pathname === "/rules" ? styles.activeLink : " textLinkAnimation"
+          }
         >
           Правила
         </Link>
         <Link
           href={"/contacts"}
-          className={pathname === "/contacts" ? styles.activeLink : " "}
+          className={
+            pathname === "/contacts" ? styles.activeLink : " textLinkAnimation"
+          }
         >
           Контакти
         </Link>
       </div>
       <TranslatorBtnBlock isClient={isClient} />
       {session.status === "authenticated" && (
-        <button className={styles.logoutBtn} onClick={signOut}>Logout</button>
+        <button className={styles.logoutBtn} onClick={signOut}>
+          Logout
+        </button>
       )}
       <BurgerBtn
         onClick={() => {

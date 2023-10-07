@@ -96,7 +96,12 @@ const HomeSlider = () => {
                   className="link"
                 >
                   <div className="div">
-                    <Image src={el.titleImg} fill alt={el.objNumber} />
+                    <Image
+                      src={el.titleImg}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      alt={el.objNumber}
+                    />
                   </div>
                   <p className="slideDescr">{el.objNumber}</p>
                 </Link>
