@@ -4,6 +4,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 import { addDays, subDays, formatDate } from "../../utils/dateUtils";
+import { sendToTelegram } from "../../utils/sendToTelegram";
 import SuccessContent from "./SuccessContent";
 import styles from "./OrderForm.module.scss";
 
@@ -166,9 +167,8 @@ const OrderForm = ({ isOpen, closeModal }) => {
             check_In: formatDate(checkIn),
             check_Out: formatDate(checkOut),
         };
+        sendToTelegram(formData);
         setSubmit(true);
-        console.log("formData:", formData);
-
         setTimeout(() => {
             closeModal();
             reset();
