@@ -58,7 +58,7 @@ ol {
 
 .textLink {
   color: #636363;
-  font-family: Crimson Text;
+  font-family: "Crimson Text";
   font-size: 10px;
   font-weight: 400;
   display: flex;
@@ -81,7 +81,7 @@ ol {
   position: relative;
   outline: none;
 }
-.textLinkAnimation:hover.textLinkAnimation::after {
+/* .textLinkAnimation:hover.textLinkAnimation::after {
   content: "";
   display: block;
   position: absolute;
@@ -99,8 +99,8 @@ ol {
   100% {
     width: 100%;
   }
-}
-
+} */
+.textLinkAnimation:hover.textLinkAnimation::after,
 .textLinkAnimation:focus.textLinkAnimation::after {
   content: "";
   display: block;
