@@ -9,6 +9,9 @@ const nextConfig = {
   images: {
     domains: ["res.cloudinary.com"],
   },
+  env: {
+    TELEGRAM_API: process.env.TELEGRAM_API,
+  },
 };
 
 module.exports = nextConfig;
