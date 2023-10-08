@@ -12,30 +12,46 @@
   align-items: center;
 }
 
+.dotList {
+  display: flex;
+  align-items: center;
+  column-gap: 16px;
+}
+
 .pageLinkDot {
-  width: 8px;
+  min-width: 8px;
   height: 8px;
   background-color: #c7c7c7;
   border-radius: 50%;
   border: none;
   cursor: pointer;
   outline: none;
-  display: flex;
-  align-items: center;
-  column-gap: 16px;
+  // display: flex;
+  // align-items: center;
+  // column-gap: 16px;
   @media screen and (min-width: $tablet) {
-    width: 12px;
+    min-width: 12px;
     height: 12px;
   }
 }
 
 .active {
-  width: 12px;
+  min-width: 12px;
   height: 12px;
   background-color: #7d7d7d;
   @media screen and (min-width: $tablet) {
-    width: 16px;
+    min-width: 16px;
     height: 16px;
+  }
+}
+
+.pageLinkItem {
+  outline: none;
+  max-width: 6px;
+  height: 6px;
+  @media screen and (min-width: $tablet) {
+    max-width: 10px;
+    height: 10px;
   }
 }
 
@@ -47,6 +63,7 @@
   display: flex;
   align-items: center;
   height: 15px;
+  outline: none;
 }
 
 .svgArrow {

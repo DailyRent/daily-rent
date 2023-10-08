@@ -52,6 +52,7 @@
 .googleMaps {
   display: flex;
   align-items: center;
+  outline: none;
   @media screen and (min-width: 1366px) {
     align-items: flex-start;
     flex-direction: row-reverse;
@@ -137,9 +138,16 @@
 }
 
 .googleMapsText {
-  text-decoration: none;
   position: relative;
   outline: none;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  text-decoration-color: #373737;
+  color: #373737;
+  @media screen and (min-width: 1366px) {
+    text-underline-offset: 6px;
+  }
 }
 // .svgMap {
 //   width: 16px;
