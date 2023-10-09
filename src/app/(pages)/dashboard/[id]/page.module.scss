@@ -14,13 +14,14 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     gap: 5px;
     margin: 20px 0px;
     padding: 10px;
     background-color: #8c878fd6;
     border-radius: 5px;
     border: 1px solid navy;
+    width: 50vw;
+    height: fit-content;
 }
 
 .imgContainer {
@@ -45,9 +46,29 @@
     position: relative;
 }
 
+.address {
+    display: block;
+    width: 40vw;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.location {
+    display: block;
+    width: 40vw;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
 .platformLink {
     display: block;
-    width: 200px;
+    width: 40vw;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.description {
+    width: 40vw;
     overflow: hidden;
 }
 
