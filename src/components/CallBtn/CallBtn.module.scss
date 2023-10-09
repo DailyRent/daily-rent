@@ -18,9 +18,22 @@
   font-weight: 400;
   line-height: normal;
 
+  &:hover,
+  &:focus {
+    background: $lightFontColor;
+    color: $darckFontColor;
+    scale: 0.95;
+  }
+
   @media screen and (min-width: $desktop) {
     width: 183px;
     height: 58px;
     font-size: 20px;
+
+    &:hover,
+    &:focus {
+      background: transparent;
+      color: $darckFontColor;
+    }
   }
 }
