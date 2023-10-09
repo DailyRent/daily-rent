@@ -48,13 +48,12 @@ const Dashboard = () => {
             setAmenitiesValues(newArray);
         };
     }
-
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log("handleSubmit was started");
-        console.log("e.target", e.target);
+        // console.log("handleSubmit was started");
+        // console.log("e.target", e.target);
         const objNumber = e.target[0].value;
-        const top = e.target[1].value;
+        const top = e.target[1].checked;
         const titleImg = e.target[2].value;
         const imgs = e.target[3].value;
         const address = e.target[4].value;
@@ -105,6 +104,7 @@ const Dashboard = () => {
 
     // меняет значение value на true или false в зависимости от checked
     function checkboxSwitchForTop(e) {
+        console.log("e.target", e.target)
         if (e.target.checked) {
             e.target.value = true;
         }
@@ -138,15 +138,15 @@ const Dashboard = () => {
                                     />
                                 </li>)
                                 )}</ul>
-                                <p>Адреса: {apart.address}</p>
+                                <p className={styles.address}>Адреса: {apart.address}</p>
                                 <p>Квартира: {apart.flatNumber}</p>
-                                <p>Місцезнаходження: {apart.googleMapLocation}</p>
+                                <Link href={apart.googleMapLocation} className={styles.location}>Місцезнаходження: {apart.googleMapLocation}</Link>
                                 <p>Ціна: {apart.price}</p>
                                 <p>Кількість кімнат: {apart.roomsQuantity}</p>
-                                <p className={styles.platformLink}>BookingUrl: {apart.bookingUrl}</p>
+                                <Link href={apart.bookingUrl} className={styles.platformLink}>BookingUrl: {apart.bookingUrl}</Link>
                                 <ul>Додатковий комфорт: {apart.amenities.map((item, index) => (<li key={index}>{item}</li>))}
                                 </ul>
-                                <p>Опис: {apart.description}</p>
+                                <p className={styles.description}>Опис: {apart.description}</p>
                             </div>
 
                             <div className={styles.btnsWrapper}>
