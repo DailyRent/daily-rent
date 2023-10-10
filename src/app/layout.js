@@ -5,7 +5,6 @@ import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import AuthProvider from "@/components/AuthProvider/AuthProvider";
 import { SiteProvider } from "@/context/SiteContext";
-
 // const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -28,6 +27,6 @@ export default function RootLayout({ children }) {
           </AuthProvider>
         </SiteProvider>
       </body>
-    </html>
+    </html >
   );
 }
