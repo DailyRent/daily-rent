@@ -2,8 +2,8 @@ const TELEGRAM_CHAT_ID = "@TestDailyRent";
 const telegramApi = process.env.TELEGRAM_API
 
 
-export const sendToTelegram = async (data) => {
-    const { name, tel, number, check_In, check_Out } = data;
+export const sendToTelegram = async (formData) => {
+    const { name, tel, number, check_In, check_Out } = formData;
 
     const text = `Вельмишановний Daily Rent,
      ${name} хотів би забронювати квартиру # ${number}

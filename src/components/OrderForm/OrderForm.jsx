@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import useSWR from "swr";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -30,12 +31,19 @@ const OrderForm = ({ isOpen, closeModal }) => {
     const [validForm, setValidForm] = useState(false);
     const [submit, setSubmit] = useState(false);
 
+    const fetcher = (...args) => fetch(...args).then((res) => res.json());
+    const { data } = useSWR("/api/apartments", fetcher);
+    const listOfAppartmentsNumbers = data?.map((item) => item.objNumber);
+
     useEffect(() => {
         if (isOpen) {
             document.body.style.overflow = "hidden";
         }
         return () => {
             document.body.style.overflow = "unset";
+            // document.body.scrollTop = 0; //For Safari
+            // document.documentElement.scrollTop = 0;
+            window.scrollTo(0, 0);
         };
     }, [isOpen]);
 
@@ -62,11 +70,11 @@ const OrderForm = ({ isOpen, closeModal }) => {
     const validateName = (value) => {
         if (value.length < 2) {
             setErrorUserName("Ім’я має бути довшим");
-            if (value.length === 0) {
-                setErrorUserName("Заповніть це поле");
-            }
         } else {
             setErrorUserName("");
+        }
+        if (value.length === 0) {
+            setErrorUserName("Заповніть це поле");
         }
     };
 
@@ -78,21 +86,27 @@ const OrderForm = ({ isOpen, closeModal }) => {
         } else {
             setErrorPhone("");
         }
-        if (value.length === 0) setErrorPhone("Заповніть це поле");
+        if (value.length === 0) {
+            setErrorPhone("Заповніть це поле");
+        }
     };
 
     const validateObjNumber = (value) => {
         let reNum = /^[0-9]*$/;
+        const findNum = listOfAppartmentsNumbers?.find(
+            (item) => item === value
+        );
 
         if (!reNum.test(value)) {
             setErrorObjNumber("Тільки цифри");
-            if (value.length === 0) {
-                setErrorObjNumber("Заповніть це поле");
-            }
+        } else if (!findNum) {
+            setErrorObjNumber("Такої квартири немає");
         } else {
             setErrorObjNumber("");
         }
-        if (value.length === 0) setErrorObjNumber("Заповніть це поле");
+        if (value.length === 0) {
+            setErrorObjNumber("Заповніть це поле");
+        }
     };
 
     const handleChange = (evt) => {

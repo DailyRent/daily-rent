@@ -1,155 +1,155 @@
 @import "../../../styles/_variables.scss";
 
 .container {
-  // display: none;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 40px;
-  // padding: 0px 32px;
-  padding: 40px 32px 8px;
-  color: $footerTextColor;
-  overflow-x: hidden;
+    // display: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    // padding: 0px 32px;
+    padding: 40px 32px 8px;
+    color: $footerTextColor;
+    overflow-x: hidden;
 
-  // @media screen and (min-width: $tablet) {
-  //   display: flex;
-  // }
-  @media screen and (min-width: $desktop) {
-    padding: 48px 75px 8px;
-  }
+    // @media screen and (min-width: $tablet) {
+    //   display: flex;
+    // }
+    @media screen and (min-width: $desktop) {
+        padding: 48px 75px 8px;
+    }
 }
 
 .tabletLinksWrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  & p {
-    color: $footerTextColor;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-  }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    & p {
+        color: $footerTextColor;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
 
-  @media screen and (min-width: $desktop) {
-    padding-bottom: 28px;
-    border-bottom: 1px solid #000;
-  }
+    @media screen and (min-width: $desktop) {
+        padding-bottom: 28px;
+        border-bottom: 1px solid #000;
+    }
 }
 
 .footerLogo {
-  font-size: 32px;
-  margin-left: 0;
-  margin-right: auto;
-  color: $footerLogoColor;
+    font-size: 32px;
+    margin-left: 0;
+    margin-right: auto;
+    color: $footerLogoColor;
 }
 
 .contentWrapper {
-  display: flex;
-  width: inherit;
-  gap: 40px;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  @media screen and (min-width: $desktop) {
-    gap: 80px;
-  }
+    display: flex;
+    width: inherit;
+    gap: 40px;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    @media screen and (min-width: $desktop) {
+        gap: 80px;
+    }
 }
 
 .leftContentWrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  flex: 1;
-  @media screen and (min-width: $desktop) {
-    gap: 24px;
-  }
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex: 1;
+    @media screen and (min-width: $desktop) {
+        gap: 24px;
+    }
 }
 
 .leftContentText {
-  color: #bbbbbb;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  max-width: 410px;
+    color: #bbbbbb;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    max-width: 410px;
 }
 
 .contacts {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  gap: 16px;
-  color: $footerLocationColor;
-  & a {
-    width: fit-content;
-  }
-  @media screen and (min-width: $desktop) {
-    gap: 24px;
-  }
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 16px;
+    color: $footerLocationColor;
+    & a {
+        width: fit-content;
+    }
+    @media screen and (min-width: $desktop) {
+        gap: 24px;
+    }
 }
 
 .rightContentWrapper {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 40px;
-  flex: 1;
-  @media screen and (min-width: $desktop) {
+    display: flex;
     flex-direction: row;
-  }
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 40px;
+    flex: 1;
+    @media screen and (min-width: $desktop) {
+        flex-direction: row;
+    }
 }
 
 .FooterNavigation {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  color: $footerTextColor;
-  @media screen and (min-width: $desktop) {
-    gap: 32px;
-  }
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    color: $footerTextColor;
+    @media screen and (min-width: $desktop) {
+        gap: 32px;
+    }
 }
 
 .btnsWrapper {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  gap: 32px;
-  align-items: flex-end;
-  & a,
-  & button {
+    width: 100%;
     display: flex;
-    width: 128px;
-    padding: 8px 0px;
-    justify-content: center;
-    align-items: center;
-  }
-
-  @media screen and (min-width: $desktop) {
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 32px;
+    align-items: flex-end;
     & a,
     & button {
-      font-size: 16px;
-      width: 183px;
-      padding: 16px 40px;
+        display: flex;
+        width: 128px;
+        padding: 8px 0px;
+        justify-content: center;
+        align-items: center;
     }
-  }
+
+    @media screen and (min-width: $desktop) {
+        & a,
+        & button {
+            font-size: 16px;
+            width: 183px;
+            padding: 16px 40px;
+        }
+    }
 }
 
 .rights {
-  color: $footerTextColor;
-  font-family: inherit;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  margin-bottom: -20px;
+    color: $footerTextColor;
+    font-family: inherit;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: -20px;
 }
 
 .webevery {
-  width: 100vw;
-  text-align: center;
-  padding: 8px;
-  border-top: 1px solid rgb(84, 84, 84, 0.14);
+    width: 100vw;
+    text-align: center;
+    padding: 8px;
+    border-top: 1px solid rgb(84, 84, 84, 0.14);
 }

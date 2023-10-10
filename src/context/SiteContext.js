@@ -23,8 +23,6 @@ export const SiteProvider = ({ children }) => {
     setModalOpen(false);
   };
 
-
-
   return (
     <SiteContext.Provider
       value={{
