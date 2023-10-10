@@ -1,4 +1,4 @@
-@import "../../../styles/_variables.scss";
+@import '../../../styles/_variables.scss';
 
 .container {
   height: 100vh;
@@ -26,16 +26,14 @@
   justify-content: center;
 
   position: relative;
+  &:hover > .img {
+    filter: none;
+  }
 
   & img {
     object-fit: cover;
     object-position: center;
     filter: brightness(0.5);
-
-    &:hover,
-    &:focus {
-      filter: none;
-    }
   }
 
   &:nth-child(3) img {
