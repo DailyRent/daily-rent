@@ -229,7 +229,7 @@ const Dashboard = () => {
                     </label>
                 </fieldset>
                 <input type='text' placeholder='Опис' className={styles.input} />
-                <button className={styles.sendBtn}>Send</button>
+                <button className={styles.sendBtn}>Створити новий обʼєкт</button>
             </form>
         </div>
     }

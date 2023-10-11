@@ -295,7 +295,7 @@ const UpdatingForm = ({ id, apart }) => {
                 <label> Опис:
                     <input type='text' placeholder='Опис' className={styles.input} value={newDescription} />
                 </label>
-                <button className={styles.sendBtn}>Send</button>
+                <button className={styles.sendBtn}>Оновити дані обʼєкту</button>
             </form>
         </div>
     )
