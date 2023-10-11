@@ -36,6 +36,7 @@ const Login = () => {
 
 
     return <div className={styles.container}>
+        <h1>Вхід</h1>
         <form className={styles.form} onSubmit={handleSubmit}>
 
             <input
@@ -52,10 +53,10 @@ const Login = () => {
                 required
             />
 
-            <button type="submit" className={styles.registerBtn}>Login</button>
+            <button type="submit" className={styles.registerBtn}>Залогінитися</button>
         </form>
 
-        <button onClick={() => signIn("google")} className={styles.loginBtn}>Login with Google</button>
+        <button onClick={() => signIn("google")} className={styles.loginBtn}>Залогінитися за допомогою Google</button>
     </div>;
 };
 
