@@ -10,26 +10,25 @@ import SuccessContent from "./SuccessContent";
 import styles from "./OrderForm.module.scss";
 
 const OrderForm = ({ isOpen, closeModal }) => {
-    const [userName, setUserName] = useState("");
-    const [phone, setPhone] = useState("");
-    const [objNumber, setObjNumber] = useState("");
-    const [checkIn, setCheckIn] = useState(null);
-    const [checkOut, setCheckOut] = useState(null);
-
-    const [dirtyUserName, setDirtyUserName] = useState(false);
-    const [dirtyPhone, setDirtyPhone] = useState(false);
-    const [dirtyObjNumber, setDirtyObjNumber] = useState(false);
-    const [dirtyCheckIn, setDirtyCheckIn] = useState(false);
-    const [dirtyCheckOut, setDirtyCheckOut] = useState(false);
-
-    const [errorUserName, setErrorUserName] = useState("Заповніть це поле");
-    const [errorPhone, setErrorPhone] = useState("Заповніть це поле");
-    const [errorObjNumber, setErrorObjNumber] = useState("Заповніть це поле");
-    const [errorCheckIn, setErrorCheckIn] = useState("Заповніть це поле");
-    const [errorCheckOut, setErrorCheckOut] = useState("Заповніть це поле");
-
-    const [validForm, setValidForm] = useState(false);
-    const [submit, setSubmit] = useState(false);
+    const [form, setForm] = useState({
+        userName: "",
+        phone: "",
+        objNumber: "",
+        checkIn: null,
+        checkOut: null,
+        dirtyUserName: false,
+        dirtyPhone: false,
+        dirtyObjNumber: false,
+        dirtyCheckIn: false,
+        dirtyCheckOut: false,
+        errorUserName: "Заповніть це поле",
+        errorPhone: "Заповніть це поле",
+        errorObjNumber: "Заповніть це поле",
+        errorCheckIn: "Заповніть це поле",
+        errorCheckOut: "Заповніть це поле",
+        validForm: false,
+        submit: false,
+    });
 
     const fetcher = (...args) => fetch(...args).then((res) => res.json());
     const { data } = useSWR("/api/apartments", fetcher);
@@ -49,32 +48,41 @@ const OrderForm = ({ isOpen, closeModal }) => {
 
     useEffect(() => {
         if (
-            errorUserName ||
-            errorPhone ||
-            errorObjNumber ||
-            errorCheckIn ||
-            errorCheckOut
+            form.errorUserName ||
+            form.errorPhone ||
+            form.errorCheckIn ||
+            form.errorCheckOut ||
+            form.errorObjNumber
         ) {
-            setValidForm(false);
+            setForm((prev) => ({ ...prev, validForm: false }));
         } else {
-            setValidForm(true);
+            setForm((prev) => ({ ...prev, validForm: true }));
         }
     }, [
-        errorUserName,
-        errorPhone,
-        errorObjNumber,
-        errorCheckIn,
-        errorCheckOut,
+        form.errorCheckIn,
+        form.errorCheckOut,
+        form.errorUserName,
+        form.errorPhone,
+        form.errorObjNumber,
     ]);
 
     const validateName = (value) => {
         if (value.length < 2) {
-            setErrorUserName("Ім’я має бути довшим");
+            setForm((prev) => ({
+                ...prev,
+                errorUserName: "Ім’я має бути довшим",
+            }));
         } else {
-            setErrorUserName("");
+            setForm((prev) => ({
+                ...prev,
+                errorUserName: "",
+            }));
         }
         if (value.length === 0) {
-            setErrorUserName("Заповніть це поле");
+            setForm((prev) => ({
+                ...prev,
+                errorUserName: "Заповніть це поле",
+            }));
         }
     };
 
@@ -82,12 +90,21 @@ const OrderForm = ({ isOpen, closeModal }) => {
         let re = /^\+\d{12}$/;
 
         if (!re.test(value)) {
-            setErrorPhone("+380123456789");
+            setForm((prev) => ({
+                ...prev,
+                errorPhone: "+380123456789",
+            }));
         } else {
-            setErrorPhone("");
+            setForm((prev) => ({
+                ...prev,
+                errorPhone: "",
+            }));
         }
         if (value.length === 0) {
-            setErrorPhone("Заповніть це поле");
+            setForm((prev) => ({
+                ...prev,
+                errorPhone: "Заповніть це поле",
+            }));
         }
     };
 
@@ -98,14 +115,26 @@ const OrderForm = ({ isOpen, closeModal }) => {
         );
 
         if (!reNum.test(value)) {
-            setErrorObjNumber("Тільки цифри");
+            setForm((prev) => ({
+                ...prev,
+                errorObjNumber: "Тільки цифри",
+            }));
         } else if (!findNum) {
-            setErrorObjNumber("Такої квартири немає");
+            setForm((prev) => ({
+                ...prev,
+                errorObjNumber: "Такої квартири немає",
+            }));
         } else {
-            setErrorObjNumber("");
+            setForm((prev) => ({
+                ...prev,
+                errorObjNumber: "",
+            }));
         }
         if (value.length === 0) {
-            setErrorObjNumber("Заповніть це поле");
+            setForm((prev) => ({
+                ...prev,
+                errorObjNumber: "Заповніть це поле",
+            }));
         }
     };
 
@@ -116,19 +145,19 @@ const OrderForm = ({ isOpen, closeModal }) => {
             case "name":
                 if (evt.target.value.length > 30) return;
                 validateName(value);
-                setUserName(value);
+                setForm((prev) => ({ ...prev, userName: value }));
                 break;
 
             case "phone":
                 if (evt.target.value.length > 13) return;
                 validatePhone(value);
-                setPhone(value);
+                setForm((prev) => ({ ...prev, phone: value }));
                 break;
 
             case "objNumber":
                 if (evt.target.value.length > 3) return;
                 validateObjNumber(value);
-                setObjNumber(value);
+                setForm((prev) => ({ ...prev, objNumber: value }));
                 break;
 
             default:
@@ -139,15 +168,15 @@ const OrderForm = ({ isOpen, closeModal }) => {
     const handleBlur = (evt) => {
         switch (evt.target.name) {
             case "name":
-                setDirtyUserName(true);
+                setForm((prev) => ({ ...prev, dirtyUserName: true }));
                 break;
 
             case "phone":
-                setDirtyPhone(true);
+                setForm((prev) => ({ ...prev, dirtyPhone: true }));
                 break;
 
             case "objNumber":
-                setDirtyObjNumber(true);
+                setForm((prev) => ({ ...prev, dirtyObjNumber: true }));
                 break;
 
             default:
@@ -156,37 +185,40 @@ const OrderForm = ({ isOpen, closeModal }) => {
     };
 
     const reset = () => {
-        setUserName("");
-        setPhone("");
-        setDirtyUserName(false);
-        setDirtyPhone(false);
-        setDirtyObjNumber(false);
-        setDirtyCheckIn(false);
-        setDirtyCheckOut(false);
-        setErrorUserName("Заповніть це поле");
-        setErrorPhone("Заповніть це поле");
-        setErrorObjNumber("Заповніть це поле");
-        setErrorCheckIn("Заповніть це поле");
-        setErrorCheckOut("Заповніть це поле");
-        setSubmit(false);
+        setForm((prev) => ({ ...prev, userName: "" }));
+        setForm((prev) => ({ ...prev, phone: "" }));
+        setForm((prev) => ({ ...prev, objNumber: "" }));
+        setForm((prev) => ({ ...prev, checkIn: null }));
+        setForm((prev) => ({ ...prev, checkOut: null }));
+        setForm((prev) => ({ ...prev, dirtyUserName: false }));
+        setForm((prev) => ({ ...prev, dirtyPhone: false }));
+        setForm((prev) => ({ ...prev, dirtyObjNumber: false }));
+        setForm((prev) => ({ ...prev, dirtyCheckIn: false }));
+        setForm((prev) => ({ ...prev, dirtyCheckOut: false }));
+        setForm((prev) => ({ ...prev, errorUserName: "Заповніть це поле" }));
+        setForm((prev) => ({ ...prev, errorPhone: "Заповніть це поле" }));
+        setForm((prev) => ({ ...prev, errorObjNumber: "Заповніть це поле" }));
+        setForm((prev) => ({ ...prev, errorCheckIn: "Заповніть це поле" }));
+        setForm((prev) => ({ ...prev, errorCheckOut: "Заповніть це поле" }));
+        setForm((prev) => ({ ...prev, submit: false }));
     };
 
     const formSubmit = (evt) => {
         evt.preventDefault();
 
         const formData = {
-            name: userName,
-            tel: phone,
-            number: objNumber,
-            check_In: formatDate(checkIn),
-            check_Out: formatDate(checkOut),
+            name: form.userName,
+            tel: form.phone,
+            number: form.objNumber,
+            check_In: formatDate(form.checkIn),
+            check_Out: formatDate(form.checkOut),
         };
         sendToTelegram(formData);
-        setSubmit(true);
+        setForm((prev) => ({ ...prev, submit: true }));
         setTimeout(() => {
             closeModal();
             reset();
-        }, 3000);
+        }, 4000);
     };
 
     return (
@@ -197,15 +229,15 @@ const OrderForm = ({ isOpen, closeModal }) => {
                 </svg>
             </button>
             <h1 className={styles.title}>Daily Rent</h1>
-            {submit ? (
+            {form.submit ? (
                 <SuccessContent closeModal={closeModal} />
             ) : (
                 <form className={styles.form} onSubmit={formSubmit}>
                     <div className={styles.innerWrap}>
                         <div className={styles.wrapError}>
-                            {dirtyUserName && errorUserName && (
+                            {form.dirtyUserName && form.errorUserName && (
                                 <div className={styles.error}>
-                                    {errorUserName}
+                                    {form.errorUserName}
                                 </div>
                             )}
 
@@ -216,11 +248,11 @@ const OrderForm = ({ isOpen, closeModal }) => {
                                 <input
                                     type='text'
                                     name='name'
-                                    value={userName}
+                                    value={form.userName}
                                     placeholder='Ім’я'
                                     autoComplete='off'
                                     className={
-                                        errorUserName && dirtyUserName
+                                        form.errorUserName && form.dirtyUserName
                                             ? `${styles.input} ${styles.inputError}`
                                             : styles.input
                                     }
@@ -231,8 +263,10 @@ const OrderForm = ({ isOpen, closeModal }) => {
                         </div>
 
                         <div className={styles.wrapError}>
-                            {dirtyPhone && errorPhone && (
-                                <div className={styles.error}>{errorPhone}</div>
+                            {form.dirtyPhone && form.errorPhone && (
+                                <div className={styles.error}>
+                                    {form.errorPhone}
+                                </div>
                             )}
                             <label className={styles.label}>
                                 <svg className={styles.icon}>
@@ -241,11 +275,11 @@ const OrderForm = ({ isOpen, closeModal }) => {
                                 <input
                                     type='tel'
                                     name='phone'
-                                    value={phone}
+                                    value={form.phone}
                                     placeholder='Номер телефону'
                                     autoComplete='off'
                                     className={
-                                        errorPhone && dirtyPhone
+                                        form.errorPhone && form.dirtyPhone
                                             ? `${styles.input} ${styles.inputError}`
                                             : styles.input
                                     }
@@ -257,9 +291,9 @@ const OrderForm = ({ isOpen, closeModal }) => {
                     </div>
                     <div className={styles.innerWrap}>
                         <div className={styles.wrapError}>
-                            {dirtyCheckIn && errorCheckIn && (
+                            {form.dirtyCheckIn && form.errorCheckIn && (
                                 <div className={styles.error}>
-                                    {errorCheckIn}
+                                    {form.errorCheckIn}
                                 </div>
                             )}
                             <div className={styles.label}>
@@ -274,22 +308,30 @@ const OrderForm = ({ isOpen, closeModal }) => {
                                     <use href='/sprite.svg#icon-chevron-down' />
                                 </svg>
                                 <DatePicker
-                                    selected={checkIn}
+                                    selected={form.checkIn}
                                     onChange={(date) => {
-                                        setCheckIn(date);
-                                        setErrorCheckIn("");
+                                        setForm((prev) => ({
+                                            ...prev,
+                                            checkIn: date,
+                                            errorCheckIn: "",
+                                        }));
                                     }}
                                     selectsStart
                                     dateFormat='dd/MM/yyyy'
-                                    startDate={checkIn}
-                                    endDate={checkOut}
+                                    startDate={form.checkIn}
+                                    endDate={form.checkOut}
                                     className={
-                                        dirtyCheckIn && errorCheckIn
+                                        form.dirtyCheckIn && form.errorCheckIn
                                             ? `${styles.input} ${styles.inputError}`
                                             : styles.input
                                     }
                                     placeholderText='Дата заїзду'
-                                    onBlur={() => setDirtyCheckIn(true)}
+                                    onBlur={() =>
+                                        setForm((prev) => ({
+                                            ...prev,
+                                            dirtyCheckIn: true,
+                                        }))
+                                    }
                                     excludeDateIntervals={[
                                         {
                                             start: subDays(new Date(), 100),
@@ -307,9 +349,9 @@ const OrderForm = ({ isOpen, closeModal }) => {
                         </div>
 
                         <div className={styles.wrapError}>
-                            {dirtyCheckOut && errorCheckOut && (
+                            {form.dirtyCheckOut && form.errorCheckOut && (
                                 <div className={styles.error}>
-                                    {errorCheckOut}
+                                    {form.errorCheckOut}
                                 </div>
                             )}
                             <div className={styles.label}>
@@ -324,23 +366,31 @@ const OrderForm = ({ isOpen, closeModal }) => {
                                     <use href='/sprite.svg#icon-chevron-down' />
                                 </svg>
                                 <DatePicker
-                                    selected={checkOut}
+                                    selected={form.checkOut}
                                     dateFormat='dd/MM/yyyy'
                                     onChange={(date) => {
-                                        setCheckOut(date);
-                                        setErrorCheckOut("");
+                                        setForm((prev) => ({
+                                            ...prev,
+                                            checkOut: date,
+                                            errorCheckOut: "",
+                                        }));
                                     }}
                                     selectsEnd
-                                    startDate={checkIn}
-                                    endDate={checkOut}
-                                    minDate={checkIn}
+                                    startDate={form.checkIn}
+                                    endDate={form.checkOut}
+                                    minDate={form.checkIn}
                                     className={
-                                        dirtyCheckOut && errorCheckOut
+                                        form.dirtyCheckOut && form.errorCheckOut
                                             ? `${styles.input} ${styles.inputError}`
                                             : styles.input
                                     }
                                     placeholderText='Дата виїзду'
-                                    onBlur={() => setDirtyCheckOut(true)}
+                                    onBlur={() =>
+                                        setForm((prev) => ({
+                                            ...prev,
+                                            dirtyCheckOut: true,
+                                        }))
+                                    }
                                     includeDateIntervals={[
                                         {
                                             start: subDays(new Date(), 2),
@@ -354,9 +404,9 @@ const OrderForm = ({ isOpen, closeModal }) => {
 
                     <div className={styles.innerWrap}>
                         <div className={styles.wrapError}>
-                            {dirtyObjNumber && errorObjNumber && (
+                            {form.dirtyObjNumber && form.errorObjNumber && (
                                 <div className={styles.error}>
-                                    {errorObjNumber}
+                                    {form.errorObjNumber}
                                 </div>
                             )}
                             <label className={styles.label}>
@@ -366,11 +416,12 @@ const OrderForm = ({ isOpen, closeModal }) => {
                                 <input
                                     type='text'
                                     name='objNumber'
-                                    value={objNumber}
+                                    value={form.objNumber}
                                     placeholder='Номер об’єкту'
                                     autoComplete='off'
                                     className={
-                                        dirtyObjNumber && errorObjNumber
+                                        form.dirtyObjNumber &&
+                                        form.errorObjNumber
                                             ? `${styles.input} ${styles.inputError}`
                                             : styles.input
                                     }
@@ -390,9 +441,9 @@ const OrderForm = ({ isOpen, closeModal }) => {
                     </div>
 
                     <button
-                        disabled={!validForm}
+                        disabled={!form.validForm}
                         className={
-                            validForm
+                            form.validForm
                                 ? `${styles.button} ${styles.activeBtn}`
                                 : styles.button
                         }
