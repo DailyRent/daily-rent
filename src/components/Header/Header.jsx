@@ -112,7 +112,7 @@ const Header = () => {
       <TranslatorBtnBlock isClient={isClient} />
       {session.status === "authenticated" && (
         <button className={styles.logoutBtn} onClick={signOut}>
-          Разлогінитися
+          Розлогінитися
         </button>
       )}
       <BurgerBtn
