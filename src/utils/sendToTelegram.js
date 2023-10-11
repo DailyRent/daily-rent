@@ -25,7 +25,7 @@ export const sendToTelegram = async (formData) => {
         });
 
         if (response.ok) {
-            console.log("To telegram sent:", data);
+            console.log("To telegram sent:", formData);
         } else {
             throw new Error(response.statusText);
         }
