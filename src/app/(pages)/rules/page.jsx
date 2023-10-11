@@ -1,9 +1,9 @@
 // "use client";
-import React from 'react';
-import styles from './page.module.scss';
+import React from "react";
+import styles from "./page.module.scss";
 // import ButtonToBack from "@/components/share/ButtonToBack/ButtonToBack";
 // import { useRouter } from "next/navigation";
-import Link from 'next/link';
+import Link from "next/link";
 
 const RulesPage = () => {
   // const router = useRouter();
@@ -15,7 +15,7 @@ const RulesPage = () => {
           <Link href="/" className="textLinkAnimation">
             Головна
           </Link>
-          /Правила
+          / Правила
         </span>
       </div>
       <div className={styles.ruleListThumb}>
