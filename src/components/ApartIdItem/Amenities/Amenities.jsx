@@ -1,8 +1,8 @@
-import { amenities } from '@/data/amenities.data';
-import { currentLanguages } from '@/data/languages.data';
-import Image from 'next/image';
-import { useTranslation } from 'react-i18next';
-import styles from './Amenities.module.scss';
+import { amenities } from "@/data/amenities.data";
+import { currentLanguages } from "@/data/languages.data";
+import Image from "next/image";
+import { useTranslation } from "react-i18next";
+import styles from "./Amenities.module.scss";
 
 const Amenities = ({ dataId }) => {
   const { i18n } = useTranslation();
@@ -11,6 +11,7 @@ const Amenities = ({ dataId }) => {
   const matchingAmenities = amenities.filter((amenity) =>
     dataId.amenities.includes(amenity.title)
   );
+
   return (
     <div className={styles.propositionContainer}>
       <h2 className={styles.propositionTitle}>Що буде в апартаментах ?</h2>
