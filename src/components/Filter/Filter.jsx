@@ -60,9 +60,9 @@ const Filter = ({ amenitiesArr, setAmenitiesArr }) => {
   //   const handleChangeAmenity = () => {
   //     setCheckedAmenity(!checkedAmenity);
 
-  const handleResetFilter = () => {
-    setAmenitiesArr([]);
-  };
+  //   const handleResetFilter = () => {
+  //     setAmenitiesArr([]);
+  //   };
   //   };
   const isFilterShown = filterShown
     ? styles.container
