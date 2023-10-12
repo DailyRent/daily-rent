@@ -17,6 +17,11 @@ const Filter = ({ amenitiesArr, setAmenitiesArr }) => {
   useEffect(() => {
     setIsLoad(false);
   }, []);
+
+  const amenitiesWithoutWiFi = amenities.filter(
+    (amenity) => amenity.title !== "Wi-Fi"
+  );
+  //   console.log(amenitiesWithoutWiFi);
   //   const [checkedAmenity, setCheckedAmenity] = useState(false);
   //   const [amenitiesArr, setAmenitiesArr] = useState([]);
   //   const pathname = usePathname();
@@ -118,7 +123,7 @@ const Filter = ({ amenitiesArr, setAmenitiesArr }) => {
         <ul className={styles.filterAmenitisContainer}>
           {/* {console.log(amenitiesArr)} */}
           {!isLoad &&
-            amenities.map((item) => {
+            amenitiesWithoutWiFi.map((item) => {
               return (
                 <FilterItem
                   key={item.id}
