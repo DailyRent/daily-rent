@@ -17,8 +17,8 @@ const UpdatingForm = ({ id, apart }) => {
     const [newBookingUrl, setNewBookingUrl] = useState(bookingUrl);
     const [newAmenities, setNewAmenities] = useState(amenities);
     const [airCond, setAirCond] = useState(newAmenities.includes("Кондиціонер"));
-    const [wifi, setWifi] = useState(newAmenities.includes("Вайфай"));
-    const [smartTV, setSmartTV] = useState(newAmenities.includes("СмартТВ"));
+    const [wifi, setWifi] = useState(newAmenities.includes("Wi-Fi"));
+    const [smartTV, setSmartTV] = useState(newAmenities.includes("Smart TV"));
     const [bath, setBath] = useState(newAmenities.includes("Ванна"));
     const [shower, setShower] = useState(newAmenities.includes("Душова кабіна"));
     const [jacuzzi, setJacuzzi] = useState(newAmenities.includes("Джакузі"));
@@ -62,10 +62,10 @@ const UpdatingForm = ({ id, apart }) => {
                 case "Кондиціонер":
                     setAirCond(false);
                     break;
-                case "Вайфай":
+                case "Wi-Fi":
                     setWifi(false);
                     break;
-                case "СмартТВ":
+                case "Smart TV":
                     setSmartTV(false);
                     break;
                 case "Ванна":
@@ -110,10 +110,10 @@ const UpdatingForm = ({ id, apart }) => {
                 case "Кондиціонер":
                     setAirCond(true);
                     break;
-                case "Вайфай":
+                case "Wi-Fi":
                     setWifi(true);
                     break;
-                case "СмартТВ":
+                case "Smart TV":
                     setSmartTV(true);
                     break;
                 case "Ванна":
@@ -214,19 +214,19 @@ const UpdatingForm = ({ id, apart }) => {
                         />
                         Кондиціонер
                     </label>
-                    <label htmlFor="wifi">
-                        <input type="checkbox" id="wifi" name="wifi" value="Вайфай"
+                    <label htmlFor="wi-fi">
+                        <input type="checkbox" id="wi-fi" name="wi-fi" value="Wi-Fi"
                             onChange={changeAmenities}
                             checked={wifi}
                         />
-                        Вайфай
+                        Wi-Fi
                     </label>
                     <label htmlFor="smartTV">
-                        <input type="checkbox" id="smartTV" name="smartTV" value="СмартТВ"
+                        <input type="checkbox" id="smartTV" name="smartTV" value="Smart TV"
                             onChange={changeAmenities}
                             checked={smartTV}
                         />
-                        СмартТВ
+                        Smart TV
                     </label>
                     <label htmlFor="bath">
                         <input type="checkbox" id="bath" name="bath" value="Ванна"

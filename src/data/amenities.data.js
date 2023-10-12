@@ -9,8 +9,8 @@ export const amenities = [
   },
   {
     id: 2,
-    titleEN: 'WiFi',
-    title: 'Вайфай',
+    titleEN: 'Wi-Fi',
+    title: 'Wi-Fi',
     img: '/png/Wi-Fi.png',
   },
   {
@@ -33,8 +33,8 @@ export const amenities = [
   },
   {
     id: 6,
-    titleEN: 'SmartTV',
-    title: 'Телебачення',
+    titleEN: 'Smart TV',
+    title: 'Smart TV',
     img: '/png/SmartTV.png',
   },
   {
