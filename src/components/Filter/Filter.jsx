@@ -9,6 +9,7 @@ import FilterItem from "./FilterItem/FilterItem";
 const Filter = ({ amenitiesArr, setAmenitiesArr }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const { filterShown, setFilterShown } = useContext(SiteContext);
+
   //   const [checkedAmenity, setCheckedAmenity] = useState(false);
   //   const [amenitiesArr, setAmenitiesArr] = useState([]);
   //   const pathname = usePathname();
@@ -47,9 +48,9 @@ const Filter = ({ amenitiesArr, setAmenitiesArr }) => {
   //   const handleChangeAmenity = () => {
   //     setCheckedAmenity(!checkedAmenity);
 
-  //   const handleResetFilter = () => {
-  //     setAmenitiesArr([]);
-  //   };
+  const handleResetFilter = () => {
+    setAmenitiesArr([]);
+  };
   //   };
   const isFilterShown = filterShown
     ? styles.container
@@ -125,23 +126,22 @@ const Filter = ({ amenitiesArr, setAmenitiesArr }) => {
           })}
         </ul>
       </div>
-      {/* <div className={styles.filterSearchResetContainer}> */}
-
-      <button
-        type="button"
-        className={styles.filterButtonSearch}
-        onClick={() => setFilterShown(!filterShown)}
-      >
-        Сховати фільтр
-      </button>
-      {/* <button
+      <div className={styles.filterSearchResetContainer}>
+        <button
+          type="button"
+          className={styles.filterButtonSearch}
+          onClick={() => setFilterShown(!filterShown)}
+        >
+          Сховати фільтр
+        </button>
+        <button
           type="button"
           className={styles.filterButtonSearch}
           onClick={() => handleResetFilter()}
         >
-          Очистити фільтр
-        </button> */}
-      {/* </div> */}
+          Очистити фільтр //close filter
+        </button>
+      </div>
     </div>
   );
 };
