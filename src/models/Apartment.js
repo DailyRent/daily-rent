@@ -40,7 +40,6 @@ const apartmentSchema = new Schema({
     },
     bookingUrl: {
         type: String,
-        unique: true,
     },
     amenities: {
         type: Array,

@@ -62,7 +62,7 @@ const EditCard = ({ params }) => {
                     <Link href={data.googleMapLocation} className={styles.location}>Місцезнаходження: {data.googleMapLocation}</Link>
                     <p>Ціна: {data.price}</p>
                     <p>Кількість кімнат: {data.roomsQuantity}</p>
-                    <p href={data.bookingUrl} className={styles.platformLink}>BookingUrl: {data.bookingUrl}</p>
+                    <Link href={data.bookingUrl} className={styles.platformLink}>BookingUrl: {data.bookingUrl}</Link>
                     <ul>Додатковий комфорт: {data.amenities.map((item, index) => (<li key={index}>{item}</li>))}
                     </ul>
                     <p className={styles.description}>Опис: {data.description}</p>

@@ -12,7 +12,8 @@ const Dashboard = () => {
     const session = useSession();
     // console.log("Dashboard session", session)
     const [roomsQuantityValue, setRoomsQuantityValue] = useState("");
-    const [amenitiesValues, setAmenitiesValues] = useState([]);
+    // надо создать переменную, чтобы при изменении языка динамически вставлять значение вайфай ниже 
+    const [amenitiesValues, setAmenitiesValues] = useState(["Вайфай"]);
 
     const fetcher = (...args) => fetch(...args).then(res => res.json())
     const { data, mutate, error, isLoading } = useSWR('/api/apartments', fetcher);
@@ -35,19 +36,31 @@ const Dashboard = () => {
         setRoomsQuantityValue(e.target.value);
     }
 
+    // const changeAmenities = (e) => {
+    //     // проверяет есть ли квартира в массиве 
+    //     const isAmenityIn = amenitiesValues.find(item => item === e.target.value);
+    //     if (isAmenityIn) {
+    //         // если есть - она удаляется и создается новый массив, который далее сохраняется
+    //         const newArr = amenitiesValues.filter(item => item !== e.target.value)
+    //         setAmenitiesValues(newArr);
+    //     } else {
+    //         // если квартиры нет - добавляется в массив
+    //         const newArray = [...amenitiesValues, e.target.value];
+    //         setAmenitiesValues(newArray);
+    //     };
+    // }
+
     const changeAmenities = (e) => {
-        // проверяет есть ли квартира в массиве 
-        const isAmenityIn = amenitiesValues.find(item => item === e.target.value);
-        if (isAmenityIn) {
-            // если есть - она удаляется и создается новый массив, который далее сохраняется
-            const newArr = amenitiesValues.filter(item => item !== e.target.value)
-            setAmenitiesValues(newArr);
-        } else {
-            // если квартиры нет - добавляется в массив
+        if (e.target.checked) {
             const newArray = [...amenitiesValues, e.target.value];
             setAmenitiesValues(newArray);
-        };
+        } else {
+            const newArr = amenitiesValues.filter(item => item !== e.target.value)
+            setAmenitiesValues(newArr);
+        }
     }
+
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         // console.log("handleSubmit was started");
@@ -102,7 +115,7 @@ const Dashboard = () => {
         }
     }
 
-    // меняет значение value на true или false в зависимости от checked
+    // меняет значение top на true или false в зависимости от checked
     function checkboxSwitchForTop(e) {
         console.log("e.target", e.target)
         if (e.target.checked) {
@@ -184,7 +197,7 @@ const Dashboard = () => {
                         Кондиціонер
                     </label>
                     <label htmlFor="wifi">
-                        <input type="checkbox" id="wifi" name="wifi" value="Вайфай" onChange={changeAmenities} />
+                        <input type="checkbox" id="wifi" name="wifi" value="Вайфай" defaultChecked onChange={changeAmenities} />
                         Вайфай
                     </label>
                     <label htmlFor="smartTV">
@@ -229,7 +242,7 @@ const Dashboard = () => {
                     </label>
                 </fieldset>
                 <input type='text' placeholder='Опис' className={styles.input} />
-                <button className={styles.sendBtn}>Send</button>
+                <button className={styles.sendBtn}>Створити новий обʼєкт</button>
             </form>
         </div>
     }
