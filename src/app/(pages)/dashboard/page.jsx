@@ -12,8 +12,8 @@ const Dashboard = () => {
     const session = useSession();
     // console.log("Dashboard session", session)
     const [roomsQuantityValue, setRoomsQuantityValue] = useState("");
-    // надо создать переменную, чтобы при изменении языка динамически вставлять значение вайфай ниже 
-    const [amenitiesValues, setAmenitiesValues] = useState(["Вайфай"]);
+    // надо создать переменную, чтобы при изменении языка динамически вставлять значение Wi-Fi ниже
+    const [amenitiesValues, setAmenitiesValues] = useState(["Wi-Fi"]);
 
     const fetcher = (...args) => fetch(...args).then(res => res.json())
     const { data, mutate, error, isLoading } = useSWR('/api/apartments', fetcher);
@@ -196,13 +196,13 @@ const Dashboard = () => {
                         <input type="checkbox" id="airCond" name="airCond" value="Кондиціонер" onChange={changeAmenities} />
                         Кондиціонер
                     </label>
-                    <label htmlFor="wifi">
-                        <input type="checkbox" id="wifi" name="wifi" value="Вайфай" defaultChecked onChange={changeAmenities} />
-                        Вайфай
+                    <label htmlFor="wi-fi">
+                        <input type="checkbox" id="wi-fi" name="wi-fi" value="Wi-Fi" defaultChecked onChange={changeAmenities} />
+                        Wi-Fi
                     </label>
                     <label htmlFor="smartTV">
-                        <input type="checkbox" id="smartTV" name="smartTV" value="СмартТВ" onChange={changeAmenities} />
-                        СмартТВ
+                        <input type="checkbox" id="smartTV" name="smartTV" value="Smart TV" onChange={changeAmenities} />
+                        Smart TV
                     </label>
                     <label htmlFor="bath">
                         <input type="checkbox" id="bath" name="bath" value="Ванна" onChange={changeAmenities} />
