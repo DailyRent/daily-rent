@@ -39,7 +39,7 @@ const RegisterPage = () => {
 
     return (
         <div className={styles.container}>
-            <h1>Register Page</h1>
+            <h1>Реєстрація</h1>
             <form className={styles.form} onSubmit={handleSubmit}>
                 <input
                     type="text"
@@ -61,11 +61,11 @@ const RegisterPage = () => {
                     required
                 />
 
-                <button type="submit" className={styles.registerBtn}>Register</button>
+                <button type="submit" className={styles.registerBtn}>Зареєструватися</button>
             </form>
 
             {err && "Something went wrong ((("}
-            <Link href='/dashboard/login'>Login with an existing account</Link>
+            <Link href='/dashboard/login'>Ви вже зареєстровані ?</Link>
         </div>
     )
 }

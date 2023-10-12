@@ -1,69 +1,57 @@
 @import '../../../styles/_variables.scss';
 
 .container {
-  width: 100%;
-  height: 100%;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-top: 80px;
-  @media screen and (min-width: $tablet) {
-    padding: 0px 32px;
-  }
-  @media screen and (min-width: 1024px) {
+  padding-top: 76px;
+  @media screen and (orientation: landscape) {
     flex-direction: row;
-    padding: 0px;
+  }
+  @media screen and (min-width: $tablet) {
+    padding-top: 58px;
+  }
+  @media screen and (min-width: $desktop) {
+    padding-top: 78px;
   }
 }
 
 .roomsContainer {
+  height: calc(100vh / 3);
   width: 100%;
-  height: 186px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   position: relative;
-  background-position: center;
-  @media screen and (min-width: $tablet) {
-    height: 343px;
-  }
-  @media screen and (min-width: 1024px) {
-    height: 930px;
-  }
-  &:hover .img {
+  &:hover > .img {
     filter: none;
   }
-}
 
-.imgContainer {
-  position: relative;
-  width: 100%;
-  height: 186px;
-  @media screen and (min-width: $tablet) {
-    height: 343px;
+  & img {
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(0.5);
   }
-  @media screen and (min-width: 1024px) {
-    height: 930px;
-  }
-}
 
-.img {
-  filter: grayscale(0%) brightness(44%);
-  object-fit: cover;
-}
-
-.title {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  // z-index: 2;
-  color: #fff;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  @media screen and (min-width: $tablet) {
-    font-size: 32px;
+  &:nth-child(3) img {
+    object-position: 0% 80%;
   }
-  @media screen and (min-width: 1024px) {
-    font-size: 40px;
+
+  & h2 {
+    filter: brightness(1);
+
+    color: $lightFontColor;
+    font-size: clamp(1.25rem, 0.893rem + 1.786vw, 2.5rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  @media screen and (orientation: landscape) {
+    height: 100%;
+    width: calc(100vw / 3);
   }
 }

@@ -36,13 +36,13 @@
       font-weight: 400;
       line-height: normal;
 
-      &:hover,
-      &:focus {
-        text-decoration: underline;
-        text-decoration-thickness: 2px;
-        text-underline-offset: 4px;
-        text-decoration-color: rgba(36, 36, 36, 0.5);
-      }
+      // &:hover,
+      // &:focus {
+      //   text-decoration: underline;
+      //   text-decoration-thickness: 2px;
+      //   text-underline-offset: 4px;
+      //   text-decoration-color: rgba(36, 36, 36, 0.5);
+      // }
     }
   }
 
@@ -53,8 +53,8 @@
 
 .activeLink {
   text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
   text-decoration-color: rgba(36, 36, 36, 0.5);
 }
 
@@ -78,7 +78,11 @@
   margin-left: 20px;
   padding: 5px;
   z-index: 20;
-  cursor:pointer;
+  cursor: pointer;
+  background-color: #53c28b;
+  color: white;
+  border-radius: 3px;
+  border-color: transparent;
 }
 
 .headerLogoLight,

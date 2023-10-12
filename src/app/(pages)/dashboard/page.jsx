@@ -12,7 +12,8 @@ const Dashboard = () => {
     const session = useSession();
     // console.log("Dashboard session", session)
     const [roomsQuantityValue, setRoomsQuantityValue] = useState("");
-    const [amenitiesValues, setAmenitiesValues] = useState([]);
+    // надо создать переменную, чтобы при изменении языка динамически вставлять значение Wi-Fi ниже
+    const [amenitiesValues, setAmenitiesValues] = useState(["Wi-Fi"]);
 
     const fetcher = (...args) => fetch(...args).then(res => res.json())
     const { data, mutate, error, isLoading } = useSWR('/api/apartments', fetcher);
@@ -35,26 +36,37 @@ const Dashboard = () => {
         setRoomsQuantityValue(e.target.value);
     }
 
+    // const changeAmenities = (e) => {
+    //     // проверяет есть ли квартира в массиве 
+    //     const isAmenityIn = amenitiesValues.find(item => item === e.target.value);
+    //     if (isAmenityIn) {
+    //         // если есть - она удаляется и создается новый массив, который далее сохраняется
+    //         const newArr = amenitiesValues.filter(item => item !== e.target.value)
+    //         setAmenitiesValues(newArr);
+    //     } else {
+    //         // если квартиры нет - добавляется в массив
+    //         const newArray = [...amenitiesValues, e.target.value];
+    //         setAmenitiesValues(newArray);
+    //     };
+    // }
+
     const changeAmenities = (e) => {
-        // проверяет есть ли квартира в массиве 
-        const isAmenityIn = amenitiesValues.find(item => item === e.target.value);
-        if (isAmenityIn) {
-            // если есть - она удаляется и создается новый массив, который далее сохраняется
-            const newArr = amenitiesValues.filter(item => item !== e.target.value)
-            setAmenitiesValues(newArr);
-        } else {
-            // если квартиры нет - добавляется в массив
+        if (e.target.checked) {
             const newArray = [...amenitiesValues, e.target.value];
             setAmenitiesValues(newArray);
-        };
+        } else {
+            const newArr = amenitiesValues.filter(item => item !== e.target.value)
+            setAmenitiesValues(newArr);
+        }
     }
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log("handleSubmit was started");
-        console.log("e.target", e.target);
+        // console.log("handleSubmit was started");
+        // console.log("e.target", e.target);
         const objNumber = e.target[0].value;
-        const top = e.target[1].value;
+        const top = e.target[1].checked;
         const titleImg = e.target[2].value;
         const imgs = e.target[3].value;
         const address = e.target[4].value;
@@ -103,8 +115,9 @@ const Dashboard = () => {
         }
     }
 
-    // меняет значение value на true или false в зависимости от checked
+    // меняет значение top на true или false в зависимости от checked
     function checkboxSwitchForTop(e) {
+        console.log("e.target", e.target)
         if (e.target.checked) {
             e.target.value = true;
         }
@@ -138,15 +151,15 @@ const Dashboard = () => {
                                     />
                                 </li>)
                                 )}</ul>
-                                <p>Адреса: {apart.address}</p>
+                                <p className={styles.address}>Адреса: {apart.address}</p>
                                 <p>Квартира: {apart.flatNumber}</p>
-                                <p>Місцезнаходження: {apart.googleMapLocation}</p>
+                                <Link href={apart.googleMapLocation} className={styles.location}>Місцезнаходження: {apart.googleMapLocation}</Link>
                                 <p>Ціна: {apart.price}</p>
                                 <p>Кількість кімнат: {apart.roomsQuantity}</p>
-                                <p className={styles.platformLink}>BookingUrl: {apart.bookingUrl}</p>
+                                <Link href={apart.bookingUrl} className={styles.platformLink}>BookingUrl: {apart.bookingUrl}</Link>
                                 <ul>Додатковий комфорт: {apart.amenities.map((item, index) => (<li key={index}>{item}</li>))}
                                 </ul>
-                                <p>Опис: {apart.description}</p>
+                                <p className={styles.description}>Опис: {apart.description}</p>
                             </div>
 
                             <div className={styles.btnsWrapper}>
@@ -183,13 +196,13 @@ const Dashboard = () => {
                         <input type="checkbox" id="airCond" name="airCond" value="Кондиціонер" onChange={changeAmenities} />
                         Кондиціонер
                     </label>
-                    <label htmlFor="wifi">
-                        <input type="checkbox" id="wifi" name="wifi" value="Вайфай" onChange={changeAmenities} />
-                        Вайфай
+                    <label htmlFor="wi-fi">
+                        <input type="checkbox" id="wi-fi" name="wi-fi" value="Wi-Fi" defaultChecked onChange={changeAmenities} />
+                        Wi-Fi
                     </label>
                     <label htmlFor="smartTV">
-                        <input type="checkbox" id="smartTV" name="smartTV" value="СмартТВ" onChange={changeAmenities} />
-                        СмартТВ
+                        <input type="checkbox" id="smartTV" name="smartTV" value="Smart TV" onChange={changeAmenities} />
+                        Smart TV
                     </label>
                     <label htmlFor="bath">
                         <input type="checkbox" id="bath" name="bath" value="Ванна" onChange={changeAmenities} />
@@ -229,7 +242,7 @@ const Dashboard = () => {
                     </label>
                 </fieldset>
                 <input type='text' placeholder='Опис' className={styles.input} />
-                <button className={styles.sendBtn}>Send</button>
+                <button className={styles.sendBtn}>Створити новий обʼєкт</button>
             </form>
         </div>
     }

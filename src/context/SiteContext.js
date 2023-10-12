@@ -13,6 +13,16 @@ export const SiteProvider = ({ children }) => {
 
   const [filterShown, setFilterShown] = useState(false);
 
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  const openModal = () => {
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+  };
+
   return (
     <SiteContext.Provider
       value={{
@@ -24,6 +34,9 @@ export const SiteProvider = ({ children }) => {
         setScrollY,
         filterShown,
         setFilterShown,
+        isModalOpen,
+        openModal,
+        closeModal
       }}
     >
       {children}

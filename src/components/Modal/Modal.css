@@ -21,7 +21,7 @@
 
 .ReactModal__Overlay {
     opacity: 0;
-    transition: opacity 700ms ease-in-out;
+    transition: opacity 500ms ease-in-out;
 }
 
 .ReactModal__Overlay--after-open {
@@ -39,7 +39,7 @@
     margin: 20px;
 
     transform: translateX(100vw);
-    transition: opacity 0.7s, transform 0.7s;
+    transition: opacity 0.5s, transform 0.5s;
 }
 
 .ReactModal__Content--after-open {

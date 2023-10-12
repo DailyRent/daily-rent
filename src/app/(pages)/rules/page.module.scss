@@ -5,7 +5,7 @@
   align-items: flex-start;
   margin-top: 85px;
   padding-bottom: 20px;
-  @media screen and (min-width: 744px) {
+  @media screen and (min-width: $tablet) {
     margin-top: 80px;
   }
 }
@@ -17,13 +17,13 @@
   column-gap: 13px;
   padding-left: 16px;
   margin-bottom: 22.5px;
-  @media screen and (min-width: 744px) {
-    padding-left: 32px;
-    margin-bottom: 37.5px;
+
+  @media screen and (min-width: $tablet) {
+    padding-left: 48px;
   }
-  @media screen and (min-width: 1444px) {
+
+  @media screen and (min-width: 1366px) {
     padding-left: 75px;
-    margin-bottom: 40px;
   }
 }
 
@@ -37,11 +37,12 @@
 
 .ruleListThumb {
   margin: 0 auto;
-  @media screen and (min-width: 744px) {
-    padding-left: 32px;
-    padding-right: 32px;
+  @media screen and (min-width: $tablet) {
+    padding-left: 48px;
+    padding-right: 48px;
   }
-  @media screen and (min-width: 1444px) {
+
+  @media screen and (min-width: 1366px) {
     padding-left: 75px;
     padding-right: 75px;
   }
@@ -49,13 +50,12 @@
 .ruleList {
   margin: 0 auto;
 
-  @media (min-width: 744px) {
+  @media (min-width: $tablet) {
     display: flex;
     flex-wrap: wrap;
-
     margin-bottom: -24px;
     margin-left: -32px;
-    @media (min-width: 1444px) {
+    @media (min-width: 1366px) {
       margin-left: -30px;
       margin-bottom: -40px;
     }
@@ -69,23 +69,27 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  @media (min-width: 744px) {
+
+  @media (min-width: $tablet) {
     flex-basis: calc(100% / 2 - 32px);
     margin-left: 32px;
   }
-  @media (min-width: 1444px) {
+
+  @media (min-width: 1366px) {
     flex-basis: calc(100% / 3 - 30px);
     margin-left: 30px;
   }
 }
 .ruleItem + .ruleItem {
   margin-top: 16px;
-  @media (min-width: 744px) {
+
+  @media (min-width: $tablet) {
     margin-top: 0px;
     margin-left: 32px;
     margin-bottom: 24px;
   }
-  @media (min-width: 1444px) {
+
+  @media (min-width: 1366px) {
     margin-top: 0px;
     margin-left: 30px;
     margin-bottom: 40px;
@@ -106,9 +110,9 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-@media (min-width: 1444px) {
-        font-size: 24px;
-    }
+  @media (min-width: 1366px) {
+    font-size: 24px;
+  }
 }
 .ruleItemDescription {
   font-family: Crimson Text;
@@ -117,7 +121,7 @@
   font-weight: 400;
   line-height: normal;
   margin-top: 24px;
-@media (min-width: 1444px) {
-        font-size: 16px;
-    }
+  @media (min-width: 1366px) {
+    font-size: 16px;
+  }
 }

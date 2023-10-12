@@ -84,4 +84,9 @@
   // font-family: Segoe UI;
   font-size: 14px;
   font-weight: 400;
+  &:hover,
+  &:focus {
+    background-color: #373737;
+    color: #ffffff;
+  }
 }

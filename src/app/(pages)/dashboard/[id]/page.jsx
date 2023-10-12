@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 import useSWR from 'swr';
 import Image from 'next/image';
 import UpdatingForm from '@/components/UpdatingForm/UpdatingForm';
+import Link from 'next/link';
 
 
 const EditCard = ({ params }) => {
@@ -56,15 +57,15 @@ const EditCard = ({ params }) => {
                         />
                     </li>)
                     )}</ul>
-                    <p>Адреса: {data.address}</p>
+                    <p className={styles.address}>Адреса: {data.address}</p>
                     <p>Квартира: {data.flatNumber}</p>
-                    <p>Місцезнаходження: {data.googleMapLocation}</p>
+                    <Link href={data.googleMapLocation} className={styles.location}>Місцезнаходження: {data.googleMapLocation}</Link>
                     <p>Ціна: {data.price}</p>
                     <p>Кількість кімнат: {data.roomsQuantity}</p>
-                    <p className={styles.platformLink}>BookingUrl: {data.bookingUrl}</p>
+                    <Link href={data.bookingUrl} className={styles.platformLink}>BookingUrl: {data.bookingUrl}</Link>
                     <ul>Додатковий комфорт: {data.amenities.map((item, index) => (<li key={index}>{item}</li>))}
                     </ul>
-                    <p>Опис: {data.description}</p>
+                    <p className={styles.description}>Опис: {data.description}</p>
                 </div>}
 
             {isLoading
