@@ -8,7 +8,7 @@ const FilterItem = ({
   title,
   activeIndex,
   setActiveIndex,
-  //   amenitiesArr,
+  // amenitiesArr,
   setAmenitiesArr,
 }) => {
   const [isChecked, setIsChecked] = useState(false);
