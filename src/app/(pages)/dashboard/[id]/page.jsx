@@ -37,7 +37,7 @@ const EditCard = ({ params }) => {
                 ? <p>Loading...</p>
                 : <div key={data._id} className={styles.apartment}>
                     <h2>Обʼєкт №: {data.objNumber}</h2>
-                    <p>Топ: {data.top ? "Так" : "Ні"}</p>
+                    {data.top ? <p>ТОП</p> : null}
                     <p>Основне фото:</p>
                     <div className={styles.imgContainer}>
                         <Image
@@ -58,6 +58,8 @@ const EditCard = ({ params }) => {
                     </li>)
                     )}</ul>
                     <p className={styles.address}>Адреса: {data.address}</p>
+                    <p className={styles.address}>Адреса англійською: {data.addressEn}</p>
+
                     <p>Квартира: {data.flatNumber}</p>
                     <Link href={data.googleMapLocation} className={styles.location}>Місцезнаходження: {data.googleMapLocation}</Link>
                     <p>Ціна: {data.price}</p>
@@ -66,6 +68,8 @@ const EditCard = ({ params }) => {
                     <ul>Додатковий комфорт: {data.amenities.map((item, index) => (<li key={index}>{item}</li>))}
                     </ul>
                     <p className={styles.description}>Опис: {data.description}</p>
+                    <p className={styles.description}>Опис англійською: {data.descriptionEn}</p>
+
                 </div>}
 
             {isLoading

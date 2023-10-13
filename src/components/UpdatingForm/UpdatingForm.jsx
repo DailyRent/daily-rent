@@ -4,12 +4,13 @@ import styles from './UpdatingForm.module.scss';
 
 
 const UpdatingForm = ({ id, apart }) => {
-    const { objNumber, top, titleImg, imgs, address, flatNumber, googleMapLocation, price, roomsQuantity, bookingUrl, amenities, description } = apart;
-    const [newObjNumber, setNewObjNumber] = useState(objNumber);
+    console.log("id", id);
+    const { objNumber, top, titleImg, imgs, address, addressEn, flatNumber, googleMapLocation, price, roomsQuantity, bookingUrl, amenities, description, descriptionEn } = apart;
     const [newTop, setNewTop] = useState(top);
     const [newTitleImg, setNewTitleImg] = useState(titleImg);
     const [newImgs, setNewImgs] = useState(imgs);
     const [newAddress, setNewAddress] = useState(address);
+    const [newAddressEn, setNewAddressEn] = useState(addressEn);
     const [newFlatNumber, setNewFlatNumber] = useState(flatNumber);
     const [newGoogleMapLocation, setNewGoogleMapLocation] = useState(googleMapLocation);
     const [newPrice, setNewPrice] = useState(price);
@@ -29,10 +30,12 @@ const UpdatingForm = ({ id, apart }) => {
     const [waterHeater, setWaterHeater] = useState(newAmenities.includes("Водонагрівач"));
     const [parking, setParking] = useState(newAmenities.includes("Парковка"));
     const [newDescription, setNewDescription] = useState(description);
+    const [newDescriptionEn, setNewDescriptionEn] = useState(descriptionEn);
 
 
 
-    // сохраняет значение top в state в зависимости от checked
+
+    // сохраняет значение ТОП в state в зависимости от checked
     function checkboxSwitchForTop(e) {
         if (e.target.checked) {
             setNewTop(true);
@@ -150,17 +153,42 @@ const UpdatingForm = ({ id, apart }) => {
         };
     }
 
+    const handleSubmit = async (e) => {
+        console.log("handleSubmit in UpdatingForm");
+        e.preventDefault();
+        try {
+            await fetch(`/api/apartments/${id}`, {
+                method: "PUT",
+                body: JSON.stringify({
+                    top: newTop,
+                    titleImg: newTitleImg,
+                    imgs: newImgs,
+                    address: newAddress,
+                    addressEn: newAddressEn,
+                    flatNumber: newFlatNumber,
+                    googleMapLocation: newGoogleMapLocation,
+                    price: newPrice,
+                    roomsQuantity: newRoomsQuantity,
+                    bookingUrl: newBookingUrl,
+                    amenities: newAmenities,
+                    description: newDescription,
+                    descriptionEn: newDescriptionEn,
+                })
+            })
+            // обнуляет все поля формы
+            // e.target.reset();
+        } catch (err) {
+            console.log(err);
+        }
+    }
 
     return (
         <div>
             <form className={styles.new}
-            // onSubmit={handleSubmit}
+                onSubmit={handleSubmit}
             >
                 <h1>Редагування обʼєкту</h1>
-                {/* <label htmlFor="ObjNumber">Номер обʼєкту:
-                    <input type='text' id="ObjNumber" placeholder="Номер обʼєкту" className={styles.input} value={newObjNumber} readOnly />
-                </label> */}
-                <p>Номер обʼєкту: {newObjNumber}</p>
+                <p>Номер обʼєкту: {objNumber}</p>
                 <label htmlFor="Top" className={styles.top}>
                     <input
                         type="checkbox"
@@ -168,25 +196,28 @@ const UpdatingForm = ({ id, apart }) => {
                         name="Top"
                         onChange={checkboxSwitchForTop}
                         checked={newTop}
-                    />Топ
+                    />ТОП
                 </label>
                 <label> Основне фото:
-                    <input type='text' placeholder='Основне фото' className={styles.input} value={newTitleImg} />
+                    <input type='text' placeholder='Основне фото' className={styles.input} value={newTitleImg} onChange={(e) => setNewTitleImg(e.target.value)} />
                 </label>
                 <label> Додаткові фото:
-                    <input type='text' placeholder='Додаткові фото' className={styles.input} value={newImgs} />
+                    <input type='text' placeholder='Додаткові фото' className={styles.input} value={newImgs} onChange={(e) => setNewImgs(e.target.value)} />
                 </label>
                 <label> Адреса:
-                    <input type='text' placeholder='Адреса' className={styles.input} value={newAddress} />
+                    <input type='text' placeholder='Адреса' className={styles.input} value={newAddress} onChange={(e) => setNewAddress(e.target.value)} />
+                </label>
+                <label> Адреса англійською:
+                    <input type='text' placeholder='Адреса англійською' className={styles.input} value={newAddressEn} onChange={(e) => setNewAddressEn(e.target.value)} />
                 </label>
                 <label> Квартира:
-                    <input type='text' placeholder='Квартира' className={styles.input} value={newFlatNumber} />
+                    <input type='text' placeholder='Квартира' className={styles.input} value={newFlatNumber} onChange={(e) => setNewFlatNumber(e.target.value)} />
                 </label>
                 <label> Місцезнаходження:
-                    <input type='text' placeholder='Місцезнаходження' className={styles.input} value={newGoogleMapLocation} />
+                    <input type='text' placeholder='Місцезнаходження' className={styles.input} value={newGoogleMapLocation} onChange={(e) => setNewGoogleMapLocation(e.target.value)} />
                 </label>
                 <label> Ціна:
-                    <input type='text' placeholder='Ціна' className={styles.input} value={newPrice} />
+                    <input type='text' placeholder='Ціна' className={styles.input} value={newPrice} onChange={(e) => setNewPrice(e.target.value)} />
                 </label>
                 <fieldset className={styles.roomsQuantity}><legend>Кількість кімнат:</legend>
                     <input type="radio" id="oneRoom" name="roomsQuantity" value="1"
@@ -203,7 +234,7 @@ const UpdatingForm = ({ id, apart }) => {
                     <label htmlFor="threeRooms">3</label>
                 </fieldset>
                 <label> Booking.com:
-                    <input type='text' placeholder='bookingUrl' className={styles.input} value={newBookingUrl} />
+                    <input type='text' placeholder='bookingUrl' className={styles.input} value={newBookingUrl} onChange={(e) => setNewBookingUrl(e.target.value)} />
                 </label>
                 <fieldset className={styles.amenities}><legend>Додатковий комфорт:</legend>
 
@@ -293,9 +324,12 @@ const UpdatingForm = ({ id, apart }) => {
                     </label>
                 </fieldset>
                 <label> Опис:
-                    <input type='text' placeholder='Опис' className={styles.input} value={newDescription} />
+                    <input type='text' placeholder='Опис' className={styles.input} value={newDescription} onChange={(e) => setNewDescription(e.target.value)} />
                 </label>
-                <button className={styles.sendBtn}>Оновити дані обʼєкту</button>
+                <label> Опис англійською:
+                    <input type='text' placeholder='Опис англійською' className={styles.input} value={newDescriptionEn} onChange={(e) => setNewDescriptionEn(e.target.value)} />
+                </label>
+                <button type='submit' className={styles.sendBtn} >Оновити дані обʼєкту</button>
             </form>
         </div>
     )

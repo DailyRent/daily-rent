@@ -70,13 +70,17 @@ const Dashboard = () => {
         const titleImg = e.target[2].value;
         const imgs = e.target[3].value;
         const address = e.target[4].value;
-        const flatNumber = e.target[5].value;
-        const googleMapLocation = e.target[6].value;
-        const price = e.target[7].value;
+        const addressEn = e.target[5].value;
+
+        const flatNumber = e.target[6].value;
+        const googleMapLocation = e.target[7].value;
+        const price = e.target[8].value;
         const roomsQuantity = roomsQuantityValue;
-        const bookingUrl = e.target[12].value;
+        const bookingUrl = e.target[13].value;
         const amenities = amenitiesValues;
-        const description = e.target[26].value;
+        const description = e.target[27].value;
+        const descriptionEn = e.target[28].value;
+
 
         try {
             await fetch("/api/apartments", {
@@ -87,13 +91,15 @@ const Dashboard = () => {
                     titleImg,
                     imgs,
                     address,
+                    addressEn,
                     flatNumber,
                     googleMapLocation,
                     price,
                     roomsQuantity,
                     bookingUrl,
                     amenities,
-                    description
+                    description,
+                    descriptionEn,
                 })
             })
             // автоматически обновляет страницу при изменении кол-ва карточек
@@ -137,7 +143,7 @@ const Dashboard = () => {
                         <div key={apart._id} className={styles.apartment}>
                             <div className={styles.contentWrapper}>
                                 <h2>Обʼєкт №: {apart.objNumber}</h2>
-                                <p>Топ: {apart.top ? "Так" : "Ні"}</p>
+                                {apart.top ? <p>ТОП</p> : null}
                                 <p>Основне фото:</p>
                                 <div className={styles.imgContainer}>
                                     <Image src={apart.titleImg} alt={apart.address} fill={true} />
@@ -152,6 +158,7 @@ const Dashboard = () => {
                                 </li>)
                                 )}</ul>
                                 <p className={styles.address}>Адреса: {apart.address}</p>
+                                <p className={styles.address}>Адреса англійською: {apart.addressEn}</p>
                                 <p>Квартира: {apart.flatNumber}</p>
                                 <Link href={apart.googleMapLocation} className={styles.location}>Місцезнаходження: {apart.googleMapLocation}</Link>
                                 <p>Ціна: {apart.price}</p>
@@ -160,6 +167,7 @@ const Dashboard = () => {
                                 <ul>Додатковий комфорт: {apart.amenities.map((item, index) => (<li key={index}>{item}</li>))}
                                 </ul>
                                 <p className={styles.description}>Опис: {apart.description}</p>
+                                <p className={styles.description}>Опис англійською: {apart.descriptionEn}</p>
                             </div>
 
                             <div className={styles.btnsWrapper}>
@@ -178,6 +186,7 @@ const Dashboard = () => {
                 <input type='text' placeholder='Основне фото' className={styles.input} />
                 <input type='text' placeholder='Додаткові фото' className={styles.input} />
                 <input type='text' placeholder='Адреса' className={styles.input} />
+                <input type='text' placeholder='Адреса англійською' className={styles.input} />
                 <input type='text' placeholder='Квартира' className={styles.input} />
                 <input type='text' placeholder='Місцезнаходження' className={styles.input} />
                 <input type='text' placeholder='Ціна' className={styles.input} />
@@ -242,7 +251,9 @@ const Dashboard = () => {
                     </label>
                 </fieldset>
                 <input type='text' placeholder='Опис' className={styles.input} />
-                <button className={styles.sendBtn}>Створити новий обʼєкт</button>
+                <input type='text' placeholder='Опис англійською' className={styles.input} />
+
+                <button type='submit' className={styles.sendBtn}>Створити новий обʼєкт</button>
             </form>
         </div>
     }

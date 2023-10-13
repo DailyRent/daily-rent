@@ -22,6 +22,10 @@ const apartmentSchema = new Schema({
         type: String,
         required: true,
     },
+    addressEn: {
+        type: String,
+        required: true,
+    },
     flatNumber: {
         type: String,
         required: true,
@@ -59,6 +63,10 @@ const apartmentSchema = new Schema({
     // Parking: bool,
 
     description: {
+        type: String,
+        required: true,
+    },
+    descriptionEn: {
         type: String,
         required: true,
     },
