@@ -1,50 +1,32 @@
 "use client";
 import { SiteContext } from "@/context/SiteContext";
 import { usePathname } from "next/navigation";
-import React, { useState, useEffect, useRef, useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useTranslation } from "react-i18next";
+import { LangSwitcher } from "./LangSwitcher";
 import styles from "./TranslatorBtnBlock.module.scss";
 
-const options = [
-  {
-    id: 1,
-    label: "Eng",
-    value: "en",
-  },
-  {
-    id: 2,
-    label: "Укр",
-    value: "ua",
-  },
-];
 
 const TranslatorBtnBlock = ({ isClient }) => {
   const pathname = usePathname();
-  const [isOpen, setIsOpen] = useState(false);
-  const [language, setLanguage] = useState();
+  const [language, setLanguage] = useState((prev) => (!prev || prev===undefined)  ? "ua" : prev);
   const { i18n } = useTranslation();
-  const rootEl = useRef(null);
+  const[isLoad,setIsLoad]=useState(true)
 
   useEffect(() => {
-    setLanguage(localStorage.getItem("whatLanguage"));
+    setIsLoad(false)
+    const lang=localStorage.getItem("whatLanguage")
+    setLanguage(()=> lang ? lang : "ua");
   }, []);
 
-  const changeLanguage = (e) => {
-    const whatLanguage = e.target.value;
+  const changeLanguage = (languageUser) => {
+    const whatLanguage = languageUser
     localStorage.setItem("whatLanguage", whatLanguage);
     const language = localStorage.getItem("whatLanguage");
     setLanguage(language);
-    setIsOpen(false);
 
     i18n.changeLanguage(language);
   };
-
-  useEffect(() => {
-    const onClick = (e) =>
-      rootEl.current.contains(e.target) || setIsOpen(false);
-    document.addEventListener("click", onClick);
-    return () => document.removeEventListener("click", onClick);
-  }, []);
 
   const { scrollY } = useContext(SiteContext);
 
@@ -58,8 +40,11 @@ const TranslatorBtnBlock = ({ isClient }) => {
     scrollStyles = styles.dropdown;
   }
 
-  return (
-    <div ref={rootEl}>
+  return (<div className={scrollStyles}>
+    {!isLoad && <LangSwitcher
+      changeLanguage={changeLanguage}
+      currentLanguage={language} />}
+    {/* <div ref={rootEl}>
       <div className={scrollStyles}>
         <button
           className={styles.dropBtn}
@@ -106,7 +91,8 @@ const TranslatorBtnBlock = ({ isClient }) => {
           </div>
         )}
       </div>
-    </div>
+    </div> */}
+</div>
   );
 };
 

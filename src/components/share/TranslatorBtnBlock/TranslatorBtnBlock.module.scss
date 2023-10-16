@@ -8,14 +8,9 @@
   color: $lightFontColor;
   margin-right: auto;
   margin-left: 0;
-  // width: 64px;
-  // height: 20px;
   @media screen and (min-width: $tablet) {
     margin-right: 0;
     margin-left: 20px;
-
-    // width: 74px;
-    // height: 32px;
     border-color: $darckFontColor;
     color: $darckFontColor;
   }
@@ -62,73 +57,30 @@
   }
 }
 
-.svg {
-  stroke: $lightFontColor;
-  width: 10px;
-  height: 10px;
-  stroke-width: 2px;
-  @media screen and (min-width: $tablet) {
-    stroke: $darckFontColor;
-    width: 16px;
-    height: 16px;
-  }
-}
-
-.svgActive {
-  rotate: 0deg;
-}
-
-.dropdownContent {
-  position: absolute;
-  bottom: -40px;
-  left: 0;
-  width: 64px;
-  height: 20px;
-
+.langToggle{
+  position: relative;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
-  row-gap: 7px;
-  opacity: 0;
-  @media screen and (min-width: $tablet) {
-    bottom: -50px;
-
-    width: 74px;
-    height: 32px;
-  }
-}
-
-.dropdownContentActive {
-  opacity: 1;
-}
-
-.label {
-  width: 85px;
-  display: block;
-
-  border-color: transparent;
-  outline: none;
-  cursor: pointer;
-  color: $lightFontColor;
-  font-size: 12px;
+  width: 50px;
+  height: 18px;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: black;
+  color: white;
+  font-size: 10px;
   font-weight: 500;
-  padding: 0;
-  transform: translateY(0em);
-  &:hover {
-    color: $darckFontColor;
-    font-size: 14px;
-  }
-
-  @media screen and (min-width: $tablet) {
-    color: $darckFontColor;
-  }
+  line-height: 12.1px;
+  cursor: pointer;
 }
 
-.input {
-  max-width: 0;
-  opacity: 0;
-  visibility: hidden;
-  position: absolute;
+.ball{
+position: absolute;
+z-index: 8;
+box-shadow: 0 0 0 0.015em rgba(0, 0, 0, 0.16);
+width: 24px;
+height: 24px;
+border-radius: 50%;
+background-color: #ffff;
+top: -3px;
 }
