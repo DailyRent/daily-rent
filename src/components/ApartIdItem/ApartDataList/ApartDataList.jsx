@@ -17,9 +17,15 @@ const ApartDataList = ({ dataId }) => {
           className={styles.googleMaps}
         >
           <div className={styles.imgContainer}>
-            <svg className={styles.img}>
+            {/* <svg className={styles.img}>
               <use href="/sprite.svg#icon-map-pin" />
-            </svg>
+            </svg> */}
+            <Image
+              src="/png/location-pin.png"
+              alt="google maps"
+              fill={true}
+              className={styles.img}
+            />
             {/* <Image
               src="/png/google-maps.png"
               alt="google maps"
@@ -31,7 +37,7 @@ const ApartDataList = ({ dataId }) => {
         </a>
       </span>
       <span className={styles.dataText + ' ' + styles.dataTextPrice}>
-        ₴ {dataId.price} / Night
+        ₴ {dataId.price}
       </span>
     </div>
   );

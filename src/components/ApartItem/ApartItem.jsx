@@ -30,8 +30,9 @@ const ApartItem = ({
           </div>
         </Link>
         <p className={styles.addressRooms}>{address}</p>
-        <p className={styles.priceRooms}>{price}₴ нічь</p>
-        {/* <span className={styles.codeRooms}>{objNumber}</span> */}
+        <p className={styles.priceRooms}>{price}₴</p>
+
+        {/* <p className={styles.priceRooms}>від {price}₴</p> */}
         <Link
           href={`/apartments/${roomsQuantity}/${id}`}
           className={styles.btnRooms}

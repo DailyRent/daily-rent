@@ -55,7 +55,15 @@
   outline: none;
   @media screen and (min-width: 1366px) {
     align-items: flex-start;
-    flex-direction: row-reverse;
+    // flex-direction: row-reverse;
+  }
+  &:hover .imgContainer {
+    &::before {
+      animation-play-state: paused;
+    }
+  }
+  &:hover .img {
+    animation-play-state: paused;
   }
 }
 
@@ -78,13 +86,14 @@
     width: 24px;
     height: 24px;
     &::before {
-      left: 38%;
+      // left: 38%;
       width: 5px;
       animation: shadow 2s infinite linear;
     }
   }
   @media screen and (min-width: 1366px) {
-    margin-right: 24px;
+    margin-right: 16px;
+    // margin-right: 24px;
     height: 32px;
     width: 32px;
   }
@@ -93,20 +102,20 @@
 @keyframes shadowMob {
   0%,
   100% {
-    box-shadow: 0px 5px 3px 1px #4343436c;
+    box-shadow: 0px 5px 4px 2px #4343436c;
   }
   50% {
-    box-shadow: 0px 5px 4px 2px #4343436c;
+    box-shadow: 0px 5px 3px 1px #4343436c;
   }
 }
 
 @keyframes shadow {
   0%,
   100% {
-    box-shadow: 0px 9px 4px 1px #4343436c;
+    box-shadow: 0px 9px 5px 2px #4343436c;
   }
   50% {
-    box-shadow: 0px 9px 5px 2px #4343436c;
+    box-shadow: 0px 9px 3px 1px #4343436c;
   }
 }
 
@@ -140,14 +149,14 @@
 .googleMapsText {
   position: relative;
   outline: none;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-  text-decoration-thickness: 1px;
-  text-decoration-color: #373737;
   color: #373737;
-  @media screen and (min-width: 1366px) {
-    text-underline-offset: 6px;
-  }
+  // text-decoration: underline;
+  // text-underline-offset: 4px;
+  // text-decoration-thickness: 1px;
+  // text-decoration-color: #373737;
+  // @media screen and (min-width: 1366px) {
+  //   text-underline-offset: 6px;
+  // }
 }
 // .svgMap {
 //   width: 16px;

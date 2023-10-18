@@ -19,10 +19,10 @@ const ApartStar = ({ dataId }) => {
           className={styles.starText}
         >
           <p className={styles.starItem}> Booking.com</p>
-          <svg className={styles.svgStar}>
+          {/* <svg className={styles.svgStar}>
             <use href="/sprite.svg#icon-star" />
           </svg>
-          4.9
+          4.9 */}
         </a>
       </li>
     </ul>

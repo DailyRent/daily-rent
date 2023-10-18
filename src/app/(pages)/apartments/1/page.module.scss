@@ -37,15 +37,30 @@
 }
 
 .containerOneRooms {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex: 1;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(1, 328px);
+  justify-content: space-evenly;
   column-gap: 30px;
   row-gap: 40px;
   padding: 40px 0;
+  @media screen and (min-width: $tablet) {
+    grid-template-columns: repeat(2, 324px);
+  }
+  @media screen and (min-width: $desktop) {
+    grid-template-columns: repeat(3, 300px);
+  }
 }
+
+// .containerOneRooms {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   // flex: 1;
+//   flex-wrap: wrap;
+//   column-gap: 30px;
+//   row-gap: 40px;
+//   padding: 40px 0;
+// }
 
 .notFoundText {
   display: flex;
