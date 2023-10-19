@@ -75,14 +75,19 @@
 }
 
 .logoutBtn {
-  margin-left: 20px;
-  padding: 5px;
-  z-index: 20;
-  cursor: pointer;
-  background-color: #53c28b;
-  color: white;
-  border-radius: 3px;
-  border-color: transparent;
+  display: none;
+
+  @media screen and (min-width: $desktop) {
+    display: block;
+    margin-left: 20px;
+    padding: 5px;
+    z-index: 20;
+    cursor: pointer;
+    background-color: #53c28b;
+    color: white;
+    border-radius: 3px;
+    border-color: transparent;
+  }
 }
 
 .headerLogoLight,

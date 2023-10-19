@@ -41,19 +41,23 @@ const EditCard = ({ params }) => {
                     <p>Основне фото:</p>
                     <div className={styles.imgContainer}>
                         <Image
+                            className={styles.img}
                             src={data.titleImg}
                             alt={data.address}
                             fill={true}
-                            className={styles.img}
+                            sizes='20vw'
+                            priority={true}
                         />
                     </div>
                     <p>Додаткові фото:</p>
                     <ul className={styles.imgsWrapper}>{data.imgs.map((item, index) => (<li className={styles.imgCont} key={index}>
                         <Image
+                            className={styles.img}
                             src={item}
                             alt="Interior photo"
                             fill={true}
-                            className={styles.img}
+                            sizes='20vw'
+                            priority={false}
                         />
                     </li>)
                     )}</ul>

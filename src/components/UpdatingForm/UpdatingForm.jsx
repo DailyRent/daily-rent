@@ -4,7 +4,6 @@ import styles from './UpdatingForm.module.scss';
 
 
 const UpdatingForm = ({ id, apart }) => {
-    console.log("id", id);
     const { objNumber, top, titleImg, imgs, address, addressEn, flatNumber, googleMapLocation, price, roomsQuantity, bookingUrl, amenities, description, descriptionEn } = apart;
     const [newTop, setNewTop] = useState(top);
     const [newTitleImg, setNewTitleImg] = useState(titleImg);
