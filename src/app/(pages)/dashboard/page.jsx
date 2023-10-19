@@ -146,7 +146,7 @@ const Dashboard = () => {
                                 {apart.top ? <p>ТОП</p> : null}
                                 <p>Основне фото:</p>
                                 <div className={styles.imgContainer}>
-                                    <Image src={apart.titleImg} alt={apart.address} fill={true} />
+                                    <Image src={apart.titleImg} alt={apart.address} fill={true} sizes='20vw' priority={true} />
                                 </div>
                                 <p>Додаткові фото:</p>
                                 <ul className={styles.imgsWrapper}>{apart.imgs.map((item, index) => (<li className={styles.imgsCont} key={index}>
@@ -154,6 +154,7 @@ const Dashboard = () => {
                                         src={item}
                                         alt="Interior photo"
                                         fill={true}
+                                        sizes='10vw'
                                     />
                                 </li>)
                                 )}</ul>
@@ -181,7 +182,7 @@ const Dashboard = () => {
                 <h1>Додавання нового обʼєкту</h1>
                 <input type='text' placeholder="Номер обʼєкту" className={styles.input} />
                 <label htmlFor="Top" className={styles.top}>
-                    <input type="checkbox" id="Top" name="Top" onChange={checkboxSwitchForTop} />Топ
+                    <input type="checkbox" id="Top" name="Top" onChange={checkboxSwitchForTop} />ТОП
                 </label>
                 <input type='text' placeholder='Основне фото' className={styles.input} />
                 <input type='text' placeholder='Додаткові фото' className={styles.input} />
