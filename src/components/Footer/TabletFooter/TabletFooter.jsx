@@ -42,8 +42,8 @@ const TabletFooter = () => {
                             <Link href='mailto:dailyrent4@gmail.com'>
                                 dailyrent4@gmail.com
                             </Link>
-                            <Link href='tel:+3803579608'>+3803579608</Link>
-                            <Link href='tel:+3803579608'>+3803579608</Link>
+                            <Link href='tel:+380357960801'>+380357960801</Link>
+                            <Link href='tel:+380357960802'>+380357960802</Link>
                         </div>
                     </div>
                     <div className={styles.rightContentWrapper}>
@@ -56,17 +56,15 @@ const TabletFooter = () => {
                         </div>
                     </div>
                 </div>
-                <p className={styles.rights}>
-                    ⓒ DailyRent. All rights reserved.
+                <p className={styles.rights}>made by
+                    <Link
+                        href='https://webevery.dev/'
+                        target='_blank'
+                        rel='noopener noreferrer'
+                    > webevery.dev </Link>
+                    ⓒ all rights reserved.
                 </p>
-                <Link
-                    href='https://webevery.dev/'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className={styles.webevery}
-                >
-                    webevery.dev
-                </Link>
+
             </footer>
         </>
     );

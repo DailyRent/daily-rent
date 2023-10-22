@@ -17,12 +17,12 @@ const MobileFooter = () => {
           <p>м. Суми</p>
         </div>
         <div className={styles.phoneNumbers}>
-          <a href="tel:+3803579608">+3803579608</a>
-          <a href="tel:+3803579608">+3803579608</a>
+          <a href="tel:+380357960801">+380357960801</a>
+          <a href="tel:+380357960802">+380357960802</a>
         </div>
       </div>
       <SocialLinks />
-      <Link href="mailto:dailyrent4@gmail.com" className={styles.email}>
+      {/* <Link href="mailto:dailyrent4@gmail.com" className={styles.email}>
         dailyrent4@gmail.com
       </Link>
       <Link
@@ -32,7 +32,15 @@ const MobileFooter = () => {
         className={styles.webevery}
       >
         webevery.dev
-      </Link>
+      </Link> */}
+      <p className={styles.rights}>made by
+        <Link
+          href='https://webevery.dev/'
+          target='_blank'
+          rel='noopener noreferrer'
+        > webevery.dev </Link>
+        ⓒ all rights reserved.
+      </p>
     </footer>
   );
 };

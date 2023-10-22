@@ -201,11 +201,6 @@ const Dashboard = () => {
                 </fieldset>
                 <input type='text' placeholder='bookingUrl' className={styles.input} />
                 <fieldset className={styles.amenities}><legend>Додатковий комфорт:</legend>
-
-                    <label htmlFor="airCond">
-                        <input type="checkbox" id="airCond" name="airCond" value="Кондиціонер" onChange={changeAmenities} />
-                        Кондиціонер
-                    </label>
                     <label htmlFor="wi-fi">
                         <input type="checkbox" id="wi-fi" name="wi-fi" value="Wi-Fi" defaultChecked onChange={changeAmenities} />
                         Wi-Fi
@@ -213,6 +208,10 @@ const Dashboard = () => {
                     <label htmlFor="smartTV">
                         <input type="checkbox" id="smartTV" name="smartTV" value="Smart TV" onChange={changeAmenities} />
                         Smart TV
+                    </label>
+                    <label htmlFor="airCond">
+                        <input type="checkbox" id="airCond" name="airCond" value="Кондиціонер" onChange={changeAmenities} />
+                        Кондиціонер
                     </label>
                     <label htmlFor="bath">
                         <input type="checkbox" id="bath" name="bath" value="Ванна" onChange={changeAmenities} />
@@ -226,25 +225,25 @@ const Dashboard = () => {
                         <input type="checkbox" id="jacuzzi" name="jacuzzi" value="Джакузі" onChange={changeAmenities} />
                         Джакузі
                     </label>
-                    <label htmlFor="microwave">
-                        <input type="checkbox" id="microwave" name="microwave" value="Мікрохвильова піч" onChange={changeAmenities} />
-                        Мікрохвильова піч
-                    </label>
-                    <label htmlFor="washingMachine">
-                        <input type="checkbox" id="washingMachine" name="washingMachine" value="Пральна машина" onChange={changeAmenities} />
-                        Пральна машина
-                    </label>
-                    <label htmlFor="balcony">
-                        <input type="checkbox" id="balcony" name="balcony" value="Балкон" onChange={changeAmenities} />
-                        Балкон
+                    <label htmlFor="waterHeater">
+                        <input type="checkbox" id="waterHeater" name="waterHeater" value="Водонагрівач" onChange={changeAmenities} />
+                        Водонагрівач
                     </label>
                     <label htmlFor="boiler">
                         <input type="checkbox" id="boiler" name="boiler" value="Котел" onChange={changeAmenities} />
                         Котел
                     </label>
-                    <label htmlFor="waterHeater">
-                        <input type="checkbox" id="waterHeater" name="waterHeater" value="Водонагрівач" onChange={changeAmenities} />
-                        Водонагрівач
+                    <label htmlFor="washingMachine">
+                        <input type="checkbox" id="washingMachine" name="washingMachine" value="Пральна машина" onChange={changeAmenities} />
+                        Пральна машина
+                    </label>
+                    <label htmlFor="microwave">
+                        <input type="checkbox" id="microwave" name="microwave" value="Мікрохвильова піч" onChange={changeAmenities} />
+                        Мікрохвильова піч
+                    </label>
+                    <label htmlFor="balcony">
+                        <input type="checkbox" id="balcony" name="balcony" value="Балкон" onChange={changeAmenities} />
+                        Балкон
                     </label>
                     <label htmlFor="parking">
                         <input type="checkbox" id="parking" name="parking" value="Парковка" onChange={changeAmenities} />
