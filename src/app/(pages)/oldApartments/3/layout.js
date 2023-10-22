@@ -1,31 +1,25 @@
 'use client';
-
-import Link from 'next/link';
 import { PaginationProvider } from '@/context/PaginationContext';
-// import ButtonToBack from "@/components/share/ButtonToBack/ButtonToBack";
-// import { useRouter } from "next/navigation";
+import Link from 'next/link';
 import styles from './page.module.scss';
 
 export default function OneRoomsLayout({ children }) {
-  // const router = useRouter();
-
   return (
     <section className={styles.container}>
-      <h1 className="visuallyHidden">OneRooms Appartments</h1>
+      <h1 className="visuallyHidden">ThreeRooms Appartments</h1>
       <div className={styles.oneRoomBox}>
         <div className={styles.backContainer}>
-          {/* <ButtonToBack onGoBack={() => router.back()} /> */}
           <p className="textLink">
             <Link href="/" className="textLinkAnimation">
               Головна
             </Link>
             /
-            <Link href="/apartments" className="textLinkAnimation">
+            <Link href="/oldApartments" className="textLinkAnimation">
               Апартаменти
             </Link>
             /
-            <Link href="/apartments/1" className="textLinkAnimation">
-              Однокімнатні
+            <Link href="/oldApartments/3" className="textLinkAnimation">
+              Трикімнатні
             </Link>
           </p>
         </div>

@@ -14,11 +14,11 @@ export default function OneRoomsLayout({ children }) {
               Головна
             </Link>
             /
-            <Link href="/apartments" className="textLinkAnimation">
+            <Link href="/oldApartments" className="textLinkAnimation">
               Апартаменти
             </Link>
             /
-            <Link href="/apartments/2" className="textLinkAnimation">
+            <Link href="/oldApartments/2" className="textLinkAnimation">
               Двокімнатні
             </Link>
           </p>
