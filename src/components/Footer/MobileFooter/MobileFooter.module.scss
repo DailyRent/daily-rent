@@ -61,18 +61,27 @@
   padding-bottom: 24px;
 }
 
-.email {
-  color: #181818;
-  font-family: inherit;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
+// .email {
+//   color: #181818;
+//   font-family: inherit;
+//   font-size: 16px;
+//   font-style: normal;
+//   font-weight: 400;
+//   line-height: normal;
+// }
 
-.webevery {
-  width: 100vw;
-  text-align: center;
-  padding: 8px;
-  border-top: 1px solid rgb(84, 84, 84, 0.14);
+// .webevery {
+//   width: 100vw;
+//   text-align: center;
+//   padding: 8px;
+//   border-top: 1px solid rgb(84, 84, 84, 0.14);
+// }
+.rights {
+    color: $footerTextColor;
+    font-family: inherit;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: -20px;
 }

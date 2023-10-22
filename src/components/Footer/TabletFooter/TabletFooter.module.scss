@@ -24,6 +24,7 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
+
     & p {
         color: $footerTextColor;
         font-size: 24px;
@@ -51,6 +52,7 @@
     gap: 40px;
     flex-wrap: nowrap;
     justify-content: space-between;
+
     @media screen and (min-width: $desktop) {
         gap: 80px;
     }
@@ -61,6 +63,7 @@
     flex-direction: column;
     gap: 16px;
     flex: 1;
+
     @media screen and (min-width: $desktop) {
         gap: 24px;
     }
@@ -81,9 +84,11 @@
     flex-direction: column;
     gap: 16px;
     color: $footerLocationColor;
+
     & a {
         width: fit-content;
     }
+
     @media screen and (min-width: $desktop) {
         gap: 24px;
     }
@@ -96,6 +101,7 @@
     justify-content: space-between;
     gap: 40px;
     flex: 1;
+
     @media screen and (min-width: $desktop) {
         flex-direction: row;
     }
@@ -106,6 +112,7 @@
     flex-direction: column;
     gap: 16px;
     color: $footerTextColor;
+
     @media screen and (min-width: $desktop) {
         gap: 32px;
     }
@@ -118,6 +125,7 @@
     flex-direction: column;
     gap: 32px;
     align-items: flex-end;
+
     & a,
     & button {
         display: flex;
@@ -128,6 +136,7 @@
     }
 
     @media screen and (min-width: $desktop) {
+
         & a,
         & button {
             font-size: 16px;
@@ -147,9 +156,9 @@
     margin-bottom: -20px;
 }
 
-.webevery {
-    width: 100vw;
-    text-align: center;
-    padding: 8px;
-    border-top: 1px solid rgb(84, 84, 84, 0.14);
-}
+// .webevery {
+//     width: 100vw;
+//     text-align: center;
+//     padding: 8px;
+//     border-top: 1px solid rgb(84, 84, 84, 0.14);
+// }

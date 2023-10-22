@@ -16,17 +16,17 @@ const UpdatingForm = ({ id, apart }) => {
     const [newRoomsQuantity, setNewRoomsQuantity] = useState(roomsQuantity);
     const [newBookingUrl, setNewBookingUrl] = useState(bookingUrl);
     const [newAmenities, setNewAmenities] = useState(amenities);
-    const [airCond, setAirCond] = useState(newAmenities.includes("Кондиціонер"));
     const [wifi, setWifi] = useState(newAmenities.includes("Wi-Fi"));
     const [smartTV, setSmartTV] = useState(newAmenities.includes("Smart TV"));
+    const [airCond, setAirCond] = useState(newAmenities.includes("Кондиціонер"));
     const [bath, setBath] = useState(newAmenities.includes("Ванна"));
     const [shower, setShower] = useState(newAmenities.includes("Душова кабіна"));
     const [jacuzzi, setJacuzzi] = useState(newAmenities.includes("Джакузі"));
-    const [microwave, setMicrowave] = useState(newAmenities.includes("Мікрохвильова піч"));
-    const [washingMachine, setWashingMachine] = useState(newAmenities.includes("Пральна машина"));
-    const [balcony, setBalcony] = useState(newAmenities.includes("Балкон"));
-    const [boiler, setBoiler] = useState(newAmenities.includes("Котел"));
     const [waterHeater, setWaterHeater] = useState(newAmenities.includes("Водонагрівач"));
+    const [boiler, setBoiler] = useState(newAmenities.includes("Котел"));
+    const [washingMachine, setWashingMachine] = useState(newAmenities.includes("Пральна машина"));
+    const [microwave, setMicrowave] = useState(newAmenities.includes("Мікрохвильова піч"));
+    const [balcony, setBalcony] = useState(newAmenities.includes("Балкон"));
     const [parking, setParking] = useState(newAmenities.includes("Парковка"));
     const [newDescription, setNewDescription] = useState(description);
     const [newDescriptionEn, setNewDescriptionEn] = useState(descriptionEn);
@@ -61,14 +61,14 @@ const UpdatingForm = ({ id, apart }) => {
 
             //перебирает всё и меняет state у элемента с e.target.value 
             switch (e.target.value) {
-                case "Кондиціонер":
-                    setAirCond(false);
-                    break;
                 case "Wi-Fi":
                     setWifi(false);
                     break;
                 case "Smart TV":
                     setSmartTV(false);
+                    break;
+                case "Кондиціонер":
+                    setAirCond(false);
                     break;
                 case "Ванна":
                     setBath(false);
@@ -79,25 +79,24 @@ const UpdatingForm = ({ id, apart }) => {
                 case "Джакузі":
                     setJacuzzi(false);
                     break;
-                case "Мікрохвильова піч":
-                    setMicrowave(false);
-                    break;
-                case "Пральна машина":
-                    setWashingMachine(false);
-                    break;
-                case "Балкон":
-                    setBalcony(false);
+                case "Водонагрівач":
+                    setWaterHeater(false);
                     break;
                 case "Котел":
                     setBoiler(false);
                     break;
-                case "Водонагрівач":
-                    setWaterHeater(false);
+                case "Пральна машина":
+                    setWashingMachine(false);
+                    break;
+                case "Мікрохвильова піч":
+                    setMicrowave(false);
+                    break;
+                case "Балкон":
+                    setBalcony(false);
                     break;
                 case "Парковка":
                     setParking(false);
                     break;
-
                 default:
                     console.log("Все удобства после удаления:", newAmenities);
             }
@@ -109,14 +108,14 @@ const UpdatingForm = ({ id, apart }) => {
 
             //перебирает всё и меняет state у элемента с e.target.value 
             switch (e.target.value) {
-                case "Кондиціонер":
-                    setAirCond(true);
-                    break;
                 case "Wi-Fi":
                     setWifi(true);
                     break;
                 case "Smart TV":
                     setSmartTV(true);
+                    break;
+                case "Кондиціонер":
+                    setAirCond(true);
                     break;
                 case "Ванна":
                     setBath(true);
@@ -127,25 +126,24 @@ const UpdatingForm = ({ id, apart }) => {
                 case "Джакузі":
                     setJacuzzi(true);
                     break;
-                case "Мікрохвильова піч":
-                    setMicrowave(true);
-                    break;
-                case "Пральна машина":
-                    setWashingMachine(true);
-                    break;
-                case "Балкон":
-                    setBalcony(true);
+                case "Водонагрівач":
+                    setWaterHeater(true);
                     break;
                 case "Котел":
                     setBoiler(true);
                     break;
-                case "Водонагрівач":
-                    setWaterHeater(true);
+                case "Пральна машина":
+                    setWashingMachine(true);
+                    break;
+                case "Мікрохвильова піч":
+                    setMicrowave(true);
+                    break;
+                case "Балкон":
+                    setBalcony(true);
                     break;
                 case "Парковка":
                     setParking(true);
                     break;
-
                 default:
                     console.log("Все удобства после добавления:", newAmenities);
             }
@@ -236,14 +234,6 @@ const UpdatingForm = ({ id, apart }) => {
                     <input type='text' placeholder='bookingUrl' className={styles.input} value={newBookingUrl} onChange={(e) => setNewBookingUrl(e.target.value)} />
                 </label>
                 <fieldset className={styles.amenities}><legend>Додатковий комфорт:</legend>
-
-                    <label htmlFor="airCond">
-                        <input type="checkbox" id="airCond" name="airCond" value="Кондиціонер"
-                            onChange={changeAmenities}
-                            checked={airCond}
-                        />
-                        Кондиціонер
-                    </label>
                     <label htmlFor="wi-fi">
                         <input type="checkbox" id="wi-fi" name="wi-fi" value="Wi-Fi"
                             onChange={changeAmenities}
@@ -257,6 +247,13 @@ const UpdatingForm = ({ id, apart }) => {
                             checked={smartTV}
                         />
                         Smart TV
+                    </label>
+                    <label htmlFor="airCond">
+                        <input type="checkbox" id="airCond" name="airCond" value="Кондиціонер"
+                            onChange={changeAmenities}
+                            checked={airCond}
+                        />
+                        Кондиціонер
                     </label>
                     <label htmlFor="bath">
                         <input type="checkbox" id="bath" name="bath" value="Ванна"
@@ -279,26 +276,12 @@ const UpdatingForm = ({ id, apart }) => {
                         />
                         Джакузі
                     </label>
-                    <label htmlFor="microwave">
-                        <input type="checkbox" id="microwave" name="microwave" value="Мікрохвильова піч"
+                    <label htmlFor="waterHeater">
+                        <input type="checkbox" id="waterHeater" name="waterHeater" value="Водонагрівач"
                             onChange={changeAmenities}
-                            checked={microwave}
+                            checked={waterHeater}
                         />
-                        Мікрохвильова піч
-                    </label>
-                    <label htmlFor="washingMachine">
-                        <input type="checkbox" id="washingMachine" name="washingMachine" value="Пральна машина"
-                            onChange={changeAmenities}
-                            checked={washingMachine}
-                        />
-                        Пральна машина
-                    </label>
-                    <label htmlFor="balcony">
-                        <input type="checkbox" id="balcony" name="balcony" value="Балкон"
-                            onChange={changeAmenities}
-                            checked={balcony}
-                        />
-                        Балкон
+                        Водонагрівач
                     </label>
                     <label htmlFor="boiler">
                         <input type="checkbox" id="boiler" name="boiler" value="Котел"
@@ -307,12 +290,26 @@ const UpdatingForm = ({ id, apart }) => {
                         />
                         Котел
                     </label>
-                    <label htmlFor="waterHeater">
-                        <input type="checkbox" id="waterHeater" name="waterHeater" value="Водонагрівач"
+                    <label htmlFor="washingMachine">
+                        <input type="checkbox" id="washingMachine" name="washingMachine" value="Пральна машина"
                             onChange={changeAmenities}
-                            checked={waterHeater}
+                            checked={washingMachine}
                         />
-                        Водонагрівач
+                        Пральна машина
+                    </label>
+                    <label htmlFor="microwave">
+                        <input type="checkbox" id="microwave" name="microwave" value="Мікрохвильова піч"
+                            onChange={changeAmenities}
+                            checked={microwave}
+                        />
+                        Мікрохвильова піч
+                    </label>
+                    <label htmlFor="balcony">
+                        <input type="checkbox" id="balcony" name="balcony" value="Балкон"
+                            onChange={changeAmenities}
+                            checked={balcony}
+                        />
+                        Балкон
                     </label>
                     <label htmlFor="parking">
                         <input type="checkbox" id="parking" name="parking" value="Парковка"
