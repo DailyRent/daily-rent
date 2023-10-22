@@ -92,7 +92,7 @@ const HomeSlider = () => {
             return (
               <SwiperSlide key={el._id}>
                 <Link
-                  href={`apartments/${el.roomsQuantity}/${el._id}`}
+                  href={`oldApartments/${el.roomsQuantity}/${el._id}`}
                   className="link"
                 >
                   <div className="div">

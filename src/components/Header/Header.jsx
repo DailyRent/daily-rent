@@ -82,6 +82,16 @@ const Header = () => {
           Апартаменти
         </Link>
         <Link
+          href={"/oldApartments"}
+          className={
+            pathname === "/oldApartments"
+              ? styles.activeLink
+              : " textLinkAnimation"
+          }
+        >
+          Старі Апартаменти
+        </Link>
+        <Link
           href={"/documents"}
           className={
             pathname === "/documents" ? styles.activeLink : " textLinkAnimation"

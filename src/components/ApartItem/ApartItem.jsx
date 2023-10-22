@@ -16,7 +16,7 @@ const ApartItem = ({
   return (
     <>
       <li className={styles.oneRooms}>
-        <Link href={`/apartments/${roomsQuantity}/${id}`}>
+        <Link href={`/oldApartments/${roomsQuantity}/${id}`}>
           <div className={styles.imgContainer}>
             <Image
               src={titleImg}
@@ -34,7 +34,7 @@ const ApartItem = ({
 
         {/* <p className={styles.priceRooms}>від {price}₴</p> */}
         <Link
-          href={`/apartments/${roomsQuantity}/${id}`}
+          href={`/oldApartments/${roomsQuantity}/${id}`}
           className={styles.btnRooms}
         >
           Детальніше

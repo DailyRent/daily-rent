@@ -421,7 +421,7 @@ const OrderForm = ({ isOpen, closeModal }) => {
                                     autoComplete='off'
                                     className={
                                         form.dirtyObjNumber &&
-                                        form.errorObjNumber
+                                            form.errorObjNumber
                                             ? `${styles.input} ${styles.inputError}`
                                             : styles.input
                                     }
@@ -432,7 +432,7 @@ const OrderForm = ({ isOpen, closeModal }) => {
                         </div>
 
                         <Link
-                            href='/apartments'
+                            href='/oldApartments'
                             onClick={closeModal}
                             className={`${styles.button} ${styles.linkBtn}`}
                         >
