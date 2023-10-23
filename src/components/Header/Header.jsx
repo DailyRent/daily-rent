@@ -15,61 +15,28 @@ const Header = () => {
   const session = useSession();
   const pathname = usePathname();
 
-  // console.log(window.innerHeight);
-  // console.log(window.innerHeight - 10);
-
   const [burgerMenu, setBurgerMenu] = useState(false);
-  // const [scrollY, setScrollY] = useState(0); // Track scroll position
-  // const { scrollY, setScrollY } = useContext(SiteContext);
+  const [isMobile, setIsMobile] = useState(false);
 
   const isClient = typeof window !== "undefined";
 
-  // const handleScroll = () => {
-  //   if (isClient) {
-  //     setScrollY(window.scrollY);
-  //   }
-  // };
+  const handleResize = () => {
+    if (window.innerWidth < 768) {
+      setIsMobile(true);
+    } else {
+      setIsMobile(false);
+    }
+  };
 
-  // useEffect(() => {
-  //   // Add event listener only on the client-side
-  //   if (isClient) {
-  //     window.addEventListener("scroll", handleScroll);
+  useState(() => {
+    window.addEventListener("resize", handleResize);
 
-  //     // Remove event listener on cleanup
-  //     return () => {
-  //       window.removeEventListener("scroll", handleScroll);
-  //     };
-  //   }
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
-  //   // eslint-disable-next-line
-  // }, [isClient]);
-
-  // let headerBgClass;
-  // let leftLinksStyles;
-  // let logoStyles;
-
-  // let iconCloseStyles;
-  // let iconBurgerStyles;
-  // if (
-  //   (pathname === "/" && isClient && scrollY >= window.innerHeight - 50) ||
-  //   pathname !== "/"
-  // ) {
-  //   headerBgClass = styles.scrolledBg;
-  //   leftLinksStyles = " ";
-  //   logoStyles = styles.headerLogo;
-
-  //   iconCloseStyles = styles.iconCloseDark;
-  //   iconBurgerStyles = styles.iconBurgerDark;
-  // } else {
-  //   headerBgClass = " ";
-  //   leftLinksStyles = styles.leftLinkLight;
-  //   logoStyles = styles.headerLogoLight;
-
-  //   iconCloseStyles = styles.iconClose;
-  //   iconBurgerStyles = styles.iconBurger;
-  // }
   return (
-    // <header className={`${styles.container} ${headerBgClass}`}>
     <header className={styles.container}>
       <p className={styles.promotion}>
         -10% НА ВСІ КВАРТИРИ ПРИ ПЕРШОМУ ЗВЕРНЕННІ
@@ -136,31 +103,21 @@ const Header = () => {
           Контакти
         </Link>
       </div> */}
-      {/* <TranslatorBtnBlock isClient={isClient} />
-      {session.status === "authenticated" && (
-        <button className={styles.logoutBtn} onClick={signOut}>
-          Розлогінитися
-        </button>
-      )} */}
-      {/* <BurgerBtn
-        onClick={() => {
-          setBurgerMenu(!burgerMenu);
-        }}
-        burgerMenu={burgerMenu}
-        isClient={isClient}
-        iconCloseStyles={iconCloseStyles}
-        iconBurgerStyles={iconBurgerStyles}
-      /> */}
-      {/* <Navigation
-        className={
-          burgerMenu ? styles.mobileNavigationVisible : styles.mobileNavigation
-        }
-        onClick={() => {
-          setTimeout(() => {
-            setBurgerMenu(false);
-          }, 250);
-        }}
-      /> */}
+
+      {isMobile && (
+        <Navigation
+          className={
+            burgerMenu
+              ? styles.mobileNavigationVisible
+              : styles.mobileNavigation
+          }
+          onClick={() => {
+            setTimeout(() => {
+              setBurgerMenu(false);
+            }, 250);
+          }}
+        />
+      )}
 
       {session.status === "authenticated" && (
         <button className={styles.logoutBtn} onClick={signOut}>

@@ -59,48 +59,48 @@
 //   background-color: $lightFontColor;
 // }
 
-// .leftLinks,
-// .rightLinks {
-//   display: none;
+.leftLinks,
+.rightLinks {
+  display: none;
 
-//   @media screen and (min-width: $tablet) {
-//     display: flex;
-//     gap: 20px;
-//     z-index: 1;
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    gap: 20px;
+    z-index: 1;
 
-//     & a {
-//       font-size: 16px;
-//       font-style: normal;
-//       font-weight: 400;
-//       line-height: normal;
+    & a {
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
 
-//       // &:hover,
-//       // &:focus {
-//       //   text-decoration: underline;
-//       //   text-decoration-thickness: 2px;
-//       //   text-underline-offset: 4px;
-//       //   text-decoration-color: rgba(36, 36, 36, 0.5);
-//       // }
-//     }
-//   }
+      // &:hover,
+      // &:focus {
+      //   text-decoration: underline;
+      //   text-decoration-thickness: 2px;
+      //   text-underline-offset: 4px;
+      //   text-decoration-color: rgba(36, 36, 36, 0.5);
+      // }
+    }
+  }
 
-//   @media screen and (min-width: 960px) {
-//     gap: 40px;
-//   }
-// }
+  @media screen and (min-width: 960px) {
+    gap: 40px;
+  }
+}
 
-// .activeLink {
-//   text-decoration: underline;
-//   text-decoration-thickness: 1px;
-//   text-underline-offset: 3px;
-//   text-decoration-color: rgba(36, 36, 36, 0.5);
-// }
+.activeLink {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(36, 36, 36, 0.5);
+}
 
-// .leftLinks {
-//   margin-left: 0;
-//   margin-right: auto;
-//   color: $darckFontColor;
-// }
+.leftLinks {
+  margin-left: 0;
+  margin-right: auto;
+  color: $darckFontColor;
+}
 
 // .leftLinkLight {
 //   color: $lightFontColor;
@@ -112,21 +112,21 @@
 //   color: $darckFontColor;
 // }
 
-// .logoutBtn {
-//   display: none;
+.logoutBtn {
+  display: none;
 
-//   @media screen and (min-width: $desktop) {
-//     display: block;
-//     margin-left: 20px;
-//     padding: 5px;
-//     z-index: 20;
-//     cursor: pointer;
-//     background-color: #53c28b;
-//     color: white;
-//     border-radius: 3px;
-//     border-color: transparent;
-//   }
-// }
+  @media screen and (min-width: $desktop) {
+    display: block;
+    margin-left: 20px;
+    padding: 5px;
+    z-index: 20;
+    cursor: pointer;
+    background-color: #53c28b;
+    color: white;
+    border-radius: 3px;
+    border-color: transparent;
+  }
+}
 
 // .headerLogoLight,
 // .headerLogo {
@@ -153,45 +153,52 @@
 //   }
 // }
 
-// .mobileNavigation,
-// .mobileNavigationVisible {
-//   position: fixed;
-//   flex-direction: column;
-//   align-items: center;
-//   padding: 0px;
-//   margin-left: -16px;
-//   top: 64px;
-//   width: 100%;
-//   height: 1px;
-//   overflow: hidden;
-//   gap: 0px;
+.mobileNavigation,
+.mobileNavigationVisible {
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  top: 64px;
+  width: 100%;
+  height: 1px;
+  overflow: hidden;
+  gap: 0px;
 
-//   color: $footerTextColor;
-//   font-size: 16px;
-//   font-style: normal;
-//   font-weight: 400;
-//   line-height: normal;
+  color: $footerTextColor;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 
-//   & li {
-//     margin-top: 20px;
-//   }
+  & li {
+    margin-top: 20px;
+  }
 
-//   @media screen and (min-width: 425px) {
-//     flex-direction: row;
-//     justify-content: center;
-//     gap: 16px;
-//   }
+  @media screen and (min-width: 425px) {
+    flex-direction: row;
+    justify-content: center;
+    gap: 16px;
+  }
 
-//   @media screen and (min-width: $tablet) {
-//     display: none;
-//   }
-// }
+  @media screen and (min-width: $tablet) {
+    display: none;
+  }
+}
 
-// .mobileNavigationVisible {
-//   height: fit-content;
-//   padding-bottom: 20px;
-//   background-color: $lightFontColor;
-// }
+.mobileNavigationVisible {
+  height: fit-content;
+  padding-bottom: 20px;
+  background-color: $lightFontColor;
+  // animation: mobileNavigationVisible 2s linear 1s forwards;
+}
+
+@keyframes mobileNavigationVisible {
+  to {
+    height: fit-content;
+    padding-bottom: 20px;
+    background-color: $lightFontColor;
+  }
+}
 
 // .qwe {
 //   background-color: aqua;
