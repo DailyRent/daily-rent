@@ -5,8 +5,10 @@
   gap: 16px;
   @media screen and (min-width: $tablet) {
     & img {
-      width: 38px;
-      height: 38px;
+      // width: 32px;
+      // height: 32px;
+      width: clamp(1.5rem, 0.929rem + 1.19vw, 2rem);
+      height: clamp(1.5rem, 0.929rem + 1.19vw, 2rem);
     }
   }
 }

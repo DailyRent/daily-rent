@@ -1,13 +1,15 @@
 @import "../../styles/_variables.scss";
 
 .burgerBtn {
-  width: 28px;
-  height: 28px;
+  // width: 28px;
+  // height: 28px;
+  width: fit-content;
+  height: fit-content;
   border: none;
   background: none;
   margin-left: auto;
   margin-right: 0;
-  z-index: 30;
+  // z-index: 30;
 
   display: flex;
   justify-content: center;
@@ -20,5 +22,27 @@
 
   @media screen and (min-width: $tablet) {
     display: none;
+  }
+}
+
+.iconBurger {
+  width: 22px;
+  height: 12px;
+
+  fill: $darckFontColor;
+  @media screen and (min-width: $mobile) {
+    width: 40px;
+    height: 24px;
+  }
+}
+
+.iconClose {
+  width: 20px;
+  height: 20px;
+
+  stroke: $darckFontColor;
+  @media screen and (min-width: $mobile) {
+    width: 32px;
+    height: 32px;
   }
 }

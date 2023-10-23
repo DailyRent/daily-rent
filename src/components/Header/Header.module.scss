@@ -2,53 +2,76 @@
 
 .container {
   position: fixed;
-  display: flex;
-  align-items: center;
-  padding: 24px 16px;
-
   z-index: 10;
+}
 
+.promotion {
+  color: $darckFontColor;
+  font-size: clamp(0.75rem, 0.65rem + 0.5vw, 1.25rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 1.04px;
+  text-align: center;
+
+  background: #e9e9e9;
+  padding: 8px;
   @media screen and (min-width: $tablet) {
-    padding: 12px 48px;
+    font-weight: 600;
   }
-
   @media screen and (min-width: $desktop) {
-    padding: 24px 75px;
+    font-weight: 600;
+    padding: 4px;
   }
 }
 
-.scrolledBg {
+.navBar {
   background-color: $lightFontColor;
+  display: flex;
+  align-items: center;
+  padding: 16px 20px;
+  height: 56px;
+
+  & .logo {
+    position: absolute;
+    transform: translate(-50%, 0%);
+    left: 50%;
+
+    & span {
+      color: $lightFontColor;
+      background-color: $darckFontColor;
+      padding: 4px;
+      margin-right: 4px;
+    }
+  }
+
+  @media screen and (min-width: $tablet) {
+    padding: 28px 36px;
+    height: 64px;
+  }
+  @media screen and (min-width: $desktop) {
+    padding: 44px 86px;
+    height: 120px;
+  }
 }
 
 .leftLinks,
 .rightLinks {
-  display: none;
+  display: flex;
+  align-items: center;
+  gap: clamp(1.25rem, -0.179rem + 2.976vw, 2.5rem);
+  z-index: 1;
 
-  @media screen and (min-width: $tablet) {
-    display: flex;
-    gap: 20px;
-    z-index: 1;
-
-    & a {
-      font-size: 16px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
-
-      // &:hover,
-      // &:focus {
-      //   text-decoration: underline;
-      //   text-decoration-thickness: 2px;
-      //   text-underline-offset: 4px;
-      //   text-decoration-color: rgba(36, 36, 36, 0.5);
-      // }
-    }
+  & a {
+    font-size: clamp(0.75rem, 0.179rem + 1.19vw, 1.25rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
   }
 
-  @media screen and (min-width: 960px) {
-    gap: 40px;
-  }
+  // @media screen and (min-width: $desktop) {
+  //   gap: 40px;
+  // }
 }
 
 .activeLink {
@@ -62,10 +85,6 @@
   margin-left: 0;
   margin-right: auto;
   color: $darckFontColor;
-}
-
-.leftLinkLight {
-  color: $lightFontColor;
 }
 
 .rightLinks {
@@ -90,38 +109,36 @@
   }
 }
 
-.headerLogoLight,
-.headerLogo {
-  width: 100%;
-  position: absolute;
-  margin-left: -16px;
+// .headerLogoLight,
+// .headerLogo {
+//   width: 100%;
+//   position: absolute;
+//   margin-left: -16px;
 
-  @media screen and (min-width: $tablet) {
-    margin-left: -48px;
-  }
+//   @media screen and (min-width: $tablet) {
+//     margin-left: -48px;
+//   }
 
-  @media screen and (min-width: $desktop) {
-    margin-left: -75px;
-  }
-}
+//   @media screen and (min-width: $desktop) {
+//     margin-left: -75px;
+//   }
+// }
 
-.headerLogoLight {
-  color: $lightFontColor;
+// .headerLogoLight {
+//   color: $lightFontColor;
 
-  @media screen and (min-width: $tablet) {
-    & span {
-      color: initial;
-    }
-  }
-}
+//   @media screen and (min-width: $tablet) {
+//     & span {
+//       color: initial;
+//     }
+//   }
+// }
 
 .mobileNavigation,
 .mobileNavigationVisible {
-  position: fixed;
   flex-direction: column;
   align-items: center;
   padding: 0px;
-  margin-left: -16px;
   top: 64px;
   width: 100%;
   height: 1px;
@@ -153,47 +170,56 @@
   height: fit-content;
   padding-bottom: 20px;
   background-color: $lightFontColor;
+  // animation: mobileNavigationVisible 2s linear 1s forwards;
 }
 
-.qwe {
-  background-color: aqua;
-  border: 2px solid red;
-}
-
-.iconBurgerDark,
-.iconBurger {
-  width: 22px;
-  height: 12px;
-
-  @media screen and (min-width: $mobile) {
-    width: 40px;
-    height: 24px;
+@keyframes mobileNavigationVisible {
+  to {
+    height: fit-content;
+    padding-bottom: 20px;
+    background-color: $lightFontColor;
   }
 }
 
-.iconBurgerDark {
-  fill: $darckFontColor;
-}
+// .qwe {
+//   background-color: aqua;
+//   border: 2px solid red;
+// }
 
-.iconBurger {
-  fill: $lightFontColor;
-}
+// .iconBurgerDark,
+// .iconBurger {
+//   width: 22px;
+//   height: 12px;
 
-.iconCloseDark,
-.iconClose {
-  width: 20px;
-  height: 20px;
+//   @media screen and (min-width: $mobile) {
+//     width: 40px;
+//     height: 24px;
+//   }
+// }
 
-  @media screen and (min-width: $mobile) {
-    width: 32px;
-    height: 32px;
-  }
-}
+// .iconBurgerDark {
+//   fill: $darckFontColor;
+// }
 
-.iconCloseDark {
-  stroke: $darckFontColor;
-}
+// .iconBurger {
+//   fill: $lightFontColor;
+// }
 
-.iconClose {
-  stroke: $lightFontColor;
-}
+// .iconCloseDark,
+// .iconClose {
+//   width: 20px;
+//   height: 20px;
+
+//   @media screen and (min-width: $mobile) {
+//     width: 32px;
+//     height: 32px;
+//   }
+// }
+
+// .iconCloseDark {
+//   stroke: $darckFontColor;
+// }
+
+// .iconClose {
+//   stroke: $lightFontColor;
+// }
