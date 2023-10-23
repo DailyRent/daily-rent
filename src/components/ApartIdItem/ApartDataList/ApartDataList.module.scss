@@ -57,14 +57,14 @@
     align-items: flex-start;
     // flex-direction: row-reverse;
   }
-  &:hover .imgContainer {
-    &::before {
-      animation-play-state: paused;
-    }
-  }
-  &:hover .img {
-    animation-play-state: paused;
-  }
+  // &:hover .imgContainer {
+  //   &::before {
+  //     animation-play-state: paused;
+  //   }
+  // }
+  // &:hover .img {
+  //   animation-play-state: paused;
+  // }
 }
 
 .imgContainer {
@@ -72,24 +72,24 @@
   width: 20px;
   height: 20px;
   margin-right: 16px;
-  &::before {
-    content: '';
-    display: block;
-    position: absolute;
-    bottom: 3px;
-    left: 43%;
-    width: 3px;
-    animation: shadowMob 2s infinite linear;
-    transition: box-shadow 0.3s ease-in-out;
-  }
+  // &::before {
+  //   content: '';
+  //   display: block;
+  //   position: absolute;
+  //   bottom: 3px;
+  //   left: 43%;
+  //   width: 3px;
+  //   animation: shadowMob 2s infinite linear;
+  //   transition: box-shadow 0.3s ease-in-out;
+  // }
   @media screen and (min-width: $tablet) {
     width: 24px;
     height: 24px;
-    &::before {
-      // left: 38%;
-      width: 5px;
-      animation: shadow 2s infinite linear;
-    }
+    // &::before {
+    //   // left: 38%;
+    //   width: 5px;
+    //   animation: shadow 2s infinite linear;
+    // }
   }
   @media screen and (min-width: 1366px) {
     margin-right: 16px;
@@ -99,25 +99,25 @@
   }
 }
 
-@keyframes shadowMob {
-  0%,
-  100% {
-    box-shadow: 0px 5px 4px 2px #4343436c;
-  }
-  50% {
-    box-shadow: 0px 5px 3px 1px #4343436c;
-  }
-}
+// @keyframes shadowMob {
+//   0%,
+//   100% {
+//     box-shadow: 0px 5px 4px 2px #4343436c;
+//   }
+//   50% {
+//     box-shadow: 0px 5px 3px 1px #4343436c;
+//   }
+// }
 
-@keyframes shadow {
-  0%,
-  100% {
-    box-shadow: 0px 9px 5px 2px #4343436c;
-  }
-  50% {
-    box-shadow: 0px 9px 3px 1px #4343436c;
-  }
-}
+// @keyframes shadow {
+//   0%,
+//   100% {
+//     box-shadow: 0px 9px 5px 2px #4343436c;
+//   }
+//   50% {
+//     box-shadow: 0px 9px 3px 1px #4343436c;
+//   }
+// }
 
 .img {
   width: 16px;
@@ -125,7 +125,7 @@
   stroke: #6d6d6d;
   fill: none;
   // object-fit: contain;
-  animation: spin 2s infinite linear;
+  // animation: spin 2s infinite linear;
   @media screen and (min-width: $tablet) {
     width: 20px;
     height: 20px;
@@ -136,15 +136,15 @@
   }
 }
 
-@keyframes spin {
-  0%,
-  100% {
-    transform: translate(0, 0);
-  }
-  50% {
-    transform: translate(0, 10%);
-  }
-}
+// @keyframes spin {
+//   0%,
+//   100% {
+//     transform: translate(0, 0);
+//   }
+//   50% {
+//     transform: translate(0, 10%);
+//   }
+// }
 
 .googleMapsText {
   position: relative;

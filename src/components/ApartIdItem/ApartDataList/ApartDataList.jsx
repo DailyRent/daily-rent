@@ -27,7 +27,7 @@ const ApartDataList = ({ dataId }) => {
               className={styles.img}
             />
             {/* <Image
-              src="/png/google-maps.png"
+              src="/png/google-maps2.png"
               alt="google maps"
               fill={true}
               className={styles.img}
