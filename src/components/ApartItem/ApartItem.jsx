@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useContext } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import styles from './ApartItem.module.scss';
 import Link from 'next/link';
@@ -16,7 +16,8 @@ const ApartItem = ({
   return (
     <>
       <li className={styles.oneRooms}>
-        <Link href={`/oldApartments/${roomsQuantity}/${id}`}>
+        <Link href={`/apartments/${id}`}>
+          {/* <Link href={`/oldApartments/${roomsQuantity}/${id}`}> */}
           <div className={styles.imgContainer}>
             <Image
               src={titleImg}
@@ -31,10 +32,9 @@ const ApartItem = ({
         </Link>
         <p className={styles.addressRooms}>{address}</p>
         <p className={styles.priceRooms}>{price}₴</p>
-
-        {/* <p className={styles.priceRooms}>від {price}₴</p> */}
         <Link
-          href={`/oldApartments/${roomsQuantity}/${id}`}
+          href={`/apartments/${id}`}
+          // href={`/oldApartments/${roomsQuantity}/${id}`}
           className={styles.btnRooms}
         >
           Детальніше
