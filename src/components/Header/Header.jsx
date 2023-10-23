@@ -10,6 +10,7 @@ import { usePathname } from "next/navigation";
 import { signOut, useSession } from "next-auth/react";
 import TranslatorBtnBlock from "../share/TranslatorBtnBlock/TranslatorBtnBlock";
 import { SiteContext } from "@/context/SiteContext";
+import SocialLinks from "../SocialLinks/SocialLinks";
 
 const Header = () => {
   const session = useSession();
@@ -29,11 +30,7 @@ const Header = () => {
   };
 
   useEffect(() => {
-    // if (isClient) {
     window.addEventListener("resize", handleResize);
-    // } else {
-    //   window.removeEventListener("resize", handleResize);
-    // }
 
     return () => {
       window.removeEventListener("resize", handleResize);
@@ -45,7 +42,61 @@ const Header = () => {
       <p className={styles.promotion}>
         -10% НА ВСІ КВАРТИРИ ПРИ ПЕРШОМУ ЗВЕРНЕННІ
       </p>
+
       <div className={styles.navBar}>
+        {!isMobile && (
+          <div className={styles.leftLinks}>
+            <Link
+              href={"/apartments"}
+              className={
+                pathname === "/apartments"
+                  ? styles.activeLink
+                  : " textLinkAnimation"
+              }
+            >
+              Апартаменти
+            </Link>
+
+            <Link
+              href={"/documents"}
+              className={
+                pathname === "/documents"
+                  ? styles.activeLink
+                  : " textLinkAnimation"
+              }
+            >
+              Документи
+            </Link>
+
+            <Link
+              href={"/rules"}
+              className={
+                pathname === "/documents"
+                  ? styles.activeLink
+                  : " textLinkAnimation"
+              }
+            >
+              Правила
+            </Link>
+          </div>
+        )}
+
+        {!isMobile && (
+          <div className={styles.rightLinks}>
+            <Link
+              href={"/contacts"}
+              className={
+                pathname === "/contacts"
+                  ? styles.activeLink
+                  : " textLinkAnimation"
+              }
+            >
+              Контакти
+            </Link>
+            <SocialLinks />
+          </div>
+        )}
+
         <TranslatorBtnBlock isClient={isClient} />
 
         <Logo className={styles.logo} isClient={isClient} />
@@ -58,37 +109,7 @@ const Header = () => {
           isClient={isClient}
         />
       </div>
-      {/* <div className={styles.leftLinks}>
-        <Link
-          href={"/apartments"}
-          className={
-            pathname === "/apartments"
-              ? styles.activeLink
-              : " textLinkAnimation"
-          }
-        >
-          Апартаменти
-        </Link>
 
-        <Link
-          href={"/documents"}
-          className={
-            pathname === "/documents" ? styles.activeLink : " textLinkAnimation"
-          }
-        >
-          Документи
-        </Link>
-
-        <Link
-          href={"/rules"}
-          className={
-            pathname === "/documents" ? styles.activeLink : " textLinkAnimation"
-          }
-        >
-          Правила
-        </Link>
-      </div> */}
-      {/* <Logo className={logoStyles} isClient={isClient} /> */}
       {/* <div className={styles.rightLinks}>
         <Link
           href={"/rules"}

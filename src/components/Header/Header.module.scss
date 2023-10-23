@@ -55,38 +55,23 @@
   }
 }
 
-// .scrolledBg {
-//   background-color: $lightFontColor;
-// }
-
 .leftLinks,
 .rightLinks {
-  display: none;
+  display: flex;
+  align-items: center;
+  gap: clamp(1.25rem, -0.179rem + 2.976vw, 2.5rem);
+  z-index: 1;
 
-  @media screen and (min-width: $tablet) {
-    display: flex;
-    gap: 20px;
-    z-index: 1;
-
-    & a {
-      font-size: 16px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
-
-      // &:hover,
-      // &:focus {
-      //   text-decoration: underline;
-      //   text-decoration-thickness: 2px;
-      //   text-underline-offset: 4px;
-      //   text-decoration-color: rgba(36, 36, 36, 0.5);
-      // }
-    }
+  & a {
+    font-size: clamp(0.75rem, 0.179rem + 1.19vw, 1.25rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
   }
 
-  @media screen and (min-width: 960px) {
-    gap: 40px;
-  }
+  // @media screen and (min-width: $desktop) {
+  //   gap: 40px;
+  // }
 }
 
 .activeLink {
@@ -102,15 +87,11 @@
   color: $darckFontColor;
 }
 
-// .leftLinkLight {
-//   color: $lightFontColor;
-// }
-
-// .rightLinks {
-//   margin-right: 0;
-//   margin-left: auto;
-//   color: $darckFontColor;
-// }
+.rightLinks {
+  margin-right: 0;
+  margin-left: auto;
+  color: $darckFontColor;
+}
 
 .logoutBtn {
   display: none;
