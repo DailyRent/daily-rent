@@ -2,198 +2,236 @@
 
 .container {
   position: fixed;
-  display: flex;
-  align-items: center;
-  padding: 24px 16px;
-
   z-index: 10;
-
-  @media screen and (min-width: $tablet) {
-    padding: 12px 48px;
-  }
-
-  @media screen and (min-width: $desktop) {
-    padding: 24px 75px;
-  }
 }
 
-.scrolledBg {
-  background-color: $lightFontColor;
-}
-
-.leftLinks,
-.rightLinks {
-  display: none;
-
-  @media screen and (min-width: $tablet) {
-    display: flex;
-    gap: 20px;
-    z-index: 1;
-
-    & a {
-      font-size: 16px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
-
-      // &:hover,
-      // &:focus {
-      //   text-decoration: underline;
-      //   text-decoration-thickness: 2px;
-      //   text-underline-offset: 4px;
-      //   text-decoration-color: rgba(36, 36, 36, 0.5);
-      // }
-    }
-  }
-
-  @media screen and (min-width: 960px) {
-    gap: 40px;
-  }
-}
-
-.activeLink {
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
-  text-decoration-color: rgba(36, 36, 36, 0.5);
-}
-
-.leftLinks {
-  margin-left: 0;
-  margin-right: auto;
+.promotion {
   color: $darckFontColor;
-}
-
-.leftLinkLight {
-  color: $lightFontColor;
-}
-
-.rightLinks {
-  margin-right: 0;
-  margin-left: auto;
-  color: $darckFontColor;
-}
-
-.logoutBtn {
-  display: none;
-
-  @media screen and (min-width: $desktop) {
-    display: block;
-    margin-left: 20px;
-    padding: 5px;
-    z-index: 20;
-    cursor: pointer;
-    background-color: #53c28b;
-    color: white;
-    border-radius: 3px;
-    border-color: transparent;
-  }
-}
-
-.headerLogoLight,
-.headerLogo {
-  width: 100%;
-  position: absolute;
-  margin-left: -16px;
-
-  @media screen and (min-width: $tablet) {
-    margin-left: -48px;
-  }
-
-  @media screen and (min-width: $desktop) {
-    margin-left: -75px;
-  }
-}
-
-.headerLogoLight {
-  color: $lightFontColor;
-
-  @media screen and (min-width: $tablet) {
-    & span {
-      color: initial;
-    }
-  }
-}
-
-.mobileNavigation,
-.mobileNavigationVisible {
-  position: fixed;
-  flex-direction: column;
-  align-items: center;
-  padding: 0px;
-  margin-left: -16px;
-  top: 64px;
-  width: 100%;
-  height: 1px;
-  overflow: hidden;
-  gap: 0px;
-
-  color: $footerTextColor;
-  font-size: 16px;
+  font-size: clamp(0.75rem, 0.65rem + 0.5vw, 1.25rem);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  letter-spacing: 1.04px;
+  text-align: center;
 
-  & li {
-    margin-top: 20px;
+  background: #e9e9e9;
+  padding: 8px;
+  @media screen and (min-width: $tablet) {
+    font-weight: 600;
   }
+  @media screen and (min-width: $desktop) {
+    font-weight: 600;
+    padding: 4px;
+  }
+}
 
-  @media screen and (min-width: 425px) {
-    flex-direction: row;
-    justify-content: center;
-    gap: 16px;
+.navBar {
+  background-color: $lightFontColor;
+  display: flex;
+  align-items: center;
+  padding: 16px 20px;
+  height: 56px;
+
+  & .logo {
+    position: absolute;
+    transform: translate(-50%, 0%);
+    left: 50%;
+
+    & span {
+      color: $lightFontColor;
+      background-color: $darckFontColor;
+      padding: 4px;
+      margin-right: 4px;
+    }
   }
 
   @media screen and (min-width: $tablet) {
-    display: none;
+    padding: 28px 36px;
+    height: 64px;
+  }
+  @media screen and (min-width: $desktop) {
+    padding: 44px 86px;
+    height: 120px;
   }
 }
 
-.mobileNavigationVisible {
-  height: fit-content;
-  padding-bottom: 20px;
-  background-color: $lightFontColor;
-}
+// .scrolledBg {
+//   background-color: $lightFontColor;
+// }
 
-.qwe {
-  background-color: aqua;
-  border: 2px solid red;
-}
+// .leftLinks,
+// .rightLinks {
+//   display: none;
 
-.iconBurgerDark,
-.iconBurger {
-  width: 22px;
-  height: 12px;
+//   @media screen and (min-width: $tablet) {
+//     display: flex;
+//     gap: 20px;
+//     z-index: 1;
 
-  @media screen and (min-width: $mobile) {
-    width: 40px;
-    height: 24px;
-  }
-}
+//     & a {
+//       font-size: 16px;
+//       font-style: normal;
+//       font-weight: 400;
+//       line-height: normal;
 
-.iconBurgerDark {
-  fill: $darckFontColor;
-}
+//       // &:hover,
+//       // &:focus {
+//       //   text-decoration: underline;
+//       //   text-decoration-thickness: 2px;
+//       //   text-underline-offset: 4px;
+//       //   text-decoration-color: rgba(36, 36, 36, 0.5);
+//       // }
+//     }
+//   }
 
-.iconBurger {
-  fill: $lightFontColor;
-}
+//   @media screen and (min-width: 960px) {
+//     gap: 40px;
+//   }
+// }
 
-.iconCloseDark,
-.iconClose {
-  width: 20px;
-  height: 20px;
+// .activeLink {
+//   text-decoration: underline;
+//   text-decoration-thickness: 1px;
+//   text-underline-offset: 3px;
+//   text-decoration-color: rgba(36, 36, 36, 0.5);
+// }
 
-  @media screen and (min-width: $mobile) {
-    width: 32px;
-    height: 32px;
-  }
-}
+// .leftLinks {
+//   margin-left: 0;
+//   margin-right: auto;
+//   color: $darckFontColor;
+// }
 
-.iconCloseDark {
-  stroke: $darckFontColor;
-}
+// .leftLinkLight {
+//   color: $lightFontColor;
+// }
 
-.iconClose {
-  stroke: $lightFontColor;
-}
+// .rightLinks {
+//   margin-right: 0;
+//   margin-left: auto;
+//   color: $darckFontColor;
+// }
+
+// .logoutBtn {
+//   display: none;
+
+//   @media screen and (min-width: $desktop) {
+//     display: block;
+//     margin-left: 20px;
+//     padding: 5px;
+//     z-index: 20;
+//     cursor: pointer;
+//     background-color: #53c28b;
+//     color: white;
+//     border-radius: 3px;
+//     border-color: transparent;
+//   }
+// }
+
+// .headerLogoLight,
+// .headerLogo {
+//   width: 100%;
+//   position: absolute;
+//   margin-left: -16px;
+
+//   @media screen and (min-width: $tablet) {
+//     margin-left: -48px;
+//   }
+
+//   @media screen and (min-width: $desktop) {
+//     margin-left: -75px;
+//   }
+// }
+
+// .headerLogoLight {
+//   color: $lightFontColor;
+
+//   @media screen and (min-width: $tablet) {
+//     & span {
+//       color: initial;
+//     }
+//   }
+// }
+
+// .mobileNavigation,
+// .mobileNavigationVisible {
+//   position: fixed;
+//   flex-direction: column;
+//   align-items: center;
+//   padding: 0px;
+//   margin-left: -16px;
+//   top: 64px;
+//   width: 100%;
+//   height: 1px;
+//   overflow: hidden;
+//   gap: 0px;
+
+//   color: $footerTextColor;
+//   font-size: 16px;
+//   font-style: normal;
+//   font-weight: 400;
+//   line-height: normal;
+
+//   & li {
+//     margin-top: 20px;
+//   }
+
+//   @media screen and (min-width: 425px) {
+//     flex-direction: row;
+//     justify-content: center;
+//     gap: 16px;
+//   }
+
+//   @media screen and (min-width: $tablet) {
+//     display: none;
+//   }
+// }
+
+// .mobileNavigationVisible {
+//   height: fit-content;
+//   padding-bottom: 20px;
+//   background-color: $lightFontColor;
+// }
+
+// .qwe {
+//   background-color: aqua;
+//   border: 2px solid red;
+// }
+
+// .iconBurgerDark,
+// .iconBurger {
+//   width: 22px;
+//   height: 12px;
+
+//   @media screen and (min-width: $mobile) {
+//     width: 40px;
+//     height: 24px;
+//   }
+// }
+
+// .iconBurgerDark {
+//   fill: $darckFontColor;
+// }
+
+// .iconBurger {
+//   fill: $lightFontColor;
+// }
+
+// .iconCloseDark,
+// .iconClose {
+//   width: 20px;
+//   height: 20px;
+
+//   @media screen and (min-width: $mobile) {
+//     width: 32px;
+//     height: 32px;
+//   }
+// }
+
+// .iconCloseDark {
+//   stroke: $darckFontColor;
+// }
+
+// .iconClose {
+//   stroke: $lightFontColor;
+// }

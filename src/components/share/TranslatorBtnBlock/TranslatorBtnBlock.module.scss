@@ -8,9 +8,13 @@
   color: $lightFontColor;
   margin-right: auto;
   margin-left: 0;
+  scale: 0.8;
+  @media screen and (min-width: $mobile) {
+    scale: 1;
+  }
   @media screen and (min-width: $tablet) {
     margin-right: 0;
-    margin-left: 20px;
+    // margin-left: 20px;
     border-color: $darckFontColor;
     color: $darckFontColor;
   }
@@ -57,7 +61,7 @@
   }
 }
 
-.langToggle{
+.langToggle {
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -74,13 +78,13 @@
   cursor: pointer;
 }
 
-.ball{
-position: absolute;
-z-index: 8;
-box-shadow: 0 0 0 0.015em rgba(0, 0, 0, 0.16);
-width: 24px;
-height: 24px;
-border-radius: 50%;
-background-color: #ffff;
-top: -3px;
+.ball {
+  position: absolute;
+  z-index: 8;
+  box-shadow: 0 0 0 0.015em rgba(0, 0, 0, 0.16);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #ffff;
+  top: -3px;
 }
