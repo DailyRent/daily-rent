@@ -1,15 +1,13 @@
 "use client";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Header.module.scss";
 import Logo from "../Logo/Logo";
 import Navigation from "../Navigation/Navigation";
 import Link from "next/link";
 import BurgerBtn from "../BurgerBtn/BurgerBtn";
 import { usePathname } from "next/navigation";
-// import LangSwitcher from "../LangSwitcher/LangSwitcher";
 import { signOut, useSession } from "next-auth/react";
 import TranslatorBtnBlock from "../share/TranslatorBtnBlock/TranslatorBtnBlock";
-import { SiteContext } from "@/context/SiteContext";
 import SocialLinks from "../SocialLinks/SocialLinks";
 
 const Header = () => {
@@ -30,7 +28,13 @@ const Header = () => {
   };
 
   useEffect(() => {
+    // Add an event listener for window resize
     window.addEventListener("resize", handleResize);
+
+    // // Initial check on component mount
+    // handleResize();
+
+    // Clean up the event listener on component unmount
 
     return () => {
       window.removeEventListener("resize", handleResize);
@@ -42,7 +46,6 @@ const Header = () => {
       <p className={styles.promotion}>
         -10% НА ВСІ КВАРТИРИ ПРИ ПЕРШОМУ ЗВЕРНЕННІ
       </p>
-
       <div className={styles.navBar}>
         {!isMobile && (
           <div className={styles.leftLinks}>
@@ -108,26 +111,13 @@ const Header = () => {
           burgerMenu={burgerMenu}
           isClient={isClient}
         />
-      </div>
 
-      {/* <div className={styles.rightLinks}>
-        <Link
-          href={"/rules"}
-          className={
-            pathname === "/rules" ? styles.activeLink : " textLinkAnimation"
-          }
-        >
-          Правила
-        </Link>
-        <Link
-          href={"/contacts"}
-          className={
-            pathname === "/contacts" ? styles.activeLink : " textLinkAnimation"
-          }
-        >
-          Контакти
-        </Link>
-      </div> */}
+        {session.status === "authenticated" && (
+          <button className={styles.logoutBtn} onClick={signOut}>
+            Розлогінитися
+          </button>
+        )}
+      </div>
 
       {isMobile && (
         <Navigation
@@ -142,12 +132,6 @@ const Header = () => {
             }, 250);
           }}
         />
-      )}
-
-      {session.status === "authenticated" && (
-        <button className={styles.logoutBtn} onClick={signOut}>
-          Розлогінитися
-        </button>
       )}
     </header>
   );

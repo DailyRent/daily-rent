@@ -1,78 +1,109 @@
-// @import "../../styles/_variables.scss";
+@import "../../styles/_variables.scss";
 
-// .container {
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   gap: 16px;
-//   // background-color: darkgrey;
-//   padding: 32px 16px;
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  color: $footerTextColor;
+  border-top: 1px solid #000;
+  background-color: #f3f3f3;
+  overflow-x: hidden;
 
-//   & .mobileSocialLinks {
-//     @media screen and (min-width: $tablet) {
-//       display: none;
-//     }
-//   }
-// }
+  & .footerLogo {
+    color: $footerLogoColor;
+    font-size: clamp(1rem, 0.714rem + 1.429vw, 2rem);
+    margin-left: 0;
+    margin-right: auto;
+  }
+  @media screen and (min-width: $tablet) {
+    gap: 12px;
+    padding: 12px 36px;
+  }
+  @media screen and (min-width: $desktop) {
+    gap: 20px;
+    padding: 24px 86px;
+  }
+}
 
-// .mobileFooter {
-//   @media screen and (min-width: $tablet) {
-//     display: none;
-//   }
-// }
+.contentWrapper {
+  display: flex;
+  width: inherit;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
 
-// .footerLogo {
-//   color: $footerLogoColor;
-//   position: static;
-// }
+.contacts,
+.navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: $footerLocationColor;
+  font-size: clamp(0.5rem, 0.286rem + 1.071vw, 1.25rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 
-// .contactsWrapper {
-//   display: flex;
-//   align-items: center;
-//   width: 100%;
-//   justify-content: space-between;
-// }
+  & a {
+    width: fit-content;
+  }
 
-// .location {
-//   display: flex;
-//   align-items: center;
-//   gap: 12px;
-//   color: $footerLocationColor;
-//   font-size: 16px;
-//   font-style: normal;
-//   font-weight: 400;
-//   line-height: normal;
+  @media screen and (min-width: $tablet) {
+    gap: 16px;
+  }
+  @media screen and (min-width: $desktop) {
+    gap: 32px;
+  }
+}
 
-//   & svg {
-//     fill: transparent;
-//     stroke: $footerLocationColor;
-//     width: 16px;
-//     height: 16px;
-//   }
+.contacts {
+  font-family: "Crimson Text";
+}
 
-//   @media screen and (min-width: $tablet) {
-//     display: none;
-//   }
-// }
+.btnsWrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-end;
 
-// .phoneNumbers {
-//   color: $footerLocationColor;
-//   font-size: 14px;
-//   font-style: normal;
-//   font-weight: 400;
-//   line-height: normal;
+  & a,
+  & button {
+    display: flex;
+    width: 85px;
+    padding: 8px;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(0.5rem, 0.357rem + 0.714vw, 1rem);
+  }
 
-//   display: flex;
-//   flex-direction: column;
-//   gap: 8px;
-// }
+  @media screen and (min-width: $tablet) {
+    gap: 16px;
 
-// .linksWrapper {
-//   display: none;
-//   width: 100%;
-//   justify-content: space-between;
-//   padding-bottom: 24px;
-//   @media screen and (min-width: $tablet) {
-//     display: flex;
-//   }
-// }
+    & a,
+    & button {
+      width: 128px;
+      padding: 8px;
+    }
+  }
+
+  @media screen and (min-width: $desktop) {
+    gap: 32px;
+    & a,
+    & button {
+      width: 288px;
+      padding: 16px;
+    }
+  }
+}
+
+.rights {
+  color: $footerTextColor;
+  font-family: "Crimson Text";
+  font-size: clamp(0.5rem, 0.357rem + 0.714vw, 1rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}

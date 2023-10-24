@@ -57,7 +57,7 @@
 
 .leftLinks,
 .rightLinks {
-  display: flex;
+  display: none;
   align-items: center;
   gap: clamp(1.25rem, -0.179rem + 2.976vw, 2.5rem);
   z-index: 1;
@@ -69,9 +69,9 @@
     line-height: normal;
   }
 
-  // @media screen and (min-width: $desktop) {
-  //   gap: 40px;
-  // }
+  @media screen and (min-width: $tablet) {
+    display: flex;
+  }
 }
 
 .activeLink {
@@ -109,31 +109,6 @@
   }
 }
 
-// .headerLogoLight,
-// .headerLogo {
-//   width: 100%;
-//   position: absolute;
-//   margin-left: -16px;
-
-//   @media screen and (min-width: $tablet) {
-//     margin-left: -48px;
-//   }
-
-//   @media screen and (min-width: $desktop) {
-//     margin-left: -75px;
-//   }
-// }
-
-// .headerLogoLight {
-//   color: $lightFontColor;
-
-//   @media screen and (min-width: $tablet) {
-//     & span {
-//       color: initial;
-//     }
-//   }
-// }
-
 .mobileNavigation,
 .mobileNavigationVisible {
   flex-direction: column;
@@ -170,7 +145,6 @@
   height: fit-content;
   padding-bottom: 20px;
   background-color: $lightFontColor;
-  // animation: mobileNavigationVisible 2s linear 1s forwards;
 }
 
 @keyframes mobileNavigationVisible {
@@ -180,46 +154,3 @@
     background-color: $lightFontColor;
   }
 }
-
-// .qwe {
-//   background-color: aqua;
-//   border: 2px solid red;
-// }
-
-// .iconBurgerDark,
-// .iconBurger {
-//   width: 22px;
-//   height: 12px;
-
-//   @media screen and (min-width: $mobile) {
-//     width: 40px;
-//     height: 24px;
-//   }
-// }
-
-// .iconBurgerDark {
-//   fill: $darckFontColor;
-// }
-
-// .iconBurger {
-//   fill: $lightFontColor;
-// }
-
-// .iconCloseDark,
-// .iconClose {
-//   width: 20px;
-//   height: 20px;
-
-//   @media screen and (min-width: $mobile) {
-//     width: 32px;
-//     height: 32px;
-//   }
-// }
-
-// .iconCloseDark {
-//   stroke: $darckFontColor;
-// }
-
-// .iconClose {
-//   stroke: $lightFontColor;
-// }
