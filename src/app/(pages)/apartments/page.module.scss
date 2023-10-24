@@ -1,44 +1,39 @@
 @import '../../../styles/_variables.scss';
 
 .container {
-  margin-top: 84px;
-  padding: 0 16px 32px 16px;
-
-  // padding: 100px 16px 32px 16px;
-
   display: flex;
-  flex: 1;
+  align-items: center;
+  padding: 100px 20px 32px 20px;
+
   @media screen and (min-width: $tablet) {
-    margin-top: 80px;
-    padding: 0px 48px;
+    padding: 118px 36px 0px 36px;
   }
 
   @media screen and (min-width: 1366px) {
-    padding: 0px 75px;
+    padding: 200px 86px 0px 86px;
   }
-  // @media screen and (min-width: $tablet) {
-  //   margin-top: 80px;
-  //   // padding: 0px 48px;
+}
 
-  //   padding: 108px 48px 0px 48px;
-  // }
-
-  // @media screen and (min-width: 1366px) {
-  //   // padding: 0px 75px;
-  //   padding: 186px 75px 0px 75px;
-  // }
+.filterContainer {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 25px;
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 35px;
+  }
+  @media screen and (min-width: 1366px) {
+    margin-bottom: 16px;
+  }
 }
 
 .backContainer {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  width: 100%;
   column-gap: 13px;
-  margin-bottom: 12px;
-  @media screen and (min-width: 1366px) {
-    margin-bottom: 37px;
-  }
 }
 
 .active {
