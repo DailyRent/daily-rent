@@ -3,7 +3,7 @@ import styles from "./OrderForm.module.scss";
 const SuccessContent = ({ closeModal }) => {
     return (
         <div className={styles.successContainer}>
-            <div>
+            <div className={styles.successWrap}>
                 <p className={styles.successTextTop}>
                     Ваша заявка успішно відправлена!
                 </p>
