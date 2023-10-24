@@ -18,7 +18,7 @@ import "swiper/css/navigation";
 import "./HomeSlider.css";
 
 // import required modules
-import { Pagination, Navigation, Autoplay, Mousewheel } from "swiper/modules";
+import { Pagination, Navigation, Autoplay } from "swiper/modules";
 
 const HomeSlider = () => {
   const { data, error, isLoading } = GetData();
@@ -83,9 +83,8 @@ const HomeSlider = () => {
           // }}
           // effect="slide"
 
-          // loop={true}
-          mousewheel={true}
-          modules={[Pagination, Navigation, Autoplay, Mousewheel]}
+          loop={true}
+          modules={[Pagination, Navigation, Autoplay]}
           className="HomeSliderSwiper"
         >
           {topData?.map((el) => {
