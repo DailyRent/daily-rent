@@ -1,16 +1,11 @@
 @import '../../../styles/variables';
+
 .filterContainer {
-  position: absolute;
-  top: 80px;
-  right: 16px;
   @media screen and (min-width: $tablet) {
-    top: 85px;
-    left: 50%;
-    transform: translate(-5%, -50%);
-  }
-  @media screen and (min-width: 1366px) {
-    top: 90px;
-    // z-index: 100;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -60%);
   }
 }
 

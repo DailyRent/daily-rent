@@ -21,7 +21,7 @@ const ApartDataList = ({ dataId }) => {
               <use href="/sprite.svg#icon-map-pin" />
             </svg> */}
             <Image
-              src="/png/location-pin.png"
+              src="/png/Google Maps Old.png"
               alt="google maps"
               fill={true}
               className={styles.img}
