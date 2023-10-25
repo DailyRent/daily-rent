@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 import useSWR from 'swr';
 import Image from 'next/image';
 import Link from 'next/link';
+// import { CldImage } from "next-cloudinary";
 
 
 const Dashboard = () => {
@@ -148,6 +149,12 @@ const Dashboard = () => {
                                 <div className={styles.imgContainer}>
                                     <Image src={apart.titleImg} alt={apart.address} fill={true} sizes='20vw' priority={true} />
                                 </div>
+                                {/* <CldImage
+                                    width="300"
+                                    height="150"
+                                    // src="<Public ID>"
+                                    // src="Classic-cars_yb6gby"
+                                    src={apart.titleImg} alt="apartment photo" /> */}
                                 <p>Додаткові фото:</p>
                                 <ul className={styles.imgsWrapper}>{apart.imgs.map((item, index) => (<li className={styles.imgsCont} key={index}>
                                     <Image
