@@ -7,8 +7,8 @@ import useSWR from 'swr';
 import Image from 'next/image';
 import Link from 'next/link';
 // import { CldImage } from "next-cloudinary";
-import { CldUploadWidget } from "next-cloudinary";
-
+// import { CldUploadWidget } from "next-cloudinary";
+import { CldUploadButton } from "next-cloudinary";
 
 
 const Dashboard = () => {
@@ -17,6 +17,7 @@ const Dashboard = () => {
     const [roomsQuantityValue, setRoomsQuantityValue] = useState("");
     // надо создать переменную, чтобы при изменении языка динамически вставлять значение Wi-Fi ниже
     const [amenitiesValues, setAmenitiesValues] = useState(["Wi-Fi"]);
+    const [resource, setResource] = useState();
 
     const fetcher = (...args) => fetch(...args).then(res => res.json())
     const { data, mutate, error, isLoading } = useSWR('/api/apartments', fetcher);
@@ -194,7 +195,7 @@ const Dashboard = () => {
                     <input type="checkbox" id="Top" name="Top" onChange={checkboxSwitchForTop} />ТОП
                 </label>
                 {/* <input type='text' placeholder='Основне фото' className={styles.input} /> */}
-                <CldUploadWidget uploadPreset="unsigned_preset">
+                {/* <CldUploadWidget uploadPreset="unsigned_preset">
                     {({ open }) => {
                         function handleOnClick(e) {
                             e.preventDefault();
@@ -206,7 +207,21 @@ const Dashboard = () => {
                             </button>
                         );
                     }}
-                </CldUploadWidget>
+                </CldUploadWidget> */}
+                <CldUploadButton
+                    className={styles.button}
+                    onUpload={async (error, result, widget,) => {
+                        const res = await result;
+                        setResource(res?.info); // Updating local state with asset details
+                        widget?.close(); // Close widget immediately after successful upload
+                        // console.log("resource", resource);
+                    }}
+                    // signatureEndpoint="/api/sign-cloudinary-params"
+                    uploadPreset="unsigned_preset"
+                >
+                    Upload to Cloudinary
+                </CldUploadButton>
+                <p>URL: {resource?.secure_url}</p>
                 <input type='text' placeholder='Додаткові фото' className={styles.input} />
                 <input type='text' placeholder='Адреса' className={styles.input} />
                 <input type='text' placeholder='Адреса англійською' className={styles.input} />
