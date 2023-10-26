@@ -31,11 +31,10 @@ const Header = () => {
     // Add an event listener for window resize
     window.addEventListener("resize", handleResize);
 
-    // // Initial check on component mount
-    // handleResize();
+    // Initial check on component mount
+    handleResize();
 
     // Clean up the event listener on component unmount
-
     return () => {
       window.removeEventListener("resize", handleResize);
     };
