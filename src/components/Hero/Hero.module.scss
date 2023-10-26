@@ -32,7 +32,7 @@
 
 .heroTitle {
   text-align: center;
-  font-size: clamp(20px, 3vw, 40px);
+  font-size: clamp(1rem, 0.571rem + 2.143vw, 2.5rem);
   font-style: normal;
   font-weight: 200;
   line-height: normal;
@@ -43,7 +43,7 @@
 .heroText {
   color: #b5b5b5;
   text-align: center;
-  font-size: clamp(12px, 3vw, 24px);
+  font-size: clamp(0.75rem, 0.536rem + 1.071vw, 1.5rem);
   font-style: normal;
   font-weight: 200;
   line-height: normal;
