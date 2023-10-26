@@ -7,14 +7,17 @@
   align-items: center;
   gap: 36px;
   width: 100%;
-  height: 100vh;
+  height: 370px;
   padding-top: 80px;
-
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url("/heroKitchen.jpeg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
+  @media screen and (min-width: $tablet) {
+    height: 100vh;
+  }
   @media screen and (min-width: $desktop) {
     gap: 70px;
     padding-top: 120px;
@@ -23,30 +26,53 @@
 
 .heroLogo {
   font-family: "Crimson Text";
-  font-size: clamp(20px, 3vw, 48px);
+  font-size: 20px;
+  // font-size: clamp(1.25rem, 0rem + 3.333vw, 3rem);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   color: $lightFontColor;
+
+  @media screen and (min-width: $tablet) {
+    font-size: 24px;
+  }
+  @media screen and (min-width: $desktop) {
+    font-size: 48px;
+  }
 }
 
 .heroTitle {
   text-align: center;
-  font-size: clamp(20px, 3vw, 40px);
+  font-size: 16px;
+  // font-size: clamp(1rem, -0.071rem + 2.857vw, 2.5rem);
+
   font-style: normal;
   font-weight: 200;
   line-height: normal;
   align-self: stretch;
   color: $lightFontColor;
+  @media screen and (min-width: $tablet) {
+    font-size: 20px;
+  }
+  @media screen and (min-width: $desktop) {
+    font-size: 40px;
+  }
 }
 
 .heroText {
   color: #b5b5b5;
   text-align: center;
-  font-size: clamp(12px, 3vw, 24px);
+  font-size: 10px;
+  // font-size: clamp(0.625rem, 0rem + 1.667vw, 1.5rem);
   font-style: normal;
   font-weight: 200;
   line-height: normal;
+  @media screen and (min-width: $tablet) {
+    font-size: 12px;
+  }
+  @media screen and (min-width: $desktop) {
+    font-size: 24px;
+  }
 }
 
 .heroCallBtn {
