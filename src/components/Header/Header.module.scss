@@ -96,7 +96,7 @@
 .logoutBtn {
   display: none;
 
-  @media screen and (min-width: $desktop) {
+  @media screen and (min-width: $tablet) {
     display: block;
     margin-left: 20px;
     padding: 5px;
