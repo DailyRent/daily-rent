@@ -6,9 +6,6 @@
   align-items: center;
   justify-content: center;
   column-gap: 21px;
-  // @media screen and (min-width: 1366px) {
-  //   // column-gap: 40px;
-  // }
 }
 
 .starList {
@@ -21,7 +18,7 @@
   font-weight: 400;
   margin-bottom: 32px;
   @media screen and (min-width: $tablet) {
-    margin-bottom: 20px;
+    margin-bottom: 28px;
   }
   @media screen and (min-width: 1366px) {
     font-size: 20px;

@@ -2,6 +2,9 @@
 
 .propositionContainer {
   margin-bottom: 20px;
+  @media screen and (min-width: 1366px) {
+    margin-bottom: 40px;
+  }
   @media screen and (min-width: 1920px) {
     margin-bottom: 88px;
   }
@@ -27,6 +30,8 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-row-gap: 16px;
+  grid-column-gap: 24px;
+  // grid-column-gap: 8px;
   color: $footerLogoColor;
   font-family: Crimson Text;
   font-size: 16px;
@@ -34,10 +39,12 @@
   @media screen and (min-width: $tablet) {
     grid-row-gap: 14px;
     font-size: 14px;
+    grid-column-gap: 16px;
   }
   @media screen and (min-width: 1366px) {
     font-size: 20px;
     grid-row-gap: 32px;
+    grid-column-gap: 32px;
   }
   @media screen and (min-width: 1920px) {
   }
@@ -52,8 +59,11 @@
   position: relative;
   width: 16px;
   height: 16px;
-  margin-right: 16px;
+  margin-right: 8px;
   @media screen and (min-width: $tablet) {
+    margin-right: 16px;
+  }
+  @media screen and (min-width: $desktop) {
     width: 24px;
     height: 24px;
   }
