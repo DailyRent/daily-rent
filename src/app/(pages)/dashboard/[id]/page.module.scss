@@ -3,6 +3,13 @@
 .container {
     display: none;
 
+    @media screen and (min-width: $tablet) {
+        display: flex;
+        gap: 50px;
+        padding: 40px 20px 20px;
+        width: 100%;
+    }
+
     @media screen and (min-width: $desktop) {
         display: flex;
         gap: 100px;

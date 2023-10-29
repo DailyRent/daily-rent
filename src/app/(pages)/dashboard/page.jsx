@@ -8,7 +8,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 // import { CldImage } from "next-cloudinary";
 // import { CldUploadWidget } from "next-cloudinary";
-import { CldUploadButton } from "next-cloudinary";
+// import { CldUploadButton } from "next-cloudinary";
+import { useForm } from "react-hook-form";
 
 
 const Dashboard = () => {
@@ -17,8 +18,8 @@ const Dashboard = () => {
     const [roomsQuantityValue, setRoomsQuantityValue] = useState("");
     // надо создать переменную, чтобы при изменении языка динамически вставлять значение Wi-Fi ниже
     const [amenitiesValues, setAmenitiesValues] = useState(["Wi-Fi"]);
-    const [resource, setResource] = useState();
-
+    const { register, handleSubmit } = useForm();
+    
     const fetcher = (...args) => fetch(...args).then(res => res.json())
     const { data, mutate, error, isLoading } = useSWR('/api/apartments', fetcher);
 
@@ -38,21 +39,7 @@ const Dashboard = () => {
 
     const changeRoomsQuantity = (e) => {
         setRoomsQuantityValue(e.target.value);
-    }
-
-    // const changeAmenities = (e) => {
-    //     // проверяет есть ли квартира в массиве 
-    //     const isAmenityIn = amenitiesValues.find(item => item === e.target.value);
-    //     if (isAmenityIn) {
-    //         // если есть - она удаляется и создается новый массив, который далее сохраняется
-    //         const newArr = amenitiesValues.filter(item => item !== e.target.value)
-    //         setAmenitiesValues(newArr);
-    //     } else {
-    //         // если квартиры нет - добавляется в массив
-    //         const newArray = [...amenitiesValues, e.target.value];
-    //         setAmenitiesValues(newArray);
-    //     };
-    // }
+    }   
 
     const changeAmenities = (e) => {
         if (e.target.checked) {
@@ -65,55 +52,55 @@ const Dashboard = () => {
     }
 
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        // console.log("handleSubmit was started");
-        // console.log("e.target", e.target);
-        const objNumber = e.target[0].value;
-        const top = e.target[1].checked;
-        const titleImg = e.target[2].value;
-        const imgs = e.target[3].value;
-        const address = e.target[4].value;
-        const addressEn = e.target[5].value;
+    // const handleSubmit = async (e) => {
+    //     e.preventDefault();
+    //     // console.log("handleSubmit was started");
+    //     // console.log("e.target", e.target);
+    //     const objNumber = e.target[0].value;
+    //     const top = e.target[1].checked;
+    //     const titleImg = e.target[2].value;
+    //     const imgs = e.target[3].value;
+    //     const address = e.target[4].value;
+    //     const addressEn = e.target[5].value;
 
-        const flatNumber = e.target[6].value;
-        const googleMapLocation = e.target[7].value;
-        const price = e.target[8].value;
-        const roomsQuantity = roomsQuantityValue;
-        const bookingUrl = e.target[13].value;
-        const amenities = amenitiesValues;
-        const description = e.target[27].value;
-        const descriptionEn = e.target[28].value;
+    //     const flatNumber = e.target[6].value;
+    //     const googleMapLocation = e.target[7].value;
+    //     const price = e.target[8].value;
+    //     const roomsQuantity = roomsQuantityValue;
+    //     const bookingUrl = e.target[13].value;
+    //     const amenities = amenitiesValues;
+    //     const description = e.target[27].value;
+    //     const descriptionEn = e.target[28].value;
 
 
-        try {
-            await fetch("/api/apartments", {
-                method: "POST",
-                body: JSON.stringify({
-                    objNumber,
-                    top,
-                    titleImg,
-                    imgs,
-                    address,
-                    addressEn,
-                    flatNumber,
-                    googleMapLocation,
-                    price,
-                    roomsQuantity,
-                    bookingUrl,
-                    amenities,
-                    description,
-                    descriptionEn,
-                })
-            })
-            // автоматически обновляет страницу при изменении кол-ва карточек
-            mutate();
-            // обнуляет все поля формы
-            // e.target.reset();
-        } catch (err) {
-            console.log(err);
-        }
-    }
+    //     try {
+    //         await fetch("/api/apartments", {
+    //             method: "POST",
+    //             body: JSON.stringify({
+    //                 objNumber,
+    //                 top,
+    //                 titleImg,
+    //                 imgs,
+    //                 address,
+    //                 addressEn,
+    //                 flatNumber,
+    //                 googleMapLocation,
+    //                 price,
+    //                 roomsQuantity,
+    //                 bookingUrl,
+    //                 amenities,
+    //                 description,
+    //                 descriptionEn,
+    //             })
+    //         })
+    //         // автоматически обновляет страницу при изменении кол-ва карточек
+    //         mutate();
+    //         // обнуляет все поля формы
+    //         // e.target.reset();
+    //     } catch (err) {
+    //         console.log(err);
+    //     }
+    // }
 
     const handleDelete = async (id) => {
         try {
@@ -136,6 +123,24 @@ const Dashboard = () => {
         }
     }
 
+    const onSubmit = async (data) => {
+        // извлекает данные по картинке, сохраненные с помощью{...register("profile")} в inpute
+        const image = data.profile[0];
+        const formData = new FormData();
+        formData.append("file", image);
+        // from Cloudinary
+        formData.append("upload_preset", "unsigned_preset");
+        const uploadResponse = await fetch(
+            `https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload`,
+            {
+                method: "POST",
+                body: formData,
+            }
+        );
+        const uploadedImageData = await uploadResponse.json();
+        const publicId = uploadedImageData.public_id;
+        console.log(publicId);
+    };
 
     if (session.status === "authenticated" && session.data.user.email === process.env.NEXT_PUBLIC_ADMIN) {
 
@@ -188,13 +193,16 @@ const Dashboard = () => {
                         </div>))}
             </div>
 
-            <form className={styles.new} onSubmit={handleSubmit}>
+            <form className={styles.new} onSubmit={handleSubmit(onSubmit)}>
                 <h1>Додавання нового обʼєкту</h1>
                 <input type='text' placeholder="Номер обʼєкту" className={styles.input} />
                 <label htmlFor="Top" className={styles.top}>
                     <input type="checkbox" id="Top" name="Top" onChange={checkboxSwitchForTop} />ТОП
                 </label>
-                {/* <input type='text' placeholder='Основне фото' className={styles.input} /> */}
+                <input
+                    // в объекте profile сохраняются данные по загружаемой картинке, которые в дальнейшем в оnSubmit извлекаются 
+                    {...register("profile")}
+                    type='file' placeholder='Основне фото' className={styles.input} />
                 {/* <CldUploadWidget uploadPreset="unsigned_preset">
                     {({ open }) => {
                         function handleOnClick(e) {
@@ -208,7 +216,7 @@ const Dashboard = () => {
                         );
                     }}
                 </CldUploadWidget> */}
-                <CldUploadButton
+                {/* <CldUploadButton
                     className={styles.button}
                     onUpload={async (error, result, widget,) => {
                         const res = await result;
@@ -220,8 +228,8 @@ const Dashboard = () => {
                     uploadPreset="unsigned_preset"
                 >
                     Upload to Cloudinary
-                </CldUploadButton>
-                <p>URL: {resource?.secure_url}</p>
+                </CldUploadButton> */}
+                {/* <p>URL: {resource?.secure_url}</p> */}
                 <input type='text' placeholder='Додаткові фото' className={styles.input} />
                 <input type='text' placeholder='Адреса' className={styles.input} />
                 <input type='text' placeholder='Адреса англійською' className={styles.input} />
