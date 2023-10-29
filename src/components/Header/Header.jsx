@@ -116,9 +116,9 @@ const {t}=useTranslation()
           isClient={isClient}
         />
 
-        {session.status === "authenticated" && (
+        {session.status  === "authenticated" && !isLoading && (
           <button className={styles.logoutBtn} onClick={signOut}>
-            Розлогінитися
+            {t("Buttons.LogOutBtn")}
           </button>
         )}
       </div>

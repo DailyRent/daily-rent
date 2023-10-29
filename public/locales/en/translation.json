@@ -19,7 +19,8 @@
     "FilterBtn":"Find",
     "ObjectsBtn":"All objects",
     "OpenFilterBtn":"Filter",
-    "CloseFilterBtn":"Close"
+    "CloseFilterBtn":"Close",
+    "LogOutBtn": "LogOut"
   },
   "form": {
     "name": "Name",
