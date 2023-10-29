@@ -54,7 +54,7 @@ const Footer = ({ onClick }) => {
           </div>
         </div>
         <p className={styles.rights}>
-          made by
+          made by{" "}
           <Link
             href="https://webevery.dev/"
             target="_blank"
