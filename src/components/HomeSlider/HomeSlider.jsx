@@ -90,10 +90,7 @@ const HomeSlider = () => {
           {topData?.map((el) => {
             return (
               <SwiperSlide key={el._id}>
-                <Link
-                  href={`oldApartments/${el.roomsQuantity}/${el._id}`}
-                  className="link"
-                >
+                <Link href={`apartments/${el._id}`} className="link">
                   <div className="div">
                     <Image
                       src={el.titleImg}
