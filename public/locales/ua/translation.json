@@ -1,11 +1,19 @@
 {
+  "Header":{
+    "headerSale":"-10% НА ВСІ КВАРТИРИ ПРИ ПЕРШОМУ ЗВЕРНЕННІ",
+    "linkApartments":"Апартаменти",
+    "linkDocuments":"Документи",
+    "linkRules":"Правила",
+    "linkContacts":"Контакти"
+
+  },
   "MainPage": {
-    "hero": "Твій комфорт - наша турбота",
+    "heroTitle": "Твій комфорт - наша турбота",
     "galleryTittle": "Апартаменти",
     "contactsTitle": "Зв'яжіться з нами"
   },
   "Buttons":{
-    "ContactBtn": "Зв’язатись",
+    "CalltBtn": "Зв’язатись",
     "OrderBtn": "Забронювати",
     "CloseBtn":"Закрити",
     "CardBtn":"Детальніше",

@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import styles from "./Header.module.scss";
 import Logo from "../Logo/Logo";
 import Navigation from "../Navigation/Navigation";
@@ -14,8 +15,11 @@ const Header = () => {
   const session = useSession();
   const pathname = usePathname();
 
+const {t}=useTranslation()
+
   const [burgerMenu, setBurgerMenu] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [isLoading,setIsLoading]= useState(true)
 
   const isClient = typeof window !== "undefined";
 
@@ -33,6 +37,7 @@ const Header = () => {
 
     // Initial check on component mount
     handleResize();
+    setIsLoading(false)
 
     // Clean up the event listener on component unmount
     return () => {
@@ -42,13 +47,13 @@ const Header = () => {
 
   return (
     <header className={styles.container}>
-      <p className={styles.promotion}>
-        -10% НА ВСІ КВАРТИРИ ПРИ ПЕРШОМУ ЗВЕРНЕННІ
-      </p>
+      {!isLoading && (<p className={styles.promotion}>
+        {t("Header.headerSale")}
+      </p>)}
       <div className={styles.navBar}>
         {!isMobile && (
           <div className={styles.leftLinks}>
-            <Link
+            {!isLoading && (<><Link
               href={"/apartments"}
               className={
                 pathname === "/apartments"
@@ -56,7 +61,7 @@ const Header = () => {
                   : " textLinkAnimation"
               }
             >
-              Апартаменти
+              {t("Header.linkApartments")}
             </Link>
 
             <Link
@@ -67,7 +72,7 @@ const Header = () => {
                   : " textLinkAnimation"
               }
             >
-              Документи
+              {t("Header.linkDocuments")}
             </Link>
 
             <Link
@@ -78,12 +83,12 @@ const Header = () => {
                   : " textLinkAnimation"
               }
             >
-              Правила
-            </Link>
+              {t("Header.linkRules")}
+            </Link></>)}
           </div>
         )}
 
-        {!isMobile && (
+        {!isMobile && !isLoading && (
           <div className={styles.rightLinks}>
             <Link
               href={"/contacts"}
@@ -93,7 +98,7 @@ const Header = () => {
                   : " textLinkAnimation"
               }
             >
-              Контакти
+              {t("Header.linkContacts")}
             </Link>
             <SocialLinks />
           </div>
@@ -118,7 +123,7 @@ const Header = () => {
         )}
       </div>
 
-      {isMobile && (
+      {isMobile && !isLoading && (
         <Navigation
           className={
             burgerMenu

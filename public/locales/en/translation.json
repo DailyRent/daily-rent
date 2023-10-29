@@ -1,11 +1,18 @@
 {
+  "Header":{
+    "headerSale":"-10% FOR ALL APARTMENTS AT THE FIRST APPLICATION",
+    "linkApartments":"Apartments",
+    "linkDocuments":"Documents",
+    "linkRules":"Rules",
+    "linkContacts":"Contacts"
+  },
   "MainPage": {
-    "hero": "Your comfort is our concern",
+    "heroTitle": "Your comfort is our concern",
     "galleryTittle": "Аpartments",
     "contactsTitle": "Contact Us"
     },
   "Buttons": {
-    "ContactBtn": "Contact Us",
+    "CalltBtn": "Contact Us",
     "OrderBtn": "Request to book",
     "CloseBtn": "Close",
     "CardBtn":"Details",
