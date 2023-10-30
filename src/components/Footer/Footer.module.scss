@@ -69,33 +69,12 @@
   gap: 8px;
   align-items: flex-end;
 
-  & a,
-  & button {
-    display: flex;
-    width: 85px;
-    padding: 8px;
-    justify-content: center;
-    align-items: center;
-    font-size: clamp(0.5rem, 0.357rem + 0.714vw, 1rem);
-  }
-
   @media screen and (min-width: $tablet) {
     gap: 16px;
-
-    & a,
-    & button {
-      width: 128px;
-      padding: 8px;
-    }
   }
 
   @media screen and (min-width: $desktop) {
     gap: 32px;
-    & a,
-    & button {
-      width: 288px;
-      padding: 16px;
-    }
   }
 }
 

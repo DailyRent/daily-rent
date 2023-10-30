@@ -2,25 +2,41 @@
 
 .button {
   display: flex;
-  width: 128px;
-  padding: 8px 0px 9px;
+  width: 85px;
+  height: 22px;
   justify-content: center;
   align-items: center;
-  gap: 24px;
 
-  border-radius: 24px;
-  border: 1px solid #929292;
+  border-radius: 12px;
+  border: 0.5px solid #929292;
   background: $darckFontColor;
 
   color: $lightFontColor;
-  font-size: 14px;
+  font-size: 8px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  transition-duration: 500ms;
+
+  &:focus,
+  &:hover {
+    background: transparent;
+    border-color: $darckFontColor;
+    color: $darckFontColor;
+    scale: 0.96;
+  }
+
+  @media screen and (min-width: $tablet) {
+    width: 128px;
+    height: 34px;
+    border-radius: 24px;
+    border-width: 1px;
+    font-size: 14px;
+  }
 
   @media screen and (min-width: $desktop) {
-    width: 183px;
-    height: 58px;
-    font-size: 20px;
+    width: 288px;
+    height: 53px;
+    font-size: 16px;
   }
 }

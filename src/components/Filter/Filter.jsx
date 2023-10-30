@@ -3,8 +3,7 @@ import React, { useState, useContext, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { SiteContext } from "@/context/SiteContext";
 import styles from "./Filter.module.scss";
-import { amenities } from "@/data/amenities.data";
-import { currentLanguages } from "@/data/languages.data";
+import { amenities,currentLanguages } from "@/data";
 import FilterItem from "./FilterItem/FilterItem";
 // import { usePathname } from "next/navigation";
 
