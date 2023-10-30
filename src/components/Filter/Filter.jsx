@@ -70,54 +70,6 @@ const Filter = ({ amenitiesArr, setAmenitiesArr }) => {
 
   return (
     <div className={isFilterShown}>
-      {/* <div className={styles.filterContainer}>
-        {" "}
-        <h3>Filter</h3>
-        <button type="button" className={styles.filterButtonClose}>
-          <svg className={styles.filterSvg}>
-            <use href="/sprite.svg#icon-close"></use>
-          </svg>
-        </button>
-      </div> */}
-
-      {/* <div className={styles.filterButtonsContainer}>
-        <h4>Number of rooms</h4>
-        <ul className={styles.filterNumberRoomsList}>
-          <li>
-            <label>
-              <span>1 Room </span>
-              <input
-                type="checkbox"
-                className={filterCheckboxStyles}
-                checked={numberOfRooms === 1}
-                onChange={handleChangeAmenity}
-              />
-            </label>
-          </li>
-          <li>
-            <label>
-              <span>2 Rooms </span>
-              <input
-                type="checkbox"
-                className={filterCheckboxStyles}
-                checked={numberOfRooms === 2}
-                onChange={handleChangeAmenity}
-              />
-            </label>
-          </li>
-          <li>
-            <label>
-              <span>3 Rooms </span>
-              <input
-                type="checkbox"
-                checked={numberOfRooms === 3}
-                className={filterCheckboxStyles}
-                onChange={handleChangeAmenity}
-              />
-            </label>
-          </li>
-        </ul>
-      </div> */}
       <div className={styles.filterButtonsContainer}>
         {/* <h4>Amenities</h4> */}
         <ul className={styles.filterAmenitisContainer}>
