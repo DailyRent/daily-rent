@@ -6,20 +6,30 @@ import { useRouter } from 'next/navigation';
 import useSWR from 'swr';
 import Image from 'next/image';
 import Link from 'next/link';
-// import { CldImage } from "next-cloudinary";
-// import { CldUploadWidget } from "next-cloudinary";
-// import { CldUploadButton } from "next-cloudinary";
+import { CldImage } from "next-cloudinary";
 import { useForm } from "react-hook-form";
 
 
 const Dashboard = () => {
     const session = useSession();
-    // console.log("Dashboard session", session)
-    const [roomsQuantityValue, setRoomsQuantityValue] = useState("");
-    // надо создать переменную, чтобы при изменении языка динамически вставлять значение Wi-Fi ниже
-    const [amenitiesValues, setAmenitiesValues] = useState(["Wi-Fi"]);
+    // console.log("Dashboard session", session) 
     const { register, handleSubmit } = useForm();
-    
+    const [objNumber, setObjNumber] = useState("");
+    const [top, setTop] = useState(false);
+    const [imgs, setImgs] = useState([]);
+    const [address, setAddress] = useState("");
+    const [addressEn, setAddressEn] = useState("");
+    const [flatNumber, setFlatNumber] = useState("");
+    const [googleMapLocation, setGoogleMapLocation] = useState("");
+    const [price, setPrice] = useState("");
+    const [roomsQuantity, setRoomsQuantity] = useState("");
+    const [bookingUrl, setBookingUrl] = useState("");
+    // надо создать переменную, чтобы при изменении языка динамически вставлять значение Wi-Fi ниже
+    const [amenities, setAmenities] = useState(["Wi-Fi"]);
+    const [description, setDescription] = useState("");
+    const [descriptionEn, setDescriptionEn] = useState("");
+
+
     const fetcher = (...args) => fetch(...args).then(res => res.json())
     const { data, mutate, error, isLoading } = useSWR('/api/apartments', fetcher);
 
@@ -37,17 +47,13 @@ const Dashboard = () => {
         router.push("/")
     }
 
-    const changeRoomsQuantity = (e) => {
-        setRoomsQuantityValue(e.target.value);
-    }   
-
     const changeAmenities = (e) => {
         if (e.target.checked) {
-            const newArray = [...amenitiesValues, e.target.value];
-            setAmenitiesValues(newArray);
+            const newArray = [...amenities, e.target.value];
+            setAmenities(newArray);
         } else {
-            const newArr = amenitiesValues.filter(item => item !== e.target.value)
-            setAmenitiesValues(newArr);
+            const newArr = amenities.filter(item => item !== e.target.value)
+            setAmenities(newArr);
         }
     }
 
@@ -112,16 +118,6 @@ const Dashboard = () => {
         }
     }
 
-    // меняет значение top на true или false в зависимости от checked
-    function checkboxSwitchForTop(e) {
-        console.log("e.target", e.target)
-        if (e.target.checked) {
-            e.target.value = true;
-        }
-        else {
-            e.target.value = false;
-        }
-    }
 
     const onSubmit = async (data) => {
         // извлекает данные по картинке, сохраненные с помощью{...register("profile")} в inpute
@@ -138,8 +134,35 @@ const Dashboard = () => {
             }
         );
         const uploadedImageData = await uploadResponse.json();
-        const publicId = uploadedImageData.public_id;
-        console.log(publicId);
+        const publicId = await uploadedImageData.public_id;
+
+        try {
+            await fetch("/api/apartments", {
+                method: "POST",
+                body: JSON.stringify({
+                    objNumber,
+                    top,
+                    titleImg: publicId,
+                    imgs,
+                    address,
+                    addressEn,
+                    flatNumber,
+                    googleMapLocation,
+                    price,
+                    roomsQuantity,
+                    bookingUrl,
+                    amenities,
+                    description,
+                    descriptionEn,
+                })
+            })
+            // автоматически обновляет страницу при изменении кол-ва карточек
+            mutate();
+            // обнуляет все поля формы
+            // e.target.reset();
+        } catch (err) {
+            console.log(err);
+        }
     };
 
     if (session.status === "authenticated" && session.data.user.email === process.env.NEXT_PUBLIC_ADMIN) {
@@ -154,15 +177,17 @@ const Dashboard = () => {
                                 <h2>Обʼєкт №: {apart.objNumber}</h2>
                                 {apart.top ? <p>ТОП</p> : null}
                                 <p>Основне фото:</p>
-                                <div className={styles.imgContainer}>
+                                {/* <div className={styles.imgContainer}>
                                     <Image src={apart.titleImg} alt={apart.address} fill={true} sizes='20vw' priority={true} />
-                                </div>
-                                {/* <CldImage
+                                </div> */}
+                                <CldImage
                                     width="300"
                                     height="150"
                                     // src="<Public ID>"
                                     // src="Classic-cars_yb6gby"
-                                    src={apart.titleImg} alt="apartment photo" /> */}
+                                    src={apart.titleImg}
+                                    alt="apartment photo"
+                                />
                                 <p>Додаткові фото:</p>
                                 <ul className={styles.imgsWrapper}>{apart.imgs.map((item, index) => (<li className={styles.imgsCont} key={index}>
                                     <Image
@@ -195,56 +220,30 @@ const Dashboard = () => {
 
             <form className={styles.new} onSubmit={handleSubmit(onSubmit)}>
                 <h1>Додавання нового обʼєкту</h1>
-                <input type='text' placeholder="Номер обʼєкту" className={styles.input} />
+                <input type='text' placeholder="Номер обʼєкту" className={styles.input} onChange={(e) => setObjNumber(e.target.value)} />
                 <label htmlFor="Top" className={styles.top}>
-                    <input type="checkbox" id="Top" name="Top" onChange={checkboxSwitchForTop} />ТОП
+                    <input type="checkbox" id="Top" name="Top" onChange={(e) => setTop(e.target.checked)} />
+                    ТОП
                 </label>
                 <input
                     // в объекте profile сохраняются данные по загружаемой картинке, которые в дальнейшем в оnSubmit извлекаются 
                     {...register("profile")}
                     type='file' placeholder='Основне фото' className={styles.input} />
-                {/* <CldUploadWidget uploadPreset="unsigned_preset">
-                    {({ open }) => {
-                        function handleOnClick(e) {
-                            e.preventDefault();
-                            open();
-                        }
-                        return (
-                            <button className="button" onClick={handleOnClick}>
-                                Upload an Image
-                            </button>
-                        );
-                    }}
-                </CldUploadWidget> */}
-                {/* <CldUploadButton
-                    className={styles.button}
-                    onUpload={async (error, result, widget,) => {
-                        const res = await result;
-                        setResource(res?.info); // Updating local state with asset details
-                        widget?.close(); // Close widget immediately after successful upload
-                        // console.log("resource", resource);
-                    }}
-                    // signatureEndpoint="/api/sign-cloudinary-params"
-                    uploadPreset="unsigned_preset"
-                >
-                    Upload to Cloudinary
-                </CldUploadButton> */}
-                {/* <p>URL: {resource?.secure_url}</p> */}
                 <input type='text' placeholder='Додаткові фото' className={styles.input} />
-                <input type='text' placeholder='Адреса' className={styles.input} />
-                <input type='text' placeholder='Адреса англійською' className={styles.input} />
-                <input type='text' placeholder='Квартира' className={styles.input} />
-                <input type='text' placeholder='Місцезнаходження' className={styles.input} />
-                <input type='text' placeholder='Ціна' className={styles.input} />
+                <input type='text' placeholder='Адреса' className={styles.input} onChange={(e) => setAddress(e.target.value)} />
+                <input type='text' placeholder='Адреса англійською' className={styles.input} onChange={(e) => setAddressEn(e.target.value)} />
+                <input type='text' placeholder='Квартира' className={styles.input} onChange={(e) => setFlatNumber(e.target.value)} />
+                <input type='text' placeholder='Місцезнаходження' className={styles.input} onChange={(e) => setGoogleMapLocation(e.target.value)} />
+                <input type='text' placeholder='Ціна' className={styles.input} onChange={(e) => setPrice(e.target.value)} />
                 <fieldset className={styles.roomsQuantity}><legend>Кількість кімнат:</legend>
-                    <input type="radio" id="oneRoom" name="roomsQuantity" value="1" onChange={changeRoomsQuantity} />
+                    <input type="radio" id="oneRoom" name="roomsQuantity" value="1" onChange={(e) => setRoomsQuantity(e.target.value)} />
                     <label htmlFor="oneRoom">1</label>
-                    <input type="radio" id="twoRooms" name="roomsQuantity" value="2" onChange={changeRoomsQuantity} />
+                    <input type="radio" id="twoRooms" name="roomsQuantity" value="2" onChange={(e) => setRoomsQuantity(e.target.value)} />
                     <label htmlFor="twoRooms">2</label>
-                    <input type="radio" id="threeRooms" name="roomsQuantity" value="3" onChange={changeRoomsQuantity} />
+                    <input type="radio" id="threeRooms" name="roomsQuantity" value="3" onChange={(e) => setRoomsQuantity(e.target.value)} />
                     <label htmlFor="threeRooms">3</label>
                 </fieldset>
-                <input type='text' placeholder='bookingUrl' className={styles.input} />
+                <input type='text' placeholder='bookingUrl' className={styles.input} onChange={(e) => setBookingUrl(e.target.value)} />
                 <fieldset className={styles.amenities}><legend>Додатковий комфорт:</legend>
                     <label htmlFor="wi-fi">
                         <input type="checkbox" id="wi-fi" name="wi-fi" value="Wi-Fi" defaultChecked onChange={changeAmenities} />
@@ -295,8 +294,8 @@ const Dashboard = () => {
                         Парковка
                     </label>
                 </fieldset>
-                <input type='text' placeholder='Опис' className={styles.input} />
-                <input type='text' placeholder='Опис англійською' className={styles.input} />
+                <input type='text' placeholder='Опис' className={styles.input} onChange={(e) => setDescription(e.target.value)} />
+                <input type='text' placeholder='Опис англійською' className={styles.input} onChange={(e) => setDescriptionEn(e.target.value)} />
 
                 <button type='submit' className={styles.sendBtn}>Створити новий обʼєкт</button>
             </form>
