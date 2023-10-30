@@ -15,7 +15,7 @@ const RulesPage = () => {
           <Link href="/" className="textLinkAnimation">
             Головна
           </Link>
-          / Правила
+          / <span className={styles.active}>Правила</span>
         </span>
       </div>
       <div className={styles.ruleListThumb}>
