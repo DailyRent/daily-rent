@@ -1,6 +1,7 @@
 @import '../../../styles/_variables.scss';
 
 .container {
+  // max-width: 1440px;
   display: flex;
   align-items: flex-start;
   padding: 100px 20px 24px 20px;
@@ -11,6 +12,9 @@
 
   @media screen and (min-width: 1366px) {
     padding: 200px 86px 32px 86px;
+  }
+  @media screen and (min-width: 1440px) {
+    max-width: 1920px;
   }
 }
 
@@ -40,6 +44,13 @@
     animation: textLink 0.8s ease forwards;
     background-color: #6d6d6d;
   }
+}
+
+.contactContainer {
+  width: 100%;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
 }
 
 .title {
@@ -84,15 +95,16 @@
   flex-direction: column;
   @media screen and (min-width: $tablet) {
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
+    // justify-content: space-between;
   }
   @media screen and (min-width: 920px) {
-    justify-content: center;
-    column-gap: 100px;
+    // justify-content: center;
+    // column-gap: 100px;
   }
   @media screen and (min-width: 1366px) {
-    justify-content: center;
-    column-gap: 120px;
+    // justify-content: center;
+    // column-gap: 120px;
   }
 }
 
@@ -103,8 +115,9 @@
   margin-bottom: 20px;
   @media screen and (min-width: $tablet) {
     width: 404px;
-    height: 305px;
+    height: 355px;
     margin-bottom: 0px;
+    margin-right: 16px;
   }
   // @media screen and (min-width: $tablet) {
   //   width: 474px;
@@ -115,14 +128,18 @@
     width: 474px;
     height: 355px;
   }
-  @media screen and (min-width: 1366px) {
+  @media screen and (min-width: $desktop) {
     width: 700px;
     height: 525px;
+  }
+  @media screen and (min-width: 1920px) {
+    width: 800px;
+    height: 675px;
   }
 }
 
 .mapImg {
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .addressContainer {

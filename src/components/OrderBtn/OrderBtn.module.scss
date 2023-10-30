@@ -1,23 +1,43 @@
 @import "../../styles/_variables.scss";
 
 .button {
-    display: flex;
+  display: flex;
+  width: 85px;
+  height: 22px;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 12px;
+  border: 0.5px solid $darckFontColor;
+  background: transparent;
+
+  color: $darckFontColor;
+  font-size: 8px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  transition-duration: 500ms;
+
+  &:focus,
+  &:hover {
+    background: $darckFontColor;
+    border-color: $darckFontColor;
+    color: $lightFontColor;
+    scale: 0.96;
+    transition-duration: 500ms;
+  }
+
+  @media screen and (min-width: $tablet) {
     width: 128px;
-    padding: 8px 0px 9px;
-
-    justify-content: center;
-    align-items: center;
-    gap: 24px;
-
+    height: 34px;
     border-radius: 24px;
-    border: 1px solid #000;
-    background-color: transparent;
-
-    color: #000;
-    font-family: inherit;
+    border-width: 1px;
     font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    cursor: pointer;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 288px;
+    height: 53px;
+    font-size: 16px;
+  }
 }

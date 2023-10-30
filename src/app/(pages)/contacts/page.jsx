@@ -18,7 +18,7 @@ const ContactsPage = () => {
           / <span className={styles.active}>Контакти</span>
         </span>
       </div>
-      <div>
+      <div className={styles.contactContainer}>
         <h1 className={styles.title}>Контакти</h1>
         <p className={styles.text}>
           Сміливо телефонуй нам або пиши у будь-яку з соцмереж. Будемо раді

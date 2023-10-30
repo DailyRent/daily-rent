@@ -54,11 +54,21 @@
     color: $darckFontColor;
     border: 1px solid $darckFontColor;
   }
-  &:hover {
-    .svg {
-      rotate: 0deg;
-    }
+}
+
+.langSwitcher{
+  width: 65px;
+  display: flex;
+  align-items: center;
+  @media screen and (min-width:$tablet) {
+    width: 85px;
   }
+}
+
+.langIndicator{
+  margin-right: 5px;
+  font-size: clamp(0.75rem, 0.179rem + 1.19vw, 1.25rem);
+  color: $darckFontColor;
 }
 
 .langToggle {

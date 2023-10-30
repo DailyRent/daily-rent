@@ -12,10 +12,13 @@ export const LangSwitcher = ({changeLanguage, currentLanguage}) => {
         changeLanguage(languageUser)
     }
     return (
-        <div className={styles.langToggle} onClick={onHandleChange}>
-            <div><span>{"Укр"}</span></div>
-            <div><span>{"Eng"}</span></div>
-            <div className={styles.ball} style={lang ==="Укр" ? {right:0} : {left:0} } ></div>
+        <div className={styles.langSwitcher}>
+            <span className={styles.langIndicator}>{lang}</span>
+                <div className={styles.langToggle} onClick={onHandleChange}>
+                    {/* <div><span>{"Укр"}</span></div>
+                    <div><span>{"Eng"}</span></div> */}
+                <div className={styles.ball} style={lang ==="Укр" ? {right:0} : {left:0} } ></div>
+            </div>
         </div>
     )
 }
