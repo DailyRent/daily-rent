@@ -5,7 +5,7 @@ import Link from "next/link";
 const Logo = ({ className }) => {
   return (
     <div className={styles.container + " " + `${className}`}>
-      <Link href="/">
+      <Link href="/" prefetch={false}>
         <span>Daily</span>Rent
       </Link>
     </div>
