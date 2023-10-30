@@ -17,17 +17,23 @@ const DocsPage = () => {
       <div className={styles.documentListThumb}>
         <ul className={styles.documentList}>
           <li className={styles.documentItem}>
-            <div className={styles.documentTop}></div>
-            <p className={styles.documentText}>lorem</p>
+            <a href="/pdf/figma.pdf" target="_blank" rel="noopener noreferrer">
+              <div className={styles.documentTop}></div>
+              <p className={styles.documentText}>lorem</p>
+            </a>
           </li>
 
           <li className={styles.documentItem}>
-            <div className={styles.documentTop}></div>
-            <p className={styles.documentText}>lorem</p>
+            <a href="/pdf/figma.pdf" target="_blank" rel="noopener noreferrer">
+              <div className={styles.documentTop}></div>
+              <p className={styles.documentText}>lorem</p>
+            </a>
           </li>
           <li className={styles.documentItem}>
-            <div className={styles.documentTop}></div>
-            <p className={styles.documentText}>lorem</p>
+            <a href="/pdf/figma.pdf" target="_blank" rel="noopener noreferrer">
+              <div className={styles.documentTop}></div>
+              <p className={styles.documentText}>lorem</p>
+            </a>
           </li>
         </ul>
       </div>
