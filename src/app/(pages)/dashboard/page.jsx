@@ -6,16 +6,17 @@ import { useRouter } from 'next/navigation';
 import useSWR from 'swr';
 import Image from 'next/image';
 import Link from 'next/link';
-import { CldImage } from "next-cloudinary";
-import { useForm } from "react-hook-form";
+import { CldImage, CldUploadButton } from "next-cloudinary";
+// import { useForm } from "react-hook-form";
 
 
 const Dashboard = () => {
     const session = useSession();
     // console.log("Dashboard session", session) 
-    const { register, handleSubmit } = useForm();
+    // const { register, handleSubmit } = useForm();
     const [objNumber, setObjNumber] = useState("");
     const [top, setTop] = useState(false);
+    const [titleImg, setTitleImg] = useState("");
     const [imgs, setImgs] = useState([]);
     const [address, setAddress] = useState("");
     const [addressEn, setAddressEn] = useState("");
@@ -58,83 +59,26 @@ const Dashboard = () => {
     }
 
 
-    // const handleSubmit = async (e) => {
-    //     e.preventDefault();
-    //     // console.log("handleSubmit was started");
-    //     // console.log("e.target", e.target);
-    //     const objNumber = e.target[0].value;
-    //     const top = e.target[1].checked;
-    //     const titleImg = e.target[2].value;
-    //     const imgs = e.target[3].value;
-    //     const address = e.target[4].value;
-    //     const addressEn = e.target[5].value;
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        // console.log("handleSubmit was started");
+        // console.log("e.target", e.target);
+        // const objNumber = e.target[0].value;
+        // const top = e.target[1].checked;
+        // const titleImg = e.target[2].value;
+        // const imgs = e.target[3].value;
+        // const address = e.target[4].value;
+        // const addressEn = e.target[5].value;
 
-    //     const flatNumber = e.target[6].value;
-    //     const googleMapLocation = e.target[7].value;
-    //     const price = e.target[8].value;
-    //     const roomsQuantity = roomsQuantityValue;
-    //     const bookingUrl = e.target[13].value;
-    //     const amenities = amenitiesValues;
-    //     const description = e.target[27].value;
-    //     const descriptionEn = e.target[28].value;
+        // const flatNumber = e.target[6].value;
+        // const googleMapLocation = e.target[7].value;
+        // const price = e.target[8].value;
+        // const roomsQuantity = roomsQuantityValue;
+        // const bookingUrl = e.target[13].value;
+        // const amenities = amenitiesValues;
+        // const description = e.target[27].value;
+        // const descriptionEn = e.target[28].value;
 
-
-    //     try {
-    //         await fetch("/api/apartments", {
-    //             method: "POST",
-    //             body: JSON.stringify({
-    //                 objNumber,
-    //                 top,
-    //                 titleImg,
-    //                 imgs,
-    //                 address,
-    //                 addressEn,
-    //                 flatNumber,
-    //                 googleMapLocation,
-    //                 price,
-    //                 roomsQuantity,
-    //                 bookingUrl,
-    //                 amenities,
-    //                 description,
-    //                 descriptionEn,
-    //             })
-    //         })
-    //         // автоматически обновляет страницу при изменении кол-ва карточек
-    //         mutate();
-    //         // обнуляет все поля формы
-    //         // e.target.reset();
-    //     } catch (err) {
-    //         console.log(err);
-    //     }
-    // }
-
-    const handleDelete = async (id) => {
-        try {
-            await fetch(`/api/apartments/${id}`, { method: "DELETE" });
-            // автоматически обновляет страницу при изменении кол-ва карточек
-            mutate();
-        } catch (error) {
-            console.log(error);
-        }
-    }
-
-
-    const onSubmit = async (data) => {
-        // извлекает данные по картинке, сохраненные с помощью{...register("profile")} в inpute
-        const image = data.profile[0];
-        const formData = new FormData();
-        formData.append("file", image);
-        // from Cloudinary
-        formData.append("upload_preset", "unsigned_preset");
-        const uploadResponse = await fetch(
-            `https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload`,
-            {
-                method: "POST",
-                body: formData,
-            }
-        );
-        const uploadedImageData = await uploadResponse.json();
-        const publicId = await uploadedImageData.public_id;
 
         try {
             await fetch("/api/apartments", {
@@ -142,7 +86,7 @@ const Dashboard = () => {
                 body: JSON.stringify({
                     objNumber,
                     top,
-                    titleImg: publicId,
+                    titleImg,
                     imgs,
                     address,
                     addressEn,
@@ -163,7 +107,64 @@ const Dashboard = () => {
         } catch (err) {
             console.log(err);
         }
-    };
+    }
+
+    const handleDelete = async (id) => {
+        try {
+            await fetch(`/api/apartments/${id}`, { method: "DELETE" });
+            // автоматически обновляет страницу при изменении кол-ва карточек
+            mutate();
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+
+    // const onSubmit = async (data) => {
+    //     // извлекает данные по картинке, сохраненные с помощью{...register("profile")} в inpute
+    //     const image = data.profile[0];
+    //     const formData = new FormData();
+    //     formData.append("file", image);
+    //     // from Cloudinary
+    //     formData.append("upload_preset", "unsigned_preset");
+    //     const uploadResponse = await fetch(
+    //         `https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload`,
+    //         {
+    //             method: "POST",
+    //             body: formData,
+    //         }
+    //     );
+    //     const uploadedImageData = await uploadResponse.json();
+    //     const publicId = await uploadedImageData.public_id;
+
+    //     try {
+    //         await fetch("/api/apartments", {
+    //             method: "POST",
+    //             body: JSON.stringify({
+    //                 objNumber,
+    //                 top,
+    //                 titleImg: publicId,
+    //                 imgs,
+    //                 address,
+    //                 addressEn,
+    //                 flatNumber,
+    //                 googleMapLocation,
+    //                 price,
+    //                 roomsQuantity,
+    //                 bookingUrl,
+    //                 amenities,
+    //                 description,
+    //                 descriptionEn,
+    //             })
+    //         })
+    //         // автоматически обновляет страницу при изменении кол-ва карточек
+    //         mutate();
+    //         // обнуляет все поля формы
+    //         // e.target.reset();
+    //     } catch (err) {
+    //         console.log(err);
+    //     }
+    // };
 
     if (session.status === "authenticated" && session.data.user.email === process.env.NEXT_PUBLIC_ADMIN) {
 
@@ -218,18 +219,43 @@ const Dashboard = () => {
                         </div>))}
             </div>
 
-            <form className={styles.new} onSubmit={handleSubmit(onSubmit)}>
+            {/* <form className={styles.new} onSubmit={handleSubmit(onSubmit)}> */}
+            <form className={styles.new} onSubmit={handleSubmit}>
+
                 <h1>Додавання нового обʼєкту</h1>
                 <input type='text' placeholder="Номер обʼєкту" className={styles.input} onChange={(e) => setObjNumber(e.target.value)} />
                 <label htmlFor="Top" className={styles.top}>
                     <input type="checkbox" id="Top" name="Top" onChange={(e) => setTop(e.target.checked)} />
                     ТОП
                 </label>
-                <input
+                {/* <input
                     // в объекте profile сохраняются данные по загружаемой картинке, которые в дальнейшем в оnSubmit извлекаются 
                     {...register("profile")}
-                    type='file' placeholder='Основне фото' className={styles.input} />
-                <input type='text' placeholder='Додаткові фото' className={styles.input} />
+                    type='file' placeholder='Основне фото' className={styles.input} /> */}
+                <CldUploadButton
+                    onUpload={(result, widget) => {
+                        // for Image component
+                        setTitleImg(result.info.secure_url);
+                        // for CldImage component from next-cloudinary
+                        // setTitleImg(result.info.public_id);
+                        widget.close();
+                    }}
+                    uploadPreset="unsigned_preset"
+                >
+                    Завантажити ОСНОВНЕ фото
+                </CldUploadButton>
+                {/* <input type='text' placeholder='Додаткові фото' className={styles.input} /> */}
+                <CldUploadButton
+                    onUpload={(result) => {
+                        // for Image component
+                        setImgs(prev => [...prev, result.info.secure_url]);
+                        // for CldImage component from next-cloudinary
+                        // setImgs(prev => [...prev, result.info.public_id]);
+                    }}
+                    uploadPreset="unsigned_preset"
+                >
+                    Завантажити додаткові фото
+                </CldUploadButton>
                 <input type='text' placeholder='Адреса' className={styles.input} onChange={(e) => setAddress(e.target.value)} />
                 <input type='text' placeholder='Адреса англійською' className={styles.input} onChange={(e) => setAddressEn(e.target.value)} />
                 <input type='text' placeholder='Квартира' className={styles.input} onChange={(e) => setFlatNumber(e.target.value)} />
