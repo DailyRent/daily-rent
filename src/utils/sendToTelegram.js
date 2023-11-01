@@ -1,39 +1,46 @@
+import { formatDate } from "@/utils/dateUtils";
+
 const TELEGRAM_CHAT_ID = "@TestDailyRent";
 const telegramApi = process.env.TELEGRAM_API
 
 
 export const sendToTelegram = async (formData) => {
-    const { name, tel, number, check_In, check_Out } = formData;
+
+    const formatedData = {
+        ...formData,
+        checkIn: formData.checkIn ? formatDate(formData.checkIn) : null,
+        checkOut: formData.checkOut ? formatDate(formData.checkOut) : null,
+    };
+
+    const { userName, phone, objNumber, checkIn, checkOut } = formatedData;
+
+    // console.log("formatedData:", formatedData);
 
     const textStart = `Вельмишановний Daily Rent,
-     ${name} хотів би забронювати квартиру  ${number}`;
+     ${userName} хотів би забронювати квартиру  ${objNumber}`;
 
-    const textEnd = `Прохання зателефонувати: ${tel} `;
+    const textEnd = `Прохання зателефонувати: ${phone} `;
 
     const textWithBothDates = `${textStart}
-      з ${check_In} по ${check_Out}.
+      з ${checkIn} по ${checkOut}.
      ${textEnd}`;
 
     const textWithCheck_In = `${textStart}
-      з ${check_In}.
+      з ${checkIn}.
       ${textEnd}`;
 
-    const textWithCheck_Out = `${textStart}
-       по ${check_Out}.
-    ${textEnd}`;
 
     let text = "";
 
-    if (check_In !== "не вказано" && check_Out !== "не вказано") {
+    if (checkIn && checkOut) {
         text = textWithBothDates;
-    } else if (check_In !== "не вказано") {
+    } else if (checkIn) {
         text = textWithCheck_In;
-    } else if (check_Out !== "не вказано") {
-        text = textWithCheck_Out;
     } else {
         text = `${textStart} 
         ${textEnd}`;
     }
+
 
     try {
         const response = await fetch(telegramApi, {
@@ -50,7 +57,7 @@ export const sendToTelegram = async (formData) => {
         });
 
         if (response.ok) {
-            console.log("To telegram sent:", formData);
+            console.log("To telegram sent:", formatedData);
         } else {
             throw new Error(response.statusText);
         }
