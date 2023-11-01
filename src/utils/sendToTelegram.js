@@ -41,7 +41,6 @@ export const sendToTelegram = async (formData) => {
         ${textEnd}`;
     }
 
-
     try {
         const response = await fetch(telegramApi, {
             method: "POST",
