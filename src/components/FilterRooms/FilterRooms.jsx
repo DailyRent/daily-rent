@@ -4,9 +4,9 @@ import FilterRoomItem from "./FilterRoomItem/FilterRoomItem";
 import styles from "./FilterRooms.module.scss";
 
 const data = [
-  { id: 1, title: 1 },
-  { id: 2, title: 2 },
-  { id: 3, title: 3 },
+  { id: 1, title: "1", text: "однокімнатні" },
+  { id: 2, title: "2", text: "двокімнатні" },
+  { id: 3, title: "3", text: "трикімнатні" },
 ];
 
 const FilterRooms = ({ numberRoomsArr, setNumberRoomsArr }) => {

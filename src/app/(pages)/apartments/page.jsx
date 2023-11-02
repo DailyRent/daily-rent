@@ -60,6 +60,48 @@ const Apartments = () => {
     return filteredAmenities;
   });
 
+  const notFoundText = () => {
+    if (
+      numberRoomsArr.includes("1") &&
+      !numberRoomsArr.includes("2") &&
+      !numberRoomsArr.includes("3")
+    )
+      return "Однокімнатні";
+
+    if (
+      !numberRoomsArr.includes("1") &&
+      numberRoomsArr.includes("2") &&
+      !numberRoomsArr.includes("3")
+    )
+      return "Двокімнатні";
+
+    if (
+      !numberRoomsArr.includes("1") &&
+      !numberRoomsArr.includes("2") &&
+      numberRoomsArr.includes("3")
+    )
+      return "Трикімнатні";
+    if (
+      numberRoomsArr.includes("1") &&
+      numberRoomsArr.includes("2") &&
+      !numberRoomsArr.includes("3")
+    )
+      return "Однокімнатні та двокімнатні";
+    if (
+      numberRoomsArr.includes("1") &&
+      !numberRoomsArr.includes("2") &&
+      numberRoomsArr.includes("3")
+    )
+      return "Однокімнатні та трикімнатні";
+
+    if (
+      !numberRoomsArr.includes("1") &&
+      numberRoomsArr.includes("2") &&
+      numberRoomsArr.includes("3")
+    )
+      return "Двокімнатні та трикімнатні";
+  };
+
   return (
     <section className={styles.container}>
       <div className={styles.filterContainer}>
@@ -99,7 +141,7 @@ const Apartments = () => {
               ))
           ) : (
             <div className={styles.notFoundText}>
-              <p>Однокімнатних квартир не знайдено</p>
+              <p>{notFoundText()} квартири не знайдено</p>
             </div>
           )}
         </ul>
