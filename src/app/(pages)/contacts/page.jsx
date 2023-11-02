@@ -21,7 +21,7 @@ const ContactsPage = () => {
     <section className={styles.container}>
       <div className={styles.toBackContainer}>
         {!isLoading && (<span className="textLink">
-          <Link href="/" className="textLinkAnimation">
+          <Link href="/" prefetch={false} className="textLinkAnimation">
             {t("Navigation.MainPage")}
           </Link>
           / <span className={styles.active}>{t("Navigation.Contacts")}</span>

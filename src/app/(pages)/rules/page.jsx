@@ -21,7 +21,7 @@ const RulesPage = () => {
       <h1 className="visuallyHidden">Rules Page</h1>
       <div className={styles.toBackContainer}>
         {!isLoading && (<span className="textLink">
-          <Link href="/" className="textLinkAnimation">
+          <Link href="/" prefetch={false} className="textLinkAnimation">
             {t("Navigation.MainPage")}
           </Link>
           / <span className={styles.active}>{t("Navigation.Rules")}</span>
