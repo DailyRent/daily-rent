@@ -16,6 +16,7 @@ const Apartments = () => {
   const [loadedCount, setLoadedCount] = useState(9);
   const [showLoading, setShowLoading] = useState(false);
   const [amenitiesArr, setAmenitiesArr] = useState([]);
+  const [numberRoomsArr, setNumberRoomsArr] = useState([]);
 
   const handleScroll = () => {
     if (!showLoading && data?.length) {
@@ -41,6 +42,15 @@ const Apartments = () => {
   }, [data, loadedCount]);
 
   const filteredRoomsData = data?.filter((room) => {
+    if (numberRoomsArr.length === 0) return true; //якщо фільтр пустий, виводимо всі квартири
+
+    const filteredRooms = numberRoomsArr.some(
+      (numberRoom) => numberRoom == room.roomsQuantity //якщо хоча б один з фільтрів співпадає, виводимо цю квартиру
+    );
+    return filteredRooms;
+  });
+
+  const filteredAmenitiesData = filteredRoomsData?.filter((room) => {
     const amenities = room.amenities;
 
     const filteredAmenities = amenitiesArr.every((amenity) =>
@@ -64,13 +74,16 @@ const Apartments = () => {
         <ButtonFilter />
       </div>
       <Filter amenitiesArr={amenitiesArr} setAmenitiesArr={setAmenitiesArr} />
-      <FilterRooms />
+      <FilterRooms
+        numberRoomsArr={numberRoomsArr}
+        setNumberRoomsArr={setNumberRoomsArr}
+      />
       {isLoading ? (
         <IsLoading />
       ) : (
         <ul className={styles.containerOneRooms}>
-          {filteredRoomsData?.length > 0 ? (
-            filteredRoomsData
+          {filteredAmenitiesData?.length > 0 ? (
+            filteredAmenitiesData
               .slice(0, loadedCount)
               .map((item) => (
                 <ApartItem

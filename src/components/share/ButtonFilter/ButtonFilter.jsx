@@ -17,7 +17,7 @@ const ButtonFilter = () => {
           type="button"
           className={styles.filterBtnContainer}
           onClick={() => {
-            setFilterShown(!filterShown), console.log(filterShown);
+            setFilterShown(!filterShown);
           }}
         >
           <svg className={styles.filterSvg}>
