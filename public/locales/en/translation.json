@@ -10,7 +10,19 @@
     "heroTitle": "Your comfort is our concern",
     "galleryTittle": "Аpartments",
     "contactsTitle": "Contact Us"
-    },
+  },
+  "ContactsPage":{
+    "Title": "Contacts",
+    "Text" : "Feel free to call us or write to us on any of the social networks. We will be happy to help and communicate with you!",
+    "CountryAndSity":"Ukraine, Sumy",
+    "Adress":"Stepana Bandery street, 3"
+  },
+  "Navigation":{
+    "MainPage":"Main",
+    "Contacts":"Contacts",
+    "Documents":"Documents",
+    "Rules":"Rules"
+  },
   "Buttons": {
     "CalltBtn": "Contact Us",
     "OrderBtn": "Request to book",

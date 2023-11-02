@@ -2,28 +2,37 @@
 
 import React from 'react';
 import styles from './page.module.scss';
+import { useTranslation } from 'react-i18next';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import SocialLinks from '@/components/SocialLinks/SocialLinks';
 
 const ContactsPage = () => {
+  const {t}= useTranslation();
+
+  const [isLoading, setIsLoading]= useState(true)
+
+  useEffect(()=>{
+    setIsLoading(false)
+  },[])
   return (
     <section className={styles.container}>
       <div className={styles.toBackContainer}>
-        <span className="textLink">
+        {!isLoading && (<span className="textLink">
           <Link href="/" className="textLinkAnimation">
-            Головна
+            {t("Navigation.MainPage")}
           </Link>
-          / <span className={styles.active}>Контакти</span>
-        </span>
+          / <span className={styles.active}>{t("Navigation.Contacts")}</span>
+        </span>)}
       </div>
+
       <div className={styles.contactContainer}>
-        <h1 className={styles.title}>Контакти</h1>
+        {!isLoading && (<><h1 className={styles.title}>{t("ContactsPage.Title")}</h1>
         <p className={styles.text}>
-          Сміливо телефонуй нам або пиши у будь-яку з соцмереж. Будемо раді
-          допомогти і потеревенити з тобою!
-        </p>
+          {t("ContactsPage.Text")}
+        </p></>)}
         <div className={styles.content}>
           <div className={styles.mapImgContainer}>
             <Image
@@ -34,13 +43,13 @@ const ContactsPage = () => {
             />
           </div>
           <address className={styles.addressContainer}>
-            <h3 className={styles.city}>
+            {!isLoading && (<h3 className={styles.city}>
               <svg width="36" height="36" className={styles.citySvg}>
                 <use href="sprite.svg#icon-flag-ukraine" />
               </svg>
-              Україна, Суми
-            </h3>
-            <p className={styles.address}>
+              {t("ContactsPage.CountryAndSity")}
+            </h3>)}
+            <div className={styles.address}>
               {/* <a href="#" className={styles.address}> */}
               <div className={styles.imgContainer}>
                 <Image
@@ -50,8 +59,8 @@ const ContactsPage = () => {
                   className={styles.img}
                 />
               </div>
-              вул.Степана Бандери, 3
-            </p>
+              {!isLoading && (<p>{t("ContactsPage.Adress")}</p>)}
+            </div>
             {/* </a> */}
             <div className={styles.telContainer}>
               <a href="tel:+380357960808" className={styles.tel}>

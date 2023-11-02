@@ -1,22 +1,31 @@
-// "use client";
+"use client";
 import React from "react";
 import styles from "./page.module.scss";
+import { useTranslation } from "react-i18next";
+import { useState, useEffect } from "react";
 // import ButtonToBack from "@/components/share/ButtonToBack/ButtonToBack";
 // import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 const RulesPage = () => {
   // const router = useRouter();
+  const {t}=useTranslation()
+
+  const [isLoading, setIsLoading]= useState(true)
+
+  useEffect(()=>{
+    setIsLoading(false)
+  },[])
   return (
     <section className={styles.container}>
       <h1 className="visuallyHidden">Rules Page</h1>
       <div className={styles.toBackContainer}>
-        <span className="textLink">
+        {!isLoading && (<span className="textLink">
           <Link href="/" className="textLinkAnimation">
-            Головна
+            {t("Navigation.MainPage")}
           </Link>
-          / <span className={styles.active}>Правила</span>
-        </span>
+          / <span className={styles.active}>{t("Navigation.Rules")}</span>
+        </span>)}
       </div>
       <div className={styles.ruleListThumb}>
         <ul className={styles.ruleList}>
