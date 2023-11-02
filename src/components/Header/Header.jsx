@@ -15,11 +15,11 @@ const Header = () => {
   const session = useSession();
   const pathname = usePathname();
 
-const {t}=useTranslation()
+  const { t } = useTranslation();
 
   const [burgerMenu, setBurgerMenu] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  const [isLoading,setIsLoading]= useState(true)
+  const [isLoading, setIsLoading] = useState(true);
 
   const isClient = typeof window !== "undefined";
 
@@ -37,7 +37,7 @@ const {t}=useTranslation()
 
     // Initial check on component mount
     handleResize();
-    setIsLoading(false)
+    setIsLoading(false);
 
     // Clean up the event listener on component unmount
     return () => {
@@ -47,44 +47,48 @@ const {t}=useTranslation()
 
   return (
     <header className={styles.container}>
-      {!isLoading && (<p className={styles.promotion}>
-        {t("Header.headerSale")}
-      </p>)}
+      {!isLoading && (
+        <p className={styles.promotion}>{t("Header.headerSale")}</p>
+      )}
       <div className={styles.navBar}>
         {!isMobile && (
           <div className={styles.leftLinks}>
-            {!isLoading && (<><Link
-              href={"/apartments"}
-              className={
-                pathname === "/apartments"
-                  ? styles.activeLink
-                  : " textLinkAnimation"
-              }
-            >
-              {t("Header.linkApartments")}
-            </Link>
+            {!isLoading && (
+              <>
+                <Link
+                  href={"/apartments"}
+                  className={
+                    pathname === "/apartments"
+                      ? styles.activeLink
+                      : " textLinkAnimation"
+                  }
+                >
+                  {t("Header.linkApartments")}
+                </Link>
 
-            <Link
-              href={"/documents"}
-              className={
-                pathname === "/documents"
-                  ? styles.activeLink
-                  : " textLinkAnimation"
-              }
-            >
-              {t("Header.linkDocuments")}
-            </Link>
+                <Link
+                  href={"/documents"}
+                  className={
+                    pathname === "/documents"
+                      ? styles.activeLink
+                      : " textLinkAnimation"
+                  }
+                >
+                  {t("Header.linkDocuments")}
+                </Link>
 
-            <Link
-              href={"/rules"}
-              className={
-                pathname === "/documents"
-                  ? styles.activeLink
-                  : " textLinkAnimation"
-              }
-            >
-              {t("Header.linkRules")}
-            </Link></>)}
+                <Link
+                  href={"/rules"}
+                  className={
+                    pathname === "/rules"
+                      ? styles.activeLink
+                      : " textLinkAnimation"
+                  }
+                >
+                  {t("Header.linkRules")}
+                </Link>
+              </>
+            )}
           </div>
         )}
 
@@ -101,10 +105,11 @@ const {t}=useTranslation()
               {t("Header.linkContacts")}
             </Link>
             <SocialLinks />
+            <TranslatorBtnBlock isClient={isClient} />
           </div>
         )}
 
-        <TranslatorBtnBlock isClient={isClient} />
+        {isMobile && <TranslatorBtnBlock isClient={isClient} />}
 
         <Logo className={styles.logo} isClient={isClient} />
 
@@ -116,7 +121,7 @@ const {t}=useTranslation()
           isClient={isClient}
         />
 
-        {session.status  === "authenticated" && !isLoading && (
+        {session.status === "authenticated" && !isLoading && (
           <button className={styles.logoutBtn} onClick={signOut}>
             {t("Buttons.LogOutBtn")}
           </button>

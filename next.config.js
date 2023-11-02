@@ -12,6 +12,22 @@ const nextConfig = {
   env: {
     TELEGRAM_API: process.env.TELEGRAM_API,
   },
-};
 
+  webpack: (config, { isServer }) => {
+   
+    config.module.rules.push({
+      test: /\.(pdf)$/,
+      use: [
+        {
+          loader: 'file-loader',
+        },
+      ],
+    });
+
+    
+    return config;
+  },
+  
+};
 module.exports = nextConfig;
+

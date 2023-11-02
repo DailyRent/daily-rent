@@ -62,7 +62,8 @@
 .rightLinks {
   display: none;
   align-items: center;
-  gap: clamp(1.25rem, -0.179rem + 2.976vw, 2.5rem);
+  // gap: clamp(1.25rem, -0.179rem + 2.976vw, 2.5rem);
+  gap: 16px;
   z-index: 1;
 
   & a {
@@ -74,6 +75,9 @@
 
   @media screen and (min-width: $tablet) {
     display: flex;
+  }
+  @media screen and (min-width: $desktop) {
+    gap: 40px;
   }
 }
 

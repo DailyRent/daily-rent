@@ -1,8 +1,8 @@
 "use client";
-
 import React, { useContext } from "react";
 import Link from "next/link";
-
+import { useTranslation } from "react-i18next";
+import { useState,useEffect } from "react";
 import { SiteContext } from "@/context/SiteContext";
 import OrderBtn from "@/components/OrderBtn/OrderBtn";
 import CallBtn from "@/components/CallBtn/CallBtn";
@@ -12,11 +12,16 @@ import SocialLinks from "@/components/SocialLinks/SocialLinks";
 import ModalR from "@/components/Modal/Modal";
 import OrderForm from "@/components/OrderForm/OrderForm";
 import styles from "./Footer.module.scss";
-import { navigationData } from "@/data/navigation.data";
+import { navigationData, currentLanguages } from "@/data";
 
 const Footer = ({ onClick }) => {
   const { isModalOpen, openModal, closeModal } = useContext(SiteContext);
+  const [isLoading,setIsLoading]=useState(true)
+  const {i18n}=useTranslation();
 
+  useEffect(()=>{
+    setIsLoading(false)
+  },[])
   return (
     <>
       <ModalR isOpen={isModalOpen} closeModal={closeModal}>
@@ -30,11 +35,12 @@ const Footer = ({ onClick }) => {
             <Link href="tel:+380357960801">+380357960801</Link>
             <Link href="tel:+380357960802">+380357960802</Link>
           </div>
-          <ul className={styles.navigation}>
+          {!isLoading && (<><ul className={styles.navigation}>
             {navigationData.slice(0, 2).map((item) => {
               return (
                 <li key={item.id} onClick={onClick}>
-                  <Link href={item.path}>{item.title}</Link>
+                  <Link href={item.path}>
+                  {i18n.language=== currentLanguages.EN ? item.titleEN : item.title}</Link>
                 </li>
               );
             })}
@@ -43,11 +49,13 @@ const Footer = ({ onClick }) => {
             {navigationData.slice(2, 4).map((item) => {
               return (
                 <li key={item.id} onClick={onClick}>
-                  <Link href={item.path}>{item.title}</Link>
+                  <Link href={item.path}>
+                    {i18n.language=== currentLanguages.EN ? item.titleEN : item.title}
+                    </Link>
                 </li>
               );
             })}
-          </ul>
+          </ul></>)}
           <div className={styles.btnsWrapper}>
             <CallBtn />
             <OrderBtn openModal={openModal} />
