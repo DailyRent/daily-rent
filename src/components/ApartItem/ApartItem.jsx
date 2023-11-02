@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import React from 'react';
-import Image from 'next/image';
-import styles from './ApartItem.module.scss';
-import Link from 'next/link';
+import React from "react";
+import Image from "next/image";
+import styles from "./ApartItem.module.scss";
+import Link from "next/link";
 
 const ApartItem = ({
   titleImg,
@@ -31,7 +31,11 @@ const ApartItem = ({
           </div>
         </Link>
         <p className={styles.addressRooms}>{address}</p>
-        <p className={styles.priceRooms}>{price}₴</p>
+
+        <p className={styles.priceRooms}>
+          {price}₴ Кількість кімнат: {roomsQuantity}
+        </p>
+
         <Link
           href={`/apartments/${id}`}
           // href={`/oldApartments/${roomsQuantity}/${id}`}
