@@ -1,18 +1,29 @@
+"use client"
 import React from "react";
 import styles from "./page.module.scss";
+import { useTranslation } from "react-i18next";
+import { useState,useEffect } from "react";
 import Link from "next/link";
 
 const DocsPage = () => {
+  const {t}=useTranslation()
+
+  const [isLoading, setIsLoading]= useState(true)
+
+  useEffect(()=>{
+    setIsLoading(false)
+  },[])
+
   return (
     <section className={styles.container}>
       <h1 className="visuallyHidden">Documents Page</h1>
       <div className={styles.toBackContainer}>
-        <span className="textLink">
-          <Link href="/" className="textLinkAnimation">
-            Головна
+        {!isLoading && (<span className="textLink">
+          <Link href="/" prefetch={false} className="textLinkAnimation">
+            {t("Navigation.MainPage")}
           </Link>
-          / <span className={styles.active}>Документи</span>
-        </span>
+          / <span className={styles.active}>{t("Navigation.Documents")}</span>
+        </span>)}
       </div>
       <div className={styles.documentListThumb}>
         <ul className={styles.documentList}>
