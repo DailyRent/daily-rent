@@ -33,7 +33,7 @@ const ApartItem = ({
         <p className={styles.addressRooms}>{address}</p>
 
         <p className={styles.priceRooms}>
-          {price}₴ Кількість кімнат: {roomsQuantity}
+          {price}₴{/* Кількість кімнат: {roomsQuantity} */}
         </p>
 
         <Link
