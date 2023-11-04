@@ -123,7 +123,6 @@ const Apartments = () => {
         <IsLoading />
       ) : (
         <ul className={styles.containerOneRooms}>
-          {console.log(data)}
           {filteredAmenitiesData?.length > 0 ? (
             filteredAmenitiesData
               .slice(0, loadedCount)
