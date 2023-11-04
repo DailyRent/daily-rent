@@ -3,7 +3,8 @@ import React, { useState, useContext, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { SiteContext } from "@/context/SiteContext";
 import styles from "./Filter.module.scss";
-import { amenities, currentLanguages } from "@/data";
+import { amenities } from "@/data";
+// import { amenities, currentLanguages } from "@/data";
 import FilterItem from "./FilterItem/FilterItem";
 // import { usePathname } from "next/navigation";
 
@@ -11,7 +12,7 @@ const Filter = ({ amenitiesArr, setAmenitiesArr }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const { filterShown, setFilterShown } = useContext(SiteContext);
   const [isLoad, setIsLoad] = useState(true);
-  const { i18n } = useTranslation();
+  // const { i18n } = useTranslation();
   const { t } = useTranslation();
   useEffect(() => {
     setIsLoad(false);
@@ -37,12 +38,8 @@ const Filter = ({ amenitiesArr, setAmenitiesArr }) => {
                 <FilterItem
                   key={item.id}
                   id={item.id}
-                  title={
-                    i18n.language === currentLanguages.EN
-                      ? item.titleEN
-                      : item.title
-                  }
-                  // titleUA={item.titleUA}
+                  title={item.title}
+                  titleEN={item.titleEN}
                   activeIndex={activeIndex}
                   setActiveIndex={setActiveIndex}
                   amenitiesArr={amenitiesArr}
