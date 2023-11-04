@@ -6,10 +6,10 @@
   padding: 100px 16px 40px 16px;
 
   @media screen and (min-width: $tablet) {
-    padding: 108px 59px 48px 59px;
+    padding: 108px 36px 48px 36px;
   }
   @media screen and (min-width: $desktop) {
-    padding: 186px 59px 48px 59px;
+    padding: 186px 86px 48px 86px;
   }
 }
 
@@ -84,8 +84,8 @@
     margin-bottom: 24px;
   }
   @media screen and (min-width: 1920px) {
-    margin-top: 55px;
-    margin-bottom: 55px;
+    margin-top: 38px;
+    margin-bottom: 38px;
   }
 }
 
@@ -99,12 +99,16 @@
   border-radius: 24px;
   background-color: $acentColor;
   color: #ffffff;
+  font-size: 14px;
   outline: none;
   &:hover,
   &:focus {
     color: $acentColor;
     border: 1px solid $acentColor;
     background-color: transparent;
+  }
+  @media screen and (min-width: $desktop) {
+    font-size: 16px;
   }
 }
 

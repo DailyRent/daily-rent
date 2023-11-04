@@ -28,11 +28,11 @@
   width: 100%;
 }
 .ItemSliderTop .swiper-button-prev {
-  background-image: url("../../../../public/png/ArrowLeftItemSl.webp");
+  background-image: url('../../../../public/png/ArrowLeftItemSl.webp');
   left: 16px;
 }
 .ItemSliderTop .swiper-button-next {
-  background-image: url("../../../../public/png/ArrowRightItemSl.webp");
+  background-image: url('../../../../public/png/ArrowRightItemSl.webp');
   right: 16px;
 }
 
@@ -65,10 +65,52 @@
   }
 }
 
+@media screen and (min-width: 1024px) {
+  .ItemSliderTop {
+    width: 456px;
+    height: 287px;
+  }
+
+  .ItemSliderTop .swiper-button-prev {
+    left: 28px;
+  }
+  .ItemSliderTop .swiper-button-next {
+    right: 28px;
+  }
+}
+
 @media screen and (min-width: 1366px) {
   .ItemSliderTop {
-    width: 600px;
-    height: 440px;
+    width: 620px;
+    height: 470px;
+  }
+
+  .ItemSliderTop .swiper-button-prev,
+  .ItemSliderTop .swiper-button-next {
+    width: 124px;
+    height: 24px;
+    bottom: 48px;
+  }
+  .ItemSliderTop .swiper-button-prev {
+    left: 70px;
+  }
+  .ItemSliderTop .swiper-button-next {
+    right: 70px;
+  }
+
+  .ItemSliderTop .swiper-pagination {
+    bottom: 48px;
+  }
+  .ItemSliderTop .swiper-pagination-bullet {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .ItemSliderTop {
+    width: 700px;
+    height: 480px;
   }
 
   .ItemSliderTop .swiper-button-prev,
@@ -95,7 +137,8 @@
 
 @media screen and (min-width: 1920px) {
   .ItemSliderTop {
-    width: 770px;
+    width: 920px;
+    /* width: 770px; */
     height: 621px;
   }
 
