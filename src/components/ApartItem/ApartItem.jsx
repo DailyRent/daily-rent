@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import React from "react";
-import Image from "next/image";
-import styles from "./ApartItem.module.scss";
-import Link from "next/link";
+import React from 'react';
+import Image from 'next/image';
+import styles from './ApartItem.module.scss';
+import Link from 'next/link';
 
 const ApartItem = ({
   titleImg,
@@ -30,8 +30,12 @@ const ApartItem = ({
             <span className={styles.codeImg}>{objNumber}</span>
           </div>
         </Link>
-        <p className={styles.addressRooms}>{address}</p>
-
+        <div className={styles.apartContent}>
+          <p className={styles.addressRooms}>
+            {roomsQuantity} кімнатна за адресою:
+          </p>
+          <p className={styles.addressRooms}>{address}</p>
+        </div>
         <p className={styles.priceRooms}>
           {price}₴{/* Кількість кімнат: {roomsQuantity} */}
         </p>

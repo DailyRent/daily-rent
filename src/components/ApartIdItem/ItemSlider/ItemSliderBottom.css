@@ -20,10 +20,26 @@
   }
 }
 
+@media screen and (min-width: 1024px) {
+  .ItemSliderBottom {
+    width: 456px;
+  }
+}
+
 @media screen and (min-width: 1366px) {
   .ItemSliderBottom {
-    width: 600px;
-    height: 150px;
+    width: 620px;
+    height: 170px;
+  }
+  .ItemSliderBottom .swiper-slide {
+    height: 218px;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .ItemSliderBottom {
+    width: 700px;
+    height: 180px;
   }
   .ItemSliderBottom .swiper-slide {
     height: 218px;
@@ -32,7 +48,8 @@
 
 @media screen and (min-width: 1920px) {
   .ItemSliderBottom {
-    width: 770px;
+    width: 920px;
+    /* width: 770px; */
     height: 218px;
   }
 }

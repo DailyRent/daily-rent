@@ -10,6 +10,8 @@ const ApartDataList = ({ dataId }) => {
         </svg>
         {dataId.objNumber}
       </span>
+
+      <span className={styles.dataText}>1 кімнатна квартира за адресою:</span>
       <span className={styles.dataText}>
         <a
           href={dataId?.googleMapLocation}
@@ -17,21 +19,12 @@ const ApartDataList = ({ dataId }) => {
           className={styles.googleMaps}
         >
           <div className={styles.imgContainer}>
-            {/* <svg className={styles.img}>
-              <use href="/sprite.svg#icon-map-pin" />
-            </svg> */}
             <Image
               src="/png/Google Maps Old.png"
               alt="google maps"
               fill={true}
               className={styles.img}
             />
-            {/* <Image
-              src="/png/google-maps2.png"
-              alt="google maps"
-              fill={true}
-              className={styles.img}
-            /> */}
           </div>
           <span className={styles.googleMapsText}>{dataId.address}</span>
         </a>

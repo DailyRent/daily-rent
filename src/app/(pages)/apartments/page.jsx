@@ -1,19 +1,18 @@
-"use client";
+'use client';
 
-import React, { useEffect, useState } from "react";
-import styles from "./page.module.scss";
-import { GetData } from "@/fetch/clientFetch";
-import ApartItem from "@/components/ApartItem/ApartItem";
-import IsLoading from "@/components/share/IsLoading/IsLoading";
-import ButtonFilter from "@/components/share/ButtonFilter/ButtonFilter";
-import Link from "next/link";
-import FilterRooms from "@/components/FilterRooms/FilterRooms";
-import ButtonToBack from "@/components/share/ButtonToBack/ButtonToBack";
-import Filter from "@/components/Filter/Filter";
+import React, { useEffect, useState } from 'react';
+import styles from './page.module.scss';
+import { GetData } from '@/fetch/clientFetch';
+import ApartItem from '@/components/ApartItem/ApartItem';
+import IsLoading from '@/components/share/IsLoading/IsLoading';
+import ButtonFilter from '@/components/share/ButtonFilter/ButtonFilter';
+import Link from 'next/link';
+import FilterRooms from '@/components/FilterRooms/FilterRooms';
+import Filter from '@/components/Filter/Filter';
 
 const Apartments = () => {
   const { data, error, isLoading } = GetData();
-  const [loadedCount, setLoadedCount] = useState(9);
+  const [loadedCount, setLoadedCount] = useState(12);
   const [showLoading, setShowLoading] = useState(false);
   const [amenitiesArr, setAmenitiesArr] = useState([]);
   const [numberRoomsArr, setNumberRoomsArr] = useState([]);
@@ -34,9 +33,9 @@ const Apartments = () => {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
     // eslint-disable-next-line
   }, [data, loadedCount]);
@@ -62,44 +61,44 @@ const Apartments = () => {
 
   const notFoundText = () => {
     if (
-      numberRoomsArr.includes("1") &&
-      !numberRoomsArr.includes("2") &&
-      !numberRoomsArr.includes("3")
+      numberRoomsArr.includes('1') &&
+      !numberRoomsArr.includes('2') &&
+      !numberRoomsArr.includes('3')
     )
-      return "Однокімнатні";
+      return 'Однокімнатні';
 
     if (
-      !numberRoomsArr.includes("1") &&
-      numberRoomsArr.includes("2") &&
-      !numberRoomsArr.includes("3")
+      !numberRoomsArr.includes('1') &&
+      numberRoomsArr.includes('2') &&
+      !numberRoomsArr.includes('3')
     )
-      return "Двокімнатні";
+      return 'Двокімнатні';
 
     if (
-      !numberRoomsArr.includes("1") &&
-      !numberRoomsArr.includes("2") &&
-      numberRoomsArr.includes("3")
+      !numberRoomsArr.includes('1') &&
+      !numberRoomsArr.includes('2') &&
+      numberRoomsArr.includes('3')
     )
-      return "Трикімнатні";
+      return 'Трикімнатні';
     if (
-      numberRoomsArr.includes("1") &&
-      numberRoomsArr.includes("2") &&
-      !numberRoomsArr.includes("3")
+      numberRoomsArr.includes('1') &&
+      numberRoomsArr.includes('2') &&
+      !numberRoomsArr.includes('3')
     )
-      return "Однокімнатні та двокімнатні";
+      return 'Однокімнатні та двокімнатні';
     if (
-      numberRoomsArr.includes("1") &&
-      !numberRoomsArr.includes("2") &&
-      numberRoomsArr.includes("3")
+      numberRoomsArr.includes('1') &&
+      !numberRoomsArr.includes('2') &&
+      numberRoomsArr.includes('3')
     )
-      return "Однокімнатні та трикімнатні";
+      return 'Однокімнатні та трикімнатні';
 
     if (
-      !numberRoomsArr.includes("1") &&
-      numberRoomsArr.includes("2") &&
-      numberRoomsArr.includes("3")
+      !numberRoomsArr.includes('1') &&
+      numberRoomsArr.includes('2') &&
+      numberRoomsArr.includes('3')
     )
-      return "Двокімнатні та трикімнатні";
+      return 'Двокімнатні та трикімнатні';
   };
 
   return (
@@ -140,7 +139,7 @@ const Apartments = () => {
                 />
               ))
           ) : (
-            <div className={styles.notFoundText}>
+            <div className={styles.notFoundTextStyles}>
               <p>{notFoundText()} квартири не знайдено</p>
             </div>
           )}
