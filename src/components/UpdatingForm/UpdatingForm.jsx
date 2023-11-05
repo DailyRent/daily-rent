@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 import styles from './UpdatingForm.module.scss';
+import { CldUploadButton } from 'next-cloudinary';
 
 
 const UpdatingForm = ({ id, apart }) => {
@@ -195,12 +196,35 @@ const UpdatingForm = ({ id, apart }) => {
                         checked={newTop}
                     />ТОП
                 </label>
-                <label> Основне фото:
+                {/* <label> Основне фото:
                     <input type='text' placeholder='Основне фото' className={styles.input} value={newTitleImg} onChange={(e) => setNewTitleImg(e.target.value)} />
-                </label>
-                <label> Додаткові фото:
+                </label> */}
+                <CldUploadButton
+                    onUpload={(result, widget) => {
+                        // for Image component
+                        setNewTitleImg(result.info.secure_url);
+                        // for CldImage component from next-cloudinary
+                        // setNewTitleImg(result.info.public_id);
+                        widget.close();
+                    }}
+                    uploadPreset="unsigned_preset"
+                >
+                    Змінити ОСНОВНЕ фото
+                </CldUploadButton>
+                {/* <label> Додаткові фото:
                     <input type='text' placeholder='Додаткові фото' className={styles.input} value={newImgs} onChange={(e) => setNewImgs(e.target.value)} />
-                </label>
+                </label> */}
+                <CldUploadButton
+                    onUpload={(result) => {
+                        // for Image component 
+                        setNewImgs(prev => [...prev, result.info.secure_url]);
+                        // for CldImage component from next-cloudinary
+                        // setNewImgs(prev => [...prev, result.info.public_id]);
+                    }}
+                    uploadPreset="unsigned_preset"
+                >
+                    Змінити додаткові фото
+                </CldUploadButton>
                 <label> Адреса:
                     <input type='text' placeholder='Адреса' className={styles.input} value={newAddress} onChange={(e) => setNewAddress(e.target.value)} />
                 </label>

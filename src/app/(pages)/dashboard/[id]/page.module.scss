@@ -45,13 +45,24 @@
 .imgsWrapper {
     gap: 10px;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.imgsItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .imgCont {
     width: 200px;
     height: 100px;
     position: relative;
+}
+
+.delete {
+    cursor: pointer;
+    color: red;
 }
 
 .address {
