@@ -4,8 +4,9 @@ import Image from 'next/image';
 import styles from './ApartDataList.module.scss';
 
 const ApartDataList = ({ dataId }) => {
+  
   const {t}= useTranslation();
-  console.log(dataId)
+  
   return (
     <div className={styles.dataList}>
       <span className={styles.dataText}>

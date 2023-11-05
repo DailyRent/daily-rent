@@ -46,15 +46,18 @@
     "ObjectsBtn":"All objects",
     "OpenFilterBtn":"Filter",
     "CloseFilterBtn":"Close",
-    "LogOutBtn": "LogOut"
+    "LogOutBtn": "LogOut",
+    "Submit":"Submit"
   },
-  "form": {
-    "name": "Name",
-    "phone": "Phone number",
+  "Form": {
+    "name": "Name *",
+    "phone": "Phone number *",
     "dateOfEntry":"Date of entry",
     "departureDate":"Departure date",
     "numberOfObject": "Number of object",
-    "formSubmited":"Your application has been successfully sent! Our manager will contact you shortly."
+    "fieldsDesc":"required fields",
+    "formSubmitedMsg1":"Your application has been successfully sent!",
+    "formSubmitedMsg2":"Our manager will contact you shortly."
   },
   "formErrors": {
     "name": "Incorrect name entered",
