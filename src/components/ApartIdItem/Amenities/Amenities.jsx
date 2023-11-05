@@ -14,7 +14,7 @@ const Amenities = ({ dataId }) => {
 
   return (
     <div className={styles.propositionContainer}>
-      <h2 className={styles.propositionTitle}>Що буде в апартаментах ?</h2>
+      <h2 className={styles.propositionTitle}>{t("ApartmentsPage.TextOfDescOptions")} ?</h2>
       <ul className={styles.propositionList}>
         {matchingAmenities.map((amenity) => (
           <li key={amenity.id} className={styles.propositionItem}>

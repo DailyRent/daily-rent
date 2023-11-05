@@ -12,6 +12,18 @@
     "galleryTittle": "Апартаменти",
     "contactsTitle": "Зв'яжіться з нами"
   },
+  "ApartmentsPage":{
+    "Title":"Що буде в апартаментах ?",
+    "OneRoom":"Однокімнатні",
+    "TwoRoom":"Двокімнатні",
+    "ThreeRoom":"Трикімнатні",
+    "OneAndTwoRoom":"One-room and two-room",
+    "OneAndThreeRoom":"One-room and three-room",
+    "TwoAndThreeRoom":"Two-room and three-room",
+    "NotFound":"квартири не знайдено",
+    "TextOfDescAdress":" кімнатна за адресою",
+    "TextOfDescOptions":"Що буде в апартаментах"
+  },
   "ContactsPage":{
     "Title": "Контакти",
     "Text" : "Сміливо телефонуй нам або пиши у будь-яку з соцмереж. Будемо раді допомогти і потеревенити з тобою!",
@@ -20,6 +32,7 @@
   },
   "Navigation":{
     "MainPage":"Головна",
+    "Apartments":"Апартаменти",
     "Contacts":"Контакти",
     "Documents":"Документи",
     "Rules":"Правила"
@@ -28,20 +41,23 @@
     "CalltBtn": "Зв’язатись",
     "OrderBtn": "Забронювати",
     "CloseBtn":"Закрити",
-    "CardBtn":"Детальніше",
+    "CardDetailsBtn":"Детальніше",
     "FilterBtn":"Шукати",
     "ObjectsBtn":"Всі об’єкти",
     "OpenFilterBtn":"Фільтр",
     "CloseFilterBtn":"Сховати фільтр",
-    "LogOutBtn": "Розлогінитися"
+    "LogOutBtn": "Розлогінитися",
+    "Submit":"Пiтвердити"
   },
-  "form": {
-    "name": "Ім’я, Прізвище",
-    "phone": "Номер телефону",
+  "Form": {
+    "name": "Ім’я *",
+    "phone": "Номер телефону *",
     "dateOfEntry":"Дата заїзду",
     "departureDate":"Дата виїзду",
-    "numberObject": "Номер об’єкту",
-    "formSubmited":"Ваша заявка успішна відправлена! Наш менеджер зв’яжеться з вами в найближчий час."
+    "numberOfObject": "Номер об’єкту",
+    "fieldsDesc":"поле, обовʼязкове для заповнення",
+    "formSubmitedMsg1":"Ваша заявка успішна відправлена!",
+    "formSubmitedMsg2":"Наш менеджер зв’яжеться з вами в найближчий час."
   },
   "formErrors": {
     "name": "Невірно введене ім’я",

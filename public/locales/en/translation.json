@@ -11,6 +11,19 @@
     "galleryTittle": "Аpartments",
     "contactsTitle": "Contact Us"
   },
+  "ApartmentsPage":{
+    "Title":"What will be in the apartment?",
+    "OneRoom":"One-room",
+    "TwoRoom":"Two-room",
+    "ThreeRoom":"Three-room",
+    "OneAndTwoRoom":"One-room and two-room",
+    "OneAndThreeRoom":"One-room and three-room",
+    "TwoAndThreeRoom":"Two-room and three-room",
+    "NotFound":"apartments not found",
+    "TextOfDescAdress":"-room apartment at the address",
+    "TextOfDescOptions":"What will be in the apartment"
+
+  },
   "ContactsPage":{
     "Title": "Contacts",
     "Text" : "Feel free to call us or write to us on any of the social networks. We will be happy to help and communicate with you!",
@@ -19,6 +32,7 @@
   },
   "Navigation":{
     "MainPage":"Main",
+    "Apartments":"Apartments",
     "Contacts":"Contacts",
     "Documents":"Documents",
     "Rules":"Rules"
@@ -27,20 +41,23 @@
     "CalltBtn": "Contact Us",
     "OrderBtn": "Request to book",
     "CloseBtn": "Close",
-    "CardBtn":"Details",
+    "CardDetailsBtn":"Details",
     "FilterBtn":"Find",
     "ObjectsBtn":"All objects",
     "OpenFilterBtn":"Filter",
     "CloseFilterBtn":"Close",
-    "LogOutBtn": "LogOut"
+    "LogOutBtn": "LogOut",
+    "Submit":"Submit"
   },
-  "form": {
-    "name": "Name",
-    "phone": "Phone number",
+  "Form": {
+    "name": "Name *",
+    "phone": "Phone number *",
     "dateOfEntry":"Date of entry",
     "departureDate":"Departure date",
     "numberOfObject": "Number of object",
-    "formSubmited":"Your application has been successfully sent! Our manager will contact you shortly."
+    "fieldsDesc":"required fields",
+    "formSubmitedMsg1":"Your application has been successfully sent!",
+    "formSubmitedMsg2":"Our manager will contact you shortly."
   },
   "formErrors": {
     "name": "Incorrect name entered",

@@ -50,15 +50,24 @@ const EditCard = ({ params }) => {
                         />
                     </div>
                     <p>Додаткові фото:</p>
-                    <ul className={styles.imgsWrapper}>{data.imgs.map((item, index) => (<li className={styles.imgCont} key={index}>
-                        <Image
-                            className={styles.img}
-                            src={item}
-                            alt="Interior photo"
-                            fill={true}
-                            sizes='20vw'
-                            priority={false}
-                        />
+                    <ul className={styles.imgsWrapper}>{data.imgs.map((item, index) => (<li className={styles.imgsItem} key={index}>
+                        <div className={styles.imgCont}>
+                            <Image
+                                className={styles.img}
+                                src={item}
+                                alt="Interior photo"
+                                fill={true}
+                                sizes='20vw'
+                                priority={false}
+                            />
+                        </div>
+                        <span className={styles.delete}
+                            onClick={() => {
+                                console.log("data.imgs", data.imgs);
+                                console.log("item", item);
+                                console.log("data.imgs", data.imgs);
+                            }}
+                        >X</span>
                     </li>)
                     )}</ul>
                     <p className={styles.address}>Адреса: {data.address}</p>

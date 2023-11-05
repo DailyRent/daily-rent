@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import {
     Formik,
     Form,
@@ -39,6 +40,7 @@ const handleSubmit = (values, actions, closeModal) => {
 };
 
 const OrderForm = ({ isOpen, closeModal }) => {
+    const {t}=useTranslation();
     useEffect(() => {
         if (isOpen) {
             document.body.style.overflow = "hidden";
@@ -105,7 +107,7 @@ const OrderForm = ({ isOpen, closeModal }) => {
                                             type='text'
                                             name='userName'
                                             id='userName'
-                                            placeholder='Ім’я *'
+                                            placeholder={t("Form.name")}
                                             autoComplete='off'
                                             maxLength='30'
                                             className={
@@ -132,7 +134,7 @@ const OrderForm = ({ isOpen, closeModal }) => {
                                             type='text'
                                             name='phone'
                                             id='phone'
-                                            placeholder='Номер телефону *'
+                                            placeholder={t("Form.phone")}
                                             autoComplete='off'
                                             maxLength='14'
                                             className={
@@ -180,7 +182,7 @@ const OrderForm = ({ isOpen, closeModal }) => {
                                                                 ? `${styles.input} ${styles.inputError}`
                                                                 : styles.input
                                                         }
-                                                        placeholderText='Дата заїзду'
+                                                        placeholderText={t("Form.dateOfEntry")}
                                                         {...field}
                                                         selected={value}
                                                         onChange={(val) =>
@@ -258,7 +260,7 @@ const OrderForm = ({ isOpen, closeModal }) => {
                                                                 ? `${styles.input} ${styles.inputError}`
                                                                 : styles.input
                                                         }
-                                                        placeholderText='Дата виїзду'
+                                                        placeholderText={t("Form.departureDate")}
                                                         {...field}
                                                         selected={value}
                                                         onChange={(val) =>
@@ -304,7 +306,7 @@ const OrderForm = ({ isOpen, closeModal }) => {
                                             id='objNumber'
                                             autoComplete='off'
                                             maxLength='3'
-                                            placeholder='Номер об’єкту'
+                                            placeholder={t("Form.numberOfObject")}
                                             className={
                                                 errors.objNumber &&
                                                 touched.objNumber
@@ -319,7 +321,7 @@ const OrderForm = ({ isOpen, closeModal }) => {
                                         />
                                     </div>
                                     <p className={styles.explainText}>
-                                        *- поле, обовʼязкове для заповнення
+                                        *- {t("Form.fieldsDesc")}
                                     </p>
                                 </div>
 
@@ -332,7 +334,7 @@ const OrderForm = ({ isOpen, closeModal }) => {
                                             : styles.button
                                     }
                                 >
-                                    Submit
+                                    {t("Buttons.Submit")}
                                 </button>
                             </Form>
                         )}
