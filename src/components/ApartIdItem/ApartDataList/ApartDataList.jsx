@@ -5,6 +5,7 @@ import styles from './ApartDataList.module.scss';
 
 const ApartDataList = ({ dataId }) => {
   const {t}= useTranslation();
+  console.log(dataId)
   return (
     <div className={styles.dataList}>
       <span className={styles.dataText}>
@@ -14,7 +15,7 @@ const ApartDataList = ({ dataId }) => {
         {dataId.objNumber}
       </span>
 
-      <span className={styles.dataText}>1 {t("ApartmentsPage.TextOfDescAdress")}:</span>
+      <span className={styles.dataText}>{dataId.roomsQuantity}{t("ApartmentsPage.TextOfDescAdress")}:</span>
       <span className={styles.dataText}>
         <a
           href={dataId?.googleMapLocation}
