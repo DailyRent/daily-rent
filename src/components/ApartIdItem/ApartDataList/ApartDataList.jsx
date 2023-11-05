@@ -1,7 +1,10 @@
+import React from 'react';
+import { useTranslation } from 'react-i18next';
 import Image from 'next/image';
 import styles from './ApartDataList.module.scss';
 
 const ApartDataList = ({ dataId }) => {
+  const {t}= useTranslation();
   return (
     <div className={styles.dataList}>
       <span className={styles.dataText}>
@@ -11,7 +14,7 @@ const ApartDataList = ({ dataId }) => {
         {dataId.objNumber}
       </span>
 
-      <span className={styles.dataText}>1 кімнатна квартира за адресою:</span>
+      <span className={styles.dataText}>1 {t("ApartmentsPage.TextOfDescAdress")}:</span>
       <span className={styles.dataText}>
         <a
           href={dataId?.googleMapLocation}

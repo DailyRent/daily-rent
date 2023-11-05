@@ -20,7 +20,8 @@
     "OneAndThreeRoom":"One-room and three-room",
     "TwoAndThreeRoom":"Two-room and three-room",
     "NotFound":"apartments not found",
-    "TextOfDesc":"-room apartment at the address"
+    "TextOfDescAdress":"-room apartment at the address",
+    "TextOfDescOptions":"What will be in the apartment"
 
   },
   "ContactsPage":{

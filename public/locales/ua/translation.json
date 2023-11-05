@@ -21,7 +21,8 @@
     "OneAndThreeRoom":"One-room and three-room",
     "TwoAndThreeRoom":"Two-room and three-room",
     "NotFound":"квартири не знайдено",
-    "TextOfDesc":" кімнатна за адресою"
+    "TextOfDescAdress":" кімнатна за адресою",
+    "TextOfDescOptions":"Що буде в апартаментах"
   },
   "ContactsPage":{
     "Title": "Контакти",

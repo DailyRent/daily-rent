@@ -1,6 +1,7 @@
 'use client';
 
 import { useContext } from 'react';
+import { useTranslation } from 'react-i18next';
 import OrderBtn from '../OrderBtn/OrderBtn';
 import IsLoading from '../share/IsLoading/IsLoading';
 import Amenities from './Amenities/Amenities';
@@ -16,21 +17,22 @@ import Link from 'next/link';
 
 const ApartIdItem = ({ dataId, error, isLoading }) => {
   // console.log(dataId?.googleMapLocation);
+  const {t}= useTranslation();
   const { isModalOpen, openModal, closeModal } = useContext(SiteContext);
 
   return (
     <section className={styles.container}>
       <div className={styles.backContainer}>
-        <p className="textLink">
-          <Link href="/" className="textLinkAnimation">
-            Головна
+        {!isLoading && (<span className="textLink">
+          <Link href="/" prefetch={false} className="textLinkAnimation">
+            {t("Navigation.MainPage")}
           </Link>
           /
           <Link href="/apartments" className="textLinkAnimation">
-            Апартаменти
+          {t("Navigation.Apartments")}
           </Link>
           /<span className={styles.active}># {dataId?.objNumber}</span>
-        </p>
+        </span>)}
       </div>
       <ModalR isOpen={isModalOpen} closeModal={closeModal}>
         <OrderForm isOpen={isModalOpen} closeModal={closeModal} />

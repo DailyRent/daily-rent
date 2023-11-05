@@ -34,7 +34,7 @@ const ApartItem = ({
         </Link>
         <div className={styles.apartContent}>
           <p className={styles.addressRooms}>
-            {roomsQuantity}{t("ApartmentsPage.TextOfDesc")}:
+            {roomsQuantity}{t("ApartmentsPage.TextOfDescAdress")}:
           </p>
           <p className={styles.addressRooms}>{address}</p>
         </div>
