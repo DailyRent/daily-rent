@@ -14,7 +14,7 @@
   }
   @media screen and (min-width: $tablet) {
     margin-right: 0;
-    margin-left: 20px;
+    // margin-left: 20px;
     border-color: $darckFontColor;
     color: $darckFontColor;
   }
@@ -56,16 +56,16 @@
   }
 }
 
-.langSwitcher{
+.langSwitcher {
   width: 65px;
   display: flex;
   align-items: center;
-  @media screen and (min-width:$tablet) {
+  @media screen and (min-width: $tablet) {
     width: 85px;
   }
 }
 
-.langIndicator{
+.langIndicator {
   margin-right: 5px;
   font-size: clamp(0.75rem, 0.179rem + 1.19vw, 1.25rem);
   color: $darckFontColor;

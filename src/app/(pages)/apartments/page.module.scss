@@ -62,11 +62,11 @@
     grid-template-columns: repeat(2, 324px);
   }
   @media screen and (min-width: $desktop) {
-    grid-template-columns: repeat(3, 300px);
+    grid-template-columns: repeat(4, 300px);
   }
 }
 
-.notFoundText {
+.notFoundTextStyles {
   display: flex;
   align-items: center;
   justify-content: center;

@@ -37,6 +37,12 @@
   background-color: $acentColor;
 }
 
+.apartContent {
+  display: flex;
+  flex-direction: column;
+  row-gap: 13px;
+}
+
 .addressRooms {
   color: #6d6d6d;
   font-family: Playfair Display;
@@ -44,7 +50,6 @@
   font-weight: 400;
   // text-overflow: ellipsis;
   width: 300px;
-  height: 40px;
   // white-space: wrap;
   // white-space: nowrap;
   // overflow: hidden;

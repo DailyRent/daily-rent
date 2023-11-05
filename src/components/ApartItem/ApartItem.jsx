@@ -30,8 +30,16 @@ const ApartItem = ({
             <span className={styles.codeImg}>{objNumber}</span>
           </div>
         </Link>
-        <p className={styles.addressRooms}>{address}</p>
-        <p className={styles.priceRooms}>{price}₴</p>
+        <div className={styles.apartContent}>
+          <p className={styles.addressRooms}>
+            {roomsQuantity} кімнатна за адресою:
+          </p>
+          <p className={styles.addressRooms}>{address}</p>
+        </div>
+        <p className={styles.priceRooms}>
+          {price}₴{/* Кількість кімнат: {roomsQuantity} */}
+        </p>
+
         <Link
           href={`/apartments/${id}`}
           // href={`/oldApartments/${roomsQuantity}/${id}`}
