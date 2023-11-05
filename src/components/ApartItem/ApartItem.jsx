@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import Image from 'next/image';
 import styles from './ApartItem.module.scss';
 import Link from 'next/link';
@@ -13,6 +14,7 @@ const ApartItem = ({
   roomsQuantity,
   id,
 }) => {
+  const {t}=useTranslation();
   return (
     <>
       <li className={styles.oneRooms}>
@@ -32,7 +34,7 @@ const ApartItem = ({
         </Link>
         <div className={styles.apartContent}>
           <p className={styles.addressRooms}>
-            {roomsQuantity} кімнатна за адресою:
+            {roomsQuantity}{t("ApartmentsPage.TextOfDesc")}:
           </p>
           <p className={styles.addressRooms}>{address}</p>
         </div>
@@ -45,7 +47,7 @@ const ApartItem = ({
           // href={`/oldApartments/${roomsQuantity}/${id}`}
           className={styles.btnRooms}
         >
-          Детальніше
+          {t("Buttons.CardDetailsBtn")}
         </Link>
       </li>
     </>

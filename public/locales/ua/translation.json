@@ -12,6 +12,17 @@
     "galleryTittle": "Апартаменти",
     "contactsTitle": "Зв'яжіться з нами"
   },
+  "ApartmentsPage":{
+    "Title":"Що буде в апартаментах ?",
+    "OneRoom":"Однокімнатні",
+    "TwoRoom":"Двокімнатні",
+    "ThreeRoom":"Трикімнатні",
+    "OneAndTwoRoom":"One-room and two-room",
+    "OneAndThreeRoom":"One-room and three-room",
+    "TwoAndThreeRoom":"Two-room and three-room",
+    "NotFound":"квартири не знайдено",
+    "TextOfDesc":" кімнатна за адресою"
+  },
   "ContactsPage":{
     "Title": "Контакти",
     "Text" : "Сміливо телефонуй нам або пиши у будь-яку з соцмереж. Будемо раді допомогти і потеревенити з тобою!",
@@ -20,6 +31,7 @@
   },
   "Navigation":{
     "MainPage":"Головна",
+    "Apartments":"Апартаменти",
     "Contacts":"Контакти",
     "Documents":"Документи",
     "Rules":"Правила"
@@ -28,7 +40,7 @@
     "CalltBtn": "Зв’язатись",
     "OrderBtn": "Забронювати",
     "CloseBtn":"Закрити",
-    "CardBtn":"Детальніше",
+    "CardDetailsBtn":"Детальніше",
     "FilterBtn":"Шукати",
     "ObjectsBtn":"Всі об’єкти",
     "OpenFilterBtn":"Фільтр",
