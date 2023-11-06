@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import {
     Formik,
@@ -40,7 +40,11 @@ const handleSubmit = (values, actions, closeModal) => {
 };
 
 const OrderForm = ({ isOpen, closeModal }) => {
-    const {t}=useTranslation();
+    
+    const {t,i18n}=useTranslation();
+
+    const schema = useMemo(() => formSchema(), [i18n.language]);
+    
     useEffect(() => {
         if (isOpen) {
             document.body.style.overflow = "hidden";
@@ -62,7 +66,7 @@ const OrderForm = ({ isOpen, closeModal }) => {
                 try {
                     validateYupSchema(
                         values,
-                        formSchema,
+                        schema,
                         true,
                         listOfAppartmentNumbers
                     );

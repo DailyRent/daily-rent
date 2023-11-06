@@ -1,18 +1,21 @@
 import * as Yup from "yup";
 
+import i18n from 'i18next';
+
 const phoneRegExp = /^\+\d{12}$/;
 
-export const formSchema = Yup.object({
+export const formSchema=() =>{
+    return Yup.object({
     userName: Yup.string()
-        .min(2, "Ім’я має бути довшим")
-        .max(29, "Ім’я має бути коротшим")
-        .required("Заповніть це поле"),
+        .min(2, i18n.t("Form.errorShortName"))
+        .max(29, i18n.t("Form.errorLongName"))
+        .required(i18n.t("Form.fieldRequiredMsg")),
     phone: Yup.string()
         .matches(phoneRegExp, "+380123456789")
-        .required('Заповніть це поле'),
+        .required(i18n.t("Form.fieldRequiredMsg")),
     objNumber: Yup.number()
-        .moreThan(-1, "Тільки позитивні цифри")
-        .typeError("Тільки цифри")
+        .moreThan(-1, i18n.t("Form.errorNumberOfObject2"))
+        .typeError(i18n.t("Form.errorNumberOfObject3"))
         .test({
             name: "objNumber",
             test(value, ctx) {
@@ -20,7 +23,7 @@ export const formSchema = Yup.object({
                 const listOfNumbers = this.options.context;
                 if (!listOfNumbers.includes(String(value)) && value) {
                     return ctx.createError({
-                        message: "Такого номера немає",
+                        message: i18n.t("Form.errorNumberOfObject"),
                     });
                 }
 
@@ -32,4 +35,4 @@ export const formSchema = Yup.object({
     checkOut: Yup.date()
         .nullable()
 
-});
+})};

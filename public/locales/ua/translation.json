@@ -57,7 +57,13 @@
     "numberOfObject": "Номер об’єкту",
     "fieldsDesc":"поле, обовʼязкове для заповнення",
     "formSubmitedMsg1":"Ваша заявка успішна відправлена!",
-    "formSubmitedMsg2":"Наш менеджер зв’яжеться з вами в найближчий час."
+    "formSubmitedMsg2":"Наш менеджер зв’яжеться з вами в найближчий час.",
+    "fieldRequiredMsg":"Заповніть це поле",
+    "errorShortName":"Ім’я має бути довшим",
+    "errorLongName":"Ім’я має бути коротшим",
+    "errorNumberOfObject":"Такого номера немає",
+    "errorNumberOfObject2":"Тільки позитивні цифри",
+    "errorNumberOfObject3":"Тільки цифри"
   },
   "formErrors": {
     "name": "Невірно введене ім’я",
