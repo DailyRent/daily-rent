@@ -12,6 +12,7 @@ const Filter = ({ amenitiesArr, setAmenitiesArr }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const { filterShown, setFilterShown } = useContext(SiteContext);
   const [isLoad, setIsLoad] = useState(true);
+  const [isFilterClear, setIsFilterClear] = useState(false);
   // const { i18n } = useTranslation();
   const { t } = useTranslation();
   useEffect(() => {
@@ -21,6 +22,10 @@ const Filter = ({ amenitiesArr, setAmenitiesArr }) => {
   const amenitiesWithoutWiFi = amenities.filter(
     (amenity) => amenity.title !== "Wi-Fi"
   );
+
+  const handleResetFilter = () => {
+    setIsFilterClear(true);
+  };
 
   const isFilterShown = filterShown
     ? styles.container
@@ -44,30 +49,31 @@ const Filter = ({ amenitiesArr, setAmenitiesArr }) => {
                   setActiveIndex={setActiveIndex}
                   amenitiesArr={amenitiesArr}
                   setAmenitiesArr={setAmenitiesArr}
+                  isFilterClear={isFilterClear}
+                  setIsFilterClear={setIsFilterClear}
                 />
               );
             })}
         </ul>
       </div>
-      {/* <div className={styles.filterSearchResetContainer}> */}
-
-      {!isLoad && (
+      <div className={styles.filterSearchResetContainer}>
+        {!isLoad && (
+          <button
+            type="button"
+            className={styles.filterButtonSearch}
+            onClick={() => setFilterShown(!filterShown)}
+          >
+            {t("Buttons.CloseFilterBtn")}
+          </button>
+        )}
         <button
-          type="button"
-          className={styles.filterButtonSearch}
-          onClick={() => setFilterShown(!filterShown)}
-        >
-          {t("Buttons.CloseFilterBtn")}
-        </button>
-      )}
-      {/* <button
           type="button"
           className={styles.filterButtonSearch}
           onClick={() => handleResetFilter()}
         >
-          Очистити фільтр //close filter
-      </button>*/}
-      {/* </div> */}
+          Очистити фільтр
+        </button>
+      </div>
     </div>
   );
 };

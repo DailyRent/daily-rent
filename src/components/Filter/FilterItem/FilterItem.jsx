@@ -12,10 +12,18 @@ const FilterItem = ({
   setActiveIndex,
   // amenitiesArr,
   setAmenitiesArr,
+  isFilterClear,
+  setIsFilterClear,
 }) => {
   const [isChecked, setIsChecked] = useState(false);
   const [isLoad, setIsLoad] = useState(true);
   const { i18n } = useTranslation();
+
+  useEffect(() => {
+    setIsChecked(false);
+    setIsFilterClear(false);
+    setAmenitiesArr([]);
+  }, [isFilterClear]);
   // const { t } = useTranslation();
   useEffect(() => {
     setIsLoad(false);
@@ -55,7 +63,10 @@ const FilterItem = ({
             className={filterCheckboxStyles}
             checked={isChecked}
             onChange={() => {
-              setActiveIndex(id), isAmenityChecked(), toggleAmenityForFilter();
+              setActiveIndex(id),
+                isAmenityChecked(),
+                toggleAmenityForFilter(),
+                setIsFilterClear(false);
             }}
           />
         </li>
