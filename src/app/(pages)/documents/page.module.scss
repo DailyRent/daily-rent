@@ -83,6 +83,7 @@
   margin-top: 24px;
   align-items: center;
   justify-content: center;
+  word-wrap: break-word;
 
 transition: 250ms;
     &:hover,
@@ -105,7 +106,10 @@ transition: 250ms;
 .documentTop {
   width: 326px;
   height: 213px;
-  background-color: #d9d9d9;
+  // background-color: #f8f5f5;
+  overflow: hidden;
+  position: relative;
+  
 
   @media (min-width: $tablet) {
     width: 205px;
@@ -117,15 +121,23 @@ transition: 250ms;
     height: 260px;
   }
 }
+.documentTopImg{
+  border: 1px solid #999999;
+  
+  object-fit: cover;
+}
 
 .documentText {
   text-align: center;
   margin-top: 24px;
+  width: 326px;
   @media (min-width: $tablet) {
     margin-top: 29px;
+    width: 205px;
   }
-  @media (min-width: 1366px) {
+  @media (min-width: 1462px) {
     margin-top: 32px;
+    width: 410px;
   }
 }
 
