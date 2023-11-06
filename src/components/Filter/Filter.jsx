@@ -1,11 +1,11 @@
-"use client";
-import React, { useState, useContext, useEffect } from "react";
-import { useTranslation } from "react-i18next";
-import { SiteContext } from "@/context/SiteContext";
-import styles from "./Filter.module.scss";
-import { amenities } from "@/data";
+'use client';
+import React, { useState, useContext, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+import { SiteContext } from '@/context/SiteContext';
+import styles from './Filter.module.scss';
+import { amenities } from '@/data';
 // import { amenities, currentLanguages } from "@/data";
-import FilterItem from "./FilterItem/FilterItem";
+import FilterItem from './FilterItem/FilterItem';
 // import { usePathname } from "next/navigation";
 
 const Filter = ({ amenitiesArr, setAmenitiesArr }) => {
@@ -20,7 +20,7 @@ const Filter = ({ amenitiesArr, setAmenitiesArr }) => {
   }, []);
 
   const amenitiesWithoutWiFi = amenities.filter(
-    (amenity) => amenity.title !== "Wi-Fi"
+    (amenity) => amenity.title !== 'Wi-Fi'
   );
 
   const handleResetFilter = () => {
@@ -57,22 +57,22 @@ const Filter = ({ amenitiesArr, setAmenitiesArr }) => {
         </ul>
       </div>
       <div className={styles.filterSearchResetContainer}>
+        <button
+          type="button"
+          className={styles.filterButtonSearch}
+          onClick={() => handleResetFilter()}
+        >
+          Очистити
+        </button>
         {!isLoad && (
           <button
             type="button"
             className={styles.filterButtonSearch}
             onClick={() => setFilterShown(!filterShown)}
           >
-            {t("Buttons.CloseFilterBtn")}
+            {t('Buttons.CloseFilterBtn')}
           </button>
         )}
-        <button
-          type="button"
-          className={styles.filterButtonSearch}
-          onClick={() => handleResetFilter()}
-        >
-          Очистити фільтр
-        </button>
       </div>
     </div>
   );

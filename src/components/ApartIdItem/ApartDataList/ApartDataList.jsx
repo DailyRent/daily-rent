@@ -4,9 +4,8 @@ import Image from 'next/image';
 import styles from './ApartDataList.module.scss';
 
 const ApartDataList = ({ dataId }) => {
-  
-  const {t}= useTranslation();
-  
+  const { t } = useTranslation();
+
   return (
     <div className={styles.dataList}>
       <span className={styles.dataText}>
@@ -16,7 +15,10 @@ const ApartDataList = ({ dataId }) => {
         {dataId.objNumber}
       </span>
 
-      <span className={styles.dataText}>{dataId.roomsQuantity}{t("ApartmentsPage.TextOfDescAdress")}:</span>
+      <span className={styles.dataText}>
+        {dataId.roomsQuantity}
+        {t('ApartmentsPage.TextOfDescAdress')}:
+      </span>
       <span className={styles.dataText}>
         <a
           href={dataId?.googleMapLocation}
