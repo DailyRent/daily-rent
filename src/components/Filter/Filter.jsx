@@ -1,17 +1,18 @@
-"use client";
-import React, { useState, useContext, useEffect } from "react";
-import { useTranslation } from "react-i18next";
-import { SiteContext } from "@/context/SiteContext";
-import styles from "./Filter.module.scss";
-import { amenities } from "@/data";
+'use client';
+import React, { useState, useContext, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+import { SiteContext } from '@/context/SiteContext';
+import styles from './Filter.module.scss';
+import { amenities } from '@/data';
 // import { amenities, currentLanguages } from "@/data";
-import FilterItem from "./FilterItem/FilterItem";
+import FilterItem from './FilterItem/FilterItem';
 // import { usePathname } from "next/navigation";
 
 const Filter = ({ amenitiesArr, setAmenitiesArr }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const { filterShown, setFilterShown } = useContext(SiteContext);
   const [isLoad, setIsLoad] = useState(true);
+  const [isFilterClear, setIsFilterClear] = useState(false);
   // const { i18n } = useTranslation();
   const { t } = useTranslation();
   useEffect(() => {
@@ -19,8 +20,12 @@ const Filter = ({ amenitiesArr, setAmenitiesArr }) => {
   }, []);
 
   const amenitiesWithoutWiFi = amenities.filter(
-    (amenity) => amenity.title !== "Wi-Fi"
+    (amenity) => amenity.title !== 'Wi-Fi'
   );
+
+  const handleResetFilter = () => {
+    setIsFilterClear(true);
+  };
 
   const isFilterShown = filterShown
     ? styles.container
@@ -44,30 +49,31 @@ const Filter = ({ amenitiesArr, setAmenitiesArr }) => {
                   setActiveIndex={setActiveIndex}
                   amenitiesArr={amenitiesArr}
                   setAmenitiesArr={setAmenitiesArr}
+                  isFilterClear={isFilterClear}
+                  setIsFilterClear={setIsFilterClear}
                 />
               );
             })}
         </ul>
       </div>
-      {/* <div className={styles.filterSearchResetContainer}> */}
-
-      {!isLoad && (
+      <div className={styles.filterSearchResetContainer}>
         <button
-          type="button"
-          className={styles.filterButtonSearch}
-          onClick={() => setFilterShown(!filterShown)}
-        >
-          {t("Buttons.CloseFilterBtn")}
-        </button>
-      )}
-      {/* <button
           type="button"
           className={styles.filterButtonSearch}
           onClick={() => handleResetFilter()}
         >
-          Очистити фільтр //close filter
-      </button>*/}
-      {/* </div> */}
+          Очистити
+        </button>
+        {!isLoad && (
+          <button
+            type="button"
+            className={styles.filterButtonSearch}
+            onClick={() => setFilterShown(!filterShown)}
+          >
+            {t('Buttons.CloseFilterBtn')}
+          </button>
+        )}
+      </div>
     </div>
   );
 };

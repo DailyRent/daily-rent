@@ -57,7 +57,13 @@
     "numberOfObject": "Number of object",
     "fieldsDesc":"required fields",
     "formSubmitedMsg1":"Your application has been successfully sent!",
-    "formSubmitedMsg2":"Our manager will contact you shortly."
+    "formSubmitedMsg2":"Our manager will contact you shortly.",
+    "fieldRequiredMsg":"Fill in this field",
+    "errorShortName":"The name should be longer",
+    "errorLongName":"The name should be shorter",
+    "errorNumberOfObject":"There's no such number",
+    "errorNumberOfObject2":"Only positive numbers",
+    "errorNumberOfObject3":"Only numbers"
   },
   "formErrors": {
     "name": "Incorrect name entered",

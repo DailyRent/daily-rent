@@ -7,7 +7,6 @@
   align-items: center;
   position: relative;
   row-gap: 16px;
-  // row-gap: 24px;
   @media screen and (min-width: $tablet) {
     align-items: flex-start;
   }
@@ -58,7 +57,6 @@
   outline: none;
   @media screen and (min-width: 1366px) {
     align-items: flex-start;
-    // flex-direction: row-reverse;
   }
   // &:hover .imgContainer {
   //   &::before {
@@ -72,8 +70,8 @@
 
 .imgContainer {
   position: relative;
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   margin-right: 16px;
   // &::before {
   //   content: '';
@@ -86,8 +84,8 @@
   //   transition: box-shadow 0.3s ease-in-out;
   // }
   @media screen and (min-width: $tablet) {
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
     // &::before {
     //   // left: 38%;
     //   width: 5px;
@@ -96,9 +94,8 @@
   }
   @media screen and (min-width: 1366px) {
     margin-right: 16px;
-    // margin-right: 24px;
-    height: 32px;
-    width: 32px;
+    height: 28px;
+    width: 28px;
   }
 }
 
@@ -161,22 +158,6 @@
   //   text-underline-offset: 6px;
   // }
 }
-// .svgMap {
-//   width: 16px;
-//   height: 16px;
-//   stroke: #6d6d6d;
-//   fill: none;
-//   margin-right: 16px;
-//   @media screen and (min-width: $tablet) {
-//     width: 20px;
-//     height: 20px;
-//   }
-//   @media screen and (min-width: 1366px) {
-//     margin-right: 24px;
-//     width: 24px;
-//     height: 24px;
-//   }
-// }
 
 .dataTextPrice {
   position: absolute;
