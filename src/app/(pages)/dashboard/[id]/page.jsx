@@ -19,6 +19,24 @@ const EditCard = ({ params }) => {
 
     const router = useRouter();
 
+    const handleDeleteImg = async (id, item) => {
+        const newArr = data.imgs.filter(el => el !== item);
+        console.log("item", item);
+        console.log("newArr", newArr);
+        try {
+            await fetch(`/api/apartments/${id}`, {
+                method: "PATCH",
+                body: JSON.stringify({
+                    imgs: newArr,
+                })
+            });
+            // автоматически обновляет страницу при изменении кол-ва карточек
+            mutate();
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     if (session.status === "loading") {
         return <p>Loading...</p>
     }
@@ -62,11 +80,18 @@ const EditCard = ({ params }) => {
                             />
                         </div>
                         <span className={styles.delete}
-                            onClick={() => {
-                                console.log("data.imgs", data.imgs);
-                                console.log("item", item);
-                                console.log("data.imgs", data.imgs);
-                            }}
+                            onClick={() => handleDeleteImg(data._id, item)
+                                //     () => {
+                                //     console.log("data.imgs", data.imgs);
+                                //     console.log("item", item);
+                                //     const filteredArr = data.imgs.filter(el => el !== item);
+                                //     console.log("filteredArr", filteredArr);
+                                //     mutate();
+                                //     data.imgs = [...filteredArr];
+                                //     console.log("data.imgs", data.imgs);
+                                //     return data.imgs;
+                                // }
+                            }
                         >X</span>
                     </li>)
                     )}</ul>
@@ -87,7 +112,7 @@ const EditCard = ({ params }) => {
 
             {isLoading
                 ? <p>Loading</p>
-                : <UpdatingForm id={id} apart={data} className={styles.updatingForm} />}
+                : <UpdatingForm id={id} apart={data} mutate={mutate} className={styles.updatingForm} />}
 
         </div>
     }

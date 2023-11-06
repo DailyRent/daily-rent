@@ -4,7 +4,7 @@ import styles from './UpdatingForm.module.scss';
 import { CldUploadButton } from 'next-cloudinary';
 
 
-const UpdatingForm = ({ id, apart }) => {
+const UpdatingForm = ({ id, apart, mutate }) => {
     const { objNumber, top, titleImg, imgs, address, addressEn, flatNumber, googleMapLocation, price, roomsQuantity, bookingUrl, amenities, description, descriptionEn } = apart;
     const [newTop, setNewTop] = useState(top);
     const [newTitleImg, setNewTitleImg] = useState(titleImg);
@@ -173,6 +173,7 @@ const UpdatingForm = ({ id, apart }) => {
                     descriptionEn: newDescriptionEn,
                 })
             })
+            mutate();
             // обнуляет все поля формы
             // e.target.reset();
         } catch (err) {
