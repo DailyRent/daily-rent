@@ -1,4 +1,4 @@
-@import "../../styles/_variables.scss";
+@import '../../styles/_variables.scss';
 
 .container {
   display: flex;
@@ -52,17 +52,12 @@
 }
 .filterContainer {
   display: flex;
-  //   justify-content: center;
   align-items: center;
 }
 .filterButtonClose {
   display: flex;
   border-radius: 50%;
   margin-left: auto;
-  //   align-items: center;
-  //   position: absolute;
-  //   top: 39px;
-  //   right: 64px;
 }
 
 .filterSvg {
@@ -89,12 +84,14 @@
   justify-content: center;
 
   column-gap: 10px;
+  row-gap: 16px;
 
   flex-wrap: wrap;
   max-width: 330px;
 
   @media screen and (min-width: $tablet) {
     max-width: 680px;
+    row-gap: 18px;
   }
 
   @media screen and (min-width: $desktop) {
@@ -105,14 +102,11 @@
 .filterSearchResetContainer {
   display: flex;
   align-items: center;
-  // justify-content: center;
-  // margin-top: 24px;
   gap: 20px;
 }
 
 .filterButtonSearch {
   padding: 8px 44px;
-  // padding: 8px 25px;
   color: #373737;
   font-size: 14px;
   font-family: Segoe UI;
@@ -123,7 +117,7 @@
   border: 1px #373737 solid;
 
   background-color: inherit;
-  margin-top: 12px;
+  margin-top: 18px;
 
   cursor: pointer;
   &:hover,
