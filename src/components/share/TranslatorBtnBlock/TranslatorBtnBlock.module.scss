@@ -56,17 +56,17 @@
 }
 
 .langSwitcher {
-  width: 57px;
+  width: 66px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   @media screen and (min-width: $tablet) {
-    width: 78px;
+    width: 101px;
   }
 }
 
 .langIndicator {
-  // margin-right: 10px;
+  margin-right: 13px;
   font-size: clamp(0.75rem, 0.179rem + 1.19vw, 1.25rem);
   // font-size: 14px;
   line-height: 18.2px;
