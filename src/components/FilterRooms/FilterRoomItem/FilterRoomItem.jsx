@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from "react";
 
+import { useTranslation } from "react-i18next";
+
 import styles from "./FilterRoomItem.module.scss";
 
 const FilterRoomItem = ({
@@ -13,6 +15,8 @@ const FilterRoomItem = ({
   setNumberRoomsArr,
 }) => {
   const [isChecked, setIsChecked] = useState(false);
+  
+  const {t}=useTranslation();
 
   const isNumberRoomsChecked = () => {
     id === activeIndex ? setIsChecked(!isChecked) : null;

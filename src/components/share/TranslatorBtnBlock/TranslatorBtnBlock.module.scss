@@ -60,13 +60,14 @@
   width: 65px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   @media screen and (min-width: $tablet) {
-    width: 85px;
+    width: 83px;
   }
 }
 
 .langIndicator {
-  margin-right: 13px;
+  margin-right: 10px;
   font-size: 14px;
   line-height: 18.2px;
   color: $darckFontColor;
@@ -98,11 +99,19 @@
 
 }
 
+.ballEng{
+  transform: translateX(-21px);
+  @media screen and (min-width: $tablet) {
+    transform: translateX(-27px);
+  }
+  
+}
+
 .ball {
   position: absolute;
   transition: 0.4s;
   // transition: left 0.3s ease, right 0.3s ease;
-  // left: 0;
+  left: 14px;
   z-index: 8;
   box-shadow: 0px 2px 8px 0px #00000029;
   // box-shadow: 0 0 0 0.015em rgba(0, 0, 0, 0.16);
@@ -114,6 +123,7 @@
   @media screen and (min-width: $tablet) {
     width: 24px;
     height: 24px;
-    top: -4.5px;
+    top: -4.75px;
+    left: 20px;
   }
 }
