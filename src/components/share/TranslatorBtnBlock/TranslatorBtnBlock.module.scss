@@ -57,7 +57,7 @@
 }
 
 .langSwitcher {
-  width: 65px;
+  width: 55px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -111,7 +111,7 @@
   position: absolute;
   transition: 0.4s;
   // transition: left 0.3s ease, right 0.3s ease;
-  left: 14px;
+  left: 13px;
   z-index: 8;
   box-shadow: 0px 2px 8px 0px #00000029;
   // box-shadow: 0 0 0 0.015em rgba(0, 0, 0, 0.16);
