@@ -100,16 +100,20 @@
 
 .ball {
   position: absolute;
+  transition: 0.4s;
+  // transition: left 0.3s ease, right 0.3s ease;
+  // left: 0;
   z-index: 8;
-  box-shadow: 0 0 0 0.015em rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 2px 8px 0px #00000029;
+  // box-shadow: 0 0 0 0.015em rgba(0, 0, 0, 0.16);
   width: 16px;
   height: 16px;
   border-radius: 50%;
   background-color: #ffff;
-  top: -3px;
+  top: -3.25px;
   @media screen and (min-width: $tablet) {
     width: 24px;
     height: 24px;
-    top: -5px;
+    top: -4.5px;
   }
 }
