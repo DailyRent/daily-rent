@@ -40,11 +40,10 @@ const handleSubmit = (values, actions, closeModal) => {
 };
 
 const OrderForm = ({ isOpen, closeModal }) => {
-    
-    const {t,i18n}=useTranslation();
+    const { t, i18n } = useTranslation();
 
     const schema = useMemo(() => formSchema(), []);
-    
+
     useEffect(() => {
         if (isOpen) {
             document.body.style.overflow = "hidden";
@@ -186,9 +185,14 @@ const OrderForm = ({ isOpen, closeModal }) => {
                                                                 ? `${styles.input} ${styles.inputError}`
                                                                 : styles.input
                                                         }
-                                                        placeholderText={t("Form.dateOfEntry")}
+                                                        placeholderText={t(
+                                                            "Form.dateOfEntry"
+                                                        )}
                                                         {...field}
                                                         selected={value}
+                                                        onFocus={(e) =>
+                                                            e.target.blur()
+                                                        }
                                                         onChange={(val) =>
                                                             setFieldValue(
                                                                 "checkIn",
@@ -264,9 +268,14 @@ const OrderForm = ({ isOpen, closeModal }) => {
                                                                 ? `${styles.input} ${styles.inputError}`
                                                                 : styles.input
                                                         }
-                                                        placeholderText={t("Form.departureDate")}
+                                                        placeholderText={t(
+                                                            "Form.departureDate"
+                                                        )}
                                                         {...field}
                                                         selected={value}
+                                                        onFocus={(e) =>
+                                                            e.target.blur()
+                                                        }
                                                         onChange={(val) =>
                                                             setFieldValue(
                                                                 "checkOut",
@@ -310,7 +319,9 @@ const OrderForm = ({ isOpen, closeModal }) => {
                                             id='objNumber'
                                             autoComplete='off'
                                             maxLength='3'
-                                            placeholder={t("Form.numberOfObject")}
+                                            placeholder={t(
+                                                "Form.numberOfObject"
+                                            )}
                                             className={
                                                 errors.objNumber &&
                                                 touched.objNumber
@@ -338,7 +349,7 @@ const OrderForm = ({ isOpen, closeModal }) => {
                                             : styles.button
                                     }
                                 >
-                                    {t("Buttons.Submit")}
+                                    {t("Buttons.OrderBtn")}
                                 </button>
                             </Form>
                         )}
