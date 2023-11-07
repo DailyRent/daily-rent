@@ -43,7 +43,7 @@ const OrderForm = ({ isOpen, closeModal }) => {
     
     const {t,i18n}=useTranslation();
 
-    const schema = useMemo(() => formSchema(), [i18n.language]);
+    const schema = useMemo(() => formSchema(), []);
     
     useEffect(() => {
         if (isOpen) {
