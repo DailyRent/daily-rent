@@ -104,8 +104,8 @@ transition: 250ms;
 }
 
 .documentTop {
-  width: 326px;
-  height: 213px;
+  width: 260px;
+  height: 350px;
   // background-color: #f8f5f5;
   overflow: hidden;
   position: relative;
@@ -117,27 +117,29 @@ transition: 250ms;
   }
 
   @media (min-width: 1462px) {
-    width: 410px;
-    height: 260px;
+    width: 300px;
+    height: 410px ;
   }
 }
 .documentTopImg{
   border: 1px solid #999999;
   
+  // object-fit: cover;
   object-fit: cover;
+   object-position: top;
 }
 
 .documentText {
   text-align: center;
   margin-top: 24px;
-  width: 326px;
+  width: 260px;
   @media (min-width: $tablet) {
     margin-top: 29px;
     width: 205px;
   }
   @media (min-width: 1462px) {
     margin-top: 32px;
-    width: 410px;
+    width: 300px;
   }
 }
 
