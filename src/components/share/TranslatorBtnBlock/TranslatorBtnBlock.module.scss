@@ -57,24 +57,25 @@
 }
 
 .langSwitcher {
-  width: 55px;
+  width: 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   @media screen and (min-width: $tablet) {
-    width: 83px;
+    width: 70px;
   }
 }
 
 .langIndicator {
-  margin-right: 10px;
-  font-size: 14px;
-  line-height: 18.2px;
+  // margin-right: 10px;
+  font-size: clamp(0.75rem, 0.179rem + 1.19vw, 1.25rem);
+  // font-size: 14px;
+  // line-height: 18.2px;
   color: $darckFontColor;
-  @media screen and (min-width: $tablet) {
-    font-size: 20px;
-    line-height: 26px;
-  }
+  // @media screen and (min-width: $tablet) {
+  //   font-size: 20px;
+  //   line-height: 26px;
+  // }
 }
 
 .langToggle {
