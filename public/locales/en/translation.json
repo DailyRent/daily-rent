@@ -43,6 +43,7 @@
     "CloseBtn": "Close",
     "CardDetailsBtn":"Details",
     "FilterBtn":"Find",
+    "FilterClear":"Clear",
     "ObjectsBtn":"All objects",
     "OpenFilterBtn":"Filter",
     "CloseFilterBtn":"Close",

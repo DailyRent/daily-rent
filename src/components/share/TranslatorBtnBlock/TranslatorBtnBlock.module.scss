@@ -66,9 +66,14 @@
 }
 
 .langIndicator {
-  margin-right: 5px;
-  font-size: clamp(0.75rem, 0.179rem + 1.19vw, 1.25rem);
+  margin-right: 13px;
+  font-size: 14px;
+  line-height: 18.2px;
   color: $darckFontColor;
+  @media screen and (min-width: $tablet) {
+    font-size: 20px;
+    line-height: 26px;
+  }
 }
 
 .langToggle {
@@ -76,8 +81,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 50px;
-  height: 18px;
+  width: 24px;
+  height: 10px;
   padding: 5px;
   border-radius: 10px;
   background-color: black;
@@ -86,15 +91,25 @@
   font-weight: 500;
   line-height: 12.1px;
   cursor: pointer;
+  @media screen and (min-width: $tablet) {
+    width: 36px;
+    height: 15px;
+  }
+
 }
 
 .ball {
   position: absolute;
   z-index: 8;
   box-shadow: 0 0 0 0.015em rgba(0, 0, 0, 0.16);
-  width: 24px;
-  height: 24px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
   background-color: #ffff;
   top: -3px;
+  @media screen and (min-width: $tablet) {
+    width: 24px;
+    height: 24px;
+    top: -5px;
+  }
 }
