@@ -57,7 +57,7 @@
 }
 
 .langSwitcher {
-  width: 50px;
+  width: 57px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -70,7 +70,7 @@
   // margin-right: 10px;
   font-size: clamp(0.75rem, 0.179rem + 1.19vw, 1.25rem);
   // font-size: 14px;
-  // line-height: 18.2px;
+  line-height: 18.2px;
   color: $darckFontColor;
   // @media screen and (min-width: $tablet) {
   //   font-size: 20px;
