@@ -4,15 +4,12 @@
   display: flex;
   align-items: flex-start;
   padding: 100px 20px 24px 20px;
-
   @media screen and (min-width: $tablet) {
     padding: 118px 36px 40px 36px;
   }
-
   @media screen and (min-width: 1366px) {
     padding: 200px 86px 32px 86px;
   }
-
   @media screen and (min-width: 1440px) {
     max-width: 1920px;
   }
@@ -23,19 +20,15 @@
   align-items: center;
   justify-content: flex-start;
   column-gap: 13px;
-
   margin-bottom: 22.5px;
-
   @media screen and (min-width: $tablet) {
   }
-
   @media screen and (min-width: 1366px) {
   }
 }
 
 .active {
   position: relative;
-
   &::after {
     content: "";
     display: block;
@@ -57,98 +50,47 @@
   font-weight: 400;
 }
 
-.ruleListThumb {
-  margin: 0 auto;
-
-  @media screen and (min-width: $tablet) {
-  }
-
-  @media screen and (min-width: 1366px) {
-  }
-}
-
-.ruleList {
-  margin: 0 auto;
-
+.rulesListItem {
+  color: #242424;
+  font-family: Crimson Text;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
   @media (min-width: $tablet) {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: -24px;
-    margin-left: -32px;
-
-    @media (min-width: 1366px) {
-      margin-left: -30px;
-      margin-bottom: -40px;
-    }
   }
 }
-
-.ruleItem {
-  width: 328px;
-  height: 213px;
-  padding: 36.5px 13px 36.5px 20px;
-  background-color: #bbb;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  @media (min-width: $tablet) {
-    flex-basis: calc(100% / 2 - 32px);
-    margin-left: 32px;
-  }
-
-  @media (min-width: 1366px) {
-    flex-basis: calc(100% / 3 - 30px);
-    margin-left: 30px;
-  }
+.rulesList {
+  color: #242424;
+  font-family: Crimson Text;
+  font-size: 24px;
+  font-style: normal;
+  line-height: normal;
 }
 
-.ruleItem + .ruleItem {
-  margin-top: 16px;
-
-  @media (min-width: $tablet) {
-    margin-top: 0px;
-    margin-left: 32px;
-    margin-bottom: 24px;
-  }
-
-  @media (min-width: 1366px) {
-    margin-top: 0px;
-    margin-left: 30px;
-    margin-bottom: 40px;
-  }
-}
-
-.circleBlock {
-  background: #d9d9d9;
-  border-radius: 50%;
-  height: 60px;
-  width: 60px;
-  flex-shrink: 0;
-  margin-right: 40px;
-}
-
-.ruleItemName {
+.decimalListTitle {
+  color: #242424;
   font-family: Crimson Text;
   font-size: 20px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 600;
   line-height: normal;
-
-  @media (min-width: 1366px) {
-    font-size: 24px;
-  }
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
-
-.ruleItemDescription {
+.decimalList {
+  list-style: decimal;
+}
+.decimalList > li {
+  margin-left: 25px;
+  color: #242424;
   font-family: Crimson Text;
-  font-size: 14px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  margin-top: 24px;
-
-  @media (min-width: 1366px) {
-    font-size: 16px;
+  @media (min-width: $tablet) {
+    font-size: 20px;
   }
 }
