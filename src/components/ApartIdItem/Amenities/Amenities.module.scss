@@ -1,4 +1,4 @@
-@import '../../../styles/variables';
+@import "../../../styles/variables";
 
 .propositionContainer {
   margin-bottom: 20px;
@@ -27,6 +27,7 @@
 }
 
 .propositionList {
+  display: -ms-grid;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-row-gap: 16px;
@@ -51,7 +52,11 @@
 }
 
 .propositionItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
@@ -70,5 +75,6 @@
 }
 
 .imgSvg {
+  -o-object-fit: cover;
   object-fit: cover;
 }

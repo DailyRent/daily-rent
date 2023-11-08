@@ -2,7 +2,7 @@
 import React, { useContext } from "react";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import { SiteContext } from "@/context/SiteContext";
 import OrderBtn from "@/components/OrderBtn/OrderBtn";
 import CallBtn from "@/components/CallBtn/CallBtn";
@@ -16,12 +16,12 @@ import { navigationData, currentLanguages } from "@/data";
 
 const Footer = ({ onClick }) => {
   const { isModalOpen, openModal, closeModal } = useContext(SiteContext);
-  const [isLoading,setIsLoading]=useState(true)
-  const {i18n}=useTranslation();
+  const [isLoading, setIsLoading] = useState(true);
+  const { i18n } = useTranslation();
 
-  useEffect(()=>{
-    setIsLoading(false)
-  },[])
+  useEffect(() => {
+    setIsLoading(false);
+  }, []);
   return (
     <>
       <ModalR isOpen={isModalOpen} closeModal={closeModal}>
@@ -35,27 +35,36 @@ const Footer = ({ onClick }) => {
             <Link href="tel:+380357960801">+380357960801</Link>
             <Link href="tel:+380357960802">+380357960802</Link>
           </div>
-          {!isLoading && (<><ul className={styles.navigation}>
-            {navigationData.slice(0, 2).map((item) => {
-              return (
-                <li key={item.id} onClick={onClick}>
-                  <Link href={item.path}>
-                  {i18n.language=== currentLanguages.EN ? item.titleEN : item.title}</Link>
-                </li>
-              );
-            })}
-          </ul>
-          <ul className={styles.navigation}>
-            {navigationData.slice(2, 4).map((item) => {
-              return (
-                <li key={item.id} onClick={onClick}>
-                  <Link href={item.path}>
-                    {i18n.language=== currentLanguages.EN ? item.titleEN : item.title}
-                    </Link>
-                </li>
-              );
-            })}
-          </ul></>)}
+          {!isLoading && (
+            <>
+              <ul className={styles.navigation}>
+                {navigationData.slice(0, 2).map((item) => {
+                  return (
+                    <li key={item.id} onClick={onClick}>
+                      <Link href={item.path}>
+                        {i18n.language === currentLanguages.EN
+                          ? item.titleEN
+                          : item.title}
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
+              <ul className={styles.navigation}>
+                {navigationData.slice(2, 4).map((item) => {
+                  return (
+                    <li key={item.id} onClick={onClick}>
+                      <Link href={item.path}>
+                        {i18n.language === currentLanguages.EN
+                          ? item.titleEN
+                          : item.title}
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
+            </>
+          )}
           <div className={styles.btnsWrapper}>
             <CallBtn />
             <OrderBtn openModal={openModal} />

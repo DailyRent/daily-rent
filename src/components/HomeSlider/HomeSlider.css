@@ -1,4 +1,6 @@
 .HomeSliderSwiper {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
   background-color: white;
   padding: 16px 0px 32px;
@@ -6,9 +8,17 @@
 }
 
 .HomeSliderSwiper .swiper-slide {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
   margin-bottom: 30px;
 }
@@ -22,11 +32,12 @@
   width: 196px;
   height: 218px;
   position: relative;
-  /* overflow: hidden; */
 }
 
 .HomeSliderSwiper .div img {
+  -o-object-fit: cover;
   object-fit: cover;
+  -o-object-position: center;
   object-position: center;
 }
 
@@ -36,8 +47,14 @@
 
   width: 110px;
   height: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   background-color: #2d2d2d;
   color: white;
@@ -111,6 +128,7 @@
   .HomeSliderSwiper .slideDescr {
     width: 169px;
     height: 24px;
+    -ms-flex-negative: 0;
     flex-shrink: 0;
     font-size: 12px;
   }
