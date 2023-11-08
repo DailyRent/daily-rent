@@ -43,6 +43,7 @@
         "CardDetailsBtn": "Details",
         "FilterBtn": "Find",
         "FilterClear": "Clear",
+        "FilterQuantRooms":" rooms",
         "ObjectsBtn": "All objects",
         "OpenFilterBtn": "Filter",
         "CloseFilterBtn": "Close",
