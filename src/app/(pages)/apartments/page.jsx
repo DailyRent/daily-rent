@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styles from './page.module.scss';
 import { useTranslation } from 'react-i18next';
 import { GetData } from '@/fetch/clientFetch';
@@ -19,28 +19,7 @@ const Apartments = () => {
   const [numberRoomsArr, setNumberRoomsArr] = useState([]);
   const { t } = useTranslation();
 
-  const handleScroll = () => {
-    if (!showLoading && data?.length) {
-      if (
-        window.innerHeight + window.scrollY >= document.body.offsetHeight &&
-        loadedCount < data.length
-      ) {
-        setShowLoading(true);
-        setTimeout(() => {
-          setLoadedCount(loadedCount + 9);
-          setShowLoading(false);
-        }, 1000);
-      }
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-    // eslint-disable-next-line
-  }, [data, loadedCount]);
+  const containerRef = useRef();
 
   const filteredRoomsData = data?.filter((room) => {
     if (numberRoomsArr.length === 0) return true; //якщо фільтр пустий, виводимо всі квартири
@@ -102,6 +81,48 @@ const Apartments = () => {
     )
       return t('ApartmentsPage.TwoAndThreeRoom');
   };
+  const handleScroll = () => {
+    const container = containerRef.current;
+
+    if (!showLoading && filteredAmenitiesData?.length && container) {
+      const containerHeight = container.offsetHeight;
+      const scrollY = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const bottomOffset = containerHeight - scrollY - windowHeight;
+
+      if (bottomOffset < 100 && loadedCount < filteredAmenitiesData.length) {
+        setShowLoading(true);
+
+        setTimeout(() => {
+          setLoadedCount(loadedCount + 12);
+          setShowLoading(false);
+        }, 500);
+      }
+    }
+  };
+
+  // const handleScroll = () => {
+  //   if (!showLoading && data?.length) {
+  //     if (
+  //       window.innerHeight + window.scrollY >= document.body.offsetHeight &&
+  //       loadedCount < data.length
+  //     ) {
+  //       setShowLoading(true);
+  //       setTimeout(() => {
+  //         setLoadedCount(loadedCount + 12);
+  //         setShowLoading(false);
+  //       }, 1000);
+  //     }
+  //   }
+  // };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+    // eslint-disable-next-line
+  }, [filteredAmenitiesData, loadedCount]);
 
   return (
     <section className={styles.container}>
@@ -129,7 +150,7 @@ const Apartments = () => {
       {isLoading ? (
         <IsLoading />
       ) : (
-        <ul className={styles.containerOneRooms}>
+        <ul ref={containerRef} className={styles.containerOneRooms}>
           {filteredAmenitiesData?.length > 0 &&
             filteredAmenitiesData
               .slice(0, loadedCount)
@@ -154,34 +175,6 @@ const Apartments = () => {
           </p>
         </div>
       )}
-      {/* {isLoading ? (
-        <IsLoading />
-      ) : (
-        <ul className={styles.containerOneRooms}>
-          {filteredAmenitiesData?.length > 0 ? (
-            filteredAmenitiesData
-              .slice(0, loadedCount)
-              .map((item) => (
-                <ApartItem
-                  key={item._id}
-                  titleImg={item.titleImg}
-                  code={item.code}
-                  address={item.address}
-                  price={item.price}
-                  objNumber={item.objNumber}
-                  roomsQuantity={item.roomsQuantity}
-                  id={item._id}
-                />
-              ))
-          ) : (
-            <div className={styles.notFoundTextStyles}>
-              <p>
-                {notFoundText()} {t('ApartmentsPage.NotFound')}
-              </p>
-            </div>
-          )}
-        </ul>
-      )} */}
       {showLoading && (
         <div className={styles.loading}>
           <IsLoading />
