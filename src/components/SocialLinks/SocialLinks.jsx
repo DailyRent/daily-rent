@@ -10,7 +10,13 @@ const SocialLinks = ({ className }) => {
         return (
           <li key={item.id}>
             <a href={item.href}>
-              <Image src={item.img} width={24} height={24} alt={item.title} />
+              <Image
+                src={item.img}
+                width={24}
+                height={24}
+                alt={item.title}
+                title={item.title}
+              />
             </a>
           </li>
         );
