@@ -1,26 +1,45 @@
-@import '../../../styles/variables';
+@import "../../../styles/variables";
 
 .pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
 
   @media screen and (min-width: $tablet) {
+    -webkit-column-gap: 16px;
+    -moz-column-gap: 16px;
     column-gap: 16px;
   }
 }
 
 .pageItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
 .dotList {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
-  // column-gap: 16px;
+  -webkit-column-gap: 8px;
+  -moz-column-gap: 8px;
   column-gap: 8px;
   @media screen and (min-width: $tablet) {
+    -webkit-column-gap: 16px;
+    -moz-column-gap: 16px;
     column-gap: 16px;
   }
 }
@@ -33,9 +52,6 @@
   border: none;
   cursor: pointer;
   outline: none;
-  // display: flex;
-  // align-items: center;
-  // column-gap: 16px;
   @media screen and (min-width: $tablet) {
     min-width: 12px;
     height: 12px;
@@ -67,7 +83,11 @@
 }
 
 .pageLink {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   height: 15px;
   outline: none;
@@ -85,9 +105,8 @@
 
 .arrowLeft {
   margin-right: 44px;
-  // margin-right: 55px;
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     top: -3px;
     left: 0;
@@ -95,6 +114,7 @@
     border-width: 1px 0 0 1px;
     display: block;
     padding: 3px;
+    -ms-transform: rotate(-45deg);
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
   }
@@ -108,9 +128,8 @@
 
 .arrowRight {
   margin-left: 44px;
-  // margin-left: 55px;
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     top: -3px;
     right: 0;
@@ -118,6 +137,7 @@
     border-width: 1px 0 0 1px;
     display: block;
     padding: 3px;
+    -ms-transform: rotate(135deg);
     transform: rotate(135deg);
     -webkit-transform: rotate(135deg);
   }

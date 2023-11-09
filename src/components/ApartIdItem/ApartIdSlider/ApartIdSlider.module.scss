@@ -1,4 +1,4 @@
-@import '../../../styles/variables';
+@import "../../../styles/variables";
 
 .container {
   width: 328px;
@@ -29,6 +29,7 @@
 }
 
 .img {
+  -o-object-fit: cover;
   object-fit: cover;
 }
 
@@ -43,13 +44,23 @@
 }
 
 .imgsList {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-column-gap: 8px;
+  -moz-column-gap: 8px;
   column-gap: 8px;
   @media screen and (min-width: $tablet) {
+    -webkit-column-gap: 22px;
+    -moz-column-gap: 22px;
     column-gap: 22px;
   }
   @media screen and (min-width: 1280px) {
+    -webkit-column-gap: 27px;
+    -moz-column-gap: 27px;
     column-gap: 27px;
   }
 }

@@ -1,251 +1,303 @@
 @import "../../styles/_variables.scss";
 
 .container {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 360px;
-    height: 640px;
-    text-align: center;
-    padding: 24px;
-    background-color: #fff;
-    @media screen and (min-width: $desktop) {
-        width: 1081px;
-        height: 635px;
-    }
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 360px;
+  height: 640px;
+  text-align: center;
+  padding: 24px;
+  background-color: #fff;
+  @media screen and (min-width: $desktop) {
+    width: 1081px;
+    height: 635px;
+  }
 }
 
 .closeBtn {
-    position: absolute;
-    top: 32px;
-    right: 32px;
-    border: none;
-    cursor: pointer;
-    @media screen and (min-width: $desktop) {
-        top: 100px;
-        right: 100px;
-    }
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  border: none;
+  cursor: pointer;
+  @media screen and (min-width: $desktop) {
+    top: 100px;
+    right: 100px;
+  }
 }
 
 .iconBtnClose {
-    position: absolute;
-    bottom: 2px;
-    width: 16px;
-    height: 16px;
-    fill: #c7c7c7;
-    @media screen and (min-width: $desktop) {
-        left: 10px;
-        width: 32px;
-        height: 32px;
-    }
+  position: absolute;
+  bottom: 2px;
+  width: 16px;
+  height: 16px;
+  fill: #c7c7c7;
+  @media screen and (min-width: $desktop) {
+    left: 10px;
+    width: 32px;
+    height: 32px;
+  }
 }
 
 .title {
-    font-family: "Crimson Text";
-    font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 32px;
-    margin-top: 15px;
-    @media screen and (min-width: $desktop) {
-        margin: 55px 0 0 0;
-    }
+  font-family: "Crimson Text";
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 32px;
+  margin-top: 15px;
+  @media screen and (min-width: $desktop) {
+    margin: 55px 0 0 0;
+  }
 }
 
 .form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 235px;
-    @media screen and (min-width: $desktop) {
-        width: 921px;
-        flex-direction: row;
-        flex-wrap: wrap;
-        // justify-content: space-around;
-    }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 235px;
+  @media screen and (min-width: $desktop) {
+    width: 921px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
 }
 
 .innerWrap {
-    width: 235px;
-    @media screen and (min-width: $desktop) {
-        display: flex;
-        width: 920px;
-        justify-content: space-between;
-        position: relative;
-    }
+  width: 235px;
+  @media screen and (min-width: $desktop) {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 920px;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    position: relative;
+  }
 }
 
 .label {
-    position: relative;
+  position: relative;
 }
 
 .input {
-    position: relative;
-    width: 235px;
-    height: 35px;
-    background-color: transparent;
-    margin-bottom: 36px;
-    outline: none;
-    border: none;
-    cursor: pointer;
-    border-bottom: 1px solid rgba(199, 199, 199, 1);
-    padding-left: 32px;
-    @media screen and (min-width: $desktop) {
-        margin: 77px 10px 0;
-        width: 440px;
-    }
+  position: relative;
+  width: 235px;
+  height: 35px;
+  background-color: transparent;
+  margin-bottom: 36px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(199, 199, 199, 1);
+  padding-left: 32px;
+  @media screen and (min-width: $desktop) {
+    margin: 77px 10px 0;
+    width: 440px;
+  }
 }
 
 .input[type="date"] {
-    color: gray;
+  color: gray;
+}
+
+.input::-webkit-input-placeholder {
+  color: #c7c7c7;
+}
+
+.input::-moz-placeholder {
+  color: #c7c7c7;
+}
+
+.input:-ms-input-placeholder {
+  color: #c7c7c7;
+}
+
+.input::-ms-input-placeholder {
+  color: #c7c7c7;
 }
 
 .input::placeholder {
-    color: #c7c7c7;
+  color: #c7c7c7;
 }
 
 .inputError {
-    border-bottom: 1px solid rgba(255, 134, 134, 1);
+  border-bottom: 1px solid rgba(255, 134, 134, 1);
 }
 
 .wrapError {
-    position: relative;
-    width: 100%;
-    @media screen and (min-width: $desktop) {
-        width: 440px;
-    }
+  position: relative;
+  width: 100%;
+  @media screen and (min-width: $desktop) {
+    width: 440px;
+  }
 }
 
 .error {
-    position: absolute;
-    bottom: 70px;
-    left: 80px;
-    color: rgba(255, 134, 134, 1);
-    font-size: 14px;
-    @media screen and (min-width: $desktop) {
-        bottom: 40px;
-        left: 200px;
-    }
+  position: absolute;
+  bottom: 70px;
+  left: 80px;
+  color: rgba(255, 134, 134, 1);
+  font-size: 14px;
+  @media screen and (min-width: $desktop) {
+    bottom: 40px;
+    left: 200px;
+  }
 }
 
 .icon {
-    position: absolute;
-    // bottom: 2px;
-    top: 10px;
-    width: 16px;
-    height: 16px;
-    @media screen and (min-width: $desktop) {
-        left: 10px;
-        top: 85px;
-    }
+  position: absolute;
+  top: 10px;
+  width: 16px;
+  height: 16px;
+  @media screen and (min-width: $desktop) {
+    left: 10px;
+    top: 85px;
+  }
 }
 
 .iconPicker {
-    bottom: 45px;
-    @media screen and (min-width: $desktop) {
-        bottom: 10px;
-    }
+  bottom: 45px;
+  @media screen and (min-width: $desktop) {
+    bottom: 10px;
+  }
 }
 
 .iconPickerRight {
-    bottom: 45px;
-    left: 210px;
-    width: 16px;
-    height: 16px;
-    @media screen and (min-width: $desktop) {
-        bottom: 10px;
-        left: 425px;
-    }
+  bottom: 45px;
+  left: 210px;
+  width: 16px;
+  height: 16px;
+  @media screen and (min-width: $desktop) {
+    bottom: 10px;
+    left: 425px;
+  }
 }
 
 .iconSvg:hover {
-    scale: 1.2;
-    fill: #ff8686;
+  scale: 1.2;
+  fill: #ff8686;
 }
 
 .explainText {
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 1.3;
-    letter-spacing: 0.5px;
-    color: rgba(199, 199, 199, 1);
-    @media screen and (min-width: $desktop) {
-        position: absolute;
-        bottom: -60px;
-        left: 10px;
-    }
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: 0.5px;
+  color: rgba(199, 199, 199, 1);
+  @media screen and (min-width: $desktop) {
+    position: absolute;
+    bottom: -60px;
+    left: 10px;
+  }
 }
 
 .button {
-    display: flex;
-    width: 183px;
-    padding: 14px 0px 14px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 183px;
+  padding: 14px 0px 14px;
 
-    justify-content: center;
-    align-items: center;
-    gap: 24px;
+  -webkit-box-pack: center;
 
-    border-radius: 24px;
-    border: 1px solid #c7c7c7;
-    background-color: transparent;
+  -ms-flex-pack: center;
 
-    color: #c7c7c7;
-    font-family: inherit;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    margin-top: 48px;
-    @media screen and (min-width: $desktop) {
-        margin: 100px auto;
-    }
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 24px;
+
+  border-radius: 24px;
+  border: 1px solid #c7c7c7;
+  background-color: transparent;
+
+  color: #c7c7c7;
+  font-family: inherit;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 48px;
+  @media screen and (min-width: $desktop) {
+    margin: 100px auto;
+  }
 }
 
 .activeBtn {
-    border: 1px solid #000;
-    color: #000;
-    cursor: pointer;
+  border: 1px solid #000;
+  color: #000;
+  cursor: pointer;
 }
 
 // styles for success content
 
 .successContainer {
-    margin-top: 80px;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    @media screen and (min-width: $desktop) {
-        margin-top: 140px;
-        padding-bottom: 40px;
-    }
+  margin-top: 80px;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  @media screen and (min-width: $desktop) {
+    margin-top: 140px;
+    padding-bottom: 40px;
+  }
 }
 
 .successWrap {
-    @media screen and (min-width: $desktop) {
-        margin-bottom: 80px;
-    }
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 80px;
+  }
 }
 
 .successTextTop {
-    font-family: sans-serif;
-    font-size: 24px;
-    line-height: 1.3;
-    font-weight: 400;
-    margin-bottom: 40px;
-    @media screen and (min-width: $desktop) {
-        font-size: 32px;
-        margin-bottom: 10px;
-    }
+  font-family: sans-serif;
+  font-size: 24px;
+  line-height: 1.3;
+  font-weight: 400;
+  margin-bottom: 40px;
+  @media screen and (min-width: $desktop) {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
 }
 
 .successText {
-    font-family: sans-serif;
-    font-size: 24px;
-    line-height: 1.3;
-    font-weight: 400;
-    @media screen and (min-width: $desktop) {
-        font-size: 32px;
-    }
+  font-family: sans-serif;
+  font-size: 24px;
+  line-height: 1.3;
+  font-weight: 400;
+  @media screen and (min-width: $desktop) {
+    font-size: 32px;
+  }
 }
