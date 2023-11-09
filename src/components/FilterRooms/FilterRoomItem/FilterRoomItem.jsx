@@ -15,9 +15,9 @@ const FilterRoomItem = ({
   setNumberRoomsArr,
 }) => {
   const [isChecked, setIsChecked] = useState(false);
-  const [isLoading, setIsLoading]=useState(true)
-  
-  const {t}=useTranslation();
+  const [isLoading, setIsLoading] = useState(true);
+
+  const { t } = useTranslation();
 
   const isNumberRoomsChecked = () => {
     id === activeIndex ? setIsChecked(!isChecked) : null;
@@ -32,7 +32,7 @@ const FilterRoomItem = ({
       );
     }
   };
-  useEffect(()=>setIsLoading(false),[])
+  useEffect(() => setIsLoading(false), []);
   useEffect(() => {
     isNumberRoomsChecked();
   }, [activeIndex]);
@@ -43,7 +43,12 @@ const FilterRoomItem = ({
 
   return (
     <li className={styles.filterRoom}>
-      {!isLoading && (<p className={styles.filterRoomText}>{title}{t("Buttons.FilterQuantRooms")}</p>)}
+      {!isLoading && (
+        <p className={styles.filterRoomText}>
+          {title}
+          {t("Buttons.FilterQuantRooms")}
+        </p>
+      )}
       <input
         id={id}
         type="checkbox"

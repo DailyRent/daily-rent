@@ -5,7 +5,12 @@ import styles from "./BurgerBtn.module.scss";
 
 const BurgerBtn = ({ onClick, burgerMenu }) => {
   return (
-    <button className={styles.burgerBtn} onClick={onClick}>
+    <button
+      className={styles.burgerBtn}
+      onClick={onClick}
+      aria-label="Button burger menu"
+      title="Burger Menu"
+    >
       {burgerMenu ? (
         <svg className={styles.iconClose}>
           <use href="/sprite.svg#icon-close" />

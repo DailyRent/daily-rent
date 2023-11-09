@@ -1,54 +1,61 @@
-'use client';
+"use client";
 
-import React from 'react';
-import styles from './page.module.scss';
-import { useTranslation } from 'react-i18next';
-import { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
-import Link from 'next/link';
-import Image from 'next/image';
-import SocialLinks from '@/components/SocialLinks/SocialLinks';
+import React from "react";
+import styles from "./page.module.scss";
+import { useTranslation } from "react-i18next";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
+import Image from "next/image";
+import SocialLinks from "@/components/SocialLinks/SocialLinks";
 
 const ContactsPage = () => {
-  const {t}= useTranslation();
+  const { t } = useTranslation();
 
-  const [isLoading, setIsLoading]= useState(true)
+  const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(()=>{
-    setIsLoading(false)
-  },[])
+  useEffect(() => {
+    setIsLoading(false);
+  }, []);
   return (
     <section className={styles.container}>
       <div className={styles.toBackContainer}>
-        {!isLoading && (<span className="textLink">
-          <Link href="/" prefetch={false} className="textLinkAnimation">
-            {t("Navigation.MainPage")}
-          </Link>
-          / <span className={styles.active}>{t("Navigation.Contacts")}</span>
-        </span>)}
+        {!isLoading && (
+          <span className="textLink">
+            <Link href="/" prefetch={false} className="textLinkAnimation">
+              {t("Navigation.MainPage")}
+            </Link>
+            / <span className={styles.active}>{t("Navigation.Contacts")}</span>
+          </span>
+        )}
       </div>
 
       <div className={styles.contactContainer}>
-        {!isLoading && (<><h1 className={styles.title}>{t("ContactsPage.Title")}</h1>
-        <p className={styles.text}>
-          {t("ContactsPage.Text")}
-        </p></>)}
+        {!isLoading && (
+          <>
+            <h1 className={styles.title}>{t("ContactsPage.Title")}</h1>
+            <p className={styles.text}>{t("ContactsPage.Text")}</p>
+          </>
+        )}
         <div className={styles.content}>
           <div className={styles.mapImgContainer}>
             <Image
-              src="/Basemap image.jpg"
+              src="/Basemap image.webp"
               alt="map"
               fill={true}
               className={styles.mapImg}
+              title="Image google map"
             />
           </div>
           <address className={styles.addressContainer}>
-            {!isLoading && (<h3 className={styles.city}>
-              <svg width="36" height="36" className={styles.citySvg}>
-                <use href="sprite.svg#icon-flag-ukraine" />
-              </svg>
-              {t("ContactsPage.CountryAndSity")}
-            </h3>)}
+            {!isLoading && (
+              <h2 className={styles.city}>
+                <svg width="36" height="36" className={styles.citySvg}>
+                  <use href="sprite.svg#icon-flag-ukraine" />
+                </svg>
+                {t("ContactsPage.CountryAndSity")}
+              </h2>
+            )}
             <div className={styles.address}>
               {/* <a href="#" className={styles.address}> */}
               <div className={styles.imgContainer}>
@@ -57,9 +64,10 @@ const ContactsPage = () => {
                   alt="google maps"
                   fill={true}
                   className={styles.img}
+                  title="Icon google map"
                 />
               </div>
-              {!isLoading && (<p>{t("ContactsPage.Adress")}</p>)}
+              {!isLoading && <p>{t("ContactsPage.Adress")}</p>}
             </div>
             {/* </a> */}
             <div className={styles.telContainer}>
