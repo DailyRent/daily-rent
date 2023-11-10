@@ -16,6 +16,25 @@ body {
   min-height: 100vh;
   /* overflow-x: hidden; Викликає скрол при відкритій модалці! */
   font-family: "Inter";
+  --sb-track-color: #f3f3f3;
+  --sb-thumb-color: #242424;
+  --sb-size: 8px;
+
+  scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+}
+
+::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 8px;
 }
 
 body,
