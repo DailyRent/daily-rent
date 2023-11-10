@@ -1,7 +1,11 @@
 @import "../../../styles/_variables.scss";
 
 .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
   align-items: flex-start;
   padding: 100px 20px 24px 20px;
   @media screen and (min-width: $tablet) {
@@ -16,9 +20,17 @@
 }
 
 .toBackContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
   justify-content: flex-start;
+  -webkit-column-gap: 13px;
+  -moz-column-gap: 13px;
   column-gap: 13px;
   margin-bottom: 22.5px;
   @media screen and (min-width: $tablet) {
@@ -37,12 +49,15 @@
     left: 0;
     width: 100%;
     height: 1px;
+    -webkit-animation: textLink 0.8s ease forwards;
     animation: textLink 0.8s ease forwards;
     background-color: #6d6d6d;
   }
 }
 
 .toBackText {
+  width: -webkit-max-content;
+  width: -moz-max-content;
   width: max-content;
   color: #636363;
   font-family: Crimson Text;
@@ -59,18 +74,76 @@
   line-height: normal;
   text-transform: uppercase;
   @media (min-width: $tablet) {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-bottom: -24px;
+    margin-left: -32px;
+
+    @media (min-width: 1366px) {
+      margin-left: -30px;
+      margin-bottom: -40px;
+    }
   }
 }
-.rulesList {
-  color: #242424;
-  font-family: Crimson Text;
-  font-size: 24px;
-  font-style: normal;
-  line-height: normal;
+
+.ruleItem {
+  width: 328px;
+  height: 213px;
+  padding: 36.5px 13px 36.5px 20px;
+  background-color: #bbb;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+
+  @media (min-width: $tablet) {
+    -ms-flex-preferred-size: calc(100% / 2 - 32px);
+    flex-basis: calc(100% / 2 - 32px);
+    margin-left: 32px;
+  }
+
+  @media (min-width: 1366px) {
+    -ms-flex-preferred-size: calc(100% / 3 - 30px);
+    flex-basis: calc(100% / 3 - 30px);
+    margin-left: 30px;
+  }
 }
 
-.decimalListTitle {
-  color: #242424;
+.ruleItem + .ruleItem {
+  margin-top: 16px;
+
+  @media (min-width: $tablet) {
+    margin-top: 0px;
+    margin-left: 32px;
+    margin-bottom: 24px;
+  }
+
+  @media (min-width: 1366px) {
+    margin-top: 0px;
+    margin-left: 30px;
+    margin-bottom: 40px;
+  }
+}
+
+.circleBlock {
+  background: #d9d9d9;
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin-right: 40px;
+}
+
+.ruleItemName {
   font-family: Crimson Text;
   font-size: 20px;
   font-style: normal;

@@ -1,153 +1,199 @@
 @import "../../../styles/_variables.scss";
 
 .container {
+  display: none;
 
-    display: none;
+  @media screen and (min-width: $tablet) {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 50px;
+    padding: 99px 20px 20px;
+    width: 100%;
+  }
 
-    @media screen and (min-width: $tablet) {
-        display: flex;
-        gap: 50px;
-        padding: 99px 20px 20px;
-        width: 100%;
-    }
-
-    @media screen and (min-width: $desktop) {
-        display: flex;
-        gap: 100px;
-        padding: 149px 40px 40px;
-        width: 100%;
-    }
+  @media screen and (min-width: $desktop) {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 100px;
+    padding: 149px 40px 40px;
+    width: 100%;
+  }
 }
 
 .apartments {
-    flex: 1;
-    width: 50vw;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  width: 50vw;
 }
 
 .apartment {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 5px;
-    margin: 20px 0px;
-    padding: 10px;
-    background-color: #8c878fd6;
-    border-radius: 5px;
-    border: 1px solid navy;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  gap: 5px;
+  margin: 20px 0px;
+  padding: 10px;
+  background-color: #8c878fd6;
+  border-radius: 5px;
+  border: 1px solid navy;
 }
 
 .imgContainer {
-    width: 300px;
-    height: 150px;
-    position: relative;
+  width: 300px;
+  height: 150px;
+  position: relative;
 }
 
 .img {
-    object-fit: cover;
+  -o-object-fit: cover;
+  object-fit: cover;
 }
 
 .imgsWrapper {
-    gap: 10px;
-    display: flex;
-    flex-wrap: wrap;
+  gap: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .imgsCont {
-    width: 200px;
-    height: 100px;
-    position: relative;
+  width: 200px;
+  height: 100px;
+  position: relative;
 }
 
 .address {
-    display: block;
-    width: 40vw;
-    overflow: hidden;
-    white-space: nowrap;
+  display: block;
+  width: 40vw;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .location {
-    display: block;
-    width: 40vw;
-    overflow: hidden;
-    white-space: nowrap;
+  display: block;
+  width: 40vw;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .platformLink {
-    display: block;
-    width: 40vw;
-    overflow: hidden;
-    white-space: nowrap;
+  display: block;
+  width: 40vw;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .description {
-    width: 40vw;
-    overflow: hidden;
+  width: 40vw;
+  overflow: hidden;
 }
 
 .btnsWrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 20px;
 }
 
 .delete {
-    cursor: pointer;
-    color: red;
+  cursor: pointer;
+  color: red;
 }
 
 .new {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: min-content;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 10px;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
 }
 
 .input,
 .textarea {
-    padding: 10px;
-    background-color: transparent;
-    border: 2px solid #bbb;
-    border-radius: 3px;
-    color: #bbb;
-    font-size: 20px;
-    font-weight: bold;
+  padding: 10px;
+  background-color: transparent;
+  border: 2px solid #bbb;
+  border-radius: 3px;
+  color: #bbb;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 fieldset.top {
-    padding: 5px 10px;
-    display: flex;
-    flex-direction: column;
+  padding: 5px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .top input {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 fieldset.roomsQuantity {
-    padding: 5px 10px;
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
+  padding: 5px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  gap: 10px;
 }
 
 fieldset.amenities {
-    padding: 5px 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+  padding: 5px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .amenities input {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 .sendBtn {
-    padding: 5px;
-    border: none;
-    background-color: #53c28b;
-    color: white;
-    cursor: pointer;
-    border-radius: 3px;
+  padding: 5px;
+  border: none;
+  background-color: #53c28b;
+  color: white;
+  cursor: pointer;
+  border-radius: 3px;
 }
