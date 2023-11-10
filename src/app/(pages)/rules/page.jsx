@@ -4,7 +4,6 @@ import styles from "./page.module.scss";
 import { useTranslation } from "react-i18next";
 import { useState, useEffect } from "react";
 // import ButtonToBack from "@/components/share/ButtonToBack/ButtonToBack";
-// import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 const RulesPage = () => {
