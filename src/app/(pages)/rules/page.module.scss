@@ -8,15 +8,12 @@
   -ms-flex-align: start;
   align-items: flex-start;
   padding: 100px 20px 24px 20px;
-
   @media screen and (min-width: $tablet) {
     padding: 118px 36px 40px 36px;
   }
-
   @media screen and (min-width: 1366px) {
     padding: 200px 86px 32px 86px;
   }
-
   @media screen and (min-width: 1440px) {
     max-width: 1920px;
   }
@@ -35,19 +32,15 @@
   -webkit-column-gap: 13px;
   -moz-column-gap: 13px;
   column-gap: 13px;
-
   margin-bottom: 22.5px;
-
   @media screen and (min-width: $tablet) {
   }
-
   @media screen and (min-width: 1366px) {
   }
 }
 
 .active {
   position: relative;
-
   &::after {
     content: "";
     display: block;
@@ -72,19 +65,14 @@
   font-weight: 400;
 }
 
-.ruleListThumb {
-  margin: 0 auto;
-
-  @media screen and (min-width: $tablet) {
-  }
-
-  @media screen and (min-width: 1366px) {
-  }
-}
-
-.ruleList {
-  margin: 0 auto;
-
+.rulesListItem {
+  color: #242424;
+  font-family: Crimson Text;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
   @media (min-width: $tablet) {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -159,23 +147,23 @@
   font-family: Crimson Text;
   font-size: 20px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 600;
   line-height: normal;
-
-  @media (min-width: 1366px) {
-    font-size: 24px;
-  }
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
-
-.ruleItemDescription {
+.decimalList {
+  list-style: decimal;
+}
+.decimalList > li {
+  margin-left: 25px;
+  color: #242424;
   font-family: Crimson Text;
-  font-size: 14px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  margin-top: 24px;
-
-  @media (min-width: 1366px) {
-    font-size: 16px;
+  @media (min-width: $tablet) {
+    font-size: 20px;
   }
 }
