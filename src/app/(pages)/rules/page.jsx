@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import { useState, useEffect } from "react";
 // import ButtonToBack from "@/components/share/ButtonToBack/ButtonToBack";
 import Link from "next/link";
+import seoStyles from "@/app/seoStyles.module.css";
 
 const RulesPage = () => {
   // const router = useRouter();
@@ -17,7 +18,10 @@ const RulesPage = () => {
   }, []);
   return (
     <section className={styles.container}>
-      <h1 className="visuallyHidden">Rules Page</h1>
+      <h1 className={seoStyles.titleHidden}>
+        Оренда квартири суми. Аренда квартиры Сумы. Суми квартири.
+      </h1>
+      {/* <h1 className="visuallyHidden">Rules Page</h1> */}
       <div className={styles.toBackContainer}>
         {!isLoading && (
           <span className="textLink">
