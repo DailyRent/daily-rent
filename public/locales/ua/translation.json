@@ -16,9 +16,9 @@
         "OneRoom": "Однокімнатні",
         "TwoRoom": "Двокімнатні",
         "ThreeRoom": "Трикімнатні",
-        "OneAndTwoRoom": "One-room and two-room",
-        "OneAndThreeRoom": "One-room and three-room",
-        "TwoAndThreeRoom": "Two-room and three-room",
+        "OneAndTwoRoom": "Однокімнатні та двокімнатні",
+        "OneAndThreeRoom": "Однокімнатні та трикімнатні",
+        "TwoAndThreeRoom": "Двокімнатні та трикімнатні",
         "NotFound": "квартири не знайдено",
         "TextOfDescAdress": " кімнатна за адресою",
         "TextOfDescOptions": "Що буде в апартаментах"
