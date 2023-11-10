@@ -79,12 +79,12 @@
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    margin-bottom: -24px;
-    margin-left: -32px;
+    margin-bottom: 24px;
+    margin-left: 32px;
 
     @media (min-width: 1366px) {
-      margin-left: -30px;
-      margin-bottom: -40px;
+      margin-left: 30px;
+      margin-bottom: 40px;
     }
   }
 }
@@ -152,8 +152,14 @@
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
+.decimalListTitle {
+  margin-bottom: 20px;
+}
+
 .decimalList {
   list-style: decimal;
+  margin-bottom: 20px;
 }
 .decimalList > li {
   margin-left: 25px;
