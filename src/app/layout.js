@@ -2,10 +2,13 @@ import "./globals.css";
 import TranslatorProvider from "@/translator/i18Provider";
 // import { Inter } from "next/font/google";
 import Header from "@/components/Header/Header";
-import Footer from "@/components/Footer/Footer";
+// import Footer from "@/components/Footer/Footer";
 import AuthProvider from "@/components/AuthProvider/AuthProvider";
 import { SiteProvider } from "@/context/SiteContext";
 // const inter = Inter({ subsets: ["latin"] });
+import dynamic from "next/dynamic";
+
+const DynamicFooter = dynamic(() => import("@/components/Footer/Footer"));
 
 export const metadata = {
   title: "Daily Rent",
@@ -22,11 +25,12 @@ export default function RootLayout({ children }) {
             <TranslatorProvider>
               <Header />
               <main>{children}</main>
-              <Footer />
+              {/* <Footer /> */}
+              <DynamicFooter />
             </TranslatorProvider>
           </AuthProvider>
         </SiteProvider>
       </body>
-    </html >
+    </html>
   );
 }
