@@ -5,9 +5,9 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  -webkit-transition-duration: 250ms;
-  -o-transition-duration: 250ms;
-  transition-duration: 250ms;
+  /* -webkit-transition-duration: 250ms;
+  -o-transition-duration: 250ms; */
+  /* transition-duration: 250ms; */
 }
 
 html,
