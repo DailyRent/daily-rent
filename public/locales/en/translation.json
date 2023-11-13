@@ -29,6 +29,12 @@
         "CountryAndSity": "Ukraine, Sumy",
         "Adress": "Stepana Bandery street, 3"
     },
+    "RulesPage":{
+        "MainTitle":"rules of residence:",
+        "TitleSection1":"Rules of behavior in the apartment:",
+        "TitleSection2":"This is strictly prohibited:",
+        "TitleSection3":"The administration has the right to immediately evict the tenant without refunding the rent, in case of:"
+    },
     "Navigation": {
         "MainPage": "Main",
         "Apartments": "Apartments",
