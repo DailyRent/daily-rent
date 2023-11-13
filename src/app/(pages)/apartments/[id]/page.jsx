@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import React from 'react';
-import useSWR from 'swr';
-import ApartIdItem from '@/components/ApartIdItem/ApartIdItem';
+import React from "react";
+import useSWR from "swr";
+import ApartIdItem from "@/components/ApartIdItem/ApartIdItem";
 // import styles from './page.module.scss';
 
 const ApartId = ({ params }) => {

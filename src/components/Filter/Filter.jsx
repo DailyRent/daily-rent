@@ -57,21 +57,20 @@ const Filter = ({ amenitiesArr, setAmenitiesArr }) => {
         </ul>
       </div>
       <div className={styles.filterSearchResetContainer}>
-        <button
+      {!isLoad && (<> <button
           type="button"
           className={styles.filterButtonSearch}
           onClick={() => handleResetFilter()}
         >
-          Очистити
+          {t("Buttons.FilterClear")}
         </button>
-        {!isLoad && (
-          <button
-            type="button"
-            className={styles.filterButtonSearch}
-            onClick={() => setFilterShown(!filterShown)}
-          >
-            {t('Buttons.CloseFilterBtn')}
-          </button>
+        <button
+          type="button"
+          className={styles.filterButtonSearch}
+          onClick={() => setFilterShown(!filterShown)}
+        >
+          {t('Buttons.CloseFilterBtn')}
+        </button></>
         )}
       </div>
     </div>

@@ -1,17 +1,36 @@
 @import "../../styles/_variables.scss";
 
 .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   gap: 36px;
   width: 100%;
   height: 370px;
   // height: 40vh;
   padding-top: 80px;
+  background-image: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(rgba(0, 0, 0, 0.6)),
+      to(rgba(0, 0, 0, 0.6))
+    ),
+    url("/heroKitchen.webp");
+  background-image: -o-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("/heroKitchen.webp");
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url("/heroKitchen.jpeg");
+    url("/heroKitchen.webp");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -54,6 +73,8 @@
   font-style: normal;
   font-weight: 200;
   line-height: normal;
+  -ms-flex-item-align: stretch;
+  -ms-grid-row-align: stretch;
   align-self: stretch;
   color: $lightFontColor;
 

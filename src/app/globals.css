@@ -1,10 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;700&family=Inter:wght@400;700&family=Jura:wght@500&display=swap");
 
 * {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  transition-duration: 250ms;
+  /* -webkit-transition-duration: 250ms;
+  -o-transition-duration: 250ms; */
+  /* transition-duration: 250ms; */
 }
 
 html,
@@ -13,16 +16,44 @@ body {
   min-height: 100vh;
   /* overflow-x: hidden; Викликає скрол при відкритій модалці! */
   font-family: "Inter";
+  --sb-track-color: #f3f3f3;
+  --sb-thumb-color: #242424;
+  --sb-size: 8px;
+
+  scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+}
+
+::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 8px;
 }
 
 body,
 main,
 section {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 main {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
   flex: 1;
 }
 
@@ -52,6 +83,7 @@ ol {
   border: 0;
   padding: 0;
   clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
   clip-path: inset(50%);
   margin: -1px;
 }
@@ -61,8 +93,14 @@ ol {
   font-family: "Crimson Text";
   font-size: 10px;
   font-weight: 400;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-column-gap: 5px;
+  -moz-column-gap: 5px;
   column-gap: 5px;
 }
 @media screen and (min-width: 768px) {
@@ -109,6 +147,7 @@ ol {
   left: 0;
   width: 100%;
   height: 1px;
+  -webkit-animation: textLink 0.8s ease forwards;
   animation: textLink 0.8s ease forwards;
   background-color: #6d6d6d;
 }

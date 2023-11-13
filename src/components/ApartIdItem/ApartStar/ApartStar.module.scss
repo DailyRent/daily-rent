@@ -1,15 +1,27 @@
-@import '../../../styles/variables';
+@import "../../../styles/variables";
 
 .starContainer {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-column-gap: 21px;
+  -moz-column-gap: 21px;
   column-gap: 21px;
 }
 
 .starList {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   row-gap: 21px;
   color: #6d6d6d;
@@ -29,19 +41,24 @@
 }
 
 .starText {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   cursor: pointer;
   outline: none;
   &:hover .starItem {
     position: relative;
     &::after {
-      content: '';
+      content: "";
       display: block;
       position: absolute;
       bottom: 0px;
       left: 0;
       height: 1px;
+      -webkit-animation: text 0.8s ease forwards;
       animation: text 0.8s ease forwards;
       background-color: #6d6d6d;
     }

@@ -1,15 +1,16 @@
-'use client';
+"use client";
 
-import React, { useEffect, useState } from 'react';
-import styles from './page.module.scss';
-import { useTranslation } from 'react-i18next';
-import { GetData } from '@/fetch/clientFetch';
-import ApartItem from '@/components/ApartItem/ApartItem';
-import IsLoading from '@/components/share/IsLoading/IsLoading';
-import ButtonFilter from '@/components/share/ButtonFilter/ButtonFilter';
-import Link from 'next/link';
-import FilterRooms from '@/components/FilterRooms/FilterRooms';
-import Filter from '@/components/Filter/Filter';
+import React, { useEffect, useRef, useState } from "react";
+import styles from "./page.module.scss";
+import { useTranslation } from "react-i18next";
+import { GetData } from "@/fetch/clientFetch";
+import ApartItem from "@/components/ApartItem/ApartItem";
+import IsLoading from "@/components/share/IsLoading/IsLoading";
+import ButtonFilter from "@/components/share/ButtonFilter/ButtonFilter";
+import Link from "next/link";
+import FilterRooms from "@/components/FilterRooms/FilterRooms";
+import Filter from "@/components/Filter/Filter";
+import seoStyles from "@/app/seoStyles.module.css";
 
 const Apartments = () => {
   const { data, error, isLoading } = GetData();
@@ -19,28 +20,7 @@ const Apartments = () => {
   const [numberRoomsArr, setNumberRoomsArr] = useState([]);
   const { t } = useTranslation();
 
-  const handleScroll = () => {
-    if (!showLoading && data?.length) {
-      if (
-        window.innerHeight + window.scrollY >= document.body.offsetHeight &&
-        loadedCount < data.length
-      ) {
-        setShowLoading(true);
-        setTimeout(() => {
-          setLoadedCount(loadedCount + 9);
-          setShowLoading(false);
-        }, 1000);
-      }
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-    // eslint-disable-next-line
-  }, [data, loadedCount]);
+  const containerRef = useRef();
 
   const filteredRoomsData = data?.filter((room) => {
     if (numberRoomsArr.length === 0) return true; //якщо фільтр пустий, виводимо всі квартири
@@ -63,58 +43,103 @@ const Apartments = () => {
 
   const notFoundText = () => {
     if (
-      numberRoomsArr.includes('1') &&
-      !numberRoomsArr.includes('2') &&
-      !numberRoomsArr.includes('3')
+      numberRoomsArr.includes("1") &&
+      !numberRoomsArr.includes("2") &&
+      !numberRoomsArr.includes("3")
     )
-      return t('ApartmentsPage.OneRoom');
+      return t("ApartmentsPage.OneRoom");
 
     if (
-      !numberRoomsArr.includes('1') &&
-      numberRoomsArr.includes('2') &&
-      !numberRoomsArr.includes('3')
+      !numberRoomsArr.includes("1") &&
+      numberRoomsArr.includes("2") &&
+      !numberRoomsArr.includes("3")
     )
-      return t('ApartmentsPage.TwoRoom');
+      return t("ApartmentsPage.TwoRoom");
 
     if (
-      !numberRoomsArr.includes('1') &&
-      !numberRoomsArr.includes('2') &&
-      numberRoomsArr.includes('3')
+      !numberRoomsArr.includes("1") &&
+      !numberRoomsArr.includes("2") &&
+      numberRoomsArr.includes("3")
     )
-      return t('ApartmentsPage.ThreeRoom');
+      return t("ApartmentsPage.ThreeRoom");
     if (
-      numberRoomsArr.includes('1') &&
-      numberRoomsArr.includes('2') &&
-      !numberRoomsArr.includes('3')
+      numberRoomsArr.includes("1") &&
+      numberRoomsArr.includes("2") &&
+      !numberRoomsArr.includes("3")
     )
-      return t('ApartmentsPage.OneAndTwoRoom');
+      return t("ApartmentsPage.OneAndTwoRoom");
     if (
-      numberRoomsArr.includes('1') &&
-      !numberRoomsArr.includes('2') &&
-      numberRoomsArr.includes('3')
+      numberRoomsArr.includes("1") &&
+      !numberRoomsArr.includes("2") &&
+      numberRoomsArr.includes("3")
     )
-      return t('ApartmentsPage.OneAndThreeRoom');
+      return t("ApartmentsPage.OneAndThreeRoom");
 
     if (
-      !numberRoomsArr.includes('1') &&
-      numberRoomsArr.includes('2') &&
-      numberRoomsArr.includes('3')
+      !numberRoomsArr.includes("1") &&
+      numberRoomsArr.includes("2") &&
+      numberRoomsArr.includes("3")
     )
-      return t('ApartmentsPage.TwoAndThreeRoom');
+      return t("ApartmentsPage.TwoAndThreeRoom");
   };
+  const handleScroll = () => {
+    const container = containerRef.current;
+
+    if (!showLoading && filteredAmenitiesData?.length && container) {
+      const containerHeight = container.offsetHeight;
+      const scrollY = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const bottomOffset = containerHeight - scrollY - windowHeight;
+
+      if (bottomOffset < 100 && loadedCount < filteredAmenitiesData.length) {
+        setShowLoading(true);
+
+        setTimeout(() => {
+          setLoadedCount(loadedCount + 12);
+          setShowLoading(false);
+        }, 500);
+      }
+    }
+  };
+
+  // const handleScroll = () => {
+  //   if (!showLoading && data?.length) {
+  //     if (
+  //       window.innerHeight + window.scrollY >= document.body.offsetHeight &&
+  //       loadedCount < data.length
+  //     ) {
+  //       setShowLoading(true);
+  //       setTimeout(() => {
+  //         setLoadedCount(loadedCount + 12);
+  //         setShowLoading(false);
+  //       }, 1000);
+  //     }
+  //   }
+  // };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+    // eslint-disable-next-line
+  }, [filteredAmenitiesData, loadedCount]);
 
   return (
     <section className={styles.container}>
+      <h1 className={seoStyles.titleHidden}>
+        Оренда квартири суми. Суми квартири. Аренда квартиры Сумы.
+      </h1>
       <div className={styles.filterContainer}>
         <div className={styles.backContainer}>
           {!isLoading && (
             <span className="textLink">
               <Link href="/" prefetch={false} className="textLinkAnimation">
-                {t('Navigation.MainPage')}
+                {t("Navigation.MainPage")}
               </Link>
-              /{' '}
+              /{" "}
               <span className={styles.active}>
-                {t('Navigation.Apartments')}
+                {t("Navigation.Apartments")}
               </span>
             </span>
           )}
@@ -129,7 +154,7 @@ const Apartments = () => {
       {isLoading ? (
         <IsLoading />
       ) : (
-        <ul className={styles.containerOneRooms}>
+        <ul ref={containerRef} className={styles.containerOneRooms}>
           {filteredAmenitiesData?.length > 0 &&
             filteredAmenitiesData
               .slice(0, loadedCount)
@@ -150,38 +175,10 @@ const Apartments = () => {
       {filteredAmenitiesData?.length <= 0 && (
         <div className={styles.notFoundTextStyles}>
           <p>
-            {notFoundText()} {t('ApartmentsPage.NotFound')}
+            {notFoundText()} {t("ApartmentsPage.NotFound")}
           </p>
         </div>
       )}
-      {/* {isLoading ? (
-        <IsLoading />
-      ) : (
-        <ul className={styles.containerOneRooms}>
-          {filteredAmenitiesData?.length > 0 ? (
-            filteredAmenitiesData
-              .slice(0, loadedCount)
-              .map((item) => (
-                <ApartItem
-                  key={item._id}
-                  titleImg={item.titleImg}
-                  code={item.code}
-                  address={item.address}
-                  price={item.price}
-                  objNumber={item.objNumber}
-                  roomsQuantity={item.roomsQuantity}
-                  id={item._id}
-                />
-              ))
-          ) : (
-            <div className={styles.notFoundTextStyles}>
-              <p>
-                {notFoundText()} {t('ApartmentsPage.NotFound')}
-              </p>
-            </div>
-          )}
-        </ul>
-      )} */}
       {showLoading && (
         <div className={styles.loading}>
           <IsLoading />

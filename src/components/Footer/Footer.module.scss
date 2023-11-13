@@ -1,8 +1,15 @@
 @import "../../styles/_variables.scss";
 
 .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   gap: 8px;
   padding: 8px 20px;
@@ -28,16 +35,28 @@
 }
 
 .contentWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: inherit;
+  -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
 .contacts,
 .navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   gap: 8px;
   color: $footerLocationColor;
@@ -47,6 +66,8 @@
   line-height: normal;
 
   & a {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
   }
 
@@ -63,10 +84,19 @@
 }
 
 .btnsWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   gap: 8px;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
   align-items: flex-end;
 
   @media screen and (min-width: $tablet) {

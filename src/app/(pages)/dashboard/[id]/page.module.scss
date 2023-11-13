@@ -1,96 +1,121 @@
 @import "../../../../styles/_variables.scss";
 
 .container {
-    display: none;
+  display: none;
 
-    @media screen and (min-width: $tablet) {
-        display: flex;
-        gap: 50px;
-        padding: 99px 20px 20px;
-        width: 100%;
-    }
+  @media screen and (min-width: $tablet) {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 50px;
+    padding: 99px 20px 20px;
+    width: 100%;
+  }
 
-    @media screen and (min-width: $desktop) {
-        display: flex;
-        gap: 100px;
-        padding: 149px 40px 40px;
-        width: 100%;
-    }
+  @media screen and (min-width: $desktop) {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 100px;
+    padding: 149px 40px 40px;
+    width: 100%;
+  }
 }
 
 .apartment {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    margin: 20px 0px;
-    padding: 10px;
-    background-color: #8c878fd6;
-    border-radius: 5px;
-    border: 1px solid navy;
-    width: 50vw;
-    height: fit-content;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 5px;
+  margin: 20px 0px;
+  padding: 10px;
+  background-color: #8c878fd6;
+  border-radius: 5px;
+  border: 1px solid navy;
+  width: 50vw;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 .imgContainer {
-    width: 300px;
-    height: 150px;
-    position: relative;
+  width: 300px;
+  height: 150px;
+  position: relative;
 }
 
 .img {
-    object-fit: cover;
+  -o-object-fit: cover;
+  object-fit: cover;
 }
 
 .imgsWrapper {
-    gap: 10px;
-    display: flex;
-    flex-direction: column;
+  gap: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .imgsItem {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 10px;
 }
 
 .imgCont {
-    width: 200px;
-    height: 100px;
-    position: relative;
+  width: 200px;
+  height: 100px;
+  position: relative;
 }
 
 .delete {
-    cursor: pointer;
-    color: red;
+  cursor: pointer;
+  color: red;
 }
 
 .address {
-    display: block;
-    width: 40vw;
-    overflow: hidden;
-    white-space: nowrap;
+  display: block;
+  width: 40vw;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .location {
-    display: block;
-    width: 40vw;
-    overflow: hidden;
-    white-space: nowrap;
+  display: block;
+  width: 40vw;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .platformLink {
-    display: block;
-    width: 40vw;
-    overflow: hidden;
-    white-space: nowrap;
+  display: block;
+  width: 40vw;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .description {
-    width: 40vw;
-    overflow: hidden;
+  width: 40vw;
+  overflow: hidden;
 }
 
 .updatingForm {
-    flex: 1;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }

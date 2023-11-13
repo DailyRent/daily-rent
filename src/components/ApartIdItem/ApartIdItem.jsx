@@ -1,43 +1,49 @@
-'use client';
+"use client";
 
-import { useContext } from 'react';
-import { useTranslation } from 'react-i18next';
-import OrderBtn from '../OrderBtn/OrderBtn';
-import IsLoading from '../share/IsLoading/IsLoading';
-import Amenities from './Amenities/Amenities';
-import ApartDataList from './ApartDataList/ApartDataList';
-import styles from './ApartIdItem.module.scss';
+import { useContext } from "react";
+import { useTranslation } from "react-i18next";
+import OrderBtn from "../OrderBtn/OrderBtn";
+import IsLoading from "../share/IsLoading/IsLoading";
+import Amenities from "./Amenities/Amenities";
+import ApartDataList from "./ApartDataList/ApartDataList";
+import styles from "./ApartIdItem.module.scss";
 // import ApartIdSlider from './ApartIdSlider/ApartIdSlider';
-import ItemSlider from './ItemSlider/ItemSlider';
-import ApartStar from './ApartStar/ApartStar';
-import ModalR from '@/components/Modal/Modal';
-import OrderForm from '@/components/OrderForm/OrderForm';
-import { SiteContext } from '@/context/SiteContext';
-import Link from 'next/link';
+import ItemSlider from "./ItemSlider/ItemSlider";
+import ApartStar from "./ApartStar/ApartStar";
+import ModalR from "@/components/Modal/Modal";
+import OrderForm from "@/components/OrderForm/OrderForm";
+import { SiteContext } from "@/context/SiteContext";
+import Link from "next/link";
+import seoStyles from "@/app/seoStyles.module.css";
 
 const ApartIdItem = ({ dataId, error, isLoading }) => {
   // console.log(dataId?.googleMapLocation);
-  const {t}= useTranslation();
+  const { t } = useTranslation();
   const { isModalOpen, openModal, closeModal } = useContext(SiteContext);
 
   return (
     <section className={styles.container}>
+      <h1 className={seoStyles.titleHidden}>
+        Оренда квартири суми. Суми квартири. Зняти квартиру суми. Сумы.
+      </h1>
       <div className={styles.backContainer}>
-        {!isLoading && (<span className="textLink">
-          <Link href="/" prefetch={false} className="textLinkAnimation">
-            {t("Navigation.MainPage")}
-          </Link>
-          /
-          <Link href="/apartments" className="textLinkAnimation">
-          {t("Navigation.Apartments")}
-          </Link>
-          /<span className={styles.active}># {dataId?.objNumber}</span>
-        </span>)}
+        {!isLoading && (
+          <span className="textLink">
+            <Link href="/" prefetch={false} className="textLinkAnimation">
+              {t("Navigation.MainPage")}
+            </Link>
+            /
+            <Link href="/apartments" className="textLinkAnimation">
+              {t("Navigation.Apartments")}
+            </Link>
+            /<span className={styles.active}># {dataId?.objNumber}</span>
+          </span>
+        )}
       </div>
       <ModalR isOpen={isModalOpen} closeModal={closeModal}>
         <OrderForm isOpen={isModalOpen} closeModal={closeModal} />
       </ModalR>
-      <h1 className="visuallyHidden">ApartId Page</h1>
+      {/* <h1 className="visuallyHidden">ApartId Page</h1> */}
       {isLoading ? (
         <IsLoading />
       ) : (

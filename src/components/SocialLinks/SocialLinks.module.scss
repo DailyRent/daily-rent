@@ -1,6 +1,8 @@
 @import "../../styles/_variables.scss";
 
 .socialLinks {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 8px;
   @media screen and (min-width: $tablet) {

@@ -1,9 +1,18 @@
-@import '../../styles/_variables.scss';
+@import "../../styles/_variables.scss";
 
 .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   // padding-top: 15px;
   margin-bottom: 15px;
@@ -12,11 +21,10 @@
 
   opacity: 1;
   overflow: auto;
-
+  -webkit-transition: height 0.5s linear, opacity 0.5s linear;
+  -o-transition: height 0.5s linear, opacity 0.5s linear;
   transition: height 0.5s linear, opacity 0.5s linear;
-
   max-width: 330px;
-
   height: 300px;
 
   @media screen and (min-width: $tablet) {
@@ -36,25 +44,41 @@
 }
 
 .container__hidden {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 
   margin-top: 0;
   margin-bottom: 0;
+  -webkit-transition: height 0.5s linear, opacity 0.5s linear;
+  -o-transition: height 0.5s linear, opacity 0.5s linear;
   transition: height 0.5s linear, opacity 0.5s linear;
-
   opacity: 0;
   height: 0;
   overflow: hidden;
   border: 0;
 }
 .filterContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 .filterButtonClose {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   border-radius: 50%;
   margin-left: auto;
@@ -67,25 +91,47 @@
 }
 
 .filterButtonsContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
 .filterButtonsContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
 .filterAmenitisContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
 
+  -webkit-column-gap: 10px;
+  -moz-column-gap: 10px;
   column-gap: 10px;
   row-gap: 16px;
-
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   max-width: 330px;
 
@@ -100,7 +146,11 @@
 }
 
 .filterSearchResetContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   gap: 20px;
 }
@@ -132,13 +182,23 @@
 }
 
 .filterButtons {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-column-gap: 21px;
+  -moz-column-gap: 21px;
   column-gap: 21px;
   @media screen and (min-width: $tablet) {
+    -webkit-column-gap: 25px;
+    -moz-column-gap: 25px;
     column-gap: 25px;
   }
   @media screen and (min-width: $desktop) {
+    -webkit-column-gap: 20px;
+    -moz-column-gap: 20px;
     column-gap: 20px;
   }
 }

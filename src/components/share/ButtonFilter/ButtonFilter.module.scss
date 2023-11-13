@@ -1,10 +1,12 @@
-@import '../../../styles/variables';
+@import "../../../styles/variables";
 
 .filterContainer {
   @media screen and (min-width: $tablet) {
     position: absolute;
     top: 50%;
     right: 50%;
+    -webkit-transform: translate(50%, -60%);
+    -ms-transform: translate(50%, -60%);
     transform: translate(50%, -60%);
   }
 }
@@ -13,8 +15,14 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-column-gap: 16px;
+  -moz-column-gap: 16px;
   column-gap: 16px;
   &:hover > .filterSvg {
     stroke: #cd5d12;
