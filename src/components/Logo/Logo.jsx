@@ -4,11 +4,13 @@ import Link from "next/link";
 
 const Logo = ({ className }) => {
   return (
-    <div className={styles.container + " " + `${className}`}>
-      <Link href="/" prefetch={false}>
-        <span>Daily</span>Rent
-      </Link>
-    </div>
+    <Link
+      href="/"
+      prefetch={false}
+      className={styles.container + " " + `${className}`}
+    >
+      <span>Daily</span>Rent
+    </Link>
   );
 };
 

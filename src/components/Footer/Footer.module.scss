@@ -12,6 +12,7 @@
   -ms-flex-align: center;
   align-items: center;
   gap: 8px;
+  gap: 24px;
   padding: 8px 20px;
   color: $footerTextColor;
   border-top: 1px solid #000;
@@ -24,6 +25,16 @@
     margin-left: 0;
     margin-right: auto;
   }
+
+  @media (max-width: 767px) {
+    padding-top: 20px;
+
+    & .mobileBtn {
+      width: 100px;
+      height: 28px;
+    }
+  }
+
   @media screen and (min-width: $tablet) {
     gap: 12px;
     padding: 12px 36px;
@@ -31,6 +42,50 @@
   @media screen and (min-width: $desktop) {
     gap: 20px;
     padding: 24px 86px;
+  }
+}
+
+.mobileContentWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 12px;
+  @media (max-width: 360px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.mobileItem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+
+  & .footerLogo {
+    font-size: 24px;
+    line-height: 0.9;
+  }
+
+  & .mobileContacts {
+    color: $footerLocationColor;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    @media (max-width: 360px) {
+      font-size: 12px;
+    }
+  }
+
+  @media (max-width: 360px) {
+    & .footerLogo {
+      margin-left: auto;
+    }
+    & .mobileContacts {
+      font-size: 12px;
+    }
   }
 }
 
@@ -59,8 +114,9 @@
   -ms-flex-direction: column;
   flex-direction: column;
   gap: 8px;
+
   color: $footerLocationColor;
-  font-size: clamp(0.5rem, 0.286rem + 1.071vw, 1.25rem);
+  font-size: clamp(16px, 2vw, 20px);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -69,6 +125,10 @@
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
+  }
+
+  @media screen and (max-width: 767px) {
+    display: none;
   }
 
   @media screen and (min-width: $tablet) {
@@ -98,6 +158,12 @@
   -webkit-box-align: end;
   -ms-flex-align: end;
   align-items: flex-end;
+
+  @media screen and (max-width: 767px) {
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+  }
 
   @media screen and (min-width: $tablet) {
     gap: 16px;

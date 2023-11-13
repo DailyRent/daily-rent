@@ -16,27 +16,78 @@ import { navigationData, currentLanguages } from "@/data";
 
 const Footer = ({ onClick }) => {
   const { isModalOpen, openModal, closeModal } = useContext(SiteContext);
-  const [isLoading, setIsLoading] = useState(true);
+  // const [isLoading, setIsLoading] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // console.log("isMobile", isMobile);
+
   const { i18n } = useTranslation();
 
+  // const isClient = typeof window !== "undefined";
+
+  const handleResize = () => {
+    if (window.innerWidth < 768) {
+      setIsMobile(true);
+    } else {
+      setIsMobile(false);
+    }
+  };
+
   useEffect(() => {
-    setIsLoading(false);
+    // Add an event listener for window resize
+    window.addEventListener("resize", handleResize);
+
+    // Initial check on component mount
+    handleResize();
+
+    // setIsLoading(false);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
+
   return (
     <>
       <ModalR isOpen={isModalOpen} closeModal={closeModal}>
         <OrderForm isOpen={isModalOpen} closeModal={closeModal} />
       </ModalR>
       <footer className={styles.container}>
-        <Logo className={styles.footerLogo} />
-        <div className={styles.contentWrapper}>
-          <div className={styles.contacts}>
-            <Link href="mailto:dailyrent4@gmail.com">dailyrent4@gmail.com</Link>
-            <Link href="tel:+380357960801">+380357960801</Link>
-            <Link href="tel:+380357960802">+380357960802</Link>
+        {isMobile && (
+          <div className={styles.mobileContentWrapper}>
+            <div className={styles.mobileItem}>
+              <Logo className={styles.footerLogo} />
+              <Link
+                href="mailto:dailyrent4@gmail.com"
+                className={styles.mobileContacts}
+              >
+                dailyrent4@gmail.com
+              </Link>
+            </div>
+            <div className={styles.mobileItem}>
+              <Link href="tel:+380357960801" className={styles.mobileContacts}>
+                +380357960801
+              </Link>
+              <Link href="tel:+380357960802" className={styles.mobileContacts}>
+                +380357960802
+              </Link>
+            </div>
           </div>
-          {!isLoading && (
+        )}
+
+        {!isMobile && <Logo className={styles.footerLogo} />}
+        <div className={styles.contentWrapper}>
+          {!isMobile && (
             <>
+              <div className={styles.contacts}>
+                <Link href="mailto:dailyrent4@gmail.com">
+                  dailyrent4@gmail.com
+                </Link>
+                <Link href="tel:+380357960801">+380357960801</Link>
+                <Link href="tel:+380357960802">+380357960802</Link>
+              </div>
+
               <ul className={styles.navigation}>
                 {navigationData.slice(0, 2).map((item) => {
                   return (
@@ -66,8 +117,11 @@ const Footer = ({ onClick }) => {
             </>
           )}
           <div className={styles.btnsWrapper}>
-            <CallBtn />
-            <OrderBtn openModal={openModal} />
+            <CallBtn className={isMobile ? `${styles.mobileBtn}` : " "} />
+            <OrderBtn
+              openModal={openModal}
+              className={isMobile ? `${styles.mobileBtn}` : " "}
+            />
           </div>
         </div>
         <p className={styles.rights}>
