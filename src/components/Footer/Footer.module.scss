@@ -74,17 +74,11 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    @media (max-width: 360px) {
-      font-size: 12px;
-    }
   }
 
   @media (max-width: 360px) {
     & .footerLogo {
       margin-left: auto;
-    }
-    & .mobileContacts {
-      font-size: 12px;
     }
   }
 }
