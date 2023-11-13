@@ -7,6 +7,7 @@ import useSWR from 'swr';
 import Image from 'next/image';
 import UpdatingForm from '@/components/UpdatingForm/UpdatingForm';
 import Link from 'next/link';
+import crypto from "crypto";
 
 
 const EditCard = ({ params }) => {
@@ -21,8 +22,6 @@ const EditCard = ({ params }) => {
 
     const handleDeleteImg = async (id, item) => {
         const newArr = data.imgs.filter(el => el !== item);
-        console.log("item", item);
-        console.log("newArr", newArr);
         try {
             await fetch(`/api/apartments/${id}`, {
                 method: "PATCH",
@@ -80,18 +79,75 @@ const EditCard = ({ params }) => {
                             />
                         </div>
                         <span className={styles.delete}
-                            onClick={() => handleDeleteImg(data._id, item)
-                                //     () => {
-                                //     console.log("data.imgs", data.imgs);
-                                //     console.log("item", item);
-                                //     const filteredArr = data.imgs.filter(el => el !== item);
-                                //     console.log("filteredArr", filteredArr);
-                                //     mutate();
-                                //     data.imgs = [...filteredArr];
-                                //     console.log("data.imgs", data.imgs);
-                                //     return data.imgs;
-                                // }
-                            }
+                            onClick={async () => {
+                                // удаляет данные о фото с mongoDB
+                                handleDeleteImg(data._id, item);
+
+                                // getPublicId 
+                                const regex = /\/v\d+\/([^/]+)\.\w{3,4}$/;
+                                //example - const cloudinaryUrl = 'https://res.cloudinary.com/your_cloud_name/image/upload/v1234567890/public_id.jpg';
+                                const cloudinaryUrl = item;
+
+                                const getPublicIdFromUrl = (url) => {
+                                    const match = url.match(regex);
+                                    return match ? match[1] : null;
+                                };
+
+                                const publicId = getPublicIdFromUrl(cloudinaryUrl);
+                                console.log("publicId", publicId);
+
+                                // сгенерировать подпись
+                                const generateSHA1 = (data) => {
+                                    const hash = crypto.createHash("sha1");
+                                    hash.update(data);
+                                    return hash.digest("hex");
+                                }
+
+                                const generateSignature = (publicId, apiSecret) => {
+                                    const timestamp = new Date().getTime();
+                                    return `public_id=${publicId}&timestamp=${timestamp}${apiSecret}`;
+                                };
+
+                                const timestamp = new Date().getTime();
+                                console.log("timestamp", timestamp);
+
+                                // const signature = generateSHA1(generateSignature(publicId, process.env.NEXT_PUBLIC_CLOUDINARY_API_SECRET));
+                                const signature = generateSignature(publicId, process.env.NEXT_PUBLIC_CLOUDINARY_API_SECRET);
+                                console.log("signature", signature);
+
+
+                                const url = `https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/destroy`;
+                                console.log("url", url);
+                                const api_key = process.env.NEXT_PUBLIC_CLOUDINARY_API_KEY;
+                                console.log("api_key", api_key);
+
+                                try {
+                                    const response = await fetch(url, {
+                                        method: "POST",
+                                        body: JSON.stringify({
+                                            public_id: publicId,
+                                            signature,
+                                            api_key,
+                                            timestamp,
+                                        })
+                                    })
+
+                                    // const response = await axios.post(url, {
+                                    //     public_id: publicId,
+                                    //     signature: signature,
+                                    //     api_key: process.env.NEXT_PUBLIC_CLOUDINARY_API_KEY,
+                                    //     timestamp: timestamp,
+                                    // });
+                                    console.log("Picture was deleted from cloudinary");
+                                    console.error("response in try", response);
+
+                                } catch (error) {
+                                    console.error("error", error);
+                                }
+
+
+
+                            }}
                         >X</span>
                     </li>)
                     )}</ul>

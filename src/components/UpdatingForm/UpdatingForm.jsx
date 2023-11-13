@@ -152,8 +152,8 @@ const UpdatingForm = ({ id, apart, mutate }) => {
     }
 
     const handleSubmit = async (e) => {
-        console.log("handleSubmit in UpdatingForm");
         e.preventDefault();
+
         try {
             await fetch(`/api/apartments/${id}`, {
                 method: "PUT",
@@ -174,8 +174,6 @@ const UpdatingForm = ({ id, apart, mutate }) => {
                 })
             })
             mutate();
-            // обнуляет все поля формы
-            // e.target.reset();
         } catch (err) {
             console.log(err);
         }
@@ -197,9 +195,6 @@ const UpdatingForm = ({ id, apart, mutate }) => {
                         checked={newTop}
                     />ТОП
                 </label>
-                {/* <label> Основне фото:
-                    <input type='text' placeholder='Основне фото' className={styles.input} value={newTitleImg} onChange={(e) => setNewTitleImg(e.target.value)} />
-                </label> */}
                 <CldUploadButton
                     onUpload={(result, widget) => {
                         // for Image component
@@ -212,9 +207,6 @@ const UpdatingForm = ({ id, apart, mutate }) => {
                 >
                     Змінити ОСНОВНЕ фото
                 </CldUploadButton>
-                {/* <label> Додаткові фото:
-                    <input type='text' placeholder='Додаткові фото' className={styles.input} value={newImgs} onChange={(e) => setNewImgs(e.target.value)} />
-                </label> */}
                 <CldUploadButton
                     onUpload={(result) => {
                         // for Image component 
@@ -224,7 +216,7 @@ const UpdatingForm = ({ id, apart, mutate }) => {
                     }}
                     uploadPreset="unsigned_preset"
                 >
-                    Змінити додаткові фото
+                    Додати додаткові фото
                 </CldUploadButton>
                 <label> Адреса:
                     <input type='text' placeholder='Адреса' className={styles.input} value={newAddress} onChange={(e) => setNewAddress(e.target.value)} />
