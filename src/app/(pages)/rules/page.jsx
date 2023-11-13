@@ -33,7 +33,6 @@ const RulesPage = () => {
           </span>
         )}
       </div>
-
       {!isLoading && <><h2 className={styles.rulesListItem}>{t("RulesPage.MainTitle")}</h2>
       <ul className={styles.rulesList}>
         <li>
@@ -64,17 +63,6 @@ const RulesPage = () => {
             {Eviction.map(({id,rule,ruleEN})=>{
               return (<li key={id}>{i18n.language===currentLanguages.EN ? ruleEN : rule  }</li>)
             })}
-            {/* <li>Порушення цих правил.</li>
-            <li>Паління у квартирі-готелі.</li>
-            <li>Порушення правил громадського порядку у квартирі-готелі.</li>
-            <li>
-              Пред&apos;явлення претензій з боку сусідів, що проживають поруч.
-            </li>
-            <li>Перебування у квартирі людей, більше домовленої кількості.</li>
-            <li>
-              Проведення у квартирі-готелі святкувань, зустрічей, гулянь тощо.
-            </li>
-            <li>Заподіяння значних матеріальних збитків орендодавцю.</li> */}
           </ol>
         </li>
       </ul></>}

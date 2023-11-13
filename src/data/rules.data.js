@@ -111,7 +111,7 @@ export const RulesInApartment = [
         rule: 'Проведення у квартирі-готелі святкувань, зустрічей, гулянь тощо.',
       },
       {
-        id: 16,
+        id: 22,
         ruleEN: 'Causing significant material damage to the lessor.',
         rule: 'Заподіяння значних матеріальних збитків орендодавцю.',
       },
