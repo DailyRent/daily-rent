@@ -79,12 +79,5 @@
         "dateOfEntry": "Choose a date",
         "departureDate": "Choose a date",
         "numberObject": "Enter the object number"
-    },
-    "contactsPage": {
-        "contactsPage": "Order a call"
-    },
-    "notification": {
-        "title": "Great!",
-        "message": "Message sent!"
     }
 }

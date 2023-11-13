@@ -79,13 +79,5 @@
         "dateOfEntry": "Оберіть дату",
         "departureDate": "Оберіть дату",
         "numberObject": "Вкажіть номер об’єкту"
-    },
-    "contacts": {
-        "contacts": "Зв'яжіться з нами"
-    },
-
-    "notification": {
-        "title": "Чудово!",
-        "message": "Повідомлення надіслано!"
     }
 }
