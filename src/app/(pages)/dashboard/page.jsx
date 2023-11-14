@@ -130,11 +130,18 @@ const Dashboard = () => {
                   <ul className={styles.imgsWrapper}>
                     {apart.imgs.map((item, index) => (
                       <li className={styles.imgsCont} key={index}>
-                        <Image
+                        {/* <Image
                           src={item}
                           alt="Interior photo"
                           fill={true}
                           sizes="10vw"
+                        /> */}
+                        <CldImage
+                          width="200"
+                          height="100"
+                          crop="fill"
+                          src={item}
+                          alt="Interior photo"
                         />
                       </li>
                     ))}
@@ -440,21 +447,21 @@ const Dashboard = () => {
           </fieldset>
           <label htmlFor="Description">
             Опис:
-            <input
+            <textarea
               type="text"
               id="Description"
               placeholder="Гарна квартира з видом на сад."
-              className={styles.input}
+              className={styles.textarea}
               onChange={(e) => setDescription(e.target.value)}
             />
           </label>
           <label htmlFor="DescriptionEn">
             Опис англійською:
-            <input
+            <textarea
               type="text"
               id="DescriptionEn"
               placeholder="Good apartment with view on garden."
-              className={styles.input}
+              className={styles.textarea}
               onChange={(e) => setDescriptionEn(e.target.value)}
             />
           </label>

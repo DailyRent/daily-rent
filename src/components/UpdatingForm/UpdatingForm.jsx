@@ -465,10 +465,9 @@ const UpdatingForm = ({ id, apart, mutate }) => {
         <label>
           {" "}
           Опис:
-          <input
+          <textarea
             type="text"
-            placeholder="Опис"
-            className={styles.input}
+            className={styles.textarea}
             value={newDescription}
             onChange={(e) => setNewDescription(e.target.value)}
           />
@@ -476,10 +475,9 @@ const UpdatingForm = ({ id, apart, mutate }) => {
         <label>
           {" "}
           Опис англійською:
-          <input
+          <textarea
             type="text"
-            placeholder="Опис англійською"
-            className={styles.input}
+            className={styles.textarea}
             value={newDescriptionEn}
             onChange={(e) => setNewDescriptionEn(e.target.value)}
           />

@@ -47,6 +47,10 @@
   border: 1px solid navy;
 }
 
+.contentWrapper {
+  width: 30%;
+}
+
 .imgContainer {
   width: 300px;
   height: 150px;
@@ -141,9 +145,14 @@
   background-color: transparent;
   border: 2px solid #bbb;
   border-radius: 3px;
-  color: #bbb;
+  color: #000;
   font-size: 20px;
   font-weight: bold;
+  width: 100%;
+}
+
+.textarea {
+  resize: none;
 }
 
 fieldset.top {
