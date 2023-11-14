@@ -19,7 +19,7 @@ const DocsPage = () => {
   return (
     <section className={styles.container}>
       <h1 className={seoStyles.titleHidden}>
-        Зняти квартиру суми. Суми квартир. Аренда квартир сумы посуточно.
+        Зняти квартиру суми. Суми квартири. Квартири подобово.
       </h1>
       {/* <h1 className="visuallyHidden">Documents Page</h1> */}
       <div className={styles.toBackContainer}>
