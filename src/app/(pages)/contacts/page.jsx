@@ -21,7 +21,7 @@ const ContactsPage = () => {
   return (
     <section className={styles.container}>
       <h1 className={seoStyles.titleHidden}>
-        Суми квартири. Сумы квартиры. Аренда квартир сумы. Суми.
+        Оренда квартири Суми. Сумы квартиры. Квартири подобово.
       </h1>
       <div className={styles.toBackContainer}>
         {!isLoading && (
