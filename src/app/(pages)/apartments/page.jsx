@@ -128,7 +128,7 @@ const Apartments = () => {
   return (
     <section className={styles.container}>
       <h1 className={seoStyles.titleHidden}>
-        Оренда квартири суми. Суми квартири. Аренда квартиры Сумы.
+        Оренда квартири суми. Суми квартири. Квартири подобово.
       </h1>
       <div className={styles.filterContainer}>
         <div className={styles.backContainer}>
