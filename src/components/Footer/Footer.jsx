@@ -97,7 +97,6 @@ const Footer = ({ onClick }) => {
                                     +380357960802
                                 </Link>
                             </div>
-
                             <ul className={styles.navigation}>
                                 {!isLoading &&
                                     navigationData.slice(0, 2).map((item) => {
