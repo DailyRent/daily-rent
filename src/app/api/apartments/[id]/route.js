@@ -66,7 +66,7 @@ export const PATCH = async (request, { params }) => {
     if (!updatedApartment) {
       return new NextResponse("Apartment not found", { status: 404 });
     }
-
+    console.log("Photos were changed and Apartment has been updated");
     return new NextResponse("Apartment has been updated", { status: 200 });
 
   } catch (error) {

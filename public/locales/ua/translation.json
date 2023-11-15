@@ -16,9 +16,9 @@
         "OneRoom": "Однокімнатні",
         "TwoRoom": "Двокімнатні",
         "ThreeRoom": "Трикімнатні",
-        "OneAndTwoRoom": "One-room and two-room",
-        "OneAndThreeRoom": "One-room and three-room",
-        "TwoAndThreeRoom": "Two-room and three-room",
+        "OneAndTwoRoom": "Однокімнатні та двокімнатні",
+        "OneAndThreeRoom": "Однокімнатні та трикімнатні",
+        "TwoAndThreeRoom": "Двокімнатні та трикімнатні",
         "NotFound": "квартири не знайдено",
         "TextOfDescAdress": " кімнатна за адресою",
         "TextOfDescOptions": "Що буде в апартаментах"
@@ -28,6 +28,12 @@
         "Text": "Сміливо телефонуй нам або пиши у будь-яку з соцмереж. Будемо раді допомогти і потеревенити з тобою!",
         "CountryAndSity": "Україна, Суми",
         "Adress": "вул.Степана Бандери, 3"
+    },
+    "RulesPage":{
+        "MainTitle":"правила проживання:",
+        "TitleSection1":"Правила поведінки в квартирі:",
+        "TitleSection2":"Категорично забороняється:",
+        "TitleSection3":"Адміністрація має право негайно виселити орендаря без повернення грошей за проживання, у разі:"
     },
     "Navigation": {
         "MainPage": "Головна",
@@ -46,7 +52,7 @@
         "FilterQuantRooms":"-кім.",
         "ObjectsBtn": "Всі об’єкти",
         "OpenFilterBtn": "Фільтр",
-        "CloseFilterBtn": "Сховати фільтр",
+        "CloseFilterBtn": "Сховати",
         "LogOutBtn": "Розлогінитися",
         "Submit": "Пiдтвердити"
     },
@@ -73,13 +79,5 @@
         "dateOfEntry": "Оберіть дату",
         "departureDate": "Оберіть дату",
         "numberObject": "Вкажіть номер об’єкту"
-    },
-    "contacts": {
-        "contacts": "Зв'яжіться з нами"
-    },
-
-    "notification": {
-        "title": "Чудово!",
-        "message": "Повідомлення надіслано!"
     }
 }

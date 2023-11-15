@@ -7,7 +7,7 @@
 
 .promotion {
   color: $darckFontColor;
-  font-size: clamp(0.75rem, 0.65rem + 0.5vw, 1.25rem);
+  font-size: clamp(12px, 1.8vw, 16px);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -23,7 +23,6 @@
 
   @media screen and (min-width: $desktop) {
     font-weight: 600;
-    padding: 4px;
   }
 }
 

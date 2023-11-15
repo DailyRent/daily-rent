@@ -3,7 +3,7 @@
 .container {
   display: none;
 
-  @media screen and (min-width: $desktop) {
+  @media screen and (min-width: $tablet) {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -18,7 +18,11 @@
     -ms-flex-align: center;
     align-items: center;
     gap: 20px;
-    padding-top: 80px;
+    padding: 99px 20px 20px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    padding: 149px 40px 40px;
   }
 }
 

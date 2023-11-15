@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import seoStyles from "@/app/seoStyles.module.css";
 
 const DocsPage = () => {
   const { t } = useTranslation();
@@ -17,7 +18,10 @@ const DocsPage = () => {
 
   return (
     <section className={styles.container}>
-      <h1 className="visuallyHidden">Documents Page</h1>
+      <h1 className={seoStyles.titleHidden}>
+        Зняти квартиру суми. Суми квартири. Квартири подобово.
+      </h1>
+      {/* <h1 className="visuallyHidden">Documents Page</h1> */}
       <div className={styles.toBackContainer}>
         {!isLoading && (
           <span className="textLink">

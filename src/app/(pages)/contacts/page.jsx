@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import SocialLinks from "@/components/SocialLinks/SocialLinks";
+import seoStyles from "@/app/seoStyles.module.css";
 
 const ContactsPage = () => {
   const { t } = useTranslation();
@@ -19,6 +20,9 @@ const ContactsPage = () => {
   }, []);
   return (
     <section className={styles.container}>
+      <h1 className={seoStyles.titleHidden}>
+        Оренда квартири Суми. Сумы квартиры. Квартири подобово.
+      </h1>
       <div className={styles.toBackContainer}>
         {!isLoading && (
           <span className="textLink">
@@ -33,7 +37,7 @@ const ContactsPage = () => {
       <div className={styles.contactContainer}>
         {!isLoading && (
           <>
-            <h1 className={styles.title}>{t("ContactsPage.Title")}</h1>
+            <h2 className={styles.title}>{t("ContactsPage.Title")}</h2>
             <p className={styles.text}>{t("ContactsPage.Text")}</p>
           </>
         )}
@@ -49,12 +53,12 @@ const ContactsPage = () => {
           </div>
           <address className={styles.addressContainer}>
             {!isLoading && (
-              <h2 className={styles.city}>
+              <h3 className={styles.city}>
                 <svg width="36" height="36" className={styles.citySvg}>
                   <use href="sprite.svg#icon-flag-ukraine" />
                 </svg>
                 {t("ContactsPage.CountryAndSity")}
-              </h2>
+              </h3>
             )}
             <div className={styles.address}>
               {/* <a href="#" className={styles.address}> */}
