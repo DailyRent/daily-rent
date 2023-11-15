@@ -16,7 +16,7 @@ import { navigationData, currentLanguages } from "@/data";
 
 const Footer = ({ onClick }) => {
   const { isModalOpen, openModal, closeModal } = useContext(SiteContext);
-  // const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true); 
   const [isMobile, setIsMobile] = useState(false);
 
   // console.log("isMobile", isMobile);
@@ -40,7 +40,7 @@ const Footer = ({ onClick }) => {
     // Initial check on component mount
     handleResize();
 
-    // setIsLoading(false);
+    setIsLoading(false);
 
     // Clean up the event listener on component unmount
     return () => {
@@ -89,7 +89,7 @@ const Footer = ({ onClick }) => {
               </div>
 
               <ul className={styles.navigation}>
-                {navigationData.slice(0, 2).map((item) => {
+                {!isLoading && navigationData.slice(0, 2).map((item) => {
                   return (
                     <li key={item.id} onClick={onClick}>
                       <Link href={item.path}>
@@ -102,7 +102,7 @@ const Footer = ({ onClick }) => {
                 })}
               </ul>
               <ul className={styles.navigation}>
-                {navigationData.slice(2, 4).map((item) => {
+                {!isLoading && navigationData.slice(2, 4).map((item) => {
                   return (
                     <li key={item.id} onClick={onClick}>
                       <Link href={item.path}>
