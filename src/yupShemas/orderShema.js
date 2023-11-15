@@ -5,7 +5,7 @@ import i18n from 'i18next';
 const phoneRegExp = /^\+\d{12}$/;
 const regExpSpaceOnlyOne = /^((?!\s{2}).)*$/;
 
-export const formSchema = () => {
+export const orderSchema = () => {
     return Yup.object({
         userName: Yup.string()
             .min(3, i18n.t("Form.errorShortName"))

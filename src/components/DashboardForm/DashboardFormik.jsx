@@ -7,7 +7,8 @@ import {
     validateYupSchema,
     yupToFormErrors,
 } from "formik";
-import { formDashboardSchema } from "@/utils/formDashboardShema";
+import { toast } from "react-toastify";
+import { dashboardSchema } from "@/yupShemas/dashboardShema";
 import { useFetcherObjectNumbers } from "@/hooks/useFetcher";
 import { useFetcherData } from "@/hooks/useFetcher";
 import styles from "./DashboardForm.module.scss";
@@ -43,6 +44,16 @@ const DashboardFormik = () => {
         } catch (err) {
             console.log(err);
         }
+        toast.success(`Новий обʼєкт №: ${values.objNumber} створено`, {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+        });
     };
 
     const listOfAppartmentNumbers = useFetcherObjectNumbers();
@@ -56,7 +67,7 @@ const DashboardFormik = () => {
                 try {
                     validateYupSchema(
                         values,
-                        formDashboardSchema,
+                        dashboardSchema,
                         true,
                         listOfAppartmentNumbers
                     );
@@ -71,14 +82,15 @@ const DashboardFormik = () => {
             }}
         >
             {(formik) => {
-                const { errors, touched, isValid, values, setFieldValue } =
-                    formik;
+                const { isValid, values, setFieldValue } = formik;
                 // console.log("formik:", formik);
                 // console.log("values:", values);
 
                 return (
                     <Form className={styles.new}>
                         <h1>Додавання нового обʼєкту</h1>
+
+                        <label htmlFor='ObjectNumber'>Номер обʼєкту:</label>
                         <ErrorMessage
                             name='objNumber'
                             className={styles.error}
@@ -86,9 +98,10 @@ const DashboardFormik = () => {
                         />
                         <Field
                             type='text'
+                            id='ObjectNumber'
                             name='objNumber'
                             maxLength='3'
-                            placeholder='Номер обʼєкту'
+                            placeholder='123'
                             className={styles.input}
                         />
 
@@ -143,8 +156,10 @@ const DashboardFormik = () => {
                         >
                             Завантажити додаткові фото
                         </CldUploadButton>
+                        <label htmlFor='address'>Адреса:</label>
                         <ErrorMessage
                             name='address'
+                            id='address'
                             maxLength='100'
                             className={styles.error}
                             component='p'
@@ -153,9 +168,10 @@ const DashboardFormik = () => {
                             type='text'
                             name='address'
                             maxLength='100'
-                            placeholder='Адреса'
+                            placeholder='вул.Шевченка, буд.8'
                             className={styles.input}
                         />
+                        <label htmlFor='addressEn'>Адреса англійською:</label>
                         <ErrorMessage
                             name='addressEn'
                             className={styles.error}
@@ -164,9 +180,11 @@ const DashboardFormik = () => {
                         <Field
                             type='text'
                             name='addressEn'
-                            placeholder='Адреса англійською'
+                            id='aaddressEn'
+                            placeholder='Shevchenko street, h.8'
                             className={styles.input}
                         />
+                        <label htmlFor='flatNumber'>Квартира:</label>
                         <ErrorMessage
                             name='flatNumber'
                             className={styles.error}
@@ -175,10 +193,12 @@ const DashboardFormik = () => {
                         <Field
                             type='text'
                             name='flatNumber'
+                            id='flatNumber'
                             maxLength='8'
-                            placeholder='Квартира'
+                            placeholder='52'
                             className={styles.input}
                         />
+                        <label htmlFor='Location'> Місцезнаходження:</label>
                         <ErrorMessage
                             name='googleMapLocation'
                             className={styles.error}
@@ -188,11 +208,14 @@ const DashboardFormik = () => {
                         <Field
                             type='text'
                             name='googleMapLocation'
-                            placeholder='Місцезнаходження'
+                            id='Location'
+                            placeholder='https://maps.app.goo.gl/Z8KyBtZDJyMEzNGf9'
                             className={styles.input}
                         />
+                        <label htmlFor='Price'>Ціна:</label>
                         <ErrorMessage
                             name='price'
+                            id='Price'
                             className={styles.error}
                             component='p'
                         />
@@ -200,7 +223,7 @@ const DashboardFormik = () => {
                             type='text'
                             name='price'
                             maxLength='7'
-                            placeholder='Ціна'
+                            placeholder='950'
                             className={styles.input}
                         />
                         <ErrorMessage
@@ -232,6 +255,7 @@ const DashboardFormik = () => {
                             />
                             <label htmlFor='threeRooms'>3</label>
                         </fieldset>
+                        <label html='Booking'>Booking.com:</label>
                         <ErrorMessage
                             name='bookingUrl'
                             className={styles.error}
@@ -240,6 +264,7 @@ const DashboardFormik = () => {
                         <Field
                             type='text'
                             name='bookingUrl'
+                            id='Booking'
                             placeholder='bookingUrl'
                             className={styles.input}
                         />
@@ -355,6 +380,7 @@ const DashboardFormik = () => {
                                 Парковка
                             </label>
                         </fieldset>
+                        <label htmlFor='Description'>Опис:</label>
                         <ErrorMessage
                             name='description'
                             className={styles.error}
@@ -364,10 +390,12 @@ const DashboardFormik = () => {
                             type='text'
                             as='textarea'
                             name='description'
+                            id='Description'
                             maxLength='300'
-                            placeholder='Опис'
+                            placeholder='Гарна квартира з видом на сад.'
                             className={styles.textarea}
                         />
+                        <label htmlFor='DescriptionEn'>Опис англійською:</label>
                         <ErrorMessage
                             name='descriptionEn'
                             className={styles.error}
@@ -376,9 +404,10 @@ const DashboardFormik = () => {
                         <Field
                             type='text'
                             as='textarea'
-                            maxLength='300'
                             name='descriptionEn'
-                            placeholder='Опис англійською'
+                            id='DescriptionEn'
+                            maxLength='300'
+                            placeholder='Good apartment with view on garden.'
                             className={styles.textarea}
                         />
 

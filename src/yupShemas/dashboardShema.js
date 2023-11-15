@@ -3,7 +3,7 @@ import * as Yup from "yup";
 const regExprUrl = /^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+(\.[a-z]{2,}){1,3}(#?\/?[a-zA-Z0-9#]+)*\/?(\?[a-zA-Z0-9-_]+=[a-zA-Z0-9-%]+&?)?$/;
 const regExprLocation = /!3d(-?\d+(?:\.\d+)?)!4d(-?\d+(?:\.\d+))/;
 
-export const formDashboardSchema = Yup.object({
+export const dashboardSchema = Yup.object({
     objNumber: Yup.number()
         .moreThan(-1, "Тільки додатні числа")
         .typeError("Тільки числа")
@@ -29,13 +29,13 @@ export const formDashboardSchema = Yup.object({
     address: Yup.string()
         .required("Адреса це обовʼязкове поле"),
     addressEn: Yup.string()
-        .required("Адреса на англійській це обовʼязкове поле"),
+        .required("Адреса англійською це обовʼязкове поле"),
     flatNumber: Yup.number()
         .moreThan(-1, "Тільки додатні числа")
         .typeError("Тільки числа")
         .required("Номер квартири це обовʼязкове поле"),
     googleMapLocation: Yup.string()
-        .required("Google-локаціяце обовʼязкове поле")
+        .required("Google-локація це обовʼязкове поле")
         .matches(regExprLocation, "https://www.google.com/maps/place/Starbucks/...повна адреса..."),
     price: Yup.number()
         .moreThan(-1, "Тільки додатні числа")
