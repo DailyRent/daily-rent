@@ -198,12 +198,13 @@ const UpdatingForm = ({ id, apart, mutate }) => {
                 }),
             });
             mutate();
+            toast.info(`Дані обʼєкту №: ${objNumber} оновлено`, {
+                theme: "colored",
+            });
         } catch (err) {
             console.log(err);
+            toast.error(`Помилка! Обʼєкт №: ${objNumber} не оновлено`);
         }
-        toast.info(`Дані обʼєкту №: ${objNumber} оновлено`, {
-            theme: "colored",
-        });
     };
 
     return (
