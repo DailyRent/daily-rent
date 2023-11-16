@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import seoStyles from "@/app/seoStyles.module.css";
-import { documents } from "@/data/documents.data";
+// import { documents } from "@/data/documents.data";
 
 const DocumentsComponent = () => {
   const { t } = useTranslation();
@@ -35,7 +35,7 @@ const DocumentsComponent = () => {
       </div>
       <article className={styles.documentListThumb}>
         <ul className={styles.documentList}>
-          {documents.map((item) => (
+          {/* {documents.map((item) => (
             <li key={item.id} className={styles.documentItem}>
               <a
                 href={item.pdf}
@@ -58,36 +58,59 @@ const DocumentsComponent = () => {
                 </figcaption>
               </a>
             </li>
-          ))}
-
-          {/* <li className={styles.documentItem}>
+          ))} */}
+          <li className={styles.documentItem}>
+            <a href="/pdf/doc1.pdf" target="_blank" rel="noopener noreferrer">
+              <figure className={styles.documentTop}>
+                <Image
+                  className={styles.documentTopImg}
+                  src="/imgDoc/img1.png"
+                  alt="Додатково про документ"
+                  priority={true}
+                  fill={true}
+                  title="Перехід до документа"
+                  sizes="(min-width: 1480px) 299px, (min-width: 780px) 204px, 259px"
+                />
+              </figure>
+              <figcaption className={styles.documentText}>
+                Витяг з ЄДР юридичних осіб
+              </figcaption>
+            </a>
+          </li>
+          <li className={styles.documentItem}>
             <a href="/pdf/doc2.pdf" target="_blank" rel="noopener noreferrer">
-              <div className={styles.documentTop}>
+              <figure className={styles.documentTop}>
                 <Image
                   className={styles.documentTopImg}
                   src="/imgDoc/img2.png"
                   alt="Додатково про документ"
                   fill={true}
+                  title="Перехід до документа"
+                  sizes="(min-width: 1480px) 299px, (min-width: 780px) 204px, 259px"
                 />
-              </div>
-              <p className={styles.documentText}>Витяг з ЄДР юридичних осіб</p>
+              </figure>
+              <figcaption className={styles.documentText}>
+                Витяг з ЄДР юридичних осіб
+              </figcaption>
             </a>
           </li>
           <li className={styles.documentItem}>
             <a href="/pdf/doc3.pdf" target="_blank" rel="noopener noreferrer">
-              <div className={styles.documentTop}>
+              <figure className={styles.documentTop}>
                 <Image
                   className={styles.documentTopImg}
                   src="/imgDoc/img3.png"
                   alt="Додатково про документ"
                   fill={true}
+                  title="Перехід до документа"
+                  sizes="(min-width: 1480px) 299px, (min-width: 780px) 204px, 259px"
                 />
-              </div>
-              <p className={styles.documentText}>
+              </figure>
+              <figcaption className={styles.documentText}>
                 Витяг з реєстру платників податку
-              </p>
+              </figcaption>
             </a>
-          </li> */}
+          </li>
         </ul>
       </article>
     </section>
