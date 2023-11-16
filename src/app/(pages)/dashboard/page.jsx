@@ -22,13 +22,13 @@ const Dashboard = () => {
             await fetch(`/api/apartments/${id}`, { method: "DELETE" });
             // автоматически обновляет страницу при изменении кол-ва карточек
             mutate();
+            toast.success(`Обʼєкт №: ${objNumber} видалено`, {
+                theme: "dark",
+            });
         } catch (error) {
             console.log(error);
+            toast.error(`Помилка! Обʼєкт №: ${objNumber} не видалено`);
         }
-
-        toast.success(`Обʼєкт №: ${objNumber} видалено`, {
-            theme: "dark",
-        });
     };
 
     if (session.status === "loading") {

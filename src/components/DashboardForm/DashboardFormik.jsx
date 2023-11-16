@@ -41,10 +41,11 @@ const DashboardFormik = () => {
             mutate();
             // обнуляет все поля формы
             actions.resetForm();
+            toast.success(`Новий обʼєкт №: ${values.objNumber} створено`);
         } catch (err) {
             console.log(err);
+            toast.error("Помилка! Обʼєкт не створено");
         }
-        toast.success(`Новий обʼєкт №: ${values.objNumber} створено`);
     };
 
     const listOfAppartmentNumbers = useFetcherObjectNumbers();
