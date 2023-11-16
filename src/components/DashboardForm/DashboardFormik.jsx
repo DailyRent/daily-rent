@@ -10,7 +10,7 @@ import {
 import { toast } from "react-toastify";
 import { dashboardSchema } from "@/yupShemas/dashboardShema";
 import { useFetcherObjectNumbers } from "@/hooks/useFetcher";
-import { useFetcherData } from "@/hooks/useFetcher";
+import { GetData } from "@/fetch/clientFetch";
 import styles from "./DashboardForm.module.scss";
 
 const DashboardFormik = () => {
@@ -44,20 +44,12 @@ const DashboardFormik = () => {
         } catch (err) {
             console.log(err);
         }
-        toast.success(`Новий обʼєкт №: ${values.objNumber} створено`, {
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "colored",
-        });
+        toast.success(`Новий обʼєкт №: ${values.objNumber} створено`);
     };
 
     const listOfAppartmentNumbers = useFetcherObjectNumbers();
-    const { mutate } = useFetcherData();
+
+    const { mutate } = GetData();
 
     return (
         <Formik
