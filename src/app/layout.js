@@ -1,5 +1,6 @@
 import "./globals.css";
 import TranslatorProvider from "@/translator/i18Provider";
+import ToastProvider from "@/context/ToastProvider";
 // import { Inter } from "next/font/google";
 import Header from "@/components/Header/Header";
 // import Footer from "@/components/Footer/Footer";
@@ -72,14 +73,16 @@ export default function RootLayout({ children }) {
       {/* <body className={inter.className}> */}
       <body>
         <SiteProvider>
-          <AuthProvider>
-            <TranslatorProvider>
-              <Header />
-              <main>{children}</main>
-              {/* <Footer /> */}
-              <DynamicFooter />
-            </TranslatorProvider>
-          </AuthProvider>
+          <ToastProvider>
+            <AuthProvider>
+              <TranslatorProvider>
+                <Header />
+                <main>{children}</main>
+                {/* <Footer /> */}
+                <DynamicFooter />
+              </TranslatorProvider>
+            </AuthProvider>
+          </ToastProvider>
         </SiteProvider>
       </body>
     </html>
