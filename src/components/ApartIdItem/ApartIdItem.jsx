@@ -15,8 +15,16 @@ import OrderForm from "@/components/OrderForm/OrderForm";
 import { SiteContext } from "@/context/SiteContext";
 import Link from "next/link";
 import seoStyles from "@/app/seoStyles.module.css";
+import useSWR from "swr";
 
-const ApartIdItem = ({ dataId, error, isLoading }) => {
+const ApartIdItem = ({ params }) => {
+  const fetcher = (...args) => fetch(...args).then((res) => res.json());
+  const { data, error, isLoading } = useSWR(
+    `/api/apartments/${params.id}`,
+    fetcher
+  );
+
+  const dataId = data && !isLoading ? data : error;
   // console.log(dataId?.googleMapLocation);
   const { t } = useTranslation();
   const { isModalOpen, openModal, closeModal } = useContext(SiteContext);

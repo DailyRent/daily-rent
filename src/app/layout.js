@@ -11,9 +11,14 @@ import dynamic from "next/dynamic";
 const DynamicFooter = dynamic(() => import("@/components/Footer/Footer"));
 
 export const metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_MAIN_URL),
+  // title: {
+  //   template: "%s | Daily Rent - оренда квартири Суми. Квартири подобово.",
+  //   default: "Daily Rent - оренда квартири Суми. Квартири подобово.",
+  // },
   title: "Daily Rent - оренда квартири Суми. Квартири подобово.",
   description:
-    "Суми квартири. Зняти квартиру Суми. Оренда квартири Суми. Квартири подобово. Квартири на день",
+    "Суми квартири ⭐ Зняти квартиру Суми ✔️ Оренда квартири Суми 🔑 Квартири подобово 📅 Квартири на день",
   keywords: [
     "Суми квартири",
     "Зняти квартиру суми",
@@ -27,6 +32,38 @@ export const metadata = {
     canonical: process.env.NEXT_PUBLIC_MAIN_URL,
   },
   themeColor: "#373737",
+  openGraph: {
+    title: "Daily Rent - оренда квартири Суми. Квартири подобово.",
+    url: process.env.NEXT_PUBLIC_MAIN_URL,
+    description:
+      "Суми квартири ⭐ Зняти квартиру Суми ✔️ Оренда квартири Суми 🔑 Квартири подобово 📅 Квартири на день",
+    type: "website",
+    siteName: "Daily Rent",
+    images: [
+      {
+        // ! url: "/opengraph-image.png",
+        type: "image/png",
+        width: 400,
+        height: 300,
+        alt: "Daily Rent",
+      },
+      {
+        // !  url: "/twitter-image.png",
+        type: "image/png",
+        width: 800,
+        height: 600,
+        alt: "Daily Rent",
+      },
+      {
+        // ! url: "/opengraph-image.png",
+        type: "image/png",
+        width: 1200,
+        height: 630,
+        alt: "Daily Rent",
+      },
+    ],
+    locale: "en_GB",
+  },
 };
 
 export default function RootLayout({ children }) {
