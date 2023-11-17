@@ -1,85 +1,97 @@
 @import "../../styles/_variables.scss";
 
 .new {
-  -webkit-box-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  gap: 10px;
-  width: -webkit-min-content;
-  width: -moz-min-content;
-  width: min-content;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 10px;
+    width: -webkit-min-content;
+    width: -moz-min-content;
+    width: min-content;
 }
 
 .input,
 .textarea {
-  padding: 10px;
-  background-color: transparent;
-  border: 2px solid #bbb;
-  border-radius: 3px;
-  color: #000;
-  font-size: 20px;
-  font-weight: bold;
+    padding: 10px;
+    background-color: transparent;
+    border: 2px solid #bbb;
+    border-radius: 3px;
+    color: #000;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .textarea {
-  resize: none;
+    resize: none;
 }
 
 fieldset.top {
-  padding: 5px 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+    padding: 5px 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
 }
 
 .top input {
-  margin-right: 10px;
+    margin-right: 10px;
 }
 
 fieldset.roomsQuantity {
-  padding: 5px 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  gap: 10px;
+    padding: 5px 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    gap: 10px;
 }
 
 fieldset.amenities {
-  padding: 5px 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  gap: 5px;
+    padding: 5px 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 5px;
 }
 
 .amenities input {
-  margin-right: 10px;
+    margin-right: 10px;
+}
+
+.button {
+    padding: 7px;
+    border: none;
+    color: white;
+    border-radius: 3px;
+    background-color: #86ebb8;
 }
 
 .sendBtn {
-  padding: 5px;
-  border: none;
-  background-color: #53c28b;
-  color: white;
-  cursor: pointer;
-  border-radius: 3px;
+    padding: 7px;
+    border: none;
+    background-color: #53c28b;
+    color: white;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.error {
+    color: red;
 }
