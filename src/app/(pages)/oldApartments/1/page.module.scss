@@ -1,4 +1,4 @@
-@import '../../../../styles/variables.scss';
+@import "../../../../styles/variables.scss";
 
 .container {
   margin-top: 84px;
@@ -67,7 +67,8 @@
   align-items: center;
   justify-content: center;
   color: $acentColor;
-  font-family: Crimson Text;
+  // font-family: Crimson Text;
+  font-family: var(--font--crimsonPro);
   font-size: 20px;
   font-style: normal;
   font-weight: 400;

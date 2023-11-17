@@ -49,7 +49,8 @@
 }
 
 .title {
-  font-family: "Crimson Text";
+  // font-family: Crimson Text;
+  font-family: var(--font--crimsonPro);
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 32px;

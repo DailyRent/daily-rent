@@ -49,7 +49,8 @@
 }
 
 .heroLogo {
-  font-family: "Crimson Text";
+  // font-family: Crimson Text;
+  font-family: var(--font--crimsonPro);
   font-size: 20px;
   // font-size: clamp(1.25rem, 0rem + 3.333vw, 3rem);
   font-style: normal;
