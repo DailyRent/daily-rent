@@ -64,7 +64,7 @@ const DocumentsComponent = () => {
               <figure className={styles.documentTop}>
                 <Image
                   className={styles.documentTopImg}
-                  src="/imgDoc/img1.png"
+                  src="/imgDoc/img1.webp"
                   alt="Додатково про документ"
                   priority={true}
                   fill={true}
@@ -82,9 +82,10 @@ const DocumentsComponent = () => {
               <figure className={styles.documentTop}>
                 <Image
                   className={styles.documentTopImg}
-                  src="/imgDoc/img2.png"
+                  src="/imgDoc/img2.webp"
                   alt="Додатково про документ"
                   fill={true}
+                  loading="lazy"
                   title="Перехід до документа"
                   sizes="(min-width: 1480px) 299px, (min-width: 780px) 204px, 259px"
                 />
@@ -99,9 +100,10 @@ const DocumentsComponent = () => {
               <figure className={styles.documentTop}>
                 <Image
                   className={styles.documentTopImg}
-                  src="/imgDoc/img3.png"
+                  src="/imgDoc/img3.webp"
                   alt="Додатково про документ"
                   fill={true}
+                  loading="lazy"
                   title="Перехід до документа"
                   sizes="(min-width: 1480px) 299px, (min-width: 780px) 204px, 259px"
                 />
