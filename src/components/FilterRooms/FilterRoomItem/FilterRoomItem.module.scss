@@ -23,7 +23,8 @@
 
 .filterRoomText {
   color: $footerLogoColor;
-  font-family: Crimson Text;
+  // font-family: Crimson Text;
+  font-family: var(--font--crimsonPro);
   font-size: 14px;
   font-weight: 400;
 }

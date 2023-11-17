@@ -68,7 +68,8 @@
 
 .title {
   color: #000000;
-  font-family: Crimson Text;
+  // font-family: Crimson Text;
+  font-family: var(--font--crimsonPro);
   font-size: 32px;
   font-weight: 400;
   margin-bottom: 24px;
@@ -85,7 +86,8 @@
 .text {
   width: 100%;
   color: #000;
-  font-family: Crimson Text;
+  // font-family: Crimson Text;
+  font-family: var(--font--crimsonPro);
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
@@ -188,7 +190,8 @@
   -moz-column-gap: 40;
   column-gap: 40;
   color: #000;
-  font-family: Crimson Text;
+  // font-family: Crimson Text;
+  font-family: var(--font--crimsonPro);
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
@@ -222,7 +225,8 @@
   column-gap: 40;
   color: $acentColor;
 
-  font-family: Crimson Text;
+  // font-family: Crimson Text;
+  font-family: var(--font--crimsonPro);
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
@@ -287,7 +291,8 @@
 .tel {
   color: #181818;
 
-  font-family: Crimson Text;
+  // font-family: Crimson Text;
+  font-family: var(--font--crimsonPro);
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -328,7 +333,8 @@
 .mail {
   color: #181818;
 
-  font-family: Crimson Text;
+  // font-family: Crimson Text;
+  font-family: var(--font--crimsonPro);
   font-size: 32px;
   font-style: normal;
   font-weight: 400;
@@ -375,7 +381,7 @@
 // .toBackText {
 //   width: max-content;
 //   color: #636363;
-//   font-family: Crimson Text;
+//   // font-family: Crimson Text;
 //   font-size: 10px;
 //   font-weight: 400;
 // }

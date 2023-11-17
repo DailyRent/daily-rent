@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;700&family=Inter:wght@400;700&family=Jura:wght@500&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;700&family=Inter:wght@400;700&family=Jura:wght@500&display=swap"); */
 
 * {
   -webkit-box-sizing: border-box;
@@ -15,7 +15,9 @@ body {
   max-width: 100vw;
   min-height: 100vh;
   /* overflow-x: hidden; Викликає скрол при відкритій модалці! */
-  font-family: "Inter";
+  /* font-family: "Inter", sans-serif; */
+  font-family: var(--font--inter);
+  /* font-family: "Crimson Text", serif; */
   --sb-track-color: #f3f3f3;
   --sb-thumb-color: #242424;
   --sb-size: 8px;
@@ -74,7 +76,7 @@ ol {
   list-style: none;
 }
 
-.visuallyHidden {
+/* .visuallyHidden {
   position: absolute;
   white-space: nowrap;
   width: 1px;
@@ -86,11 +88,11 @@ ol {
   -webkit-clip-path: inset(50%);
   clip-path: inset(50%);
   margin: -1px;
-}
+} */
 
 .textLink {
   color: #636363;
-  font-family: "Crimson Text";
+  /* font-family: "Crimson Text"; */
   font-size: 10px;
   font-weight: 400;
   display: -webkit-box;
