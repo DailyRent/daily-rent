@@ -13,7 +13,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import seoStyles from "@/app/seoStyles.module.css";
 
-const RulesPage = () => {
+const RulesComponent = () => {
   // const router = useRouter();
   const { t } = useTranslation();
   const { i18n } = useTranslation();
@@ -91,4 +91,4 @@ const RulesPage = () => {
   );
 };
 
-export default RulesPage;
+export default RulesComponent;
