@@ -41,13 +41,13 @@ export const amenities = [
     id: 7,
     titleEN: 'Water heater',
     title: 'Водонагрівач',
-    img: '/png/Boiler.png',
+        img: '/png/Water heater.png',
   },
   {
     id: 8,
     titleEN: 'Boiler',
     title: 'Котел',
-    img: '/png/Water heater.png',
+    img: '/png/Boiler.png',
   },
   {
     id: 9,

@@ -60,6 +60,10 @@ const EditCard = ({ params }) => {
   ) {
     return (
       <div className={styles.container}>
+        <p className={styles.displaySizeMessage}>
+          Для користування цим функціоналом розмір Вашого екрану повинен бути не
+          менше 768 пікселів.
+        </p>
         {isLoading ? (
           <p>Loading...</p>
         ) : (
@@ -222,7 +226,7 @@ const EditCard = ({ params }) => {
             id={id}
             apart={data}
             mutate={mutate}
-            className={styles.updatingForm}
+            // className={styles.updatingForm}
           />
         )}
       </div>

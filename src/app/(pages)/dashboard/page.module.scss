@@ -1,32 +1,54 @@
 @import "../../../styles/_variables.scss";
 
 .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 103px 10px 10px;
+  flex: 1;
+
+  @media screen and (min-width: $tablet) {
+    align-items: normal;
+    justify-content: normal;
+    gap: 50px;
+    padding: 99px 20px 20px;
+    width: 100%;
+    flex: none;
+  }
+
+  @media screen and (min-width: $desktop) {
+    gap: 100px;
+    padding: 149px 40px 40px;
+  }
+}
+
+.displaySizeMessage {
+  width: 90%;
+  font-size: clamp(16px, 4vw, 30px);
+  font-weight: 700;
+  color: red;
+  text-align: center;
+
+  @media screen and (min-width: $tablet) {
+    display: none;
+  }
+}
+
+.apartments {
   display: none;
 
   @media screen and (min-width: $tablet) {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    gap: 50px;
-    padding: 99px 20px 20px;
-    width: 100%;
+    flex-direction: column;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    width: 50vw;
   }
-
-  @media screen and (min-width: $desktop) {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    gap: 100px;
-    padding: 149px 40px 40px;
-    width: 100%;
-  }
-}
-
-.apartments {
-  -webkit-box-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  width: 50vw;
 }
 
 .apartment {

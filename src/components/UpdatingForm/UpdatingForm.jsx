@@ -195,7 +195,7 @@ const UpdatingForm = ({ id, apart, mutate }) => {
   };
 
   return (
-    <div>
+    <div className={styles.formWrapper}>
       <form className={styles.new} onSubmit={handleSubmit}>
         <h1>Редагування обʼєкту</h1>
         <p>Номер обʼєкту: {objNumber}</p>

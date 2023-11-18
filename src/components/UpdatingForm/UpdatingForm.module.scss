@@ -1,5 +1,18 @@
 @import "../../styles/_variables.scss";
 
+.formWrapper {
+  display: none;
+
+  @media screen and (min-width: $tablet) {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+  }
+}
+
 .new {
   -webkit-box-flex: 1;
   -ms-flex: 1;
