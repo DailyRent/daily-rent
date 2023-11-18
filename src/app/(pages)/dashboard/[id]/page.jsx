@@ -4,8 +4,8 @@ import styles from "./page.module.scss";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import useSWR from "swr";
-import Image from "next/image";
-import UpdatingForm from "@/components/UpdatingForm/UpdatingForm";
+// import Image from "next/image";
+import UpdatingFormik from "@/components/UpdatingForm/UpdatingFormik";
 import Link from "next/link";
 import crypto from "crypto";
 import { CldImage } from "next-cloudinary";
@@ -222,7 +222,7 @@ const EditCard = ({ params }) => {
         {isLoading ? (
           <p>Loading</p>
         ) : (
-          <UpdatingForm
+          <UpdatingFormik
             id={id}
             apart={data}
             mutate={mutate}

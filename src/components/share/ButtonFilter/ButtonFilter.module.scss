@@ -40,7 +40,8 @@
 
 .filter {
   color: $acentColor;
-  font-family: Crimson Text;
+  // font-family: Crimson Text;
+  font-family: var(--font--crimsonPro);
   font-size: 16px;
   font-weight: 400;
   cursor: pointer;

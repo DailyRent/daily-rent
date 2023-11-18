@@ -7,13 +7,13 @@ import Link from "next/link";
 import { CldImage } from "next-cloudinary";
 import { toast } from "react-toastify";
 import DashboardFormik from "@/components/DashboardForm/DashboardFormik";
-import { useFetcherData } from "@/hooks/useFetcher";
+import { GetData } from "@/fetch/clientFetch";
 import styles from "./page.module.scss";
 
 const Dashboard = () => {
   const session = useSession();
 
-  const { data, mutate, isLoading } = useFetcherData();
+  const { data, mutate, isLoading } = GetData();
 
   const router = useRouter();
 

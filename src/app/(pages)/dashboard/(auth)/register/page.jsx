@@ -69,10 +69,9 @@ const RegisterPage = () => {
             Зареєструватися
           </button>
         </form>
+        {err && "Something went wrong ((("}
+        <Link href="/dashboard/login">Ви вже зареєстровані ?</Link>
       </div>
-
-      {err && "Something went wrong ((("}
-      <Link href="/dashboard/login">Ви вже зареєстровані ?</Link>
     </div>
   );
 };

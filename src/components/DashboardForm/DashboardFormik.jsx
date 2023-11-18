@@ -10,7 +10,7 @@ import {
 import { toast } from "react-toastify";
 import { dashboardSchema } from "@/yupShemas/dashboardShema";
 import { useFetcherObjectNumbers } from "@/hooks/useFetcher";
-import { useFetcherData } from "@/hooks/useFetcher";
+import { GetData } from "@/fetch/clientFetch";
 import styles from "./DashboardForm.module.scss";
 
 const DashboardFormik = () => {
@@ -37,32 +37,25 @@ const DashboardFormik = () => {
                 method: "POST",
                 body: JSON.stringify(values),
             });
-            // автоматически обновляет страницу при изменении кол-ва карточек
+            // автоматично обновлює строрінку при зміні кількості карточок
             mutate();
-            // обнуляет все поля формы
+            // обнуляє форму
             actions.resetForm();
+            toast.success(`Новий обʼєкт №: ${values.objNumber} створено`);
         } catch (err) {
             console.log(err);
+            toast.error("Помилка! Обʼєкт не створено");
         }
-        toast.success(`Новий обʼєкт №: ${values.objNumber} створено`, {
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "colored",
-        });
     };
 
     const listOfAppartmentNumbers = useFetcherObjectNumbers();
-    const { mutate } = useFetcherData();
+
+    const { mutate } = GetData();
 
     return (
         <Formik
             initialValues={initialValues}
-            // validationSchema={formDashboardSchema}
+            // validationSchema={dashboardSchema}
             validate={(values) => {
                 try {
                     validateYupSchema(
@@ -83,8 +76,6 @@ const DashboardFormik = () => {
         >
             {(formik) => {
                 const { isValid, values, setFieldValue } = formik;
-                // console.log("formik:", formik);
-                // console.log("values:", values);
 
                 return (
                     <Form className={styles.new}>
@@ -109,10 +100,6 @@ const DashboardFormik = () => {
                             <Field type='checkbox' name='top' id='Top' />
                             ТОП
                         </label>
-                        {/* <input
-                    // в объекте profile сохраняются данные по загружаемой картинке, которые в дальнейшем в оnSubmit извлекаются 
-                    {...register("profile")}
-                    type='file' placeholder='Основне фото' className={styles.input} /> */}
                         <ErrorMessage
                             name='titleImg'
                             className={styles.error}
@@ -135,7 +122,6 @@ const DashboardFormik = () => {
                         >
                             Завантажити ОСНОВНЕ фото
                         </CldUploadButton>
-                        {/* <input type='text' placeholder='Додаткові фото' className={styles.input} /> */}
                         <ErrorMessage
                             name='imgs'
                             className={styles.error}
@@ -209,7 +195,7 @@ const DashboardFormik = () => {
                             type='text'
                             name='googleMapLocation'
                             id='Location'
-                            placeholder='https://maps.app.goo.gl/Z8KyBtZDJyMEzNGf9'
+                            placeholder='https://maps.app.goo.gl/Z8KyBtZDJyMEzNGf9...'
                             className={styles.input}
                         />
                         <label htmlFor='Price'>Ціна:</label>
@@ -414,7 +400,6 @@ const DashboardFormik = () => {
                         <button
                             type='submit'
                             disabled={!isValid}
-                            // className={styles.sendBtn}
                             className={
                                 isValid
                                     ? `${styles.button} ${styles.sendBtn}`

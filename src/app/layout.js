@@ -1,20 +1,43 @@
 import "./globals.css";
-import TranslatorProvider from "@/translator/i18Provider";
-import ToastProvider from "@/context/ToastProvider";
-// import { Inter } from "next/font/google";
+// import TranslatorProvider from "@/translator/i18Provider";
+// import ToastProvider from "@/context/ToastProvider";
+import { Inter, Crimson_Pro } from "next/font/google";
 import Header from "@/components/Header/Header";
 // import Footer from "@/components/Footer/Footer";
-import AuthProvider from "@/components/AuthProvider/AuthProvider";
+// import AuthProvider from "@/components/AuthProvider/AuthProvider";
 import { SiteProvider } from "@/context/SiteContext";
-// const inter = Inter({ subsets: ["latin"] });
 import dynamic from "next/dynamic";
 
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font--inter",
+});
+
+const crimsonPro = Crimson_Pro({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font--crimsonPro",
+});
+
 const DynamicFooter = dynamic(() => import("@/components/Footer/Footer"));
+const DynamicToastProvider = dynamic(() => import("@/context/ToastProvider"));
+const DynamicTranslatorProvider = dynamic(() =>
+  import("@/translator/i18Provider")
+);
+const DynamicAuthProvider = dynamic(() =>
+  import("@/components/AuthProvider/AuthProvider")
+);
 
 export const metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_MAIN_URL),
+  // title: {
+  //   template: "%s | Daily Rent - оренда квартири Суми. Квартири подобово.",
+  //   default: "Daily Rent - оренда квартири Суми. Квартири подобово.",
+  // },
   title: "Daily Rent - оренда квартири Суми. Квартири подобово.",
   description:
-    "Суми квартири. Зняти квартиру Суми. Оренда квартири Суми. Квартири подобово. Квартири на день",
+    "Суми квартири ⭐ Зняти квартиру Суми ✔️ Оренда квартири Суми 🔑 Квартири подобово 📅 Квартири на день",
   keywords: [
     "Суми квартири",
     "Зняти квартиру суми",
@@ -28,24 +51,62 @@ export const metadata = {
     canonical: process.env.NEXT_PUBLIC_MAIN_URL,
   },
   themeColor: "#373737",
+  openGraph: {
+    title: "Daily Rent - оренда квартири Суми. Квартири подобово.",
+    url: process.env.NEXT_PUBLIC_MAIN_URL,
+    description:
+      "Суми квартири ⭐ Зняти квартиру Суми ✔️ Оренда квартири Суми 🔑 Квартири подобово 📅 Квартири на день",
+    type: "website",
+    siteName: "Daily Rent",
+    images: [
+      {
+        // ! url: "/opengraph-image.png",
+        type: "image/png",
+        width: 400,
+        height: 300,
+        alt: "Daily Rent",
+      },
+      {
+        // !  url: "/twitter-image.png",
+        type: "image/png",
+        width: 800,
+        height: 600,
+        alt: "Daily Rent",
+      },
+      {
+        // ! url: "/opengraph-image.png",
+        type: "image/png",
+        width: 1200,
+        height: 630,
+        alt: "Daily Rent",
+      },
+    ],
+    locale: "en_GB",
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      {/* <body className={inter.className}> */}
-      <body>
+      <body className={`${inter.variable} ${crimsonPro.variable}`}>
+        {/* <body className={inter.className}> */}
         <SiteProvider>
-          <ToastProvider>
-            <AuthProvider>
-              <TranslatorProvider>
+          {/* <ToastProvider> */}
+          <DynamicToastProvider>
+            {/* <AuthProvider> */}
+            <DynamicAuthProvider>
+              {/* <TranslatorProvider> */}
+              <DynamicTranslatorProvider>
                 <Header />
                 <main>{children}</main>
                 {/* <Footer /> */}
                 <DynamicFooter />
-              </TranslatorProvider>
-            </AuthProvider>
-          </ToastProvider>
+                {/* </TranslatorProvider> */}
+              </DynamicTranslatorProvider>
+              {/* </AuthProvider> */}
+            </DynamicAuthProvider>
+            {/* </ToastProvider> */}
+          </DynamicToastProvider>
         </SiteProvider>
       </body>
     </html>

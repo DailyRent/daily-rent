@@ -1,4 +1,4 @@
-.titleHidden {
+/* .titleHidden {
   opacity: 0;
   position: absolute;
   text-align: center;
@@ -6,4 +6,18 @@
   left: 50%;
   width: 0;
   height: 0;
+} */
+
+.titleHidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  margin: -1px;
 }

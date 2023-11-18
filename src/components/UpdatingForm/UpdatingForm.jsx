@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import styles from "./UpdatingForm.module.scss";
 import { CldUploadButton } from "next-cloudinary";
+import { toast } from "react-toastify";
 
 const UpdatingForm = ({ id, apart, mutate }) => {
   const {
@@ -189,8 +190,12 @@ const UpdatingForm = ({ id, apart, mutate }) => {
         }),
       });
       mutate();
+      toast.info(`Дані обʼєкту №: ${objNumber} оновлено`, {
+        theme: "colored",
+      });
     } catch (err) {
       console.log(err);
+      toast.error(`Помилка! Обʼєкт №: ${objNumber} не оновлено`);
     }
   };
 

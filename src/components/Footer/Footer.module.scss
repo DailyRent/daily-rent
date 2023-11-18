@@ -134,7 +134,8 @@
 }
 
 .contacts {
-  font-family: "Crimson Text";
+  // font-family: "Crimson Text";
+  font-family: var(--font--crimsonPro);
 }
 
 .btnsWrapper {
@@ -170,7 +171,8 @@
 
 .rights {
   color: $footerTextColor;
-  font-family: "Crimson Text";
+  // font-family: "Crimson Text";
+  font-family: var(--font--crimsonPro);
   font-size: clamp(12px, 2vw, 16px);
   font-style: normal;
   font-weight: 400;
