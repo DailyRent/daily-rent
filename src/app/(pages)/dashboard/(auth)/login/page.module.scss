@@ -1,6 +1,36 @@
 @import "../../../../../styles/_variables.scss";
 
 .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 103px 10px 10px;
+  flex: 1;
+
+  @media screen and (min-width: $tablet) {
+    padding: 99px 20px 20px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    padding: 149px 40px 40px;
+  }
+}
+
+.displaySizeMessage {
+  width: 90%;
+  font-size: clamp(16px, 4vw, 30px);
+  font-weight: 700;
+  color: red;
+  text-align: center;
+
+  @media screen and (min-width: $tablet) {
+    display: none;
+  }
+}
+
+.contentWrapper {
   display: none;
 
   @media screen and (min-width: $tablet) {
