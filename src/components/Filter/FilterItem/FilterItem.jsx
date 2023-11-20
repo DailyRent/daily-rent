@@ -61,6 +61,7 @@ const FilterItem = ({
             id={id}
             type="checkbox"
             className={filterCheckboxStyles}
+            aria-label={i18n.language === currentLanguages.EN ? titleEN : title}
             checked={isChecked}
             onChange={() => {
               setActiveIndex(id),
