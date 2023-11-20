@@ -1,4 +1,4 @@
-@import "@/styles/_variables.scss";
+@import '@/styles/_variables.scss';
 
 .container {
   // max-width: 1440px;
@@ -46,7 +46,7 @@
 .active {
   position: relative;
   &::after {
-    content: "";
+    content: '';
     display: block;
     position: absolute;
     bottom: 0px;
@@ -196,9 +196,10 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   @media screen and (min-width: $tablet) {
     font-size: 32px;
+    margin-bottom: 25px;
   }
   @media screen and (min-width: 1366px) {
     font-size: 36px;
@@ -231,7 +232,7 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   @media screen and (min-width: $tablet) {
     font-size: 24px;
     margin-bottom: 22px;
