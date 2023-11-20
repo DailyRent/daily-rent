@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 
 import { useTranslation } from "react-i18next";
+import { currentLanguages } from "@/data";
 
 import styles from "./FilterRoomItem.module.scss";
 
@@ -13,11 +14,13 @@ const FilterRoomItem = ({
   setActiveIndex,
   // numberRoomsArr,
   setNumberRoomsArr,
+  ariaTextEn,
+  ariaTextUk,
 }) => {
   const [isChecked, setIsChecked] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const isNumberRoomsChecked = () => {
     id === activeIndex ? setIsChecked(!isChecked) : null;
@@ -54,6 +57,9 @@ const FilterRoomItem = ({
         type="checkbox"
         className={filterCheckboxStyles}
         checked={isChecked}
+        aria-label={
+          i18n.language === currentLanguages.EN ? ariaTextEn : ariaTextUk
+        }
         onChange={() => {
           setActiveIndex(id),
             isNumberRoomsChecked(),

@@ -83,12 +83,48 @@ export const metadata = {
     ],
     locale: "en_GB",
   },
+  appLinks: {
+    ios: {
+      url: process.env.NEXT_PUBLIC_MAIN_URL,
+      app_name: "Daily Rent",
+    },
+    android: {
+      url: process.env.NEXT_PUBLIC_MAIN_URL,
+      package: process.env.NEXT_PUBLIC_MAIN_URL,
+      app_name: "Daily Rent",
+    },
+    web: {
+      url: process.env.NEXT_PUBLIC_MAIN_URL,
+      should_fallback: true,
+    },
+  },
+  assets: [process.env.NEXT_PUBLIC_MAIN_URL],
 };
 
 export default function RootLayout({ children }) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Daily Rent",
+    url: process.env.NEXT_PUBLIC_MAIN_URL,
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        telephone: "+380357960801",
+        email: "dailyrent4@gmail.com",
+        contactType: "customer service",
+      },
+    ],
+    keywords:
+      "Суми квартири. Зняти квартиру Суми. Оренда квартири Суми. Квартири подобово. Квартири на день",
+  };
   return (
     <html lang="en">
       <body className={`${inter.variable} ${crimsonPro.variable}`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         {/* <body className={inter.className}> */}
         <SiteProvider>
           {/* <ToastProvider> */}
