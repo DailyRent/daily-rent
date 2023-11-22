@@ -1,7 +1,7 @@
-import React from 'react';
-import { useTranslation } from 'react-i18next';
-import Image from 'next/image';
-import styles from './ApartDataList.module.scss';
+import React from "react";
+import { useTranslation } from "react-i18next";
+import Image from "next/image";
+import styles from "./ApartDataList.module.scss";
 
 const ApartDataList = ({ dataId }) => {
   const { t } = useTranslation();
@@ -17,7 +17,7 @@ const ApartDataList = ({ dataId }) => {
 
       <span className={styles.dataText}>
         {dataId.roomsQuantity}
-        {t('ApartmentsPage.TextOfDescAdress')}:
+        {t("ApartmentsPage.TextOfDescAdress")}:
       </span>
       <span className={styles.dataText}>
         <a
@@ -30,13 +30,14 @@ const ApartDataList = ({ dataId }) => {
               src="/png/Google Maps Old.png"
               alt="google maps"
               fill={true}
+              sizes="10vw"
               className={styles.img}
             />
           </div>
           <span className={styles.googleMapsText}>{dataId.address}</span>
         </a>
       </span>
-      <span className={styles.dataText + ' ' + styles.dataTextPrice}>
+      <span className={styles.dataText + " " + styles.dataTextPrice}>
         ₴ {dataId.price}
       </span>
     </div>
