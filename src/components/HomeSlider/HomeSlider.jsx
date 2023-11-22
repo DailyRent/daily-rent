@@ -4,7 +4,9 @@ import React, { useEffect, useState } from "react";
 import styles from "./HomeSlider.module.scss";
 
 import Link from "next/link";
-import Image from "next/image";
+// import Image from "next/image";
+import { CldImage } from "next-cloudinary";
+
 import { GetData } from "@/fetch/clientFetch";
 import Loading from "@/app/loading";
 
@@ -18,7 +20,7 @@ import "swiper/css/navigation";
 import "./HomeSlider.css";
 
 // import required modules
-import { Pagination, Navigation, Autoplay } from "swiper/modules";
+import { Pagination, Navigation, Keyboard } from "swiper/modules";
 
 const HomeSlider = () => {
   const { data, error, isLoading } = GetData();
@@ -63,28 +65,22 @@ const HomeSlider = () => {
 
   return (
     <div className={styles.container}>
-      <p className={styles.sliderText}>Lorem ipsum</p>
-      <h2 className={styles.sliderTitle}>Lorem ipsum</h2>
+      {/* <p className={styles.sliderText}>Lorem ipsum</p> */}
+      <h2 className={styles.sliderTitle}>Top apartments</h2>
       {isLoading ? (
         <Loading className={styles.sliderLoader} />
       ) : (
         <Swiper
           slidesPerView={slidesPerView}
-          // spaceBetween={30}
+          loop={true}
           pagination={{
-            clickable: true,
             dynamicBullets: true,
           }}
           navigation={true}
-          // speed={1000}
-          // autoplay={{
-          //   delay: 1000,
-          //   disableOnInteraction: false,
-          // }}
-          // effect="slide"
-
-          loop={true}
-          modules={[Pagination, Navigation, Autoplay]}
+          keyboard={{
+            enabled: true,
+          }}
+          modules={[Pagination, Navigation, Keyboard]}
           className="HomeSliderSwiper"
         >
           {topData?.map((el) => {
@@ -92,7 +88,7 @@ const HomeSlider = () => {
               <SwiperSlide key={el._id}>
                 <Link href={`apartments/${el._id}`} className="link">
                   <div className="div">
-                    <Image
+                    <CldImage
                       src={el.titleImg}
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
