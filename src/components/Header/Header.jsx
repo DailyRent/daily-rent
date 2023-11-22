@@ -25,13 +25,6 @@ const Header = () => {
 
   const isClient = typeof window !== "undefined";
 
-  console.log(session.status);
-  console.log("isMobile", isMobile);
-  console.log("window.innerWidth", window.innerWidth);
-
-  // if (session.status === "authenticated" && window.innerWidth < 1200) {
-  // }
-
   const handleResize = () => {
     if (
       window.innerWidth < 768 ||
@@ -67,41 +60,40 @@ const Header = () => {
         {!isMobile && (
           <div className={styles.leftLinks}>
             {!isLoading && (
-              <Link
-                href={"/apartments"}
-                className={
-                  pathname === "/apartments"
-                    ? styles.activeLink
-                    : " textLinkAnimation"
-                }
-              >
-                {t("Header.linkApartments")}
-              </Link>
-            )}
-            {!isLoading && (
-              <Link
-                href={"/documents"}
-                className={
-                  pathname === "/documents"
-                    ? styles.activeLink
-                    : " textLinkAnimation"
-                }
-              >
-                {t("Header.linkDocuments")}
-              </Link>
-            )}
+              <>
+                <Link
+                  href={"/apartments"}
+                  className={
+                    pathname === "/apartments"
+                      ? styles.activeLink
+                      : " textLinkAnimation"
+                  }
+                >
+                  {t("Header.linkApartments")}
+                </Link>
 
-            {!isLoading && (
-              <Link
-                href={"/rules"}
-                className={
-                  pathname === "/rules"
-                    ? styles.activeLink
-                    : " textLinkAnimation"
-                }
-              >
-                {t("Header.linkRules")}
-              </Link>
+                <Link
+                  href={"/documents"}
+                  className={
+                    pathname === "/documents"
+                      ? styles.activeLink
+                      : " textLinkAnimation"
+                  }
+                >
+                  {t("Header.linkDocuments")}
+                </Link>
+
+                <Link
+                  href={"/rules"}
+                  className={
+                    pathname === "/rules"
+                      ? styles.activeLink
+                      : " textLinkAnimation"
+                  }
+                >
+                  {t("Header.linkRules")}
+                </Link>
+              </>
             )}
           </div>
         )}
