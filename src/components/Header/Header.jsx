@@ -15,6 +15,8 @@ const Header = () => {
   const session = useSession();
   const pathname = usePathname();
 
+  // console.log(pathname);
+
   const { t } = useTranslation();
 
   const [burgerMenu, setBurgerMenu] = useState(false);
@@ -23,8 +25,18 @@ const Header = () => {
 
   const isClient = typeof window !== "undefined";
 
+  console.log(session.status);
+  console.log("isMobile", isMobile);
+  console.log("window.innerWidth", window.innerWidth);
+
+  // if (session.status === "authenticated" && window.innerWidth < 1200) {
+  // }
+
   const handleResize = () => {
-    if (window.innerWidth < 768) {
+    if (
+      window.innerWidth < 768 ||
+      (session.status === "authenticated" && window.innerWidth < 1200)
+    ) {
       setIsMobile(true);
     } else {
       setIsMobile(false);
@@ -32,18 +44,19 @@ const Header = () => {
   };
 
   useEffect(() => {
+    setIsLoading(false);
     // Add an event listener for window resize
+
     window.addEventListener("resize", handleResize);
 
     // Initial check on component mount
     handleResize();
-    setIsLoading(false);
 
     // Clean up the event listener on component unmount
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [session.status]);
 
   return (
     <header className={styles.container}>
@@ -54,57 +67,62 @@ const Header = () => {
         {!isMobile && (
           <div className={styles.leftLinks}>
             {!isLoading && (
-              <>
-                <Link
-                  href={"/apartments"}
-                  className={
-                    pathname === "/apartments"
-                      ? styles.activeLink
-                      : " textLinkAnimation"
-                  }
-                >
-                  {t("Header.linkApartments")}
-                </Link>
+              <Link
+                href={"/apartments"}
+                className={
+                  pathname === "/apartments"
+                    ? styles.activeLink
+                    : " textLinkAnimation"
+                }
+              >
+                {t("Header.linkApartments")}
+              </Link>
+            )}
+            {!isLoading && (
+              <Link
+                href={"/documents"}
+                className={
+                  pathname === "/documents"
+                    ? styles.activeLink
+                    : " textLinkAnimation"
+                }
+              >
+                {t("Header.linkDocuments")}
+              </Link>
+            )}
 
-                <Link
-                  href={"/documents"}
-                  className={
-                    pathname === "/documents"
-                      ? styles.activeLink
-                      : " textLinkAnimation"
-                  }
-                >
-                  {t("Header.linkDocuments")}
-                </Link>
-
-                <Link
-                  href={"/rules"}
-                  className={
-                    pathname === "/rules"
-                      ? styles.activeLink
-                      : " textLinkAnimation"
-                  }
-                >
-                  {t("Header.linkRules")}
-                </Link>
-              </>
+            {!isLoading && (
+              <Link
+                href={"/rules"}
+                className={
+                  pathname === "/rules"
+                    ? styles.activeLink
+                    : " textLinkAnimation"
+                }
+              >
+                {t("Header.linkRules")}
+              </Link>
             )}
           </div>
         )}
 
-        {!isMobile && !isLoading && (
+        {!isMobile && (
           <div className={styles.rightLinks}>
-            <Link
-              href={"/contacts"}
-              className={
-                pathname === "/contacts"
-                  ? styles.activeLink
-                  : " textLinkAnimation"
-              }
-            >
-              {t("Header.linkContacts")}
-            </Link>
+            {!isLoading && (
+              <Link
+                href={"/contacts"}
+                className={
+                  pathname === "/contacts"
+                    ? styles.activeLink
+                    : " textLinkAnimation"
+                }
+              >
+                {t("Header.linkContacts")}
+              </Link>
+            )}
+
             <SocialLinks />
+
             <TranslatorBtnBlock isClient={isClient} />
           </div>
         )}
@@ -113,13 +131,15 @@ const Header = () => {
 
         <Logo className={styles.logo} isClient={isClient} />
 
-        <BurgerBtn
-          onClick={() => {
-            setBurgerMenu(!burgerMenu);
-          }}
-          burgerMenu={burgerMenu}
-          isClient={isClient}
-        />
+        {isMobile && (
+          <BurgerBtn
+            onClick={() => {
+              setBurgerMenu(!burgerMenu);
+            }}
+            burgerMenu={burgerMenu}
+            isClient={isClient}
+          />
+        )}
 
         {session.status === "authenticated" && !isLoading && (
           <button className={styles.logoutBtn} onClick={signOut}>
@@ -128,7 +148,7 @@ const Header = () => {
         )}
       </div>
 
-      {isMobile && !isLoading && (
+      {(isMobile || !isLoading) && (
         <Navigation
           className={
             burgerMenu
