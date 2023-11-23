@@ -108,9 +108,9 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  // -webkit-box-align: center;
+  // -ms-flex-align: center;
+  // align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
@@ -136,7 +136,8 @@
 
 .mapImgContainer {
   position: relative;
-  width: 328px;
+  width: 100%;
+  // width: 328px;
   height: 246px;
   margin-bottom: 20px;
   @media screen and (min-width: $tablet) {
@@ -268,9 +269,12 @@
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-column-gap: 59px;
-  -moz-column-gap: 59px;
-  column-gap: 59px;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  // -webkit-column-gap: 59px;
+  // -moz-column-gap: 59px;
+  // column-gap: 59px;
   margin-bottom: 24px;
   @media screen and (min-width: $tablet) {
     -webkit-box-align: start;
