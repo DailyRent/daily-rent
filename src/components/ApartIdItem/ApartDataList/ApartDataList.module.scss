@@ -1,4 +1,4 @@
-@import "../../../styles/variables";
+@import '../../../styles/variables';
 
 .dataList {
   width: 100%;
@@ -177,6 +177,19 @@
   // @media screen and (min-width: 1366px) {
   //   text-underline-offset: 6px;
   // }
+  width: 228px;
+  -webkit-hyphens: auto;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+  @media screen and (min-width: 768px) {
+    width: 238px;
+  }
+  @media screen and (min-width: 1366px) {
+    width: 352px;
+  }
 }
 
 .dataTextPrice {

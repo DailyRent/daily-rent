@@ -1,4 +1,4 @@
-@import "../../styles/_variables.scss";
+@import '../../styles/_variables.scss';
 
 .oneRooms {
   position: relative;
@@ -59,14 +59,14 @@
   // font-family: Playfair Display;
   font-size: 16px;
   font-weight: 400;
-  // text-overflow: ellipsis;
+  text-overflow: ellipsis;
   width: 300px;
   // white-space: wrap;
-  // white-space: nowrap;
-  // overflow: hidden;
-  &:hover {
-    white-space: wrap;
-  }
+  white-space: nowrap;
+  overflow: hidden;
+  // &:hover {
+  //   white-space: wrap;
+  // }
 }
 
 .priceRooms {
