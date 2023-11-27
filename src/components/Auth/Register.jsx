@@ -3,8 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-// import { Formik, Form, Field, ErrorMessage } from "formik";
-// import { registerSchema } from "@/yupShemas/registerShema";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import { registerSchema } from "@/yupShemas/registerShema";
 import styles from "./Register.module.scss";
 
 const Register = () => {
@@ -12,43 +12,12 @@ const Register = () => {
     // для перенаправления после регистрации
     const router = useRouter();
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        const name = e.target[0].value;
-        const email = e.target[1].value;
-        const password = e.target[2].value;
+    // const handleSubmit = async (e) => {
+    //     e.preventDefault();
+    //     const name = e.target[0].value;
+    //     const email = e.target[1].value;
+    //     const password = e.target[2].value;
 
-        try {
-            const response = await fetch("/api/auth/register", {
-                method: "POST",
-                headers: {
-                    "Content-type": "application/json",
-                },
-                body: JSON.stringify({
-                    name,
-                    email,
-                    password,
-                }),
-            });
-
-            response.status === 201 &&
-                router.push(
-                    "/dashboard/login?success=Account has been created"
-                );
-            toast.success("Аккаунт успішно створено");
-        } catch (error) {
-            setErr(true);
-        }
-    };
-
-    // const initialValues = {
-    //     name: "",
-    //     email: "",
-    //     password: "",
-    // };
-
-    // const handleSubmit = async (values, actions) => {
-    //     const { name, email, password } = values;
     //     try {
     //         const response = await fetch("/api/auth/register", {
     //             method: "POST",
@@ -66,11 +35,42 @@ const Register = () => {
     //             router.push(
     //                 "/dashboard/login?success=Account has been created"
     //             );
-    //         actions.resetForm();
+    //         toast.success("Аккаунт успішно створено");
     //     } catch (error) {
     //         setErr(true);
     //     }
     // };
+
+    const initialValues = {
+        name: "",
+        email: "",
+        password: "",
+    };
+
+    const handleSubmit = async (values, actions) => {
+        const { name, email, password } = values;
+        try {
+            const response = await fetch("/api/auth/register", {
+                method: "POST",
+                headers: {
+                    "Content-type": "application/json",
+                },
+                body: JSON.stringify({
+                    name,
+                    email,
+                    password,
+                }),
+            });
+
+            response.status === 201 &&
+                router.push(
+                    "/dashboard/login?success=Account has been created"
+                );
+            actions.resetForm();
+        } catch (error) {
+            setErr(true);
+        }
+    };
 
     return (
         <div className={styles.container}>
@@ -80,7 +80,7 @@ const Register = () => {
             </p>
             <div className={styles.contentWrapper}>
                 <h1>Реєстрація</h1>
-                {/* <Formik
+                <Formik
                     initialValues={initialValues}
                     validationSchema={registerSchema}
                     onSubmit={(values, actions) => {
@@ -140,8 +140,8 @@ const Register = () => {
                             </Form>
                         );
                     }}
-                </Formik> */}
-                <form className={styles.form} onSubmit={handleSubmit}>
+                </Formik>
+                {/* <form className={styles.form} onSubmit={handleSubmit}>
                     <input
                         type='text'
                         placeholder='Ivan Petrov'
@@ -169,7 +169,7 @@ const Register = () => {
                     >
                         Зареєструватися
                     </button>
-                </form>
+                </form> */}
                 {err && "Something went wrong ((("}
                 <Link href='/dashboard/login'>Ви вже зареєстровані ?</Link>
             </div>

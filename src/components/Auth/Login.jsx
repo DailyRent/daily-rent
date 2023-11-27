@@ -2,8 +2,8 @@
 
 import { useRouter } from "next/navigation";
 import { signIn, useSession } from "next-auth/react";
-// import { Formik, Form, Field, ErrorMessage } from "formik";
-// import { loginSchema } from "@/yupShemas/loginShema";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import { loginSchema } from "@/yupShemas/loginShema";
 import styles from "./Login.module.scss";
 
 const Login = () => {
@@ -38,19 +38,19 @@ const Login = () => {
         password: "",
     };
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        const email = e.target[0].value;
-        const password = e.target[1].value;
+    // const handleSubmit = async (e) => {
+    //     e.preventDefault();
+    //     const email = e.target[0].value;
+    //     const password = e.target[1].value;
 
-        signIn("credentials", { email, password });
-    };
-
-    // const handleSubmit = async (values, actions) => {
-    //     const { email, password } = values;
     //     signIn("credentials", { email, password });
-    //     actions.resetForm();
     // };
+
+    const handleSubmit = async (values, actions) => {
+        const { email, password } = values;
+        signIn("credentials", { email, password });
+        actions.resetForm();
+    };
 
     return (
         <div className={styles.container}>
@@ -60,7 +60,7 @@ const Login = () => {
             </p>
             <div className={styles.contentWrapper}>
                 <h1>Вхід</h1>
-                {/* <Formik
+                <Formik
                     initialValues={initialValues}
                     validationSchema={loginSchema}
                     onSubmit={(values, actions) => {
@@ -109,9 +109,9 @@ const Login = () => {
                             </Form>
                         );
                     }}
-                </Formik> */}
+                </Formik>
 
-                <form className={styles.form} onSubmit={handleSubmit}>
+                {/* <form className={styles.form} onSubmit={handleSubmit}>
                     <input
                         type='email'
                         placeholder='Petrov@gmail.com'
@@ -132,7 +132,7 @@ const Login = () => {
                     >
                         Залогінитися
                     </button>
-                </form>
+                </form> */}
 
                 <button
                     onClick={() => {
