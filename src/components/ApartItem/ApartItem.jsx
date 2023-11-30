@@ -14,7 +14,7 @@ const ApartItem = ({
   roomsQuantity,
   id,
 }) => {
-  const {t}=useTranslation();
+  const { t } = useTranslation();
   return (
     <>
       <li className={styles.oneRooms}>
