@@ -13,6 +13,7 @@ import { useFetcherObjectNumbers } from "@/hooks/useFetcher";
 import { GetData } from "@/fetch/clientFetch";
 import styles from "./DashboardForm.module.scss";
 
+
 const DashboardFormik = () => {
     const initialValues = {
         objNumber: "",
@@ -120,7 +121,7 @@ const DashboardFormik = () => {
                             }}
                             uploadPreset='unsigned_preset'
                         >
-                            Завантажити ОСНОВНЕ фото
+                            Завантажити ОСНОВНЕ фото (тільки .WEBP)
                         </CldUploadButton>
                         <ErrorMessage
                             name='imgs'
@@ -140,7 +141,7 @@ const DashboardFormik = () => {
                             }}
                             uploadPreset='unsigned_preset'
                         >
-                            Завантажити додаткові фото
+                            Завантажити додаткові фото (тільки .WEBP)
                         </CldUploadButton>
                         <label htmlFor='address'>Адреса:</label>
                         <ErrorMessage
@@ -262,7 +263,7 @@ const DashboardFormik = () => {
                                     id='wi-fi'
                                     name='amenities'
                                     value='Wi-Fi'
-                                    // defaultChecked
+                                // defaultChecked
                                 />
                                 Wi-Fi
                             </label>

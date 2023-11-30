@@ -9,15 +9,16 @@ import styles from "./TranslatorBtnBlock.module.scss";
 
 const TranslatorBtnBlock = ({ isClient }) => {
   const pathname = usePathname();
-  const [language, setLanguage] = useState((prev) => (!prev || prev===undefined)  ? "ua" : prev);
+  const [language, setLanguage] = useState((prev) => (!prev || prev === undefined) ? "ua" : prev);
   const { i18n } = useTranslation();
-  const[isLoad,setIsLoad]=useState(true)
+  const [isLoad, setIsLoad] = useState(true)
 
   useEffect(() => {
     setIsLoad(false)
-    const lang=localStorage.getItem("whatLanguage")
-    setLanguage(()=> lang ? lang : "ua");
+    const lang = localStorage.getItem("whatLanguage")
+    setLanguage(() => lang ? lang : "ua");
   }, []);
+
 
   const changeLanguage = (languageUser) => {
     const whatLanguage = languageUser
@@ -92,7 +93,7 @@ const TranslatorBtnBlock = ({ isClient }) => {
         )}
       </div>
     </div> */}
-</div>
+  </div>
   );
 };
 

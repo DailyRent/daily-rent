@@ -26,7 +26,8 @@ const ApartIdItem = ({ params }) => {
 
   const dataId = data && !isLoading ? data : error;
   // console.log(dataId?.googleMapLocation);
-  const { t } = useTranslation();
+
+  const { t, i18n } = useTranslation();
   const { isModalOpen, openModal, closeModal } = useContext(SiteContext);
 
   return (
@@ -66,7 +67,9 @@ const ApartIdItem = ({ params }) => {
           </div>
         </div>
       )}
-
+      {/* <p className={styles.textInfo}>
+        {i18n.language === "ua" ? dataId?.description : dataId?.descriptionEn}
+      </p> */}
       <p className={styles.textInfo}>
         Lorem ipsum dolor sit amet consectetur. A fermentum venenatis interdum
         ornare. Augue semper at risus neque maecenas neque potenti eget.

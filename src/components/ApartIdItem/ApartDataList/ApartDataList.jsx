@@ -4,7 +4,7 @@ import Image from "next/image";
 import styles from "./ApartDataList.module.scss";
 
 const ApartDataList = ({ dataId }) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   return (
     <div className={styles.dataList}>
@@ -34,7 +34,7 @@ const ApartDataList = ({ dataId }) => {
               className={styles.img}
             />
           </div>
-          <span className={styles.googleMapsText}>{dataId.address}</span>
+          <span className={styles.googleMapsText}>{i18n.language === "ua" ? dataId.address : dataId.addressEn}</span>
         </a>
       </span>
       <span className={styles.dataText + " " + styles.dataTextPrice}>

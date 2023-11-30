@@ -1,6 +1,6 @@
 {
     "Header": {
-        "headerSale": "-10% НА ВСІ КВАРТИРИ ПРИ ПЕРШОМУ ЗВЕРНЕННІ",
+        "headerSale": "-10% ПРИ ПЕРШОМУ ЗАМОВЛЕННІ",
         "linkApartments": "Апартаменти",
         "linkDocuments": "Документи",
         "linkRules": "Правила",
@@ -9,18 +9,18 @@
     "MainPage": {
         "heroTitle": "Твій комфорт - наша турбота",
         "galleryTittle": "Апартаменти",
-        "contactsTitle": "Зв'яжіться з нами"
+        "contactsTitle": "Зв’яжіться з нами"
     },
     "ApartmentsPage": {
-        "Title": "Що буде в апартаментах ?",
+        "Title": "Що буде в апартаментах?",
         "OneRoom": "Однокімнатні",
         "TwoRoom": "Двокімнатні",
         "ThreeRoom": "Трикімнатні",
         "OneAndTwoRoom": "Однокімнатні та двокімнатні",
         "OneAndThreeRoom": "Однокімнатні та трикімнатні",
         "TwoAndThreeRoom": "Двокімнатні та трикімнатні",
-        "NotFound": "квартири не знайдено",
-        "TextOfDescAdress": " кімнатна за адресою",
+        "NotFound": "Квартири не знайдено",
+        "TextOfDescAdress": "-кімнатна за адресою",
         "TextOfDescOptions": "Що буде в апартаментах"
     },
     "ContactsPage": {
@@ -29,11 +29,11 @@
         "CountryAndSity": "Україна, Суми",
         "Adress": "вул.Степана Бандери, 3"
     },
-    "RulesPage":{
-        "MainTitle":"правила проживання:",
-        "TitleSection1":"Правила поведінки в квартирі:",
-        "TitleSection2":"Категорично забороняється:",
-        "TitleSection3":"Адміністрація має право негайно виселити орендаря без повернення грошей за проживання, у разі:"
+    "RulesPage": {
+        "MainTitle": "Правила проживання:",
+        "TitleSection1": "Правила поведінки в квартирі:",
+        "TitleSection2": "Категорично забороняється:",
+        "TitleSection3": "Адміністрація має право негайно виселити орендаря без повернення грошей за проживання у разі:"
     },
     "Navigation": {
         "MainPage": "Головна",
@@ -49,7 +49,7 @@
         "CardDetailsBtn": "Детальніше",
         "FilterBtn": "Шукати",
         "FilterClear": "Очистити",
-        "FilterQuantRooms":"-кім.",
+        "FilterQuantRooms": "-кім.",
         "ObjectsBtn": "Всі об’єкти",
         "OpenFilterBtn": "Фільтр",
         "CloseFilterBtn": "Сховати",
@@ -63,13 +63,13 @@
         "departureDate": "Дата виїзду",
         "numberOfObject": "Номер об’єкту",
         "fieldsDesc": "поле, обовʼязкове для заповнення",
-        "formSubmitedMsg1": "Ваша заявка успішна відправлена!",
-        "formSubmitedMsg2": "Наш менеджер зв’яжеться з вами в найближчий час.",
+        "formSubmitedMsg1": "Ваша заявка успішно відправлена!",
+        "formSubmitedMsg2": "Наш менеджер зв’яжеться з Вами найближчим часом.",
         "fieldRequiredMsg": "Заповніть це поле",
         "errorShortName": "Ім’я має бути довшим",
         "errorLongName": "Ім’я має бути коротшим",
-        "errorNumberOfObject": "Такого номера немає",
-        "errorNumberOfObject2": "Тільки позитивні цифри",
+        "errorNumberOfObject": "Такого номеру немає",
+        "errorNumberOfObject2": "Тільки додатні числа",
         "errorNumberOfObject3": "Тільки цифри",
         "errorTooManySpases": "Забагато пробілів"
     },

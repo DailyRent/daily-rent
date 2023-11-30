@@ -1,6 +1,6 @@
 {
     "Header": {
-        "headerSale": "-10% FOR ALL APARTMENTS AT THE FIRST APPLICATION",
+        "headerSale": "-10% ON FIRST ORDER",
         "linkApartments": "Apartments",
         "linkDocuments": "Documents",
         "linkRules": "Rules",
@@ -25,15 +25,15 @@
     },
     "ContactsPage": {
         "Title": "Contacts",
-        "Text": "Feel free to call us or write to us on any of the social networks. We will be happy to help and communicate with you!",
+        "Text": "Feel free to call us or write to us on any of the social media. We will be happy to help and communicate with you!",
         "CountryAndSity": "Ukraine, Sumy",
         "Adress": "Stepana Bandery street, 3"
     },
-    "RulesPage":{
-        "MainTitle":"rules of residence:",
-        "TitleSection1":"Rules of behavior in the apartment:",
-        "TitleSection2":"This is strictly prohibited:",
-        "TitleSection3":"The administration has the right to immediately evict the tenant without refunding the rent, in case of:"
+    "RulesPage": {
+        "MainTitle": "rules of residence:",
+        "TitleSection1": "Rules of behavior in the apartment:",
+        "TitleSection2": "This is strictly prohibited:",
+        "TitleSection3": "The administration has the right to immediately evict the tenant without refunding the rent in case of:"
     },
     "Navigation": {
         "MainPage": "Main",
@@ -49,7 +49,7 @@
         "CardDetailsBtn": "Details",
         "FilterBtn": "Find",
         "FilterClear": "Clear",
-        "FilterQuantRooms":" rooms",
+        "FilterQuantRooms": "-rooms",
         "ObjectsBtn": "All objects",
         "OpenFilterBtn": "Filter",
         "CloseFilterBtn": "Close",
