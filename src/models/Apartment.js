@@ -48,6 +48,10 @@ const apartmentSchema = new Schema({
     amenities: {
         type: Array,
     },
+    bedsQuantity: {
+        type: String,
+        required: true,
+    },
     // эти свойства будут заходить в amenities, благодаря checkbox
     // Air conditioning: bool,
     // SmartTV: bool,

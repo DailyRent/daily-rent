@@ -75,6 +75,18 @@ fieldset.amenities {
   margin-right: 10px;
 }
 
+fieldset.bedsQuantity {
+  padding: 5px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  gap: 10px;
+}
+
 .button {
   padding: 7px;
   border: none;
