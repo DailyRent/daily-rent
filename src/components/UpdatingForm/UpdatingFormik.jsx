@@ -20,6 +20,7 @@ const UpdatingFormik = ({ id, apart, mutate }) => {
     roomsQuantity,
     bookingUrl,
     amenities,
+    bedsQuantity,
     description,
     descriptionEn,
   } = apart;
@@ -36,6 +37,7 @@ const UpdatingFormik = ({ id, apart, mutate }) => {
     newRoomsQuantity: roomsQuantity,
     newBookingUrl: bookingUrl,
     newAmenities: amenities,
+    newBedsQuantity: bedsQuantity,
     newDescription: description,
     newDescriptionEn: descriptionEn,
   };
@@ -53,6 +55,7 @@ const UpdatingFormik = ({ id, apart, mutate }) => {
       newRoomsQuantity,
       newBookingUrl,
       newAmenities,
+      newBedsQuantity,
       newDescription,
       newDescriptionEn,
     } = values;
@@ -71,6 +74,7 @@ const UpdatingFormik = ({ id, apart, mutate }) => {
           roomsQuantity: newRoomsQuantity,
           bookingUrl: newBookingUrl,
           amenities: newAmenities,
+          bedsQuantity: newBedsQuantity,
           description: newDescription,
           descriptionEn: newDescriptionEn,
         }),
@@ -127,7 +131,7 @@ const UpdatingFormik = ({ id, apart, mutate }) => {
                 }}
                 uploadPreset="unsigned_preset"
               >
-                Змінити ОСНОВНЕ фото
+                Змінити ОСНОВНЕ фото (тільки .WEBP)
               </CldUploadButton>
               <ErrorMessage
                 name="newImgs"
@@ -144,7 +148,7 @@ const UpdatingFormik = ({ id, apart, mutate }) => {
                 }}
                 uploadPreset="unsigned_preset"
               >
-                Додати додаткові фото
+                Додати додаткові фото (тільки .WEBP)
               </CldUploadButton>
               <label htmlFor="newAddress">Адреса:</label>
               <ErrorMessage
@@ -368,6 +372,49 @@ const UpdatingFormik = ({ id, apart, mutate }) => {
                   />
                   Парковка
                 </label>
+              </fieldset>
+              <ErrorMessage
+                name="newBedsQuantity"
+                className={styles.error}
+                component="p"
+              />
+              <fieldset className={styles.roomsQuantity}>
+                <legend>Кількість кімнат:</legend>
+                <Field
+                  type="radio"
+                  id="twoBeds"
+                  name="newBedsQuantity"
+                  value="2"
+                />
+                <label htmlFor="twoBeds">2</label>
+                <Field
+                  type="radio"
+                  id="threeBeds"
+                  name="newBedsQuantity"
+                  value="3"
+                />
+                <label htmlFor="threeBeds">3</label>
+                <Field
+                  type="radio"
+                  id="fourBeds"
+                  name="newBedsQuantity"
+                  value="4"
+                />
+                <label htmlFor="fourBeds">4</label>
+                <Field
+                  type="radio"
+                  id="fiveBeds"
+                  name="newBedsQuantity"
+                  value="5"
+                />
+                <label htmlFor="fiveBeds">5</label>
+                <Field
+                  type="radio"
+                  id="sixBeds"
+                  name="newBedsQuantity"
+                  value="6"
+                />
+                <label htmlFor="sixBeds">6</label>
               </fieldset>
               <label htmlFor="Description">Опис:</label>
               <ErrorMessage

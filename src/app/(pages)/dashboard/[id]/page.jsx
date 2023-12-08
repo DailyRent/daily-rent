@@ -212,6 +212,7 @@ const EditCard = ({ params }) => {
                 <li key={index}>{item}</li>
               ))}
             </ul>
+            <p>Кількість спальних місць: {data.bedsQuantity}</p>
             <p className={styles.description}>Опис: {data.description}</p>
             <p className={styles.description}>
               Опис англійською: {data.descriptionEn}
