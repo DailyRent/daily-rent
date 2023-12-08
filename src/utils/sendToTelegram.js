@@ -8,13 +8,14 @@ export const sendToTelegram = async (formData) => {
 
     const formatedData = {
         ...formData,
+        userName: formData.userName ? formData.userName : "Анонім",
         checkIn: formData.checkIn ? formatDate(formData.checkIn) : null,
         checkOut: formData.checkOut ? formatDate(formData.checkOut) : null,
     };
 
     const { userName, phone, objNumber, checkIn, checkOut } = formatedData;
 
-    // console.log("formatedData:", formatedData);
+    console.log("formatedData:", formatedData);
 
     const textStart = `Вельмишановний Daily Rent,
      ${userName} хотів би забронювати квартиру  ${objNumber}`;

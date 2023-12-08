@@ -41,7 +41,7 @@ const handleSubmit = (values, actions, closeModal) => {
 };
 
 const OrderForm = ({ isOpen, closeModal }) => {
-    const { t, i18n } = useTranslation();
+    const { t } = useTranslation();
 
     const schema = useMemo(() => orderSchema(), []);
 
@@ -51,9 +51,6 @@ const OrderForm = ({ isOpen, closeModal }) => {
         }
         return () => {
             document.body.style.overflow = "unset";
-            // document.body.scrollTop = 0; //For Safari
-            // document.documentElement.scrollTop = 0;
-            window.scrollTo(0, 0);
         };
     }, [isOpen]);
 

@@ -57,7 +57,7 @@
         "Submit": "Submit"
     },
     "Form": {
-        "name": "Name *",
+        "name": "Name",
         "phone": "Phone number *",
         "dateOfEntry": "Date of entry",
         "departureDate": "Departure date",
