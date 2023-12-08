@@ -2,16 +2,13 @@ import * as Yup from "yup";
 
 import i18n from 'i18next';
 
-const phoneRegExp = /^\+\d{12}$/;
-const regExpSpaceOnlyOne = /^((?!\s{2}).)*$/;
+import { phoneRegExp } from "@/utils/regularExpressions";
 
 export const orderSchema = () => {
     return Yup.object({
         userName: Yup.string()
             .min(3, i18n.t("Form.errorShortName"))
-            .max(29, i18n.t("Form.errorLongName"))
-            .matches(regExpSpaceOnlyOne, i18n.t("Form.errorTooManySpases"))
-            .required(i18n.t("Form.fieldRequiredMsg")),
+            .max(29, i18n.t("Form.errorLongName")),
         phone: Yup.string()
             .matches(phoneRegExp, "+380123456789")
             .required(i18n.t("Form.fieldRequiredMsg")),

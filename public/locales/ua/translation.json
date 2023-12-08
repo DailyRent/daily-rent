@@ -57,7 +57,7 @@
         "Submit": "Пiдтвердити"
     },
     "Form": {
-        "name": "Ім’я *",
+        "name": "Ім’я",
         "phone": "Номер телефону *",
         "dateOfEntry": "Дата заїзду",
         "departureDate": "Дата виїзду",
