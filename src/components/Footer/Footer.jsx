@@ -135,11 +135,7 @@ const Footer = ({ onClick }) => {
         )}
         <p className={styles.rights}>
           made by{" "}
-          <Link
-            href="https://webevery.dev/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <Link href="https://webevery.dev/" target="_blank">
             webevery.dev{" "}
           </Link>
           ⓒ all rights reserved

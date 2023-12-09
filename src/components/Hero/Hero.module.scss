@@ -49,13 +49,12 @@
 }
 
 .heroLogo {
-  // font-family: Crimson Text;
   font-family: var(--font--crimsonPro);
   font-size: 20px;
-  // font-size: clamp(1.25rem, 0rem + 3.333vw, 3rem);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  letter-spacing: 1.28px;
   color: $lightFontColor;
 
   @media screen and (min-width: $tablet) {
@@ -69,8 +68,6 @@
 .heroTitle {
   text-align: center;
   font-size: 16px;
-  // font-size: clamp(1rem, -0.071rem + 2.857vw, 2.5rem);
-
   font-style: normal;
   font-weight: 200;
   line-height: normal;
@@ -108,7 +105,7 @@
   color: $darckFontColor;
   font-size: 12px;
 
-  &:focus,
+  // &:focus,
   &:hover {
     color: $lightFontColor;
     border-width: 1px;

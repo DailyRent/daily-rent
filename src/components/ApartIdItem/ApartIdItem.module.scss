@@ -142,8 +142,9 @@
   color: #ffffff;
   font-size: 14px;
   outline: none;
-  &:hover,
-  &:focus {
+
+  // &:focus,
+  &:hover {
     color: $acentColor;
     border: 1px solid $acentColor;
     background-color: transparent;

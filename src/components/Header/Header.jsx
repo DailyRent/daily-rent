@@ -10,6 +10,7 @@ import { usePathname } from "next/navigation";
 import { signOut, useSession } from "next-auth/react";
 import TranslatorBtnBlock from "../share/TranslatorBtnBlock/TranslatorBtnBlock";
 import SocialLinks from "../SocialLinks/SocialLinks";
+import { useCallback } from "react";
 
 const Header = () => {
   const session = useSession();
@@ -25,7 +26,7 @@ const Header = () => {
 
   const isClient = typeof window !== "undefined";
 
-  const handleResize = () => {
+  const handleResize = useCallback(() => {
     if (
       window.innerWidth < 768 ||
       (session.status === "authenticated" && window.innerWidth < 1200)
@@ -34,7 +35,7 @@ const Header = () => {
     } else {
       setIsMobile(false);
     }
-  };
+  }, [session.status]);
 
   useEffect(() => {
     setIsLoading(false);
@@ -49,7 +50,7 @@ const Header = () => {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, [session.status]);
+  }, [handleResize]);
 
   return (
     <header className={styles.container}>
