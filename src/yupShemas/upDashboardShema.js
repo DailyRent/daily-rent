@@ -32,6 +32,6 @@ export const upDashboardSchema = Yup.object({
     newDescription: Yup.string()
         .required("Опис це обовʼязкове поле"),
     newDescriptionEn: Yup.string()
-        .required("Опис на англійській це обовʼязкове поле"),
+        .required("Опис англійською це обовʼязкове поле"),
 
 })

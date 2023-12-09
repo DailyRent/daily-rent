@@ -50,6 +50,6 @@ export const dashboardSchema = Yup.object({
     description: Yup.string()
         .required("Опис це обовʼязкове поле"),
     descriptionEn: Yup.string()
-        .required("Опис на англійській це обовʼязкове поле"),
+        .required("Опис англійською це обовʼязкове поле"),
 
 })
