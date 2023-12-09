@@ -65,7 +65,7 @@ const Header = () => {
                   href={"/apartments"}
                   className={
                     pathname === "/apartments"
-                      ? styles.activeLink
+                      ? "activeLink"
                       : " textLinkAnimation"
                   }
                 >
@@ -76,7 +76,7 @@ const Header = () => {
                   href={"/documents"}
                   className={
                     pathname === "/documents"
-                      ? styles.activeLink
+                      ? "activeLink"
                       : " textLinkAnimation"
                   }
                 >
@@ -86,9 +86,7 @@ const Header = () => {
                 <Link
                   href={"/rules"}
                   className={
-                    pathname === "/rules"
-                      ? styles.activeLink
-                      : " textLinkAnimation"
+                    pathname === "/rules" ? "activeLink" : " textLinkAnimation"
                   }
                 >
                   {t("Header.linkRules")}
@@ -104,9 +102,7 @@ const Header = () => {
               <Link
                 href={"/contacts"}
                 className={
-                  pathname === "/contacts"
-                    ? styles.activeLink
-                    : " textLinkAnimation"
+                  pathname === "/contacts" ? "activeLink" : " textLinkAnimation"
                 }
               >
                 {t("Header.linkContacts")}

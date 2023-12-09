@@ -68,7 +68,7 @@
     line-height: 0.9;
   }
 
-  & .mobileContacts {
+  & a {
     color: $footerLocationColor;
     font-size: 16px;
     font-style: normal;
@@ -119,6 +119,15 @@
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
+
+    @keyframes textLink {
+      0% {
+        width: 0px;
+      }
+      100% {
+        width: 100%;
+      }
+    }
   }
 
   @media screen and (max-width: 767px) {
