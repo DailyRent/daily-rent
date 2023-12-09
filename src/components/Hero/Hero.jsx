@@ -16,10 +16,10 @@ const Hero = () => {
 
   return (
     <section className={styles.container}>
-      <Logo className={styles.heroLogo} />
+      <h1 className={styles.heroLogo}>DailyRent</h1>
       {!isLoading && (
         <>
-          <h1 className={styles.heroTitle}>{t("MainPage.heroTitle")}</h1>
+          <p className={styles.heroTitle}>{t("MainPage.heroTitle")}</p>
           <p className={styles.heroText}>
             Lorem ipsum dolor sit amet consectetur.
           </p>

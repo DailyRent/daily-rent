@@ -4,21 +4,17 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  justify-content: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
   width: 100%;
-  padding: 16px 16px 0px;
+  padding: 16px 0px;
   gap: 16px;
-  margin-bottom: 16px;
 
   @media screen and (min-width: $tablet) {
-    padding: 28px 32px 0px;
-    margin-bottom: 24px;
-  }
-  @media screen and (min-width: $tablet) {
-    margin-bottom: 56px;
+    padding: 28px 32px;
   }
 }
 
@@ -31,18 +27,6 @@
 
   @media screen and (min-width: $tablet) {
     font-size: 24px;
-  }
-}
-
-.sliderTitle {
-  color: $footerTextColor;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-
-  @media screen and (min-width: $tablet) {
-    font-size: 32px;
   }
 }
 

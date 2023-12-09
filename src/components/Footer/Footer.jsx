@@ -13,18 +13,11 @@ import ModalR from "@/components/Modal/Modal";
 import OrderForm from "@/components/OrderForm/OrderForm";
 import styles from "./Footer.module.scss";
 import { navigationData, currentLanguages } from "@/data";
-// import { Crimson_Pro } from "next/font/google";
-
-// const crimsonPro = Crimson_Pro({
-//   subsets: ["latin"],
-// });
 
 const Footer = ({ onClick }) => {
   const { isModalOpen, openModal, closeModal } = useContext(SiteContext);
   const [isLoading, setIsLoading] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
-
-  // console.log("isMobile", isMobile);
 
   const { i18n } = useTranslation();
 
@@ -62,42 +55,50 @@ const Footer = ({ onClick }) => {
         {isMobile && (
           <div className={styles.mobileContentWrapper}>
             <div className={styles.mobileItem}>
-              <Logo className={styles.footerLogo} />
+              <Logo className={`${styles.footerLogo}  textLinkAnimation`} />
               <Link
                 href="mailto:dailyrent4@gmail.com"
-                className={styles.mobileContacts}
+                className="textLinkAnimation"
               >
                 dailyrent4@gmail.com
               </Link>
             </div>
             <div className={styles.mobileItem}>
-              <Link href="tel:+380357960801" className={styles.mobileContacts}>
+              <Link href="tel:+380357960801" className="textLinkAnimation">
                 +380357960801
               </Link>
-              <Link href="tel:+380357960802" className={styles.mobileContacts}>
+              <Link href="tel:+380357960802" className="textLinkAnimation">
                 +380357960802
               </Link>
             </div>
           </div>
         )}
-
-        {!isMobile && <Logo className={styles.footerLogo} />}
-        <div className={styles.contentWrapper}>
-          {!isMobile && (
-            <>
+        {/* {!isMobile && <Logo className={styles.footerLogo} />} */}
+        {!isMobile && (
+          <>
+            <div className={styles.contentWrapper}>
+              {/* {!isMobile && (
+            <> */}
               <div className={styles.contacts}>
-                <Link href="mailto:dailyrent4@gmail.com">
+                <Link
+                  href="mailto:dailyrent4@gmail.com"
+                  className="textLinkAnimation"
+                >
                   dailyrent4@gmail.com
                 </Link>
-                <Link href="tel:+380357960801">+380357960801</Link>
-                <Link href="tel:+380357960802">+380357960802</Link>
+                <Link href="tel:+380357960801" className="textLinkAnimation">
+                  +380357960801
+                </Link>
+                <Link href="tel:+380357960802" className="textLinkAnimation">
+                  +380357960802
+                </Link>
               </div>
               <ul className={styles.navigation}>
                 {!isLoading &&
                   navigationData.slice(0, 2).map((item) => {
                     return (
                       <li key={item.id} onClick={onClick}>
-                        <Link href={item.path}>
+                        <Link href={item.path} className="textLinkAnimation">
                           {i18n.language === currentLanguages.EN
                             ? item.titleEN
                             : item.title}
@@ -111,7 +112,7 @@ const Footer = ({ onClick }) => {
                   navigationData.slice(2, 4).map((item) => {
                     return (
                       <li key={item.id} onClick={onClick}>
-                        <Link href={item.path}>
+                        <Link href={item.path} className="textLinkAnimation">
                           {i18n.language === currentLanguages.EN
                             ? item.titleEN
                             : item.title}
@@ -120,26 +121,24 @@ const Footer = ({ onClick }) => {
                     );
                   })}
               </ul>
-            </>
-          )}
-          <div className={styles.btnsWrapper}>
-            <CallBtn className={isMobile ? `${styles.mobileBtn}` : " "} />
-            <OrderBtn
-              openModal={openModal}
-              className={isMobile ? `${styles.mobileBtn}` : " "}
-            />
-          </div>
-        </div>
+              {/* </>
+          )} */}
+              <div className={styles.btnsWrapper}>
+                <CallBtn className={isMobile ? `${styles.mobileBtn}` : " "} />
+                <OrderBtn
+                  openModal={openModal}
+                  className={isMobile ? `${styles.mobileBtn}` : " "}
+                />
+              </div>
+            </div>
+          </>
+        )}
         <p className={styles.rights}>
           made by{" "}
-          <Link
-            href="https://webevery.dev/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <Link href="https://webevery.dev/" target="_blank">
             webevery.dev{" "}
           </Link>
-          ⓒ all rights reserved.
+          ⓒ all rights reserved
         </p>
       </footer>
     </>

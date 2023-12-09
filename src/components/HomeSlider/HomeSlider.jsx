@@ -20,7 +20,7 @@ import "swiper/css/navigation";
 import "./HomeSlider.css";
 
 // import required modules
-import { Pagination, Navigation, Keyboard } from "swiper/modules";
+import { Pagination, Navigation, Keyboard, Autoplay } from "swiper/modules";
 
 const HomeSlider = () => {
   const { data, error, isLoading } = GetData();
@@ -64,15 +64,19 @@ const HomeSlider = () => {
   }, []);
 
   return (
-    <div className={styles.container}>
-      {/* <p className={styles.sliderText}>Lorem ipsum</p> */}
-      <h2 className={styles.sliderTitle}>Top apartments</h2>
+    <section className={styles.container}>
       {isLoading ? (
         <Loading className={styles.sliderLoader} />
       ) : (
         <Swiper
           slidesPerView={slidesPerView}
           loop={true}
+          speed={1000}
+          autoplay={{
+            delay: 1000,
+            disableOnInteraction: false,
+          }}
+          effect="slide"
           pagination={{
             dynamicBullets: true,
           }}
@@ -80,7 +84,7 @@ const HomeSlider = () => {
           keyboard={{
             enabled: true,
           }}
-          modules={[Pagination, Navigation, Keyboard]}
+          modules={[Pagination, Navigation, Keyboard, Autoplay]}
           className="HomeSliderSwiper"
         >
           {topData?.map((el) => {
@@ -103,7 +107,7 @@ const HomeSlider = () => {
           })}
         </Swiper>
       )}
-    </div>
+    </section>
   );
 };
 
