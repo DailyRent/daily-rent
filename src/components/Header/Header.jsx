@@ -37,11 +37,31 @@ const Header = () => {
     }
   }, [session.status]);
 
+  const isDocument = typeof document !== "undefined";
+  const header = isDocument && document.getElementById("header");
+
+  let scrolledWindow = 0;
+
+  const headerScrollclassName = () => {
+    if (window.scrollY <= 12) {
+      return;
+    } else if (window.scrollY > scrolledWindow) {
+      header.classList.add(`${styles.containerHidden}`);
+      header.classList.remove(`${styles.containerVisible}`);
+    } else {
+      header.classList.remove(`${styles.containerHidden}`);
+      header.classList.add(`${styles.containerVisible}`);
+    }
+
+    scrolledWindow = window.scrollY;
+  };
+
   useEffect(() => {
     setIsLoading(false);
     // Add an event listener for window resize
 
     window.addEventListener("resize", handleResize);
+    window.addEventListener("scroll", headerScrollclassName);
 
     // Initial check on component mount
     handleResize();
@@ -49,11 +69,15 @@ const Header = () => {
     // Clean up the event listener on component unmount
     return () => {
       window.removeEventListener("resize", handleResize);
+      window.removeEventListener("scroll", headerScrollclassName);
     };
-  }, [handleResize]);
+  }, [handleResize, headerScrollclassName]);
+
+  const headerScrollStyles = styles.containerVisible;
 
   return (
-    <header className={styles.container}>
+    // <header id="header" className={`${styles.container}`}>
+    <header id="header" className={styles.container}>
       {!isLoading && (
         <p className={styles.promotion}>{t("Header.headerSale")}</p>
       )}

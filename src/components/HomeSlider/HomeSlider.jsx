@@ -64,9 +64,7 @@ const HomeSlider = () => {
   }, []);
 
   return (
-    <div className={styles.container}>
-      {/* <p className={styles.sliderText}>Lorem ipsum</p> */}
-      <h2 className={styles.sliderTitle}>Top apartments</h2>
+    <section className={styles.container}>
       {isLoading ? (
         <Loading className={styles.sliderLoader} />
       ) : (
@@ -109,7 +107,7 @@ const HomeSlider = () => {
           })}
         </Swiper>
       )}
-    </div>
+    </section>
   );
 };
 

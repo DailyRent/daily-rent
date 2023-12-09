@@ -3,6 +3,15 @@
 .container {
   position: fixed;
   z-index: 10;
+  transition-duration: 500ms;
+}
+
+.containerVisible {
+  transform: translateY(0%);
+}
+
+.containerHidden {
+  transform: translateY(-100%);
 }
 
 .promotion {
