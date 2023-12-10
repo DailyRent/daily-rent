@@ -117,6 +117,9 @@ export default function RootLayout({ children }) {
     ],
     keywords:
       "Суми квартири. Зняти квартиру Суми. Оренда квартири Суми. Квартири подобово. Квартири на день",
+    verification: {
+      google: process.env.NEXT_PUBLIC_GSC,
+    },
   };
   return (
     <html lang="en">
