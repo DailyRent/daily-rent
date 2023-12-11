@@ -1,10 +1,6 @@
-// "use client";
-
 import React from "react";
-// import useSWR from "swr";
 import ApartIdItem from "@/components/ApartIdItem/ApartIdItem";
 import { getMetaById } from "@/fetch/serverFetch";
-// import styles from './page.module.scss';
 
 export async function generateMetadata({ params, searchParams }, parent) {
   // console.log("🚀 ~ parent:", await parent);
@@ -36,23 +32,48 @@ export async function generateMetadata({ params, searchParams }, parent) {
   };
 }
 
-const ApartId = ({ params }) => {
-  // const fetcher = (...args) => fetch(...args).then((res) => res.json());
-  // const { data, error, isLoading } = useSWR(
-  //   `/api/apartments/${params.id}`,
-  //   fetcher
-  // );
+const ApartId = async ({ params }) => {
+  const apartment = await getMetaById(params.id);
 
-  // const dataId = data && !isLoading ? data : error;
+  const jsonLd = {
+    "@context": "http://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        item: {
+          "@id": process.env.NEXT_PUBLIC_MAIN_URL,
+          name: "Daily Rent - оренда квартири Суми. Квартири подобово.",
+        },
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        item: {
+          "@id": `${process.env.NEXT_PUBLIC_MAIN_URL}apartments`,
+          name: "Daily Rent Квартири",
+        },
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        item: {
+          "@id": `${process.env.NEXT_PUBLIC_MAIN_URL}apartments/${apartment.address}`,
+          name: "Daily Rent Оренда квартир детальніше",
+        },
+      },
+    ],
+  };
 
   return (
-    <ApartIdItem
-      // dataId={dataId}
-      // error={error}
-      // isLoading={isLoading}
-      // meta={data}
-      params={params}
-    />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <ApartIdItem params={params} />
+    </>
   );
 };
 
