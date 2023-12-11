@@ -50,7 +50,9 @@ const RulesComponent = () => {
                 {RulesInApartment.map(({ id, rule, ruleEN }) => {
                   return (
                     <li key={id}>
-                      {i18n.language === currentLanguages.EN ? ruleEN : rule}
+                      <p>
+                        {i18n.language === currentLanguages.EN ? ruleEN : rule}
+                      </p>
                     </li>
                   );
                 })}
@@ -64,7 +66,9 @@ const RulesComponent = () => {
                 {Prohibited.map(({ id, rule, ruleEN }) => {
                   return (
                     <li key={id}>
-                      {i18n.language === currentLanguages.EN ? ruleEN : rule}
+                      <p>
+                        {i18n.language === currentLanguages.EN ? ruleEN : rule}
+                      </p>
                     </li>
                   );
                 })}
@@ -78,7 +82,9 @@ const RulesComponent = () => {
                 {Eviction.map(({ id, rule, ruleEN }) => {
                   return (
                     <li key={id}>
-                      {i18n.language === currentLanguages.EN ? ruleEN : rule}
+                      <p>
+                        {i18n.language === currentLanguages.EN ? ruleEN : rule}
+                      </p>
                     </li>
                   );
                 })}

@@ -64,11 +64,11 @@ const Footer = ({ onClick }) => {
               </Link>
             </div>
             <div className={styles.mobileItem}>
-              <Link href="tel:+380357960801" className="textLinkAnimation">
-                +380357960801
+              <Link href="tel:+380991930030" className="textLinkAnimation">
+                +380991930030
               </Link>
-              <Link href="tel:+380357960802" className="textLinkAnimation">
-                +380357960802
+              <Link href="tel:+380675151939" className="textLinkAnimation">
+                +380675151939
               </Link>
             </div>
           </div>
@@ -86,11 +86,11 @@ const Footer = ({ onClick }) => {
                 >
                   dailyrent4@gmail.com
                 </Link>
-                <Link href="tel:+380357960801" className="textLinkAnimation">
-                  +380357960801
+                <Link href="tel:+380991930030" className="textLinkAnimation">
+                  +380991930030
                 </Link>
-                <Link href="tel:+380357960802" className="textLinkAnimation">
-                  +380357960802
+                <Link href="tel:+380675151939" className="textLinkAnimation">
+                  +380675151939
                 </Link>
               </div>
               <ul className={styles.navigation}>

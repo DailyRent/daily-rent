@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import styles from "./Header.module.scss";
 import Logo from "../Logo/Logo";
@@ -10,7 +10,6 @@ import { usePathname } from "next/navigation";
 import { signOut, useSession } from "next-auth/react";
 import TranslatorBtnBlock from "../share/TranslatorBtnBlock/TranslatorBtnBlock";
 import SocialLinks from "../SocialLinks/SocialLinks";
-import { useCallback } from "react";
 
 const Header = () => {
   const session = useSession();
@@ -42,7 +41,7 @@ const Header = () => {
 
   let scrolledWindow = 0;
 
-  const headerScrollclassName = () => {
+  const headerScrollclassName = useCallback(() => {
     if (window.scrollY <= 12) {
       return;
     } else if (window.scrollY > scrolledWindow) {
@@ -54,14 +53,14 @@ const Header = () => {
     }
 
     scrolledWindow = window.scrollY;
-  };
+  }, [scrolledWindow]);
 
   useEffect(() => {
     setIsLoading(false);
     // Add an event listener for window resize
 
     window.addEventListener("resize", handleResize);
-    window.addEventListener("scroll", headerScrollclassName);
+    window.addEventListener("scroll", headerScrollclassName, { passive: true });
 
     // Initial check on component mount
     handleResize();
@@ -69,11 +68,13 @@ const Header = () => {
     // Clean up the event listener on component unmount
     return () => {
       window.removeEventListener("resize", handleResize);
-      window.removeEventListener("scroll", headerScrollclassName);
+      window.removeEventListener("scroll", headerScrollclassName, {
+        passive: true,
+      });
     };
   }, [handleResize, headerScrollclassName]);
 
-  const headerScrollStyles = styles.containerVisible;
+  // const headerScrollStyles = styles.containerVisible;
 
   return (
     // <header id="header" className={`${styles.container}`}>
