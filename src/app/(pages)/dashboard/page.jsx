@@ -131,7 +131,7 @@ const Dashboard = () => {
                   </span>
                 </div> */}
                 <div className={styles.btnsWrapper}>
-                  <Link href={`/dashboard/${apart._id}`}>
+                  <Link className={styles.editLink} href={`/dashboard/${apart._id}`}>
                     <svg className={styles.editIcon}>
                       <use href="/sprite.svg#icon-edit" />
                     </svg>

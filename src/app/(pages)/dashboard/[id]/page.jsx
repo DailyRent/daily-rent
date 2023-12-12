@@ -116,8 +116,8 @@ const EditCard = ({ params }) => {
                       //   priority={false}
                     />
                   </div>
-                  <span
-                    className={styles.delete}
+                  <svg
+                    className={styles.deleteIcon}
                     onClick={async () => {
                       // удаляет данные о фото с mongoDB
                       handleDeleteImg(data._id, item);
@@ -187,8 +187,8 @@ const EditCard = ({ params }) => {
                       }
                     }}
                   >
-                    X
-                  </span>
+                    <use href="/sprite.svg#icon-delete" />
+                  </svg>
                 </li>
               ))}
             </ul>

@@ -100,9 +100,14 @@
   position: relative;
 }
 
-.delete {
+.deleteIcon {
+  width: 20px;
+  height: 20px;
+}
+
+.deleteIcon:hover {
   cursor: pointer;
-  color: red;
+  fill: red;
 }
 
 .address {
