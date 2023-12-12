@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import React from 'react';
-import styles from './ContactsComponent.module.scss';
-import { useTranslation } from 'react-i18next';
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import SocialLinks from '@/components/SocialLinks/SocialLinks';
-import seoStyles from '@/app/seoStyles.module.css';
+import React from "react";
+import styles from "./ContactsComponent.module.scss";
+import { useTranslation } from "react-i18next";
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import SocialLinks from "@/components/SocialLinks/SocialLinks";
+import seoStyles from "@/app/seoStyles.module.css";
 
 const ContactsComponent = () => {
   const { t } = useTranslation();
@@ -26,9 +26,9 @@ const ContactsComponent = () => {
         {!isLoading && (
           <span className="textLink">
             <Link href="/" prefetch={false} className="textLinkAnimation">
-              {t('Navigation.MainPage')}
+              {t("Navigation.MainPage")}
             </Link>
-            / <span className={styles.active}>{t('Navigation.Contacts')}</span>
+            / <span className={styles.active}>{t("Navigation.Contacts")}</span>
           </span>
         )}
       </div>
@@ -36,8 +36,8 @@ const ContactsComponent = () => {
       <div className={styles.contactContainer}>
         {!isLoading && (
           <>
-            <h2 className={styles.title}>{t('ContactsPage.Title')}</h2>
-            <p className={styles.text}>{t('ContactsPage.Text')}</p>
+            <h2 className={styles.title}>{t("ContactsPage.Title")}</h2>
+            <p className={styles.text}>{t("ContactsPage.Text")}</p>
           </>
         )}
         <div className={styles.content}>
@@ -58,7 +58,7 @@ const ContactsComponent = () => {
                 <svg width="36" height="36" className={styles.citySvg}>
                   <use href="sprite.svg#icon-flag-ukraine" />
                 </svg>
-                {t('ContactsPage.CountryAndSity')}
+                {t("ContactsPage.CountryAndSity")}
               </h3>
             )}
             <a
@@ -80,11 +80,11 @@ const ContactsComponent = () => {
               {/* {!isLoading && <p>{t('ContactsPage.Adress')}</p>} */}
             </a>
             <div className={styles.telContainer}>
-              <a href="tel:+380357960808" className={styles.tel}>
-                +38 035 796 08 08
+              <a href="tel:+380991930030" className={styles.tel}>
+                +38 099 193 00 30
               </a>
-              <a href="tel:+380357960808" className={styles.tel}>
-                +38 035 796 08 08
+              <a href="tel:+380675151939" className={styles.tel}>
+                +38 067 515 19 39
               </a>
             </div>
             <div className={styles.box}>

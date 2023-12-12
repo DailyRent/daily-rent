@@ -142,8 +142,9 @@
   color: #ffffff;
   font-size: 14px;
   outline: none;
-  &:hover,
-  &:focus {
+
+  // &:focus,
+  &:hover {
     color: $acentColor;
     border: 1px solid $acentColor;
     background-color: transparent;
@@ -154,7 +155,8 @@
 }
 
 .textInfo {
-  color: #c7c7c7;
+  // color: #c7c7c7;
+  color: #3c3c3c;
   // font-family: Crimson Text;
   font-family: var(--font--crimsonPro);
   font-size: 20px;

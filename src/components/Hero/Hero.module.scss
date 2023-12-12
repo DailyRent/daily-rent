@@ -14,11 +14,10 @@
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  gap: 36px;
+  gap: 20px;
   width: 100%;
-  height: 370px;
-  // height: 40vh;
-  padding-top: 80px;
+  padding-top: 110px;
+  // padding-bottom: 44px;
   background-image: -webkit-gradient(
       linear,
       left top,
@@ -38,8 +37,10 @@
   @media screen and (orientation: portrait) {
     height: 50vh;
   }
+
   @media screen and (orientation: landscape) {
     height: 100vh;
+    padding-top: 124px;
   }
 
   @media screen and (min-width: $desktop) {
@@ -49,13 +50,12 @@
 }
 
 .heroLogo {
-  // font-family: Crimson Text;
   font-family: var(--font--crimsonPro);
   font-size: 20px;
-  // font-size: clamp(1.25rem, 0rem + 3.333vw, 3rem);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  letter-spacing: 1.28px;
   color: $lightFontColor;
 
   @media screen and (min-width: $tablet) {
@@ -69,8 +69,6 @@
 .heroTitle {
   text-align: center;
   font-size: 16px;
-  // font-size: clamp(1rem, -0.071rem + 2.857vw, 2.5rem);
-
   font-style: normal;
   font-weight: 200;
   line-height: normal;
@@ -108,7 +106,7 @@
   color: $darckFontColor;
   font-size: 12px;
 
-  &:focus,
+  // &:focus,
   &:hover {
     color: $lightFontColor;
     border-width: 1px;

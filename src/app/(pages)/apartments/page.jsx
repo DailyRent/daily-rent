@@ -10,7 +10,37 @@ export const metadata = {
 };
 
 const Apartments = () => {
-  return <ApartmentsComponent />;
+  const jsonLd = {
+    "@context": "http://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        item: {
+          "@id": process.env.NEXT_PUBLIC_MAIN_URL,
+          name: "Daily Rent - оренда квартири Суми. Квартири подобово.",
+        },
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        item: {
+          "@id": `${process.env.NEXT_PUBLIC_MAIN_URL}apartments`,
+          name: "Daily Rent Квартири",
+        },
+      },
+    ],
+  };
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <ApartmentsComponent />
+    </>
+  );
 };
 
 export default Apartments;

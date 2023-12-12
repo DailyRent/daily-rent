@@ -24,81 +24,36 @@ export const metadata = {
 };
 
 const RulesPage = () => {
-  // const router = useRouter();
-  // const { t } = useTranslation();
-  // const { i18n } = useTranslation();
-  // const [isLoading, setIsLoading] = useState(true);
-
-  // useEffect(() => {
-  //   setIsLoading(false);
-  // }, []);
+  const jsonLd = {
+    "@context": "http://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        item: {
+          "@id": process.env.NEXT_PUBLIC_MAIN_URL,
+          name: "Daily Rent - оренда квартири Суми. Квартири подобово.",
+        },
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        item: {
+          "@id": `${process.env.NEXT_PUBLIC_MAIN_URL}rules`,
+          name: "Daily Rent Правила",
+        },
+      },
+    ],
+  };
   return (
-    <RulesComponent />
-    // <section className={styles.container}>
-    //   <h1 className={seoStyles.titleHidden}>
-    //     Оренда квартири суми. Квартири подобово. Суми квартири.
-    //   </h1>
-    //   {/* <h1 className="visuallyHidden">Rules Page</h1> */}
-    //   <div className={styles.toBackContainer}>
-    //     {!isLoading && (
-    //       <span className="textLink">
-    //         <Link href="/" prefetch={false} className="textLinkAnimation">
-    //           {t("Navigation.MainPage")}
-    //         </Link>
-    //         / <span className={styles.active}>{t("Navigation.Rules")}</span>
-    //       </span>
-    //     )}
-    //   </div>
-    //   {!isLoading && (
-    //     <>
-    //       <h2 className={styles.rulesListItem}>{t("RulesPage.MainTitle")}</h2>
-    //       <ul className={styles.rulesList}>
-    //         <li>
-    //           <h3 className={styles.decimalListTitle}>
-    //             {t("RulesPage.TitleSection1")}
-    //           </h3>
-    //           <ol className={styles.decimalList}>
-    //             {RulesInApartment.map(({ id, rule, ruleEN }) => {
-    //               return (
-    //                 <li key={id}>
-    //                   {i18n.language === currentLanguages.EN ? ruleEN : rule}
-    //                 </li>
-    //               );
-    //             })}
-    //           </ol>
-    //         </li>
-    //         <li>
-    //           <h3 className={styles.decimalListTitle}>
-    //             {t("RulesPage.TitleSection2")}
-    //           </h3>
-    //           <ol className={styles.decimalList}>
-    //             {Prohibited.map(({ id, rule, ruleEN }) => {
-    //               return (
-    //                 <li key={id}>
-    //                   {i18n.language === currentLanguages.EN ? ruleEN : rule}
-    //                 </li>
-    //               );
-    //             })}
-    //           </ol>
-    //         </li>
-    //         <li>
-    //           <h3 className={styles.decimalListTitle}>
-    //             {t("RulesPage.TitleSection3")}
-    //           </h3>
-    //           <ol className={styles.decimalList}>
-    //             {Eviction.map(({ id, rule, ruleEN }) => {
-    //               return (
-    //                 <li key={id}>
-    //                   {i18n.language === currentLanguages.EN ? ruleEN : rule}
-    //                 </li>
-    //               );
-    //             })}
-    //           </ol>
-    //         </li>
-    //       </ul>
-    //     </>
-    //   )}
-    // </section>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <RulesComponent />
+    </>
   );
 };
 

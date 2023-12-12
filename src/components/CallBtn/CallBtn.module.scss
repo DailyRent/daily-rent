@@ -24,7 +24,7 @@
   -o-transition-duration: 500ms;
   transition-duration: 500ms;
 
-  &:focus,
+  // &:focus,
   &:hover {
     background: transparent;
     border-color: $darckFontColor;

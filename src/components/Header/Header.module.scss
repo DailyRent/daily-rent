@@ -3,6 +3,15 @@
 .container {
   position: fixed;
   z-index: 10;
+  transition-duration: 500ms;
+}
+
+.containerVisible {
+  transform: translateY(0%);
+}
+
+.containerHidden {
+  transform: translateY(-100%);
 }
 
 .promotion {
@@ -53,13 +62,13 @@
   }
 
   @media screen and (min-width: $tablet) {
-    padding: 28px 36px;
+    padding: 0px 36px;
     height: 64px;
   }
 
   @media screen and (min-width: $desktop) {
-    padding: 44px 86px;
-    height: 120px;
+    padding: 0px 86px;
+    height: 100px;
   }
 }
 
@@ -88,14 +97,6 @@
   @media screen and (min-width: $desktop) {
     gap: 40px;
   }
-}
-
-.activeLink {
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
-  -webkit-text-decoration-color: rgba(36, 36, 36, 0.5);
-  text-decoration-color: rgba(36, 36, 36, 0.5);
 }
 
 .leftLinks {

@@ -60,28 +60,28 @@ export const metadata = {
     siteName: "Daily Rent",
     images: [
       {
-        // ! url: "/opengraph-image.png",
+        url: "/seo_images/opengraph-image-400x300.png",
         type: "image/png",
         width: 400,
         height: 300,
         alt: "Daily Rent",
       },
       {
-        // !  url: "/twitter-image.png",
+        url: "/seo_images/twitter-image-800x600.png",
         type: "image/png",
         width: 800,
         height: 600,
         alt: "Daily Rent",
       },
       {
-        // ! url: "/opengraph-image.png",
+        url: "/seo_images/opengraph-image-1200-630.png",
         type: "image/png",
         width: 1200,
         height: 630,
         alt: "Daily Rent",
       },
     ],
-    locale: "en_GB",
+    locale: "uk-UA",
   },
   appLinks: {
     ios: {
@@ -99,6 +99,9 @@ export const metadata = {
     },
   },
   assets: [process.env.NEXT_PUBLIC_MAIN_URL],
+  verification: {
+    google: process.env.NEXT_PUBLIC_GSC,
+  },
 };
 
 export default function RootLayout({ children }) {
@@ -110,16 +113,31 @@ export default function RootLayout({ children }) {
     contactPoint: [
       {
         "@type": "ContactPoint",
-        telephone: "+380357960801",
+        telephone: "+380991930030",
         email: "dailyrent4@gmail.com",
         contactType: "customer service",
+      },
+      {
+        "@type": "ContactPoint",
+        telephone: "+380675151939",
+        contactType: "customer service",
+      },
+    ],
+    logo: [
+      {
+        "@type": "ImageObject",
+        url: "/seo_images/twitter-image-800x600.png",
+        contentUrl: "/seo_images/twitter-image-800x600.png",
+        size: "800x600",
+        caption: "Daily Rent",
+        inLanguage: "uk-UA",
       },
     ],
     keywords:
       "Суми квартири. Зняти квартиру Суми. Оренда квартири Суми. Квартири подобово. Квартири на день",
   };
   return (
-    <html lang="en">
+    <html lang="uk-UA">
       <body className={`${inter.variable} ${crimsonPro.variable}`}>
         <script
           type="application/ld+json"

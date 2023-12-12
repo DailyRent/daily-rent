@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import styles from "./Header.module.scss";
 import Logo from "../Logo/Logo";
@@ -25,7 +25,7 @@ const Header = () => {
 
   const isClient = typeof window !== "undefined";
 
-  const handleResize = () => {
+  const handleResize = useCallback(() => {
     if (
       window.innerWidth < 768 ||
       (session.status === "authenticated" && window.innerWidth < 1200)
@@ -34,13 +34,33 @@ const Header = () => {
     } else {
       setIsMobile(false);
     }
-  };
+  }, [session.status]);
+
+  const isDocument = typeof document !== "undefined";
+  const header = isDocument && document.getElementById("header");
+
+  let scrolledWindow = 0;
+
+  const headerScrollclassName = useCallback(() => {
+    if (window.scrollY <= 12) {
+      return;
+    } else if (window.scrollY > scrolledWindow) {
+      header.classList.add(`${styles.containerHidden}`);
+      header.classList.remove(`${styles.containerVisible}`);
+    } else {
+      header.classList.remove(`${styles.containerHidden}`);
+      header.classList.add(`${styles.containerVisible}`);
+    }
+
+    scrolledWindow = window.scrollY;
+  }, [scrolledWindow]);
 
   useEffect(() => {
     setIsLoading(false);
     // Add an event listener for window resize
 
     window.addEventListener("resize", handleResize);
+    window.addEventListener("scroll", headerScrollclassName, { passive: true });
 
     // Initial check on component mount
     handleResize();
@@ -48,11 +68,17 @@ const Header = () => {
     // Clean up the event listener on component unmount
     return () => {
       window.removeEventListener("resize", handleResize);
+      window.removeEventListener("scroll", headerScrollclassName, {
+        passive: true,
+      });
     };
-  }, [session.status]);
+  }, [handleResize, headerScrollclassName]);
+
+  // const headerScrollStyles = styles.containerVisible;
 
   return (
-    <header className={styles.container}>
+    // <header id="header" className={`${styles.container}`}>
+    <header id="header" className={styles.container}>
       {!isLoading && (
         <p className={styles.promotion}>{t("Header.headerSale")}</p>
       )}
@@ -65,7 +91,7 @@ const Header = () => {
                   href={"/apartments"}
                   className={
                     pathname === "/apartments"
-                      ? styles.activeLink
+                      ? "activeLink"
                       : " textLinkAnimation"
                   }
                 >
@@ -76,7 +102,7 @@ const Header = () => {
                   href={"/documents"}
                   className={
                     pathname === "/documents"
-                      ? styles.activeLink
+                      ? "activeLink"
                       : " textLinkAnimation"
                   }
                 >
@@ -86,9 +112,7 @@ const Header = () => {
                 <Link
                   href={"/rules"}
                   className={
-                    pathname === "/rules"
-                      ? styles.activeLink
-                      : " textLinkAnimation"
+                    pathname === "/rules" ? "activeLink" : " textLinkAnimation"
                   }
                 >
                   {t("Header.linkRules")}
@@ -104,9 +128,7 @@ const Header = () => {
               <Link
                 href={"/contacts"}
                 className={
-                  pathname === "/contacts"
-                    ? styles.activeLink
-                    : " textLinkAnimation"
+                  pathname === "/contacts" ? "activeLink" : " textLinkAnimation"
                 }
               >
                 {t("Header.linkContacts")}
