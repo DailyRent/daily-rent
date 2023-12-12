@@ -71,9 +71,9 @@ const HomeSlider = () => {
         <Swiper
           slidesPerView={slidesPerView}
           loop={true}
-          speed={1000}
+          speed={1200}
           autoplay={{
-            delay: 1000,
+            delay: 2400,
             disableOnInteraction: false,
           }}
           effect="slide"

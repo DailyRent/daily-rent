@@ -15,8 +15,6 @@ const Header = () => {
   const session = useSession();
   const pathname = usePathname();
 
-  // console.log(pathname);
-
   const { t } = useTranslation();
 
   const [burgerMenu, setBurgerMenu] = useState(false);
@@ -24,6 +22,7 @@ const Header = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   const isClient = typeof window !== "undefined";
+  const isDocument = typeof document !== "undefined";
 
   const handleResize = useCallback(() => {
     if (
@@ -36,7 +35,6 @@ const Header = () => {
     }
   }, [session.status]);
 
-  const isDocument = typeof document !== "undefined";
   const header = isDocument && document.getElementById("header");
 
   let scrolledWindow = 0;
@@ -55,12 +53,35 @@ const Header = () => {
     scrolledWindow = window.scrollY;
   }, [scrolledWindow]);
 
+  const closeBurgerMenu = () => {
+    setTimeout(() => {
+      setBurgerMenu(false);
+    }, 250);
+  };
+
+  const closeBurgerMenuOnClick = (e) => {
+    console.dir(e.target.id);
+    console.log(e.target.classList);
+    console.dir(e.target);
+
+    if (
+      e.target.id === "mobileNavigation" ||
+      e.target.nodeName === "use" ||
+      e.target.nodeName === "svg"
+    ) {
+      return;
+    } else {
+      closeBurgerMenu();
+    }
+  };
+
   useEffect(() => {
     setIsLoading(false);
     // Add an event listener for window resize
 
     window.addEventListener("resize", handleResize);
     window.addEventListener("scroll", headerScrollclassName, { passive: true });
+    window.addEventListener("click", closeBurgerMenuOnClick);
 
     // Initial check on component mount
     handleResize();
@@ -71,13 +92,13 @@ const Header = () => {
       window.removeEventListener("scroll", headerScrollclassName, {
         passive: true,
       });
+      window.removeEventListener("click", closeBurgerMenuOnClick);
     };
-  }, [handleResize, headerScrollclassName]);
+  }, [handleResize, headerScrollclassName, closeBurgerMenuOnClick]);
 
   // const headerScrollStyles = styles.containerVisible;
 
   return (
-    // <header id="header" className={`${styles.container}`}>
     <header id="header" className={styles.container}>
       {!isLoading && (
         <p className={styles.promotion}>{t("Header.headerSale")}</p>
@@ -147,6 +168,7 @@ const Header = () => {
 
         {isMobile && (
           <BurgerBtn
+            id="burgerBtn"
             onClick={() => {
               setBurgerMenu(!burgerMenu);
             }}
@@ -164,16 +186,13 @@ const Header = () => {
 
       {(isMobile || !isLoading) && (
         <Navigation
+          id="mobileNavigation"
           className={
             burgerMenu
               ? styles.mobileNavigationVisible
               : styles.mobileNavigation
           }
-          onClick={() => {
-            setTimeout(() => {
-              setBurgerMenu(false);
-            }, 250);
-          }}
+          onClick={closeBurgerMenu}
         />
       )}
     </header>
