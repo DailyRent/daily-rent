@@ -9,7 +9,6 @@ import Link from "next/link";
 import crypto from "crypto";
 import { CldImage } from "next-cloudinary";
 
-
 const EditCard = ({ params }) => {
   const { id } = params;
 
@@ -100,18 +99,21 @@ const EditCard = ({ params }) => {
                       handleDeleteImgFromMongoDB(data._id, item);
 
                       // getPublicId
-                      const regex = /\/v\d+\/([^/]+)\.\w{3,4}$/;
+                      // const regex = /\/v\d+\/([^/]+)\.\w{3,4}$/;
                       //example - const cloudinaryUrl = 'https://res.cloudinary.com/your_cloud_name/image/upload/v1234567890/public_id.jpg';
-                      const cloudinaryUrl = item;
+                      // const cloudinaryUrl = item;
 
-                      const getPublicIdFromUrl = (url) => {
-                        const match = url.match(regex);
-                        return match ? match[1] : null;
-                      };
+                      // const getPublicIdFromUrl = (url) => {
+                      //   const match = url.match(regex);
+                      //   return match ? match[1] : null;
+                      // };
 
-                      const publicId = getPublicIdFromUrl(cloudinaryUrl);
-                      console.log("publicId", publicId);
+                      // const publicId = getPublicIdFromUrl(cloudinaryUrl);
+                      // console.log("publicId", publicId);
                       // если в БД хранится publicId, всё, что выше, начиная с regex (128строка), не нужно
+                      console.log("item", item);
+                      const publicId = item;
+                      console.log("publicId", publicId);
 
                       // сгенерировать подпись
                       const generateSHA1 = (data) => {
@@ -127,7 +129,12 @@ const EditCard = ({ params }) => {
 
                       const timestamp = new Date().getTime();
 
-                      const signature = generateSHA1(generateSignature(publicId, process.env.NEXT_PUBLIC_CLOUDINARY_API_SECRET));
+                      const signature = generateSHA1(
+                        generateSignature(
+                          publicId,
+                          process.env.NEXT_PUBLIC_CLOUDINARY_API_SECRET
+                        )
+                      );
 
                       const url = `https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/destroy`;
 
@@ -198,7 +205,7 @@ const EditCard = ({ params }) => {
             id={id}
             apart={data}
             mutate={mutate}
-          // className={styles.updatingForm}
+            // className={styles.updatingForm}
           />
         )}
       </div>

@@ -8,7 +8,7 @@ import {
   yupToFormErrors,
 } from "formik";
 import { toast } from "react-toastify";
-import { dashboardSchema } from "@/yupShemas/dashboardShema";
+import { dashboardSchema } from "@/yupSchemas/dashboardSchema";
 import { useFetcherObjectNumbers } from "@/hooks/useFetcher";
 import { GetData } from "@/fetch/clientFetch";
 import styles from "./DashboardForm.module.scss";
@@ -56,7 +56,6 @@ const DashboardFormik = () => {
   return (
     <Formik
       initialValues={initialValues}
-      // validationSchema={dashboardSchema}
       validate={(values) => {
         try {
           validateYupSchema(
@@ -111,9 +110,11 @@ const DashboardFormik = () => {
               onUpload={(result, widget) => {
                 // for Image component
                 // setTitleImg(result.info.secure_url);
-                setFieldValue("titleImg", result.info.secure_url);
+                // setFieldValue("titleImg", result.info.secure_url);
                 // for CldImage component from next-cloudinary
                 // setTitleImg(result.info.public_id);
+                setFieldValue("titleImg", result.info.public_id);
+
                 widget.close();
               }}
               uploadPreset="unsigned_preset"
@@ -125,9 +126,10 @@ const DashboardFormik = () => {
               name="imgs"
               onUpload={(result) => {
                 // for Image component
-                setFieldValue("imgs", [...values.imgs, result.info.secure_url]);
+                // setFieldValue("imgs", [...values.imgs, result.info.secure_url]);
                 // for CldImage component from next-cloudinary
                 // setImgs(prev => [...prev, result.info.public_id]);
+                setFieldValue("imgs", [...values.imgs, result.info.public_id]);
               }}
               uploadPreset="unsigned_preset"
             >

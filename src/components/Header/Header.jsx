@@ -60,9 +60,9 @@ const Header = () => {
   };
 
   const closeBurgerMenuOnClick = (e) => {
-    console.dir(e.target.id);
-    console.log(e.target.classList);
-    console.dir(e.target);
+    // console.dir(e.target.id);
+    // console.log(e.target.classList);
+    // console.dir(e.target);
 
     if (
       e.target.id === "mobileNavigation" ||
