@@ -1,10 +1,11 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { useTranslation } from 'react-i18next';
-import Image from 'next/image';
-import styles from './ApartItem.module.scss';
-import Link from 'next/link';
+import React from "react";
+import { useTranslation } from "react-i18next";
+import Image from "next/image";
+import styles from "./ApartItem.module.scss";
+import Link from "next/link";
+import { CldImage } from "next-cloudinary";
 
 const ApartItem = ({
   titleImg,
@@ -21,10 +22,18 @@ const ApartItem = ({
         <Link href={`/apartments/${id}`}>
           {/* <Link href={`/oldApartments/${roomsQuantity}/${id}`}> */}
           <div className={styles.imgContainer}>
-            <Image
+            {/* <Image
               src={titleImg}
               alt="apartament"
               fill={true}
+              className={styles.img}
+              priority
+              sizes="(max-width: 768px) 324px, (max-width: 1440px) 300px"
+            /> */}
+            <CldImage
+              src={titleImg}
+              alt="apartment"
+              fill
               className={styles.img}
               priority
               sizes="(max-width: 768px) 324px, (max-width: 1440px) 300px"
@@ -34,7 +43,8 @@ const ApartItem = ({
         </Link>
         <div className={styles.apartContent}>
           <p className={styles.addressRooms}>
-            {roomsQuantity}{t("ApartmentsPage.TextOfDescAdress")}:
+            {roomsQuantity}
+            {t("ApartmentsPage.TextOfDescAdress")}:
           </p>
           <p className={styles.addressRooms}>{address}</p>
         </div>

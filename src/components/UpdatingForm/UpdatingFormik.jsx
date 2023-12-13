@@ -2,7 +2,7 @@
 
 import { CldUploadButton } from "next-cloudinary";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import { upDashboardSchema } from "@/yupShemas/upDashboardShema";
+import { updatingDashboardSchema } from "@/yupSchemas/updatingDashboardSchema";
 import { toast } from "react-toastify";
 import styles from "./UpdatingForm.module.scss";
 
@@ -95,7 +95,7 @@ const UpdatingFormik = ({ id, apart, mutate }) => {
       <Formik
         enableReinitialize={true}
         initialValues={initialValues}
-        validationSchema={upDashboardSchema}
+        validationSchema={updatingDashboardSchema}
         onSubmit={(values, actions) => {
           handleSubmit(values, actions);
         }}
@@ -126,7 +126,7 @@ const UpdatingFormik = ({ id, apart, mutate }) => {
               <CldUploadButton
                 name="newTitleImg"
                 onUpload={(result, widget) => {
-                  setFieldValue("newTitleImg", result.info.secure_url);
+                  setFieldValue("newTitleImg", result.info.public_id);
                   widget.close();
                 }}
                 uploadPreset="unsigned_preset"
@@ -143,7 +143,7 @@ const UpdatingFormik = ({ id, apart, mutate }) => {
                 onUpload={(result) => {
                   setFieldValue("newImgs", [
                     ...values.newImgs,
-                    result.info.secure_url,
+                    result.info.public_id,
                   ]);
                 }}
                 uploadPreset="unsigned_preset"

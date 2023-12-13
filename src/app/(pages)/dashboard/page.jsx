@@ -2,7 +2,6 @@
 
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
-// import Image from "next/image";
 import Link from "next/link";
 import { CldImage } from "next-cloudinary";
 import { toast } from "react-toastify";
@@ -62,15 +61,10 @@ const Dashboard = () => {
                 <h2>Обʼєкт №: {apart.objNumber}</h2>
                 {apart.top ? <p>ТОП</p> : null}
                 <p>Основне фото:</p>
-                {/* <div className={styles.imgContainer}>
-                                    <Image src={apart.titleImg} alt={apart.address} fill={true} sizes='20vw' priority={true} />
-                                </div> */}
                 <CldImage
                   width="300"
                   height="150"
                   crop="fill"
-                  // src="<Public ID>"
-                  // src="Classic-cars_yb6gby"
                   src={apart.titleImg}
                   alt="apartment photo"
                 />
@@ -78,12 +72,6 @@ const Dashboard = () => {
                 <ul className={styles.imgsWrapper}>
                   {apart.imgs.map((item, index) => (
                     <li className={styles.imgsCont} key={index}>
-                      {/* <Image
-                                                         src={item}
-                                                         alt="Interior photo"
-                                                         fill={true}
-                                                         sizes="10vw"
-                                                     /> */}
                       <CldImage
                         width="200"
                         height="100"
@@ -121,17 +109,11 @@ const Dashboard = () => {
                 <p className={styles.description}>
                   Опис англійською: {apart.descriptionEn}
                 </p>
-                {/* <div className={styles.btnsWrapper}>
-                  <Link href={`/dashboard/${apart._id}`}>Редагувати</Link>
-                  <span
-                    className={styles.delete}
-                    onClick={() => handleDelete(apart._id, apart.objNumber)}
-                  >
-                    X
-                  </span>
-                </div> */}
                 <div className={styles.btnsWrapper}>
-                  <Link className={styles.editLink} href={`/dashboard/${apart._id}`}>
+                  <Link
+                    className={styles.editLink}
+                    href={`/dashboard/${apart._id}`}
+                  >
                     <svg className={styles.editIcon}>
                       <use href="/sprite.svg#icon-edit" />
                     </svg>

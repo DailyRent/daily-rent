@@ -4,42 +4,13 @@ import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import { registerSchema } from "@/yupShemas/registerShema";
+import { registerSchema } from "@/yupSchemas/registerSchema";
 import styles from "./Register.module.scss";
 
 const Register = () => {
   const [err, setErr] = useState(false);
   // для перенаправления после регистрации
   const router = useRouter();
-
-  // const handleSubmit = async (e) => {
-  //     e.preventDefault();
-  //     const name = e.target[0].value;
-  //     const email = e.target[1].value;
-  //     const password = e.target[2].value;
-
-  //     try {
-  //         const response = await fetch("/api/auth/register", {
-  //             method: "POST",
-  //             headers: {
-  //                 "Content-type": "application/json",
-  //             },
-  //             body: JSON.stringify({
-  //                 name,
-  //                 email,
-  //                 password,
-  //             }),
-  //         });
-
-  //         response.status === 201 &&
-  //             router.push(
-  //                 "/dashboard/login?success=Account has been created"
-  //             );
-  //         toast.success("Аккаунт успішно створено");
-  //     } catch (error) {
-  //         setErr(true);
-  //     }
-  // };
 
   const initialValues = {
     name: "",
@@ -139,36 +110,7 @@ const Register = () => {
             );
           }}
         </Formik>
-        {/* <form className={styles.form} onSubmit={handleSubmit}>
-                    <input
-                        type='text'
-                        placeholder='Ivan Petrov'
-                        className={styles.input}
-                        required
-                    />
-
-                    <input
-                        type='email'
-                        placeholder='Petrov@gmail.com'
-                        className={styles.input}
-                        required
-                    />
-
-                    <input
-                        type='password'
-                        placeholder='IvanP12345'
-                        className={styles.input}
-                        required
-                    />
-
-                    <button
-                        type='submit'
-                        className={`${styles.registerBtn} ${styles.active}`}
-                    >
-                        Зареєструватися
-                    </button>
-                </form> */}
-        {err && "Something went wrong ((("}
+        {err && "Щось трапилося ((("}
         <Link href="/dashboard/login">Ви вже зареєстровані ?</Link>
       </div>
     </div>
