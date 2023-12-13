@@ -151,6 +151,7 @@
 
   & li {
     margin-top: 20px;
+    transform: translateY(-100%);
   }
 
   @media screen and (min-width: 425px) {
@@ -175,23 +176,8 @@
   height: fit-content;
   padding-bottom: 20px;
   background-color: $lightFontColor;
-}
-
-@-webkit-keyframes mobileNavigationVisible {
-  to {
-    height: -webkit-fit-content;
-    height: fit-content;
-    padding-bottom: 20px;
-    background-color: $lightFontColor;
-  }
-}
-
-@keyframes mobileNavigationVisible {
-  to {
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
-    height: fit-content;
-    padding-bottom: 20px;
-    background-color: $lightFontColor;
+  & li {
+    margin-top: 20px;
+    transform: translateY(0);
   }
 }

@@ -56,7 +56,7 @@ const ItemSlider = ({ dataId }) => {
         keyboard={{
           enabled: true,
         }}
-        mousewheel={true}
+        // mousewheel={true}
         thumbs={{ swiper: thumbsSwiper }}
         modules={[
           FreeMode,
