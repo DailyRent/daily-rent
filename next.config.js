@@ -14,7 +14,7 @@ const nextConfig = {
   },
 
   webpack: (config, { isServer }) => {
-   
+
     config.module.rules.push({
       test: /\.(pdf)$/,
       use: [
@@ -24,10 +24,10 @@ const nextConfig = {
       ],
     });
 
-    
+
     return config;
   },
-  
+
 };
 module.exports = nextConfig;
 

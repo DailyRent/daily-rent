@@ -102,7 +102,7 @@ const UpdatingFormik = ({ id, apart, mutate }) => {
       >
         {(formik) => {
           const { isValid, values, setFieldValue } = formik;
-          console.log("isValid", isValid);
+
           return (
             <Form className={styles.new}>
               <h1>Редагування обʼєкту</h1>
