@@ -118,6 +118,7 @@ const DashboardFormik = () => {
 
                 widget.close();
               }}
+              options={{ multiple: false }}
               uploadPreset="unsigned_preset"
             >
               Завантажити ОСНОВНЕ фото (тільки .WEBP)

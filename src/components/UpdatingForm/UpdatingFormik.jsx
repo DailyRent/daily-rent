@@ -132,6 +132,7 @@ const UpdatingFormik = ({ id, apart, mutate }) => {
                   setFieldValue("newTitleImg", result.info.public_id);
                   widget.close();
                 }}
+                options={{ multiple: false }}
                 uploadPreset="unsigned_preset"
               >
                 Змінити ОСНОВНЕ фото (тільки .WEBP)
