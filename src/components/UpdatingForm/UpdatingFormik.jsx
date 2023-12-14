@@ -126,6 +126,7 @@ const UpdatingFormik = ({ id, apart, mutate }) => {
               />
               <CldUploadButton
                 name="newTitleImg"
+                className={styles.uploadBtn}
                 onUpload={(result, widget) => {
                   handleDeleteImgFromCloudinary(titleImg);
                   setFieldValue("newTitleImg", result.info.public_id);
@@ -142,6 +143,7 @@ const UpdatingFormik = ({ id, apart, mutate }) => {
               />
               <CldUploadButton
                 name="newImgs"
+                className={styles.uploadBtn}
                 onUpload={(result) => {
                   setFieldValue("newImgs", [
                     ...values.newImgs,

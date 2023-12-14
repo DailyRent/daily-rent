@@ -12,6 +12,7 @@ import { dashboardSchema } from "@/yupSchemas/dashboardSchema";
 import { useFetcherObjectNumbers } from "@/hooks/useFetcher";
 import { GetData } from "@/fetch/clientFetch";
 import styles from "./DashboardForm.module.scss";
+import { handleDeleteImgFromCloudinary } from "@/utils/handleDeleteImgFromCloudinary";
 
 const DashboardFormik = () => {
   const initialValues = {
@@ -107,12 +108,12 @@ const DashboardFormik = () => {
             />
             <CldUploadButton
               name="titleImg"
+              className={styles.uploadBtn}
               onUpload={(result, widget) => {
-                // for Image component
-                // setTitleImg(result.info.secure_url);
-                // setFieldValue("titleImg", result.info.secure_url);
-                // for CldImage component from next-cloudinary
-                // setTitleImg(result.info.public_id);
+                if (values.titleImg !== "") {
+                  handleDeleteImgFromCloudinary(values.titleImg);
+                }
+
                 setFieldValue("titleImg", result.info.public_id);
 
                 widget.close();
@@ -124,11 +125,8 @@ const DashboardFormik = () => {
             <ErrorMessage name="imgs" className={styles.error} component="p" />
             <CldUploadButton
               name="imgs"
+              className={styles.uploadBtn}
               onUpload={(result) => {
-                // for Image component
-                // setFieldValue("imgs", [...values.imgs, result.info.secure_url]);
-                // for CldImage component from next-cloudinary
-                // setImgs(prev => [...prev, result.info.public_id]);
                 setFieldValue("imgs", [...values.imgs, result.info.public_id]);
               }}
               uploadPreset="unsigned_preset"
