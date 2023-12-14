@@ -5,6 +5,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import { updatingDashboardSchema } from "@/yupSchemas/updatingDashboardSchema";
 import { toast } from "react-toastify";
 import styles from "./UpdatingForm.module.scss";
+import { handleDeleteImgFromCloudinary } from "@/utils/handleDeleteImgFromCloudinary";
 
 const UpdatingFormik = ({ id, apart, mutate }) => {
   const {
@@ -126,6 +127,7 @@ const UpdatingFormik = ({ id, apart, mutate }) => {
               <CldUploadButton
                 name="newTitleImg"
                 onUpload={(result, widget) => {
+                  handleDeleteImgFromCloudinary(titleImg);
                   setFieldValue("newTitleImg", result.info.public_id);
                   widget.close();
                 }}
