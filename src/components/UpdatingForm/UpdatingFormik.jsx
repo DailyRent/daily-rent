@@ -2,10 +2,11 @@
 
 import { CldUploadButton } from "next-cloudinary";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import { updatingDashboardSchema } from "@/yupSchemas/updatingDashboardSchema";
 import { toast } from "react-toastify";
-import styles from "./UpdatingForm.module.scss";
+import { updatingDashboardSchema } from "@/yupSchemas/updatingDashboardSchema";
 import { handleDeleteImgFromCloudinary } from "@/utils/handleDeleteImgFromCloudinary";
+import { isDeepEqual } from "@/utils/deepEqual";
+import styles from "./UpdatingForm.module.scss";
 
 const UpdatingFormik = ({ id, apart, mutate }) => {
   const {
@@ -25,6 +26,23 @@ const UpdatingFormik = ({ id, apart, mutate }) => {
     description,
     descriptionEn,
   } = apart;
+
+  const currentValues = {
+    top,
+    titleImg,
+    imgs,
+    address,
+    addressEn,
+    flatNumber,
+    googleMapLocation,
+    price,
+    roomsQuantity,
+    bookingUrl,
+    amenities,
+    bedsQuantity,
+    description,
+    descriptionEn,
+  };
 
   const initialValues = {
     newTop: top,
@@ -60,31 +78,39 @@ const UpdatingFormik = ({ id, apart, mutate }) => {
       newDescription,
       newDescriptionEn,
     } = values;
+
+    const updatedValues = {
+      top: newTop,
+      titleImg: newTitleImg,
+      imgs: newImgs,
+      address: newAddress,
+      addressEn: newAddressEn,
+      flatNumber: newFlatNumber,
+      googleMapLocation: newGoogleMapLocation,
+      price: newPrice,
+      roomsQuantity: newRoomsQuantity,
+      bookingUrl: newBookingUrl,
+      amenities: newAmenities,
+      bedsQuantity: newBedsQuantity,
+      description: newDescription,
+      descriptionEn: newDescriptionEn,
+    };
+
+    if (isDeepEqual(currentValues, updatedValues)) {
+      toast.warning(`Ви не внесли змін в обʼєкт №: ${objNumber}`);
+      return;
+    }
+
     try {
       await fetch(`/api/apartments/${id}`, {
         method: "PUT",
-        body: JSON.stringify({
-          top: newTop,
-          titleImg: newTitleImg,
-          imgs: newImgs,
-          address: newAddress,
-          addressEn: newAddressEn,
-          flatNumber: newFlatNumber,
-          googleMapLocation: newGoogleMapLocation,
-          price: newPrice,
-          roomsQuantity: newRoomsQuantity,
-          bookingUrl: newBookingUrl,
-          amenities: newAmenities,
-          bedsQuantity: newBedsQuantity,
-          description: newDescription,
-          descriptionEn: newDescriptionEn,
-        }),
+        body: JSON.stringify(updatedValues),
       });
       // автоматично обновлює строрінку при зміні кількості карточок
       mutate();
       // обнуляє форму
       actions.resetForm();
-      toast.info(`Дані обʼєкту №: ${objNumber} оновлено`);
+      toast.success(`Дані обʼєкту №: ${objNumber} оновлено`);
     } catch (err) {
       console.log(err);
       toast.error(`Помилка! Обʼєкт №: ${objNumber} не оновлено`);
