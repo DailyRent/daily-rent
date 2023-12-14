@@ -8,6 +8,7 @@ import { toast } from "react-toastify";
 import DashboardFormik from "@/components/DashboardForm/DashboardFormik";
 import { GetData } from "@/fetch/clientFetch";
 import styles from "./page.module.scss";
+import { handleDeleteImgFromCloudinary } from "@/utils/handleDeleteImgFromCloudinary";
 
 const Dashboard = () => {
   const session = useSession();
@@ -16,7 +17,7 @@ const Dashboard = () => {
 
   const router = useRouter();
 
-  const handleDelete = async (id, objNumber) => {
+  const handleDeleteApartmentFromDB = async (id, objNumber) => {
     try {
       await fetch(`/api/apartments/${id}`, { method: "DELETE" });
       // автоматически обновляет страницу при изменении кол-ва карточек
@@ -120,7 +121,15 @@ const Dashboard = () => {
                   </Link>
                   <svg
                     className={styles.deleteIcon}
-                    onClick={() => handleDelete(apart._id, apart.objNumber)}
+                    onClick={() => {
+                      handleDeleteImgFromCloudinary(apart.titleImg);
+
+                      apart.imgs.map((item) =>
+                        handleDeleteImgFromCloudinary(item)
+                      );
+
+                      handleDeleteApartmentFromDB(apart._id, apart.objNumber);
+                    }}
                   >
                     <use href="/sprite.svg#icon-delete" />
                   </svg>
