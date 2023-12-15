@@ -7,11 +7,6 @@ export const navigationData = [
     titleEN:"Apartments",
     path: "/apartments",
   },
-  // {
-  //   id: v4(),
-  //   title: "Старі Апартаменти",
-  //   path: "/oldApartments",
-  // },
   {
     id: v4(),
     title: "Документи",
