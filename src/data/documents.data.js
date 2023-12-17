@@ -6,7 +6,6 @@ export const documents = [
     alt: "Додатково про документ",
     text: "Виписка з ЄДР юридичних осіб",
     title: "Перехід до документа",
-    seo: "pdf/doc1.pdf",
   },
   {
     id: 2,
@@ -15,7 +14,6 @@ export const documents = [
     alt: "Додатково про документ",
     text: "Витяг з ЄДР юридичних осіб",
     title: "Перехід до документа",
-    seo: "pdf/doc2.pdf",
   },
   {
     id: 3,
@@ -24,6 +22,5 @@ export const documents = [
     alt: "Додатково про документ",
     text: "Витяг з реєстру платників податку",
     title: "Перехід до документа",
-    seo: "pdf/doc3.pdf",
   },
 ];

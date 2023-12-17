@@ -14,20 +14,20 @@ const nextConfig = {
   },
 
   webpack: (config, { isServer }) => {
+
     config.module.rules.push({
       test: /\.(pdf)$/,
       use: [
         {
-          loader: "file-loader",
+          loader: 'file-loader',
         },
       ],
     });
 
+
     return config;
   },
 
-  // webpack: async function (config) {
-  //   return config;
-  // },
 };
 module.exports = nextConfig;
+
