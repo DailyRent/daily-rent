@@ -61,8 +61,8 @@ const Amenities = ({ dataId }) => {
     id: 100,
     titleEN: dataId.bedsQuantity,
     title: dataId.bedsQuantity,
-    img: '/webp/Bed6.webp',
-    // img: '/webp/Bed7.webp',
+    // img: '/webp/Bed6.webp',
+    img: '/webp/Bed7.webp',
     // img: '/webp/Berth.webp',
   };
 
