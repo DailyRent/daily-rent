@@ -1,12 +1,14 @@
-@import "../../../styles/variables";
+@import '../../../styles/variables';
 
 .filterRoom {
+  width: 91px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  justify-content: flex-end;
   -webkit-column-gap: 8px;
   -moz-column-gap: 8px;
   column-gap: 8px;
@@ -46,7 +48,7 @@
 
   &::after {
     position: absolute;
-    content: "";
+    content: '';
     top: -3px;
     left: -3px;
     width: 16px;
@@ -80,7 +82,7 @@
     position: absolute;
     top: -3px;
     left: 50%;
-    content: "";
+    content: '';
     width: 16px;
     height: 16px;
     background: #fff;

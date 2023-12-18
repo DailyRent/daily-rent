@@ -1,7 +1,6 @@
 @import '@/styles/_variables.scss';
 
 .container {
-  // max-width: 1440px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -23,6 +22,7 @@
 }
 
 .toBackContainer {
+  height: 16px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -66,6 +66,20 @@
   // justify-content: center;
 }
 
+.titleContainer {
+  height: 166px;
+  margin-bottom: 16px;
+
+  @media screen and (min-width: $tablet) {
+    height: 185px;
+    margin-bottom: 28px;
+  }
+  @media screen and (min-width: 1366px) {
+    height: 158px;
+    margin-bottom: 32px;
+  }
+}
+
 .title {
   color: #000000;
   // font-family: Crimson Text;
@@ -92,15 +106,10 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  margin-bottom: 16px;
 
   @media screen and (min-width: $tablet) {
     text-align: justify;
     font-size: 32px;
-    margin-bottom: 28px;
-  }
-  @media screen and (min-width: 1366px) {
-    margin-bottom: 32px;
   }
 }
 
@@ -181,6 +190,7 @@
 }
 
 .city {
+  height: 36px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -197,13 +207,23 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  margin-bottom: 20px;
   @media screen and (min-width: $tablet) {
     font-size: 32px;
-    margin-bottom: 25px;
   }
   @media screen and (min-width: 1366px) {
     font-size: 36px;
+  }
+}
+
+.cityContainer {
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 20px;
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 25px;
+  }
+  @media screen and (min-width: 1366px) {
     margin-bottom: 46px;
   }
 }
