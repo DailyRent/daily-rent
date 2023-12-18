@@ -19,11 +19,22 @@
   background-color: #f3f3f3;
   overflow-x: hidden;
 
+  justify-content: space-between;
+
   & .footerLogo {
     color: $footerLogoColor;
     font-size: clamp(1rem, 0.714rem + 1.429vw, 2rem);
     margin-left: 0;
     margin-right: auto;
+  }
+  @media (max-width: 360px) {
+    // justify-content: space-between;
+    height: 186px;
+  }
+
+  @media (min-width: 361px) and (max-width: 767px) {
+    height: 128px;
+    // justify-content: space-between;
   }
 
   @media (max-width: 767px) {
@@ -42,6 +53,7 @@
   @media screen and (min-width: $desktop) {
     gap: 20px;
     padding: 24px 86px;
+    height: 250px;
   }
 }
 

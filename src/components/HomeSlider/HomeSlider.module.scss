@@ -10,6 +10,7 @@
   -ms-flex-direction: column;
   flex-direction: column;
   width: 100%;
+  height: 328px;
   padding: 16px 0px;
   gap: 16px;
 
@@ -51,5 +52,6 @@
 
 .sliderLoader {
   width: 100%;
-  height: 218px;
+  // height: 218px;
+  height: 100%;
 }
