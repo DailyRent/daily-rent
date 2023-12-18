@@ -20,6 +20,7 @@ const Header = () => {
   const [burgerMenu, setBurgerMenu] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [scrolledWindow, setScrolledWindow] = useState(0);
 
   const isClient = typeof window !== "undefined";
   const isDocument = typeof document !== "undefined";
@@ -37,7 +38,7 @@ const Header = () => {
 
   const header = isDocument && document.getElementById("header");
 
-  let scrolledWindow = 0;
+  // let scrolledWindow = 0;
 
   const headerScrollclassName = useCallback(() => {
     if (window.scrollY <= 12) {
@@ -50,8 +51,9 @@ const Header = () => {
       header.classList.add(`${styles.containerVisible}`);
     }
 
-    scrolledWindow = window.scrollY;
-  }, [scrolledWindow]);
+    // scrolledWindow = window.scrollY;
+    setScrolledWindow(window.scrollY);
+  }, [scrolledWindow, header.classList]);
 
   const closeBurgerMenu = () => {
     setTimeout(() => {
@@ -59,11 +61,7 @@ const Header = () => {
     }, 250);
   };
 
-  const closeBurgerMenuOnClick = (e) => {
-    // console.dir(e.target.id);
-    // console.log(e.target.classList);
-    // console.dir(e.target);
-
+  const closeBurgerMenuOnClick = useCallback((e) => {
     if (
       e.target.id === "mobileNavigation" ||
       e.target.nodeName === "use" ||
@@ -73,7 +71,7 @@ const Header = () => {
     } else {
       closeBurgerMenu();
     }
-  };
+  }, []);
 
   useEffect(() => {
     setIsLoading(false);
