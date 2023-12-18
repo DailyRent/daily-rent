@@ -96,7 +96,7 @@ const HomeSlider = () => {
                       src={el.titleImg}
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      alt={el.objNumber}
+                      alt={el.address}
                       loading="lazy"
                     />
                   </div>
