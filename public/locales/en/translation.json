@@ -1,83 +1,84 @@
 {
-    "Header": {
-        "headerSale": "-10% ON FIRST ORDER",
-        "linkApartments": "Apartments",
-        "linkDocuments": "Documents",
-        "linkRules": "Rules",
-        "linkContacts": "Contacts"
-    },
-    "MainPage": {
-        "heroTitle": "Your comfort is our concern",
-        "galleryTittle": "Аpartments",
-        "contactsTitle": "Contact Us"
-    },
-    "ApartmentsPage": {
-        "Title": "What will be in the apartment?",
-        "OneRoom": "One-room",
-        "TwoRoom": "Two-room",
-        "ThreeRoom": "Three-room",
-        "OneAndTwoRoom": "One-room and two-room",
-        "OneAndThreeRoom": "One-room and three-room",
-        "TwoAndThreeRoom": "Two-room and three-room",
-        "NotFound": "apartments not found",
-        "TextOfDescAdress": "-room apartment at the address",
-        "TextOfDescOptions": "What will be in the apartment"
-    },
-    "ContactsPage": {
-        "Title": "Contacts",
-        "Text": "Feel free to call us or write to us on any of the social media. We will be happy to help and communicate with you!",
-        "CountryAndSity": "Ukraine, Sumy",
-        "Adress": "Stepana Bandery street, 3"
-    },
-    "RulesPage": {
-        "MainTitle": "rules of residence:",
-        "TitleSection1": "Rules of behavior in the apartment:",
-        "TitleSection2": "This is strictly prohibited:",
-        "TitleSection3": "The administration has the right to immediately evict the tenant without refunding the rent in case of:"
-    },
-    "Navigation": {
-        "MainPage": "Main",
-        "Apartments": "Apartments",
-        "Contacts": "Contacts",
-        "Documents": "Documents",
-        "Rules": "Rules"
-    },
-    "Buttons": {
-        "CalltBtn": "Contact Us",
-        "OrderBtn": "Request to book",
-        "CloseBtn": "Close",
-        "CardDetailsBtn": "Details",
-        "FilterBtn": "Find",
-        "FilterClear": "Clear",
-        "FilterQuantRooms": "-rooms",
-        "ObjectsBtn": "All objects",
-        "OpenFilterBtn": "Filter",
-        "CloseFilterBtn": "Close",
-        "LogOutBtn": "LogOut",
-        "Submit": "Submit"
-    },
-    "Form": {
-        "name": "Name",
-        "phone": "Phone number *",
-        "dateOfEntry": "Date of entry",
-        "departureDate": "Departure date",
-        "numberOfObject": "Number of object",
-        "fieldsDesc": "required fields",
-        "formSubmitedMsg1": "Your application has been successfully sent!",
-        "formSubmitedMsg2": "Our manager will contact you shortly.",
-        "fieldRequiredMsg": "Fill in this field",
-        "errorShortName": "The name should be longer",
-        "errorLongName": "The name should be shorter",
-        "errorNumberOfObject": "There's no such number",
-        "errorNumberOfObject2": "Only positive numbers",
-        "errorNumberOfObject3": "Only numbers",
-        "errorTooManySpases": "Too many spases"
-    },
-    "formErrors": {
-        "name": "Incorrect name entered",
-        "phone": "Phone number",
-        "dateOfEntry": "Choose a date",
-        "departureDate": "Choose a date",
-        "numberObject": "Enter the object number"
-    }
+  "Header": {
+    "headerSale": "-10% ON FIRST ORDER",
+    "linkApartments": "Apartments",
+    "linkDocuments": "Documents",
+    "linkRules": "Rules",
+    "linkContacts": "Contacts"
+  },
+  "MainPage": {
+    "heroTitle": "Daily rent of apartments in Sumy",
+    "heroSubTitle": "Top housing offers for a comfortable stay",
+    "galleryTittle": "Аpartments",
+    "contactsTitle": "Contact Us"
+  },
+  "ApartmentsPage": {
+    "Title": "What will be in the apartment?",
+    "OneRoom": "One-room",
+    "TwoRoom": "Two-room",
+    "ThreeRoom": "Three-room",
+    "OneAndTwoRoom": "One-room and two-room",
+    "OneAndThreeRoom": "One-room and three-room",
+    "TwoAndThreeRoom": "Two-room and three-room",
+    "NotFound": "apartments not found",
+    "TextOfDescAdress": "-room apartment at the address",
+    "TextOfDescOptions": "What will be in the apartment"
+  },
+  "ContactsPage": {
+    "Title": "Contacts",
+    "Text": "Feel free to call us or write to us on any of the social media. We will be happy to help and communicate with you!",
+    "CountryAndSity": "Ukraine, Sumy",
+    "Adress": "Stepana Bandery street, 3"
+  },
+  "RulesPage": {
+    "MainTitle": "rules of residence:",
+    "TitleSection1": "Rules of behavior in the apartment:",
+    "TitleSection2": "This is strictly prohibited:",
+    "TitleSection3": "The administration has the right to immediately evict the tenant without refunding the rent in case of:"
+  },
+  "Navigation": {
+    "MainPage": "Main",
+    "Apartments": "Apartments",
+    "Contacts": "Contacts",
+    "Documents": "Documents",
+    "Rules": "Rules"
+  },
+  "Buttons": {
+    "CalltBtn": "Contact Us",
+    "OrderBtn": "Request to book",
+    "CloseBtn": "Close",
+    "CardDetailsBtn": "Details",
+    "FilterBtn": "Find",
+    "FilterClear": "Clear",
+    "FilterQuantRooms": "-rooms",
+    "ObjectsBtn": "All objects",
+    "OpenFilterBtn": "Filter",
+    "CloseFilterBtn": "Close",
+    "LogOutBtn": "LogOut",
+    "Submit": "Submit"
+  },
+  "Form": {
+    "name": "Name",
+    "phone": "Phone number *",
+    "dateOfEntry": "Date of entry",
+    "departureDate": "Departure date",
+    "numberOfObject": "Number of object",
+    "fieldsDesc": "required fields",
+    "formSubmitedMsg1": "Your application has been successfully sent!",
+    "formSubmitedMsg2": "Our manager will contact you shortly.",
+    "fieldRequiredMsg": "Fill in this field",
+    "errorShortName": "The name should be longer",
+    "errorLongName": "The name should be shorter",
+    "errorNumberOfObject": "There's no such number",
+    "errorNumberOfObject2": "Only positive numbers",
+    "errorNumberOfObject3": "Only numbers",
+    "errorTooManySpases": "Too many spases"
+  },
+  "formErrors": {
+    "name": "Incorrect name entered",
+    "phone": "Phone number",
+    "dateOfEntry": "Choose a date",
+    "departureDate": "Choose a date",
+    "numberObject": "Enter the object number"
+  }
 }
