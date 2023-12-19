@@ -80,6 +80,7 @@ const ContactsComponent = () => {
                   sizes="36px"
                 />
               </div>
+              
               {!isLoading && <p>{t('ContactsPage.Adress')}</p>}
             </a>
             <div className={styles.telContainer}>
