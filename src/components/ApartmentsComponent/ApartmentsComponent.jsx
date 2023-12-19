@@ -223,7 +223,14 @@ const ApartmentsComponent = () => {
     return filteredRooms;
   });
 
-  const filteredAmenitiesData = filteredRoomsData?.filter((room) => {
+  const filteredBedsData = filteredRoomsData?.filter((bed) => {
+    const filteredBeds = numberBedsArr.every(
+      (numberBed) => numberBed != bed.bedsQuantity
+    );
+    return filteredBeds;
+  });
+
+  const filteredAmenitiesData = filteredBedsData?.filter((room) => {
     const amenities = room.amenities;
 
     const filteredAmenities = amenitiesArr.every((amenity) =>
@@ -367,6 +374,7 @@ const ApartmentsComponent = () => {
                   objNumber={item.objNumber}
                   roomsQuantity={item.roomsQuantity}
                   id={item._id}
+                  bedsQuantity={item.bedsQuantity}
                 />
               ))}
         </ul>

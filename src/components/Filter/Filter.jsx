@@ -33,19 +33,23 @@ const Filter = ({
   );
 
   const handleIncrementFilter = () => {
+    console.log(numberBedsArr);
     if (filterBeds === 6) return;
     setFilterBeds((prevFilterBeds) => prevFilterBeds + 1);
+
     setNumberBedsArr((numberBedsArr) => [...numberBedsArr, filterBeds]);
   };
 
   const handleDecrementFilter = () => {
+    console.log(numberBedsArr);
     if (filterBeds === 2) return;
     setFilterBeds((prevFilterBeds) => prevFilterBeds - 1);
     setNumberBedsArr((numberBedsArr) =>
-      numberBedsArr.filter((numberBeds) => numberBeds != filterBeds)
+      numberBedsArr.filter((numberBeds) => numberBeds != filterBeds - 1)
     );
   };
-  console.log(numberBedsArr);
+  // console.log(numberBedsArr);
+  // console.log(filterBeds);
   const handleResetFilter = () => {
     setIsFilterClear(true);
   };
