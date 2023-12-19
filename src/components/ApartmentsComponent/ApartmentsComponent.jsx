@@ -213,7 +213,7 @@ const ApartmentsComponent = () => {
   const [numberBedsArr, setNumberBedsArr] = useState([]);
   const { t, i18n } = useTranslation();
   const containerRef = useRef();
-  console.log(data);
+  // console.log(data);
   const filteredRoomsData = data?.filter((room) => {
     if (numberRoomsArr.length === 0) return true; //якщо фільтр пустий, виводимо всі квартири
 
@@ -374,7 +374,6 @@ const ApartmentsComponent = () => {
                   objNumber={item.objNumber}
                   roomsQuantity={item.roomsQuantity}
                   id={item._id}
-                  bedsQuantity={item.bedsQuantity}
                 />
               ))}
         </ul>

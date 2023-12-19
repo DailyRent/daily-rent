@@ -41,7 +41,7 @@ const Filter = ({
   };
 
   const handleDecrementFilter = () => {
-    console.log(numberBedsArr);
+    // console.log(numberBedsArr);
     if (filterBeds === 2) return;
     setFilterBeds((prevFilterBeds) => prevFilterBeds - 1);
     setNumberBedsArr((numberBedsArr) =>

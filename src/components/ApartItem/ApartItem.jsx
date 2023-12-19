@@ -13,7 +13,6 @@ const ApartItem = ({
   price,
   objNumber,
   roomsQuantity,
-  bedsQuantity,
   id,
 }) => {
   const { t } = useTranslation();
@@ -52,7 +51,6 @@ const ApartItem = ({
         <p className={styles.priceRooms}>
           {price}₴{/* Кількість кімнат: {roomsQuantity} */}
         </p>
-        <p>{bedsQuantity}</p>
         <Link
           href={`/apartments/${id}`}
           // href={`/oldApartments/${roomsQuantity}/${id}`}
