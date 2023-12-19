@@ -1,6 +1,8 @@
-@import "../../../styles/variables";
+@import '../../../styles/variables';
 
 .filterContainer {
+  width: 75px;
+  height: 24px;
   @media screen and (min-width: $tablet) {
     position: absolute;
     top: 50%;

@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
-import { useTranslation } from "react-i18next";
-import { currentLanguages } from "@/data";
+import { useTranslation } from 'react-i18next';
+import { currentLanguages } from '@/data';
 
-import styles from "./FilterRoomItem.module.scss";
+import styles from './FilterRoomItem.module.scss';
 
 const FilterRoomItem = ({
   id,
@@ -49,7 +49,7 @@ const FilterRoomItem = ({
       {!isLoading && (
         <p className={styles.filterRoomText}>
           {title}
-          {t("Buttons.FilterQuantRooms")}
+          {t('Buttons.FilterQuantRooms')}
         </p>
       )}
       <input
