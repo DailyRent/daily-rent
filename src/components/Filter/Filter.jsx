@@ -4,10 +4,11 @@ import { useTranslation } from "react-i18next";
 import { SiteContext } from "@/context/SiteContext";
 import styles from "./Filter.module.scss";
 import { amenities } from "@/data";
-import { beds } from "@/data";
+// import { beds } from "@/data";
 // import { amenities, currentLanguages } from "@/data";
 import FilterItem from "./FilterItem/FilterItem";
-import FilterItemBeds from "./FilterItem/FilterItemBeds";
+// import FilterItemBeds from "./FilterItem/FilterItemBeds";
+// import Image from "next/image";
 // import { usePathname } from "next/navigation";
 
 const Filter = ({
@@ -20,6 +21,7 @@ const Filter = ({
   const { filterShown, setFilterShown } = useContext(SiteContext);
   const [isLoad, setIsLoad] = useState(true);
   const [isFilterClear, setIsFilterClear] = useState(false);
+  const [filterBeds, setFilterBeds] = useState(2);
   // const { i18n } = useTranslation();
   const { t } = useTranslation();
   useEffect(() => {
@@ -30,6 +32,20 @@ const Filter = ({
     (amenity) => amenity.title !== "Wi-Fi"
   );
 
+  const handleIncrementFilter = () => {
+    if (filterBeds === 6) return;
+    setFilterBeds((prevFilterBeds) => prevFilterBeds + 1);
+    setNumberBedsArr((numberBedsArr) => [...numberBedsArr, filterBeds]);
+  };
+
+  const handleDecrementFilter = () => {
+    if (filterBeds === 2) return;
+    setFilterBeds((prevFilterBeds) => prevFilterBeds - 1);
+    setNumberBedsArr((numberBedsArr) =>
+      numberBedsArr.filter((numberBeds) => numberBeds != filterBeds)
+    );
+  };
+  console.log(numberBedsArr);
   const handleResetFilter = () => {
     setIsFilterClear(true);
   };
@@ -41,6 +57,25 @@ const Filter = ({
   return (
     <div className={isFilterShown}>
       <div className={styles.filterButtonsContainer}>
+        <div className={styles.filterAmenitisContainer}>
+          <p>Спальні місця</p>
+          {/* <div className={styles.imgSvgContainer}>
+            <Image
+              src="/webp/Bed7.webp"
+              alt="bed"
+              fill={true}
+              className={styles.imgSvg}
+              sizes="(min-width: 768px) 24px,"
+            />
+          </div> */}
+          <button className={styles.buttonBeds} onClick={handleDecrementFilter}>
+            -
+          </button>
+          <span className={styles.textBeds}>{filterBeds}</span>
+          <button className={styles.buttonBeds} onClick={handleIncrementFilter}>
+            +
+          </button>
+        </div>
         {/* <h4>Amenities</h4> */}
         <ul className={styles.filterAmenitisContainer}>
           {/* {console.log(amenitiesArr)} */}
@@ -61,8 +96,12 @@ const Filter = ({
                 />
               );
             })}
+        </ul>
+
+        {/* <ul className={styles.filterAmenitisContainer}>
           {!isLoad &&
             beds.map((bed) => {
+              // console.log(bed);
               return (
                 <FilterItemBeds
                   key={bed.id}
@@ -78,7 +117,7 @@ const Filter = ({
                 />
               );
             })}
-        </ul>
+        </ul> */}
       </div>
       <div className={styles.filterSearchResetContainer}>
         {!isLoad && (

@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./FilterItem.module.scss";
 import { useTranslation } from "react-i18next";
 import { currentLanguages } from "@/data";
+import Image from "next/image";
 
 const FilterItemBeds = ({
   id,
@@ -16,12 +17,17 @@ const FilterItemBeds = ({
   setIsFilterClear,
 }) => {
   const [isChecked, setIsChecked] = useState(false);
+  const [isLoad, setIsLoad] = useState(true);
 
   useEffect(() => {
     setIsChecked(false);
     setIsFilterClear(false);
-    setAmenitiesArr([]);
+    setNumberBedsArr([]);
   }, [isFilterClear]);
+
+  useEffect(() => {
+    setIsLoad(false);
+  }, []);
 
   const isBedChecked = () =>
     id === activeIndex ? setIsChecked(!isChecked) : null;
@@ -49,6 +55,15 @@ const FilterItemBeds = ({
       {!isLoad && (
         <li className={styles.filterItem}>
           <p className={styles.filterCheckboxTitle}>{title}</p>
+          <div className={styles.imgSvgContainer}>
+            <Image
+              src={img}
+              alt="bed"
+              fill={true}
+              className={styles.imgSvg}
+              sizes="(min-width: 768px) 24px,"
+            />
+          </div>
           <input
             id={id}
             type="checkbox"
