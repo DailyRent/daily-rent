@@ -82,7 +82,11 @@ const Amenities = ({ dataId }) => {
             <div className={styles.imgSvgContainer}>
               <Image
                 src={amenity.img}
-                alt={amenity.titleEN}
+                alt={
+                  i18n.language === currentLanguages.EN
+                    ? amenity.titleEN
+                    : amenity.title
+                }
                 fill={true}
                 className={styles.imgSvg}
                 sizes="(min-width: 768px) 24px,"

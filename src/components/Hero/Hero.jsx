@@ -3,7 +3,6 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { useState, useEffect } from "react";
 import CallBtn from "../CallBtn/CallBtn";
-// import Logo from "../Logo/Logo";
 import styles from "./Hero.module.scss";
 import seoStyles from "@/app/seoStyles.module.css";
 
@@ -21,14 +20,12 @@ const Hero = () => {
         Оренда квартири суми. Квартири подобово. Суми квартири.
       </h1>
       <h2 className={styles.heroLogo}>DailyRent</h2>
-      {!isLoading && (
-        <>
-          <p className={styles.heroTitle}>{t("MainPage.heroTitle")}</p>
-          <p className={styles.heroText}>
-            Lorem ipsum dolor sit amet consectetur.
-          </p>
-        </>
-      )}
+      <p className={styles.heroTitle}>
+        {!isLoading && t("MainPage.heroTitle")}
+      </p>
+      <p className={styles.heroText}>
+        {!isLoading && t("MainPage.heroSubTitle")}
+      </p>
       <CallBtn className={styles.heroCallBtn} />
     </section>
   );

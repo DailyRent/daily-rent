@@ -1,4 +1,4 @@
-@import "@/styles/_variables.scss";
+@import '@/styles/_variables.scss';
 
 .container {
   display: -webkit-box;
@@ -19,6 +19,7 @@
 }
 
 .filterContainer {
+  height: 16px;
   position: relative;
   width: 100%;
   display: -webkit-box;
@@ -57,7 +58,7 @@
 .active {
   position: relative;
   &::after {
-    content: "";
+    content: '';
     display: block;
     position: absolute;
     bottom: 0px;
