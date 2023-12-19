@@ -47,11 +47,11 @@ const FilterRoomItem = ({
   return (
     <li className={styles.filterRoom}>
       {!isLoading && (
-        <p className={styles.filterRoomText}>
+        <><p className={styles.filterRoomText}>
           {title}
           {t('Buttons.FilterQuantRooms')}
         </p>
-      )}
+      
       <input
         id={id}
         type="checkbox"
@@ -65,7 +65,7 @@ const FilterRoomItem = ({
             isNumberRoomsChecked(),
             toggleNumberRoomsForFilter();
         }}
-      />
+      /></>)}
     </li>
   );
 };
