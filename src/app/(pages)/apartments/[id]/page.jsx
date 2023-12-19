@@ -59,7 +59,7 @@ const ApartId = async ({ params }) => {
         "@type": "ListItem",
         position: 3,
         item: {
-          "@id": `${process.env.NEXT_PUBLIC_MAIN_URL}apartments/${apartment.address}`,
+          "@id": `${process.env.NEXT_PUBLIC_MAIN_URL}apartments/${apartment._id}`,
           name: "Daily Rent Оренда квартир детальніше",
         },
       },
