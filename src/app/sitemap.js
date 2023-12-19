@@ -73,7 +73,7 @@ export default async function sitemap() {
   const routes = [
     {
       name: "",
-      priority: 1,
+      priority: 0.9,
     },
     {
       name: "apartments",
