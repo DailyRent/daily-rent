@@ -62,7 +62,7 @@ const Filter = ({
     <div className={isFilterShown}>
       <div className={styles.filterButtonsContainer}>
         <div className={styles.filterAmenitisContainer}>
-          <p>Спальні місця</p>
+          <p className={styles.textBeds}>Спальні місця</p>
           {/* <div className={styles.imgSvgContainer}>
             <Image
               src="/webp/Bed7.webp"
@@ -75,7 +75,7 @@ const Filter = ({
           <button className={styles.buttonBeds} onClick={handleDecrementFilter}>
             -
           </button>
-          <span className={styles.textBeds}>{filterBeds}</span>
+          <span className={styles.numberBeds}>{filterBeds}</span>
           <button className={styles.buttonBeds} onClick={handleIncrementFilter}>
             +
           </button>
