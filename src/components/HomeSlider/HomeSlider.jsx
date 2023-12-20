@@ -27,7 +27,7 @@ import { Pagination, Navigation, Keyboard, Autoplay } from "swiper/modules";
 
 const HomeSlider = () => {
   const { data, error, isLoading } = GetData();
-  const {i18n}= useTranslation()
+  const { i18n } = useTranslation();
   // Filter the data to get only the item with top === true
   const topData = data ? data.filter((item) => item.top === true) : [];
   // const topData = data?.filter((item) => item.top === true)
@@ -77,7 +77,7 @@ const HomeSlider = () => {
           speed={1200}
           autoplay={{
             delay: 2400,
-            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
           }}
           effect="slide"
           pagination={{
@@ -93,13 +93,25 @@ const HomeSlider = () => {
           {topData?.map((el) => {
             return (
               <SwiperSlide key={el._id}>
-                <Link href={`apartments/${el._id}`} className="link">
+                <Link
+                  href={`apartments/${el._id}`}
+                  className="link"
+                  data-title={
+                    i18n.language === currentLanguages.EN
+                      ? el.addressEn
+                      : el.address
+                  }
+                >
                   <div className="div">
                     <CldImage
                       src={el.titleImg}
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      alt={i18n.language === currentLanguages.EN ? el.addressEn :  el.address}
+                      alt={
+                        i18n.language === currentLanguages.EN
+                          ? el.addressEn
+                          : el.address
+                      }
                       loading="lazy"
                     />
                   </div>
