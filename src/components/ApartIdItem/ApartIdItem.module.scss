@@ -1,4 +1,4 @@
-@import "../../styles/variables";
+@import '../../styles/variables';
 
 .container {
   width: 100%;
@@ -62,6 +62,7 @@
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  margin-bottom: 40px;
   @media screen and (min-width: $tablet) {
     -webkit-box-pack: space-evenly;
     -ms-flex-pack: space-evenly;
@@ -154,51 +155,51 @@
   }
 }
 
+.textGrid {
+  width: 360px;
+  padding: 0 30px;
+  @media screen and (min-width: 768px) {
+    width: 760px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 900px;
+  }
+  @media screen and (min-width: 1366px) {
+    width: 1160px;
+  }
+  @media screen and (min-width: 1920px) {
+    width: 1470px;
+  }
+}
+
+.textWelcome {
+  color: #3c3c3c;
+  font-family: var(--font--crimsonPro);
+  font-weight: 400;
+  line-height: 31.2px;
+  font-size: 22px;
+  color: #3c3c3c;
+  text-transform: unset;
+  @media screen and (min-width: $desktop) {
+    font-size: 26px;
+  }
+}
+
 .textInfo {
   // color: #c7c7c7;
   color: #3c3c3c;
-  // font-family: Crimson Text;
   font-family: var(--font--crimsonPro);
   font-size: 20px;
   font-weight: 400;
+  line-height: 31.2px;
   padding: 32px 0;
   text-align: justify;
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
   @media screen and (min-width: $desktop) {
     font-size: 24px;
     padding: 40px 0;
   }
 }
-
-// .contactsMap {
-//   width: 100vw;
-//   height: 427px;
-//   overflow: hidden;
-//   position: relative;
-//   border: none;
-//   filter: grayscale(100%) invert(85%) contrast(100%);
-
-//   & iframe {
-//     left: 0;
-//     top: 0;
-//     height: 100%;
-//     width: 100%;
-//     position: absolute;
-//     border: none;
-//     padding-left: 0px;
-//     padding-right: 0px;
-//     @media screen and (min-width: $tablet) {
-//       padding-left: 32px;
-//       padding-right: 32px;
-//     }
-//     @media screen and (min-width: 1280px) {
-//       padding-left: 0px;
-//       padding-right: 0px;
-//     }
-//   }
-//   @media screen and (min-width: $tablet) {
-//     height: 404px;
-//   }
-//   @media screen and (min-width: 1280px) {
-//     height: 600px;
-//   }
-// }
