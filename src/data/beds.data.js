@@ -2,33 +2,33 @@
 
 export const beds = [
   {
-    id: 1,
+    id: 31,
     titleEN: "2",
     title: "2",
-    img: "/webp/Bed.webp",
+    img: "/webp/Bed7.webp",
   },
   {
-    id: 2,
+    id: 32,
     titleEN: "3",
     title: "3",
-    img: "/webp/Bed.webp",
+    img: "/webp/Bed7.webp",
   },
   {
-    id: 3,
+    id: 33,
     titleEN: "4",
-   title: "4",
-    img: "/webp/Bed.webp",
+    title: "4",
+    img: "/webp/Bed7.webp",
   },
   {
-    id: 4,
+    id: 34,
     titleEN: "5",
     title: "5",
-    img: "/webp/Bed.webp",
+    img: "/webp/Bed7.webp",
   },
   {
-    id: 5,
+    id: 35,
     titleEN: "6",
     title: "6",
-    img: "/webp/Bed.webp",
+    img: "/webp/Bed7.webp",
   },
 ];

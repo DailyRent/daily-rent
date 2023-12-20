@@ -51,7 +51,6 @@ const ApartItem = ({
         <p className={styles.priceRooms}>
           {price}₴{/* Кількість кімнат: {roomsQuantity} */}
         </p>
-
         <Link
           href={`/apartments/${id}`}
           // href={`/oldApartments/${roomsQuantity}/${id}`}

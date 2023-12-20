@@ -190,13 +190,6 @@
 
 // export default ApartmentsComponent;
 
-
-
-
-
-
-
-
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
@@ -218,9 +211,10 @@ const ApartmentsComponent = () => {
   const [showLoading, setShowLoading] = useState(false);
   const [amenitiesArr, setAmenitiesArr] = useState([]);
   const [numberRoomsArr, setNumberRoomsArr] = useState([]);
+  const [numberBedsArr, setNumberBedsArr] = useState([]);
   const { t, i18n } = useTranslation();
   const containerRef = useRef();
-
+  // console.log(data);
   const filteredRoomsData = data?.filter((room) => {
     if (numberRoomsArr.length === 0) return true; //якщо фільтр пустий, виводимо всі квартири
 
@@ -230,7 +224,14 @@ const ApartmentsComponent = () => {
     return filteredRooms;
   });
 
-  const filteredAmenitiesData = filteredRoomsData?.filter((room) => {
+  const filteredBedsData = filteredRoomsData?.filter((bed) => {
+    const filteredBeds = numberBedsArr.every(
+      (numberBed) => numberBed != bed.bedsQuantity
+    );
+    return filteredBeds;
+  });
+
+  const filteredAmenitiesData = filteredBedsData?.filter((room) => {
     const amenities = room.amenities;
 
     const filteredAmenities = amenitiesArr.every((amenity) =>
@@ -345,7 +346,12 @@ const ApartmentsComponent = () => {
         </div>
         <ButtonFilter />
       </div>
-      <Filter amenitiesArr={amenitiesArr} setAmenitiesArr={setAmenitiesArr} />
+      <Filter
+        amenitiesArr={amenitiesArr}
+        setAmenitiesArr={setAmenitiesArr}
+        numberBedsArr={numberBedsArr}
+        setNumberBedsArr={setNumberBedsArr}
+      />
       <FilterRooms
         numberRoomsArr={numberRoomsArr}
         setNumberRoomsArr={setNumberRoomsArr}
@@ -388,4 +394,3 @@ const ApartmentsComponent = () => {
 };
 
 export default ApartmentsComponent;
-

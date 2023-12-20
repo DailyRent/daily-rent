@@ -143,6 +143,10 @@
   @media screen and (min-width: $desktop) {
     max-width: 757px;
   }
+
+  &:not(:first-child) {
+    margin-top: 20px;
+  }
 }
 
 .filterSearchResetContainer {
@@ -201,4 +205,51 @@
     -moz-column-gap: 20px;
     column-gap: 20px;
   }
+}
+
+.imgSvgContainer {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  @media screen and (min-width: $tablet) {
+    margin-right: 16px;
+  }
+  @media screen and (min-width: $desktop) {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.imgSvg {
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.buttonBeds {
+  width: 24px;
+  height: 24px;
+  color: #545454;
+  font-size: 20px;
+  background-color: #c7c7cc;
+  border-radius: 5px;
+  border: none;
+
+  &:hover,
+  &:focus {
+    background-color: #9f9fa5;
+  }
+}
+
+.textBeds {
+  display: flex;
+  width: 51px;
+  height: 21px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  border-radius: 24px;
+  border: 1px solid #545454;
 }
