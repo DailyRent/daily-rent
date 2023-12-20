@@ -210,6 +210,7 @@ import Link from "next/link";
 import FilterRooms from "@/components/FilterRooms/FilterRooms";
 import Filter from "@/components/Filter/Filter";
 import seoStyles from "@/app/seoStyles.module.css";
+import {currentLanguages} from "@/data";
 
 const ApartmentsComponent = () => {
   const { data, error, isLoading } = GetData();
@@ -361,7 +362,7 @@ const ApartmentsComponent = () => {
                   key={item._id}
                   titleImg={item.titleImg}
                   code={item.code}
-                  address={i18n.language === "ua" ? item.address : item.addressEn}
+                  address={i18n.language === currentLanguages.EN ? item.addressEn :  item.address}
                   price={item.price}
                   objNumber={item.objNumber}
                   roomsQuantity={item.roomsQuantity}
