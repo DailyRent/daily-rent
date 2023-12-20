@@ -37,8 +37,11 @@ const ContactsComponent = () => {
         <div className={styles.titleContainer}>
           {!isLoading && (
             <>
-              <h2 className={styles.title}>{t('ContactsPage.Title')}</h2>
-              <p className={styles.text}>{t('ContactsPage.Text')}</p>
+              {/* <h2 className={styles.title}>{t('ContactsPage.Title')}</h2> */}
+              {/* <p className={styles.text}>{t('ContactsPage.Text')}</p> */}
+              <p className={styles.text}>
+                Затишні квартири у Сумах чекають на твій дзвінок.
+              </p>
             </>
           )}
         </div>
@@ -80,7 +83,7 @@ const ContactsComponent = () => {
                   sizes="36px"
                 />
               </div>
-              
+
               {!isLoading && <p>{t('ContactsPage.Adress')}</p>}
             </a>
             <div className={styles.telContainer}>

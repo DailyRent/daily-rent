@@ -61,21 +61,20 @@
 
 .contactContainer {
   width: 100%;
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: center;
 }
 
 .titleContainer {
-  height: 166px;
+  height: 53px;
+  // height: 166px;
   margin-bottom: 16px;
 
   @media screen and (min-width: $tablet) {
-    height: 185px;
+    height: 36px;
+    // height: 185px;
     margin-bottom: 28px;
   }
   @media screen and (min-width: 1366px) {
-    height: 158px;
+    // height: 158px;
     margin-bottom: 32px;
   }
 }
@@ -130,7 +129,8 @@
     -ms-flex-direction: row;
     flex-direction: row;
     -ms-flex-pack: distribute;
-    justify-content: space-around;
+    // justify-content: space-around;
+    column-gap: 15%;
     // justify-content: space-between;
   }
   @media screen and (min-width: 920px) {
