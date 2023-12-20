@@ -47,11 +47,12 @@
 //
 //
 
-import { amenities } from "@/data/amenities.data";
-import { currentLanguages } from "@/data/languages.data";
-import Image from "next/image";
-import { useTranslation } from "react-i18next";
-import styles from "./Amenities.module.scss";
+
+import { amenities,currentLanguages } from '@/data';
+import Image from 'next/image';
+import { useTranslation } from 'react-i18next';
+import styles from './Amenities.module.scss';
+
 
 const Amenities = ({ dataId }) => {
   const { i18n } = useTranslation();

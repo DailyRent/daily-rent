@@ -80,8 +80,8 @@ const ContactsComponent = () => {
                   sizes="36px"
                 />
               </div>
-              {!isLoading && <p>вулиця Воскресенська, 8</p>}
-              {/* {!isLoading && <p>{t('ContactsPage.Adress')}</p>} */}
+              
+              {!isLoading && <p>{t('ContactsPage.Adress')}</p>}
             </a>
             <div className={styles.telContainer}>
               <a href="tel:+380991930030" className={styles.tel}>

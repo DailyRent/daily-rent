@@ -4,6 +4,9 @@ import React, { useEffect, useState } from "react";
 import styles from "./HomeSlider.module.scss";
 
 import Link from "next/link";
+
+import { useTranslation } from "react-i18next";
+import { currentLanguages } from "@/data";
 // import Image from "next/image";
 import { CldImage } from "next-cloudinary";
 
@@ -24,7 +27,7 @@ import { Pagination, Navigation, Keyboard, Autoplay } from "swiper/modules";
 
 const HomeSlider = () => {
   const { data, error, isLoading } = GetData();
-
+  const {i18n}= useTranslation()
   // Filter the data to get only the item with top === true
   const topData = data ? data.filter((item) => item.top === true) : [];
   // const topData = data?.filter((item) => item.top === true)
@@ -96,7 +99,7 @@ const HomeSlider = () => {
                       src={el.titleImg}
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      alt={el.address}
+                      alt={i18n.language === currentLanguages.EN ? el.addressEn :  el.address}
                       loading="lazy"
                     />
                   </div>
