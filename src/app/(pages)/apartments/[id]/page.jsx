@@ -17,7 +17,7 @@ export async function generateMetadata({ params, searchParams }, parent) {
 
   return {
     title: `Квартири подобово Daily Rent - оренда квартири Суми.`,
-    description: `Зняти квартиру в місті Суми за адресою ${product.address}`,
+    description: `Зняти квартиру в місті Суми за адресою ${product?.address}`,
     openGraph: {
       images: [product.titleImg, ...previousImages],
       type: "website",
@@ -59,7 +59,7 @@ const ApartId = async ({ params }) => {
         "@type": "ListItem",
         position: 3,
         item: {
-          "@id": `${process.env.NEXT_PUBLIC_MAIN_URL}apartments/${apartment._id}`,
+          "@id": `${process.env.NEXT_PUBLIC_MAIN_URL}apartments/${apartment?._id}`,
           name: "Daily Rent Оренда квартир детальніше",
         },
       },

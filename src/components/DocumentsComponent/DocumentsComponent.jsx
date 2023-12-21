@@ -23,17 +23,19 @@ const DocumentsComponent = () => {
         Зняти квартиру суми. Суми квартири. Квартири подобово.
       </h1>
       {/* <h1 className="visuallyHidden">Documents Page</h1> */}
-      <div className={styles.toBackContainer}>
+      <nav className={styles.toBackContainer}>
         {!isLoading && (
-          <span className="textLink">
+          <article className="textLink">
+            <h2 className={seoStyles.titleHidden}>Navigation</h2>
             <Link href="/" prefetch={false} className="textLinkAnimation">
               {t("Navigation.MainPage")}
             </Link>
-            / <span className={styles.active}>{t("Navigation.Documents")}</span>
-          </span>
+            / <span className="active">{t("Navigation.Documents")}</span>
+          </article>
         )}
-      </div>
+      </nav>
       <article className={styles.documentListThumb}>
+        <h3 className={seoStyles.titleHidden}>Documents files</h3>
         <ul className={styles.documentList}>
           {/* {documents.map((item) => (
             <li key={item.id} className={styles.documentItem}>

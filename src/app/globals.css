@@ -169,3 +169,20 @@ ol {
   -webkit-text-decoration-color: rgba(36, 36, 36, 0.5);
   text-decoration-color: rgba(36, 36, 36, 0.5);
 }
+
+.active {
+  position: relative;
+}
+
+.active::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  -webkit-animation: textLink 0.8s ease forwards;
+  animation: textLink 0.8s ease forwards;
+  background-color: #6d6d6d;
+}

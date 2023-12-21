@@ -47,12 +47,10 @@
 //
 //
 
-
-import { amenities,currentLanguages } from '@/data';
-import Image from 'next/image';
-import { useTranslation } from 'react-i18next';
-import styles from './Amenities.module.scss';
-
+import { amenities, currentLanguages } from "@/data";
+import Image from "next/image";
+import { useTranslation } from "react-i18next";
+import styles from "./Amenities.module.scss";
 
 const Amenities = ({ dataId }) => {
   const { i18n } = useTranslation();
@@ -73,14 +71,14 @@ const Amenities = ({ dataId }) => {
 
   const matchingAmenitiesWithBed = [...matchingAmenities, bed];
   return (
-    <div className={styles.propositionContainer}>
-      <h2 className={styles.propositionTitle}>
+    <article className={styles.propositionContainer}>
+      <h5 className={styles.propositionTitle}>
         {t("ApartmentsPage.TextOfDescOptions")} ?
-      </h2>
+      </h5>
       <ul className={styles.propositionList}>
         {matchingAmenitiesWithBed.map((amenity) => (
           <li key={amenity.id} className={styles.propositionItem}>
-            <div className={styles.imgSvgContainer}>
+            <figure className={styles.imgSvgContainer}>
               <Image
                 src={amenity.img}
                 alt={
@@ -92,16 +90,16 @@ const Amenities = ({ dataId }) => {
                 className={styles.imgSvg}
                 sizes="(min-width: 768px) 24px,"
               />
-            </div>
+            </figure>
             {i18n.language === currentLanguages.EN ? (
-              <p>{amenity.titleEN}</p>
+              <figcaption>{amenity.titleEN}</figcaption>
             ) : (
-              <p>{amenity.title}</p>
+              <figcaption>{amenity.title}</figcaption>
             )}
           </li>
         ))}
       </ul>
-    </div>
+    </article>
   );
 };
 

@@ -28,16 +28,17 @@ const RulesComponent = () => {
         Оренда квартири суми. Квартири подобово. Суми квартири.
       </h1>
       {/* <h1 className="visuallyHidden">Rules Page</h1> */}
-      <div className={styles.toBackContainer}>
+      <nav className={styles.toBackContainer}>
         {!isLoading && (
-          <span className="textLink">
+          <article className="textLink">
+            <h2 className={seoStyles.titleHidden}>Navigation</h2>
             <Link href="/" prefetch={false} className="textLinkAnimation">
               {t("Navigation.MainPage")}
             </Link>
-            / <span className={styles.active}>{t("Navigation.Rules")}</span>
-          </span>
+            / <span className="active">{t("Navigation.Rules")}</span>
+          </article>
         )}
-      </div>
+      </nav>
       {!isLoading && (
         <>
           <h2 className={styles.rulesListItem}>{t("RulesPage.MainTitle")}</h2>

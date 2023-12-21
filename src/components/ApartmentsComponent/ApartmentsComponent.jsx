@@ -203,7 +203,7 @@ import Link from "next/link";
 import FilterRooms from "@/components/FilterRooms/FilterRooms";
 import Filter from "@/components/Filter/Filter";
 import seoStyles from "@/app/seoStyles.module.css";
-import {currentLanguages} from "@/data";
+import { currentLanguages } from "@/data";
 
 const ApartmentsComponent = () => {
   const { data, error, isLoading } = GetData();
@@ -331,19 +331,17 @@ const ApartmentsComponent = () => {
         Оренда квартири суми. Суми квартири. Квартири подобово.
       </h1>
       <div className={styles.filterContainer}>
-        <div className={styles.backContainer}>
+        <nav className={styles.backContainer}>
           {!isLoading && (
-            <span className="textLink">
+            <article className="textLink">
+              <h2 className={seoStyles.titleHidden}>Navigation</h2>
               <Link href="/" prefetch={false} className="textLinkAnimation">
                 {t("Navigation.MainPage")}
               </Link>
-              /{" "}
-              <span className={styles.active}>
-                {t("Navigation.Apartments")}
-              </span>
-            </span>
+              / <span className="active">{t("Navigation.Apartments")}</span>
+            </article>
           )}
-        </div>
+        </nav>
         <ButtonFilter />
       </div>
       <Filter
@@ -368,7 +366,11 @@ const ApartmentsComponent = () => {
                   key={item._id}
                   titleImg={item.titleImg}
                   code={item.code}
-                  address={i18n.language === currentLanguages.EN ? item.addressEn :  item.address}
+                  address={
+                    i18n.language === currentLanguages.EN
+                      ? item.addressEn
+                      : item.address
+                  }
                   price={item.price}
                   objNumber={item.objNumber}
                   roomsQuantity={item.roomsQuantity}

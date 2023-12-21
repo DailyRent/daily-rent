@@ -8,24 +8,24 @@ const ApartDataList = ({ dataId }) => {
 
   return (
     <div className={styles.dataList}>
-      <span className={styles.dataText}>
+      <figure className={styles.dataText}>
         <svg className={styles.svgHash}>
           <use href="/sprite.svg#icon-hash" />
         </svg>
         {dataId.objNumber}
-      </span>
+      </figure>
 
-      <span className={styles.dataText}>
+      <p className={styles.dataText}>
         {dataId.roomsQuantity}
         {t("ApartmentsPage.TextOfDescAdress")}:
-      </span>
-      <span className={styles.dataText}>
+      </p>
+      <address className={styles.dataText}>
         <a
           href={dataId?.googleMapLocation}
           target="_blank"
           className={styles.googleMaps}
         >
-          <div className={styles.imgContainer}>
+          <figure className={styles.imgContainer}>
             <Image
               src="/png/Google Maps Old.png"
               alt="google maps"
@@ -33,10 +33,12 @@ const ApartDataList = ({ dataId }) => {
               sizes="10vw"
               className={styles.img}
             />
-          </div>
-          <span className={styles.googleMapsText}>{i18n.language === "ua" ? dataId.address : dataId.addressEn}</span>
+          </figure>
+          <figcaption className={styles.googleMapsText}>
+            {i18n.language === "ua" ? dataId.address : dataId.addressEn}
+          </figcaption>
         </a>
-      </span>
+      </address>
       <span className={styles.dataText + " " + styles.dataTextPrice}>
         ₴ {dataId.price}
       </span>

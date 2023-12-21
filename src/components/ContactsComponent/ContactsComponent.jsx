@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import React from 'react';
-import styles from './ContactsComponent.module.scss';
-import { useTranslation } from 'react-i18next';
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import SocialLinks from '@/components/SocialLinks/SocialLinks';
-import seoStyles from '@/app/seoStyles.module.css';
+import React from "react";
+import styles from "./ContactsComponent.module.scss";
+import { useTranslation } from "react-i18next";
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import SocialLinks from "@/components/SocialLinks/SocialLinks";
+import seoStyles from "@/app/seoStyles.module.css";
 
 const ContactsComponent = () => {
   const { t } = useTranslation();
@@ -22,31 +22,33 @@ const ContactsComponent = () => {
       <h1 className={seoStyles.titleHidden}>
         Оренда квартири Суми. Сумы квартиры. Квартири подобово.
       </h1>
-      <div className={styles.toBackContainer}>
+      <nav className={styles.toBackContainer}>
         {!isLoading && (
-          <span className="textLink">
+          <article className="textLink">
+            <h2 className={seoStyles.titleHidden}>Navigation</h2>
             <Link href="/" prefetch={false} className="textLinkAnimation">
-              {t('Navigation.MainPage')}
+              {t("Navigation.MainPage")}
             </Link>
-            / <span className={styles.active}>{t('Navigation.Contacts')}</span>
-          </span>
+            / <span className="active">{t("Navigation.Contacts")}</span>
+          </article>
         )}
-      </div>
+      </nav>
 
       <div className={styles.contactContainer}>
-        <div className={styles.titleContainer}>
+        <article className={styles.titleContainer}>
           {!isLoading && (
             <>
               {/* <h2 className={styles.title}>{t('ContactsPage.Title')}</h2> */}
               {/* <p className={styles.text}>{t('ContactsPage.Text')}</p> */}
-              <p className={styles.text}>
+              <h3 className={styles.text}>
                 Затишні квартири у Сумах чекають на твій дзвінок.
-              </p>
+              </h3>
             </>
           )}
-        </div>
-        <div className={styles.content}>
-          <div className={styles.mapImgContainer}>
+        </article>
+        <article className={styles.content}>
+          <h4 className={seoStyles.titleHidden}>Contact information</h4>
+          <figure className={styles.mapImgContainer}>
             <Image
               src="/Basemap image.webp"
               alt="Image map"
@@ -56,24 +58,24 @@ const ContactsComponent = () => {
               title="Image google map"
               sizes="(min-width: 1920px) 800px, (min-width: 1380px) 700px, (min-width: 1040px) 474px, (min-width: 780px) calc(7.5vw + 328px), 328px"
             />
-          </div>
+          </figure>
           <address className={styles.addressContainer}>
-            <div className={styles.cityContainer}>
+            <figure className={styles.cityContainer}>
               <svg width="36" height="36" className={styles.citySvg}>
                 <use href="sprite.svg#icon-flag-ukraine" />
               </svg>
               {!isLoading && (
-                <h3 className={styles.city}>
-                  {t('ContactsPage.CountryAndSity')}
-                </h3>
+                <figcaption className={styles.city}>
+                  {t("ContactsPage.CountryAndSity")}
+                </figcaption>
               )}
-            </div>
+            </figure>
             <a
               href="https://maps.app.goo.gl/NTDTgDfgvo4h1nPj7"
               target="_blank"
               className={styles.address}
             >
-              <div className={styles.imgContainer}>
+              <figure className={styles.imgContainer}>
                 <Image
                   src="/png/Google Maps Old.png"
                   alt="google maps"
@@ -82,28 +84,30 @@ const ContactsComponent = () => {
                   title="Icon google map"
                   sizes="36px"
                 />
-              </div>
+              </figure>
 
-              {!isLoading && <p>{t('ContactsPage.Adress')}</p>}
+              {!isLoading && (
+                <figcaption>{t("ContactsPage.Adress")}</figcaption>
+              )}
             </a>
-            <div className={styles.telContainer}>
+            <address className={styles.telContainer}>
               <a href="tel:+380991930030" className={styles.tel}>
                 +38 099 193 00 30
               </a>
               <a href="tel:+380675151939" className={styles.tel}>
                 +38 067 515 19 39
               </a>
-            </div>
-            <div className={styles.box}>
+            </address>
+            <address className={styles.box}>
               <div className={styles.socialLinks}>
                 <SocialLinks />
               </div>
               <a href="mailto:dailyrent4@gmail.com" className={styles.mail}>
                 dailyrent4@gmail.com
               </a>
-            </div>
+            </address>
           </address>
-        </div>
+        </article>
       </div>
     </section>
   );
