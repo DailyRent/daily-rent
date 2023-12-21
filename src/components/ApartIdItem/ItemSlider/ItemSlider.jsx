@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "./ItemSlider.module.scss";
 import { v4 } from "uuid";
 import { CldImage } from "next-cloudinary";
+import seoStyles from "@/app/seoStyles.module.css";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -44,7 +45,10 @@ const ItemSlider = ({ dataId }) => {
 
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   return (
-    <div className={styles.swiperContainer}>
+    <article className={styles.swiperContainer}>
+      <h4 className={seoStyles.titleHidden}>
+        Detailed images of the apartment
+      </h4>
       <Swiper
         loop={true}
         spaceBetween={10}
@@ -86,7 +90,7 @@ const ItemSlider = ({ dataId }) => {
       >
         {item}
       </Swiper>
-    </div>
+    </article>
   );
 };
 

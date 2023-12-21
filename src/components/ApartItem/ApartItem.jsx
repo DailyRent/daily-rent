@@ -21,7 +21,7 @@ const ApartItem = ({
       <li className={styles.oneRooms}>
         <Link href={`/apartments/${id}`}>
           {/* <Link href={`/oldApartments/${roomsQuantity}/${id}`}> */}
-          <div className={styles.imgContainer}>
+          <figure className={styles.imgContainer}>
             {/* <Image
               src={titleImg}
               alt="apartament"
@@ -38,8 +38,8 @@ const ApartItem = ({
               priority
               sizes="(max-width: 768px) 324px, (max-width: 1440px) 300px"
             />
-            <span className={styles.codeImg}>{objNumber}</span>
-          </div>
+            <figcaption className={styles.codeImg}>{objNumber}</figcaption>
+          </figure>
         </Link>
         <div className={styles.apartContent}>
           <p className={styles.addressRooms}>
