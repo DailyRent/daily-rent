@@ -1,4 +1,4 @@
-@import "../../../styles/variables";
+@import '../../../styles/variables';
 
 .propositionContainer {
   margin-bottom: 20px;
@@ -79,4 +79,11 @@
 .imgSvg {
   -o-object-fit: cover;
   object-fit: cover;
+}
+
+.bedsQuantity {
+  width: 16px;
+  @media screen and (min-width: $desktop) {
+    width: 26px;
+  }
 }

@@ -47,10 +47,10 @@
 //
 //
 
-import { amenities, currentLanguages } from "@/data";
-import Image from "next/image";
-import { useTranslation } from "react-i18next";
-import styles from "./Amenities.module.scss";
+import { amenities, currentLanguages } from '@/data';
+import Image from 'next/image';
+import { useTranslation } from 'react-i18next';
+import styles from './Amenities.module.scss';
 
 const Amenities = ({ dataId }) => {
   const { i18n } = useTranslation();
@@ -60,9 +60,7 @@ const Amenities = ({ dataId }) => {
     id: 100,
     titleEN: dataId.bedsQuantity,
     title: dataId.bedsQuantity,
-    // img: '/webp/Bed6.webp',
-    img: "/webp/Bed7.webp",
-    // img: '/webp/Berth.webp',
+    img: '/webp/Bed7.webp',
   };
 
   const matchingAmenities = amenities.filter((amenity) =>
@@ -73,12 +71,18 @@ const Amenities = ({ dataId }) => {
   return (
     <article className={styles.propositionContainer}>
       <h5 className={styles.propositionTitle}>
-        {t("ApartmentsPage.TextOfDescOptions")} ?
+        {t('ApartmentsPage.TextOfDescOptions')} ?
       </h5>
       <ul className={styles.propositionList}>
         {matchingAmenitiesWithBed.map((amenity) => (
           <li key={amenity.id} className={styles.propositionItem}>
-            <figure className={styles.imgSvgContainer}>
+            <figure
+              className={
+                amenity.title === dataId.bedsQuantity
+                  ? styles.bedsQuantity + ' ' + styles.imgSvgContainer
+                  : styles.imgSvgContainer
+              }
+            >
               <Image
                 src={amenity.img}
                 alt={
