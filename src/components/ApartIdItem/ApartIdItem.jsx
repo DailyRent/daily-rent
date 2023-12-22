@@ -78,7 +78,7 @@ const ApartIdItem = ({ params }) => {
         {i18n.language === "ua" ? dataId?.description : dataId?.descriptionEn}
       </p> */}
       <article className={styles.textGrid}>
-        <h6 className={styles.textWelcome}>Ласкаво просимо до DailyRent.</h6>
+        <h6 className={styles.textWelcome}>{t("ApartIdItem.TextWelcome")}</h6>
         <ul className={styles.textInfo}>
           <li>
             <p>

@@ -24,8 +24,12 @@
     "TextOfDescAdress": "-room apartment at the address",
     "TextOfDescOptions": "What will be in the apartment"
   },
+  "ApartIdItem":{
+    "TextWelcome":"Welcome to DailyRent."
+  },
   "ContactsPage": {
-    "Title": "Contacts",
+    "Title":"Cozy apartments in Sumy are waiting for your call.",
+    "Title1": "Contacts",
     "Text": "Feel free to call us or write to us on any of the social media. We will be happy to help and communicate with you!",
     "CountryAndSity": "Ukraine, Sumy",
     "Adress": "Voskresenska Street, 8"
