@@ -56,7 +56,10 @@
   "DocumentsPage":{
     "SeoTitleH1":"Rent a flat Sumy. Sumy flat. Rent a flat Sumy. Sumy.",
     "SeoTitleH2":"Navigation",
-    "SeoTitleH3":"Documents files"
+    "SeoTitleH3":"Documents files",
+    "Document1":"Extract from the Unified State Register of Legal Entities",
+    "Document2":"Extract from the Unified State Register of Legal Entities",
+    "Document3":"Extract from the register of taxpayers"
   },
   "Navigation": {
     "MainPage": "Main",
@@ -73,6 +76,7 @@
     "FilterBtn": "Find",
     "FilterClear": "Clear",
     "FilterQuantRooms": "-rooms",
+    "FilterSleepingPlaces":"Sleeping places",
     "ObjectsBtn": "All objects",
     "OpenFilterBtn": "Filter",
     "CloseFilterBtn": "Close",

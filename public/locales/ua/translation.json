@@ -56,7 +56,10 @@
   "DocumentsPage":{
     "SeoTitleH1":"Оренда квартири суми. Суми квартири. Зняти квартиру суми. Сумы.",
     "SeoTitleH2":"Навігація",
-    "SeoTitleH3":"Файли документів"
+    "SeoTitleH3":"Файли документів",
+    "Document1":"Витяг з ЄДР юридичних осіб",
+    "Document2":"Витяг з ЄДР юридичних осіб",
+    "Document3":"Витяг з реєстру платників податку"
   },
   "Navigation": {
     "MainPage": "Головна",
@@ -73,6 +76,7 @@
     "FilterBtn": "Шукати",
     "FilterClear": "Очистити",
     "FilterQuantRooms": "-кім.",
+    "FilterSleepingPlaces":"Спальні місця",
     "ObjectsBtn": "Всі об’єкти",
     "OpenFilterBtn": "Фільтр",
     "CloseFilterBtn": "Сховати",

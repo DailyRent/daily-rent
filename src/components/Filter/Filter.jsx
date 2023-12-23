@@ -62,7 +62,7 @@ const Filter = ({
     <div className={isFilterShown}>
       <div className={styles.filterButtonsContainer}>
         <div className={styles.filterAmenitisContainer}>
-          <p className={styles.textBeds}>Спальні місця</p>
+          <p className={styles.textBeds}>{!isLoad && t("Buttons.FilterSleepingPlaces")}</p>
           {/* <div className={styles.imgSvgContainer}>
             <Image
               src="/webp/Bed7.webp"
