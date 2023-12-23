@@ -6,6 +6,7 @@ import OrderBtn from "../OrderBtn/OrderBtn";
 import IsLoading from "../share/IsLoading/IsLoading";
 import Amenities from "./Amenities/Amenities";
 import ApartDataList from "./ApartDataList/ApartDataList";
+import { currentLanguages, textInfoAppartId }from "@/data";
 import styles from "./ApartIdItem.module.scss";
 // import ApartIdSlider from './ApartIdSlider/ApartIdSlider';
 import ItemSlider from "./ItemSlider/ItemSlider";
@@ -78,47 +79,11 @@ const ApartIdItem = ({ params }) => {
         {i18n.language === "ua" ? dataId?.description : dataId?.descriptionEn}
       </p> */}
       <article className={styles.textGrid}>
-        <h6 className={styles.textWelcome}>{t("ApartIdItem.TextWelcome")}</h6>
+        <h6 className={styles.textWelcome}>{!isLoading && t("ApartIdItem.TextWelcome")}</h6>
         <ul className={styles.textInfo}>
-          <li>
-            <p>
-              &#8226; Наші просторі квартири вражають комфортом та стилем,
-              ідеально підходять для відпочинку чи робочого перебування у місті
-              Суми.
-            </p>
-          </li>
-          <li>
-            <p>
-              &#8226; Кожна квартира обладнана зручними меблями, повністю
-              укомплектована кухнею, технікою та Wi-Fi.
-            </p>
-          </li>
-          <li>
-            <p>
-              &#8226; Гарантуємо комфорт та стиль для вашого відпочинку чи
-              роботи в місті.
-            </p>
-          </li>
-          <li>
-            <p>
-              &#8226; Локації квартир забезпечують легкий доступ до пам&#39;яток
-              та інфраструктури. Забронюйте подобово за доступною ціною та
-              насолоджуйтеся зручністю житла в центрі міста.
-            </p>
-          </li>
-          <li>
-            <p>
-              &#8226; Виберіть наше житло для оренди та насолоджуйтеся комфортом
-              та стилем. Зробіть своє перебування незабутнім з нашими зручними
-              квартирами.
-            </p>
-          </li>
-          <li>
-            <p>
-              &#8226; Заходьте до нас та насолоджуйтеся комфортом у кожній
-              квартирі на подобову оренду у Сумах.
-            </p>
-          </li>
+          {!isLoading && textInfoAppartId.map((el)=>{
+           return (<li key={el.id}>&#8226; { i18n.language === currentLanguages.EN ? el.textEN : el.text}</li>)
+          })}
         </ul>
       </article>
     </section>
