@@ -38,10 +38,10 @@ const ContactsComponent = () => {
         <article className={styles.titleContainer}>
           {!isLoading && (
             <>
-              {/* <h2 className={styles.title}>{t('ContactsPage.Title')}</h2> */}
+              {/* <h2 className={styles.title}>{t('ContactsPage.Title1')}</h2> */}
               {/* <p className={styles.text}>{t('ContactsPage.Text')}</p> */}
               <h3 className={styles.text}>
-                Затишні квартири у Сумах чекають на твій дзвінок.
+              {t('ContactsPage.Title')}
               </h3>
             </>
           )}

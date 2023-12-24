@@ -5,3 +5,4 @@ export {socialLinks} from "./socialLinks";
 export {support} from "./support";
 export { RulesInApartment, Prohibited, Eviction } from './rules.data';
 export { beds } from "./beds.data";
+export { textInfoAppartId } from './textInfoAppartId.data';

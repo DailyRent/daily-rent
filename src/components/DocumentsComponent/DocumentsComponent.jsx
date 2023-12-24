@@ -75,7 +75,7 @@ const DocumentsComponent = () => {
                 />
               </figure>
               <figcaption className={styles.documentText}>
-                Витяг з ЄДР юридичних осіб
+                {!isLoading && t("DocumentsPage.Document1")}
               </figcaption>
             </a>
           </li>
@@ -93,7 +93,7 @@ const DocumentsComponent = () => {
                 />
               </figure>
               <figcaption className={styles.documentText}>
-                Витяг з ЄДР юридичних осіб
+              {!isLoading && t("DocumentsPage.Document2")}
               </figcaption>
             </a>
           </li>
@@ -111,7 +111,7 @@ const DocumentsComponent = () => {
                 />
               </figure>
               <figcaption className={styles.documentText}>
-                Витяг з реєстру платників податку
+              {!isLoading && t("DocumentsPage.Document3")}
               </figcaption>
             </a>
           </li>

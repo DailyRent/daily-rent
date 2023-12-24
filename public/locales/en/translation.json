@@ -7,12 +7,15 @@
     "linkContacts": "Contacts"
   },
   "MainPage": {
+    "SeoTitleH1":"Rent a flat Sumy. Sumy flat. Rent a flat Sumy. Sumy.",
     "heroTitle": "Daily rent of apartments in Sumy",
     "heroSubTitle": "Top housing offers for a comfortable stay",
     "galleryTittle": "Аpartments",
     "contactsTitle": "Contact Us"
   },
   "ApartmentsPage": {
+    "SeoTitleH1":"Rent a flat Sumy. Sumy flat. Rent a flat Sumy. Sumy.",
+    "SeoTitleH2":"Navigation",
     "Title": "What will be in the apartment?",
     "OneRoom": "One-room",
     "TwoRoom": "Two-room",
@@ -24,17 +27,39 @@
     "TextOfDescAdress": "-room apartment at the address",
     "TextOfDescOptions": "What will be in the apartment"
   },
+  "ApartIdItem":{
+    "SeoTitleH1":"Rent a flat Sumy. Sumy flat. Rent a flat Sumy. Sumy.",
+    "SeoTitleH2":"Navigation",
+    "SeoTitleH3":"Detailed information about the apartments",
+    "SeoTitleH4":"Detailed information about the amenities",
+    "SeoTitleItemSliderH4":"Detailed images of the apartment",
+    "TextWelcome":"Welcome to DailyRent."
+  },
   "ContactsPage": {
-    "Title": "Contacts",
+    "SeoTitleH1":"Rent a flat Sumy. Sumy flat. Rent a flat Sumy. Sumy.",
+    "SeoTitleH2":"Navigation",
+    "SeoTitleH4":"Contact information",
+    "Title":"Cozy apartments in Sumy are waiting for your call.",
+    "Title1": "Contacts",
     "Text": "Feel free to call us or write to us on any of the social media. We will be happy to help and communicate with you!",
     "CountryAndSity": "Ukraine, Sumy",
     "Adress": "Voskresenska Street, 8"
   },
   "RulesPage": {
+    "SeoTitleH1":"Rent a flat Sumy. Sumy flat. Rent a flat Sumy. Sumy.",
+    "SeoTitleH2":"Navigation",
     "MainTitle": "rules of residence:",
     "TitleSection1": "Rules of behavior in the apartment:",
     "TitleSection2": "This is strictly prohibited:",
     "TitleSection3": "The administration has the right to immediately evict the tenant without refunding the rent in case of:"
+  },
+  "DocumentsPage":{
+    "SeoTitleH1":"Rent a flat Sumy. Sumy flat. Rent a flat Sumy. Sumy.",
+    "SeoTitleH2":"Navigation",
+    "SeoTitleH3":"Documents files",
+    "Document1":"Extract from the Unified State Register of Legal Entities",
+    "Document2":"Extract from the Unified State Register of Legal Entities",
+    "Document3":"Extract from the register of taxpayers"
   },
   "Navigation": {
     "MainPage": "Main",
@@ -51,6 +76,7 @@
     "FilterBtn": "Find",
     "FilterClear": "Clear",
     "FilterQuantRooms": "-rooms",
+    "FilterSleepingPlaces":"Sleeping places",
     "ObjectsBtn": "All objects",
     "OpenFilterBtn": "Filter",
     "CloseFilterBtn": "Close",
@@ -58,6 +84,7 @@
     "Submit": "Submit"
   },
   "Form": {
+    "SeoTitleH3":"Rent a flat Sumy. Sumy flat. Rent a flat Sumy. Sumy.",
     "name": "Name",
     "phone": "Phone number *",
     "dateOfEntry": "Date of entry",
