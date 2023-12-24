@@ -32,13 +32,14 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-row-gap: 16px;
-  grid-column-gap: 24px;
-  // grid-column-gap: 8px;
+  grid-column-gap: 10px;
   color: $footerLogoColor;
-  // font-family: Crimson Text;
   font-family: var(--font--crimsonPro);
   font-size: 16px;
   font-weight: 400;
+  @media screen and (min-width: 360px) {
+    grid-column-gap: 24px;
+  }
   @media screen and (min-width: $tablet) {
     grid-row-gap: 14px;
     font-size: 14px;

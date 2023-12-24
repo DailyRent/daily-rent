@@ -1,4 +1,4 @@
-@import "../../../styles/_variables.scss";
+@import '../../../styles/_variables.scss';
 
 .swiperContainer {
   display: -webkit-box;
@@ -12,6 +12,7 @@
   -ms-flex-align: center;
   align-items: center;
   margin-bottom: 36px;
+  padding: 0px 15px;
   @media screen and (min-width: $tablet) {
     margin-bottom: 0px;
   }

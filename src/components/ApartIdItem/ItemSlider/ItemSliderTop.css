@@ -1,7 +1,12 @@
 .ItemSliderTop {
-  width: 328px;
+  width: 288px;
   height: 264px;
   margin-bottom: 16px;
+}
+@media screen and (min-width: 360px) {
+  .ItemSliderTop {
+    width: 328px;
+  }
 }
 .ItemSliderTop .swiper-wrapper {
   margin-bottom: 16px;
