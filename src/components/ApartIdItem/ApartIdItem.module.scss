@@ -8,7 +8,7 @@
   padding: 100px 16px 40px 16px;
 
   @media screen and (min-width: $tablet) {
-    padding: 108px 36px 48px 36px;
+    padding: 108px 32px 48px 32px;
   }
   @media screen and (min-width: $desktop) {
     padding: 186px 86px 48px 86px;
@@ -104,11 +104,14 @@
 
 .arrow {
   display: block;
-  width: 309px;
+  width: 100%;
   height: 1px;
   background: #c7c7c7;
   margin-top: 16px;
   margin-bottom: 16px;
+  @media screen and (min-width: 360px) {
+    width: 309px;
+  }
 
   @media screen and (min-width: $tablet) {
     margin-top: 28px;
@@ -156,10 +159,13 @@
 }
 
 .textGrid {
-  width: 360px;
-  padding: 0 30px;
+  width: 288px;
+  // padding: 0 30px;
+  @media screen and (min-width: 360px) {
+    width: 328px;
+  }
   @media screen and (min-width: 768px) {
-    width: 760px;
+    width: 704px;
   }
 
   @media screen and (min-width: 1024px) {

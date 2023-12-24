@@ -1,6 +1,11 @@
 .ItemSliderBottom {
-  width: 328px;
+  width: 288px;
   height: 95px;
+}
+@media screen and (min-width: 360px) {
+  .ItemSliderBottom {
+    width: 328px;
+  }
 }
 
 .ItemSliderBottom .swiper-slide {
