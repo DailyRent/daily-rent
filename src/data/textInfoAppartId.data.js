@@ -18,7 +18,7 @@ export const textInfoAppartId=[
     },
     {   
         id: v4(),
-        text: "Локації квартир забезпечують легкий доступ до пам&#39;яток та інфраструктури. Забронюйте подобово за доступною ціною та насолоджуйтеся зручністю житла в центрі міста.",
+        text: "Локації квартир забезпечують легкий доступ до пам'яток та інфраструктури. Забронюйте подобово за доступною ціною та насолоджуйтеся зручністю житла в центрі міста.",
         textEN:"The location of the apartments provides easy access to the city's attractions and infrastructure. Book an apartment at an affordable price and enjoy the convenience of living in the city centre.",
     },
     {   
