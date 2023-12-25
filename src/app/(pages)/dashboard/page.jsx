@@ -105,11 +105,7 @@ const Dashboard = () => {
                     <li key={index}>{item}</li>
                   ))}
                 </ul>
-                <p>Кількість спальних місць: {apart.bedsQuantity}</p>
-                <p className={styles.description}>Опис: {apart.description}</p>
-                <p className={styles.description}>
-                  Опис англійською: {apart.descriptionEn}
-                </p>
+                <p>Кількість спальних місць: {apart.bedsQuantity}</p>                
                 <div className={styles.btnsWrapper}>
                   <Link
                     className={styles.editLink}

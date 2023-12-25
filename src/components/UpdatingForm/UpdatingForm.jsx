@@ -18,8 +18,6 @@ const UpdatingForm = ({ id, apart, mutate }) => {
     roomsQuantity,
     bookingUrl,
     amenities,
-    description,
-    descriptionEn,
   } = apart;
   const [newTop, setNewTop] = useState(top);
   const [newTitleImg, setNewTitleImg] = useState(titleImg);
@@ -51,8 +49,6 @@ const UpdatingForm = ({ id, apart, mutate }) => {
   );
   const [balcony, setBalcony] = useState(newAmenities.includes("Балкон"));
   const [parking, setParking] = useState(newAmenities.includes("Парковка"));
-  const [newDescription, setNewDescription] = useState(description);
-  const [newDescriptionEn, setNewDescriptionEn] = useState(descriptionEn);
 
   // сохраняет значение ТОП в state в зависимости от checked
   function checkboxSwitchForTop(e) {
@@ -185,8 +181,6 @@ const UpdatingForm = ({ id, apart, mutate }) => {
           roomsQuantity: newRoomsQuantity,
           bookingUrl: newBookingUrl,
           amenities: newAmenities,
-          description: newDescription,
-          descriptionEn: newDescriptionEn,
         }),
       });
       mutate();
@@ -467,26 +461,7 @@ const UpdatingForm = ({ id, apart, mutate }) => {
             Парковка
           </label>
         </fieldset>
-        <label>
-          {" "}
-          Опис:
-          <textarea
-            type="text"
-            className={styles.textarea}
-            value={newDescription}
-            onChange={(e) => setNewDescription(e.target.value)}
-          />
-        </label>
-        <label>
-          {" "}
-          Опис англійською:
-          <textarea
-            type="text"
-            className={styles.textarea}
-            value={newDescriptionEn}
-            onChange={(e) => setNewDescriptionEn(e.target.value)}
-          />
-        </label>
+
         <button type="submit" className={styles.sendBtn}>
           Оновити дані обʼєкту
         </button>

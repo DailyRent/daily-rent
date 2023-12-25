@@ -110,10 +110,6 @@ const EditCard = ({ params }) => {
               ))}
             </ul>
             <p>Кількість спальних місць: {data.bedsQuantity}</p>
-            <p className={styles.description}>Опис: {data.description}</p>
-            <p className={styles.description}>
-              Опис англійською: {data.descriptionEn}
-            </p>
           </div>
         )}
 

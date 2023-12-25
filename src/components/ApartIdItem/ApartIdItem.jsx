@@ -74,10 +74,7 @@ const ApartIdItem = ({ params }) => {
             <OrderBtn className={styles.orderBtn} openModal={openModal} />
           </article>
         </article>
-      )}
-      {/* <p className={styles.textInfo}>
-        {i18n.language === "ua" ? dataId?.description : dataId?.descriptionEn}
-      </p> */}
+      )}      
       <article className={styles.textGrid}>
         <h6 className={styles.textWelcome}>{!isLoading && t("ApartIdItem.TextWelcome")}</h6>
         <ul className={styles.textInfo}>

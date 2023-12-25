@@ -29,8 +29,6 @@ const DashboardFormik = () => {
     bookingUrl: "",
     amenities: ["Wi-Fi"],
     bedsQuantity: "",
-    description: "",
-    descriptionEn: "",
   };
 
   const handleSubmit = async (values, actions) => {
@@ -249,7 +247,7 @@ const DashboardFormik = () => {
                   id="wi-fi"
                   name="amenities"
                   value="Wi-Fi"
-                  // defaultChecked
+                // defaultChecked
                 />
                 Wi-Fi
               </label>
@@ -375,38 +373,8 @@ const DashboardFormik = () => {
               <label htmlFor="fiveBeds">5</label>
               <Field type="radio" id="sixBeds" name="bedsQuantity" value="6" />
               <label htmlFor="sixBeds">6</label>
-            </fieldset>
-            <label htmlFor="Description">Опис:</label>
-            <ErrorMessage
-              name="description"
-              className={styles.error}
-              component="p"
-            />
-            <Field
-              type="text"
-              as="textarea"
-              name="description"
-              id="Description"
-              maxLength="300"
-              placeholder="Гарна квартира з видом на сад."
-              className={styles.textarea}
-            />
-            <label htmlFor="DescriptionEn">Опис англійською:</label>
-            <ErrorMessage
-              name="descriptionEn"
-              className={styles.error}
-              component="p"
-            />
-            <Field
-              type="text"
-              as="textarea"
-              name="descriptionEn"
-              id="DescriptionEn"
-              maxLength="300"
-              placeholder="Good apartment with view on garden."
-              className={styles.textarea}
-            />
-
+            </fieldset>           
+            
             <button
               type="submit"
               disabled={!isValid}

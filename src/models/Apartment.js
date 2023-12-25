@@ -45,12 +45,12 @@ const apartmentSchema = new Schema({
     bookingUrl: {
         type: String,
     },
-    amenities: {
-        type: Array,
-    },
     bedsQuantity: {
         type: String,
         required: true,
+    },
+    amenities: {
+        type: Array,
     },
     // эти свойства будут заходить в amenities, благодаря checkbox
     // Air conditioning: bool,
@@ -64,16 +64,8 @@ const apartmentSchema = new Schema({
     // Balcony: bool,
     // Boiler: bool,  -  котел
     // Water heater: bool,
-    // Parking: bool,
+    // Parking: bool,   
 
-    description: {
-        type: String,
-        required: true,
-    },
-    descriptionEn: {
-        type: String,
-        required: true,
-    },
 },
     { timestamps: true },
 )

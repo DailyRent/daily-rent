@@ -16,8 +16,6 @@ const DashboardForm = ({ mutate, data }) => {
     const [bookingUrl, setBookingUrl] = useState("");
     // надо создать переменную, чтобы при изменении языка динамически вставлять значение Wi-Fi ниже
     const [amenities, setAmenities] = useState(["Wi-Fi"]);
-    const [description, setDescription] = useState("");
-    const [descriptionEn, setDescriptionEn] = useState("");
 
     const changeAmenities = (e) => {
         if (e.target.checked) {
@@ -48,8 +46,6 @@ const DashboardForm = ({ mutate, data }) => {
                     roomsQuantity,
                     bookingUrl,
                     amenities,
-                    description,
-                    descriptionEn,
                 }),
             });
             // автоматически обновляет страницу при изменении кол-ва карточек
@@ -296,18 +292,6 @@ const DashboardForm = ({ mutate, data }) => {
                     Парковка
                 </label>
             </fieldset>
-            <input
-                type='text'
-                placeholder='Опис'
-                className={styles.input}
-                onChange={(e) => setDescription(e.target.value)}
-            />
-            <input
-                type='text'
-                placeholder='Опис англійською'
-                className={styles.input}
-                onChange={(e) => setDescriptionEn(e.target.value)}
-            />
 
             <button type='submit' className={styles.sendBtn}>
                 Створити новий обʼєкт
