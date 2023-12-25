@@ -25,13 +25,7 @@ export const updatingDashboardSchema = Yup.object({
     newRoomsQuantity: Yup.string()
         .required("Кількість кімнат це обовʼязкове поле"),
     newBookingUrl: Yup.string()
-        .required("web-адреса booking це обовʼязкове поле")
         .matches(regExprUrl, "https://www.booking.com"),
     newBedsQuantity: Yup.string()
         .required("Кількість спальних місць це обовʼязкове поле"),
-    newDescription: Yup.string()
-        .required("Опис це обовʼязкове поле"),
-    newDescriptionEn: Yup.string()
-        .required("Опис англійською це обовʼязкове поле"),
-
 })

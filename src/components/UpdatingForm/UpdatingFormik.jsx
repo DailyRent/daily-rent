@@ -23,8 +23,6 @@ const UpdatingFormik = ({ id, apart, mutate }) => {
     bookingUrl,
     amenities,
     bedsQuantity,
-    description,
-    descriptionEn,
   } = apart;
 
   const currentValues = {
@@ -40,8 +38,6 @@ const UpdatingFormik = ({ id, apart, mutate }) => {
     bookingUrl,
     amenities,
     bedsQuantity,
-    description,
-    descriptionEn,
   };
 
   const initialValues = {
@@ -57,8 +53,6 @@ const UpdatingFormik = ({ id, apart, mutate }) => {
     newBookingUrl: bookingUrl,
     newAmenities: amenities,
     newBedsQuantity: bedsQuantity,
-    newDescription: description,
-    newDescriptionEn: descriptionEn,
   };
 
   const handleSubmit = async (values, actions) => {
@@ -75,8 +69,6 @@ const UpdatingFormik = ({ id, apart, mutate }) => {
       newBookingUrl,
       newAmenities,
       newBedsQuantity,
-      newDescription,
-      newDescriptionEn,
     } = values;
 
     const updatedValues = {
@@ -92,8 +84,6 @@ const UpdatingFormik = ({ id, apart, mutate }) => {
       bookingUrl: newBookingUrl,
       amenities: newAmenities,
       bedsQuantity: newBedsQuantity,
-      description: newDescription,
-      descriptionEn: newDescriptionEn,
     };
 
     if (isDeepEqual(currentValues, updatedValues)) {
@@ -447,36 +437,6 @@ const UpdatingFormik = ({ id, apart, mutate }) => {
                 />
                 <label htmlFor="sixBeds">6</label>
               </fieldset>
-              <label htmlFor="Description">Опис:</label>
-              <ErrorMessage
-                name="newDescription"
-                className={styles.error}
-                component="p"
-              />
-              <Field
-                type="text"
-                as="textarea"
-                name="newDescription"
-                id="Description"
-                maxLength="300"
-                value={values.newDescription}
-                className={styles.textarea}
-              />
-              <label htmlFor="DescriptionEn">Опис англійською:</label>
-              <ErrorMessage
-                name="newDescriptionEn"
-                className={styles.error}
-                component="p"
-              />
-              <Field
-                type="text"
-                as="textarea"
-                name="newDescriptionEn"
-                id="DescriptionEn"
-                maxLength="300"
-                value={values.newDescriptionEn}
-                className={styles.textarea}
-              />
 
               <button
                 type="submit"
