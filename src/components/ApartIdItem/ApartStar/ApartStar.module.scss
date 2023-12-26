@@ -1,7 +1,8 @@
-@import "../../../styles/variables";
+@import '../../../styles/variables';
 
 .starContainer {
   width: 100%;
+  height: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -14,6 +15,12 @@
   -webkit-column-gap: 21px;
   -moz-column-gap: 21px;
   column-gap: 21px;
+  @media screen and (min-width: $tablet) {
+    height: 46px;
+  }
+  @media screen and (min-width: $desktop) {
+    height: 50px;
+  }
 }
 
 // .starList {
@@ -67,7 +74,7 @@
   &:hover .starItem {
     position: relative;
     &::after {
-      content: "";
+      content: '';
       display: block;
       position: absolute;
       bottom: 0px;

@@ -28,6 +28,7 @@
 }
 
 .propositionList {
+  width: 288px;
   display: -ms-grid;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -38,6 +39,7 @@
   font-size: 16px;
   font-weight: 400;
   @media screen and (min-width: 360px) {
+    width: 100%;
     grid-column-gap: 24px;
   }
   @media screen and (min-width: $tablet) {
