@@ -15,13 +15,17 @@ import styles from "./Footer.module.scss";
 import { navigationData, currentLanguages } from "@/data";
 
 const Footer = ({ onClick }) => {
-  const { isModalOpen, openModal, closeModal } = useContext(SiteContext);
+  const { isModalOpen, openModal, closeModal, setScrolledWindow } =
+    useContext(SiteContext);
   const [isLoading, setIsLoading] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
 
   const { i18n } = useTranslation();
 
   // const isClient = typeof window !== "undefined";
+  const handleSetScrolledWindow = () => {
+    setScrolledWindow(0);
+  };
 
   const handleResize = () => {
     if (window.innerWidth < 768) {
@@ -76,13 +80,10 @@ const Footer = ({ onClick }) => {
             </>
           )}
         </div>
-        {/* )} */}
-        {/* {!isMobile && <Logo className={styles.footerLogo} />} */}
+
         {!isMobile && (
           <>
             <div className={styles.contentWrapper}>
-              {/* {!isMobile && (
-            <> */}
               <div className={styles.contacts}>
                 <Link
                   href="mailto:dailyrent4@gmail.com"
@@ -102,7 +103,11 @@ const Footer = ({ onClick }) => {
                   navigationData.slice(0, 2).map((item) => {
                     return (
                       <li key={item.id} onClick={onClick}>
-                        <Link href={item.path} className="textLinkAnimation">
+                        <Link
+                          href={item.path}
+                          className="textLinkAnimation"
+                          onClick={handleSetScrolledWindow}
+                        >
                           {i18n.language === currentLanguages.EN
                             ? item.titleEN
                             : item.title}
@@ -116,7 +121,11 @@ const Footer = ({ onClick }) => {
                   navigationData.slice(2, 4).map((item) => {
                     return (
                       <li key={item.id} onClick={onClick}>
-                        <Link href={item.path} className="textLinkAnimation">
+                        <Link
+                          href={item.path}
+                          className="textLinkAnimation"
+                          onClick={handleSetScrolledWindow}
+                        >
                           {i18n.language === currentLanguages.EN
                             ? item.titleEN
                             : item.title}
@@ -125,8 +134,7 @@ const Footer = ({ onClick }) => {
                     );
                   })}
               </ul>
-              {/* </>
-          )} */}
+
               <div className={styles.btnsWrapper}>
                 <CallBtn className={isMobile ? `${styles.mobileBtn}` : " "} />
                 <OrderBtn
