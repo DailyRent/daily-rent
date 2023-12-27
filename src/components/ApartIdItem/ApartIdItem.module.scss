@@ -1,4 +1,4 @@
-@import '../../styles/variables';
+@import "../../styles/variables";
 
 .container {
   width: 100%;
@@ -6,7 +6,7 @@
   display: -ms-flexbox;
   display: flex;
   padding: 100px 16px 40px 16px;
-
+  min-height: 100vh;
   @media screen and (min-width: $tablet) {
     padding: 108px 32px 48px 32px;
   }
@@ -51,7 +51,7 @@
 
 .apartContent {
   width: 100%;
-  height: 100%;
+  // height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -63,6 +63,14 @@
   -ms-flex-align: center;
   align-items: center;
   margin-bottom: 40px;
+  gap: clamp(32px, 10vw, 40px);
+  max-width: 540px;
+
+  @media screen and (orientation: landscape) and (max-width: 767px) {
+    gap: 12px;
+    max-width: 100%;
+  }
+
   @media screen and (min-width: $tablet) {
     -webkit-box-pack: space-evenly;
     -ms-flex-pack: space-evenly;
@@ -71,11 +79,20 @@
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
     flex-direction: row;
+    max-width: 1920px;
+  }
+
+  // @media screen and (min-width: $desktop) {
+  //   max-width: 1920px;
+  // }
+  @media screen and (orientation: "landscape") {
+    flex-direction: row;
+    // gap: clamp(32px, 10vw, 40px);
   }
 }
 
 .content {
-  height: 100%;
+  // height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -89,44 +106,69 @@
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+
+  width: 100%;
+  justify-content: space-between;
+  gap: 16px;
+
+  @media screen and (orientation: "landscape") {
+    flex: 1;
+    height: 375px;
+    gap: initial;
+  }
+
   @media screen and (min-width: $tablet) {
     -webkit-box-align: start;
     -ms-flex-align: start;
     align-items: flex-start;
-    margin-left: 24px;
+    height: 398px;
   }
+  @media screen and (min-width: 1024px) {
+    height: 551px;
+  }
+  @media screen and (min-width: 1024px) and (orientation: portrait) {
+    height: 398px;
+  }
+
   @media screen and (min-width: $desktop) {
     -webkit-box-align: start;
     -ms-flex-align: start;
     align-items: flex-start;
+    height: 656px;
   }
-}
-
-.arrow {
-  display: block;
-  width: 268px;
-  height: 1px;
-  background: #c7c7c7;
-  margin-top: 16px;
-  margin-bottom: 16px;
-  @media screen and (min-width: 360px) {
-    width: 309px;
-  }
-
-  @media screen and (min-width: $tablet) {
-    margin-top: 28px;
-    margin-bottom: 28px;
-  }
-  @media screen and (min-width: $desktop) {
-    width: 429px;
-    margin-top: 24px;
-    margin-bottom: 24px;
+  @media screen and (min-width: 1500px) {
+    height: 676px;
   }
   @media screen and (min-width: 1920px) {
-    margin-top: 38px;
-    margin-bottom: 38px;
+    height: 855px;
   }
 }
+
+// .arrow {
+//   display: block;
+//   width: 268px;
+//   height: 1px;
+//   background: #c7c7c7;
+//   margin-top: 16px;
+//   margin-bottom: 16px;
+//   @media screen and (min-width: 360px) {
+//     width: 309px;
+//   }
+
+//   @media screen and (min-width: $tablet) {
+//     margin-top: 28px;
+//     margin-bottom: 28px;
+//   }
+//   @media screen and (min-width: $desktop) {
+//     width: 429px;
+//     margin-top: 24px;
+//     margin-bottom: 24px;
+//   }
+//   @media screen and (min-width: 1920px) {
+//     margin-top: 38px;
+//     margin-bottom: 38px;
+//   }
+// }
 
 .orderBtn {
   display: -webkit-box;
@@ -159,23 +201,15 @@
 }
 
 .textGrid {
-  width: 288px;
-  // padding: 0 30px;
-  @media screen and (min-width: 360px) {
-    width: 328px;
-  }
-  @media screen and (min-width: 768px) {
-    width: 704px;
+  width: 100%;
+  max-width: 540px;
+
+  @media screen and (orientation: landscape) and (max-width: 767px) {
+    max-width: 100%;
   }
 
-  @media screen and (min-width: 1024px) {
-    width: 900px;
-  }
-  @media screen and (min-width: 1366px) {
-    width: 1160px;
-  }
-  @media screen and (min-width: 1920px) {
-    width: 1470px;
+  @media screen and (min-width: $tablet) {
+    max-width: 1920px;
   }
 }
 
@@ -187,13 +221,13 @@
   font-size: 22px;
   color: #3c3c3c;
   text-transform: unset;
+
   @media screen and (min-width: $desktop) {
     font-size: 26px;
   }
 }
 
 .textInfo {
-  // color: #c7c7c7;
   color: #3c3c3c;
   font-family: var(--font--crimsonPro);
   font-size: 20px;

@@ -8,12 +8,17 @@ const ApartDataList = ({ dataId }) => {
 
   return (
     <div className={styles.dataList}>
-      <figure className={styles.dataText}>
-        <svg className={styles.svgHash}>
-          <use href="/sprite.svg#icon-hash" />
-        </svg>
-        {dataId.objNumber}
-      </figure>
+      <div className={styles.dataText + " " + styles.dataTextPrice}>
+        <figure>
+          <svg className={styles.svgHash}>
+            <use href="/sprite.svg#icon-hash" />
+          </svg>
+          <figcaption> {dataId.objNumber}.</figcaption>
+        </figure>
+        <strong className={styles.dataText + " " + styles.dataTextPrice}>
+          ₴ {dataId.price}
+        </strong>
+      </div>
 
       <p className={styles.dataText}>
         {dataId.roomsQuantity}
@@ -39,9 +44,9 @@ const ApartDataList = ({ dataId }) => {
           </figcaption>
         </a>
       </address>
-      <span className={styles.dataText + " " + styles.dataTextPrice}>
+      {/* <span className={styles.dataText + " " + styles.dataTextPrice}>
         ₴ {dataId.price}
-      </span>
+      </span> */}
     </div>
   );
 };

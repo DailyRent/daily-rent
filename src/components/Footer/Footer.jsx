@@ -56,94 +56,95 @@ const Footer = ({ onClick }) => {
         <OrderForm isOpen={isModalOpen} closeModal={closeModal} />
       </ModalR>
       <footer className={styles.container}>
-        {/* {isMobile && ( */}
-        <div className={styles.mobileContentWrapper}>
-          {isMobile && (
-            <>
-              <div className={styles.mobileItem}>
-                <Logo className={`${styles.footerLogo}  textLinkAnimation`} />
-                <Link
-                  href="mailto:dailyrent4@gmail.com"
-                  className="textLinkAnimation"
-                >
-                  dailyrent4@gmail.com
-                </Link>
-              </div>
-              <div className={styles.mobileItem}>
-                <Link href="tel:+380991930030" className="textLinkAnimation">
-                  +380991930030
-                </Link>
-                <Link href="tel:+380675151939" className="textLinkAnimation">
-                  +380675151939
-                </Link>
-              </div>
-            </>
-          )}
-        </div>
+        {isMobile && (
+          <div className={styles.mobileContentWrapper}>
+            {/* {isMobile && ( */}
+            {/* <> */}
+            <div className={styles.mobileItem}>
+              <Logo className={`${styles.footerLogo}  textLinkAnimation`} />
+              <Link
+                href="mailto:dailyrent4@gmail.com"
+                className="textLinkAnimation"
+              >
+                dailyrent4@gmail.com
+              </Link>
+            </div>
+            <div className={styles.mobileItem}>
+              <Link href="tel:+380991930030" className="textLinkAnimation">
+                +380991930030
+              </Link>
+              <Link href="tel:+380675151939" className="textLinkAnimation">
+                +380675151939
+              </Link>
+            </div>
+            {/* </> */}
+            {/* )} */}
+          </div>
+        )}
 
         {!isMobile && (
-          <>
-            <div className={styles.contentWrapper}>
-              <div className={styles.contacts}>
-                <Link
-                  href="mailto:dailyrent4@gmail.com"
-                  className="textLinkAnimation"
-                >
-                  dailyrent4@gmail.com
-                </Link>
-                <Link href="tel:+380991930030" className="textLinkAnimation">
-                  +380991930030
-                </Link>
-                <Link href="tel:+380675151939" className="textLinkAnimation">
-                  +380675151939
-                </Link>
-              </div>
-              <ul className={styles.navigation}>
-                {!isLoading &&
-                  navigationData.slice(0, 2).map((item) => {
-                    return (
-                      <li key={item.id} onClick={onClick}>
-                        <Link
-                          href={item.path}
-                          className="textLinkAnimation"
-                          onClick={handleSetScrolledWindow}
-                        >
-                          {i18n.language === currentLanguages.EN
-                            ? item.titleEN
-                            : item.title}
-                        </Link>
-                      </li>
-                    );
-                  })}
-              </ul>
-              <ul className={styles.navigation}>
-                {!isLoading &&
-                  navigationData.slice(2, 4).map((item) => {
-                    return (
-                      <li key={item.id} onClick={onClick}>
-                        <Link
-                          href={item.path}
-                          className="textLinkAnimation"
-                          onClick={handleSetScrolledWindow}
-                        >
-                          {i18n.language === currentLanguages.EN
-                            ? item.titleEN
-                            : item.title}
-                        </Link>
-                      </li>
-                    );
-                  })}
-              </ul>
-
-              <div className={styles.btnsWrapper}>
-                <CallBtn className={isMobile ? `${styles.mobileBtn}` : " "} />
-                <OrderBtn
-                  openModal={openModal}
-                  className={isMobile ? `${styles.mobileBtn}` : " "}
-                />
-              </div>
+          // <>
+          <div className={styles.contentWrapper}>
+            <div className={styles.contacts}>
+              <Link
+                href="mailto:dailyrent4@gmail.com"
+                className="textLinkAnimation"
+              >
+                dailyrent4@gmail.com
+              </Link>
+              <Link href="tel:+380991930030" className="textLinkAnimation">
+                +380991930030
+              </Link>
+              <Link href="tel:+380675151939" className="textLinkAnimation">
+                +380675151939
+              </Link>
             </div>
-          </>
+            <ul className={styles.navigation}>
+              {!isLoading &&
+                navigationData.slice(0, 2).map((item) => {
+                  return (
+                    <li key={item.id} onClick={onClick}>
+                      <Link
+                        href={item.path}
+                        className="textLinkAnimation"
+                        onClick={handleSetScrolledWindow}
+                      >
+                        {i18n.language === currentLanguages.EN
+                          ? item.titleEN
+                          : item.title}
+                      </Link>
+                    </li>
+                  );
+                })}
+            </ul>
+            <ul className={styles.navigation}>
+              {!isLoading &&
+                navigationData.slice(2, 4).map((item) => {
+                  return (
+                    <li key={item.id} onClick={onClick}>
+                      <Link
+                        href={item.path}
+                        className="textLinkAnimation"
+                        onClick={handleSetScrolledWindow}
+                      >
+                        {i18n.language === currentLanguages.EN
+                          ? item.titleEN
+                          : item.title}
+                      </Link>
+                    </li>
+                  );
+                })}
+            </ul>
+
+            <div className={styles.btnsWrapper}>
+              <CallBtn className={isMobile ? `${styles.mobileBtn}` : " "} />
+              <OrderBtn
+                openModal={openModal}
+                className={isMobile ? `${styles.mobileBtn}` : " "}
+              />
+            </div>
+          </div>
+          // </>
         )}
         <p className={styles.rights}>
           made by{" "}
