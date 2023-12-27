@@ -2,7 +2,7 @@ import * as Yup from "yup";
 
 import i18n from 'i18next';
 
-import { phoneRegExp } from "@/utils/regularExpressions";
+import { regexPhone } from "@/utils/regularExpressions";
 
 export const orderSchema = () => {
     return Yup.object({
@@ -10,7 +10,7 @@ export const orderSchema = () => {
             .min(3, i18n.t("Form.errorShortName"))
             .max(29, i18n.t("Form.errorLongName")),
         phone: Yup.string()
-            .matches(phoneRegExp, "+380123456789")
+            .matches(regexPhone, "+380123456789")
             .required(i18n.t("Form.fieldRequiredMsg")),
         objNumber: Yup.number()
             .moreThan(-1, i18n.t("Form.errorNumberOfObject2"))
