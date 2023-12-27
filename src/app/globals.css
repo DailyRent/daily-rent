@@ -8,6 +8,7 @@
   -webkit-transition-duration: 250ms;
   -o-transition-duration: 250ms;
   transition-duration: 250ms;
+  /* outline: red 1px solid; */
 }
 
 html,

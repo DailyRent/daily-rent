@@ -1,4 +1,4 @@
-@import '../../../styles/variables';
+@import "../../../styles/variables";
 
 .dataList {
   width: 100%;
@@ -14,10 +14,16 @@
   align-items: center;
   position: relative;
   row-gap: 16px;
-  @media screen and (min-width: $tablet) {
-    -webkit-box-align: start;
-    -ms-flex-align: start;
-    align-items: flex-start;
+
+  // padding-bottom: 20px;
+  // border-bottom: 1px solid #c7c7c7;
+  // @media screen and (min-width: $tablet) {
+  //   -webkit-box-align: start;
+  //   -ms-flex-align: start;
+  //   align-items: flex-start;
+  // }
+  @media screen and (orientation: landscape) {
+    row-gap: 8px;
   }
   @media screen and (min-width: 1366px) {
     row-gap: 20px;
@@ -26,7 +32,6 @@
 
 .dataText {
   color: #3c3c3c;
-  // font-family: Crimson Text;
   font-family: var(--font--crimsonPro);
   font-size: 16px;
   font-weight: 400;
@@ -36,30 +41,35 @@
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  width: 100%;
+
   @media screen and (min-width: 1366px) {
     font-size: 24px;
   }
-  &:first-child {
-    width: max-content;
-  }
-  &:not(:last-child) {
-    width: 264px;
-    @media screen and (min-width: 1366px) {
-      width: 436px;
-    }
+}
+
+.dataTextPrice {
+  justify-content: flex-end;
+  display: flex;
+
+  & figure {
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
   }
 }
 
 .svgHash {
   width: 16px;
   height: 26px;
-  margin-right: 16px;
+  margin-right: 8px;
   @media screen and (min-width: $tablet) {
     width: 20px;
     height: 20px;
   }
   @media screen and (min-width: 1366px) {
-    margin-right: 24px;
+    margin-right: 12px;
     width: 24px;
     height: 24px;
   }
@@ -193,14 +203,14 @@
 }
 
 .dataTextPrice {
-  position: absolute;
-  top: 0;
-  right: 28px;
+  // position: absolute;
+  // top: 0;
+  // right: 28px;
   color: $acentColor;
   font-size: 20px;
   @media screen and (min-width: 1366px) {
-    right: 0;
-    position: static;
+    // right: 0;
+    // position: static;
     font-size: 32px;
   }
 }

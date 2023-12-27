@@ -6,7 +6,7 @@ import OrderBtn from "../OrderBtn/OrderBtn";
 import IsLoading from "../share/IsLoading/IsLoading";
 import Amenities from "./Amenities/Amenities";
 import ApartDataList from "./ApartDataList/ApartDataList";
-import { currentLanguages, textInfoAppartId }from "@/data";
+import { currentLanguages, textInfoAppartId } from "@/data";
 import styles from "./ApartIdItem.module.scss";
 // import ApartIdSlider from './ApartIdSlider/ApartIdSlider';
 import ItemSlider from "./ItemSlider/ItemSlider";
@@ -68,19 +68,27 @@ const ApartIdItem = ({ params }) => {
               Detailed information about the amenities
             </h4>
             <ApartDataList dataId={dataId} />
-            <div className={styles.arrow}></div>
+            <hr style={{ width: "100%" }} />
             <Amenities dataId={dataId} />
-            <ApartStar dataId={dataId} />
+            {/* <ApartStar dataId={dataId} /> */}
             <OrderBtn className={styles.orderBtn} openModal={openModal} />
           </article>
         </article>
-      )}      
+      )}
       <article className={styles.textGrid}>
-        <h6 className={styles.textWelcome}>{!isLoading && t("ApartIdItem.TextWelcome")}</h6>
+        <h6 className={styles.textWelcome}>
+          {!isLoading && t("ApartIdItem.TextWelcome")}
+        </h6>
         <ul className={styles.textInfo}>
-          {!isLoading && textInfoAppartId.map((el)=>{
-           return (<li key={el.id}>&#8226; { i18n.language === currentLanguages.EN ? el.textEN : el.text}</li>)
-          })}
+          {!isLoading &&
+            textInfoAppartId.map((el) => {
+              return (
+                <li key={el.id}>
+                  &#8226;{" "}
+                  {i18n.language === currentLanguages.EN ? el.textEN : el.text}
+                </li>
+              );
+            })}
         </ul>
       </article>
     </section>

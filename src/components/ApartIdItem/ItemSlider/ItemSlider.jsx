@@ -27,6 +27,7 @@ const ItemSlider = ({ dataId }) => {
   const images = dataId?.imgs;
 
   const allImages = [dataId?.titleImg, ...images];
+  const priorityImg = dataId?.titleImg ? true : false;
 
   const item = allImages.map((item) => {
     // console.log(item);
@@ -85,6 +86,10 @@ const ItemSlider = ({ dataId }) => {
         keyboard={{
           enabled: true,
         }}
+        // breakpoints={{
+        //   580: { slidesPerView: 4 },
+        //   768: { slidesPerView: 3 },
+        // }}
         modules={[FreeMode, Navigation, Thumbs, Mousewheel, Keyboard]}
         className="ItemSliderBottom"
       >

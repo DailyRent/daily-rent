@@ -1,7 +1,8 @@
-@import '../../../styles/variables';
+@import "../../../styles/variables";
 
 .propositionContainer {
   margin-bottom: 20px;
+  width: 100%;
   @media screen and (min-width: 1366px) {
     margin-bottom: 28px;
   }
@@ -12,7 +13,6 @@
 
 .propositionTitle {
   color: $acentColor;
-  // font-family: Crimson Text;
   font-family: var(--font--crimsonPro);
   font-size: 20px;
   font-weight: 400;
@@ -38,6 +38,9 @@
   font-family: var(--font--crimsonPro);
   font-size: 16px;
   font-weight: 400;
+  @media screen and (orientation: landscape) and (max-width: 767px) {
+    row-gap: 8px;
+  }
   @media screen and (min-width: 360px) {
     width: 100%;
     grid-column-gap: 24px;
