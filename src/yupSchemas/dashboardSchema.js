@@ -1,6 +1,6 @@
 import * as Yup from "yup";
 
-import { regExprUrl, regExprGoogleLocation } from "@/utils/regularExpressions";
+import { regexUrl, regexGoogleLocation } from "@/utils/regularExpressions";
 
 export const dashboardSchema = Yup.object({
     objNumber: Yup.number()
@@ -35,7 +35,7 @@ export const dashboardSchema = Yup.object({
         .required("Номер квартири це обовʼязкове поле"),
     googleMapLocation: Yup.string()
         .required("Google-локація це обовʼязкове поле")
-        .matches(regExprGoogleLocation, "https://www.google.com/maps/place/Starbucks/...повний url..."),
+        .matches(regexGoogleLocation, "https://maps.app.goo.gl/qvW2LmZFsvEDxMFej"),
     price: Yup.number()
         .moreThan(-1, "Тільки додатні числа")
         .typeError("Тільки числа")
@@ -43,7 +43,7 @@ export const dashboardSchema = Yup.object({
     roomsQuantity: Yup.string()
         .required("Кількість кімнат це обовʼязкове поле"),
     bookingUrl: Yup.string()
-        .matches(regExprUrl, "https://www.booking.com"),
+        .matches(regexUrl, "https://www.booking.com"),
     bedsQuantity: Yup.string()
         .required("Кількість спальних місць це обовʼязкове поле"),
 })
