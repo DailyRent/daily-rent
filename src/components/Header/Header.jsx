@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState, useCallback, useContext } from "react";
 import { useTranslation } from "react-i18next";
 import styles from "./Header.module.scss";
 import Logo from "../Logo/Logo";
@@ -10,6 +10,7 @@ import { usePathname } from "next/navigation";
 import { signOut, useSession } from "next-auth/react";
 import TranslatorBtnBlock from "../share/TranslatorBtnBlock/TranslatorBtnBlock";
 import SocialLinks from "../SocialLinks/SocialLinks";
+import { SiteContext } from "@/context/SiteContext";
 
 const Header = () => {
   const session = useSession();
@@ -20,7 +21,7 @@ const Header = () => {
   const [burgerMenu, setBurgerMenu] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  const [scrolledWindow, setScrolledWindow] = useState(0);
+  const { scrolledWindow, setScrolledWindow } = useContext(SiteContext);
 
   const isClient = typeof window !== "undefined";
   const isDocument = typeof document !== "undefined";
@@ -38,11 +39,10 @@ const Header = () => {
 
   const header = isDocument && document.getElementById("header");
 
-  // let scrolledWindow = 0;
-
   const headerScrollclassName = useCallback(() => {
     if (window.scrollY <= 12) {
-      return;
+      header.classList.remove(`${styles.containerHidden}`);
+      header.classList.add(`${styles.containerVisible}`);
     } else if (window.scrollY > scrolledWindow) {
       header.classList.add(`${styles.containerHidden}`);
       header.classList.remove(`${styles.containerVisible}`);
@@ -51,9 +51,8 @@ const Header = () => {
       header.classList.add(`${styles.containerVisible}`);
     }
 
-    // scrolledWindow = window.scrollY;
     setScrolledWindow(window.scrollY);
-  }, [scrolledWindow, header.classList]);
+  }, [scrolledWindow, setScrolledWindow, header.classList]);
 
   const closeBurgerMenu = () => {
     setTimeout(() => {
@@ -93,8 +92,6 @@ const Header = () => {
       window.removeEventListener("click", closeBurgerMenuOnClick);
     };
   }, [handleResize, headerScrollclassName, closeBurgerMenuOnClick]);
-
-  // const headerScrollStyles = styles.containerVisible;
 
   return (
     <header id="header" className={styles.container}>
