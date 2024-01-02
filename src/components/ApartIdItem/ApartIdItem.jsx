@@ -8,7 +8,6 @@ import Amenities from "./Amenities/Amenities";
 import ApartDataList from "./ApartDataList/ApartDataList";
 import { currentLanguages, textInfoAppartId } from "@/data";
 import styles from "./ApartIdItem.module.scss";
-// import ApartIdSlider from './ApartIdSlider/ApartIdSlider';
 import ItemSlider from "./ItemSlider/ItemSlider";
 import ApartStar from "./ApartStar/ApartStar";
 import ModalR from "@/components/Modal/Modal";
@@ -84,7 +83,6 @@ const ApartIdItem = ({ params }) => {
             textInfoAppartId.map((el) => {
               return (
                 <li key={el.id}>
-                  &#8226;{" "}
                   {i18n.language === currentLanguages.EN ? el.textEN : el.text}
                 </li>
               );
