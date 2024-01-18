@@ -19,7 +19,7 @@ export async function generateMetadata({ params, searchParams }, parent) {
     title: `Квартири подобово Daily Rent - оренда квартири Суми.`,
     description: `Зняти квартиру в місті Суми за адресою ${product?.address}`,
     openGraph: {
-      images: [product.titleImg, ...previousImages],
+      images: [product?.titleImg, ...previousImages],
       type: "website",
       title: "Daily Rent - оренда квартири Суми. Квартири подобово.",
       url: `${process.env.NEXT_PUBLIC_MAIN_URL}apartments/${id}`,
