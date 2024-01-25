@@ -44,6 +44,11 @@ export const dashboardSchema = Yup.object({
         .required("Кількість кімнат це обовʼязкове поле"),
     bookingUrl: Yup.string()
         .matches(regexUrl, "https://www.booking.com"),
+    amenities: Yup.array().min(1, "Мінімум одне вибране поле"),
     bedsQuantity: Yup.string()
         .required("Кількість спальних місць це обовʼязкове поле"),
+    description: Yup.string()
+        .required("Опис це обовʼязкове поле"),
+    descriptionEn: Yup.string()
+        .required("Опис англійською це обовʼязкове поле"),
 })

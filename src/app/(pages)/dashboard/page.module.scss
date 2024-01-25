@@ -7,20 +7,23 @@
   align-items: center;
   justify-content: center;
   padding: 103px 10px 10px;
-  flex: 1;
+  width: 100%;
+  // flex: 1;
 
   @media screen and (min-width: $tablet) {
     align-items: normal;
     justify-content: normal;
-    gap: 50px;
-    padding: 99px 20px 20px;
-    width: 100%;
-    flex: none;
+    // gap: 50px;
+    // padding: 99px 20px 20px;
+    padding: 119px 20px 20px;
+    // width: 100%;
+    // flex: none;
   }
 
   @media screen and (min-width: $desktop) {
-    gap: 100px;
-    padding: 149px 40px 40px;
+    // gap: 100px;
+    // padding: 149px 40px 40px;
+    padding: 177px 40px 40px;
   }
 }
 
@@ -33,6 +36,16 @@
 
   @media screen and (min-width: $tablet) {
     display: none;
+  }
+}
+
+.contentWrapper {
+  display: none;
+
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    width: 100%;
+    gap: 50px;
   }
 }
 
@@ -65,11 +78,19 @@
   -ms-flex-pack: justify;
   justify-content: space-between;
   gap: 5px;
-  margin: 20px 0px;
+  // margin: 20px 0px;
   padding: 10px;
   background-color: #8c878fd6;
   border-radius: 5px;
   border: 1px solid navy;
+}
+
+.apartment:not(:last-child) {
+  margin-bottom: 20px;
+
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 40px;
+  }
 }
 
 .imgContainer {
@@ -117,6 +138,9 @@
   width: 40vw;
   overflow: hidden;
   white-space: nowrap;
+}
+.description {
+  display: block;
 }
 
 .btnsWrapper {

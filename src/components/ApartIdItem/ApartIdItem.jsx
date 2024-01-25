@@ -25,7 +25,30 @@ const ApartIdItem = ({ params }) => {
   );
 
   const dataId = data && !isLoading ? data : error;
-  // console.log(dataId?.googleMapLocation);
+
+  // массив для добавления описания квартиры в карточку
+  const descsToPushArray = [];
+
+  const descArrayFromData = data?.description.split(" | ");
+
+  const descEnArrayFromData = data?.descriptionEn.split(" | ");
+
+  descArrayFromData?.map((item, index) => {
+    const id = index;
+    const text = item;
+    const obj = {
+      id,
+      text,
+      textEn: "",
+    };
+    descsToPushArray.push(obj);
+  });
+
+  descsToPushArray.map((item, index) => {
+    item.textEn = descEnArrayFromData[index];
+  });
+
+  const allInformation = [...descsToPushArray, ...textInfoAppartId];
 
   const { t, i18n } = useTranslation();
   const { isModalOpen, openModal, closeModal } = useContext(SiteContext);
@@ -80,7 +103,7 @@ const ApartIdItem = ({ params }) => {
         </h6>
         <ul className={styles.textInfo}>
           {!isLoading &&
-            textInfoAppartId.map((el) => {
+            allInformation.map((el) => {
               return (
                 <li key={el.id}>
                   {i18n.language === currentLanguages.EN ? el.textEN : el.text}

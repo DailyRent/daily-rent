@@ -64,7 +64,8 @@ fieldset.top {
   cursor: pointer;
 }
 
-fieldset.roomsQuantity {
+fieldset.roomsQuantity,
+fieldset.bedsQuantity {
   padding: 5px 10px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -98,15 +99,16 @@ fieldset.amenities {
   color: white;
   border-radius: 3px;
   background-color: #86ebb8;
+  cursor: not-allowed;
 }
 
 .sendBtn {
-  padding: 7px;
-  border: none;
+  // padding: 7px;
+  // border: none;
   background-color: #53c28b;
-  color: white;
+  // color: white;
   cursor: pointer;
-  border-radius: 3px;
+  // border-radius: 3px;
 }
 
 .error {

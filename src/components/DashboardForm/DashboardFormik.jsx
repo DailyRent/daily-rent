@@ -29,6 +29,8 @@ const DashboardFormik = () => {
     bookingUrl: "",
     amenities: ["Wi-Fi"],
     bedsQuantity: "",
+    description: "",
+    descriptionEn: "",
   };
 
   const handleSubmit = async (values, actions) => {
@@ -119,7 +121,7 @@ const DashboardFormik = () => {
               options={{ multiple: false }}
               uploadPreset="unsigned_preset"
             >
-              Завантажити ОСНОВНЕ фото (тільки .WEBP)
+              Завантажити ГОЛОВНЕ фото (тільки .WEBP)
             </CldUploadButton>
             <ErrorMessage name="imgs" className={styles.error} component="p" />
             <CldUploadButton
@@ -132,21 +134,22 @@ const DashboardFormik = () => {
             >
               Завантажити додаткові фото (тільки .WEBP)
             </CldUploadButton>
+
             <label htmlFor="address">Адреса:</label>
             <ErrorMessage
               name="address"
-              id="address"
-              maxLength="100"
               className={styles.error}
               component="p"
             />
             <Field
               type="text"
               name="address"
+              id="address"
               maxLength="100"
               placeholder="вул.Шевченка, буд.8"
               className={styles.input}
             />
+
             <label htmlFor="addressEn">Адреса англійською:</label>
             <ErrorMessage
               name="addressEn"
@@ -156,10 +159,11 @@ const DashboardFormik = () => {
             <Field
               type="text"
               name="addressEn"
-              id="aaddressEn"
+              id="addressEn"
               placeholder="Shevchenko street, h.8"
               className={styles.input}
             />
+
             <label htmlFor="flatNumber">Квартира:</label>
             <ErrorMessage
               name="flatNumber"
@@ -174,13 +178,13 @@ const DashboardFormik = () => {
               placeholder="52"
               className={styles.input}
             />
+
             <label htmlFor="Location"> Місцезнаходження:</label>
             <ErrorMessage
               name="googleMapLocation"
               className={styles.error}
               component="p"
             />
-
             <Field
               type="text"
               name="googleMapLocation"
@@ -188,6 +192,7 @@ const DashboardFormik = () => {
               placeholder="https://maps.app.goo.gl/Z8KyBtZDJyMEzNGf9..."
               className={styles.input}
             />
+
             <label htmlFor="Price">Ціна:</label>
             <ErrorMessage
               name="price"
@@ -198,6 +203,7 @@ const DashboardFormik = () => {
             <Field
               type="text"
               name="price"
+              id="Price"
               maxLength="7"
               placeholder="950"
               className={styles.input}
@@ -226,6 +232,7 @@ const DashboardFormik = () => {
               />
               <label htmlFor="threeRooms">3</label>
             </fieldset>
+
             <label html="Booking">Booking.com:</label>
             <ErrorMessage
               name="bookingUrl"
@@ -239,6 +246,12 @@ const DashboardFormik = () => {
               placeholder="bookingUrl"
               className={styles.input}
             />
+
+            <ErrorMessage
+              name="amenities"
+              className={styles.error}
+              component="p"
+            />
             <fieldset className={styles.amenities}>
               <legend>Додатковий комфорт:</legend>
               <label htmlFor="wi-fi">
@@ -247,7 +260,7 @@ const DashboardFormik = () => {
                   id="wi-fi"
                   name="amenities"
                   value="Wi-Fi"
-                // defaultChecked
+                  // defaultChecked
                 />
                 Wi-Fi
               </label>
@@ -351,6 +364,7 @@ const DashboardFormik = () => {
                 Парковка
               </label>
             </fieldset>
+
             <ErrorMessage
               name="bedsQuantity"
               className={styles.error}
@@ -373,8 +387,41 @@ const DashboardFormik = () => {
               <label htmlFor="fiveBeds">5</label>
               <Field type="radio" id="sixBeds" name="bedsQuantity" value="6" />
               <label htmlFor="sixBeds">6</label>
-            </fieldset>           
-            
+            </fieldset>
+
+            <label htmlFor="description">Опис:</label>
+            <ErrorMessage
+              name="description"
+              className={styles.error}
+              component="p"
+            />
+            <Field
+              as="textarea"
+              type="text"
+              name="description"
+              id="description"
+              maxLength="500"
+              placeholder="Між кожним блоком повинні бути пробіл вертикальна риска пробіл. Перший блок інформації. | Другий блок інформації. | Третій блок інформації. | Четвертий блок інформації."
+              className={styles.textarea}
+              rows={5}
+            />
+
+            <label htmlFor="descriptionEn">Опис англійською:</label>
+            <ErrorMessage
+              name="descriptionEn"
+              className={styles.error}
+              component="p"
+            />
+            <Field
+              as="textarea"
+              type="text"
+              name="descriptionEn"
+              id="descriptionEn"
+              placeholder="First information block. | Second information block. | Third information block. | Fourth information block."
+              className={styles.textarea}
+              rows={5}
+            />
+
             <button
               type="submit"
               disabled={!isValid}

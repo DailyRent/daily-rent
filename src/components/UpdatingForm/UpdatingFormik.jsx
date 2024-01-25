@@ -23,6 +23,8 @@ const UpdatingFormik = ({ id, apart, mutate }) => {
     bookingUrl,
     amenities,
     bedsQuantity,
+    description,
+    descriptionEn,
   } = apart;
 
   const currentValues = {
@@ -38,6 +40,8 @@ const UpdatingFormik = ({ id, apart, mutate }) => {
     bookingUrl,
     amenities,
     bedsQuantity,
+    description,
+    descriptionEn,
   };
 
   const initialValues = {
@@ -53,6 +57,8 @@ const UpdatingFormik = ({ id, apart, mutate }) => {
     newBookingUrl: bookingUrl,
     newAmenities: amenities,
     newBedsQuantity: bedsQuantity,
+    newDescription: description,
+    newDescriptionEn: descriptionEn,
   };
 
   const handleSubmit = async (values, actions) => {
@@ -69,6 +75,8 @@ const UpdatingFormik = ({ id, apart, mutate }) => {
       newBookingUrl,
       newAmenities,
       newBedsQuantity,
+      newDescription,
+      newDescriptionEn,
     } = values;
 
     const updatedValues = {
@@ -84,6 +92,8 @@ const UpdatingFormik = ({ id, apart, mutate }) => {
       bookingUrl: newBookingUrl,
       amenities: newAmenities,
       bedsQuantity: newBedsQuantity,
+      description: newDescription,
+      descriptionEn: newDescriptionEn,
     };
 
     if (isDeepEqual(currentValues, updatedValues)) {
@@ -135,11 +145,11 @@ const UpdatingFormik = ({ id, apart, mutate }) => {
                 ТОП
               </label>
 
-              <ErrorMessage
+              {/* <ErrorMessage
                 name="newTitleImg"
                 className={styles.error}
                 component="p"
-              />
+              /> */}
               <CldUploadButton
                 name="newTitleImg"
                 className={styles.uploadBtn}
@@ -151,8 +161,9 @@ const UpdatingFormik = ({ id, apart, mutate }) => {
                 options={{ multiple: false }}
                 uploadPreset="unsigned_preset"
               >
-                Змінити ОСНОВНЕ фото (тільки .WEBP)
+                Змінити ГОЛОВНЕ фото (тільки .WEBP)
               </CldUploadButton>
+
               <ErrorMessage
                 name="newImgs"
                 className={styles.error}
@@ -171,21 +182,22 @@ const UpdatingFormik = ({ id, apart, mutate }) => {
               >
                 Додати додаткові фото (тільки .WEBP)
               </CldUploadButton>
+
               <label htmlFor="newAddress">Адреса:</label>
               <ErrorMessage
                 name="newAddress"
-                id="newAddress"
-                maxLength="100"
                 className={styles.error}
                 component="p"
               />
               <Field
                 type="text"
                 name="newAddress"
+                id="newAddress"
                 maxLength="100"
                 value={values.newAddress}
                 className={styles.input}
               />
+
               <label htmlFor="newAddressEn">Адреса англійською:</label>
               <ErrorMessage
                 name="newAddressEn"
@@ -199,6 +211,7 @@ const UpdatingFormik = ({ id, apart, mutate }) => {
                 value={values.newAddressEn}
                 className={styles.input}
               />
+
               <label htmlFor="newFlatNumber">Квартира:</label>
               <ErrorMessage
                 name="newFlatNumber"
@@ -213,13 +226,13 @@ const UpdatingFormik = ({ id, apart, mutate }) => {
                 value={values.newFlatNumber}
                 className={styles.input}
               />
+
               <label htmlFor="Location"> Місцезнаходження:</label>
               <ErrorMessage
                 name="newGoogleMapLocation"
                 className={styles.error}
                 component="p"
               />
-
               <Field
                 type="text"
                 name="newGoogleMapLocation"
@@ -227,6 +240,7 @@ const UpdatingFormik = ({ id, apart, mutate }) => {
                 value={values.newGoogleMapLocation}
                 className={styles.input}
               />
+
               <label htmlFor="Price">Ціна:</label>
               <ErrorMessage
                 name="newPrice"
@@ -241,11 +255,12 @@ const UpdatingFormik = ({ id, apart, mutate }) => {
                 value={values.newPrice}
                 className={styles.input}
               />
-              <ErrorMessage
+
+              {/* <ErrorMessage
                 name="newRoomsQuantity"
                 className={styles.error}
                 component="p"
-              />
+              /> */}
               <fieldset className={styles.roomsQuantity}>
                 <legend>Кількість кімнат:</legend>
                 <Field
@@ -270,6 +285,7 @@ const UpdatingFormik = ({ id, apart, mutate }) => {
                 />
                 <label htmlFor="threeRooms">3</label>
               </fieldset>
+
               <label html="Booking">Booking.com:</label>
               <ErrorMessage
                 name="newBookingUrl"
@@ -282,6 +298,12 @@ const UpdatingFormik = ({ id, apart, mutate }) => {
                 id="Booking"
                 value={values.newBookingUrl}
                 className={styles.input}
+              />
+
+              <ErrorMessage
+                name="newAmenities"
+                className={styles.error}
+                component="p"
               />
               <fieldset className={styles.amenities}>
                 <legend>Додатковий комфорт:</legend>
@@ -394,13 +416,14 @@ const UpdatingFormik = ({ id, apart, mutate }) => {
                   Парковка
                 </label>
               </fieldset>
-              <ErrorMessage
+
+              {/* <ErrorMessage
                 name="newBedsQuantity"
                 className={styles.error}
                 component="p"
-              />
-              <fieldset className={styles.roomsQuantity}>
-                <legend>Кількість кімнат:</legend>
+              /> */}
+              <fieldset className={styles.bedsQuantity}>
+                <legend>Кількість спальних місць:</legend>
                 <Field
                   type="radio"
                   id="twoBeds"
@@ -437,6 +460,39 @@ const UpdatingFormik = ({ id, apart, mutate }) => {
                 />
                 <label htmlFor="sixBeds">6</label>
               </fieldset>
+
+              <label htmlFor="newDescription">Опис:</label>
+              <ErrorMessage
+                name="newDescription"
+                className={styles.error}
+                component="p"
+              />
+              <Field
+                as="textarea"
+                type="text"
+                name="newDescription"
+                id="newDescription"
+                maxLength="500"
+                value={values.newDescription}
+                className={styles.textarea}
+                rows={5}
+              />
+
+              <label htmlFor="newDescriptionEn">Опис англійською:</label>
+              <ErrorMessage
+                name="newDescriptionEn"
+                className={styles.error}
+                component="p"
+              />
+              <Field
+                as="textarea"
+                type="text"
+                name="newDescriptionEn"
+                id="newDescriptionEn"
+                value={values.newDescriptionEn}
+                className={styles.textarea}
+                rows={5}
+              />
 
               <button
                 type="submit"
