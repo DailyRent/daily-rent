@@ -5,6 +5,7 @@ import { signIn, useSession } from "next-auth/react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { loginSchema } from "@/yupSchemas/loginSchema";
 import styles from "./Login.module.scss";
+import Loading from "@/app/loading";
 
 const Login = () => {
   // дает данные о пользователе - data, залогинен он или нет - status
@@ -14,7 +15,7 @@ const Login = () => {
   const router = useRouter();
 
   if (session.status === "loading") {
-    return <p>Loading...</p>;
+    return <Loading />;
   }
 
   // перенаправляет на другую страницу за счет роутера (если не админ)
@@ -92,8 +93,8 @@ const Login = () => {
                   disabled={!isValid}
                   className={
                     isValid
-                      ? `${styles.registerBtn} ${styles.active}`
-                      : styles.registerBtn
+                      ? `${styles.loginBtn} ${styles.active}`
+                      : styles.loginBtn
                   }
                 >
                   Залогінитися
@@ -107,7 +108,7 @@ const Login = () => {
           onClick={() => {
             signIn("google");
           }}
-          className={styles.loginBtn}
+          className={styles.loginGoogleBtn}
         >
           Залогінитися за допомогою Google
         </button>

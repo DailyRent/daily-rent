@@ -9,6 +9,7 @@ import Link from "next/link";
 import { CldImage } from "next-cloudinary";
 import { handleDeleteImgFromMongoDB } from "@/utils/handleDeleteImgFromMongoDB";
 import { handleDeleteImgFromCloudinary } from "@/utils/handleDeleteImgFromCloudinary";
+import Loading from "@/app/loading";
 
 const EditCard = ({ params }) => {
   const { id } = params;
@@ -23,7 +24,7 @@ const EditCard = ({ params }) => {
   const router = useRouter();
 
   if (session.status === "loading") {
-    return <p>Loading...</p>;
+    return <Loading />;
   }
 
   if (session.status === "unauthenticated") {
@@ -48,75 +49,81 @@ const EditCard = ({ params }) => {
           менше 768 пікселів.
         </p>
         {isLoading ? (
-          <p>Loading...</p>
+          <Loading />
         ) : (
-          <div key={data._id} className={styles.apartment}>
-            <h2>Обʼєкт №: {data.objNumber}</h2>
-            {data.top ? <p>ТОП</p> : null}
-            <p>Основне фото:</p>
-            <div className={styles.imgContainer}>
-              <CldImage
-                width="300"
-                height="150"
-                crop="fill"
-                src={data.titleImg}
-                alt={data.address}
-              />
+          <div className={styles.contentWrapper}>
+            <div key={data._id} className={styles.apartment}>
+              <h2>Обʼєкт №: {data.objNumber}</h2>
+              {data.top ? <p>ТОП</p> : null}
+              <p>Основне фото:</p>
+              <div className={styles.imgContainer}>
+                <CldImage
+                  width="300"
+                  height="150"
+                  crop="fill"
+                  src={data.titleImg}
+                  alt={data.address}
+                />
+              </div>
+              <p>Додаткові фото:</p>
+              <ul className={styles.imgsWrapper}>
+                {data.imgs.map((item, index) => (
+                  <li className={styles.imgsItem} key={index}>
+                    <div className={styles.imgCont}>
+                      <CldImage
+                        width="200"
+                        height="100"
+                        crop="fill"
+                        src={item}
+                        alt="Interior photo"
+                      />
+                    </div>
+                    <svg
+                      className={styles.deleteIcon}
+                      onClick={async () => {
+                        handleDeleteImgFromMongoDB(
+                          data,
+                          data._id,
+                          item,
+                          mutate
+                        );
+
+                        handleDeleteImgFromCloudinary(item);
+                      }}
+                    >
+                      <use href="/sprite.svg#icon-delete" />
+                    </svg>
+                  </li>
+                ))}
+              </ul>
+              <p className={styles.address}>Адреса: {data.address}</p>
+              <p className={styles.address}>
+                Адреса англійською: {data.addressEn}
+              </p>
+
+              <p>Квартира: {data.flatNumber}</p>
+              <Link href={data.googleMapLocation} className={styles.location}>
+                Місцезнаходження: {data.googleMapLocation}
+              </Link>
+              <p>Ціна: {data.price}</p>
+              <p>Кількість кімнат: {data.roomsQuantity}</p>
+              <Link href={data.bookingUrl} className={styles.platformLink}>
+                BookingUrl: {data.bookingUrl}
+              </Link>
+              <ul>
+                Додатковий комфорт:{" "}
+                {data.amenities.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+              <p>Кількість спальних місць: {data.bedsQuantity}</p>
+              <p className={styles.description}>Опис: {data.description}</p>
+              <p className={styles.description}>
+                Опис англійською: {data.descriptionEn}
+              </p>
             </div>
-            <p>Додаткові фото:</p>
-            <ul className={styles.imgsWrapper}>
-              {data.imgs.map((item, index) => (
-                <li className={styles.imgsItem} key={index}>
-                  <div className={styles.imgCont}>
-                    <CldImage
-                      width="200"
-                      height="100"
-                      crop="fill"
-                      src={item}
-                      alt="Interior photo"
-                    />
-                  </div>
-                  <svg
-                    className={styles.deleteIcon}
-                    onClick={async () => {
-                      handleDeleteImgFromMongoDB(data, data._id, item, mutate);
-
-                      handleDeleteImgFromCloudinary(item);
-                    }}
-                  >
-                    <use href="/sprite.svg#icon-delete" />
-                  </svg>
-                </li>
-              ))}
-            </ul>
-            <p className={styles.address}>Адреса: {data.address}</p>
-            <p className={styles.address}>
-              Адреса англійською: {data.addressEn}
-            </p>
-
-            <p>Квартира: {data.flatNumber}</p>
-            <Link href={data.googleMapLocation} className={styles.location}>
-              Місцезнаходження: {data.googleMapLocation}
-            </Link>
-            <p>Ціна: {data.price}</p>
-            <p>Кількість кімнат: {data.roomsQuantity}</p>
-            <Link href={data.bookingUrl} className={styles.platformLink}>
-              BookingUrl: {data.bookingUrl}
-            </Link>
-            <ul>
-              Додатковий комфорт:{" "}
-              {data.amenities.map((item, index) => (
-                <li key={index}>{item}</li>
-              ))}
-            </ul>
-            <p>Кількість спальних місць: {data.bedsQuantity}</p>
+            <UpdatingFormik id={id} apart={data} mutate={mutate} />
           </div>
-        )}
-
-        {isLoading ? (
-          <p>Loading</p>
-        ) : (
-          <UpdatingFormik id={id} apart={data} mutate={mutate} />
         )}
       </div>
     );
