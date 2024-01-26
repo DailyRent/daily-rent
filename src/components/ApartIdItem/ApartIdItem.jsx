@@ -9,13 +9,14 @@ import ApartDataList from "./ApartDataList/ApartDataList";
 import { currentLanguages, textInfoAppartId } from "@/data";
 import styles from "./ApartIdItem.module.scss";
 import ItemSlider from "./ItemSlider/ItemSlider";
-import ApartStar from "./ApartStar/ApartStar";
+// import ApartStar from "./ApartStar/ApartStar";
 import ModalR from "@/components/Modal/Modal";
 import OrderForm from "@/components/OrderForm/OrderForm";
 import { SiteContext } from "@/context/SiteContext";
 import Link from "next/link";
 import seoStyles from "@/app/seoStyles.module.css";
 import useSWR from "swr";
+import { v4 } from "uuid";
 
 const ApartIdItem = ({ params }) => {
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
@@ -26,28 +27,30 @@ const ApartIdItem = ({ params }) => {
 
   const dataId = data && !isLoading ? data : error;
 
-  // массив для добавления описания квартиры в карточку
+  // массив для добавления description квартиры в карточку
   const descsToPushArray = [];
 
+  // строки из БД, которые преобразуется в массивы
   const descArrayFromData = data?.description.split(" | ");
-
   const descEnArrayFromData = data?.descriptionEn.split(" | ");
 
-  descArrayFromData?.map((item, index) => {
-    const id = index;
+  // наполнение массива данными из БД
+  descArrayFromData?.map((item) => {
+    const id = v4();
     const text = item;
     const obj = {
       id,
       text,
-      textEn: "",
+      textEN: "",
     };
     descsToPushArray.push(obj);
   });
 
   descsToPushArray.map((item, index) => {
-    item.textEn = descEnArrayFromData[index];
+    item.textEN = descEnArrayFromData[index];
   });
 
+  // общий массив для рендера, созданный путем распыления массивов данных из локальной data и БД
   const allInformation = [...descsToPushArray, ...textInfoAppartId];
 
   const { t, i18n } = useTranslation();
@@ -103,9 +106,9 @@ const ApartIdItem = ({ params }) => {
         </h6>
         <ul className={styles.textInfo}>
           {!isLoading &&
-            allInformation.map((el) => {
+            allInformation.map((el, index) => {
               return (
-                <li key={el.id}>
+                <li key={index}>
                   {i18n.language === currentLanguages.EN ? el.textEN : el.text}
                 </li>
               );
