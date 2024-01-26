@@ -70,6 +70,7 @@ const Dashboard = () => {
                     crop="fill"
                     src={apart.titleImg}
                     alt="apartment photo"
+                    priority={true}
                   />
                   <p>Додаткові фото:</p>
                   <ul className={styles.imgsWrapper}>
