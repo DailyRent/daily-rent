@@ -20,12 +20,14 @@ const Hero = () => {
         Оренда квартири суми. Квартири подобово. Суми квартири.
       </h1>
       <h2 className={styles.heroLogo}>DailyRent</h2>
-      <p className={styles.heroTitle}>
-        {!isLoading && t("MainPage.heroTitle")}
-      </p>
-      <p className={styles.heroText}>
-        {!isLoading && t("MainPage.heroSubTitle")}
-      </p>
+      <div className={styles.heroTitleWrapper}>
+        <h3 className={styles.heroTitle}>
+          {!isLoading && t("MainPage.heroTitle")}
+        </h3>
+        <p className={styles.heroText}>
+          {!isLoading && t("MainPage.heroSubTitle")}
+        </p>
+      </div>
       <CallBtn className={styles.heroCallBtn} />
     </section>
   );
