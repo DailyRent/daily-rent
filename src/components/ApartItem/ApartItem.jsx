@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import React from "react";
-import { useTranslation } from "react-i18next";
-import Image from "next/image";
-import styles from "./ApartItem.module.scss";
-import Link from "next/link";
-import { CldImage } from "next-cloudinary";
+import React from 'react';
+import { useTranslation } from 'react-i18next';
+import styles from './ApartItem.module.scss';
+import Link from 'next/link';
+import { CldImage } from 'next-cloudinary';
+import Image from 'next/image';
 
 const ApartItem = ({
   titleImg,
@@ -14,22 +14,14 @@ const ApartItem = ({
   objNumber,
   roomsQuantity,
   id,
+  bedsQuantity,
 }) => {
   const { t } = useTranslation();
   return (
     <>
       <li className={styles.oneRooms}>
         <Link href={`/apartments/${id}`}>
-          {/* <Link href={`/oldApartments/${roomsQuantity}/${id}`}> */}
           <figure className={styles.imgContainer}>
-            {/* <Image
-              src={titleImg}
-              alt="apartament"
-              fill={true}
-              className={styles.img}
-              priority
-              sizes="(max-width: 768px) 324px, (max-width: 1440px) 300px"
-            /> */}
             <CldImage
               src={titleImg}
               alt="apartment"
@@ -44,20 +36,22 @@ const ApartItem = ({
         <div className={styles.apartContent}>
           <p className={styles.addressRooms}>
             {roomsQuantity}
-            {t("ApartmentsPage.TextOfDescAdress")}:
+            {t('ApartmentsPage.TextOfDescAdress')}:
           </p>
           <p className={styles.addressRooms}>{address}</p>
         </div>
-        <p className={styles.priceRooms}>
-          {price}₴{/* Кількість кімнат: {roomsQuantity} */}
-        </p>
-        <Link
-          href={`/apartments/${id}`}
-          // href={`/oldApartments/${roomsQuantity}/${id}`}
-          className={styles.btnRooms}
-        >
-          {t("Buttons.CardDetailsBtn")}
-        </Link>
+        <div className={styles.bottomContainer}>
+          <p className={styles.priceRooms}>{price} ₴</p>
+          <div className={styles.bedContainer}>
+            <p className={styles.bedsQuantity}>{bedsQuantity}</p>
+            <figure className={styles.bedImg}>
+              <Image src="/webp/Bed7.webp" fill alt="кількість спальних міст" />
+            </figure>
+          </div>
+          <Link href={`/apartments/${id}`} className={styles.btnRooms}>
+            {t('Buttons.CardDetailsBtn')}
+          </Link>
+        </div>
       </li>
     </>
   );

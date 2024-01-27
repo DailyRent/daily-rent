@@ -35,8 +35,18 @@
   position: absolute;
   bottom: 0;
   left: 0;
+  // width: 100%;
   width: 169px;
-  text-align: center;
+  height: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   color: $lightFontColor;
   font-size: 13px;
   font-weight: 700;
@@ -69,6 +79,16 @@
   // }
 }
 
+.bottomContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .priceRooms {
   width: -webkit-max-content;
   width: -moz-max-content;
@@ -86,10 +106,35 @@
   font-weight: 400;
 }
 
+.bedContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.bedImg {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
+.bedsQuantity {
+  color: #373737;
+  font-family: 'Crimson Text';
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-right: 4px;
+}
+
 .btnRooms {
-  position: absolute;
-  bottom: 0;
-  right: 0;
+  // position: absolute;
+  // bottom: 0;
+  // right: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
