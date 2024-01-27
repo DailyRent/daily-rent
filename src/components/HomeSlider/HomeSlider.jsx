@@ -30,7 +30,6 @@ const HomeSlider = () => {
   const { i18n } = useTranslation();
   // Filter the data to get only the item with top === true
   const topData = data ? data.filter((item) => item.top === true) : [];
-  console.log(topData);
 
   const [slidesPerView, setSlidesPerView] = useState(5); // Default value for slidesPerView
 
@@ -73,10 +72,10 @@ const HomeSlider = () => {
           slidesPerView={slidesPerView}
           loop={true}
           speed={1200}
-          // autoplay={{
-          //   delay: 2400,
-          //   pauseOnMouseEnter: true,
-          // }}
+          autoplay={{
+            delay: 2400,
+            pauseOnMouseEnter: true,
+          }}
           effect="slide"
           pagination={{
             dynamicBullets: true,
