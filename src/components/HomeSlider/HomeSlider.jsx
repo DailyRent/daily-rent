@@ -30,9 +30,7 @@ const HomeSlider = () => {
   const { i18n } = useTranslation();
   // Filter the data to get only the item with top === true
   const topData = data ? data.filter((item) => item.top === true) : [];
-  // const topData = data?.filter((item) => item.top === true)
-
-  // Now, filteredData contains only the item(s) with flatNumber=66
+  console.log(topData);
 
   const [slidesPerView, setSlidesPerView] = useState(5); // Default value for slidesPerView
 
@@ -75,10 +73,10 @@ const HomeSlider = () => {
           slidesPerView={slidesPerView}
           loop={true}
           speed={1200}
-          autoplay={{
-            delay: 2400,
-            pauseOnMouseEnter: true,
-          }}
+          // autoplay={{
+          //   delay: 2400,
+          //   pauseOnMouseEnter: true,
+          // }}
           effect="slide"
           pagination={{
             dynamicBullets: true,
@@ -115,7 +113,10 @@ const HomeSlider = () => {
                       loading="lazy"
                     />
                   </div>
-                  <p className="slideDescr">{el.objNumber}</p>
+                  <div className="slideDescr">
+                    <p>{el.objNumber}</p>
+                    <p>{el.price}$</p>
+                  </div>
                 </Link>
               </SwiperSlide>
             );

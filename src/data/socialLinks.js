@@ -17,6 +17,6 @@ export const socialLinks = [
     id: v4(),
     title: "Telegram",
     img: "/social-links/Telegram.webp",
-    href: "#",
+    href: "https://t.me/+380991930030",
   },
 ];
