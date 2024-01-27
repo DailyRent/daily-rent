@@ -9,7 +9,7 @@ const SocialLinks = ({ className }) => {
       {socialLinks.map((item) => {
         return (
           <li key={item.id}>
-            <a href={item.href}>
+            <a href={item.href} target="_blank">
               <Image
                 src={item.img}
                 width={24}
