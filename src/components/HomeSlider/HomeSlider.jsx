@@ -114,7 +114,7 @@ const HomeSlider = () => {
                   </div>
                   <div className="slideDescr">
                     <p>{el.objNumber}</p>
-                    <p>{el.price}$</p>
+                    <p>{el.price} &#8372;</p>
                   </div>
                 </Link>
               </SwiperSlide>
