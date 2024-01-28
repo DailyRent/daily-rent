@@ -7,6 +7,7 @@ import Header from "@/components/Header/Header";
 // import AuthProvider from "@/components/AuthProvider/AuthProvider";
 import { SiteProvider } from "@/context/SiteContext";
 import dynamic from "next/dynamic";
+import CallBtnRound from "@/components/CallBtnRound/CallBtnRound";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -154,6 +155,7 @@ export default function RootLayout({ children }) {
                 <Header />
                 <main>{children}</main>
                 {/* <Footer /> */}
+                <CallBtnRound />
                 <DynamicFooter />
                 {/* </TranslatorProvider> */}
               </DynamicTranslatorProvider>
