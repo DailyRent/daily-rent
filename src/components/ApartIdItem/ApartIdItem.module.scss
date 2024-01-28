@@ -1,4 +1,4 @@
-@import "../../styles/variables";
+@import '../../styles/variables';
 
 .container {
   width: 100%;
@@ -66,7 +66,7 @@
     max-width: 1920px;
   }
 
-  @media screen and (orientation: "landscape") {
+  @media screen and (orientation: 'landscape') {
     flex-direction: row;
   }
 }
@@ -90,7 +90,7 @@
   justify-content: space-between;
   gap: 16px;
 
-  @media screen and (orientation: "landscape") {
+  @media screen and (orientation: 'landscape') {
     flex: 1;
     height: 375px;
     gap: initial;
@@ -166,34 +166,61 @@
   }
 }
 
-.textWelcome {
-  color: #3c3c3c;
-  font-family: var(--font--crimsonPro);
-  font-weight: 400;
-  line-height: 31.2px;
-  font-size: 22px;
-  color: #3c3c3c;
-  text-transform: unset;
-  margin-bottom: 32px;
+// .textWelcome {
+//   color: #3c3c3c;
+//   font-family: var(--font--crimsonPro);
+//   font-weight: 400;
+//   line-height: 31.2px;
+//   font-size: 22px;
+//   color: #3c3c3c;
+//   text-transform: unset;
+//   margin-bottom: 32px;
 
-  @media screen and (min-width: $desktop) {
-    font-size: 26px;
-  }
-}
+//   @media screen and (min-width: $desktop) {
+//     font-size: 26px;
+//   }
+// }
 
-.textInfo {
+.textInfoContainer {
   color: #3c3c3c;
   font-family: var(--font--crimsonPro);
   font-size: 20px;
   font-weight: 400;
   line-height: 31.2px;
   text-align: justify;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   row-gap: 16px;
-  list-style: unset;
   margin-left: 8px;
+
   @media screen and (min-width: $desktop) {
     font-size: 24px;
   }
+}
+
+.textInfoTitle {
+  color: #3c3c3c;
+  font-family: 'Crimson Text';
+  font-size: 20px;
+  line-height: 31.2px;
+  text-align: justify;
+  @media screen and (min-width: $desktop) {
+    font-size: 24px;
+  }
+}
+
+.textInfoRulse {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  row-gap: 8px;
 }
