@@ -8,10 +8,11 @@ import { handleDeleteImgFromCloudinary } from "@/utils/handleDeleteImgFromCloudi
 import { isDeepEqual } from "@/utils/deepEqual";
 import styles from "./UpdatingForm.module.scss";
 
-const UpdatingFormik = ({ id, apart, mutate }) => {
+const UpdatingForm = ({ id, apart, mutate }) => {
   const {
     objNumber,
     top,
+    priority,
     titleImg,
     imgs,
     address,
@@ -29,6 +30,7 @@ const UpdatingFormik = ({ id, apart, mutate }) => {
 
   const currentValues = {
     top,
+    priority,
     titleImg,
     imgs,
     address,
@@ -46,6 +48,7 @@ const UpdatingFormik = ({ id, apart, mutate }) => {
 
   const initialValues = {
     newTop: top,
+    newPriority: priority,
     newTitleImg: titleImg,
     newImgs: imgs,
     newAddress: address,
@@ -64,6 +67,7 @@ const UpdatingFormik = ({ id, apart, mutate }) => {
   const handleSubmit = async (values, actions) => {
     const {
       newTop,
+      newPriority,
       newTitleImg,
       newImgs,
       newAddress,
@@ -81,6 +85,7 @@ const UpdatingFormik = ({ id, apart, mutate }) => {
 
     const updatedValues = {
       top: newTop,
+      priority: newPriority,
       titleImg: newTitleImg,
       imgs: newImgs,
       address: newAddress,
@@ -145,11 +150,21 @@ const UpdatingFormik = ({ id, apart, mutate }) => {
                 ТОП
               </label>
 
-              {/* <ErrorMessage
-                name="newTitleImg"
+              <label htmlFor="priority">Пріоритет:</label>
+              <ErrorMessage
+                name="newPriority"
                 className={styles.error}
                 component="p"
-              /> */}
+              />
+              <Field
+                type="text"
+                name="newPriority"
+                id="priority"
+                maxLength="3"
+                value={values.newPriority}
+                className={styles.input}
+              />
+
               <CldUploadButton
                 name="newTitleImg"
                 className={styles.uploadBtn}
@@ -244,23 +259,18 @@ const UpdatingFormik = ({ id, apart, mutate }) => {
               <label htmlFor="Price">Ціна:</label>
               <ErrorMessage
                 name="newPrice"
-                id="Price"
                 className={styles.error}
                 component="p"
               />
               <Field
                 type="text"
                 name="newPrice"
+                id="Price"
                 maxLength="7"
                 value={values.newPrice}
                 className={styles.input}
               />
 
-              {/* <ErrorMessage
-                name="newRoomsQuantity"
-                className={styles.error}
-                component="p"
-              /> */}
               <fieldset className={styles.roomsQuantity}>
                 <legend>Кількість кімнат:</legend>
                 <Field
@@ -417,11 +427,6 @@ const UpdatingFormik = ({ id, apart, mutate }) => {
                 </label>
               </fieldset>
 
-              {/* <ErrorMessage
-                name="newBedsQuantity"
-                className={styles.error}
-                component="p"
-              /> */}
               <fieldset className={styles.bedsQuantity}>
                 <legend>Кількість спальних місць:</legend>
                 <Field
@@ -511,4 +516,4 @@ const UpdatingFormik = ({ id, apart, mutate }) => {
   );
 };
 
-export default UpdatingFormik;
+export default UpdatingForm;

@@ -14,10 +14,11 @@ import { GetData } from "@/fetch/clientFetch";
 import styles from "./DashboardForm.module.scss";
 import { handleDeleteImgFromCloudinary } from "@/utils/handleDeleteImgFromCloudinary";
 
-const DashboardFormik = () => {
+const DashboardForm = () => {
   const initialValues = {
     objNumber: "",
     top: false,
+    priority: "",
     titleImg: "",
     imgs: [],
     address: "",
@@ -101,6 +102,22 @@ const DashboardFormik = () => {
               <Field type="checkbox" name="top" id="Top" />
               ТОП
             </label>
+
+            <label htmlFor="Priority">Пріоритет:</label>
+            <ErrorMessage
+              name="priority"
+              className={styles.error}
+              component="p"
+            />
+            <Field
+              type="text"
+              name="priority"
+              id="Priority"
+              maxLength="3"
+              placeholder="57"
+              className={styles.input}
+            />
+
             <ErrorMessage
               name="titleImg"
               className={styles.error}
@@ -196,7 +213,6 @@ const DashboardFormik = () => {
             <label htmlFor="Price">Ціна:</label>
             <ErrorMessage
               name="price"
-              id="Price"
               className={styles.error}
               component="p"
             />
@@ -260,7 +276,7 @@ const DashboardFormik = () => {
                   id="wi-fi"
                   name="amenities"
                   value="Wi-Fi"
-                  // defaultChecked
+                // defaultChecked
                 />
                 Wi-Fi
               </label>
@@ -438,4 +454,4 @@ const DashboardFormik = () => {
   );
 };
 
-export default DashboardFormik;
+export default DashboardForm;

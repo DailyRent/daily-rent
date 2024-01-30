@@ -10,6 +10,10 @@ const apartmentSchema = new Schema({
     top: {
         type: Boolean,
     },
+    priority: {
+        type: String,
+        required: true,
+    },
     titleImg: {
         type: String,
         required: true,
