@@ -76,16 +76,20 @@
   }
 }
 
-.imgContainer {
-  width: 300px;
-  height: 150px;
-  position: relative;
+.priority {
+  font-weight: 600;
 }
 
-.img {
-  -o-object-fit: cover;
-  object-fit: cover;
-}
+// .imgContainer {
+//   width: 300px;
+//   height: 150px;
+//   position: relative;
+// }
+
+// .img {
+//   -o-object-fit: cover;
+//   object-fit: cover;
+// }
 
 .imgsWrapper {
   gap: 10px;
@@ -148,13 +152,3 @@
 .description {
   display: block;
 }
-
-// .updatingForm {
-//   display: none;
-
-//   @media screen and (min-width: $tablet) {
-//     -webkit-box-flex: 1;
-//     -ms-flex: 1;
-//     flex: 1;
-//   }
-// }

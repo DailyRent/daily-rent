@@ -214,8 +214,20 @@ const ApartmentsComponent = () => {
   const [numberBedsArr, setNumberBedsArr] = useState([]);
   const { t, i18n } = useTranslation();
   const containerRef = useRef();
-  // console.log(data);
-  const filteredRoomsData = data?.filter((room) => {
+  // console.log("data", data);
+
+  let sortedData = [];
+
+  if (!isLoading) {
+    sortedData = [...data];
+    sortedData.sort((a, b) => {
+      return Number(a.priority) - Number(b.priority);
+    })
+  }
+
+  const filteredRoomsData = sortedData?.filter((room) => {
+
+    // const filteredRoomsData = data?.filter((room) => {
     if (numberRoomsArr.length === 0) return true; //якщо фільтр пустий, виводимо всі квартири
 
     const filteredRooms = numberRoomsArr.some(
@@ -382,7 +394,7 @@ const ApartmentsComponent = () => {
               ))}
         </ul>
       )}
-      {filteredAmenitiesData?.length <= 0 && (
+      {!isLoading && filteredAmenitiesData?.length <= 0 && (
         <div className={styles.notFoundTextStyles}>
           <p>
             {notFoundText()} {t('ApartmentsPage.NotFound')}

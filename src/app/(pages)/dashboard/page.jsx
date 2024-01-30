@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { CldImage } from "next-cloudinary";
 import { toast } from "react-toastify";
-import DashboardFormik from "@/components/DashboardForm/DashboardFormik";
+import DashboardForm from "@/components/DashboardForm/DashboardForm";
 import { GetData } from "@/fetch/clientFetch";
 import styles from "./page.module.scss";
 import { handleDeleteImgFromCloudinary } from "@/utils/handleDeleteImgFromCloudinary";
@@ -15,6 +15,16 @@ const Dashboard = () => {
   const session = useSession();
 
   const { data, mutate, isLoading } = GetData();
+
+  let sortedByUpdateData = [];
+
+  if (!isLoading) {
+    sortedByUpdateData = [...data];
+
+    sortedByUpdateData.sort((a, b) => {
+      return Date.parse(b.updatedAt) - Date.parse(a.updatedAt);
+    });
+  }
 
   const router = useRouter();
 
@@ -28,6 +38,9 @@ const Dashboard = () => {
     }
     toast.success(`Обʼєкт №: ${objNumber} видалено`, { theme: "dark" });
   };
+
+  const sortedPriorities = data?.map((item) => item.priority).sort((a, b) => { return a - b }).join(", ");
+
 
   if (session.status === "loading") {
     return <Loading />;
@@ -54,15 +67,18 @@ const Dashboard = () => {
           Для користування цим функціоналом розмір Вашого екрану повинен бути не
           менше 768 пікселів.
         </p>
+        {!isLoading && <p className={styles.priorityList}>Значення пріоритетів: {sortedPriorities}</p>}
         {isLoading ? (
           <Loading />
         ) : (
           <div className={styles.contentWrapper}>
+
             <div className={styles.apartments}>
-              {data?.map((apart) => (
+              {sortedByUpdateData.map((apart) => (
                 <div key={apart._id} className={styles.apartment}>
                   <h2>Обʼєкт №: {apart.objNumber}</h2>
                   {apart.top ? <p>ТОП</p> : null}
+                  <p className={styles.priority}>Пріоритет: {apart.priority}</p>
                   <p>Основне фото:</p>
                   <CldImage
                     width="300"
@@ -142,7 +158,7 @@ const Dashboard = () => {
                 </div>
               ))}
             </div>
-            <DashboardFormik />
+            <DashboardForm />
           </div>
         )}
       </div>

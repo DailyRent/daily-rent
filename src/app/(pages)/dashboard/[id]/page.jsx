@@ -4,7 +4,7 @@ import styles from "./page.module.scss";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import useSWR from "swr";
-import UpdatingFormik from "@/components/UpdatingForm/UpdatingFormik";
+import UpdatingForm from "@/components/UpdatingForm/UpdatingForm";
 import Link from "next/link";
 import { CldImage } from "next-cloudinary";
 import { handleDeleteImgFromMongoDB } from "@/utils/handleDeleteImgFromMongoDB";
@@ -55,16 +55,17 @@ const EditCard = ({ params }) => {
             <div key={data._id} className={styles.apartment}>
               <h2>Обʼєкт №: {data.objNumber}</h2>
               {data.top ? <p>ТОП</p> : null}
+              <p className={styles.priority}>Пріоритет: {data.priority}</p>
               <p>Основне фото:</p>
-              <div className={styles.imgContainer}>
-                <CldImage
-                  width="300"
-                  height="150"
-                  crop="fill"
-                  src={data.titleImg}
-                  alt={data.address}
-                />
-              </div>
+              {/* <div className={styles.imgContainer}> */}
+              <CldImage
+                width="300"
+                height="150"
+                crop="fill"
+                src={data.titleImg}
+                alt={data.address}
+              />
+              {/* </div> */}
               <p>Додаткові фото:</p>
               <ul className={styles.imgsWrapper}>
                 {data.imgs.map((item, index) => (
@@ -122,7 +123,7 @@ const EditCard = ({ params }) => {
                 Опис англійською: {data.descriptionEn}
               </p>
             </div>
-            <UpdatingFormik id={id} apart={data} mutate={mutate} />
+            <UpdatingForm id={id} apart={data} mutate={mutate} />
           </div>
         )}
       </div>

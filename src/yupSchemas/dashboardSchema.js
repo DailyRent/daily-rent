@@ -22,6 +22,10 @@ export const dashboardSchema = Yup.object({
             },
         }),
     top: Yup.boolean(),
+    priority: Yup.number()
+        .moreThan(-1, "Тільки додатні числа")
+        .typeError("Тільки числа")
+        .required("Пріоритет це обовʼязкове поле"),
     titleImg: Yup.string()
         .required("Головне фото це обовʼязкове поле"),
     imgs: Yup.array().min(2, "Мінімум дві додаткові фотографії"),
