@@ -14,10 +14,7 @@ const CallBtn = ({ className }) => {
   return (
     <>
       {/* {!isLoading && ( */}
-      <a
-        href="tel:+380503738465"
-        className={styles.button + " " + `${className}`}
-      >
+      <a href="tel:+380991930030" className={styles.button + " " + `${className}`}>
         {!isLoading && t("Buttons.CalltBtn")}
       </a>
       {/* )} */}
