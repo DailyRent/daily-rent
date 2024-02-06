@@ -1,8 +1,7 @@
 import { formatDate } from "@/utils/dateUtils";
 
-const TELEGRAM_CHAT_ID = "@TestDailyRent";
+const TELEGRAM_CHAT_ID = "@DailyRent24";
 const telegramApi = process.env.TELEGRAM_API
-
 
 export const sendToTelegram = async (formData) => {
 
@@ -15,7 +14,7 @@ export const sendToTelegram = async (formData) => {
 
     const { userName, phone, objNumber, checkIn, checkOut } = formatedData;
 
-    const textStart = `Вельмишановний Daily Rent,
+    const textStart = `Шановний Daily Rent,
      ${userName} хотів би забронювати квартиру  ${objNumber}`;
 
     const textEnd = `Прохання зателефонувати: ${phone} `;
