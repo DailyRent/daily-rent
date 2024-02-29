@@ -11,7 +11,7 @@ export const socialLinks = [
     id: v4(),
     title: "Instagram",
     img: "/social-links/Instagram.webp",
-    href: "#",
+    href: "https://www.instagram.com/daily.rent.sumy",
   },
   {
     id: v4(),
