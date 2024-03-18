@@ -1,17 +1,10 @@
-@import '../../styles/variables';
+@import "../../styles/variables";
 
 .container {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 100px 16px 40px 16px;
-  @media screen and (min-width: $tablet) {
-    padding: 108px 32px 48px 32px;
-  }
-  @media screen and (min-width: $desktop) {
-    padding: 186px 86px 48px 86px;
-  }
 }
 
 .backContainer {
@@ -66,7 +59,7 @@
     max-width: 1920px;
   }
 
-  @media screen and (orientation: 'landscape') {
+  @media screen and (orientation: "landscape") {
     flex-direction: row;
   }
 }
@@ -90,7 +83,7 @@
   justify-content: space-between;
   gap: 16px;
 
-  @media screen and (orientation: 'landscape') {
+  @media screen and (orientation: "landscape") {
     flex: 1;
     height: 375px;
     gap: initial;
@@ -166,21 +159,6 @@
   }
 }
 
-// .textWelcome {
-//   color: #3c3c3c;
-//   font-family: var(--font--crimsonPro);
-//   font-weight: 400;
-//   line-height: 31.2px;
-//   font-size: 22px;
-//   color: #3c3c3c;
-//   text-transform: unset;
-//   margin-bottom: 32px;
-
-//   @media screen and (min-width: $desktop) {
-//     font-size: 26px;
-//   }
-// }
-
 .textInfoContainer {
   color: #3c3c3c;
   font-family: var(--font--crimsonPro);
@@ -205,7 +183,7 @@
 
 .textInfoTitle {
   color: #3c3c3c;
-  font-family: 'Crimson Text';
+  font-family: "Crimson Text";
   font-size: 20px;
   line-height: 31.2px;
   text-align: justify;
