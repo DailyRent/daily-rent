@@ -1,4 +1,4 @@
-@import "@/styles/_variables.scss";
+@import '@/styles/_variables.scss';
 
 .container {
   display: -webkit-box;
@@ -7,6 +7,15 @@
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  padding: 112px 20px 24px 20px;
+
+  @media screen and (min-width: $tablet) {
+    padding: 118px 36px 40px 36px;
+  }
+
+  @media screen and (min-width: 1366px) {
+    padding: 200px 86px 32px 86px;
+  }
 }
 
 .filterContainer {
@@ -49,7 +58,7 @@
 .containerOneRooms {
   display: -ms-grid;
   display: grid;
-  grid-template-columns: repeat(1, 328px);
+  grid-template-columns: repeat(1, 280px);
   -webkit-box-pack: space-evenly;
   -ms-flex-pack: space-evenly;
   justify-content: space-evenly;
@@ -58,11 +67,14 @@
   column-gap: 30px;
   row-gap: 40px;
   padding: 40px 0;
+  @media screen and (min-width: 360px) {
+    grid-template-columns: repeat(1, 320px);
+  }
   @media screen and (min-width: $tablet) {
-    grid-template-columns: repeat(2, 324px);
+    grid-template-columns: repeat(2, 1fr);
   }
   @media screen and (min-width: $desktop) {
-    grid-template-columns: repeat(4, 300px);
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
