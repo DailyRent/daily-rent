@@ -79,7 +79,6 @@ const ApartIdItem = ({ params }) => {
       <ModalR isOpen={isModalOpen} closeModal={closeModal}>
         <OrderForm isOpen={isModalOpen} closeModal={closeModal} />
       </ModalR>
-      {/* <h1 className="visuallyHidden">ApartId Page</h1> */}
       {isLoading ? (
         <IsLoading />
       ) : (
@@ -101,9 +100,6 @@ const ApartIdItem = ({ params }) => {
         </article>
       )}
       <article className={styles.textGrid}>
-        {/* <h6 className={styles.textWelcome}>
-          {!isLoading && t("ApartIdItem.TextWelcome")}
-        </h6> */}
         <ul className={styles.textInfoContainer}>
           {!isLoading &&
             allInformation.map((el, index) => {

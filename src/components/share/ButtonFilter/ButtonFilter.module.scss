@@ -1,7 +1,6 @@
 @import '../../../styles/variables';
 
 .filterContainer {
-  // width: 75px;
   height: 24px;
   @media screen and (min-width: $tablet) {
     position: absolute;
@@ -42,7 +41,6 @@
 
 .filter {
   color: $acentColor;
-  // font-family: Crimson Text;
   font-family: var(--font--crimsonPro);
   font-size: 16px;
   font-weight: 400;

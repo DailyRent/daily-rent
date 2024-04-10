@@ -1,4 +1,4 @@
-@import "../../../styles/variables";
+@import '../../../styles/variables';
 
 .dataList {
   width: 100%;
@@ -15,13 +15,6 @@
   position: relative;
   row-gap: 16px;
 
-  // padding-bottom: 20px;
-  // border-bottom: 1px solid #c7c7c7;
-  // @media screen and (min-width: $tablet) {
-  //   -webkit-box-align: start;
-  //   -ms-flex-align: start;
-  //   align-items: flex-start;
-  // }
   @media screen and (orientation: landscape) {
     row-gap: 8px;
   }
@@ -88,14 +81,6 @@
     -ms-flex-align: start;
     align-items: flex-start;
   }
-  // &:hover .imgContainer {
-  //   &::before {
-  //     animation-play-state: paused;
-  //   }
-  // }
-  // &:hover .img {
-  //   animation-play-state: paused;
-  // }
 }
 
 .imgContainer {
@@ -103,24 +88,9 @@
   width: 16px;
   height: 16px;
   margin-right: 16px;
-  // &::before {
-  //   content: '';
-  //   display: block;
-  //   position: absolute;
-  //   bottom: 3px;
-  //   left: 43%;
-  //   width: 3px;
-  //   animation: shadowMob 2s infinite linear;
-  //   transition: box-shadow 0.3s ease-in-out;
-  // }
   @media screen and (min-width: $tablet) {
     width: 20px;
     height: 20px;
-    // &::before {
-    //   // left: 38%;
-    //   width: 5px;
-    //   animation: shadow 2s infinite linear;
-    // }
   }
   @media screen and (min-width: 1366px) {
     margin-right: 16px;
@@ -129,33 +99,11 @@
   }
 }
 
-// @keyframes shadowMob {
-//   0%,
-//   100% {
-//     box-shadow: 0px 5px 4px 2px #4343436c;
-//   }
-//   50% {
-//     box-shadow: 0px 5px 3px 1px #4343436c;
-//   }
-// }
-
-// @keyframes shadow {
-//   0%,
-//   100% {
-//     box-shadow: 0px 9px 5px 2px #4343436c;
-//   }
-//   50% {
-//     box-shadow: 0px 9px 3px 1px #4343436c;
-//   }
-// }
-
 .img {
   width: 16px;
   height: 16px;
   stroke: #6d6d6d;
   fill: none;
-  // object-fit: contain;
-  // animation: spin 2s infinite linear;
   @media screen and (min-width: $tablet) {
     width: 20px;
     height: 20px;
@@ -166,27 +114,10 @@
   }
 }
 
-// @keyframes spin {
-//   0%,
-//   100% {
-//     transform: translate(0, 0);
-//   }
-//   50% {
-//     transform: translate(0, 10%);
-//   }
-// }
-
 .googleMapsText {
   position: relative;
   outline: none;
   color: #373737;
-  // text-decoration: underline;
-  // text-underline-offset: 4px;
-  // text-decoration-thickness: 1px;
-  // text-decoration-color: #373737;
-  // @media screen and (min-width: 1366px) {
-  //   text-underline-offset: 6px;
-  // }
   width: 228px;
   -webkit-hyphens: auto;
   overflow-wrap: break-word;
@@ -203,14 +134,9 @@
 }
 
 .dataTextPrice {
-  // position: absolute;
-  // top: 0;
-  // right: 28px;
   color: $acentColor;
   font-size: 20px;
   @media screen and (min-width: 1366px) {
-    // right: 0;
-    // position: static;
     font-size: 32px;
   }
 }

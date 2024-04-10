@@ -44,9 +44,6 @@ const ApartDataList = ({ dataId }) => {
           </figcaption>
         </a>
       </address>
-      {/* <span className={styles.dataText + " " + styles.dataTextPrice}>
-        ₴ {dataId.price}
-      </span> */}
     </div>
   );
 };

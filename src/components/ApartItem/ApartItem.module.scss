@@ -67,12 +67,8 @@
   font-weight: 400;
   text-overflow: ellipsis;
   width: 300px;
-  // white-space: wrap;
   white-space: nowrap;
   overflow: hidden;
-  // &:hover {
-  //   white-space: wrap;
-  // }
 }
 
 .bottomContainer {
@@ -97,7 +93,6 @@
 
 .codeRooms {
   color: $acentColor;
-  // font-family: Segoe UI;
   font-size: 13px;
   font-weight: 400;
 }
@@ -128,9 +123,6 @@
 }
 
 .btnRooms {
-  // position: absolute;
-  // bottom: 0;
-  // right: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -147,7 +139,6 @@
   border-radius: 24px;
   border: 1px solid $acentColor;
   color: $acentColor;
-  // font-family: Segoe UI;
   font-size: 14px;
   font-weight: 400;
   &:hover,
