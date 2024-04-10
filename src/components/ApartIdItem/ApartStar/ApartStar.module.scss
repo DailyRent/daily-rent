@@ -23,31 +23,6 @@
   }
 }
 
-// .starList {
-//   display: -webkit-box;
-//   display: -ms-flexbox;
-//   display: flex;
-//   -webkit-box-align: center;
-//   -ms-flex-align: center;
-//   align-items: center;
-//   row-gap: 21px;
-//   color: #6d6d6d;
-//   // font-family: Crimson Text;
-//   font-family: var(--font--crimsonPro);
-//   font-size: 16px;
-//   font-weight: 400;
-//   margin-bottom: 32px;
-//   @media screen and (min-width: $tablet) {
-//     margin-bottom: 28px;
-//   }
-//   @media screen and (min-width: 1366px) {
-//     font-size: 20px;
-//   }
-//   @media screen and (min-width: 1920px) {
-//     margin-bottom: 136px;
-//   }
-// }
-
 .starText {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -95,10 +70,3 @@
     }
   }
 }
-
-// .svgStar {
-//   width: 20px;
-//   height: 20px;
-//   margin-right: 8px;
-//   margin-left: 16px;
-// }
