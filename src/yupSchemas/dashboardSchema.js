@@ -10,7 +10,6 @@ export const dashboardSchema = Yup.object({
         .test({
             name: "objNumber",
             test(value, ctx) {
-                // console.log('this.options:', this.options)
                 const listOfNumbers = this.options.context;
                 if (listOfNumbers.includes(String(value)) && value) {
                     return ctx.createError({

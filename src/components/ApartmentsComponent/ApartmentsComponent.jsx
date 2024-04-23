@@ -33,7 +33,6 @@ const ApartmentsComponent = () => {
   }
 
   const filteredRoomsData = sortedData?.filter((room) => {
-    // const filteredRoomsData = data?.filter((room) => {
     if (numberRoomsArr.length === 0) return true; //якщо фільтр пустий, виводимо всі квартири
 
     const filteredRooms = numberRoomsArr.some(

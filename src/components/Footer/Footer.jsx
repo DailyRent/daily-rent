@@ -7,8 +7,6 @@ import { SiteContext } from "@/context/SiteContext";
 import OrderBtn from "@/components/OrderBtn/OrderBtn";
 import CallBtn from "@/components/CallBtn/CallBtn";
 import Logo from "@/components/Logo/Logo";
-// import Navigation from "@/components/Navigation/Navigation";
-// import SocialLinks from "@/components/SocialLinks/SocialLinks";
 import ModalR from "@/components/Modal/Modal";
 import OrderForm from "@/components/OrderForm/OrderForm";
 import styles from "./Footer.module.scss";
@@ -22,7 +20,6 @@ const Footer = ({ onClick }) => {
 
   const { i18n } = useTranslation();
 
-  // const isClient = typeof window !== "undefined";
   const handleSetScrolledWindow = () => {
     setScrolledWindow(0);
   };
@@ -58,8 +55,6 @@ const Footer = ({ onClick }) => {
       <footer className={styles.container}>
         {isMobile && (
           <div className={styles.mobileContentWrapper}>
-            {/* {isMobile && ( */}
-            {/* <> */}
             <div className={styles.mobileItem}>
               <Logo className={`${styles.footerLogo}  textLinkAnimation`} />
               <Link
@@ -77,13 +72,10 @@ const Footer = ({ onClick }) => {
                 +380675151939
               </Link>
             </div>
-            {/* </> */}
-            {/* )} */}
           </div>
         )}
 
         {!isMobile && (
-          // <>
           <div className={styles.contentWrapper}>
             <div className={styles.contacts}>
               <Link
@@ -144,7 +136,6 @@ const Footer = ({ onClick }) => {
               />
             </div>
           </div>
-          // </>
         )}
         <p className={styles.rights}>
           made by{" "}

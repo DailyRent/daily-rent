@@ -7,7 +7,6 @@ import Link from "next/link";
 
 import { useTranslation } from "react-i18next";
 import { currentLanguages } from "@/data";
-// import Image from "next/image";
 import { CldImage } from "next-cloudinary";
 
 import { GetData } from "@/fetch/clientFetch";

@@ -18,14 +18,10 @@
     -moz-column-gap: 16px;
     column-gap: 16px;
   }
-
-  @media screen and (min-width: $desktop) {
-  }
 }
 
 .filterRoomText {
   color: $footerLogoColor;
-  // font-family: Crimson Text;
   font-family: var(--font--crimsonPro);
   font-size: 14px;
   font-weight: 400;

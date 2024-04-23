@@ -31,9 +31,11 @@
   -ms-flex-pack: justify;
   justify-content: space-between;
   margin-bottom: 25px;
+
   @media screen and (min-width: $tablet) {
     margin-bottom: 35px;
   }
+
   @media screen and (min-width: 1366px) {
     margin-bottom: 16px;
   }
@@ -56,6 +58,7 @@
 
 .active {
   position: relative;
+
   &::after {
     content: "";
     display: block;
@@ -82,9 +85,11 @@
   column-gap: 30px;
   row-gap: 40px;
   padding: 40px 0;
+
   @media screen and (min-width: $tablet) {
     grid-template-columns: repeat(2, 324px);
   }
+
   @media screen and (min-width: $desktop) {
     grid-template-columns: repeat(4, 300px);
   }
@@ -94,20 +99,17 @@
   width: 100%;
   text-align: center;
   margin: 0 auto;
-  // display: flex;
-  // align-items: center;
-  // justify-content: center;
-
   color: $acentColor;
-  // font-family: Crimson Text;
   font-family: var(--font--crimsonPro);
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+
   @media screen and (min-width: $tablet) {
     font-size: 28px;
   }
+
   @media screen and (min-width: 1024px) {
     font-size: 32px;
   }

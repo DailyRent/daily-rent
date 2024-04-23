@@ -5,11 +5,9 @@
   display: -ms-flexbox;
   display: flex;
   gap: 8px;
+
   @media screen and (min-width: $tablet) {
     & img {
-      // width: clamp(1.5rem, 0.929rem + 1.19vw, 2rem);
-      // height: clamp(1.5rem, 0.929rem + 1.19vw, 2rem);
-
       width: clamp(1rem, -0.143rem + 2.381vw, 2rem);
       height: clamp(1rem, -0.143rem + 2.381vw, 2rem);
     }

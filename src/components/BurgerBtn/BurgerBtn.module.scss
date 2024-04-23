@@ -1,8 +1,6 @@
 @import "../../styles/_variables.scss";
 
 .burgerBtn {
-  // width: 28px;
-  // height: 28px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -13,7 +11,6 @@
   background: none;
   margin-left: auto;
   margin-right: 0;
-  // z-index: 30;
 
   display: -webkit-box;
   display: -ms-flexbox;
@@ -32,10 +29,6 @@
     -ms-transform: rotate(360deg);
     transform: rotate(360deg);
   }
-
-  // @media screen and (min-width: $tablet) {
-  //   display: none;
-  // }
 }
 
 .iconBurger {
@@ -43,6 +36,7 @@
   height: 12px;
 
   fill: $darckFontColor;
+
   @media screen and (min-width: $mobile) {
     width: 40px;
     height: 24px;
@@ -54,6 +48,7 @@
   height: 20px;
 
   stroke: $darckFontColor;
+
   @media screen and (min-width: $mobile) {
     width: 32px;
     height: 32px;

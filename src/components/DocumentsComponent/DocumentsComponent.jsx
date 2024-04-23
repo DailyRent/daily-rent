@@ -6,7 +6,6 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import seoStyles from "@/app/seoStyles.module.css";
-// import { documents } from "@/data/documents.data";
 
 const DocumentsComponent = () => {
   const { t } = useTranslation();
@@ -22,7 +21,6 @@ const DocumentsComponent = () => {
       <h1 className={seoStyles.titleHidden}>
         Зняти квартиру суми. Суми квартири. Квартири подобово.
       </h1>
-      {/* <h1 className="visuallyHidden">Documents Page</h1> */}
       <nav className={styles.toBackContainer}>
         {!isLoading && (
           <article className="textLink">
@@ -37,30 +35,6 @@ const DocumentsComponent = () => {
       <article className={styles.documentListThumb}>
         <h3 className={seoStyles.titleHidden}>Documents files</h3>
         <ul className={styles.documentList}>
-          {/* {documents.map((item) => (
-            <li key={item.id} className={styles.documentItem}>
-              <a
-                href={item.pdf}
-                target="_blank"
-                rel="noopener noreferrer"
-                title={item.title}
-              >
-                <figure className={styles.documentTop}>
-                  <Image
-                    className={styles.documentTopImg}
-                    src={item.img}
-                    alt={item.alt}
-                    fill={true}
-                    title={item.title}
-                    sizes="(min-width: 1480px) 299px, (min-width: 780px) 204px, 259px"
-                  />
-                </figure>
-                <figcaption className={styles.documentText}>
-                  {item.text}
-                </figcaption>
-              </a>
-            </li>
-          ))} */}
           <li className={styles.documentItem}>
             <a href="/pdf/doc1.pdf" target="_blank" rel="noopener noreferrer">
               <figure className={styles.documentTop}>
@@ -93,7 +67,7 @@ const DocumentsComponent = () => {
                 />
               </figure>
               <figcaption className={styles.documentText}>
-              {!isLoading && t("DocumentsPage.Document2")}
+                {!isLoading && t("DocumentsPage.Document2")}
               </figcaption>
             </a>
           </li>
@@ -111,7 +85,7 @@ const DocumentsComponent = () => {
                 />
               </figure>
               <figcaption className={styles.documentText}>
-              {!isLoading && t("DocumentsPage.Document3")}
+                {!isLoading && t("DocumentsPage.Document3")}
               </figcaption>
             </a>
           </li>

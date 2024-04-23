@@ -12,7 +12,6 @@ const FilterRoomItem = ({
   title,
   activeIndex,
   setActiveIndex,
-  // numberRoomsArr,
   setNumberRoomsArr,
   ariaTextEn,
   ariaTextUk,
@@ -51,21 +50,21 @@ const FilterRoomItem = ({
           {title}
           {t('Buttons.FilterQuantRooms')}
         </p>
-      
-      <input
-        id={id}
-        type="checkbox"
-        className={filterCheckboxStyles}
-        checked={isChecked}
-        aria-label={
-          i18n.language === currentLanguages.EN ? ariaTextEn : ariaTextUk
-        }
-        onChange={() => {
-          setActiveIndex(id),
-            isNumberRoomsChecked(),
-            toggleNumberRoomsForFilter();
-        }}
-      /></>)}
+
+          <input
+            id={id}
+            type="checkbox"
+            className={filterCheckboxStyles}
+            checked={isChecked}
+            aria-label={
+              i18n.language === currentLanguages.EN ? ariaTextEn : ariaTextUk
+            }
+            onChange={() => {
+              setActiveIndex(id),
+                isNumberRoomsChecked(),
+                toggleNumberRoomsForFilter();
+            }}
+          /></>)}
     </li>
   );
 };

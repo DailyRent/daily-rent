@@ -13,5 +13,4 @@ export const registerSchema = Yup.object({
         .min(7, 'Пароль занадто короткий!')
         .max(40, 'Пароль занадто довгий!')
         .required('Пароль це обовʼязкове поле'),
-
 });

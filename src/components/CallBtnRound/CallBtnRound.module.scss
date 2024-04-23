@@ -2,7 +2,6 @@
 
 .callBtn {
   background: #34e0e9;
-  //   border: 2px solid #34e0e9;
   border-radius: 50%;
   box-shadow: 0 8px 10px rgba(52, 224, 233, 0.3);
   cursor: pointer;
@@ -18,6 +17,7 @@
   transition: 0.3s;
   -webkit-animation: hoverWave linear 1s infinite;
   animation: hoverWave linear 1s infinite;
+
   @media screen and (min-width: $tablet) {
     scale: 1.6;
   }
@@ -28,30 +28,32 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
     & svg {
       width: inherit;
       height: inherit;
       fill: $lightFontColor;
-      //   -webkit-animation: 1.2s ease 0s normal none 1 running shake;
-      //   animation: 1.2s ease 0s normal none 1 running shake;
-
       animation: shake 1.2s ease infinite;
     }
   }
 }
+
 @keyframes hoverWave {
   0% {
     box-shadow: 0 8px 10px rgba(52, 224, 233, 0.3),
       0 0 0 0 rgba(52, 224, 233, 0.2), 0 0 0 0 rgba(52, 224, 233, 0.2);
   }
+
   40% {
     box-shadow: 0 8px 10px rgba(52, 224, 233, 0.3),
       0 0 0 15px rgba(52, 224, 233, 0.2), 0 0 0 0 rgba(52, 224, 233, 0.2);
   }
+
   80% {
     box-shadow: 0 8px 10px rgba(52, 224, 233, 0.3),
       0 0 0 30px rgba(52, 224, 233, 0), 0 0 0 26.7px rgba(52, 224, 233, 0.067);
   }
+
   100% {
     box-shadow: 0 8px 10px rgba(52, 224, 233, 0.3),
       0 0 0 30px rgba(52, 224, 233, 0), 0 0 0 40px rgba(52, 224, 233, 0);
@@ -64,51 +66,61 @@
     -webkit-transform: rotateZ(0deg);
     transform: rotateZ(0deg);
   }
+
   10% {
     transform: rotateZ(-30deg);
     -ms-transform: rotateZ(-30deg);
     -webkit-transform: rotateZ(-30deg);
   }
+
   20% {
     transform: rotateZ(15deg);
     -ms-transform: rotateZ(15deg);
     -webkit-transform: rotateZ(15deg);
   }
+
   30% {
     transform: rotateZ(-10deg);
     -ms-transform: rotateZ(-10deg);
     -webkit-transform: rotateZ(-10deg);
   }
+
   40% {
     transform: rotateZ(7.5deg);
     -ms-transform: rotateZ(7.5deg);
     -webkit-transform: rotateZ(7.5deg);
   }
+
   50% {
     transform: rotateZ(-6deg);
     -ms-transform: rotateZ(-6deg);
     -webkit-transform: rotateZ(-6deg);
   }
+
   60% {
     transform: rotateZ(5deg);
     -ms-transform: rotateZ(5deg);
     -webkit-transform: rotateZ(5deg);
   }
+
   70% {
     transform: rotateZ(-4.28571deg);
     -ms-transform: rotateZ(-4.28571deg);
     -webkit-transform: rotateZ(-4.28571deg);
   }
+
   80% {
     transform: rotateZ(3.75deg);
     -ms-transform: rotateZ(3.75deg);
     -webkit-transform: rotateZ(3.75deg);
   }
+
   90% {
     transform: rotateZ(-3.33333deg);
     -ms-transform: rotateZ(-3.33333deg);
     -webkit-transform: rotateZ(-3.33333deg);
   }
+
   100% {
     transform: rotateZ(0deg);
     -ms-transform: rotateZ(0deg);

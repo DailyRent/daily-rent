@@ -111,13 +111,12 @@ const UpdatingForm = ({ id, apart, mutate }) => {
         method: "PUT",
         body: JSON.stringify(updatedValues),
       });
-      // автоматично обновлює строрінку при зміні кількості карточок
+      // автоматично обновлює сторінку при зміні кількості карток
       mutate();
       // обнуляє форму
       actions.resetForm();
       toast.success(`Дані обʼєкту №: ${objNumber} оновлено`);
     } catch (err) {
-      console.log(err);
       toast.error(`Помилка! Обʼєкт №: ${objNumber} не оновлено`);
     }
   };

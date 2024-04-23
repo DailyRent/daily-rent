@@ -2,7 +2,6 @@ export const getData = async () => {
   const res = await fetch(`${process.env.NEXTAUTH_URL}/api/apartments`, {
     cache: "no-store",
   });
-  console.log("getData", res);
 
   if (!res.ok) {
     throw new Error("Failed to fetch data");
@@ -25,13 +24,6 @@ export const getById = async (id) => {
     console.log(error);
   }
 };
-
-// /components/Hero/Hero.jsx (server component)
-// const Hero = async () => {
-// const data = await getData();
-// console.log("server fetch", data[0]);
-// ......
-// }
 
 export const getMetaById = async (id) => {
   try {

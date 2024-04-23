@@ -64,25 +64,10 @@ const apartmentSchema = new Schema({
         type: String,
         required: true,
     },
-    // эти свойства будут заходить в amenities, благодаря checkbox
-    // Air conditioning: bool,
-    // SmartTV: bool,
-    // WiFi: bool,
-    // Bath: bool,
-    // Shower: bool,
-    // Jacuzzi: bool,
-    // Microwave: bool,
-    // Washing machine: bool,
-    // Balcony: bool,
-    // Boiler: bool,  -  котел
-    // Water heater: bool,
-    // Parking: bool,   
-
 },
     { timestamps: true },
 )
 
 
-// export default mongoose.model("Apartment", apartmentSchema);
 //If the Apartment collection does not exist - create a new one.
 export default mongoose.models.Apartment || mongoose.model("Apartment", apartmentSchema);

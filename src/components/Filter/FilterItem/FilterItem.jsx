@@ -10,7 +10,6 @@ const FilterItem = ({
   title,
   activeIndex,
   setActiveIndex,
-  // amenitiesArr,
   setAmenitiesArr,
   isFilterClear,
   setIsFilterClear,
@@ -24,7 +23,6 @@ const FilterItem = ({
     setIsFilterClear(false);
     setAmenitiesArr([]);
   }, [isFilterClear]);
-  // const { t } = useTranslation();
   useEffect(() => {
     setIsLoad(false);
   }, []);

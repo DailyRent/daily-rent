@@ -25,9 +25,5 @@ const nextConfig = {
 
     return config;
   },
-
-  // webpack: async function (config) {
-  //   return config;
-  // },
 };
 module.exports = nextConfig;

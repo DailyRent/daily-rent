@@ -18,14 +18,12 @@ export const orderSchema = () => {
             .test({
                 name: "objNumber",
                 test(value, ctx) {
-                    // console.log('this.options:', this.options)
                     const listOfNumbers = this.options.context;
                     if (!listOfNumbers.includes(String(value)) && value) {
                         return ctx.createError({
                             message: i18n.t("Form.errorNumberOfObject"),
                         });
                     }
-
                     return true;
                 },
             }),
@@ -33,6 +31,5 @@ export const orderSchema = () => {
             .nullable(),
         checkOut: Yup.date()
             .nullable()
-
     })
 };

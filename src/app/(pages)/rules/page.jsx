@@ -1,17 +1,3 @@
-// "use client";
-// import React from "react";
-// import styles from "./page.module.scss";
-// import {
-//   RulesInApartment,
-//   Prohibited,
-//   Eviction,
-//   currentLanguages,
-// } from "@/data";
-// import { useTranslation } from "react-i18next";
-// import { useState, useEffect } from "react";
-// // import ButtonToBack from "@/components/share/ButtonToBack/ButtonToBack";
-// import Link from "next/link";
-// import seoStyles from "@/app/seoStyles.module.css";
 import RulesComponent from "@/components/RulesComponent/RulesComponent";
 
 export const metadata = {

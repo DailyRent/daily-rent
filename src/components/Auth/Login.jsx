@@ -10,7 +10,6 @@ import Loading from "@/app/loading";
 const Login = () => {
   // дает данные о пользователе - data, залогинен он или нет - status
   const session = useSession();
-  // console.log(session) // { "data": null,  "status": "unauthenticated"}
 
   const router = useRouter();
 

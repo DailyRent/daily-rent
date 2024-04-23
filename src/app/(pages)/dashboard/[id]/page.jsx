@@ -57,7 +57,6 @@ const EditCard = ({ params }) => {
               {data.top ? <p>ТОП</p> : null}
               <p className={styles.priority}>Пріоритет: {data.priority}</p>
               <p>Основне фото:</p>
-              {/* <div className={styles.imgContainer}> */}
               <CldImage
                 width="300"
                 height="150"
@@ -65,7 +64,6 @@ const EditCard = ({ params }) => {
                 src={data.titleImg}
                 alt={data.address}
               />
-              {/* </div> */}
               <p>Додаткові фото:</p>
               <ul className={styles.imgsWrapper}>
                 {data.imgs.map((item, index) => (

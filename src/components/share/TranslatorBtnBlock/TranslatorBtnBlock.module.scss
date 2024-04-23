@@ -9,23 +9,28 @@
   margin-right: auto;
   margin-left: 0;
   scale: 0.8;
+
   @media screen and (min-width: $mobile) {
     scale: 1;
   }
+
   @media screen and (min-width: $tablet) {
     margin-right: 0;
     border-color: $darckFontColor;
     color: $darckFontColor;
   }
 }
+
 .dropdownDark {
   & .dropBtn {
     border: 1px solid $darckFontColor;
     color: $darckFontColor;
   }
+
   & .svg {
     stroke: $darckFontColor;
   }
+
   & .label {
     color: $darckFontColor;
   }
@@ -54,6 +59,7 @@
   font-size: 10px;
   font-weight: 500;
   text-transform: uppercase;
+
   @media screen and (min-width: $tablet) {
     padding: 8px 16px;
     -webkit-column-gap: 4px;
@@ -76,6 +82,7 @@
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+
   @media screen and (min-width: $tablet) {
     width: 101px;
   }
@@ -84,13 +91,8 @@
 .langIndicator {
   margin-right: 13px;
   font-size: clamp(0.75rem, 0.179rem + 1.19vw, 1.25rem);
-  // font-size: 14px;
   line-height: 18.2px;
   color: $darckFontColor;
-  // @media screen and (min-width: $tablet) {
-  //   font-size: 20px;
-  //   line-height: 26px;
-  // }
 }
 
 .langToggle {
@@ -114,6 +116,7 @@
   font-weight: 500;
   line-height: 12.1px;
   cursor: pointer;
+
   @media screen and (min-width: $tablet) {
     width: 36px;
     height: 15px;
@@ -124,6 +127,7 @@
   -webkit-transform: translateX(-21px);
   -ms-transform: translateX(-21px);
   transform: translateX(-21px);
+
   @media screen and (min-width: $tablet) {
     -webkit-transform: translateX(-27px);
     -ms-transform: translateX(-27px);
@@ -136,17 +140,16 @@
   -webkit-transition: 0.4s;
   -o-transition: 0.4s;
   transition: 0.4s;
-  // transition: left 0.3s ease, right 0.3s ease;
   left: 13px;
   z-index: 8;
   -webkit-box-shadow: 0px 2px 8px 0px #00000029;
   box-shadow: 0px 2px 8px 0px #00000029;
-  // box-shadow: 0 0 0 0.015em rgba(0, 0, 0, 0.16);
   width: 16px;
   height: 16px;
   border-radius: 50%;
   background-color: #ffff;
   top: -3.25px;
+
   @media screen and (min-width: $tablet) {
     width: 24px;
     height: 24px;

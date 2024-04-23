@@ -80,7 +80,6 @@
   margin-right: 10px;
 
   color: #545454;
-  // font-family: Crimson Text;
   font-family: var(--font--crimsonPro);
   font-size: 16px;
   font-style: normal;
@@ -96,23 +95,4 @@
     margin-right: 16px;
     font-size: 20px;
   }
-}
-
-.imgSvgContainer {
-  position: relative;
-  width: 16px;
-  height: 16px;
-  margin-right: 8px;
-  @media screen and (min-width: $tablet) {
-    margin-right: 16px;
-  }
-  @media screen and (min-width: $desktop) {
-    width: 24px;
-    height: 24px;
-  }
-}
-
-.imgSvg {
-  -o-object-fit: cover;
-  object-fit: cover;
 }

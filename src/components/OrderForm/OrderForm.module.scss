@@ -17,6 +17,7 @@
     text-align: center;
     padding: 24px;
     background-color: #fff;
+
     @media screen and (min-width: $desktop) {
         width: 1081px;
         height: 635px;
@@ -29,6 +30,7 @@
     right: 32px;
     border: none;
     cursor: pointer;
+
     @media screen and (min-width: $desktop) {
         top: 100px;
         right: 100px;
@@ -41,6 +43,7 @@
     width: 16px;
     height: 16px;
     fill: #c7c7c7;
+
     @media screen and (min-width: $desktop) {
         left: 10px;
         width: 32px;
@@ -49,12 +52,12 @@
 }
 
 .title {
-    // font-family: Crimson Text;
     font-family: var(--font--crimsonPro);
     font-size: 24px;
     font-weight: 700;
     margin-bottom: 32px;
     margin-top: 15px;
+
     @media screen and (min-width: $desktop) {
         margin: 55px 0 0 0;
     }
@@ -72,6 +75,7 @@
     -ms-flex-align: center;
     align-items: center;
     width: 235px;
+
     @media screen and (min-width: $desktop) {
         width: 921px;
         -webkit-box-orient: horizontal;
@@ -90,6 +94,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
     @media screen and (min-width: $desktop) {
         width: 920px;
         flex-direction: row;
@@ -115,6 +120,7 @@
     cursor: pointer;
     border-bottom: 1px solid rgba(199, 199, 199, 1);
     padding-left: 32px;
+
     @media screen and (min-width: $desktop) {
         margin: 77px 10px 0;
         width: 440px;
@@ -152,6 +158,7 @@
 .wrapError {
     position: relative;
     width: 100%;
+
     @media screen and (min-width: $desktop) {
         width: 440px;
     }
@@ -163,6 +170,7 @@
     left: 80px;
     color: rgba(255, 134, 134, 1);
     font-size: 14px;
+
     @media screen and (min-width: $desktop) {
         bottom: 40px;
         left: 200px;
@@ -174,6 +182,7 @@
     top: 10px;
     width: 16px;
     height: 16px;
+
     @media screen and (min-width: $desktop) {
         left: 10px;
         top: 85px;
@@ -182,6 +191,7 @@
 
 .iconPicker {
     bottom: 45px;
+
     @media screen and (min-width: $desktop) {
         bottom: 10px;
     }
@@ -192,6 +202,7 @@
     left: 210px;
     width: 16px;
     height: 16px;
+
     @media screen and (min-width: $desktop) {
         bottom: 10px;
         left: 425px;
@@ -209,6 +220,7 @@
     line-height: 1.3;
     letter-spacing: 0.5px;
     color: rgba(199, 199, 199, 1);
+
     @media screen and (min-width: $desktop) {
         position: absolute;
         bottom: -60px;
@@ -244,6 +256,7 @@
     font-weight: 400;
     line-height: normal;
     margin-top: 48px;
+
     @media screen and (min-width: $desktop) {
         margin: 100px auto;
     }
@@ -272,6 +285,7 @@
     align-items: center;
     -ms-flex-pack: distribute;
     justify-content: space-around;
+
     @media screen and (min-width: $desktop) {
         margin-top: 140px;
         padding-bottom: 40px;
@@ -290,6 +304,7 @@
     line-height: 1.3;
     font-weight: 400;
     margin-bottom: 40px;
+
     @media screen and (min-width: $desktop) {
         font-size: 32px;
         margin-bottom: 10px;
@@ -301,6 +316,7 @@
     font-size: 24px;
     line-height: 1.3;
     font-weight: 400;
+
     @media screen and (min-width: $desktop) {
         font-size: 32px;
     }
