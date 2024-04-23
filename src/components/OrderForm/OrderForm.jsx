@@ -105,9 +105,6 @@ const OrderForm = ({ isOpen, closeModal }) => {
                                         <svg className={styles.icon}>
                                             <use href='/sprite.svg#icon-user' />
                                         </svg>
-                                        {/* <label htmlFor='userName' className={styles.label}>
-                                              Ім’я
-                                         </label> */}
                                         <Field
                                             type='text'
                                             name='userName'
@@ -117,7 +114,7 @@ const OrderForm = ({ isOpen, closeModal }) => {
                                             maxLength='30'
                                             className={
                                                 errors.userName &&
-                                                touched.userName
+                                                    touched.userName
                                                     ? `${styles.input} ${styles.inputError}`
                                                     : styles.input
                                             }
@@ -132,9 +129,6 @@ const OrderForm = ({ isOpen, closeModal }) => {
                                         <svg className={styles.icon}>
                                             <use href='/sprite.svg#icon-phone' />
                                         </svg>
-                                        {/* <label htmlFor='phone' className={styles.label}>
-                                            Номер телефону
-                                         </label> */}
                                         <Field
                                             type='text'
                                             name='phone'
@@ -167,9 +161,6 @@ const OrderForm = ({ isOpen, closeModal }) => {
                                         >
                                             <use href='/sprite.svg#icon-chevron-down' />
                                         </svg>
-                                        {/* <label htmlFor='checkIn' className={styles.label}>
-                                              'Дата заїзду
-                                          </label> */}
                                         <Field name='checkIn' id='checkIn'>
                                             {({ form, field }) => {
                                                 const { setFieldValue } = form;
@@ -183,7 +174,7 @@ const OrderForm = ({ isOpen, closeModal }) => {
                                                         selectsStart
                                                         className={
                                                             errors.checkIn &&
-                                                            touched.checkIn
+                                                                touched.checkIn
                                                                 ? `${styles.input} ${styles.inputError}`
                                                                 : styles.input
                                                         }
@@ -247,9 +238,6 @@ const OrderForm = ({ isOpen, closeModal }) => {
                                         >
                                             <use href='/sprite.svg#icon-chevron-down' />
                                         </svg>
-                                        {/* <label htmlFor='checkIn' className={styles.label}>
-                                              'Дата заїзду
-                                        </label> */}
                                         <Field name='checkOut' id='checkOut'>
                                             {({ form, field }) => {
                                                 const { setFieldValue } = form;
@@ -266,7 +254,7 @@ const OrderForm = ({ isOpen, closeModal }) => {
                                                         minDate={values.checkIn}
                                                         className={
                                                             errors.checkOut &&
-                                                            touched.checkOut
+                                                                touched.checkOut
                                                                 ? `${styles.input} ${styles.inputError}`
                                                                 : styles.input
                                                         }
@@ -312,9 +300,6 @@ const OrderForm = ({ isOpen, closeModal }) => {
                                         <svg className={styles.icon}>
                                             <use href='/sprite.svg#icon-hash' />
                                         </svg>
-                                        {/* <label htmlFor='objNumber' className={styles.label}>
-                                               Номер об’єкту
-                                            </label> */}
                                         <Field
                                             type='text'
                                             name='objNumber'
@@ -326,7 +311,7 @@ const OrderForm = ({ isOpen, closeModal }) => {
                                             )}
                                             className={
                                                 errors.objNumber &&
-                                                touched.objNumber
+                                                    touched.objNumber
                                                     ? `${styles.input} ${styles.inputError}`
                                                     : styles.input
                                             }

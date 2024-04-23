@@ -28,6 +28,7 @@
   position: relative;
   overflow: hidden;
 }
+
 .HomeSliderSwiper .link[data-title]:hover:after {
   content: attr(data-title);
   position: absolute;
@@ -62,7 +63,6 @@
   bottom: 0;
 
   width: 100%;
-  /* height: 16px; */
   padding: 8px 24px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -103,6 +103,7 @@
   background-image: url("../../../public/png/ArrowLeft.webp");
   left: 10%;
 }
+
 .HomeSliderSwiper .swiper-button-next {
   background-image: url("../../../public/png/ArrowRight.webp");
   right: 10%;
@@ -113,6 +114,7 @@
   width: 12px;
   height: 12px;
 }
+
 .HomeSliderSwiper .swiper-pagination-bullet-active-prev,
 .HomeSliderSwiper .swiper-pagination-bullet-active-next {
   opacity: 0.6;
@@ -121,7 +123,6 @@
 @media screen and (min-width: 768px) {
   .HomeSliderSwiper .link[data-title]:hover:after {
     font-size: 16px;
-    /* padding: 8px; */
   }
 
   .HomeSliderSwiper .swiper-button-prev,
@@ -129,9 +130,11 @@
     height: 16px;
     width: 124px;
   }
+
   .HomeSliderSwiper .swiper-button-prev {
     left: 20%;
   }
+
   .HomeSliderSwiper .swiper-button-next {
     right: 20%;
   }
@@ -157,6 +160,7 @@
   .HomeSliderSwiper .swiper-button-prev {
     left: 30%;
   }
+
   .HomeSliderSwiper .swiper-button-next {
     right: 30%;
   }

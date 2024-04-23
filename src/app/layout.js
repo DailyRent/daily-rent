@@ -1,10 +1,6 @@
 import "./globals.css";
-// import TranslatorProvider from "@/translator/i18Provider";
-// import ToastProvider from "@/context/ToastProvider";
 import { Inter, Crimson_Pro } from "next/font/google";
 import Header from "@/components/Header/Header";
-// import Footer from "@/components/Footer/Footer";
-// import AuthProvider from "@/components/AuthProvider/AuthProvider";
 import { SiteProvider } from "@/context/SiteContext";
 import dynamic from "next/dynamic";
 import CallBtnRound from "@/components/CallBtnRound/CallBtnRound";
@@ -32,10 +28,6 @@ const DynamicAuthProvider = dynamic(() =>
 
 export const metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_MAIN_URL),
-  // title: {
-  //   template: "%s | Daily Rent - оренда квартири Суми. Квартири подобово.",
-  //   default: "Daily Rent - оренда квартири Суми. Квартири подобово.",
-  // },
   title: "Daily Rent - оренда квартири Суми. Квартири подобово.",
   description:
     "Суми квартири ⭐ Зняти квартиру Суми ✔️ Оренда квартири Суми 🔑 Квартири подобово 📅 Квартири на день",
@@ -144,24 +136,16 @@ export default function RootLayout({ children }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        {/* <body className={inter.className}> */}
         <SiteProvider>
-          {/* <ToastProvider> */}
           <DynamicToastProvider>
-            {/* <AuthProvider> */}
             <DynamicAuthProvider>
-              {/* <TranslatorProvider> */}
               <DynamicTranslatorProvider>
                 <Header />
                 <main>{children}</main>
-                {/* <Footer /> */}
                 <CallBtnRound />
                 <DynamicFooter />
-                {/* </TranslatorProvider> */}
               </DynamicTranslatorProvider>
-              {/* </AuthProvider> */}
             </DynamicAuthProvider>
-            {/* </ToastProvider> */}
           </DynamicToastProvider>
         </SiteProvider>
       </body>

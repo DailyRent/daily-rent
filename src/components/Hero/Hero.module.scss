@@ -16,13 +16,11 @@
   align-items: center;
   gap: 20px;
   width: 100%;
-  background-image: -webkit-gradient(
-      linear,
+  background-image: -webkit-gradient(linear,
       left top,
       left bottom,
       from(rgba(0, 0, 0, 0.6)),
-      to(rgba(0, 0, 0, 0.6))
-    ),
+      to(rgba(0, 0, 0, 0.6))),
     url("/webp/heroBg5.webp");
   background-image: -o-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url("/webp/heroBg5.webp");
@@ -59,6 +57,7 @@
   @media screen and (min-width: $tablet) {
     font-size: 24px;
   }
+
   @media screen and (min-width: $desktop) {
     font-size: 48px;
   }
@@ -88,6 +87,7 @@
     font-size: 20px;
     height: 20px;
   }
+
   @media screen and (min-width: $desktop) {
     font-size: 40px;
     height: 40px;
@@ -103,6 +103,7 @@
   line-height: normal;
   text-shadow: 0px 0px 4px black;
   height: 28px;
+
   @media screen and (min-width: 321px) {
     height: 16px;
   }
@@ -120,7 +121,6 @@
   color: $darckFontColor;
   font-size: 12px;
 
-  // &:focus,
   &:hover {
     color: $lightFontColor;
     border-width: 1px;

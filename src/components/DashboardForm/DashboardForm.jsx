@@ -40,13 +40,12 @@ const DashboardForm = () => {
         method: "POST",
         body: JSON.stringify(values),
       });
-      // автоматично обновлює строрінку при зміні кількості карточок
+      // автоматично обновлює сторінку при зміні кількості карток
       mutate();
       // обнуляє форму
       actions.resetForm();
       toast.success(`Новий обʼєкт №: ${values.objNumber} створено`);
     } catch (err) {
-      console.log(err);
       toast.error("Помилка! Обʼєкт не створено");
     }
   };
@@ -276,7 +275,6 @@ const DashboardForm = () => {
                   id="wi-fi"
                   name="amenities"
                   value="Wi-Fi"
-                // defaultChecked
                 />
                 Wi-Fi
               </label>

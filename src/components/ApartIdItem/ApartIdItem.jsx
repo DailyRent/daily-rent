@@ -9,7 +9,6 @@ import ApartDataList from './ApartDataList/ApartDataList';
 import { currentLanguages, textInfoAppartId } from '@/data';
 import styles from './ApartIdItem.module.scss';
 import ItemSlider from './ItemSlider/ItemSlider';
-// import ApartStar from "./ApartStar/ApartStar";
 import ModalR from '@/components/Modal/Modal';
 import OrderForm from '@/components/OrderForm/OrderForm';
 import { SiteContext } from '@/context/SiteContext';
@@ -94,7 +93,6 @@ const ApartIdItem = ({ params }) => {
             <ApartDataList dataId={dataId} />
             <hr style={{ width: '100%' }} />
             <Amenities dataId={dataId} />
-            {/* <ApartStar dataId={dataId} /> */}
             <OrderBtn className={styles.orderBtn} openModal={openModal} />
           </article>
         </article>

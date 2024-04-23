@@ -8,21 +8,14 @@
   justify-content: center;
   padding: 103px 10px 10px;
   width: 100%;
-  // flex: 1;
 
   @media screen and (min-width: $tablet) {
     align-items: normal;
     justify-content: normal;
-    // gap: 50px;
-    // padding: 99px 20px 20px;
     padding: 119px 20px 20px;
-    // width: 100%;
-    // flex: none;
   }
 
   @media screen and (min-width: $desktop) {
-    // gap: 100px;
-    // padding: 149px 40px 40px;
     padding: 177px 40px 40px;
   }
 }
@@ -64,7 +57,6 @@
     -ms-flex-direction: column;
     flex-direction: column;
     gap: 5px;
-    // margin: 20px 0px;
     padding: 10px;
     background-color: #8c878fd6;
     border-radius: 5px;
@@ -79,17 +71,6 @@
 .priority {
   font-weight: 600;
 }
-
-// .imgContainer {
-//   width: 300px;
-//   height: 150px;
-//   position: relative;
-// }
-
-// .img {
-//   -o-object-fit: cover;
-//   object-fit: cover;
-// }
 
 .imgsWrapper {
   gap: 10px;

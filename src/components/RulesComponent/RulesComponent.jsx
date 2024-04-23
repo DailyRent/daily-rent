@@ -9,12 +9,10 @@ import {
 } from "@/data";
 import { useTranslation } from "react-i18next";
 import { useState, useEffect } from "react";
-// import ButtonToBack from "@/components/share/ButtonToBack/ButtonToBack";
 import Link from "next/link";
 import seoStyles from "@/app/seoStyles.module.css";
 
 const RulesComponent = () => {
-  // const router = useRouter();
   const { t } = useTranslation();
   const { i18n } = useTranslation();
   const [isLoading, setIsLoading] = useState(true);
@@ -27,7 +25,6 @@ const RulesComponent = () => {
       <h1 className={seoStyles.titleHidden}>
         Оренда квартири суми. Квартири подобово. Суми квартири.
       </h1>
-      {/* <h1 className="visuallyHidden">Rules Page</h1> */}
       <nav className={styles.toBackContainer}>
         {!isLoading && (
           <article className="textLink">
