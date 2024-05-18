@@ -1,4 +1,4 @@
-@import '@/styles/_variables.scss';
+@import "@/styles/_variables.scss";
 
 .container {
   display: -webkit-box;
@@ -8,6 +8,7 @@
   -ms-flex-align: center;
   align-items: center;
   padding: 112px 20px 24px 20px;
+  min-height: 100vh;
 
   @media screen and (min-width: $tablet) {
     padding: 118px 36px 40px 36px;

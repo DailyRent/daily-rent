@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./FilterItem.module.scss";
 import { useTranslation } from "react-i18next";
 import { currentLanguages } from "@/data";
+import { useCallback } from "react";
 
 const FilterItem = ({
   id,
@@ -22,13 +23,16 @@ const FilterItem = ({
     setIsChecked(false);
     setIsFilterClear(false);
     setAmenitiesArr([]);
-  }, [isFilterClear]);
+  }, [isFilterClear, setAmenitiesArr, setIsFilterClear]);
+
   useEffect(() => {
     setIsLoad(false);
   }, []);
 
-  const isAmenityChecked = () =>
-    id === activeIndex ? setIsChecked(!isChecked) : null;
+  const isAmenityChecked = useCallback(
+    () => (id === activeIndex ? setIsChecked(!isChecked) : null),
+    [id, activeIndex, isChecked]
+  );
 
   const toggleAmenityForFilter = () => {
     if (!isChecked) {
@@ -42,7 +46,7 @@ const FilterItem = ({
 
   useEffect(() => {
     isAmenityChecked();
-  }, [activeIndex]);
+  }, [activeIndex, isAmenityChecked]);
 
   const filterCheckboxStyles = isChecked
     ? styles.filterInputCheckbox__Checked

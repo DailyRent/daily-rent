@@ -128,13 +128,13 @@ const Footer = ({ onClick }) => {
                 })}
             </ul>
 
-            <div className={styles.btnsWrapper}>
-              <CallBtn className={isMobile ? `${styles.mobileBtn}` : " "} />
-              <OrderBtn
-                openModal={openModal}
-                className={isMobile ? `${styles.mobileBtn}` : " "}
-              />
-            </div>
+            {!isLoading && (
+              <div className={styles.btnsWrapper}>
+                <CallBtn />
+
+                <OrderBtn openModal={openModal} />
+              </div>
+            )}
           </div>
         )}
         <p className={styles.rights}>

@@ -1,7 +1,8 @@
 .ItemSliderTop {
   width: 100%;
-  height: 264px;
+  /* height: 264px; */
   margin-bottom: 16px;
+  height: 64vw;
 }
 
 .ItemSliderTop .swiper-wrapper {
@@ -97,7 +98,9 @@
 
 @media screen and (min-width: 1366px) {
   .ItemSliderTop {
-    height: 470px;
+    /* height: 470px; */
+    height: 33vw;
+    /* max-height: 470px; */
   }
 
   .ItemSliderTop .swiper-button-prev,
@@ -151,7 +154,8 @@
 
 @media screen and (min-width: 1920px) {
   .ItemSliderTop {
-    height: 621px;
+    /* height: 621px; */
+    max-height: 470px;
   }
 
   .ItemSliderTop .swiper-button-prev,

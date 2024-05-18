@@ -30,20 +30,15 @@
   }
 
   @media (max-width: 360px) {
-    height: 186px;
+    min-height: 186px;
   }
 
   @media (min-width: 361px) and (max-width: 767px) {
-    height: 128px;
+    min-height: 128px;
   }
 
   @media (max-width: 767px) {
     padding-top: 20px;
-
-    & .mobileBtn {
-      width: 100px;
-      height: 24px;
-    }
   }
 
   @media screen and (min-width: $tablet) {
@@ -54,7 +49,7 @@
   @media screen and (min-width: $desktop) {
     gap: 20px;
     padding: 24px 86px;
-    height: 250px;
+    min-height: 250px;
   }
 }
 
@@ -163,9 +158,7 @@
 }
 
 .btnsWrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
@@ -178,13 +171,10 @@
   -ms-flex-align: end;
   align-items: flex-end;
 
-  @media screen and (max-width: 767px) {
-    width: 100%;
-    flex-direction: row;
-    justify-content: center;
-  }
-
   @media screen and (min-width: $tablet) {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     gap: 16px;
   }
 
