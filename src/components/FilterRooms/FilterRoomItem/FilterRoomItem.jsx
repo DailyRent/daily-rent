@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from "react";
 
-import { useTranslation } from 'react-i18next';
-import { currentLanguages } from '@/data';
+import { useTranslation } from "react-i18next";
+import { currentLanguages } from "@/data";
 
-import styles from './FilterRoomItem.module.scss';
+import styles from "./FilterRoomItem.module.scss";
 
 const FilterRoomItem = ({
   id,
@@ -21,9 +21,9 @@ const FilterRoomItem = ({
 
   const { t, i18n } = useTranslation();
 
-  const isNumberRoomsChecked = () => {
+  const isNumberRoomsChecked = useCallback(() => {
     id === activeIndex ? setIsChecked(!isChecked) : null;
-  };
+  }, [id, activeIndex, isChecked]);
 
   const toggleNumberRoomsForFilter = () => {
     if (!isChecked) {
@@ -37,7 +37,7 @@ const FilterRoomItem = ({
   useEffect(() => setIsLoading(false), []);
   useEffect(() => {
     isNumberRoomsChecked();
-  }, [activeIndex]);
+  }, [activeIndex, isNumberRoomsChecked]);
 
   const filterCheckboxStyles = isChecked
     ? styles.filterInputCheckbox__Checked
@@ -46,10 +46,11 @@ const FilterRoomItem = ({
   return (
     <li className={styles.filterRoom}>
       {!isLoading && (
-        <><p className={styles.filterRoomText}>
-          {title}
-          {t('Buttons.FilterQuantRooms')}
-        </p>
+        <>
+          <p className={styles.filterRoomText}>
+            {title}
+            {t("Buttons.FilterQuantRooms")}
+          </p>
 
           <input
             id={id}
@@ -64,7 +65,9 @@ const FilterRoomItem = ({
                 isNumberRoomsChecked(),
                 toggleNumberRoomsForFilter();
             }}
-          /></>)}
+          />
+        </>
+      )}
     </li>
   );
 };
