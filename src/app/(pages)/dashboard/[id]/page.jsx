@@ -3,24 +3,21 @@ import React from "react";
 import styles from "./page.module.scss";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
-import useSWR from "swr";
 import UpdatingForm from "@/components/UpdatingForm/UpdatingForm";
 import Link from "next/link";
 import { CldImage } from "next-cloudinary";
 import { handleDeleteImgFromMongoDB } from "@/utils/handleDeleteImgFromMongoDB";
 import { handleDeleteImgFromCloudinary } from "@/utils/handleDeleteImgFromCloudinary";
 import Loading from "@/app/loading";
+import { GetDataById } from "@/fetch/clientFetch";
 
 const EditCard = ({ params }) => {
   const { id } = params;
 
   const session = useSession();
 
-  const fetcher = (...args) => fetch(...args).then((res) => res.json());
-  const { data, mutate, error, isLoading } = useSWR(
-    `/api/apartments/${id}`,
-    fetcher
-  );
+  const { data, mutate, isLoading } = GetDataById(id);
+
   const router = useRouter();
 
   if (session.status === "loading") {
