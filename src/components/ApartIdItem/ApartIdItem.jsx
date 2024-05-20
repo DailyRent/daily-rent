@@ -14,15 +14,12 @@ import OrderForm from '@/components/OrderForm/OrderForm';
 import { SiteContext } from '@/context/SiteContext';
 import Link from 'next/link';
 import seoStyles from '@/app/seoStyles.module.css';
-import useSWR from 'swr';
+// import useSWR from 'swr';
 import { v4 } from 'uuid';
+import { GetDataById } from '@/fetch/clientFetch';
 
 const ApartIdItem = ({ params }) => {
-  const fetcher = (...args) => fetch(...args).then((res) => res.json());
-  const { data, error, isLoading } = useSWR(
-    `/api/apartments/${params.id}`,
-    fetcher
-  );
+  const { data, error, isLoading } = GetDataById(params.id)
 
   const dataId = data && !isLoading ? data : error;
 
