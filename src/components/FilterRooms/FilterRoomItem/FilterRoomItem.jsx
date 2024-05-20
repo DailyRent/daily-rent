@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 
 import { useTranslation } from "react-i18next";
 import { currentLanguages } from "@/data";
@@ -21,9 +21,9 @@ const FilterRoomItem = ({
 
   const { t, i18n } = useTranslation();
 
-  const isNumberRoomsChecked = useCallback(() => {
+  const isNumberRoomsChecked = () => {
     id === activeIndex ? setIsChecked(!isChecked) : null;
-  }, [id, activeIndex, isChecked]);
+  };
 
   const toggleNumberRoomsForFilter = () => {
     if (!isChecked) {
@@ -37,7 +37,7 @@ const FilterRoomItem = ({
   useEffect(() => setIsLoading(false), []);
   useEffect(() => {
     isNumberRoomsChecked();
-  }, [activeIndex, isNumberRoomsChecked]);
+  }, [activeIndex]);
 
   const filterCheckboxStyles = isChecked
     ? styles.filterInputCheckbox__Checked
