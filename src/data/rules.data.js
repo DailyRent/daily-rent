@@ -12,7 +12,7 @@ export const RulesInApartment = [
     {
       id: 3,
       ruleEN: 'Check-in takes place from 14.00. Check-out takes place at 11.00.',
-      rule: 'Заселення відбувається з 14.00. Виселення відбувається о 11.00.',
+      rule: 'Заселення відбувається з 14.00. Виселення відбувається об 11.00.',
     },
     {
       id: 4,
