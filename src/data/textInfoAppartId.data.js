@@ -3,8 +3,8 @@ import { v4 } from 'uuid';
 export const textInfoAppartId = [
   {
     id: v4(),
-    title: 'Розрахунковий час — 11:00 година дня.',
-    titleEN: 'The estimated time is 11:00 pm.',
+    title: 'Розрахунковий час — 11:00 година ранку.',
+    titleEN: 'The estimated time is 11:00 am.',
     text: 'Надаються документи по 2 та 3 групі з наявністю касового апарату (робота з підприємствами, ПДВ).',
     textEN:
       'Documents for Groups 2 and 3 with a cash register are provided (work with enterprises, VAT).',
