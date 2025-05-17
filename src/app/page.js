@@ -1,20 +1,24 @@
-import Hero from "@/components/Hero/Hero";
-import dynamic from "next/dynamic";
+import Hero from '@/components/Hero/Hero';
+import dynamic from 'next/dynamic';
 
 const DynamicHomeSlider = dynamic(() =>
-  import("@/components/HomeSlider/HomeSlider")
+  import('@/components/HomeSlider/HomeSlider')
+);
+
+const DynamicHomeApartmentsList = dynamic(() =>
+  import('@/components/HomeApartmentsList/HomeApartmentsList')
 );
 
 export default function Home() {
   const jsonLd = {
-    "@context": "http://schema.org",
-    "@type": "BreadcrumbList",
+    '@context': 'http://schema.org',
+    '@type': 'BreadcrumbList',
     itemListElement: {
-      "@type": "ListItem",
+      '@type': 'ListItem',
       position: 1,
       item: {
-        "@id": process.env.NEXT_PUBLIC_MAIN_URL,
-        name: "Daily Rent - оренда квартири Суми. Квартири подобово.",
+        '@id': process.env.NEXT_PUBLIC_MAIN_URL,
+        name: 'Daily Rent - оренда квартири Суми. Квартири подобово.',
       },
     },
   };
@@ -26,6 +30,7 @@ export default function Home() {
       />
       <Hero />
       <DynamicHomeSlider />
+      <DynamicHomeApartmentsList />
     </>
   );
 }
