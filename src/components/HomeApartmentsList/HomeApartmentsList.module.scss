@@ -1,0 +1,60 @@
+@import '@/styles/_variables.scss';
+
+.section {
+  padding: 16px 20px 24px 20px;
+  min-height: 100vh;
+
+  @media screen and (min-width: $tablet) {
+    padding: 16px 36px 40px 36px;
+  }
+
+  @media screen and (min-width: 1366px) {
+    padding: 28px 86px 32px 86px;
+  }
+}
+
+.title {
+  color: $footerLocationColor;
+  font-family: var(--font--crimsonPro);
+  font-size: 32px;
+  font-weight: 400;
+  margin-bottom: 32px;
+  text-align: center;
+
+  @media screen and (min-width: $tablet) {
+    font-size: 40px;
+    margin-bottom: 40px;
+  }
+
+  @media screen and (min-width: 1366px) {
+    font-size: 48px;
+  }
+}
+
+.apartamentList {
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: repeat(1, 280px);
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  -webkit-column-gap: 30px;
+  -moz-column-gap: 30px;
+  column-gap: 30px;
+  row-gap: 40px;
+  padding-bottom: 40px;
+  @media screen and (min-width: 360px) {
+    grid-template-columns: repeat(1, 320px);
+  }
+  @media screen and (min-width: $tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media screen and (min-width: $desktop) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.loading {
+  width: 100%;
+  margin: 0 auto;
+}
