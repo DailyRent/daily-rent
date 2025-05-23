@@ -58,10 +58,10 @@ const Footer = ({ onClick }) => {
             <div className={styles.mobileItem}>
               <Logo className={`${styles.footerLogo}  textLinkAnimation`} />
               <Link
-                href="mailto:dailyrent4@gmail.com"
+                href="mailto:info@dailyrent.online"
                 className="textLinkAnimation"
               >
-                dailyrent4@gmail.com
+                info@dailyrent.online
               </Link>
             </div>
             <div className={styles.mobileItem}>
@@ -79,10 +79,10 @@ const Footer = ({ onClick }) => {
           <div className={styles.contentWrapper}>
             <div className={styles.contacts}>
               <Link
-                href="mailto:dailyrent4@gmail.com"
+                href="mailto:info@dailyrent.online"
                 className="textLinkAnimation"
               >
-                dailyrent4@gmail.com
+                info@dailyrent.online
               </Link>
               <Link href="tel:+380991930030" className="textLinkAnimation">
                 +380991930030

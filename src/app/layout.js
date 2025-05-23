@@ -4,6 +4,7 @@ import Header from "@/components/Header/Header";
 import { SiteProvider } from "@/context/SiteContext";
 import dynamic from "next/dynamic";
 import CallBtnRound from "@/components/CallBtnRound/CallBtnRound";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -98,6 +99,7 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID;
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -107,7 +109,7 @@ export default function RootLayout({ children }) {
       {
         "@type": "ContactPoint",
         telephone: "+380991930030",
-        email: "dailyrent4@gmail.com",
+        email: "info@dailyrent.online",
         contactType: "customer service",
       },
       {
@@ -131,6 +133,7 @@ export default function RootLayout({ children }) {
   };
   return (
     <html lang="uk-UA">
+      <GoogleTagManager gtmId={`${GTM_ID}`} />
       <body className={`${inter.variable} ${crimsonPro.variable}`}>
         <script
           type="application/ld+json"
