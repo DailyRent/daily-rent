@@ -98,8 +98,8 @@ const ContactsComponent = () => {
               <div className={styles.socialLinks}>
                 <SocialLinks />
               </div>
-              <a href="mailto:dailyrent4@gmail.com" className={styles.mail}>
-                dailyrent4@gmail.com
+              <a href="mailto:info@dailyrent.online" className={styles.mail}>
+                info@dailyrent.online
               </a>
             </address>
           </address>

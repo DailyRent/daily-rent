@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@next/third-parties": "^15.1.8",
     "bcryptjs": "^2.4.3",
     "crypto": "^1.0.1",
     "eslint": "8.49.0",
