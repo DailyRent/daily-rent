@@ -30,7 +30,7 @@ export default async function sitemap() {
   const routes = [
     {
       name: "",
-      priority: 0.9,
+      priority: 1.0,
     },
     {
       name: "apartments",
@@ -38,7 +38,7 @@ export default async function sitemap() {
     },
     {
       name: "documents",
-      priority: 0.8,
+      priority: 0.5,
     },
     {
       name: "rules",
