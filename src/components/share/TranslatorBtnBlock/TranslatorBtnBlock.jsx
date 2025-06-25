@@ -22,8 +22,8 @@ const TranslatorBtnBlock = ({ isClient }) => {
 
   const changeLanguage = (languageUser) => {
     const whatLanguage = languageUser
-    localStorage.setItem("whatLanguage", whatLanguage);
-    const language = localStorage.getItem("whatLanguage");
+    localStorage.setItem("i18nextLng", whatLanguage);
+    const language = localStorage.getItem("i18nextLng");
     setLanguage(language);
 
     i18n.changeLanguage(language);
