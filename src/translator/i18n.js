@@ -17,9 +17,8 @@ i18n
     interpolation: {
       escapeValue: false,
     },
-    // wait: process && !process.release,
-  },
-  
-);
+    detection: {
+      order: ['localStorage']
+  }});
 
 export default i18n;
